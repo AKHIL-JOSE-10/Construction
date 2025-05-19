@@ -14,7 +14,7 @@ const Workerservice = () => {
     <Grid>
       <Box>
         <Typography sx={{ fontSize: '20px', fontWeight: '650', p: 2 }}>My Services</Typography>
-        <Accordion sx={{ borderRadius: 50, border: '1px solid brown', overflow: 'hidden', }}>
+        <Accordion sx={{ borderRadius: 5, border: '1px solid brown', overflow: 'hidden',mb:1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
