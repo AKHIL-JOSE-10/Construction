@@ -1,5 +1,5 @@
 import { Grid, Typography, Box, Button, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
-import MobHeading from './modules/components/Mobile/mobileHeading';
+import MobHeading from '../..//modules/components/Mobile/mobileHeading';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VerifiedIcon from '@mui/icons-material/Verified';
 

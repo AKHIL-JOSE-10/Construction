@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material"
 import MobHeading from "../../modules/components/Mobile/mobileHeading"
-import MobileBottomTab from "../../modules/components/Mobile/mobileTab"
+import MobileBottomTab from "../../modules/components/Mobile/mobileBottomTab"
 import MobTopTab from "../../modules/components/Mobile/mobTopTab";
 
 const MobmyBookings = () => {

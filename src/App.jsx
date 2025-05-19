@@ -2,17 +2,16 @@ import { Grid, Typography, Avatar, Box, Button, Accordion, Tabs, AccordionSummar
 import MobHeading from './modules/components/Mobile/mobileHeading';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import MobBookingInfo from './pages/Mobile/mobBookingInfo ';
-
+import MobBookingInfo from './pages/Mobile/mobBookingInfo'
+import MobmyBookings from './pages/Mobile/mobmyBookings';
 function App() {
   return (
     // <Signinpage/>
     // <Signuppage/>
     // <MobProfilePage/>
-    // <MobmyBookings/>
+    <MobmyBookings/>
     // <Workerpage/>
-    <MobBookingInfo/>
-
+//<MobBookingInfo/>
   );
 }
 
