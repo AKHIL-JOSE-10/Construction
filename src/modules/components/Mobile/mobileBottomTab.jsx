@@ -5,7 +5,7 @@ import MessageIcon from '@mui/icons-material/Message';
 import BookOnlineIcon from '@mui/icons-material/BookOnline';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const MobileTab = () => {
+const MobileBottomTab = () => {
     return (
         <Box sx={{position: 'fixed',bottom: 0,}}>
             <Tabs aria-label="icon label tabs example">
@@ -19,4 +19,4 @@ const MobileTab = () => {
     )
 }
 
-export default MobileTab
+export default MobileBottomTab

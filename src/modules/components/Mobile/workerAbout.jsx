@@ -1,0 +1,49 @@
+import { Grid, Typography, Box, } from '@mui/material';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import CategoryIcon from '@mui/icons-material/Category';
+import googlemap from '../../../assets/googlemap.jpeg'
+
+const WorkerAbout = () => {
+    return (
+        <Grid>
+            <Grid>
+                <Grid sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', px: 1, py: 2 }}>About me</Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', p: 1 }}>
+                        <CalendarTodayIcon sx={{ fontSize: 20, color: 'gray', mr: 1 }} />
+                        <Typography sx={{ fontSize: '18px' }}>Joined: 12 Dec 2025</Typography>
+                    </Box>
+
+                    <Box sx={{ display: 'flex', alignItems: 'center', p: 1 }}>
+                        <CategoryIcon sx={{ fontSize: 20, color: 'gray', mr: 1 }} />
+                        <Typography sx={{ fontSize: '18px' }}>Category : Electrician / Plumber</Typography>
+                    </Box>
+                    <Typography sx={{ fontSize: '16px', p: 1, color: 'text.secondary', lineHeight: 1.8, textAlign: 'justify', maxWidth: '700px', mx: 'auto' }}>
+                        I’ve been working as a professional <strong>Plumber/Electrician</strong> for over 4 years, handling residential and commercial projects with care and precision. I take pride in delivering reliable, safe, and efficient service. Whether it's a quick fix or a full installation, I’m here to help. Feel free to get in touch for any support or questions!
+                    </Typography>
+                </Grid>
+                <Grid>
+                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', px: 1, py: 2 }}>Service Skills</Typography>
+                    <Box sx={{ display: 'flex', gap: 2 }}>
+                        <Typography sx={{ flex: '0 0 42%', p: 1.5, borderRadius: 2, backgroundColor: '#f5f5f5', fontWeight: 500, fontSize: 16, boxShadow: '0 1px 4px rgba(0,0,0,0.1)', }}>
+                            Troubleshooting & Repair
+                        </Typography>
+
+                        <Typography
+                            sx={{ flex: '0 0 42%', p: 1.5, borderRadius: 2, backgroundColor: '#f5f5f5', fontWeight: 500, fontSize: 16, boxShadow: '0 1px 4px rgba(0,0,0,0.1)', }}>
+                            Installation & Maintenance
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Grid sx={{ display: 'flex', flexDirection: 'column',mb:2 }}>
+                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', mt: 2, px: 1, py: 2 }}>Location</Typography>
+                    <Typography sx={{ fontSize: '18px', fontWeight: '500', px: 1, }}>Aranattukara,Thrissur</Typography>
+                    <Typography sx={{ fontSize: '15px', px: 1 }}>0.2 km away</Typography>
+                </Grid>
+            </Grid>
+            <Box component="img" src={googlemap} alt="Main" sx={{ width: '100%', borderRadius: 2, display: 'block', }} />
+        </Grid>
+    )
+}
+
+export default WorkerAbout
