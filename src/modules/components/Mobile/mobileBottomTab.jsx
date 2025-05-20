@@ -7,12 +7,12 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const MobileBottomTab = () => {
     return (
-        <Box sx={{ position: 'fixed', bottom: 0, }}>
-            <Tabs aria-label="icon label tabs example">
+        <Box sx={{mt:13, position: 'fixed',overflow:'hidden', bottom: 0 ,  left: 0,right: 0,width: '100%', bgcolor: 'white',zIndex: 10,borderTop: '1px solid #ccc'}}>
+            <Tabs aria-label="icon label tabs example" variant="fullWidth" >
                 <Tab
                     icon={<Avatar src={ExploreIcon} sx={{ width: 29, height: 29 }} />}
                     label="Explore"
-                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, pl: 1.8, margin: 0.9 }}
+                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, pl: 1.3, margin: 0.8 }}
                 />
 
                 <Tab

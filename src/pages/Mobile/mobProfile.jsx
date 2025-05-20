@@ -1,7 +1,7 @@
 import { Grid, Typography, Avatar, Box, List, ListItem, ListItemButton, ListItemText, } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MobHeading from '../../modules/components/Mobile/mobileHeading';
-import MobileTab from '../../modules/components/Mobile/mobileTab';
+import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
 
 const MobProfilePage = () => {
     return (
@@ -20,81 +20,84 @@ const MobProfilePage = () => {
                         />
                     </Box>
                 </Grid>
-                <Box sx={{ ml: 1, mt: 3, mr: 2 }}>
-                    <List >
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Account info" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem >
+                <Grid sx={{pb:12}}>
+                    <Box sx={{ ml: 1, mt: 3, mr: 2 }}>
+                        <List >
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Account info" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem >
 
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Premium Subscription" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Premium Subscription" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
 
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Saved Workers" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Saved Workers" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
 
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Payment History " slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Payment History " slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
 
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Refer a Friend" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Terms and Condition" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Refer a Friend" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Terms and Condition" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
 
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }} >
-                                <ListItemText primary="Privacy Policy" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }} >
+                                    <ListItemText primary="Privacy Policy" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
 
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Settings" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Settings" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
 
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Help & Support" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
-                        <ListItem disablePadding sx={{ mb: 1 }}>
-                            <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
-                                <ListItemText primary="Logout" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
-                                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                            </ListItemButton>
-                        </ListItem>
-                    </List>
-                </Box>
-                <Box sx={{ ml: 2.8, width: 330, display: 'flex', alignItems: 'center' }}>
-                    <Box sx={{ flex: 1, height: '0.9px', bgcolor: '#ccc' }} />
-                </Box>
-                <MobileTab />
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Help & Support" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
+                            <ListItem disablePadding sx={{ mb: 1 }}>
+                                <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
+                                    <ListItemText primary="Logout" slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                                </ListItemButton>
+                            </ListItem>
+                        </List>
+                    </Box>
+                    <Box sx={{ ml: 2.8, width: 330, display: 'flex', alignItems: 'center' }}>
+                        <Box sx={{ flex: 1, height: '0.9px', bgcolor: '#ccc' }} />
+                    </Box>
+                </Grid>
+
+                <MobileBottomTab />
             </Grid>
         </Grid>
     )

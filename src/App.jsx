@@ -4,14 +4,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import MobBookingInfo from './pages/Mobile/mobBookingInfo'
 import MobmyBookings from './pages/Mobile/mobmyBookings';
+import ServiceCategory from './pages/Mobile/serviceCategory';
+import MobProfilePage from './pages/Mobile/mobProfile';
+
 function App() {
   return (
     // <Signinpage/>
     // <Signuppage/>
     // <MobProfilePage/>
-    <MobmyBookings/>
+    // <MobmyBookings/>
     // <Workerpage/>
-//<MobBookingInfo/>
+   //<MobBookingInfo/>
+   <ServiceCategory/>
   );
 }
 
