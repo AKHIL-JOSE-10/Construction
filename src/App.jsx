@@ -6,6 +6,8 @@ import MobBookingInfo from './pages/Mobile/mobBookingInfo'
 import MobmyBookings from './pages/Mobile/mobmyBookings';
 import ServiceCategory from './pages/Mobile/serviceCategory';
 import MobProfilePage from './pages/Mobile/mobProfile';
+import MobSettings from './pages/Mobile/mobSettings';
+import MobNotification from './pages/Mobile/mobNotification';
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
     // <MobmyBookings/>
     // <Workerpage/>
    //<MobBookingInfo/>
-   <ServiceCategory/>
+  //  <ServiceCategory/>
+  // <MobSettings/>
+  <MobNotification />
   );
 }
 

@@ -1,4 +1,4 @@
-import { Grid, Box, List, ListItem, ListItemButton, ListItemText,Avatar } from '@mui/material';
+import { Box, List, ListItem, ListItemButton, ListItemText, Avatar } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const ServiceCategoryList = ({img,heading,subheading}) => {

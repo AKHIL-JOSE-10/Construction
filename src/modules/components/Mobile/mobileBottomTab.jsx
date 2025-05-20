@@ -12,28 +12,28 @@ const MobileBottomTab = () => {
                 <Tab
                     icon={<Avatar src={ExploreIcon} sx={{ width: 29, height: 29 }} />}
                     label="Explore"
-                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, pl: 1.3, margin: 0.8 }}
+                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, pl: 1.3, margin: 0.8, textTransform: 'none' }}
                 />
 
                 <Tab
                     icon={<Avatar src={PremiumIcon} sx={{ width: 29, height: 29 }} />}
                     label="Premium"
-                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9 }}
+                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9, textTransform: 'none' }}
                 />
 
                 <Tab
                     icon={<Avatar src={MessageIcon} sx={{ width: 29, height: 29 }} />}
                     label="Messages"
-                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9 }}
+                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9 , textTransform: 'none'}}
                 />
 
                 <Tab
                     icon={<Avatar src={BookingIcon} sx={{ width: 29, height: 29 }} />}
                     label="Bookings"
-                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9 }}
+                    sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9, textTransform: 'none'}}
                 />
 
-                <Tab icon={<AccountCircleIcon sx={{ width: 27, height: 27 }} />} label="Profile" sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9 }} />
+                <Tab icon={<AccountCircleIcon sx={{ width: 27, height: 27 }} />} label="Profile" sx={{ fontSize: '0.6rem', minWidth: 'auto', padding: 0.9, margin: 0.9, textTransform: 'none'}} />
 
             </Tabs>
         </Box>
