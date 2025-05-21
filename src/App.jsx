@@ -21,7 +21,7 @@ function App() {
   //  <ServiceCategory/>
   // <MobSettings/>
   // <MobNotification />
-  // <Home/>
+  <Home/>
   // <Profile/>
   // <Bookings/>
   );

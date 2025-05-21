@@ -375,7 +375,7 @@ export default function Home() {
             ))}
           </Box>
         </Grid>
-        <Grid container size={12}  pb={3} justifyContent={"center"}>
+        <Grid container  direction={"column"} size={12}  pb={3} justifyContent={"center"} alignItems={"center"}>
           <Typography sx={{ color: "rgba(119, 119, 119, 1)" }}>
             Don't see what you are looking for?
           </Typography>
