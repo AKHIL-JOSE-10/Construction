@@ -11,6 +11,7 @@ import MobNotification from './pages/Mobile/mobNotification';
 import Signinpage from './pages/signinpage';
 import Home from "./modules/pages/Home/Mobile/Home"
 import Profile from "./modules/pages/Profile/Profile"
+import Mobsignin from './pages/Mobile/Authentication/mobsignin';
 function App() {
   return (
     // <Signinpage/>
@@ -22,9 +23,10 @@ function App() {
   //  <ServiceCategory/>
   // <MobSettings/>
   // // <MobNotification />
-  <Home/>
+  // <Home/>
   // <Profile/>
   // <Bookings/>
+  <Mobsignin/>
   );
 }
 
