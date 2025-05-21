@@ -1,8 +1,10 @@
-import { Grid, Typography, Box, TextField, InputAdornment, Checkbox, FormControlLabel, Stack, Button } from '@mui/material';
-import Signinuplayout from '../modules/layouts/signin-uplayout/signin-uplayout'
+import { Typography, Box, TextField, InputAdornment, Checkbox, FormControlLabel, Stack, Button } from '@mui/material';
+import AuthenticationLayout from '../modules/layouts/authenticationLayout'
+
 const Signuppage = () => {
+    
   return (
-    <Signinuplayout mainheading='Join & Build Smart' subheading='Sign up to connect with trusted pros for your construction needs'>
+    <AuthenticationLayout mainheading='Join & Build Smart' subheading='Sign up to connect with trusted pros for your construction needs'>
         <Typography variant='h6' sx={{ fontWeight: 'bold', pt: 5, textAlign: { xs: 'left', sm: 'center' }, ml: { xs: 8, sm: 0 } }}> Create an account</Typography>
             <Box pl={5} pb={5} pr={5} pt={3}>
                 <Typography sx={{ fontSize: '11px', color: '#666666', fontWeight: 'bold' }}>Full Name</Typography>
@@ -73,7 +75,7 @@ const Signuppage = () => {
                     </Stack>
                 </Stack>
             </Box>
-    </Signinuplayout>
+    </AuthenticationLayout>
   )
 }
 
