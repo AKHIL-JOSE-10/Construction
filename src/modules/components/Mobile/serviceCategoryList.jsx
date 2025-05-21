@@ -8,7 +8,7 @@ const ServiceCategoryList = ({img,heading,subheading}) => {
                 <ListItem disablePadding>
                     <ListItemButton disablePadding sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
                             <Avatar src={img} alt="icon" sx={{ width: 35, height: 35, mr: 2 }} variant="rounded"/>
-                        <ListItemText primary={heading} secondary={subheading} slotProps={{ primary: { sx: { color: 'grey', fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
+                        <ListItemText primary={heading} secondary={subheading} slotProps={{ primary: { sx: { fontSize: '1rem', fontWeight: 'bold' }, variant: "body2", } }} />
                         <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
                     </ListItemButton>
                 </ListItem >

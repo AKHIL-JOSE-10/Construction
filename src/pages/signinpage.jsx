@@ -1,9 +1,9 @@
-import Signinuplayout from '../modules/layouts/signin-uplayout/signin-uplayout'
+import AuthenticationLayout from '../modules/layouts/authenticationLayout'
 import { Grid, Typography, Box, TextField, Checkbox, FormControlLabel, Stack, Button } from '@mui/material';
 import GoogleIcon from '../assets/GoogleIcon.png'
 const Signinpage = () => {
     return (
-        <Signinuplayout mainheading='Welcome Back' subheading='Login to manage your projects and bookings effortlessly.'>
+        <AuthenticationLayout mainheading='Welcome Back' subheading='Login to manage your projects and bookings effortlessly.'>
             <Typography variant='h6' sx={{ fontWeight: 'bold', pt: 3.5, textAlign: { xs: 'left', sm: 'center' }, ml: { xs: 8, sm: 0 } }}> Log in</Typography>
             <Box pl={5} pb={5} pr={5} pt={4}>
                 <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
@@ -74,7 +74,7 @@ const Signinpage = () => {
                     </Button>
                 </Box>
             </Box>
-        </Signinuplayout>
+        </AuthenticationLayout>
 
     )
 }
