@@ -8,10 +8,12 @@ import ServiceCategory from './pages/Mobile/serviceCategory';
 import MobProfilePage from './pages/Mobile/mobProfile';
 import MobSettings from './pages/Mobile/mobSettings';
 import MobNotification from './pages/Mobile/mobNotification';
-import Signinpage from './pages/signinpage'
+import Signinpage from './pages/signinpage';
+import Home from "./modules/pages/Home/Mobile/Home"
+import Profile from "./modules/pages/Profile/Profile"
 function App() {
   return (
-    <Signinpage/>
+    // <Signinpage/>
     // <Signuppage/>
     // <MobProfilePage/>
     // <MobmyBookings/>
@@ -19,7 +21,10 @@ function App() {
    //<MobBookingInfo/>
   //  <ServiceCategory/>
   // <MobSettings/>
-  // <MobNotification />
+  // // <MobNotification />
+  <Home/>
+  // <Profile/>
+  // <Bookings/>
   );
 }
 
