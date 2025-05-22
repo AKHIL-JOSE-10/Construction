@@ -12,6 +12,8 @@ import Signinpage from './pages/signinpage';
 import Home from "./modules/pages/Home/Mobile/Home"
 import Profile from "./modules/pages/Profile/Profile"
 import Mobsignin from './pages/Mobile/Authentication/mobsignin';
+import MobSignup from './pages/Mobile/Authentication/mobSignup';
+
 function App() {
   return (
     // <Signinpage/>
@@ -26,7 +28,8 @@ function App() {
   // <Home/>
   // <Profile/>
   // <Bookings/>
-  <Mobsignin/>
+  // <Mobsignin/>
+  <MobSignup/>
   );
 }
 

@@ -1,6 +1,5 @@
-import { Grid, Typography, Box, TextField, Checkbox, FormControlLabel, Stack, Button } from '@mui/material';
+import { Typography, Box, TextField, Checkbox, FormControlLabel, Stack, Button } from '@mui/material';
 import GoogleIcon from '../../../assets/GoogleIcon.png'
-import MobAuthHeading from '../../../modules/components/Mobile/mobAuthHeading';
 import MobAuthLayout from '../../../modules/layouts/Mobile/mobAuthLayout';
 
 const Mobsignin = () => {
@@ -44,7 +43,12 @@ const Mobsignin = () => {
                         required
                         sx={{ width: { xs: '38vh', sm: '55vh', md: '64vh' }, mb: 2 }}
                         slotProps={{
-                            input: { sx: { height: { xs: '4.5vh', sm: '5vh', md: '5vh' } } }
+                            input: {
+                                sx: {
+                                    height: { xs: '4.5vh', sm: '5vh', md: '5vh' },
+                                    fontSize: { xs: '16px', sm: '24px', md: '25px' }
+                                }
+                            }
                         }}
                     />
 
@@ -55,7 +59,12 @@ const Mobsignin = () => {
                         required
                         sx={{ width: { xs: '38vh', sm: '55vh', md: '64vh' }, mb: 2 }}
                         slotProps={{
-                            input: { sx: { height: { xs: '4.5vh', sm: '5vh', md: '5vh' } } }
+                            input: {
+                                sx: {
+                                    height: { xs: '4.5vh', sm: '5vh', md: '5vh' },
+                                    fontSize: { xs: '16px', sm: '24px', md: '25px' }
+                                }
+                            }
                         }}
                     />
 
