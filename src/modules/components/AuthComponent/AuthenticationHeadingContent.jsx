@@ -1,7 +1,7 @@
 import {Box,Grid,Typography} from '@mui/material'
 import Signupimg from '../../../assets/signup.png';
 
-export const Headingcontent = ({mainheading,subheading}) => {
+export const AuthenticationHeadingContent = ({mainheading,subheading}) => {
   return (
             <Grid sx={{display:'flex', flexDirection:'column', width: {lg:'50vh',md:'31vh',sm:'30vh',xs:'23vh'},ml: {lg:8 ,md:8,sm:2,xs:5}, mt: {lg:8,md:8,sm:8,xs:-5} }}>
           <Typography sx={{fontSize:{lg:'2.3rem',md:'1.9rem',sm:'2rem',xs:'1.8rem'} }}color='white' mb={2} fontWeight={'bold'}>
