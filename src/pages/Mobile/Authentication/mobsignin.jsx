@@ -8,7 +8,7 @@ const Mobsignin = () => {
         <MobAuthLayout heading1="Join & Build" heading2="Smart">
 
             <Box sx={{ height: 'auto', width: '95%', mb: 3, bgcolor: 'white', border: '2px solid #B08B6F', borderRadius: 2 }}>
-                <Typography variant='h4' sx={{ fontWeight: '700', pt: 3.5, textAlign: 'center', }}>Log in</Typography>
+                <Typography sx={{fontSize:{xs:'30px',sm:'40px'}, fontWeight: '700', pt: 3.5, textAlign: 'center', }}>Log in</Typography>
 
                 <Box px={3} pb={5} pt={4}>
                     <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
