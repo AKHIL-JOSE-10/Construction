@@ -9,11 +9,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
 
-const Workerservice = () => {
+const MobWorkerservice = () => {
   return (
     <Grid>
       <Box>
-        <Typography sx={{ fontSize: '20px', fontWeight: '650', p: 2 }}>My Services</Typography>
+        <Typography sx={{ fontSize: '18px', fontWeight: '600', p: 2 }}>My Services</Typography>
         <Accordion sx={{ borderRadius: 5, border: '1px solid brown', overflow: 'hidden',mb:1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -28,7 +28,7 @@ const Workerservice = () => {
               />
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
 
-                <Typography variant='h5' component="span" sx={{ ml: 2, fontWeight: 'bold' }}>Plumping </Typography>
+                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '550' }}>Plumping </Typography>
                 <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your plumping needs </Typography>
               </Box>
 
@@ -65,7 +65,7 @@ const Workerservice = () => {
         </Accordion>
       </Box>
       <Box >
-        <Typography sx={{ fontSize: '20px', fontWeight: '650', mt: 4, ml: 2 }}>Availability</Typography>
+        <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3, mb: 2 }}>
             <Paper elevation={5} sx={{ borderRadius: 3, padding: 2, maxWidth: 360, }} >
@@ -85,4 +85,4 @@ const Workerservice = () => {
   )
 }
 
-export default Workerservice
+export default MobWorkerservice

@@ -4,12 +4,12 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import WorkerTopTab from '../../modules/components/Mobile/workerTopTab';
+import MobWorkerTopTab from '../../modules/components/Mobile/mobWorkerTopTab';
 
 
-const Workerpage = () => {
+const MobWorkerpage = () => {
   return (
-    <Grid container sx={{ height: 'auto' }}>
+    <Grid container sx={{ height: 'auto',p:1 }}>
       <Grid>
         <Box sx={{ position: 'relative', display: 'inline-block' }}>
           {/* Background image */}
@@ -19,7 +19,6 @@ const Workerpage = () => {
             alt="Main"
             sx={{
               width: '100%',
-              borderRadius: 2,
               display: 'block',
             }}
           />
@@ -60,31 +59,31 @@ const Workerpage = () => {
           </Box>
         </Box>
         <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', mt: 4, p: 1 }}>
-          <Typography sx={{ fontSize: '26px', fontWeight: 'bold' }}>Jane Cooper</Typography>
-          <Button variant="contained" sx={{ borderRadius: 4, textTransform: 'none', bgcolor: '#CCB09B' }}><Typography sx={{ fontSize: '18px', fontWeight: 'bold' }}>Message</Typography></Button>
+          <Typography sx={{ fontSize: '26px', fontWeight: '600' }}>Jane Cooper</Typography>
+          <Button variant="contained" sx={{ borderRadius: 4, textTransform: 'none', bgcolor: '#CCB09B' }}><Typography sx={{ fontSize: '15px', fontWeight: '500' }}>Message</Typography></Button>
         </Box>
         <Box sx={{ p: 2, display: "flex", flexDirection: 'column' }}>
           <Box sx={{ display: "flex", flexDirection: 'row', mb: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <WorkHistoryIcon sx={{ fontSize: 18, color: 'purple' }} />
-              <Typography sx={{ fontWeight: 'bold', fontSize: 15 }}>4+ yrs of experience</Typography>
+              <Typography sx={{ fontWeight: '500', fontSize: 15 }}>4+ yrs of experience</Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, pl: 6 }}>
               <LocationOnIcon sx={{ fontSize: 18, color: 'orange' }} />
-              <Typography sx={{ fontWeight: 'bold', fontSize: 15 }}>Thrissur</Typography>
+              <Typography sx={{ fontWeight: '500', fontSize: 15 }}>Thrissur</Typography>
             </Box>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <VerifiedUserIcon sx={{ fontSize: 18, color: 'green' }} />
-            <Typography sx={{ fontWeight: 'bold', fontSize: 15 }}>Archisans verified worker</Typography>
+            <Typography sx={{ fontWeight: '500', fontSize: 15 }}>Archisans verified worker</Typography>
           </Box>
         </Box>
       </Grid>
       <Grid sx={{width:'100%'}}>
-        <WorkerTopTab />
+        <MobWorkerTopTab />
       </Grid>
     </Grid>
   )
 }
 
-export default Workerpage
+export default MobWorkerpage

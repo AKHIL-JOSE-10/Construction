@@ -1,10 +1,10 @@
 import { Box, Tabs, Tab } from '@mui/material';
 import { useState } from 'react';
-import Workerservice from './workerservice';
-import WorkerAbout from './workerAbout';
-import WorkerReview from './workerReview';
+import MobWorkerservice from './mobWorkerService';
+import MobWorkerReview from './mobWorkerReview';
+import MobWorkerAbout from './mobworkerAbout';
 
-const WorkerTopTab = () => {
+const MobWorkerTopTab = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -23,12 +23,12 @@ const WorkerTopTab = () => {
 
       {/* Tab content */}
       <Box sx={{ p: 1 }}>
-        {value === 0 && <Workerservice />}
-        {value === 1 && <WorkerAbout />}
-        {value === 2 && <WorkerReview />}
+        {value === 0 && <MobWorkerservice />}
+        {value === 1 && <MobWorkerAbout />}
+        {value === 2 && <MobWorkerReview />}
       </Box>
     </Box>
   );
 };
 
-export default WorkerTopTab;
+export default MobWorkerTopTab;
