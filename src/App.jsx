@@ -14,6 +14,7 @@ import Mobsignin from './pages/Mobile/Authentication/mobsignin';
 import MobSignup from './pages/Mobile/Authentication/mobSignup';
 import MobServiceCategory from './pages/Mobile/mobServiceCategory';
 import MobWorkerpage from './pages/Mobile/mobWorkerpage';
+import MobForgotPassword from './pages/Mobile/Authentication/mobForgotPassword';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
     // <Signuppage/>
     // <MobProfilePage/>
     // <MobmyBookings/>
-    <MobWorkerpage/>
+    // <MobWorkerpage/>
   //  <MobBookingInfo/>
   //  <MobServiceCategory/>
   // <MobSettings/>
@@ -30,7 +31,8 @@ function App() {
   // <Profile/>
   // <Bookings/>
   // <Mobsignin/>
-  // <MobSignup/>
+  <MobSignup/>
+  // <MobForgotPassword />
   );
 }
 
