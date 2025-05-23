@@ -3,12 +3,12 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CategoryIcon from '@mui/icons-material/Category';
 import googlemap from '../../../assets/googlemap.jpeg'
 
-const WorkerAbout = () => {
+const MobWorkerAbout = () => {
     return (
         <Grid>
             <Grid>
                 <Grid sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', px: 1, py: 2 }}>About me</Typography>
+                    <Typography sx={{ fontSize: '18px', fontWeight: '600', px: 1, py: 2 }}>About me</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', p: 1 }}>
                         <CalendarTodayIcon sx={{ fontSize: 20, color: 'gray', mr: 1 }} />
                         <Typography sx={{ fontSize: '18px' }}>Joined: 12 Dec 2025</Typography>
@@ -23,7 +23,7 @@ const WorkerAbout = () => {
                     </Typography>
                 </Grid>
                 <Grid>
-                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', px: 1, py: 2 }}>Service Skills</Typography>
+                    <Typography sx={{ fontSize: '18px', fontWeight: '600', px: 1, py: 2 }}>Service Skills</Typography>
                     <Box sx={{ display: 'flex', gap: 2 }}>
                         <Typography sx={{ flex: '0 0 42%', p: 1.5, borderRadius: 2, backgroundColor: '#f5f5f5', fontWeight: 500, fontSize: 16, boxShadow: '0 1px 4px rgba(0,0,0,0.1)', }}>
                             Troubleshooting & Repair
@@ -36,7 +36,7 @@ const WorkerAbout = () => {
                     </Box>
                 </Grid>
                 <Grid sx={{ display: 'flex', flexDirection: 'column',mb:2 }}>
-                    <Typography sx={{ fontSize: '20px', fontWeight: 'bold', mt: 2, px: 1, py: 2 }}>Location</Typography>
+                    <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 2, px: 1, py: 2 }}>Location</Typography>
                     <Typography sx={{ fontSize: '18px', fontWeight: '500', px: 1, }}>Aranattukara,Thrissur</Typography>
                     <Typography sx={{ fontSize: '15px', px: 1 }}>0.2 km away</Typography>
                 </Grid>
@@ -46,4 +46,4 @@ const WorkerAbout = () => {
     )
 }
 
-export default WorkerAbout
+export default MobWorkerAbout

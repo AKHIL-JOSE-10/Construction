@@ -4,7 +4,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import MobBookingInfo from './pages/Mobile/mobBookingInfo'
 import MobmyBookings from './pages/Mobile/mobmyBookings';
-import ServiceCategory from './pages/Mobile/serviceCategory';
 import MobProfilePage from './pages/Mobile/mobProfile';
 import MobSettings from './pages/Mobile/mobSettings';
 import MobNotification from './pages/Mobile/mobNotification';
@@ -13,6 +12,8 @@ import Home from "./modules/pages/Home/Mobile/Home"
 import Profile from "./modules/pages/Profile/Profile"
 import Mobsignin from './pages/Mobile/Authentication/mobsignin';
 import MobSignup from './pages/Mobile/Authentication/mobSignup';
+import MobServiceCategory from './pages/Mobile/mobServiceCategory';
+import MobWorkerpage from './pages/Mobile/mobWorkerpage';
 
 function App() {
   return (
@@ -20,16 +21,16 @@ function App() {
     // <Signuppage/>
     // <MobProfilePage/>
     // <MobmyBookings/>
-    // <Workerpage/>
-   //<MobBookingInfo/>
-  //  <ServiceCategory/>
+    <MobWorkerpage/>
+  //  <MobBookingInfo/>
+  //  <MobServiceCategory/>
   // <MobSettings/>
   // // <MobNotification />
   // <Home/>
   // <Profile/>
   // <Bookings/>
   // <Mobsignin/>
-  <MobSignup/>
+  // <MobSignup/>
   );
 }
 
