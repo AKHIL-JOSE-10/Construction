@@ -152,7 +152,7 @@ export default function Home() {
             justifyContent={"center"}
             sx={{ overflow: "hidden", height: "38vh" }}
           >
-            {ServiceListValues.map((data) => (
+            {ServiceListValues.slice(0,6).map((data) => (
               <ServiceLayer key={data.name} data={data} />
             ))}
           </Grid>
