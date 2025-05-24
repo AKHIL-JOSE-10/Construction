@@ -1,7 +1,7 @@
 import Search from "../../integrated/components/Search/Search";
 import SideBar from "../../integrated/components/SideBar/SideBar";
 
-import SideBarLayout from "../../layouts/SideBarLayout/sideBarLayout";
+import SideBarLayout from "../../layouts/SideBarLayout/SideBarLayout";
 import {ProfileManagementDashboard} from "./ProfileManagement";
 
 export default function Profile() {
