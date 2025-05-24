@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import DashBoardLayout from "../../layouts/DashBoardLayout/DashBoardLayout";
-import SideBarLayout from "../../layouts/SideBarLayout/sideBarLayout";
+import SideBarLayout from "../../layouts/SideBarLayout/SideBarLayout";
 import {
   Message,
   MoreVert,

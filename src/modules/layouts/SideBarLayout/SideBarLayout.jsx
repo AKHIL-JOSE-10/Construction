@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 
-import UserPageLayout from "../UserPageLayout/userPageLayout";
+import UserPageLayout from "../UserPageLayout/UserPageLayout";
 export default function SideBarLayout({ children , SideBar}) {
   return (
     <>
