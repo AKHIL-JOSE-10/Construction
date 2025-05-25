@@ -51,7 +51,7 @@ export default function Home() {
           container
           direction={"row"}
           sx={{ position: "relative", zIndex: 1 }}
-          mt={2}
+          mt={1}
           alignItems={"center"}
           spacing={2}
           size={12}
