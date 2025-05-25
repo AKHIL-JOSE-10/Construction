@@ -3,7 +3,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const MobServiceCategoryList = ({ img, heading, subheading }) => {
     return (
-        <Grid sx={{ width: '100%' }}>
+        <Grid >
             <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                 <List disablePadding sx={{ width: '100%' }}>
                     <ListItem disablePadding sx={{ width: '100%', border:'0.5px solid #e0e0e0' }}>

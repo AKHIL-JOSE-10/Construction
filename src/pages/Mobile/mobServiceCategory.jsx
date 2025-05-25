@@ -21,7 +21,7 @@ import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
 
 const MobServiceCategory = () => {
     return (
-        <Grid container sx={{ width: '100%' }}>
+        <Grid container >
             <MobHeading Heading='Service Category' />
             <Box sx={{width:'100%'}}>
                 <MobServiceCategoryList img={ArchitectIcon} heading="Architects" subheading="Plan buildings and layouts" />

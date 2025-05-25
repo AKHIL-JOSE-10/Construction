@@ -11,7 +11,6 @@ const MobHeading = ({ Heading }) => {
       zIndex: 1000,
       height: '60px',
       bgcolor: 'white',
-      borderBottom: '1px solid #ccc',
     }}>
 
       {/* Back Arrow */}
