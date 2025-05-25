@@ -66,14 +66,8 @@ const MobSettings = () => {
             "Recieve Security Alerts",
             "Change Password",
           ].map((label, index) => (
-            <ListItem disablePadding sx={{ border:'0.5px solid #e0e0e0'}} key={index}>
-              <ListItemButton
-                sx={{mb:1,
-                  borderRadius: 2,
-                  '&:hover': { backgroundColor: '#F1E6DD' },
-                  '&:hover .MuiListItemText-primary': { color: 'black' },
-                }}
-              >
+            <ListItem disablePadding sx={{ border:'0.5px solid #e0e0e0',}} key={index}>
+              <ListItemButton sx={{py:2, }}>
                 <ListItemText
                   primary={label}
                   secondary={label === "Notifications" ? "via email and whatsapp" : null}
