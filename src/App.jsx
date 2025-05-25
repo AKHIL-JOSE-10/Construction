@@ -13,17 +13,20 @@ import MobNotification from './pages/Mobile/mobNotification';
 import Signinpage from './pages/signinpage';
 import Home from "./modules/pages/Home/Mobile/Home";
 import Profile from "./modules/pages/Profile/Profile";
-import Mobsignin from './pages/Mobile/Authentication/mobsignin';
-import MobSignup from './pages/Mobile/Authentication/mobSignup';
-import MobServiceCategory from './pages/Mobile/mobServiceCategory';
-import MobWorkerpage from './pages/Mobile/mobWorkerpage';
-import MobForgotPassword from './pages/Mobile/Authentication/mobForgotPassword';
-import Bookings from "./modules/pages/Bookings/Bookings"
+import Mobsignin from "./pages/Mobile/Authentication/mobsignin";
+import MobSignup from "./pages/Mobile/Authentication/mobSignup";
+import MobServiceCategory from "./pages/Mobile/mobServiceCategory";
+import MobWorkerpage from "./pages/Mobile/mobWorkerpage";
+import MobForgotPassword from "./pages/Mobile/Authentication/mobForgotPassword";
+import Bookings from "./modules/pages/Bookings/Bookings";
+import EditInfo from "./modules/pages/EditInfo/EditInfo";
+import RouteListPage from "./RouterListPage";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<RouteListPage />} />
         <Route path="/signin" element={<Signinpage />} />
         <Route path="/mobile-signin" element={<Mobsignin />} />
         <Route path="/mobile-signup" element={<MobSignup />} />
