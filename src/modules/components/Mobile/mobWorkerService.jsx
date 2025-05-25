@@ -7,9 +7,15 @@ import EventIcon from '@mui/icons-material/Event';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import dayjs from 'dayjs';
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+
 
 const MobWorkerservice = () => {
+
+  const [date, setDate] = useState(new Date());
+
   return (
     <Grid>
       <Box sx={{ px: 1 }}>
@@ -67,53 +73,13 @@ const MobWorkerservice = () => {
 
       <Box>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
-        
-<LocalizationProvider dateAdapter={AdapterDayjs}>
-  <Box
-    sx={{
-      border: '2px solid #E5E5E5',
-      display: 'flex',
-      justifyContent: 'center',
-      mt: 1,
-      mb: 1,
-    }}
-  >
-    <Box
-      sx={{
-        borderRadius: 3,
-        maxWidth: 300,
-        width: '100%',
-        '& .MuiPickersStaticWrapper-root': {
-          transform: 'scale(0.85)',
-          transformOrigin: 'top left',
-        },
-        '& .MuiDialogActions-root': {
-          mt: 0,
-          pt: 0,
-        },
-        '& .MuiDialogActions-spacing': {
-          marginTop: 0,
-          paddingTop: 0,
-        },
-      }}
-    >
-      <StaticDatePicker
-        value={dayjs()}
-        onChange={() => {}}
-        displayStaticWrapperAs="desktop"
-        slotProps={{
-          actionBar: {
-            sx: {
-              mt: 0,
-              pt: 0,
-              mb: 0,
-            },
-          },
-        }}
-      />
-    </Box>
-  </Box>
-</LocalizationProvider>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center',my:2 }}>
+          <Calendar
+            onChange={setDate}
+            value={date}
+          />
+        </Box>
 
 
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
