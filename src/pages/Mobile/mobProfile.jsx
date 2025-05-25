@@ -27,11 +27,19 @@ const MobProfilePage = () => {
   ];
 
   return (
-    <Grid container direction="column">
-      <Grid sx={{ width: '100%' }}>
-        <MobHeading Heading="profile" />
+    <Box
+      sx={{
+        width: '100vw',
+        minHeight: '100vh',
+        overflowX: 'hidden',
+        boxSizing: 'border-box',
+        bgcolor: '#fff',
+      }}
+    >
+      <Grid container direction="column" sx={{ width: '100%' }}>
+        <Grid item xs={12}>
+          <MobHeading Heading="profile" />
 
-        <Grid pt={3} mt="40px">
           <Box
             sx={{
               bgcolor: '#B08B6F',
@@ -39,18 +47,14 @@ const MobProfilePage = () => {
               width: '100%',
               display: 'flex',
               flexDirection: 'row',
-              pl: 3,
               pt: 2,
               alignItems: 'center',
               justifyContent: 'space-between',
-              pr: 2,
+              mt: '40px',
             }}
           >
-            <Box>
-              <Typography
-                variant="h5"
-                sx={{ color: 'white', fontWeight: 'bold' }}
-              >
+            <Box sx={{ml:2}}>
+              <Typography variant="h5" sx={{ color: 'white', fontWeight: 'bold' }}>
                 Hi Rehan
               </Typography>
               <Typography variant="body2" sx={{ color: 'white', pt: 1 }}>
@@ -58,57 +62,64 @@ const MobProfilePage = () => {
               </Typography>
             </Box>
             <Avatar
-              sx={{ height: 60, width: 60 }}
+              sx={{ height: 60, width: 60, mr:2 }}
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
           </Box>
         </Grid>
 
-        <Grid sx={{ width: '100%' }}>
-          <Box sx={{ width: '100%' }}>
-            <List sx={{ width: '100%' }}>
-              {menuItems.map((text, index) => (
-                <ListItem key={index} disablePadding sx={{ mb: 1, width: '100%' }}>
-                  <ListItemButton
-                    sx={{
-                      width: '100%',
-                      '&:hover': {
-                        backgroundColor: '#F1E6DD',
-                      },
-                      '&:hover .MuiListItemText-primary': {
-                        color: 'black',
+        <Grid item xs={12}>
+          <List sx={{ width: '100%', p: 0 }}>
+            {menuItems.map((text, index) => (
+              <ListItem
+                key={index}
+                disablePadding
+                sx={{
+                  width: '100%',
+                  px: 0,
+                }}
+              >
+                <ListItemButton
+                  sx={{
+                    width: '100%',
+                    px: 3,
+                    py: 2,
+                    '&:hover': {
+                      backgroundColor: '#F1E6DD',
+                    },
+                    '&:hover .MuiListItemText-primary': {
+                      color: 'black',
+                    },
+                  }}
+                >
+                  <ListItemText
+                    primary={text}
+                    slotProps={{
+                      primary: {
+                        sx: {
+                          color: 'grey',
+                          fontSize: '1rem',
+                          fontWeight: 'bold',
+                        },
+                        variant: 'body2',
                       },
                     }}
-                  >
-                    <ListItemText
-                      primary={text}
-                      slotProps={{
-                        primary: {
-                          sx: {
-                            color: 'grey',
-                            fontSize: '1rem',
-                            fontWeight: 'bold',
-                          },
-                          variant: 'body2',
-                        },
-                      }}
-                    />
-                    <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+                  />
+                  <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
 
-          <Box sx={{ ml: 2.8, width: 330, display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ flex: 1, height: '0.9px', bgcolor: '#ccc' }} />
+          <Box sx={{ px: 2 }}>
+            <Box sx={{ width: '100%', height: '0.9px', bgcolor: '#ccc' }} />
           </Box>
         </Grid>
 
         <MobileBottomTab />
       </Grid>
-    </Grid>
+    </Box>
   );
 };
 
