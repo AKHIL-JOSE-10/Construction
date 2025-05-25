@@ -7,7 +7,7 @@ const MobmyBookings = () => {
     return (
         <Grid container sx={{width:"100vw"}}>
             <MobHeading Heading="My Bookings" />
-            <Box sx={{mt:"85px",width:"100%"}}>
+            <Box sx={{width:"100%"}}>
                 <MobTopTab />
                 <MobileBottomTab />
             </Box>

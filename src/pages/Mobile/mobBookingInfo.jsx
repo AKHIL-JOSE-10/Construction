@@ -7,7 +7,7 @@ const MobBookingInfo = () => {
     return (
         <Grid container>
             <MobHeading Heading="Booking info" />
-            <Grid sx={{ px: 1, mt: 8 }}>
+            <Grid sx={{ px: 1,}}>
                 <Box>
                     <Typography sx={{ fontSize: '23px', fontWeight: '600' }}>Plumping Service</Typography>
                     <Typography sx={{ fontSize: 14, color: 'grey', mb: 2 }}>Booking ID : #7082195</Typography>
