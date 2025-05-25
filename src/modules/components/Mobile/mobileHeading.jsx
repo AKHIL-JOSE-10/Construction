@@ -3,7 +3,18 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const MobHeading = ({ Heading }) => {
   return (
-    <Box sx={{ display: 'flex', width: '100%', position: 'relative', height: '75px',mb:1}}>
+        <Box sx={{
+      display: 'flex',
+      width: '100%',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      zIndex: 1000,
+      height: '75px',
+      bgcolor: 'white',
+      borderBottom: '1px solid #ccc',
+    }}>
+
       {/* Back Arrow */}
       <Box
         sx={{
@@ -27,7 +38,7 @@ const MobHeading = ({ Heading }) => {
           transform: 'translate(-50%, -50%)',
           fontSize: '21px',
           fontWeight: 500,
-          maxWidth: '80%', // limits text width on small screens
+          maxWidth: '80%',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
