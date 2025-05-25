@@ -9,6 +9,7 @@ const Mobbookingcard = ({ status }) => {
         <Grid sx={{mx:1, mt: 2, border: '2px solid #E5E5E5', borderRadius: 3 }}>
             <Box sx={{ p: 2, display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Typography sx={{ fontSize: 16, fontWeight: 'bold' }}>Indoor Cleaning</Typography>
+                <Box sx={{display:'flex', justifyContent: 'flex-end'}}></Box>
                 <Typography sx={{ fontSize: 14 }}>{status}</Typography>
             </Box>
 
