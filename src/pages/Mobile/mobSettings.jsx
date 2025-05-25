@@ -57,7 +57,7 @@ const MobSettings = () => {
   return (
     <Grid>
       <MobHeading Heading="Settings" />
-      <Box sx={{ ml: 0, width:'100%' }}>
+      <Box sx={{ ml: 0, width:'100%',mt:-1 }}>
         <List>
           {[
             "Notifications",
