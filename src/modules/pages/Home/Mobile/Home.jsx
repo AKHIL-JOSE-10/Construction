@@ -14,7 +14,12 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { color, ServiceList, ServiceListValues, textDecoration } from "./constants";
+import {
+  color,
+  ServiceList,
+  ServiceListValues,
+  textDecoration,
+} from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
 
@@ -72,11 +77,20 @@ export default function Home() {
               <KeyboardArrowDownOutlined sx={{ color: "white" }} />
             </Grid>
           </Grid>
-          <Grid container alignItems={"center"} spacing={1.2} size={3} justifyContent={"space-around"}>
+          <Grid
+            container
+            alignItems={"center"}
+            spacing={1.2}
+            size={3}
+            justifyContent={"space-around"}
+          >
             <NotificationsNoneOutlined
               sx={{ color: "white", fontSize: "20px" }}
             />
-            <Avatar src={"https://randomuser.me/api/portraits/women/79.jpg"} sx={{width:"30px",height:"30px"}}>
+            <Avatar
+              src={"https://randomuser.me/api/portraits/women/79.jpg"}
+              sx={{ width: "30px", height: "30px" }}
+            >
               J
             </Avatar>
           </Grid>
@@ -88,6 +102,7 @@ export default function Home() {
             height: "5vh",
             borderRadius: "1000px",
           }}
+          alignItems={"center"}
           size={10}
         >
           <Input
@@ -103,6 +118,9 @@ export default function Home() {
               "& .MuiInputBase-root": {
                 border: "none", // Ensure no border
                 backgroundColor: "transparent", // Transparent background
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               },
               "& .MuiInputBase-input": {
                 padding: "0.5em", // Padding for text
@@ -128,7 +146,11 @@ export default function Home() {
         container
         size={12}
         direction={"column"}
-        sx={{ bgcolor: color.layoutColor, height: "100%",paddingBottom:"80px" }}
+        sx={{
+          bgcolor: color.layoutColor,
+          height: "100%",
+          paddingBottom: "80px",
+        }}
       >
         <Grid container>
           <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
@@ -146,7 +168,7 @@ export default function Home() {
             justifyContent={"center"}
             sx={{ overflow: "hidden", height: "38vh" }}
           >
-            {ServiceList.slice(0,6).map((data) => (
+            {ServiceList.slice(0, 6).map((data) => (
               <ServiceLayer key={data.name} data={data} />
             ))}
           </Grid>
@@ -258,6 +280,7 @@ export default function Home() {
           size={12}
           direction={"column"}
           p={1}
+          pt={4}
           sx={{ overflow: "hidden" }}
         >
           <Grid container size={12} sx={{ height: "fit-content" }}>
@@ -369,7 +392,15 @@ export default function Home() {
             ))}
           </Box>
         </Grid>
-        <Grid container  direction={"column"} size={12}  pb={3} justifyContent={"center"} alignItems={"center"}>
+        <Grid
+          container
+          direction={"column"}
+          size={12}
+          pt={2}
+          pb={3}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
           <Typography sx={{ color: "rgba(119, 119, 119, 1)" }}>
             Don't see what you are looking for?
           </Typography>
