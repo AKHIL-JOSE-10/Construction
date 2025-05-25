@@ -25,7 +25,7 @@ const MobTopTab = () => {
     return (
         <Box sx={{width: '100%'}}>
             {/* Tabs */}
-            <Box sx={{ width: '100%', borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ width: '100%', position:"fixed",top:"65px",borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'center',bgcolor:'white',zIndex:1000 }}>
                 <Tabs value={value} onChange={handleChange} aria-label="booking tabs"  TabIndicatorProps={{ style: { backgroundColor: '#BFA088' } }}>
                     <Tab label="In progress" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 1 }} />
                     <Tab label="Completed" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 1 }} />
@@ -35,7 +35,7 @@ const MobTopTab = () => {
 
             {/* Filter Dropdown */}
             <Grid container sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', mt: 2, }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column' , mr: 1}}>
+                <Box sx={{ display: 'flex', flexDirection: 'column' , mr: 1,mt:5}}>
                     <FormControl sx={{ minWidth: 80 }} size="small">
                         <InputLabel id="filter-label" sx={{ fontSize: 14 }}>Filter</InputLabel>
                         <Select

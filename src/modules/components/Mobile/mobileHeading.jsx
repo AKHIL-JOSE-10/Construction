@@ -8,9 +8,8 @@ const MobHeading = ({ Heading }) => {
       width: '100%',
       position: 'fixed',
       top: 0,
-      left: 0,
       zIndex: 1000,
-      height: '75px',
+      height: '65px',
       bgcolor: 'white',
       borderBottom: '1px solid #ccc',
     }}>

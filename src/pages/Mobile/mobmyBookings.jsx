@@ -5,13 +5,12 @@ import MobTopTab from "../../modules/components/Mobile/mobTopTab";
 
 const MobmyBookings = () => {
     return (
-        <Grid container sx={{ width: '100%' }}>
+        <Grid container sx={{width:"100vw"}}>
             <MobHeading Heading="My Bookings" />
-            <Box sx={{mt:"85px"}}>
+            <Box sx={{mt:"85px",width:"100%"}}>
                 <MobTopTab />
                 <MobileBottomTab />
             </Box>
-
         </Grid>
     )
 }
