@@ -5,14 +5,26 @@ const MobSignup = () => {
     return (
         <MobAuthLayout heading1="Join & Build" heading2="Smart">
             <Box sx={{ height: 'auto', width: '95%', mb: 3, bgcolor: 'white', border: '2px solid #B08B6F', borderRadius: 2 }}>
-                <Typography  sx={{fontSize:{xs:'30px',sm:'40px'}, fontWeight: '700', pt: 3.5, textAlign: 'center', }}>Sign up </Typography>
+                <Typography sx={{ fontSize: { xs: '30px', sm: '40px' }, fontWeight: '700', pt: 3.5, textAlign: 'center', }}>Sign up </Typography>
 
                 <Box px={3} pb={5} pt={4}>
                     <Typography sx={{ fontSize: { xs: '15px', sm: '26px', md: '26px' }, color: '#666666', fontWeight: '550', mb: 1, ml: 0.5 }}>Full Name</Typography>
                     <TextField
-                        size="small"
+                        size='small'
                         required
-                        sx={{ width: { xs: '38vh', sm: '55vh', md: '64vh' }, mb: 2 }}
+                        sx={{
+                            width: { xs: '38vh', sm: '55vh', md: '64vh' },
+                            mb: 2,
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            }
+                        }}
                         slotProps={{
                             input: {
                                 sx: {
@@ -25,17 +37,26 @@ const MobSignup = () => {
 
                     <Typography sx={{ fontSize: { xs: '15px', sm: '26px', md: '26px' }, color: '#666666', fontWeight: '550', mb: 1, ml: 0.5 }}>Email</Typography>
                     <TextField
-                        size="small"
+                        size='small'
                         required
                         sx={{
                             width: { xs: '38vh', sm: '55vh', md: '64vh' },
-                            mb: 2
+                            mb: 2,
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            }
                         }}
                         slotProps={{
                             input: {
                                 sx: {
                                     height: { xs: '4.5vh', sm: '5vh', md: '5vh' },
-                                    fontSize: { xs: '16px', sm: '22px', md: '24px' }
+                                    fontSize: { xs: '16px', sm: '24px', md: '25px' }
                                 }
                             }
                         }}
@@ -45,18 +66,22 @@ const MobSignup = () => {
                     <TextField
                         size="small"
                         required
-                        sx={{ width: { xs: '38vh', sm: '55vh', md: '64vh' }, mb: 2 }}
-                        slotProps={{
-                            input: {
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        +91
-                                    </InputAdornment>
-                                ),
-                                sx: {
-                                    height: { xs: '4.5vh', sm: '5vh', md: '5vh' },
-                                    fontSize: { xs: '16px', sm: '24px', md: '25px' }
-                                }
+                        sx={{
+                            width: { xs: '38vh', sm: '55vh', md: '64vh' },
+                            mb: 2,
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            }
+                        }}
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    +91
+                                </InputAdornment>
+                            ),
+                            sx: {
+                                height: { xs: '4.5vh', sm: '5vh', md: '5vh' },
+                                fontSize: { xs: '16px', sm: '24px', md: '25px' }
                             }
                         }}
                         inputProps={{
@@ -67,10 +92,22 @@ const MobSignup = () => {
 
                     <Typography sx={{ fontSize: { xs: '15px', sm: '26px', md: '26px' }, color: '#666666', fontWeight: '550', mb: 1, ml: 0.5 }}>Password</Typography>
                     <TextField
-                        size="small"
-                        type="password"
+                        size='small'
                         required
-                        sx={{ width: { xs: '38vh', sm: '55vh', md: '64vh' }, mb: 0.5 }}
+                        type='password'
+                        sx={{
+                            width: { xs: '38vh', sm: '55vh', md: '64vh' },
+                            mb: 2,
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            }
+                        }}
                         slotProps={{
                             input: {
                                 sx: {
