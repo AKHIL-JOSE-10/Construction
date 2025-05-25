@@ -24,6 +24,7 @@ export default function EditInfo() {
       p={2}
       size={12}
       sx={{ height: "fit-content" }}
+      pt={0}
       pb={10}
     >
       {/*Heading with back Icon */}
@@ -35,7 +36,6 @@ export default function EditInfo() {
           height: "10vh",
           zIndex: 1000,
           width: "90vw",
-          paddingTop: "15px",
           display: "flex",
           alignItems: "center",
         }}
