@@ -20,8 +20,8 @@ import {
   Search as SearchIcon,
   Verified,
 } from "@mui/icons-material";
-import Search from "./modules/integrated/components/Search/Search";
-import SideBar from "./modules/integrated/components/SideBar/SideBar"
+import Search from "../../integrated/components/Search/Search";
+import SideBar from "../../integrated/components/SideBar/SideBar"
 function Bookings() {
   return (
     <>
@@ -272,7 +272,6 @@ function Bookings() {
                         <Typography
                           color="secondary"
                           sx={{
-                            color: "rgba(57, 99, 248, 0.7)",
                             color: "#3963F8",
                             fontSize: "12px",
                             textShadow: "0 0 2px rgba(0, 0, 0, 0.1)",
@@ -1125,7 +1124,6 @@ function Bookings() {
                         <Typography
                           color="secondary"
                           sx={{
-                            color: "rgba(57, 99, 248, 0.7)",
                             color: "#3963F8",
                             fontSize: "12px",
                             textShadow: "0 0 2px rgba(0, 0, 0, 0.1)",

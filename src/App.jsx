@@ -18,6 +18,7 @@ import MobSignup from './pages/Mobile/Authentication/mobSignup';
 import MobServiceCategory from './pages/Mobile/mobServiceCategory';
 import MobWorkerpage from './pages/Mobile/mobWorkerpage';
 import MobForgotPassword from './pages/Mobile/Authentication/mobForgotPassword';
+import Bookings from "./modules/pages/Bookings/Bookings"
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/mobile-notifications" element={<MobNotification />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path ="/bookings" element={<Bookings/>} />
         <Route path="/forgot-password" element={<MobForgotPassword />} />
       </Routes>
     </Router>
