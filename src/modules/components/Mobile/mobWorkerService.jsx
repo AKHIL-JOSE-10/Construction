@@ -12,9 +12,9 @@ import dayjs from 'dayjs';
 const MobWorkerservice = () => {
   return (
     <Grid>
-      <Box>
+      <Box sx={{ px: 1 }}>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', p: 2 }}>My Services</Typography>
-        <Accordion sx={{ borderRadius: 5, border: '1px solid brown', overflow: 'hidden',mb:1 }}>
+        <Accordion sx={{ borderRadius: 5, border: '1px solid brown', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -64,11 +64,12 @@ const MobWorkerservice = () => {
           </AccordionDetails>
         </Accordion>
       </Box>
-      <Box >
+
+      <Box>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3, mb: 2 }}>
-            <Paper elevation={5} sx={{ borderRadius: 3, padding: 2, maxWidth: 360, }} >
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3, mb: 2, px: 5 }}>
+            <Paper elevation={5} sx={{ borderRadius: 3, padding: 2, maxWidth: 360, width: '100%' }}>
               <StaticDatePicker
                 value={dayjs()}
                 onChange={() => { }}
@@ -78,9 +79,13 @@ const MobWorkerservice = () => {
           </Box>
         </LocalizationProvider>
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
-          <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }}>Book now</Button>
+          <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }}>
+            Book now
+          </Button>
         </Box>
       </Box>
+
+
     </Grid>
   )
 }

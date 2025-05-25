@@ -3,7 +3,7 @@ import { Grid, Avatar, Box, Rating, Stack, Typography } from '@mui/material';
 
 const MobWorkerReviewCard = ({name,rate,date}) => {
     return (
-        <Grid sx={{ p: 2 , mb:2, border:'3px solid #f8ece9 '}}>
+        <Grid sx={{ p: 2 , mb:2, border:'1.5px solid #f8ece9 '}}>
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
 
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>

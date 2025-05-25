@@ -9,7 +9,7 @@ import MobWorkerTopTab from '../../modules/components/Mobile/mobWorkerTopTab';
 
 const MobWorkerpage = () => {
   return (
-    <Grid container sx={{ height: 'auto',p:1 }}>
+    <Grid container sx={{ height: 'auto',}}>
       <Grid>
         <Box sx={{ position: 'relative', display: 'inline-block' }}>
           {/* Background image */}
@@ -28,7 +28,7 @@ const MobWorkerpage = () => {
             sx={{
               position: 'absolute',
               bottom: -30,
-              left: '15%',
+              left: '18%',
               transform: 'translateX(-50%)',
             }}
           >
@@ -58,7 +58,7 @@ const MobWorkerpage = () => {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', mt: 4, p: 1 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', mt: 4, py:1, px:2 }}>
           <Typography sx={{ fontSize: '26px', fontWeight: '600' }}>Jane Cooper</Typography>
           <Button variant="contained" sx={{ borderRadius: 4, textTransform: 'none', bgcolor: '#CCB09B' }}><Typography sx={{ fontSize: '15px', fontWeight: '500' }}>Message</Typography></Button>
         </Box>
