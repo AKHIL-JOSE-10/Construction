@@ -68,14 +68,14 @@ const MobWorkerservice = () => {
       <Box>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3, mb: 2, px: 2 }}>
-            <Paper sx={{ borderRadius: 3, padding: 2, maxWidth: 360, width: '100%' }}>
+          <Box sx={{border:'1px solid #E5E5E5', display: 'flex', justifyContent: 'center', mt: 3, mb: 2, px: 2 }}>
+            <Box sx={{ borderRadius: 3, padding: 2, maxWidth: 360, width: '100%' }}>
               <StaticDatePicker
                 value={dayjs()}
                 onChange={() => { }}
                 displayStaticWrapperAs="desktop"
               />
-            </Paper>
+            </Box>
           </Box>
         </LocalizationProvider>
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
