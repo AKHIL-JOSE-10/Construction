@@ -43,7 +43,7 @@ const MobProfilePage = () => {
           <Box
             sx={{
               bgcolor: '#B08B6F',
-              height: '80px',
+              height: '95px',
               width: '100%',
               display: 'flex',
               flexDirection: 'row',
