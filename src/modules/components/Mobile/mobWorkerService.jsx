@@ -67,17 +67,55 @@ const MobWorkerservice = () => {
 
       <Box>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Box sx={{border:'2px solid #E5E5E5', display: 'flex', justifyContent: 'center', mt: 3, mb: 2, px: 2 }}>
-            <Box sx={{ borderRadius: 3, maxWidth: 360, width: '100%' }}>
-              <StaticDatePicker
-                value={dayjs()}
-                onChange={() => { }}
-                displayStaticWrapperAs="desktop"
-              />
-            </Box>
-          </Box>
-        </LocalizationProvider>
+        
+<LocalizationProvider dateAdapter={AdapterDayjs}>
+  <Box
+    sx={{
+      border: '2px solid #E5E5E5',
+      display: 'flex',
+      justifyContent: 'center',
+      mt: 1,
+      mb: 1,
+    }}
+  >
+    <Box
+      sx={{
+        borderRadius: 3,
+        maxWidth: 300,
+        width: '100%',
+        '& .MuiPickersStaticWrapper-root': {
+          transform: 'scale(0.85)',
+          transformOrigin: 'top left',
+        },
+        '& .MuiDialogActions-root': {
+          mt: 0,
+          pt: 0,
+        },
+        '& .MuiDialogActions-spacing': {
+          marginTop: 0,
+          paddingTop: 0,
+        },
+      }}
+    >
+      <StaticDatePicker
+        value={dayjs()}
+        onChange={() => {}}
+        displayStaticWrapperAs="desktop"
+        slotProps={{
+          actionBar: {
+            sx: {
+              mt: 0,
+              pt: 0,
+              mb: 0,
+            },
+          },
+        }}
+      />
+    </Box>
+  </Box>
+</LocalizationProvider>
+
+
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
           <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }}>
             Book now
