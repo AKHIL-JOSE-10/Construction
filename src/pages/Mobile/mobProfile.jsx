@@ -42,7 +42,7 @@ const MobProfilePage = () => {
 
           <Box
             sx={{
-              bgcolor: '#B08B6F',
+              bgcolor: '#F1E6DD',
               height: '95px',
               width: '100%',
               display: 'flex',
@@ -54,10 +54,10 @@ const MobProfilePage = () => {
             }}
           >
             <Box sx={{ml:2}}>
-              <Typography variant="h5" sx={{ color: 'white', fontWeight: 'bold' }}>
+              <Typography variant="h5" sx={{ color: 'black', fontWeight: 'bold' }}>
                 Hi Rehan
               </Typography>
-              <Typography variant="body2" sx={{ color: 'white', pt: 1 }}>
+              <Typography variant="body2" sx={{ color: 'black', pt: 1 }}>
                 rehan@gmail.com
               </Typography>
             </Box>
