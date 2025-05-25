@@ -20,7 +20,7 @@ const MobWorkerservice = () => {
     <Grid>
       <Box sx={{ px: 1 }}>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', p: 2 }}>My Services</Typography>
-        <Accordion sx={{ borderRadius: 5, border: '1px solid brown', overflow: 'hidden', mb: 1 }}>
+        <Accordion sx={{ borderRadius: 1, border: '1px solid brown', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
