@@ -6,7 +6,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 
 const Mobbookingcard = ({ status }) => {
     return (
-        <Grid sx={{ width: '100%', ml: 1.7, mr: 1.7, mt: 2, border: '2px solid #E5E5E5', borderRadius: 3 }}>
+        <Grid sx={{mx:1, mt: 2, border: '2px solid #E5E5E5', borderRadius: 3 }}>
             <Box sx={{ p: 2, display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Typography sx={{ fontSize: 16, fontWeight: 'bold' }}>Indoor Cleaning</Typography>
                 <Typography sx={{ fontSize: 14 }}>{status}</Typography>
