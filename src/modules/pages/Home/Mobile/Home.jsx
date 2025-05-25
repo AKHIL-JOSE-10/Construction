@@ -149,7 +149,7 @@ export default function Home() {
         sx={{
           bgcolor: color.layoutColor,
           height: "100%",
-          paddingBottom: "80px",
+          paddingBottom: "60px",
         }}
       >
         <Grid container>
@@ -396,8 +396,8 @@ export default function Home() {
           container
           direction={"column"}
           size={12}
-          pt={4.5}
-          pb={3}
+          pt={1}
+          pb={1}
           justifyContent={"center"}
           alignItems={"center"}
         >
