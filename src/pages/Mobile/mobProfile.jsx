@@ -100,7 +100,7 @@ const MobProfilePage = () => {
                         sx: {
                           color: 'black',
                           fontSize: '1rem',
-                          fontWeight: 'bold',
+                          fontWeight: '500',
                         },
                         variant: 'body2',
                       },
