@@ -74,7 +74,7 @@ const MobSettings = () => {
                   slotProps={{
                     primary: {
                       sx: {
-                        fontSize: '1.1rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold',
                         color: 'black', // Primary text color
                       },
