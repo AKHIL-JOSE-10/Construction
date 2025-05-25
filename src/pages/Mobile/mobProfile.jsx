@@ -38,7 +38,7 @@ const MobProfilePage = () => {
     >
       <Grid container direction="column" sx={{ width: '100%' }}>
         <Grid item xs={12}>
-          <MobHeading Heading="profile" />
+          <MobHeading Heading="Profile" />
 
           <Box
             sx={{
@@ -98,7 +98,7 @@ const MobProfilePage = () => {
                     slotProps={{
                       primary: {
                         sx: {
-                          color: 'grey',
+                          color: 'black',
                           fontSize: '1rem',
                           fontWeight: 'bold',
                         },
