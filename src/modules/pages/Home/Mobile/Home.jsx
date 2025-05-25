@@ -396,7 +396,7 @@ export default function Home() {
           container
           direction={"column"}
           size={12}
-          pt={2}
+          pt={4.5}
           pb={3}
           justifyContent={"center"}
           alignItems={"center"}
