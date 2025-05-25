@@ -8,7 +8,7 @@ const Mobsignin = () => {
         <MobAuthLayout heading1="Join & Build" heading2="Smart">
 
             <Box sx={{ height: 'auto', width: '95%', mb: 3, bgcolor: 'white', border: '2px solid #B08B6F', borderRadius: 2 }}>
-                <Typography sx={{fontSize:{xs:'30px',sm:'40px'}, fontWeight: '700', pt: 3.5, textAlign: 'center', }}>Log in</Typography>
+                <Typography sx={{ fontSize: { xs: '30px', sm: '40px' }, fontWeight: '700', pt: 3.5, textAlign: 'center', }}>Log in</Typography>
 
                 <Box px={3} pb={5} pt={4}>
                     <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
@@ -41,7 +41,19 @@ const Mobsignin = () => {
                     <TextField
                         size='small'
                         required
-                        sx={{ width: { xs: '38vh', sm: '55vh', md: '64vh' }, mb: 2 }}
+                        sx={{
+                            width: { xs: '38vh', sm: '55vh', md: '64vh' },
+                            mb: 2,
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            }
+                        }}
                         slotProps={{
                             input: {
                                 sx: {
@@ -55,9 +67,21 @@ const Mobsignin = () => {
                     <Typography sx={{ fontSize: { xs: '15px', sm: '26px', md: '26px' }, color: '#666666', fontWeight: '550', mb: 1, ml: 0.5 }}>Password</Typography>
                     <TextField
                         size='small'
-                        type='password'
                         required
-                        sx={{ width: { xs: '38vh', sm: '55vh', md: '64vh' }, mb: 2 }}
+                        type='password'
+                        sx={{
+                            width: { xs: '38vh', sm: '55vh', md: '64vh' },
+                            mb: 2,
+                            '& .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&:hover .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            },
+                            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                border: 'none',
+                            }
+                        }}
                         slotProps={{
                             input: {
                                 sx: {
