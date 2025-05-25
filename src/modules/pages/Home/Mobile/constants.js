@@ -9,11 +9,11 @@ export const color = {
 
 export const textDecoration = {
   headerPrimary: {
-    fontSize: "1.05rem",
+    fontSize: "13px",
     color: color.TextColorPrimary,
   },
   headerSecondary: {
-    fontSize: "0.9rem",
+    fontSize: "10px",
     color: color.TextColorPrimary,
   },
   headingPrimaryDark: {
@@ -109,5 +109,26 @@ export const ServiceListValues = [
     name: "Aristic jobs",
     path: "./Images/Icons/Aristic jobs",
     description: "Design, branding, and creative art",
+  },
+];
+
+export const ServiceList = [
+  {
+    name: "Architectural Services",
+  },
+  {
+    name: "Artisans Services",
+  },
+  {
+    name: "Educational Services",
+  },
+  {
+    name: "Legal Services",
+  },
+  {
+    name: "Acoustic Services",
+  },
+  {
+    name: "Security and Automation",
   },
 ];
