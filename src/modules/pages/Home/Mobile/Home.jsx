@@ -14,7 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { color, ServiceListValues, textDecoration } from "./constants";
+import { color, ServiceList, ServiceListValues, textDecoration } from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
 
@@ -26,15 +26,16 @@ export default function Home() {
         container
         size={12}
         sx={{
-          height: "25vh",
+          height: "18vh",
           bgcolor: color.primary,
           position: "relative",
         }}
         justifyContent={"center"}
         overflow={"hidden"}
+        mb={2}
       >
         {/* Top Header information container */}
-        <Box
+        {/* <Box
           sx={{
             width: "70%",
             height: "18vh",
@@ -45,21 +46,22 @@ export default function Home() {
             left: -20,
             zIndex: 0,
           }}
-        />
+        /> */}
         <Grid
           container
           direction={"row"}
           sx={{ position: "relative", zIndex: 1 }}
-          mt={5}
+          mt={1}
           alignItems={"center"}
           spacing={2}
           size={12}
           p={1}
+          pb={0}
         >
-          <Grid>
+          <Grid size={1}>
             <LocationOnOutlined sx={{ color: "white" }} />
           </Grid>
-          <Grid flexGrow={1}>
+          <Grid flexGrow={1} size={7}>
             <Typography sx={{ ...textDecoration.headerSecondary }}>
               Current Location
             </Typography>
@@ -70,11 +72,11 @@ export default function Home() {
               <KeyboardArrowDownOutlined sx={{ color: "white" }} />
             </Grid>
           </Grid>
-          <Grid container alignItems={"center"} spacing={1.2}>
+          <Grid container alignItems={"center"} spacing={1.2} size={3} justifyContent={"space-around"}>
             <NotificationsNoneOutlined
-              sx={{ color: "white", fontSize: "30px" }}
+              sx={{ color: "white", fontSize: "20px" }}
             />
-            <Avatar src={"https://randomuser.me/api/portraits/women/79.jpg"}>
+            <Avatar src={"https://randomuser.me/api/portraits/women/79.jpg"} sx={{width:"30px",height:"30px"}}>
               J
             </Avatar>
           </Grid>
@@ -109,7 +111,7 @@ export default function Home() {
             }}
           />
         </Grid>
-        <Box
+        {/* <Box
           sx={{
             width: "10vh",
             height: "10vh",
@@ -120,7 +122,7 @@ export default function Home() {
             right: -30,
             zIndex: -1000,
           }}
-        />
+        /> */}
       </Grid>
       <Grid
         container
@@ -135,14 +137,6 @@ export default function Home() {
                 Service Category
               </Typography>
             </Grid>
-            <Grid>
-              <Typography
-                mt={0.4}
-                sx={{ ...textDecoration.headingPrimaryColored }}
-              >
-                See all
-              </Typography>
-            </Grid>
           </Grid>
           <Grid
             container
@@ -152,7 +146,7 @@ export default function Home() {
             justifyContent={"center"}
             sx={{ overflow: "hidden", height: "38vh" }}
           >
-            {ServiceListValues.slice(0,6).map((data) => (
+            {ServiceList.slice(0,6).map((data) => (
               <ServiceLayer key={data.name} data={data} />
             ))}
           </Grid>
@@ -200,8 +194,8 @@ export default function Home() {
                   direction={"column"}
                   size={3}
                   sx={{
-                    width: "38vh",
-                    minWidth: "38vh", // Prevent shrinking
+                    width: "30vh",
+                    minWidth: "30vh", // Prevent shrinking
                     flexShrink: 0, // Prevent shrinking when overflowing
                     backgroundColor: "#fff",
                     borderRadius: "12px",
@@ -245,10 +239,10 @@ export default function Home() {
                     </Box>
                   </Grid>
                   <Grid item size={12} spacing={1} sx={{ padding: "5px" }}>
-                    <Typography sx={{ fontSize: "15px", fontWeight: "600" }}>
+                    <Typography sx={{ fontSize: "10px", fontWeight: "600" }}>
                       Electrical Help {index + 1}
                     </Typography>
-                    <Typography sx={{ fontSize: "10px", color: "gray" }}>
+                    <Typography sx={{ fontSize: "8px", color: "gray" }}>
                       The cost of house cleaning depends on the square footage
                       being cleaned
                     </Typography>
@@ -307,8 +301,8 @@ export default function Home() {
                 container
                 direction={"column"}
                 size={3}
-                height={"32vh"}
-                minWidth={"18vh"}
+                height={"28vh"}
+                minWidth={"15vh"}
                 mt={2}
                 sx={{ border: "1px solid rgba(237, 237, 237, 1)" }}
                 borderRadius={"12px"}
@@ -342,23 +336,23 @@ export default function Home() {
                     size={12}
                     sx={{
                       bgcolor: "rgba(254, 252, 232, 1)",
-                      width: "60px",
+                      width: "40px",
                       borderRadius: "6px",
                     }}
                     justifyContent={"space-around"}
                   >
                     <StarOutline
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "18px" }}
+                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
                     />
                     <Typography
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
+                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
                     >
                       5.0
                     </Typography>
                   </Grid>
                   <Grid size={12} mt={1}>
                     <Typography
-                      sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "15px" }}
+                      sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
                     >
                       Perry Wilson
                     </Typography>
