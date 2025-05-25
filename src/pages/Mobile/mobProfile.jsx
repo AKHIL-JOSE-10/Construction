@@ -42,6 +42,7 @@ const MobProfilePage = () => {
 
           <Box
             sx={{
+              borderRadius:1.5,
               bgcolor: '	#E8D6C5',
               height: '95px',
               width: '100%',
