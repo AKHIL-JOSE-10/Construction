@@ -53,7 +53,7 @@ const MobTopTab = () => {
             </Grid>
 
             {/* Booking Card Component */}
-            <Box sx={{ mt: 3 }}>
+            <Box sx={{ mt: 3,mb:8 }}>
                 <Mobbookingcard status={getStatus()} />
                 <Mobbookingcard status={getStatus()} />
                 <Mobbookingcard status={getStatus()} />
