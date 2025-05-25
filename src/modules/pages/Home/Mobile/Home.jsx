@@ -101,6 +101,7 @@ export default function Home() {
             bgcolor: color.layoutColor,
             height: "5vh",
             borderRadius: "1000px",
+            display:"flex"
           }}
           alignItems={"center"}
           size={10}
@@ -119,7 +120,6 @@ export default function Home() {
                 border: "none", // Ensure no border
                 backgroundColor: "transparent", // Transparent background
                 display: "flex",
-                flexDirection: "column",
                 alignItems: "center",
                 height:"100%",
               },
