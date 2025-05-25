@@ -121,6 +121,7 @@ export default function Home() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                height:"100%",
               },
               "& .MuiInputBase-input": {
                 padding: "0.5em", // Padding for text
@@ -396,7 +397,7 @@ export default function Home() {
           container
           direction={"column"}
           size={12}
-          pt={1}
+          pt={3}
           pb={1}
           justifyContent={"center"}
           alignItems={"center"}
