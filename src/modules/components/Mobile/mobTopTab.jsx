@@ -34,8 +34,8 @@ const MobTopTab = () => {
             </Box>
 
             {/* Filter Dropdown */}
-            <Grid container sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', mt: 2, mr: 2 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Grid container sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', mt: 2, }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column' , mr: 1}}>
                     <FormControl sx={{ minWidth: 80 }} size="small">
                         <InputLabel id="filter-label" sx={{ fontSize: 14 }}>Filter</InputLabel>
                         <Select
