@@ -156,7 +156,7 @@ const MobBookingInfo = () => {
 
                     </Grid>
 
-                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mt: 2 }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, my: 2 }}>
                         <Button variant="outlined" sx={{ bgcolor: 'red', color: 'white', borderRadius: 5 }}>
                             Cancel Booking
                         </Button>
