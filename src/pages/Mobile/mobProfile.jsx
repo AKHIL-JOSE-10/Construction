@@ -6,11 +6,11 @@ import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
 const MobProfilePage = () => {
     return (
         <Grid container direction="column">
-            <Grid>
+            <Grid sx={{width:'100%'}}>
                 <MobHeading Heading="profile" />
 
-                <Grid pl={2} pr={3.5} pt={3} mt={'50px'}>
-                    <Box sx={{ bgcolor: '#B08B6F', height: '80px', width: '320px', display: 'flex', flexDirection: 'row', pl: 3, pt: 2, borderRadius: 4 }}>
+                <Grid pr={3.5} pt={3} mt={'50px'}>
+                    <Box sx={{ bgcolor: '#B08B6F', height: '80px', width: '100%', display: 'flex', flexDirection: 'row', pl: 3, pt: 2 }}>
                         <Box sx={{ flexDirection: 'column' }}>
                             <Typography variant='h5' sx={{ color: 'white', fontWeight: 'bold' }}> Hi Rehan</Typography>
                             <Typography variant='body2' sx={{ color: 'white', pt: 1 }}> rehan@gmail.com</Typography>
@@ -22,7 +22,7 @@ const MobProfilePage = () => {
                     </Box>
                 </Grid>
                 <Grid sx={{pb:12}}>
-                    <Box sx={{ ml: 1, mt: 3, mr: 2 }}>
+                    <Box sx={{ ml: 1, mt: 3, mr: 2,width:"100%" }}>
                         <List >
                             <ListItem disablePadding sx={{ mb: 1 }}>
                                 <ListItemButton sx={{ borderRadius: 2, '&:hover': { backgroundColor: '#F1E6DD' }, '&:hover .MuiListItemText-primary': { color: 'black' } }}>
