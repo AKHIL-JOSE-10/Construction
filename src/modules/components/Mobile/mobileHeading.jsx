@@ -9,7 +9,7 @@ const MobHeading = ({ Heading }) => {
       position: 'fixed',
       top: 0,
       zIndex: 1000,
-      height: '65px',
+      height: '60px',
       bgcolor: 'white',
       borderBottom: '1px solid #ccc',
     }}>

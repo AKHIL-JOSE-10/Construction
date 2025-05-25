@@ -8,7 +8,8 @@ const MobProfilePage = () => {
         <Grid container direction="column">
             <Grid>
                 <MobHeading Heading="profile" />
-                <Grid pl={2} pr={3.5} pt={3}>
+
+                <Grid pl={2} pr={3.5} pt={3} mt={'50px'}>
                     <Box sx={{ bgcolor: '#B08B6F', height: '80px', width: '320px', display: 'flex', flexDirection: 'row', pl: 3, pt: 2, borderRadius: 4 }}>
                         <Box sx={{ flexDirection: 'column' }}>
                             <Typography variant='h5' sx={{ color: 'white', fontWeight: 'bold' }}> Hi Rehan</Typography>
