@@ -102,6 +102,7 @@ export default function Home() {
             height: "5vh",
             borderRadius: "1000px",
           }}
+          alignItems={"center"}
           size={10}
         >
           <Input
