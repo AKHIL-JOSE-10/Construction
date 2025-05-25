@@ -56,8 +56,8 @@ const IOSSwitch = styled((props) => <Switch focusVisibleClassName=".Mui-focusVis
 const MobSettings = () => {
   return (
     <Grid>
-      <MobHeading Heading="Settings"/>
-      <Box sx={{ml: 1, mt: 3, mr: 2 }}>
+      <MobHeading Heading="Settings" />
+      <Box sx={{ ml: 0, width:'100%',mt:-1 }}>
         <List>
           {[
             "Notifications",
@@ -66,28 +66,23 @@ const MobSettings = () => {
             "Recieve Security Alerts",
             "Change Password",
           ].map((label, index) => (
-            <ListItem disablePadding sx={{ mb: 3}} key={index}>
-              <ListItemButton
-                sx={{
-                  borderRadius: 2,
-                  '&:hover': { backgroundColor: '#F1E6DD' },
-                  '&:hover .MuiListItemText-primary': { color: 'black' },
-                }}
-              >
+            <ListItem disablePadding sx={{ border:'0.5px solid #e0e0e0',}} key={index}>
+              <ListItemButton sx={{py:2, }}>
                 <ListItemText
                   primary={label}
                   secondary={label === "Notifications" ? "via email and whatsapp" : null}
                   slotProps={{
                     primary: {
                       sx: {
-                        fontSize: '1.1rem',
+                        fontSize: '1rem',
                         fontWeight: 'bold',
+                        color: 'black', // Primary text color
                       },
                       variant: "body2",
                     },
                     secondary: {
                       sx: {
-                        color: '#9e9e9e',
+                        color: 'black', // Secondary text color
                         fontSize: '0.90rem',
                         mt: 0.5,
                       },
@@ -100,7 +95,7 @@ const MobSettings = () => {
           ))}
         </List>
       </Box>
-      <MobileBottomTab/>
+      <MobileBottomTab />
     </Grid>
   )
 }

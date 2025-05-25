@@ -38,11 +38,12 @@ const MobProfilePage = () => {
     >
       <Grid container direction="column" sx={{ width: '100%' }}>
         <Grid item xs={12}>
-          <MobHeading Heading="profile" />
+          <MobHeading Heading="Profile" />
 
           <Box
             sx={{
-              bgcolor: '#B08B6F',
+              borderRadius:1.5,
+              bgcolor: '	#E8D6C5',
               height: '95px',
               width: '100%',
               display: 'flex',
@@ -54,10 +55,10 @@ const MobProfilePage = () => {
             }}
           >
             <Box sx={{ml:2}}>
-              <Typography variant="h5" sx={{ color: 'white', fontWeight: 'bold' }}>
-                Hi Rehan
+              <Typography variant="h5" sx={{ color: 'black', fontWeight: 'bold' }}>
+                Rehan
               </Typography>
-              <Typography variant="body2" sx={{ color: 'white', pt: 1 }}>
+              <Typography sx={{fontSize:'15px', color: 'black', pt: 1 }}>
                 rehan@gmail.com
               </Typography>
             </Box>
@@ -98,9 +99,9 @@ const MobProfilePage = () => {
                     slotProps={{
                       primary: {
                         sx: {
-                          color: 'grey',
+                          color: 'black',
                           fontSize: '1rem',
-                          fontWeight: 'bold',
+                          fontWeight: '500',
                         },
                         variant: 'body2',
                       },
