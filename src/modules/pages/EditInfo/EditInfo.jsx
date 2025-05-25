@@ -136,7 +136,7 @@ export default function EditInfo() {
         <Input
           disabled={edit}
           value={"+91 1234567899"}
-          sx={{ fontSize: "12px", fontSize: "8px" }}
+          sx={{ fontSize: "8px" }}
         />
       </Grid>
       <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
