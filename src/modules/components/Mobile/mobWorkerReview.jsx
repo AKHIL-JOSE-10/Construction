@@ -39,7 +39,7 @@ const MobWorkerReview = () => {
                 </Box>
             </Grid>
             <WorkerReviewCard name="Jane" rate="4.0" date="20th dec 2025" />
-            <WorkerReviewCard name="Elanor" rate="4.5" date="17th sec 2025" />
+            <WorkerReviewCard name="Elanor" rate="4.5" date="17th Mar 2025" />
 
         </Grid>
     );
