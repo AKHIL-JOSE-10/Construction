@@ -179,7 +179,7 @@ export default function Home() {
         <Grid container size={12}>
           <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
-              <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
+              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb:2 }}>
                 Popular Service on Archisans
               </Typography>
             </Grid>
@@ -287,7 +287,7 @@ export default function Home() {
         >
           <Grid container size={12} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
-              <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
+              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb:2 }}>
                 Top Workers Near You
               </Typography>
             </Grid>

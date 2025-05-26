@@ -9,7 +9,7 @@ export const color = {
 
 export const textDecoration = {
   headerPrimary: {
-    fontSize: "13px",
+    fontSize: "12px",
     color: color.TextColorPrimary,
   },
   headerSecondary: {
