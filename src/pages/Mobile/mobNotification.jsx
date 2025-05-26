@@ -24,39 +24,39 @@ const MobNotification = () => {
                     </Tabs>
                 </Box>
 
-                <Box sx={{ mt: 3,px:0 ,width:'100%' }}>
+                <Box sx={{ mt:3 ,mb:10 ,px:0 ,width:'100%' }}>
                     <MobNotificationList
-                        img={<NotificationsNoneIcon sx={{ color: '#BFA088' }} />}
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Confirmed"
                         subheading="Jane has confirmed your bokking request"
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
-                        img={<NotificationsNoneIcon sx={{ color: '#BFA088' }} />}
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Rejected"
                         subheading="Jane has rejected your bokking request"
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
-                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2', opacity: 0.8 }} />}
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Work Completed"
                         subheading="“The job by Jane has been completed. Please review."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
-                        img={<NotificationsNoneIcon sx={{ color: '#333333' }} />}
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="* Cancelled by User"
                         subheading="You cancelled the booking with Elanor"
                         datetime="12-03-2025 | 9:00 am"
                     />
                      <MobNotificationList
-                       img={<NotificationsNoneIcon sx={{ color: '#5E6C84' }} />}
+                       img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }}} />}
                         heading="Cancelled by Worker"
                         subheading="Jane cancelled your booking request."
                         datetime="12-03-2025 | 9:00 am"
                     />
                      <MobNotificationList
-                        img={<NotificationsNoneIcon sx={{ color: '#777777' }} />}
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Payment Requested"
                         subheading="Jane has requested payment for the completed work."
                         datetime="12-03-2025 | 9:00 am"
