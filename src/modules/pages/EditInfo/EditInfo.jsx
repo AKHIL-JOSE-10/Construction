@@ -11,9 +11,8 @@ import {
   Input,
   Typography,
 } from "@mui/material";
-import React from "react";
 import MobileBottomTab from "../../components/Mobile/mobileBottomTab";
-
+import MobHeading from "../../components/Mobile/mobileHeading";
 export default function EditInfo() {
   let edit = true;
   const workTitles = ["Mason", "Plumber", "Electrician"];
@@ -27,69 +26,14 @@ export default function EditInfo() {
       pt={0}
       pb={10}
     >
-      {/*Heading with back Icon */}
-      <Box
-        sx={{
-          bgcolor: "white",
-          position: "fixed",
-          top: 0,
-          height: "10vh",
-          zIndex: 1000,
-          width: "90vw",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Grid
-          container
-          size={12}
-          height={"6vh"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
-          <Grid
-            container
-            size={2}
-            alignItems={"center"}
-            justifyContent={"center"}
-            height={"100%"}
-          >
-            <IconButton sx={{ padding: 0 }}>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "30px",
-                  width: "30px",
-                  border: "1px solid grey",
-                  borderRadius: "8px",
-                }}
-              >
-                <ArrowBack />
-              </Box>
-            </IconButton>
-          </Grid>
-          <Grid
-            flexGrow={1}
-            container
-            alignItems={"center"}
-            justifyContent={"center"}
-          >
-            <Typography variant={"h5"} sx={{ color: "black" }}>
-              Edit account info
-            </Typography>
-          </Grid>
-          <Divider sx={{width:"100%",paddingTop:"12px"}} />
-        </Grid>
-      </Box>
+
+      <MobHeading Heading="Edit Profile"/>
 
       {/*Avatar with name and edit button*/}
       <Grid
         container
         size={12}
         height={"14vh"}
-        mt={10}
         alignItems={"center"}
         sx={{ position: "relative" }}
       >
