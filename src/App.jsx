@@ -3,7 +3,7 @@ import MobBookingInfo from "./pages/Mobile/mobBookingInfo";
 import MobmyBookings from "./pages/Mobile/mobmyBookings";
 import MobProfilePage from "./pages/Mobile/mobProfile";
 import MobSettings from "./pages/Mobile/mobSettings";
-import MobNotification from "./pages/Mobile/mobNotification";
+import MobNotifications from "./pages/Mobile/mobNotifications";
 import Signinpage from "./pages/signinpage";
 import Home from "./modules/pages/Home/Mobile/Home";
 import Profile from "./modules/pages/Profile/Profile";
@@ -32,7 +32,7 @@ function App() {
         <Route path="/mobile-service-category" element={<MobServiceCategory />} />
         <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
         <Route path="/mobile-settings" element={<MobSettings />} />
-        <Route path="/mobile-notifications" element={<MobNotification />} />
+        <Route path="/mobile-notifications" element={<MobNotifications />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/bookings" element={<Bookings />} />

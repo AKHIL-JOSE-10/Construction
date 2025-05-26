@@ -1,42 +1,21 @@
-import { Grid, Box, Tab, Tabs } from '@mui/material';
-import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
-import MobHeading from "../../modules/components/Mobile/mobileHeading";
-import MobNotificationList from '../../modules/components/Mobile/mobNotificationList';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import CancelIcon from '@mui/icons-material/Cancel';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { Grid, Box, } from '@mui/material';
+import MobNotificationList from './mobNotificationList';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-const MobNotification = () => {
+const MobNotificationAll = () => {
     return (
         <Grid container >
 
-            <MobHeading Heading='Notifications' />
-
-            <Grid sx={{ mt: 5, width: "100%" }}>
-                <Grid sx={{mb:8}}>
-                    <Box sx={{
-                        position: 'fixed',
-                        top: '46px',
-                        zIndex: 1000,
-                        width: '100%',
-                        backgroundColor: '#fff',
-                        borderBottom: 1,
-                        borderColor: 'divider',
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}>
-                        <Tabs aria-label="booking tabs" TabIndicatorProps={{ style: { backgroundColor: '#BFA088' } }}>
-                            <Tab label="All" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 3 }} />
-                            <Tab label="Bookings" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 3 }} />
-                            <Tab label="System" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none' }} />
-                        </Tabs>
-                    </Box>
-                </Grid>
-
+            <Grid sx={{  width: "100%" }}>
 
                 <Box sx={{ mt: 3, mb: 10, px: 0, width: '100%' }}>
+                      <MobNotificationList
+                        img={<InfoOutlinedIcon sx={{ color: '#4A90E2' }} />}
+                        heading="Archisans"
+                        subheading="Renew Subscription."
+                        datetime="12-03-2025 | 9:00 am"
+                    />
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Confirmed"
@@ -47,6 +26,12 @@ const MobNotification = () => {
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Rejected"
                         subheading="Jane has rejected your booking request."
+                        datetime="12-03-2025 | 9:00 am"
+                    />
+                                        <MobNotificationList
+                        img={<InfoOutlinedIcon sx={{ color: '#4A90E2' }} />}
+                        heading="Password Updated Successfully."
+                        subheading="Your password has been updated successfully."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
@@ -81,9 +66,8 @@ const MobNotification = () => {
                     />
                 </Box>
             </Grid>
-            <MobileBottomTab />
         </Grid>
     );
 };
 
-export default MobNotification;
+export default MobNotificationAll;
