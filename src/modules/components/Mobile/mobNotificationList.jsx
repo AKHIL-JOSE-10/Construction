@@ -13,7 +13,7 @@ const MobNotificationList = ({ img, heading, subheading, datetime }) => {
           <Box sx={{width:'100%', ml:-2 }}>
             <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 
-              <Typography  sx={{fontSize:'16px', fontWeight: 'bold',}}>
+              <Typography  sx={{fontSize:'15px', fontWeight: 'bold',}}>
                 {heading}
               </Typography>
 

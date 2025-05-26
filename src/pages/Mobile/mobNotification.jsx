@@ -28,25 +28,25 @@ const MobNotification = () => {
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Confirmed"
-                        subheading="Jane has confirmed your bokking request"
+                        subheading="Jane has confirmed your bokking request."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Rejected"
-                        subheading="Jane has rejected your bokking request"
+                        subheading="Jane has rejected your bokking request."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Work Completed"
-                        subheading="“The job by Jane has been completed. Please review."
+                        subheading="The job by Jane has been completed. Please review."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="* Cancelled by User"
-                        subheading="You cancelled the booking with Elanor"
+                        subheading="You cancelled the booking with Elanor."
                         datetime="12-03-2025 | 9:00 am"
                     />
                      <MobNotificationList
@@ -64,7 +64,7 @@ const MobNotification = () => {
                      <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Payment Completed"
-                        subheading="You have completed the payment for booking #6754"
+                        subheading="You have completed the payment for booking #6754."
                         datetime="12-03-2025 | 9:00 am"
                     />
                 </Box>
