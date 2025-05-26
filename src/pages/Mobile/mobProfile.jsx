@@ -8,15 +8,13 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Button,
   Divider,
 } from '@mui/material';
 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MobHeading from '../../modules/components/Mobile/mobileHeading';
 import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
-import { Link } from 'react-router-dom';
-
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import StarIcon from '@mui/icons-material/Star';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import PaymentIcon from '@mui/icons-material/Payment';
@@ -53,28 +51,40 @@ const MobProfilePage = () => {
             }}
           >
             <Avatar
-              sx={{ height: 100, width: 100, mx: 2, mb: 2 }}
+              sx={{ height: 90, width: 90, mx: 2, mb: 1 }}
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
-            <Box sx={{ mb: 2 }}>
+            <Box sx={{ my: 2 }}>
               <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550' }}>
                 Jane Cooper
               </Typography>
               <Typography sx={{ fontSize: '15px', color: 'black', pb: 1 }}>
                 janecooper@gmail.com
               </Typography>
-              <Link to="/editInfo" style={{ textDecoration: 'none' }}>
-                <Button size="small" variant="contained" color="primary">
-                  Edit Profile
-                </Button>
-              </Link>
             </Box>
           </Box>
         </Grid>
 
         <Grid item xs={12}>
           <List sx={{ width: '100%', p: 0 }}>
+
+            {/* Account Info*/}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, pb: 1 }}>
+                <AccountCircleIcon sx={{ mr: 2, color: '#757575', fontSize:'23px' }} />
+                <ListItemText
+                  primary="Account Info"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
             {/* Saved Workers */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1 }}>

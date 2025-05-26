@@ -6,11 +6,11 @@ const MobMessages = () => {
     <Grid>
       <Box
         sx={{
-          height: '100vh',
+          height: '86vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          bgcolor: '#f4f4f4',
+          bgcolor: 'white',
           textAlign: 'center',
           px: 2,
           flexDirection:'column'
