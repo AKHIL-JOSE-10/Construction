@@ -27,9 +27,9 @@ const MobTopTab = () => {
             {/* Tabs */}
             <Box sx={{ width: '100%', position:"fixed",top:"60px",borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'center',bgcolor:'white',zIndex:1000 }}>
                 <Tabs value={value} onChange={handleChange} aria-label="booking tabs"  TabIndicatorProps={{ style: { backgroundColor: '#BFA088' } }}>
-                    <Tab label="In progress" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 1 }} />
-                    <Tab label="Completed" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 1 }} />
-                    <Tab label="Cancelled" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none' }} />
+                    <Tab label="In progress" sx={{ color: '#777777', fontSize: '0.9rem', textTransform: 'none', mr: 1 }} />
+                    <Tab label="Completed" sx={{ color: '#777777', fontSize: '0.9rem', textTransform: 'none', mr: 1 }} />
+                    <Tab label="Cancelled" sx={{ color: '#777777', fontSize: '0.9rem', textTransform: 'none' }} />
                 </Tabs>
             </Box>
 

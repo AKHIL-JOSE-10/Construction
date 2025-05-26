@@ -52,14 +52,14 @@ const Mobbookingcard = ({ status }) => {
                                         borderRadius: '50px', textTransform: 'none', px: 2, borderColor: '#333333', color: '#333333',
                                         '&:hover': { borderColor: 'black', backgroundColor: '#f0f0f0' }
                                     }}>
-                                    <Typography sx={{ fontSize: 14, fontWeight: 'bold' }}>Rate Service</Typography>
+                                    <Typography sx={{ fontSize: 12, fontWeight: 'bold' }}>Rate Service</Typography>
                                 </Button>
                                 <Button variant="outlined"
                                     sx={{
                                         borderRadius: '50px', textTransform: 'none', px: 2, borderColor: '#333333', color: '#333333',
                                         '&:hover': { borderColor: 'black', backgroundColor: '#f0f0f0' }
                                     }}>
-                                    <Typography sx={{ fontSize: 14, fontWeight: 'bold' }}>Click to Pay</Typography>
+                                    <Typography sx={{ fontSize: 12, fontWeight: 'bold' }}>Click to Pay</Typography>
                                 </Button>
                             </>
                         ) : (
@@ -68,7 +68,7 @@ const Mobbookingcard = ({ status }) => {
                                     borderRadius: '50px', textTransform: 'none', px: 2, borderColor: '#333333', color: '#333333',
                                     '&:hover': { borderColor: 'black', backgroundColor: '#f0f0f0' }
                                 }}>
-                                <Typography sx={{ fontSize: 14, fontWeight: 'bold' }}>Mark as completed</Typography>
+                                <Typography sx={{ fontSize: 12, fontWeight: 'bold' }}>Mark as completed</Typography>
                             </Button>
                         )}
                     </Box>
