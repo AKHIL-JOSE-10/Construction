@@ -20,7 +20,6 @@ export default function EditInfo() {
     <Grid
       container
       direction={"column"}
-      p={2}
       size={12}
       sx={{ height: "fit-content" }}
       pt={0}
