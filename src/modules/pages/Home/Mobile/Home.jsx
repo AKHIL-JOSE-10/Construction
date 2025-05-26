@@ -22,6 +22,7 @@ import {
 } from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -84,9 +85,9 @@ export default function Home() {
             size={3}
             justifyContent={"space-around"}
           >
-            <NotificationsNoneOutlined
-              sx={{ color: "white", fontSize: "20px" }}
-            />
+            <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
+              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "20px", cursor: 'pointer' }} />
+            </Link>
             <Avatar
               src={"https://randomuser.me/api/portraits/women/79.jpg"}
               sx={{ width: "30px", height: "30px" }}
@@ -101,7 +102,7 @@ export default function Home() {
             bgcolor: color.layoutColor,
             height: "5vh",
             borderRadius: "1000px",
-            display:"flex"
+            display: "flex"
           }}
           alignItems={"center"}
           size={10}
@@ -121,7 +122,7 @@ export default function Home() {
                 backgroundColor: "transparent", // Transparent background
                 display: "flex",
                 alignItems: "center",
-                height:"100%",
+                height: "100%",
               },
               "& .MuiInputBase-input": {
                 padding: "0.5em", // Padding for text

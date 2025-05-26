@@ -11,7 +11,7 @@ const MobNotification = () => {
     return (
         <Grid container >
 
-            <MobHeading Heading='Notification' />
+            <MobHeading Heading='Notifications' />
 
             <Grid sx={{mt:5,width:"100%"}}>
 
