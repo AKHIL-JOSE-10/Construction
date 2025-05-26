@@ -111,7 +111,7 @@ const MobProfilePage = () => {
                       primary: {
                         sx: {
                           color: 'black',
-                          fontSize: '1 rem',
+                          fontSize: '17px',
                           fontWeight: '500',
                         },
                         variant: 'body2',
