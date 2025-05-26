@@ -46,6 +46,7 @@ const MobProfilePage = () => {
         overflowX: 'hidden',
         boxSizing: 'border-box',
         bgcolor: '#fff',
+        mb:10
       }}
     >
       <Grid container direction="column" sx={{ width: '100%' }}>
@@ -57,9 +58,8 @@ const MobProfilePage = () => {
               width: '100%',
               display: 'flex',
               flexDirection: 'row',
-              pt: 2,
               alignItems: 'center',
-              mt: '40px',
+              mb:2
             }}
           >
             <Avatar
@@ -101,7 +101,7 @@ const MobProfilePage = () => {
                   }}
                 >
                   {item.icon && (
-                    <Box sx={{ minWidth: 30, color: 'black', mr: 2 }}>
+                    <Box sx={{ minWidth: 30,  color: '#757575', mr: 2 }}>
                       {item.icon}
                     </Box>
                   )}
@@ -112,7 +112,7 @@ const MobProfilePage = () => {
                         sx: {
                           color: 'black',
                           fontSize: '1.1rem',
-                          fontWeight: '550',
+                          fontWeight: '500',
                         },
                         variant: 'body2',
                       },
