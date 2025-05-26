@@ -63,12 +63,12 @@ const MobProfilePage = () => {
             }}
           >
             <Avatar
-              sx={{ height: 100, width: 100, mx: 3, mb: 2 }}
+              sx={{ height: 100, width: 100, mx:2, mb: 2 }}
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
             <Box sx={{ mb: 2 }}>
-              <Typography sx={{ color: 'black', fontSize: 23, fontWeight: 'bold' }}>
+              <Typography sx={{ color: 'black', fontSize: 21, fontWeight: 'bold' }}>
                 Jane Cooper
               </Typography>
               <Typography sx={{ fontSize: '15px', color: 'black', pb: 1 }}>
