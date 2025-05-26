@@ -78,7 +78,7 @@ const MobProfilePage = () => {
             {/* Saved Workers */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1 }}>
-                <BookmarkIcon sx={{ mr: 2, color: '#757575' }} />
+                <BookmarkIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Saved Workers"
                   slotProps={{
@@ -94,7 +94,7 @@ const MobProfilePage = () => {
             {/* Payment History */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1 }}>
-                <PaymentIcon sx={{ mr: 2, color: '#757575' }} />
+                <PaymentIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Payment History"
                   slotProps={{
@@ -110,7 +110,7 @@ const MobProfilePage = () => {
             {/* Premium Subscription */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1 }}>
-                <StarIcon sx={{ mr: 2, color: '#757575' }} />
+                <StarIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Premium Subscription"
                   slotProps={{
@@ -126,7 +126,7 @@ const MobProfilePage = () => {
             {/* Refer a Friend */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1, mb:1.5 }}>
-                <GroupAddIcon sx={{ mr: 2, color: '#757575' }} />
+                <GroupAddIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Refer a Friend"
                   slotProps={{
@@ -145,7 +145,7 @@ const MobProfilePage = () => {
             {/* Terms and Condition */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1 ,mt:1.5}}>
-                <GavelIcon sx={{ mr: 2, color: '#757575' }} />
+                <GavelIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Terms and Condition"
                   slotProps={{
@@ -161,7 +161,7 @@ const MobProfilePage = () => {
             {/* Privacy Policy */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1, mb:1.5 }}>
-                <PrivacyTipIcon sx={{ mr: 2, color: '#757575' }} />
+                <PrivacyTipIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Privacy Policy"
                   slotProps={{
@@ -180,7 +180,7 @@ const MobProfilePage = () => {
             {/* Settings */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1, mt:1.5 }}>
-                <SettingsIcon sx={{ mr: 2, color: '#757575' }} />
+                <SettingsIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Settings"
                   slotProps={{
@@ -196,7 +196,7 @@ const MobProfilePage = () => {
             {/* Help & Support */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1 }}>
-                <HelpIcon sx={{ mr: 2, color: '#757575' }} />
+                <HelpIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Help & Support"
                   slotProps={{
@@ -212,7 +212,7 @@ const MobProfilePage = () => {
             {/* Logout */}
             <ListItem disablePadding>
               <ListItemButton sx={{ px: 3, py: 1 }}>
-                <LogoutIcon sx={{ mr: 2, color: '#757575' }} />
+                <LogoutIcon sx={{ mr: 2, color: '#757575', fontSize:'22px' }} />
                 <ListItemText
                   primary="Logout"
                   slotProps={{
@@ -226,7 +226,7 @@ const MobProfilePage = () => {
             </ListItem>
 
             {/* Final Divider after Logout */}
-            <Divider sx={{ mx: 3, borderColor: '#e0e0e0' }} />
+            <Divider sx={{ mx: 3, borderColor: '#e0e0e0',mb:2 }} />
           </List>
         </Grid>
       </Grid>
