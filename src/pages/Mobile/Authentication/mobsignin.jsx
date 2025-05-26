@@ -2,7 +2,7 @@ import { Typography, Box, TextField, Checkbox, FormControlLabel, Stack, Button }
 import GoogleIcon from '../../../assets/GoogleIcon.png'
 import MobAuthLayout from '../../../modules/layouts/Mobile/mobAuthLayout';
 
-const Mobsignin = () => {
+const MobSignin = () => {
     return (
 
         <MobAuthLayout heading1="Join & Build" heading2="Smart">
@@ -160,4 +160,4 @@ const Mobsignin = () => {
     )
 }
 
-export default Mobsignin
+export default MobSignin
