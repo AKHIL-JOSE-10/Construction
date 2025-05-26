@@ -47,11 +47,11 @@ const MobProfilePage = () => {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              mb: 2,
+              mb: 1
             }}
           >
             <Avatar
-              sx={{ height: 80, width: 80, mx: 2, mb: 1 }}
+              sx={{ height: 80, width: 80, mr: 2, ml:2.5, mb: 1 }}
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
