@@ -303,13 +303,13 @@ export default function Home() {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row", // Horizontal layout
-              overflowX: "auto", // Enable horizontal scrolling
-              width: "100vw", // Full viewport width
+              flexDirection: "row",
+              overflowX: "auto",
+              width: "100vw",
               gap: "20px",
               scrollbarWidth: "thin",
               "&::-webkit-scrollbar": {
-                height: "8px", // Height for horizontal scrollbar
+                height: "8px",
               },
               "&::-webkit-scrollbar-thumb": {
                 backgroundColor: "#aaa",
@@ -321,76 +321,73 @@ export default function Home() {
             }}
           >
             {[...Array(4)].map((_, index) => (
-              <Grid
+              <Link
+                to="/mobile-workerpage"
                 key={index}
-                container
-                direction={"column"}
-                size={3}
-                height={"28vh"}
-                minWidth={"15vh"}
-                mt={2}
-                sx={{ border: "1px solid rgba(237, 237, 237, 1)" }}
-                borderRadius={"12px"}
-                spacing={1}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <Grid
-                  size={12}
-                  height={"50%"}
+                  container
+                  direction="column"
+                  height="28vh"
+                  minWidth="15vh"
+                  mt={2}
                   sx={{
+                    border: "1px solid rgba(237, 237, 237, 1)",
+                    borderRadius: "12px",
+                    cursor: "pointer",
                     overflow: "hidden",
-                    borderTopRightRadius: "12px",
-                    borderTopLeftRadius: "12px",
                   }}
                 >
-                  <img
-                    src="/assets/DummyImages/Sample-2.jpg"
-                    width={"100%"}
-                    height={"100%"}
-                  />
-                </Grid>
-                <Grid
-                  container
-                  direction={"column"}
-                  size={12}
-                  height={"40%"}
-                  ml={1}
-                >
                   <Grid
-                    container
-                    direction={"row"}
-                    size={12}
+                    item
+                    height="50%"
                     sx={{
-                      bgcolor: "rgba(254, 252, 232, 1)",
-                      width: "40px",
-                      borderRadius: "6px",
+                      borderTopRightRadius: "12px",
+                      borderTopLeftRadius: "12px",
                     }}
-                    justifyContent={"space-around"}
                   >
-                    <StarOutline
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
+                    <img
+                      src="/assets/DummyImages/Sample-2.jpg"
+                      width="100%"
+                      height="100%"
+                      alt="Worker"
                     />
-                    <Typography
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
-                    >
-                      5.0
-                    </Typography>
                   </Grid>
-                  <Grid size={12} mt={1}>
-                    <Typography
-                      sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
+                  <Grid item container direction="column" height="40%" ml={1}>
+                    <Grid
+                      item
+                      container
+                      direction="row"
+                      sx={{
+                        bgcolor: "rgba(254, 252, 232, 1)",
+                        width: "40px",
+                        borderRadius: "6px",
+                      }}
+                      justifyContent="space-around"
                     >
-                      Perry Wilson
-                    </Typography>
-                  </Grid>
-                  <Grid size={12}>
-                    <Typography
-                      sx={{ color: "rgba(123, 123, 123, 1)", fontSize: "10px" }}
-                    >
-                      Location
-                    </Typography>
+                      <StarOutline
+                        sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
+                      />
+                      <Typography
+                        sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
+                      >
+                        5.0
+                      </Typography>
+                    </Grid>
+                    <Grid item mt={1}>
+                      <Typography sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}>
+                        Perry Wilson
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography sx={{ color: "rgba(123, 123, 123, 1)", fontSize: "10px" }}>
+                        Location
+                      </Typography>
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
+              </Link>
             ))}
           </Box>
         </Grid>
