@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import MobBookingInfo from "./pages/Mobile/mobBookingInfo";
 import MobmyBookings from "./pages/Mobile/mobmyBookings";
 import MobProfilePage from "./pages/Mobile/mobProfile";
@@ -8,7 +7,7 @@ import MobNotification from "./pages/Mobile/mobNotification";
 import Signinpage from "./pages/signinpage";
 import Home from "./modules/pages/Home/Mobile/Home";
 import Profile from "./modules/pages/Profile/Profile";
-import MobSignin from "./pages/Mobile/Authentication/mobSignin";
+import MobSignin from "./pages/Mobile/Authentication/mobSignin"
 import MobSignup from "./pages/Mobile/Authentication/mobSignup";
 import MobServiceCategory from "./pages/Mobile/mobServiceCategory";
 import MobWorkerpage from "./pages/Mobile/mobWorkerpage";
