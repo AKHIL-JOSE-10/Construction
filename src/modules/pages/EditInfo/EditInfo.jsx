@@ -92,7 +92,11 @@ export default function EditInfo() {
       </Grid>
 
       <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
-        <Typography sx={{ fontSize: "15px" }}>Date of Birth</Typography>
+        <Box sx={{display:'flex',flexDirection:'row'}}>
+        <Typography sx={{ fontSize: "15px",mr:1 }}>Date of Birth</Typography> 
+        <Typography variant="body2">(optional)</Typography>
+        </Box>
+
         <Input
           disabled={edit}
           value={"10 January 1999"}
@@ -150,7 +154,7 @@ export default function EditInfo() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid container direction="column" p={2} pb={0}>
+      {/* <Grid container direction="column" p={2} pb={0}>
         <Typography sx={{ fontSize: "15px" }}>Add your work title</Typography>
 
         <Input
@@ -175,8 +179,8 @@ export default function EditInfo() {
             </Box>
           )}
         />
-      </Grid>
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
+      </Grid> */}
+      {/* <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
         <Typography sx={{ fontSize: "15px" }}>Bank Details</Typography>
         <Grid container size={12} spacing={4}>
           <Grid size={6}>
@@ -209,20 +213,9 @@ export default function EditInfo() {
             />
           </Grid>
         </Grid>
-      </Grid>
+      </Grid> */}
       <Grid size={12} p={2} pt={2.5} pb={0} sx={{ position: "relative" }}>
         <Typography sx={{ fontSize: "15px" }}>Change Password</Typography>
-        <Input
-          disabled={edit}
-          fullWidth
-          placeholder={"Looking to change your current password?"}
-          sx={{ fontSize: "12px", paddingTop: "8px" }}
-        />
-        <Box sx={{ position: "absolute", top: 28, right: 14 }}>
-          <Button variant="outlined" color="black" sx={{ height: "2em" }}>
-            Change
-          </Button>
-        </Box>
       </Grid>
       <MobileBottomTab />
     </Grid>
