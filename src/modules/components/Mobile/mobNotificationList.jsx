@@ -6,14 +6,14 @@ const MobNotificationList = ({ img, heading, subheading, datetime }) => {
       <List disablePadding >
         <ListItem  sx={{ width: '100%',  borderBottom:'0.5px solid #e0e0e0', py:2 }}>
           <ListItemAvatar>
-            <Avatar sx={{ width: 38, height: 38, bgcolor: 'transparent' }}>
+            <Avatar sx={{ width: 28, height: 38, bgcolor: 'transparent' }}>
               {img}
             </Avatar>
           </ListItemAvatar>
-          <Box sx={{width:'100%'}}>
+          <Box sx={{width:'100%', ml:-2 }}>
             <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 
-              <Typography variant="body1" sx={{ fontWeight: 'bold', }}>
+              <Typography  sx={{fontSize:'16px', fontWeight: 'bold',}}>
                 {heading}
               </Typography>
 
