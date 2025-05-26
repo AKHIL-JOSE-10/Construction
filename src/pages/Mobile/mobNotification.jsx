@@ -45,7 +45,7 @@ const MobNotification = () => {
                     />
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
-                        heading="* Cancelled by User"
+                        heading="Cancelled by User"
                         subheading="You cancelled the booking with Elanor."
                         datetime="12-03-2025 | 9:00 am"
                     />
