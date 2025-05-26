@@ -13,19 +13,29 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MobHeading from '../../modules/components/Mobile/mobileHeading';
 import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
 import { Link } from 'react-router-dom';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import StarIcon from '@mui/icons-material/Star';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import PaymentIcon from '@mui/icons-material/Payment';
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import GavelIcon from '@mui/icons-material/Gavel';
+import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
+import SettingsIcon from '@mui/icons-material/Settings';
+import HelpIcon from '@mui/icons-material/Help';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const MobProfilePage = () => {
   const menuItems = [
-    'Account info',
-    'Premium Subscription',
-    'Saved Workers',
-    'Payment History',
-    'Refer a Friend',
-    'Terms and Condition',
-    'Privacy Policy',
-    'Settings',
-    'Help & Support',
-    'Logout',
+    { text: 'Account info', icon: <AccountCircleIcon /> },
+    { text: 'Premium Subscription', icon: <StarIcon /> },
+    { text: 'Saved Workers', icon: <BookmarkIcon /> },
+    { text: 'Payment History', icon: <PaymentIcon /> },
+    { text: 'Refer a Friend', icon: <GroupAddIcon /> },
+    { text: 'Terms and Condition', icon: <GavelIcon /> },
+    { text: 'Privacy Policy', icon: <PrivacyTipIcon /> },
+    { text: 'Settings', icon: <SettingsIcon /> },
+    { text: 'Help & Support', icon: <HelpIcon /> },
+    { text: 'Logout', icon: <LogoutIcon /> },
   ];
 
   return (
@@ -57,11 +67,11 @@ const MobProfilePage = () => {
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
-            <Box sx={{ ml: 2, mb: 2 }}>
+            <Box sx={{ mb: 2 }}>
               <Typography sx={{ color: 'black', fontSize: 23, fontWeight: 'bold' }}>
                 Jane Cooper
               </Typography>
-              <Typography sx={{ fontSize: '15px', color: 'black', pb: 1, }}>
+              <Typography sx={{ fontSize: '15px', color: 'black', pb: 1 }}>
                 janecooper@gmail.com
               </Typography>
               <Link to="/editInfo" style={{ textDecoration: 'none' }}>
@@ -70,36 +80,33 @@ const MobProfilePage = () => {
                 </Button>
               </Link>
             </Box>
-
           </Box>
         </Grid>
 
         <Grid item xs={12}>
           <List sx={{ width: '100%', p: 0 }}>
-            {menuItems.map((text, index) => (
+            {menuItems.map((item, index) => (
               <ListItem
                 key={index}
                 disablePadding
-                sx={{
-                  width: '100%',
-                  px: 0,
-                }}
+                sx={{ width: '100%', px: 0 }}
               >
                 <ListItemButton
                   sx={{
                     width: '100%',
                     px: 3,
                     py: 1,
-                    '&:hover': {
-                      backgroundColor: '#F1E6DD',
-                    },
-                    '&:hover .MuiListItemText-primary': {
-                      color: 'black',
-                    },
+                    '&:hover': { backgroundColor: '#F1E6DD' },
+                    '&:hover .MuiListItemText-primary': { color: 'black' },
                   }}
                 >
+                  {item.icon && (
+                    <Box sx={{ minWidth: 30, color: 'black', mr: 2 }}>
+                      {item.icon}
+                    </Box>
+                  )}
                   <ListItemText
-                    primary={text}
+                    primary={item.text}
                     slotProps={{
                       primary: {
                         sx: {
