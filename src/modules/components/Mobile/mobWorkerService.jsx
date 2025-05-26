@@ -7,7 +7,7 @@ import EventIcon from '@mui/icons-material/Event';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
@@ -20,7 +20,7 @@ const MobWorkerservice = () => {
     <Grid>
       <Box sx={{ px: 1 }}>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', p: 2 }}>My Services</Typography>
-        <Accordion sx={{ borderRadius: 1, border: '1px solid brown', overflow: 'hidden', mb: 1 }}>
+        <Accordion sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -69,20 +69,69 @@ const MobWorkerservice = () => {
             </Box>
           </AccordionDetails>
         </Accordion>
+        <Accordion sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexDirection: 'row' }}>
+              <Avatar
+                src={serviceImg}
+                alt="Worker"
+                sx={{ width: 40, height: 40 }}
+              />
+              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+
+                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '550' }}>Electrician </Typography>
+                <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your plumping needs </Typography>
+              </Box>
+
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <AccessTimeIcon color="primary" />
+                  <Typography variant="subtitle1" fontWeight="bold">Base rate</Typography>
+                </Box>
+                <Typography variant="subtitle1" color="text.secondary">300 rs / Hour</Typography>
+              </Box>
+
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Brightness3Icon sx={{ color: '#1976d2' }} />
+                  <Typography variant="subtitle1" fontWeight="bold">Evening rate</Typography>
+                </Box>
+                <Typography variant="subtitle1" color="text.secondary">200 rs / Hour</Typography>
+              </Box>
+
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <EventIcon color="success" />
+                  <Typography variant="subtitle1" fontWeight="bold">Holiday rate</Typography>
+                </Box>
+                <Typography variant="subtitle1" color="text.secondary">250 rs / Hour</Typography>
+              </Box>
+              <Typography sx={{ fontSize: '13px', color: 'grey', mt: 2 }}>" Final pricing will be determined based on the scope of additional work and time required."</Typography>
+            </Box>
+          </AccordionDetails>
+        </Accordion>
       </Box>
 
       <Box>
-        <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
+        {/* <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center',my:2 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
           <Calendar
             onChange={setDate}
             value={date}
           />
-        </Box>
+        </Box> */}
 
 
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center',mt:3 }}>
           <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }}>
             Book now
           </Button>

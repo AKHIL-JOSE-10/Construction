@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Grid,
   Typography,
@@ -9,6 +9,10 @@ import {
   ListItemButton,
   ListItemText,
   Divider,
+  Dialog,
+  DialogTitle,
+  DialogActions,
+  Button
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -26,6 +30,16 @@ import HelpIcon from '@mui/icons-material/Help';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const MobProfilePage = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleLogoutClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box
       sx={{
@@ -69,7 +83,7 @@ const MobProfilePage = () => {
         <Grid item xs={12}>
           <List sx={{ width: '100%', p: 0 }}>
 
-            {/* Account Info*/}
+            {/* Account Info */}
             <ListItem disablePadding>
               <ListItemButton
                 component={Link}
@@ -193,7 +207,11 @@ const MobProfilePage = () => {
 
             {/* Settings */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1, mt: 1.5 }}>
+              <ListItemButton
+                component={Link}
+                to="/mobile-settings"
+                sx={{ px: 3, py: 1, mt: 1.5 }}
+              >
                 <SettingsIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Settings"
@@ -225,7 +243,7 @@ const MobProfilePage = () => {
 
             {/* Logout */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1 }}>
+              <ListItemButton sx={{ px: 3, py: 1 }} onClick={handleLogoutClick}>
                 <LogoutIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Logout"
@@ -246,6 +264,15 @@ const MobProfilePage = () => {
       </Grid>
 
       <MobileBottomTab activePage="profile" />
+
+      {/* Logout Confirmation Dialog */}
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Are you sure you want to logout ?</DialogTitle>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">Cancel</Button>
+          <Button onClick={handleClose} color="primary" autoFocus>OK</Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

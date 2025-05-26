@@ -31,7 +31,6 @@ const MobNotificationTopTab = () => {
             {/* Top Tabs */}
             <Box sx={{
                 mt:1,
-                mb:-100,
                 position: 'fixed',
                 zIndex: 1000,
                 width: '100%',
@@ -60,7 +59,7 @@ const MobNotificationTopTab = () => {
             </Box>
 
             {/* Render Component Below Tabs */}
-            <Grid sx={{ mt: 10, width: '100%' }}>
+            <Grid sx={{ mt: 6, width: '100%' }}>
                 {renderComponent()}
             </Grid>
         </Grid>

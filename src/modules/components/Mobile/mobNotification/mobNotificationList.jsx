@@ -4,7 +4,7 @@ const MobNotificationList = ({ img, heading, subheading, datetime }) => {
   return (
     <Box >
       <List disablePadding >
-        <ListItem  sx={{ width: '100%',  borderBottom:'0.5px solid #e0e0e0', py:2 }}>
+        <ListItem  sx={{ width: '100%',  borderBottom:'0.5px solid #e0e0e0', pb:2 }}>
           <ListItemAvatar>
             <Avatar sx={{ width: 28, height: 38, bgcolor: 'transparent' }}>
               {img}
