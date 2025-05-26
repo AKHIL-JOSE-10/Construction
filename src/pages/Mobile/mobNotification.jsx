@@ -6,6 +6,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CancelIcon from '@mui/icons-material/Cancel';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
 const MobNotification = () => {
     return (
@@ -25,27 +26,45 @@ const MobNotification = () => {
 
                 <Box sx={{ mt: 3,px:0 ,width:'100%' }}>
                     <MobNotificationList
-                        img={<CheckCircleIcon color="success" />}
-                        heading="Order Confirmed"
-                        subheading="your order #6754 has been confirmed"
+                        img={<NotificationsNoneIcon sx={{ color: '#BFA088' }} />}
+                        heading="Booking Confirmed"
+                        subheading="Jane has confirmed your bokking request"
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
-                        img={<LocalShippingIcon color="primary" />}
-                        heading="Order Delivered"
-                        subheading="your order #6754 has been delivered"
+                        img={<NotificationsNoneIcon sx={{ color: '#BFA088' }} />}
+                        heading="Booking Rejected"
+                        subheading="Jane has rejected your bokking request"
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
-                        img={<CancelIcon color="error" />}
-                        heading="Order Rejected"
-                        subheading="your order #6754 has been rejected"
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2', opacity: 0.8 }} />}
+                        heading="Work Completed"
+                        subheading="“The job by Jane has been completed. Please review."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
-                        img={<AccessTimeIcon color="warning" />}
-                        heading="Order Pick Up"
-                        subheading="your order #6754 has been picked up"
+                        img={<NotificationsNoneIcon sx={{ color: '#333333' }} />}
+                        heading="* Cancelled by User"
+                        subheading="You cancelled the booking with Elanor"
+                        datetime="12-03-2025 | 9:00 am"
+                    />
+                     <MobNotificationList
+                       img={<NotificationsNoneIcon sx={{ color: '#5E6C84' }} />}
+                        heading="Cancelled by Worker"
+                        subheading="Jane cancelled your booking request."
+                        datetime="12-03-2025 | 9:00 am"
+                    />
+                     <MobNotificationList
+                        img={<NotificationsNoneIcon sx={{ color: '#777777' }} />}
+                        heading="Payment Requested"
+                        subheading="Jane has requested payment for the completed work."
+                        datetime="12-03-2025 | 9:00 am"
+                    />
+                     <MobNotificationList
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
+                        heading="Payment Completed"
+                        subheading="You have completed the payment for booking #6754"
                         datetime="12-03-2025 | 9:00 am"
                     />
                 </Box>
