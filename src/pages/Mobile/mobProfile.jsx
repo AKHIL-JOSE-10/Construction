@@ -75,7 +75,7 @@ const MobProfilePage = () => {
                 janecooper@gmail.com
               </Typography>
               <Link to="/editInfo" style={{ textDecoration: 'none' }}>
-                <Button variant="contained" color="primary">
+                <Button size='small' variant="contained" color="primary">
                   Edit Profile
                 </Button>
               </Link>
