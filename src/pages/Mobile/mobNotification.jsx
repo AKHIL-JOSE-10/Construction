@@ -2,7 +2,6 @@ import { Grid, Box, Tab, Tabs } from '@mui/material';
 import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
 import MobHeading from "../../modules/components/Mobile/mobileHeading";
 import MobNotificationList from '../../modules/components/Mobile/mobNotificationList';
-
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -14,7 +13,7 @@ const MobNotification = () => {
 
             <MobHeading Heading='Notification' />
 
-            <Grid sx={{mt:2,width:"100%"}}>
+            <Grid sx={{mt:5,width:"100%"}}>
 
                 <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'center', mt: 2 }}>
                     <Tabs aria-label="booking tabs" TabIndicatorProps={{ style: { backgroundColor: '#BFA088' } }}>

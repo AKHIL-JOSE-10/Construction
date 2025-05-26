@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Grid,
   Typography,
@@ -7,13 +8,15 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  Button
+  Button,
+  Divider,
 } from '@mui/material';
+
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MobHeading from '../../modules/components/Mobile/mobileHeading';
 import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
 import { Link } from 'react-router-dom';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import StarIcon from '@mui/icons-material/Star';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import PaymentIcon from '@mui/icons-material/Payment';
@@ -25,19 +28,6 @@ import HelpIcon from '@mui/icons-material/Help';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const MobProfilePage = () => {
-  const menuItems = [
-    { text: 'Account info', icon: <AccountCircleIcon /> },
-    { text: 'Premium Subscription', icon: <StarIcon /> },
-    { text: 'Saved Workers', icon: <BookmarkIcon /> },
-    { text: 'Payment History', icon: <PaymentIcon /> },
-    { text: 'Refer a Friend', icon: <GroupAddIcon /> },
-    { text: 'Terms and Condition', icon: <GavelIcon /> },
-    { text: 'Privacy Policy', icon: <PrivacyTipIcon /> },
-    { text: 'Settings', icon: <SettingsIcon /> },
-    { text: 'Help & Support', icon: <HelpIcon /> },
-    { text: 'Logout', icon: <LogoutIcon /> },
-  ];
-
   return (
     <Box
       sx={{
@@ -46,10 +36,10 @@ const MobProfilePage = () => {
         overflowX: 'hidden',
         boxSizing: 'border-box',
         bgcolor: '#fff',
-        mb:10
+        mb: 10,
       }}
     >
-      <Grid container direction="column" sx={{ width: '100%' }}>
+      <Grid container direction="column">
         <Grid item xs={12}>
           <MobHeading Heading="Profile" />
 
@@ -59,11 +49,11 @@ const MobProfilePage = () => {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              mb:2
+              mb: 2,
             }}
           >
             <Avatar
-              sx={{ height: 100, width: 100, mx:2, mb: 2 }}
+              sx={{ height: 100, width: 100, mx: 2, mb: 2 }}
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
@@ -75,7 +65,7 @@ const MobProfilePage = () => {
                 janecooper@gmail.com
               </Typography>
               <Link to="/editInfo" style={{ textDecoration: 'none' }}>
-                <Button size='small' variant="contained" color="primary">
+                <Button size="small" variant="contained" color="primary">
                   Edit Profile
                 </Button>
               </Link>
@@ -85,52 +75,163 @@ const MobProfilePage = () => {
 
         <Grid item xs={12}>
           <List sx={{ width: '100%', p: 0 }}>
-            {menuItems.map((item, index) => (
-              <ListItem
-                key={index}
-                disablePadding
-                sx={{ width: '100%', px: 0 }}
-              >
-                <ListItemButton
-                  sx={{
-                    width: '100%',
-                    px: 3,
-                    py: 1,
-                    '&:hover': { backgroundColor: '#F1E6DD' },
-                    '&:hover .MuiListItemText-primary': { color: 'black' },
+            {/* Saved Workers */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1 }}>
+                <BookmarkIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Saved Workers"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
                   }}
-                >
-                  {item.icon && (
-                    <Box sx={{ minWidth: 30,  color: '#757575', mr: 2 }}>
-                      {item.icon}
-                    </Box>
-                  )}
-                  <ListItemText
-                    primary={item.text}
-                    slotProps={{
-                      primary: {
-                        sx: {
-                          color: 'black',
-                          fontSize: '16px',
-                          fontWeight: '500',
-                        },
-                        variant: 'body2',
-                      },
-                    }}
-                  />
-                  <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Payment History */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1 }}>
+                <PaymentIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Payment History"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Premium Subscription */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1 }}>
+                <StarIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Premium Subscription"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Refer a Friend */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1, mb:1.5 }}>
+                <GroupAddIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Refer a Friend"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Divider after Refer a Friend */}
+            <Divider sx={{ mx: 3, borderColor: '#e0e0e0' }} />
+
+            {/* Terms and Condition */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1 ,mt:1.5}}>
+                <GavelIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Terms and Condition"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Privacy Policy */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1, mb:1.5 }}>
+                <PrivacyTipIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Privacy Policy"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Divider after Privacy Policy */}
+            <Divider sx={{ mx: 3, borderColor: '#e0e0e0' }} />
+
+            {/* Settings */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1, mt:1.5 }}>
+                <SettingsIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Settings"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Help & Support */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1 }}>
+                <HelpIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Help & Support"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Logout */}
+            <ListItem disablePadding>
+              <ListItemButton sx={{ px: 3, py: 1 }}>
+                <LogoutIcon sx={{ mr: 2, color: '#757575' }} />
+                <ListItemText
+                  primary="Logout"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Final Divider after Logout */}
+            <Divider sx={{ mx: 3, borderColor: '#e0e0e0' }} />
           </List>
-
-          <Box sx={{ px: 2 }}>
-            <Box sx={{ width: '100%', height: '0.9px', bgcolor: '#ccc' }} />
-          </Box>
         </Grid>
-
-        <MobileBottomTab />
       </Grid>
+
+      <MobileBottomTab activePage="profile" />
     </Box>
   );
 };
