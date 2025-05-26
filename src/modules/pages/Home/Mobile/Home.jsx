@@ -176,9 +176,9 @@ export default function Home() {
           </Grid>
         </Grid>
 
-        <Grid container size={12}>
+        <Grid container size={12} sx={{mt:1}}>
           <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
-            <Grid flexGrow={1}>
+            <Grid flexGrow={1}> 
               <Typography sx={{ ...textDecoration.headingPrimaryDark, mb:2 }}>
                 Popular Service on Archisans
               </Typography>
@@ -283,7 +283,7 @@ export default function Home() {
           direction={"column"}
           p={1}
           pt={4}
-          sx={{ overflow: "hidden" }}
+          sx={{ overflow: "hidden", mt:1 }}
         >
           <Grid container size={12} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
