@@ -30,7 +30,7 @@ const MobNotificationTopTab = () => {
 
             {/* Top Tabs */}
             <Box sx={{
-                mt:1,
+                pt:0.8,
                 position: 'fixed',
                 zIndex: 1000,
                 width: '100%',
