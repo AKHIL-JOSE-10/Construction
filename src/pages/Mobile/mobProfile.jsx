@@ -83,7 +83,7 @@ const MobProfilePage = () => {
                   primary="Saved Workers"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -99,7 +99,7 @@ const MobProfilePage = () => {
                   primary="Payment History"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -115,7 +115,7 @@ const MobProfilePage = () => {
                   primary="Premium Subscription"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -131,7 +131,7 @@ const MobProfilePage = () => {
                   primary="Refer a Friend"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -150,7 +150,7 @@ const MobProfilePage = () => {
                   primary="Terms and Condition"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -166,7 +166,7 @@ const MobProfilePage = () => {
                   primary="Privacy Policy"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -185,7 +185,7 @@ const MobProfilePage = () => {
                   primary="Settings"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -201,7 +201,7 @@ const MobProfilePage = () => {
                   primary="Help & Support"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
@@ -217,7 +217,7 @@ const MobProfilePage = () => {
                   primary="Logout"
                   slotProps={{
                     primary: {
-                      sx: { color: 'black', fontSize: '16px', fontWeight: 500 },
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
                     },
                   }}
                 />
