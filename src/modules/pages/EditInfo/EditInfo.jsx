@@ -26,7 +26,7 @@ export default function EditInfo() {
       pb={10}
     >
 
-      <MobHeading Heading="Edit Profile"/>
+      <MobHeading Heading="Account Info"/>
 
       {/*Avatar with name and edit button*/}
       <Grid

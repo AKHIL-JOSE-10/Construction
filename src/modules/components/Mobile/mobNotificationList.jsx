@@ -2,19 +2,19 @@ import { Box, List, ListItem, ListItemAvatar, Avatar, Typography } from '@mui/ma
 
 const MobNotificationList = ({ img, heading, subheading, datetime }) => {
   return (
-    <Box sx={{display: 'flex', justifyContent: 'space-between',mt:2 }}>
-      <List >
-        <ListItem >
+    <Box >
+      <List disablePadding >
+        <ListItem  sx={{ width: '100%',  borderBottom:'0.5px solid #e0e0e0', py:2 }}>
           <ListItemAvatar>
             <Avatar sx={{ width: 38, height: 38, bgcolor: 'transparent' }}>
               {img}
             </Avatar>
           </ListItemAvatar>
-          <Box>
-            <Box sx={{ width: '115%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <Box sx={{width:'100%'}}>
+            <Box sx={{  display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 
               <Typography variant="body1" sx={{ fontWeight: 'bold', }}>
-                {heading}{' '}
+                {heading}
               </Typography>
 
               <Typography

@@ -23,7 +23,7 @@ const MobNotification = () => {
                     </Tabs>
                 </Box>
 
-                <Box sx={{ mt: 3,px:0 }}>
+                <Box sx={{ mt: 3,px:0 ,width:'100%' }}>
                     <MobNotificationList
                         img={<CheckCircleIcon color="success" />}
                         heading="Order Confirmed"
