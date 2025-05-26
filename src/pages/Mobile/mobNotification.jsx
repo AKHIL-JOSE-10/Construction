@@ -14,27 +14,39 @@ const MobNotification = () => {
 
             <MobHeading Heading='Notifications' />
 
-            <Grid sx={{mt:5,width:"100%"}}>
+            <Grid sx={{ mt: 5, width: "100%" }}>
+                <Grid sx={{mb:8}}>
+                    <Box sx={{
+                        position: 'fixed',
+                        top: '46px',
+                        zIndex: 1000,
+                        width: '100%',
+                        backgroundColor: '#fff',
+                        borderBottom: 1,
+                        borderColor: 'divider',
+                        display: 'flex',
+                        justifyContent: 'center',
+                    }}>
+                        <Tabs aria-label="booking tabs" TabIndicatorProps={{ style: { backgroundColor: '#BFA088' } }}>
+                            <Tab label="All" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 3 }} />
+                            <Tab label="Bookings" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 3 }} />
+                            <Tab label="System" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none' }} />
+                        </Tabs>
+                    </Box>
+                </Grid>
 
-                <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex', justifyContent: 'center', mt: 2 }}>
-                    <Tabs aria-label="booking tabs" TabIndicatorProps={{ style: { backgroundColor: '#BFA088' } }}>
-                        <Tab label="All" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 3 }} />
-                        <Tab label="Bookings" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none', mr: 3 }} />
-                        <Tab label="System" sx={{ color: '#777777', fontSize: '1rem', textTransform: 'none' }} />
-                    </Tabs>
-                </Box>
 
-                <Box sx={{ mt:3 ,mb:10 ,px:0 ,width:'100%' }}>
+                <Box sx={{ mt: 3, mb: 10, px: 0, width: '100%' }}>
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Confirmed"
-                        subheading="Jane has confirmed your bokking request."
+                        subheading="Jane has confirmed your booking request."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Booking Rejected"
-                        subheading="Jane has rejected your bokking request."
+                        subheading="Jane has rejected your booking request."
                         datetime="12-03-2025 | 9:00 am"
                     />
                     <MobNotificationList
@@ -49,19 +61,19 @@ const MobNotification = () => {
                         subheading="You cancelled the booking with Elanor."
                         datetime="12-03-2025 | 9:00 am"
                     />
-                     <MobNotificationList
-                       img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
+                    <MobNotificationList
+                        img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Cancelled by Worker"
                         subheading="Jane cancelled your booking request."
                         datetime="12-03-2025 | 9:00 am"
                     />
-                     <MobNotificationList
+                    <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Payment Requested"
                         subheading="Jane has requested payment for the completed work."
                         datetime="12-03-2025 | 9:00 am"
                     />
-                     <MobNotificationList
+                    <MobNotificationList
                         img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Payment Completed"
                         subheading="You have completed the payment for booking #6754."
