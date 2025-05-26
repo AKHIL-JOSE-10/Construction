@@ -50,7 +50,7 @@ const MobNotification = () => {
                         datetime="12-03-2025 | 9:00 am"
                     />
                      <MobNotificationList
-                       img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }}} />}
+                       img={<NotificationsNoneIcon sx={{ color: '#4A90E2' }} />}
                         heading="Cancelled by Worker"
                         subheading="Jane cancelled your booking request."
                         datetime="12-03-2025 | 9:00 am"
