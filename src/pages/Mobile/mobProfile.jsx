@@ -7,10 +7,12 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Button
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import MobHeading from '../../modules/components/Mobile/mobileHeading';
 import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
+import { Link } from 'react-router-dom';
 
 const MobProfilePage = () => {
   const menuItems = [
@@ -42,31 +44,33 @@ const MobProfilePage = () => {
 
           <Box
             sx={{
-              borderRadius:1.5,
-              bgcolor: '	#E8D6C5',
-              height: '95px',
               width: '100%',
               display: 'flex',
               flexDirection: 'row',
               pt: 2,
               alignItems: 'center',
-              justifyContent: 'space-between',
               mt: '40px',
             }}
           >
-            <Box sx={{ml:2}}>
-              <Typography variant="h5" sx={{ color: 'black', fontWeight: 'bold' }}>
-                Rehan
-              </Typography>
-              <Typography sx={{fontSize:'15px', color: 'black', pt: 1 }}>
-                rehan@gmail.com
-              </Typography>
-            </Box>
             <Avatar
-              sx={{ height: 60, width: 60, mr:2 }}
+              sx={{ height: 115, width: 115, mx: 3, mb: 2 }}
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
+            <Box sx={{ ml: 2, mb: 2 }}>
+              <Typography sx={{ color: 'black', fontSize: 23, fontWeight: 'bold' }}>
+                Jane Cooper
+              </Typography>
+              <Typography sx={{ fontSize: '15px', color: 'black', pb: 1, }}>
+                janecooper@gmail.com
+              </Typography>
+              <Link to="/editInfo" style={{ textDecoration: 'none' }}>
+                <Button variant="contained" color="primary">
+                  Edit Profile
+                </Button>
+              </Link>
+            </Box>
+
           </Box>
         </Grid>
 
@@ -85,7 +89,7 @@ const MobProfilePage = () => {
                   sx={{
                     width: '100%',
                     px: 3,
-                    py: 2,
+                    py: 1,
                     '&:hover': {
                       backgroundColor: '#F1E6DD',
                     },
@@ -100,8 +104,8 @@ const MobProfilePage = () => {
                       primary: {
                         sx: {
                           color: 'black',
-                          fontSize: '1rem',
-                          fontWeight: '500',
+                          fontSize: '1.1rem',
+                          fontWeight: '550',
                         },
                         variant: 'body2',
                       },

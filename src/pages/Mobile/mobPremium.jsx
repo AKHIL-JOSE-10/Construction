@@ -11,12 +11,14 @@ const MobPremium = () => {
                     alignItems: 'center',
                     bgcolor: '#f4f4f4',
                     textAlign: 'center',
-                    px: 2
+                    px: 2,
+                    flexDirection:'column'
                 }}
             >
+                <Typography variant='h4'>Premium Page</Typography>
                 <Typography
                     variant="h6"
-                    sx={{ color: '#555', fontWeight: 500 }}
+                    sx={{ color: '#555', fontWeight: 500,mt:2 }}
                 >
                     🚧 Work in Progress 🚧
                 </Typography>

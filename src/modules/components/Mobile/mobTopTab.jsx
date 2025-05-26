@@ -34,7 +34,7 @@ const MobTopTab = () => {
             </Box>
 
             {/* Filter Dropdown */}
-            <Grid container sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', mt: 2, }}>
+            <Grid container sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', mt: 10,mb:-1.5 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column' , mr: 1,mt:5}}>
                     <FormControl sx={{ minWidth: 80 }} size="small">
                         <InputLabel id="filter-label" sx={{ fontSize: 14 }}>Filter</InputLabel>
@@ -53,7 +53,7 @@ const MobTopTab = () => {
             </Grid>
 
             {/* Booking Card Component */}
-            <Box sx={{ mt: 3,mb:8 }}>
+            <Box sx={{ mt: 3,mb:1 }}>
                 <Mobbookingcard status={getStatus()} />
                 <Mobbookingcard status={getStatus()} />
                 <Mobbookingcard status={getStatus()} />
