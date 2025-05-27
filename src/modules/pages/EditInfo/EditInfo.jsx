@@ -74,15 +74,15 @@ export default function EditInfo() {
       </Grid>
 
       {/* Contents after Avatar and name */}
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={3}>
         <Typography sx={{ fontSize: "16px" }}>Phone Number</Typography>
         <Input
           disabled={edit}
           value={"+91 1234567899"}
-          sx={{ fontSize: "13px" }}
+          sx={{ fontSize: "14px" }}
         />
       </Grid>
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={3}>
         <Typography sx={{ fontSize: "16px" }}>Email</Typography>
         <Input
           disabled={edit}
@@ -91,7 +91,7 @@ export default function EditInfo() {
         />
       </Grid>
 
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={3}>
         <Box sx={{display:'flex',flexDirection:'row'}}>
         <Typography sx={{ fontSize: "16px",mr:1 }}>Date of Birth</Typography> 
         <Typography variant="body2">(optional)</Typography>
@@ -103,7 +103,7 @@ export default function EditInfo() {
           sx={{ fontSize: "13px", paddingTop: "8px" }}
         />
       </Grid>
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={3}>
         <Typography sx={{ fontSize: "16px" }}>Address</Typography>
         <Grid container size={12} spacing={4}>
           <Grid size={4}>

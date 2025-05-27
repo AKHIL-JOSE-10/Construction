@@ -86,14 +86,17 @@ export default function Home() {
             justifyContent={"space-around"}
           >
             <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
-              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "20px", cursor: 'pointer' }} />
+              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "22px", cursor: 'pointer' }} />
             </Link>
-            <Avatar
-              src={"https://randomuser.me/api/portraits/women/79.jpg"}
-              sx={{ width: "30px", height: "30px" }}
-            >
-              J
-            </Avatar>
+
+            <Link to="/editInfo" style={{ color: 'inherit' }}>
+              <Avatar
+                src={"https://randomuser.me/api/portraits/women/79.jpg"}
+                sx={{ width: "35px", height: "35px" }}
+              >
+              </Avatar>
+            </Link>
+
           </Grid>
         </Grid>
         {/* Search bar container */}
