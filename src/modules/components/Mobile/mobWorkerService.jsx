@@ -126,33 +126,32 @@ const MobWorkerservice = () => {
       <Box>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
 
-       <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-  <LocalizationProvider dateAdapter={AdapterDayjs}>
-    <Paper
-      elevation={3}
-      sx={{
-        borderRadius: 2,
-        border: '1px solid #ccc',
-        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
-        p: 1,
-        px: 3,
-      }}
-    >
-      <StaticDatePicker
-        orientation="portrait"
-        openTo="day"
-        value={date}
-        onChange={(newValue) => setDate(newValue)}
-        slotProps={{
-          actionBar: { actions: [] },
-          toolbar: {
-            toolbarTitle: 'Free Slot : Evening',
-          },
-        }}
-      />
-    </Paper>
-  </LocalizationProvider>
-</Box>
+        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Paper
+              elevation={3}
+              sx={{
+                borderRadius: 2,
+                border: '1px solid #ccc',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
+                p: 1,
+              }}
+            >
+              <StaticDatePicker
+                orientation="portrait"
+                openTo="day"
+                value={date}
+                onChange={(newValue) => setDate(newValue)}
+                slotProps={{
+                  actionBar: { actions: [] },
+                  toolbar: {
+                    toolbarTitle: 'Free Slot : Evening',
+                  },
+                }}
+              />
+            </Paper>
+          </LocalizationProvider>
+        </Box>
 
 
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', mt: 3 }}>
