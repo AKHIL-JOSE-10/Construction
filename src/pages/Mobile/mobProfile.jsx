@@ -69,7 +69,7 @@ const MobProfilePage = () => {
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
-            <Box sx={{ my: 2 }}>
+            <Box sx={{ mb: 2 }}>
               <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550' }}>
                 Jane Cooper
               </Typography>
