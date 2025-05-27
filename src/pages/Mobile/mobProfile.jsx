@@ -54,35 +54,52 @@ const MobProfilePage = () => {
       <Grid container direction="column">
         <Grid item xs={12}>
           <MobHeading Heading="Profile" />
+<Box
+  sx={{
+    width: '100%',
+    px: 2, // horizontal padding
+    mb: 1,
+  }}
+>
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+       // bottom shadow
+      pb: 1.5,
+    }}
+  >
+    <Avatar
+      sx={{ height: 80, width: 80, mr: 2, ml: 0.5 }}
+      src="https://randomuser.me/api/portraits/women/79.jpg"
+      alt="Jane"
+    />
+    <Box>
+      <Typography sx={{ color: 'black', fontSize: 20, fontWeight: 550, mt: 1.5 }}>
+        Jane Cooper
+      </Typography>
+      <Typography sx={{ fontSize: '14px', color: 'grey', pb: 0.5, }}>
+        janecooper@gmail.com
+      </Typography>
+      <Typography sx={{ fontSize: '13px', color: 'grey', pb: 1, }}>
+        Mob:9736458763
+      </Typography>
+    </Box>
+  </Box>
 
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              mb: 1,
-              justifyContent:'space-between'
-            }}
-          >
+  {/* This border line has margin on left and right (not full width) */}
+  <Box
+    sx={{
+      boxShadow: '0 4px 6px -4px rgba(0, 0, 0, 0.4)',
+      ml: 0.7,
+      mr:4.3,
+      pb:1.5,
+      mt:-2
+    }}
+  />
+</Box>
 
-            <Box sx={{ mb: 2, ml:3.5 }}>
-              <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550',mt:1.5 ,display:'inline-flex'}}>
-                Jane Cooper
-              </Typography>
-              <Typography sx={{ fontSize: '12px', color: 'grey', pb: 1 }}>
-                janecooper@gmail.com
-              </Typography>
-              <Typography sx={{ fontSize: '12px', color: 'grey', pb: 1 }}>
-                9736458763
-              </Typography>              
-            </Box>
-                        <Avatar
-              sx={{ height: 80, width: 80, mr: 2, ml: 2.5, mb: 1 }}
-              src="https://randomuser.me/api/portraits/women/79.jpg"
-              alt="Jane"
-            />
-          </Box>
         </Grid>
 
         <Grid item xs={12}>
