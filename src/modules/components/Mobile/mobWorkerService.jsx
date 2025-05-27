@@ -8,19 +8,20 @@ import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import dayjs from 'dayjs';
 
 
 const MobWorkerservice = () => {
 
-  const [date, setDate] = useState(new Date());
+const [date, setDate] = useState(dayjs());
 
   return (
     <Grid>
       <Box sx={{ px: 1 }}>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', p: 2 }}>My Services</Typography>
-        <Accordion sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
+        <Accordion
+          defaultExpanded
+          sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -69,7 +70,9 @@ const MobWorkerservice = () => {
             </Box>
           </AccordionDetails>
         </Accordion>
-        <Accordion sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
+        <Accordion
+          defaultExpanded
+          sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -121,17 +124,21 @@ const MobWorkerservice = () => {
       </Box>
 
       <Box>
-        {/* <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
+        <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 4, ml: 2 }}>Availability</Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', my: 2 }}>
-          <Calendar
-            onChange={setDate}
-            value={date}
-          />
-        </Box> */}
+        <Box sx={{ mt: 2 }}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <StaticDatePicker
+              orientation="portrait"
+              openTo="day"
+              value={date}
+              onChange={(newValue) => setDate(newValue)}
+            />
+          </LocalizationProvider>
+        </Box>
 
 
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center',mt:3 }}>
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', mt: 3 }}>
           <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }}>
             Book now
           </Button>
