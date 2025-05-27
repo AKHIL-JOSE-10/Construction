@@ -10,13 +10,15 @@ import {
     DialogContent,
     DialogActions,
     Rating,
-    IconButton
+    IconButton,
+    TextField
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 const MobMyBookingsCompleted = () => {
     const [open, setOpen] = useState(false);
     const [rating, setRating] = useState(0);
+    const [comment, setComment] = useState("");
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -24,11 +26,13 @@ const MobMyBookingsCompleted = () => {
 
     const handleClose = () => {
         setOpen(false);
-        setRating(0); // Reset rating on close
+        setRating(0);
+        setComment("");
     };
 
     const handleRate = () => {
         console.log("Rated:", rating);
+        console.log("Comment:", comment);
         handleClose();
     };
 
@@ -124,6 +128,22 @@ const MobMyBookingsCompleted = () => {
                         <Typography sx={{ mt: 1, fontStyle: 'italic', color: '#888' }}>
                             {getRatingLabel(rating)}
                         </Typography>
+
+                        <TextField
+                            fullWidth
+                            multiline
+                            rows={3}
+                            value={comment}
+                            onChange={(e) => setComment(e.target.value)}
+                            placeholder="Write your feedback here..."
+                            variant="outlined"
+                            sx={{
+                                mt: 2,
+                                '& .MuiOutlinedInput-root': {
+                                    borderRadius: '10px',
+                                },
+                            }}
+                        />
                     </DialogContent>
 
                     <DialogActions sx={{ justifyContent: 'center', mt: 2 }}>
