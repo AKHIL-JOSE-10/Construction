@@ -62,12 +62,22 @@ const MobProfilePage = () => {
               mt: -1
             }}
           >
+                        <Box
+              sx={{
+                boxShadow: '0 4px 6px -4px rgba(0, 0, 0, 0.3)',
+                ml: -0.5,
+                mr: 3,
+                pb: 1.5,
+                mt: -1,
+              }}
+            />
             <Box
               sx={{
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
                 pb: 1.5,
+                mt:1
               }}
             >
               <Avatar
