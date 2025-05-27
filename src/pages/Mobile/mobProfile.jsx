@@ -70,12 +70,15 @@ const MobProfilePage = () => {
               alt="Jane"
             />
             <Box sx={{ mb: 2 }}>
-              <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550' }}>
+              <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550',mt:1.5 }}>
                 Jane Cooper
               </Typography>
-              <Typography sx={{ fontSize: '15px', color: 'black', pb: 1 }}>
+              <Typography sx={{ fontSize: '14px', color: 'black', pb: 1 }}>
                 janecooper@gmail.com
               </Typography>
+              <Typography sx={{ fontSize: '13px', color: 'black', pb: 1 }}>
+                Mob:9736458763
+              </Typography>              
             </Box>
           </Box>
         </Grid>

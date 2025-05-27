@@ -66,7 +66,7 @@ const MobSettings = () => {
             "Recieve Security Alerts",
             "Change Password",
           ].map((label, index) => (
-            <ListItem disablePadding sx={{ border:'0.5px solid #e0e0e0',}} key={index}>
+            <ListItem disablePadding sx={{ borderBottom:'0.5px solid #e0e0e0',}} key={index}>
               <ListItemButton sx={{py:2, }}>
                 <ListItemText
                   primary={label}
@@ -74,8 +74,8 @@ const MobSettings = () => {
                   slotProps={{
                     primary: {
                       sx: {
-                        fontSize: '1rem',
-                        fontWeight: 'bold',
+                        fontSize: '17px',
+                         fontWeight: 540,
                         color: 'black', // Primary text color
                       },
                       variant: "body2",

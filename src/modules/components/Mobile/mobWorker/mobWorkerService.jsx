@@ -1,4 +1,4 @@
-import { Grid, Typography, Avatar, Box, Button, Accordion, AccordionSummary, AccordionDetails, Paper } from '@mui/material';
+import { Grid, Typography, Avatar, Box, Button, Accordion, AccordionSummary, AccordionDetails, Paper ,GlobalStyles } from '@mui/material';
 import serviceImg from '../../../../assets/serviceImg.png'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -126,6 +126,16 @@ const MobWorkerservice = () => {
 
         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
+            {/* Global style override to hide the toolbar */}
+            <GlobalStyles styles={{
+              '.MuiPickersToolbar-root': {
+                display: 'none !important',
+              },
+              '.MuiPickersCalendarHeader-root': {
+                paddingTop: '0px', // adjust spacing if needed
+              },
+            }} />
+
             <Paper
               elevation={3}
               sx={{
@@ -142,13 +152,6 @@ const MobWorkerservice = () => {
                 onChange={(newValue) => setDate(newValue)}
                 slotProps={{
                   actionBar: { actions: [] },
-                  toolbar: {
-                    sx: {
-                      '& .MuiPickersToolbar-title': {
-                        display: 'none',  // hide the "Select date" text
-                      },
-                    },
-                  },
                 }}
               />
             </Paper>

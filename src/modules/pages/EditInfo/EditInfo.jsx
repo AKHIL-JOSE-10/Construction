@@ -63,8 +63,8 @@ export default function EditInfo() {
         </Grid>
 
         <Grid container direction={"column"} size={7.5}>
-          <Typography sx={{ fontSize: "15px" }}>Name</Typography>
-          <Input disabled={edit} value={"Jane"} sx={{ fontSize: "12px" }} />
+          <Typography sx={{ fontSize: "16px" }}>Name</Typography>
+          <Input disabled={edit} value={"Jane"} sx={{ fontSize: "13px" }} />
         </Grid>
         <Box sx={{ position: "absolute", top: 0, right: 14 }}>
           <Button variant="outlined" color="black" sx={{ height: "2em" }}>
@@ -74,82 +74,82 @@ export default function EditInfo() {
       </Grid>
 
       {/* Contents after Avatar and name */}
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
-        <Typography sx={{ fontSize: "15px" }}>Phone Number</Typography>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+        <Typography sx={{ fontSize: "16px" }}>Phone Number</Typography>
         <Input
           disabled={edit}
           value={"+91 1234567899"}
-          sx={{ fontSize: "8px" }}
+          sx={{ fontSize: "13px" }}
         />
       </Grid>
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
-        <Typography sx={{ fontSize: "15px" }}>Email</Typography>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+        <Typography sx={{ fontSize: "16px" }}>Email</Typography>
         <Input
           disabled={edit}
           value={"jane@example.com"}
-          sx={{ fontSize: "12px", paddingTop: "8px" }}
+          sx={{ fontSize: "13px", paddingTop: "8px" }}
         />
       </Grid>
 
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
         <Box sx={{display:'flex',flexDirection:'row'}}>
-        <Typography sx={{ fontSize: "15px",mr:1 }}>Date of Birth</Typography> 
+        <Typography sx={{ fontSize: "16px",mr:1 }}>Date of Birth</Typography> 
         <Typography variant="body2">(optional)</Typography>
         </Box>
 
         <Input
           disabled={edit}
           value={"10 January 1999"}
-          sx={{ fontSize: "12px", paddingTop: "8px" }}
+          sx={{ fontSize: "13px", paddingTop: "8px" }}
         />
       </Grid>
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={0}>
-        <Typography sx={{ fontSize: "15px" }}>Address</Typography>
+      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+        <Typography sx={{ fontSize: "16px" }}>Address</Typography>
         <Grid container size={12} spacing={4}>
           <Grid size={4}>
             <Input
               disabled={edit}
               placeholder={"House/Flat No"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
             <Input
               disabled={edit}
               placeholder={"City/Town"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
             <Input
               disabled={edit}
               placeholder={"Postal/Zip Code"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
           </Grid>
           <Grid size={4}>
             <Input
               disabled={edit}
               placeholder={"Street Name/Road"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
             <Input
               disabled={edit}
               placeholder={"District"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
             <Input
               disabled={edit}
               placeholder={"Country"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
           </Grid>
           <Grid size={4}>
             <Input
               disabled={edit}
               placeholder={"Landmark"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
             <Input
               disabled={edit}
               placeholder={"State/Province"}
-              sx={{ fontSize: "12px", paddingTop: "8px" }}
+              sx={{ fontSize: "13px", paddingTop: "8px" }}
             />
           </Grid>
         </Grid>
