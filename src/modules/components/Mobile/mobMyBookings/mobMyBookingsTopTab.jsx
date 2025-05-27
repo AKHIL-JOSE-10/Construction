@@ -1,0 +1,123 @@
+import { useState } from "react";
+import {
+  Box,
+  Tab,
+  Tabs,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Grid
+} from "@mui/material";
+import MobMyBookingsInProgress from "./mobMyBookingsInProgress";
+import MobMyBookingsCompleted from "./mobMyBookingsCompleted";
+import MobMyBookingsCancelled from "./mobMyBookingsCancelled";
+
+const MobMyBookingsTopTab = () => {
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const renderTabContent = () => {
+    switch (value) {
+      case 0:
+        return <MobMyBookingsInProgress />;
+      case 1:
+        return <MobMyBookingsCompleted />;
+      case 2:
+        return <MobMyBookingsCancelled />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <Box sx={{ width: "100%" }}>
+      {/* Tabs */}
+      <Box
+        sx={{
+          width: "100%",
+          position: "fixed",
+          top: "60px",
+          borderBottom: 1,
+          borderColor: "divider",
+          display: "flex",
+          justifyContent: "center",
+          bgcolor: "white",
+          zIndex: 1000
+        }}
+      >
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="booking tabs"
+          TabIndicatorProps={{ style: { backgroundColor: "#BFA088" } }}
+        >
+          <Tab
+            label="In progress"
+            sx={{
+              color: "#777777",
+              fontSize: "0.9rem",
+              textTransform: "none",
+              mr: 1
+            }}
+          />
+          <Tab
+            label="Completed"
+            sx={{
+              color: "#777777",
+              fontSize: "0.9rem",
+              textTransform: "none",
+              mr: 1
+            }}
+          />
+          <Tab
+            label="Cancelled"
+            sx={{
+              color: "#777777",
+              fontSize: "0.9rem",
+              textTransform: "none"
+            }}
+          />
+        </Tabs>
+      </Box>
+
+      {/* Filter Dropdown */}
+      <Grid
+        container
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+          mt: 10,
+          mb: -1.5
+        }}
+      >
+        <Box sx={{ display: "flex", flexDirection: "column", mr: 1, mt: 5 }}>
+          <FormControl sx={{ minWidth: 80 }} size="small">
+            <InputLabel id="filter-label" sx={{ fontSize: 14 }}>
+              Filter
+            </InputLabel>
+            <Select
+              labelId="filter-label"
+              id="filter-select"
+              label="Filter"
+              sx={{ borderRadius: 5, height: 36 }}
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+      </Grid>
+
+      {/* Booking Tab Content */}
+      <Box sx={{ mt: 3, mb: 1 }}>{renderTabContent()}</Box>
+    </Box>
+  );
+};
+
+export default MobMyBookingsTopTab;

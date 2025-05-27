@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MobBookingInfo from "./pages/Mobile/mobBookingInfo";
-import MobmyBookings from "./pages/Mobile/mobmyBookings";
+import MobMyBookings from "./pages/Mobile/mobmyBookings";
 import MobProfilePage from "./pages/Mobile/mobProfile";
 import MobSettings from "./pages/Mobile/mobSettings";
 import MobNotifications from "./pages/Mobile/mobNotifications";
@@ -27,7 +27,7 @@ function App() {
         <Route path="/mobile-signin" element={<MobSignin />} />
         <Route path="/mobile-signup" element={<MobSignup />} />
         <Route path="/mobile-profile" element={<MobProfilePage />} />
-        <Route path="/mobile-bookings" element={<MobmyBookings />} />
+        <Route path="/mobile-bookings" element={<MobMyBookings />} />
         <Route path="/mobile-booking-info" element={<MobBookingInfo />} />
         <Route path="/mobile-service-category" element={<MobServiceCategory />} />
         <Route path="/mobile-workerpage" element={<MobWorkerpage />} />

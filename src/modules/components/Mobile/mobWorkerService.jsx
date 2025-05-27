@@ -18,9 +18,8 @@ const MobWorkerservice = () => {
   return (
     <Grid>
       <Box sx={{ px: 1 }}>
-        <Typography sx={{ fontSize: '18px', fontWeight: '600', p: 2 }}>My Services</Typography>
+        <Typography sx={{ fontSize: '18px', fontWeight: '600', py: 2,ml:1 }}>My Services</Typography>
         <Accordion
-          defaultExpanded
           sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -71,7 +70,6 @@ const MobWorkerservice = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          defaultExpanded
           sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -144,9 +142,6 @@ const MobWorkerservice = () => {
                 onChange={(newValue) => setDate(newValue)}
                 slotProps={{
                   actionBar: { actions: [] },
-                  toolbar: {
-                    toolbarTitle: 'Free Slot : Evening',
-                  },
                 }}
               />
             </Paper>

@@ -176,10 +176,10 @@ export default function Home() {
           </Grid>
         </Grid>
 
-        <Grid container size={12} sx={{mt:1}}>
+        <Grid container size={12} sx={{ mt: 1 }}>
           <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
-            <Grid flexGrow={1}> 
-              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb:2 }}>
+            <Grid flexGrow={1}>
+              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
                 Popular Service on Archisans
               </Typography>
             </Grid>
@@ -283,11 +283,11 @@ export default function Home() {
           direction={"column"}
           p={1}
           pt={4}
-          sx={{ overflow: "hidden", mt:1 }}
+          sx={{ overflow: "hidden", mt: 1 }}
         >
           <Grid container size={12} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
-              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb:2 }}>
+              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
                 Top Workers Near You
               </Typography>
             </Grid>
@@ -403,7 +403,17 @@ export default function Home() {
           <Typography sx={{ color: "rgba(119, 119, 119, 1)" }}>
             Don't see what you are looking for?
           </Typography>
-          <Typography sx={{ color: "hsl(26, 29.10%, 56.30%)" }}>
+
+          <Typography
+            component={Link}
+            to="/mobile-service-category"
+            sx={{
+              color: "hsl(26, 29.10%, 56.30%)",
+              textDecoration: 'none',
+              cursor: 'pointer',
+              fontWeight: 500
+            }}
+          >
             View all services
           </Typography>
         </Grid>

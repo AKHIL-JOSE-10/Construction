@@ -19,7 +19,7 @@ const MobBookingInfo = () => {
 
                 <Grid>
                     <Typography sx={{ fontSize: '16px', fontWeight: '550', mb: 2 }}>Service Details</Typography>
-                    <Accordion sx={{ borderRadius: 1, border: '1px solid brown', overflow: 'hidden', mb: 1 }}>
+                    <Accordion defaultExpanded sx={{ borderRadius: 1, border: '1px solid brown', overflow: 'hidden', mb: 1 }}>
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
