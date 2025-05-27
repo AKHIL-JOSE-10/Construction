@@ -18,7 +18,7 @@ const MobWorkerservice = () => {
   return (
     <Grid>
       <Box sx={{ px: 1 }}>
-        <Typography sx={{ fontSize: '18px', fontWeight: '600', py: 2,ml:1 }}>My Services</Typography>
+        <Typography sx={{ fontSize: '18px', fontWeight: '600', py: 2, ml: 1 }}>My Services</Typography>
         <Accordion
           sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
@@ -142,6 +142,13 @@ const MobWorkerservice = () => {
                 onChange={(newValue) => setDate(newValue)}
                 slotProps={{
                   actionBar: { actions: [] },
+                  toolbar: {
+                    sx: {
+                      '& .MuiPickersToolbar-title': {
+                        display: 'none',  // hide the "Select date" text
+                      },
+                    },
+                  },
                 }}
               />
             </Paper>
