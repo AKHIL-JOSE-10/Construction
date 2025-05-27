@@ -91,11 +91,11 @@ const MobProfilePage = () => {
   {/* This border line has margin on left and right (not full width) */}
   <Box
     sx={{
-      boxShadow: '0 4px 6px -4px rgba(0, 0, 0, 0.4)',
-      ml: 0.7,
-      mr:4.3,
+      boxShadow: '0 4px 6px -4px rgba(0, 0, 0, 0.3)',
+      ml: -0.5,
+      mr:3,
       pb:1.5,
-      mt:-2
+      mt:-1,
     }}
   />
 </Box>
