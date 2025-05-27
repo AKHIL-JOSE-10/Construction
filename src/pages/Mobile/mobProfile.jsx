@@ -54,63 +54,63 @@ const MobProfilePage = () => {
       <Grid container direction="column">
         <Grid item xs={12}>
           <MobHeading Heading="Profile" />
-<Box
-  sx={{
-    width: '100%',
-    px: 2, // horizontal padding
-    mb: 1,
-  }}
->
-  <Box
-    sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-       // bottom shadow
-      pb: 1.5,
-    }}
-  >
-    <Avatar
-      sx={{ height: 80, width: 80, mr: 2, ml: 0.5 }}
-      src="https://randomuser.me/api/portraits/women/79.jpg"
-      alt="Jane"
-    />
-    <Box>
-      <Typography sx={{ color: 'black', fontSize: 20, fontWeight: 550, mt: 1.5 }}>
-        Jane Cooper
-      </Typography>
-      <Typography sx={{ fontSize: '14px', color: 'grey', pb: 0.5, }}>
-        janecooper@gmail.com
-      </Typography>
-      <Typography sx={{ fontSize: '13px', color: 'grey', pb: 1, }}>
-        Mob:9736458763
-      </Typography>
-    </Box>
-  </Box>
+          <Box
+            sx={{
+              width: '100%',
+              px: 2, // horizontal padding
+              mb: 1,
+              mt: -1
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                pb: 1.5,
+              }}
+            >
+              <Avatar
+                sx={{ height: 80, width: 80, mr: 2, ml: 0.5 }}
+                src="https://randomuser.me/api/portraits/women/79.jpg"
+                alt="Jane"
+              />
+              <Box>
+                <Typography sx={{ color: 'black', fontSize: 20, fontWeight: 550, mt: 1.5 }}>
+                  Jane Cooper
+                </Typography>
+                <Typography sx={{ fontSize: '14px', color: 'grey', pb: 0.5, }}>
+                  janecooper@gmail.com
+                </Typography>
+                <Typography sx={{ fontSize: '13px', color: 'grey', pb: 1, }}>
+                  +91 9736458763
+                </Typography>
+              </Box>
+            </Box>
 
-  {/* This border line has margin on left and right (not full width) */}
-  <Box
-    sx={{
-      boxShadow: '0 4px 6px -4px rgba(0, 0, 0, 0.3)',
-      ml: -0.5,
-      mr:3,
-      pb:1.5,
-      mt:-1,
-    }}
-  />
-</Box>
+            {/* This border line has margin on left and right (not full width) */}
+            <Box
+              sx={{
+                boxShadow: '0 4px 6px -4px rgba(0, 0, 0, 0.3)',
+                ml: -0.5,
+                mr: 3,
+                pb: 1.5,
+                mt: -1,
+              }}
+            />
+          </Box>
 
         </Grid>
 
         <Grid item xs={12}>
-          <List sx={{ width: '100%', p: 0 }}>
+          <List sx={{ width: '100%', p: 0 ,mt:1}}>
 
             {/* Account Info */}
             <ListItem disablePadding>
               <ListItemButton
                 component={Link}
                 to="/editInfo"
-                sx={{ px: 3, pb: 1 }}
+                sx={{ px: 2, pb: 1 }}
               >
                 <AccountCircleIcon sx={{ mr: 2, color: '#757575', fontSize: '23px' }} />
                 <ListItemText
@@ -127,7 +127,7 @@ const MobProfilePage = () => {
 
             {/* Saved Workers */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1 }}>
+              <ListItemButton sx={{ px: 2, py: 1 }}>
                 <BookmarkIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Saved Workers"
@@ -143,7 +143,7 @@ const MobProfilePage = () => {
 
             {/* Payment History */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1 }}>
+              <ListItemButton sx={{ px: 2, py: 1 }}>
                 <PaymentIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Payment History"
@@ -159,7 +159,7 @@ const MobProfilePage = () => {
 
             {/* Premium Subscription */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1 }}>
+              <ListItemButton sx={{ px: 2, py: 1 }}>
                 <StarIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Premium Subscription"
@@ -175,7 +175,7 @@ const MobProfilePage = () => {
 
             {/* Refer a Friend */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1, mb: 1.5 }}>
+              <ListItemButton sx={{ px: 2, py: 1, mb: 1.5 }}>
                 <GroupAddIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Refer a Friend"
@@ -194,7 +194,7 @@ const MobProfilePage = () => {
 
             {/* Terms and Condition */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1, mt: 1.5 }}>
+              <ListItemButton sx={{ px: 2, py: 1, mt: 1.5 }}>
                 <GavelIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Terms and Condition"
@@ -210,7 +210,7 @@ const MobProfilePage = () => {
 
             {/* Privacy Policy */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1, mb: 1.5 }}>
+              <ListItemButton sx={{ px: 2, py: 1, mb: 1.5 }}>
                 <PrivacyTipIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Privacy Policy"
@@ -232,7 +232,7 @@ const MobProfilePage = () => {
               <ListItemButton
                 component={Link}
                 to="/mobile-settings"
-                sx={{ px: 3, py: 1, mt: 1.5 }}
+                sx={{ px: 2, py: 1, mt: 1.5 }}
               >
                 <SettingsIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
@@ -249,7 +249,7 @@ const MobProfilePage = () => {
 
             {/* Help & Support */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1 }}>
+              <ListItemButton sx={{ px: 2, py: 1 }}>
                 <HelpIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Help & Support"
@@ -265,7 +265,7 @@ const MobProfilePage = () => {
 
             {/* Logout */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 3, py: 1 }} onClick={handleLogoutClick}>
+              <ListItemButton sx={{ px: 2, py: 1 }} onClick={handleLogoutClick}>
                 <LogoutIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Logout"
