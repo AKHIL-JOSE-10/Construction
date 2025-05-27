@@ -66,7 +66,7 @@ const MobProfilePage = () => {
             }}
           >
 
-            <Box sx={{ mb: 2, ml:2 }}>
+            <Box sx={{ mb: 2, ml:3.5 }}>
               <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550',mt:1.5 ,display:'inline-flex'}}>
                 Jane Cooper
               </Typography>
