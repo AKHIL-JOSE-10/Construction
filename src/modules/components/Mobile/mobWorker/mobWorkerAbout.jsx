@@ -1,7 +1,7 @@
 import { Grid, Typography, Box, } from '@mui/material';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CategoryIcon from '@mui/icons-material/Category';
-import googlemap from '../../../assets/googlemap.jpeg'
+import googlemap from '../../../../assets/googlemap.jpeg'
 
 const MobWorkerAbout = () => {
     return (

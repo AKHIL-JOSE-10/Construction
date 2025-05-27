@@ -256,9 +256,6 @@ const MobProfilePage = () => {
                 <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
               </ListItemButton>
             </ListItem>
-
-            {/* Final Divider after Logout */}
-            <Divider sx={{ mx: 3, borderColor: '#e0e0e0', mb: 2 }} />
           </List>
         </Grid>
       </Grid>

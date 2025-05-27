@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Grid, Typography, Box, Rating, Stack, FormControl, InputLabel, Select, MenuItem, } from '@mui/material';
-import WorkerReviewCard from './mobWorkerReviewCard';
+import MobWorkerReviewCard from './mobWorkerReviewCard';
 
 
 const MobWorkerReview = () => {
@@ -38,8 +38,8 @@ const MobWorkerReview = () => {
                     </FormControl>
                 </Box>
             </Grid>
-            <WorkerReviewCard name="Jane" rate="4.0" date="20th dec 2025" />
-            <WorkerReviewCard name="Elanor" rate="4.5" date="17th Mar 2025" />
+            <MobWorkerReviewCard name="Jane" rate="4.0" date="20th dec 2025" />
+            <MobWorkerReviewCard name="Elanor" rate="4.5" date="17th Mar 2025" />
 
         </Grid>
     );

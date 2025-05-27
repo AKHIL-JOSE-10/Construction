@@ -214,9 +214,9 @@ export default function EditInfo() {
           </Grid>
         </Grid>
       </Grid> */}
-      <Grid size={12} p={2} pt={2.5} pb={0} sx={{ position: "relative" }}>
+      {/* <Grid size={12} p={2} pt={2.5} pb={0} sx={{ position: "relative" }}>
         <Typography sx={{ fontSize: "15px" }}>Change Password</Typography>
-      </Grid>
+      </Grid> */}
       <MobileBottomTab />
     </Grid>
   );

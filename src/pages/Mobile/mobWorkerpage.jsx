@@ -4,7 +4,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import MobWorkerTopTab from '../../modules/components/Mobile/mobWorkerTopTab';
+import MobWorkerTopTab from '../../modules/components/Mobile/mobWorker/mobWorkerTopTab';
 
 
 const MobWorkerpage = () => {

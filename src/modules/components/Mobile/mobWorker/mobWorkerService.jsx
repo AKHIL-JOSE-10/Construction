@@ -1,5 +1,5 @@
 import { Grid, Typography, Avatar, Box, Button, Accordion, AccordionSummary, AccordionDetails, Paper } from '@mui/material';
-import serviceImg from '../../../assets/serviceImg.png'
+import serviceImg from '../../../../assets/serviceImg.png'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import Brightness3Icon from '@mui/icons-material/Brightness3';

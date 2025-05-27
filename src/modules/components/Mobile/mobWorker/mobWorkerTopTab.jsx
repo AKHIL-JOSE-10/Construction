@@ -2,7 +2,7 @@ import { Box, Tabs, Tab } from '@mui/material';
 import { useState } from 'react';
 import MobWorkerservice from './mobWorkerService';
 import MobWorkerReview from './mobWorkerReview';
-import MobWorkerAbout from './mobWorkerAbout';
+import MobWorkerAbout from './mobWorkerAbout';;
 
 const MobWorkerTopTab = () => {
   const [value, setValue] = useState(0);
