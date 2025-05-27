@@ -61,25 +61,27 @@ const MobProfilePage = () => {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              mb: 1
+              mb: 1,
+              justifyContent:'space-between'
             }}
           >
-            <Avatar
+
+            <Box sx={{ mb: 2, ml:2 }}>
+              <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550',mt:1.5 ,display:'inline-flex'}}>
+                Jane Cooper
+              </Typography>
+              <Typography sx={{ fontSize: '12px', color: 'grey', pb: 1 }}>
+                janecooper@gmail.com
+              </Typography>
+              <Typography sx={{ fontSize: '12px', color: 'grey', pb: 1 }}>
+                9736458763
+              </Typography>              
+            </Box>
+                        <Avatar
               sx={{ height: 80, width: 80, mr: 2, ml: 2.5, mb: 1 }}
               src="https://randomuser.me/api/portraits/women/79.jpg"
               alt="Jane"
             />
-            <Box sx={{ mb: 2 }}>
-              <Typography sx={{ color: 'black', fontSize: 20, fontWeight: '550',mt:1.5 }}>
-                Jane Cooper
-              </Typography>
-              <Typography sx={{ fontSize: '14px', color: 'black', pb: 1 }}>
-                janecooper@gmail.com
-              </Typography>
-              <Typography sx={{ fontSize: '13px', color: 'black', pb: 1 }}>
-                Mob:9736458763
-              </Typography>              
-            </Box>
           </Box>
         </Grid>
 
