@@ -10,7 +10,7 @@ const MobHelpSupportCard = ({ title, icon }) => {
                     justifyContent: 'space-between',
                     pr: 3, // side padding
                     mt: 1,
-                    ml: 5,
+                    ml: 6,
                     mb: 3
                 }}
             >
