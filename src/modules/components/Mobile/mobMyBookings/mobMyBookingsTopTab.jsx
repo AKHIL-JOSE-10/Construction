@@ -56,9 +56,9 @@ const MobMyBookingsTopTab = () => {
               }
             }}
           >
-            <Tab label="In progress" />
-            <Tab label="Completed" />
-            <Tab label="Cancelled" />
+            <Tab label="In progress" sx={{fontSize:'18px'}}/>
+            <Tab label="Completed" sx={{fontSize:'18px'}}/>
+            <Tab label="Cancelled" sx={{fontSize:'18px'}}/>
           </Tabs>
         </Box>
 
