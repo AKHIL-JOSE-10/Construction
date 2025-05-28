@@ -20,8 +20,10 @@ const MobHelpSupport = () => {
                     <Typography
                         sx={{
                             pl: 2,
+                            pr:1,
                             pb:2,
                             mb: 4,
+                            mt:1,
                             fontSize: 16,
                             color: 'text.primary',
                             fontWeight: 550,
