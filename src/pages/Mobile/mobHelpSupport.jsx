@@ -20,8 +20,7 @@ const MobHelpSupport = () => {
             <Box
                 sx={{
                     position: 'relative',
-                    background: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)',
-                    px: 2,
+                    background: 'linear-gradient(135deg,rgb(255, 253, 248) 0%,rgb(236, 228, 217) 100%)',
                     pt: 3,
                     pb: 6,
                     borderTopLeftRadius: 20,
@@ -34,10 +33,7 @@ const MobHelpSupport = () => {
                 {/* Decorative blurred blob background */}
                 <Box
                     sx={{
-                        position: 'absolute',
-                        width: 250,
-                        height: 250,
-                        background: 'radial-gradient(circle,rgb(237, 228, 206),rgb(253, 216, 161))',
+                        background: 'radial-gradient(circle,rgb(16, 15, 11),rgb(129, 85, 20))',
                         filter: 'blur(120px)',
                         top: '-60px',
                         left: '-80px',
@@ -49,9 +45,7 @@ const MobHelpSupport = () => {
                 <Box
                     sx={{
                         position: 'absolute',
-                        width: 300,
-                        height: 300,
-                        background: 'radial-gradient(circle, #fbc2eb, #a6c1ee)',
+                        background: 'radial-gradient(circle,rgb(193, 83, 162),rgb(11, 39, 88))',
                         filter: 'blur(100px)',
                         bottom: '-100px',
                         right: '-80px',
@@ -63,15 +57,13 @@ const MobHelpSupport = () => {
                 {/* Content below heading */}
                 <Box
                     sx={{
-                        position: 'relative',
                         px: 2,
                         py: 3,
                         mb: 4,
-                        maxWidth: 450,
                         borderRadius: 1,
                         mx: 'auto',
                         background: '#fff',
-                        boxShadow: '0 4px 16px rgba(71, 71, 71, 0.1)',
+                        boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
                         zIndex: 1,
                     }}
                 >

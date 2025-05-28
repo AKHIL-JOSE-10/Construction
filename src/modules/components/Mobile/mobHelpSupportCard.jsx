@@ -16,7 +16,7 @@ const MobHelpSupportCard = ({ title, icon }) => {
             >
                 <Box
             sx={{
-                bgcolor: '#F1E6DD',
+                bgcolor: 'rgba(239, 239, 237, 0.79)',
                 width: '100px',
                 height: '105px',
                 borderRadius: 1,
