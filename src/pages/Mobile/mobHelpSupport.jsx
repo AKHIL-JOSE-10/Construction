@@ -18,22 +18,22 @@ const MobHelpSupport = () => {
 
                 <Box sx={{ zIndex: 2 }}>
                     <Grid>
-                        <Typography
-                            sx={{
-                                pl: 2,
-                                pr: 1,
-                                pb: 1,
-                                mb: 2,
-                                fontSize: 15,
-                                color: 'text.primary',
-                                fontWeight: 500,
-                                textAlign: 'left',
-                                lineHeight: 1.6,
-                                userSelect: 'none',
-                            }}
-                        >
-                            Need help❓Find answers, get in touch with support 💬, or raise tickets 📝 to resolve your issues quickly and efficiently.
-                        </Typography>
+<Typography
+  sx={{
+    pl: 2,
+    pr: 2,
+    pb: 1,
+    mb: 2,
+    fontSize: 18,
+    color: 'text.primary',
+    fontWeight: 600,
+    textAlign: 'center',
+    lineHeight: 1.7,
+    userSelect: 'none',
+  }}
+>
+  Need assistance? Connect with us via chat, call, or raise a support ticket — we're here to help.
+</Typography>
                     </Grid>
 
                     <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
