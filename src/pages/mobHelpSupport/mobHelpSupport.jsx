@@ -5,8 +5,9 @@ import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 import ChatIcon from '@mui/icons-material/Chat';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import MobHeading from '../../modules/components/Mobile/mobileHeading';
-import MobHelpSupportCard from '../../modules/components/Mobile/mobHelpSupportCard';
+import MobHelpSupportCard from '../../modules/components/Mobile/mobHelpSupportChat/mobHelpSupportCard';
 import HelpSupport_img from '../../assets/HelpSupport_img.jpg'
+import { Link } from 'react-router-dom';
 
 const MobHelpSupport = () => {
     return (
@@ -26,9 +27,9 @@ const MobHelpSupport = () => {
                                 mb: 2,
                                 fontSize: 17,
                                 color: 'text.primary',
-                                fontWeight: 600,
+                                fontWeight: 500,
                                 textAlign: 'center',
-                                lineHeight: 1.7,
+                                lineHeight: 1.6,
                                 userSelect: 'none',
                             }}
                         >
@@ -38,7 +39,9 @@ const MobHelpSupport = () => {
 
                     <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
                         <Grid item>
-                            <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />
+                            <Link to="/mobile-helpsupportchat" style={{ textDecoration: 'none' }}>
+                                <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />
+                            </Link>
                         </Grid>
                         <Grid item>
                             <MobHelpSupportCard title="Call Us" icon={<PhoneIcon />} />
@@ -54,11 +57,11 @@ const MobHelpSupport = () => {
                         </Grid>
                     </Grid>
 
-<Grid container justifyContent="center" sx={{ mb: 5 }}>
-  <Grid item>
-    <MobHelpSupportCard title="My Tickets" icon={<AssignmentIcon />} />
-  </Grid>
-</Grid>
+                    <Grid container justifyContent="center" sx={{ mb: 5 }}>
+                        <Grid item>
+                            <MobHelpSupportCard title="My Tickets" icon={<AssignmentIcon />} />
+                        </Grid>
+                    </Grid>
 
                 </Box>
 

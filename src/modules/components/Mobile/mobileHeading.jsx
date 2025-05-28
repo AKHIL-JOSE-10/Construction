@@ -1,21 +1,26 @@
 import { Typography, Box, Grid } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const MobHeading = ({ Heading }) => {
-  return (
-    <Grid sx={{mb:8}}>
-      <Box sx={{
-        display: 'flex',
-        width: '100%',
-        position: 'fixed',
-        top: 0,
-        zIndex: 1000,
-        height: '60px',
-        bgcolor: 'white',
-      }}>
+  const navigate = useNavigate(); // Initialize navigate
 
+  return (
+    <Grid sx={{ mb: 8 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          width: '100%',
+          position: 'fixed',
+          top: 0,
+          zIndex: 1000,
+          height: '60px',
+          bgcolor: 'white',
+        }}
+      >
         {/* Back Arrow */}
         <Box
+          onClick={() => navigate(-1)} // Go back one page
           sx={{
             position: 'absolute',
             left: 10,
@@ -48,7 +53,6 @@ const MobHeading = ({ Heading }) => {
         </Typography>
       </Box>
     </Grid>
-
   );
 };
 

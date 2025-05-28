@@ -17,7 +17,8 @@ import EditInfo from "./modules/pages/EditInfo/EditInfo";
 import RouteListPage from "./RouterListPage";
 import MobMessages from "./pages/Mobile/mobMessages";
 import MobPremium from "./pages/Mobile/mobPremium";
-import MobHelpSupport from "./pages/Mobile/mobHelpSupport";
+import MobHelpSupport from "./pages/mobHelpSupport/mobHelpSupport";
+import MobHelpSupportChat from "./pages/mobHelpSupport/mobHelpSupportChat";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/mobile-premium" element={<MobPremium />} />
         <Route path="/mobile-messages" element={<MobMessages />} />
         <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
+         <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
 
       </Routes>
     </Router>
