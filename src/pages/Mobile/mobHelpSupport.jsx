@@ -19,14 +19,14 @@ const MobHelpSupport = () => {
 <Grid>
   <Typography
     sx={{
-      px: 3,
-      py: 2,
+      px: 1,
+      py: 1,
       mb: 5,
-      mx:2,
-      fontSize: 16,
+      mx:1,
+      fontSize: 14,
       color: 'text.primary',
       backgroundColor: '#E8F0FE',  // soft blue background
-      borderRadius: 2,
+      borderRadius: 1,
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
       fontWeight: 550,
       textAlign: 'left',
