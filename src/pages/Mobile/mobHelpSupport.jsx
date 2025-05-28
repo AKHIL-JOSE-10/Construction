@@ -16,20 +16,18 @@ const MobHelpSupport = () => {
       <MobHeading Heading="Help & Support" />
     </Grid>
 
-    <Box sx={{ maxWidth: 450, mx: 'auto', position: 'relative', zIndex: 2 }}>
+    <Box sx={{ zIndex: 2 }}>
       <Grid>
         <Typography
           sx={{
             pl: 2,
             pr: 1,
-            pb: 2,
-            mb: 4,
-            mt: 1,
+            pb: 1,
+            mb: 3,
             fontSize: 16,
             color: 'text.primary',
             fontWeight: 550,
             textAlign: 'left',
-            maxWidth: 400,
             lineHeight: 1.7,
             userSelect: 'none',
           }}
