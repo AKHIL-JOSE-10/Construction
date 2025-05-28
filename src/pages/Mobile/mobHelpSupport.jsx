@@ -53,7 +53,7 @@ const MobHelpSupport = () => {
                             <MobHelpSupportCard title="FAQ" icon={<HelpOutlineIcon />} />
                         </Grid>
                     </Grid>
-                    
+
 <Grid container justifyContent="center" sx={{ mb: 5 }}>
   <Grid item>
     <MobHelpSupportCard title="My Tickets" icon={<AssignmentIcon />} />
@@ -71,7 +71,7 @@ const MobHelpSupport = () => {
                         position: 'absolute',
                         bottom: 0,
                         right: 0,
-                        width: '88%',
+                        width: '95%',
                         opacity: 0.5,
                         pointerEvents: 'none',
                         userSelect: 'none',
