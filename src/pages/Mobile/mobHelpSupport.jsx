@@ -76,7 +76,6 @@ const MobHelpSupport = () => {
                         pointerEvents: 'none',
                         userSelect: 'none',
                         zIndex: -1,
-                        mr:-8
                     }}
                 />
             </Grid>
