@@ -68,7 +68,7 @@ const MobHelpSupport = () => {
         position: 'absolute',
         bottom: 0,
         right: 0,
-        width: '80%',
+        width: '78%',
         opacity: 0.5,
         pointerEvents: 'none',
         userSelect: 'none',
