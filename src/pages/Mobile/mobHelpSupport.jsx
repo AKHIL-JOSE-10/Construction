@@ -22,7 +22,7 @@ const MobHelpSupport = () => {
                             pl: 2,
                             pb:2,
                             mb: 4,
-                            fontSize: 15,
+                            fontSize: 16,
                             color: 'text.primary',
                             fontWeight: 550,
                             textAlign: 'left',
