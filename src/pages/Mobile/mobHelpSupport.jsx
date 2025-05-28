@@ -12,7 +12,7 @@ const MobHelpSupport = () => {
         <Grid container direction="column">
 
             <Grid >
-                <MobHeading Heading="Help & support" />
+                <MobHeading Heading="Help & Support" />
             </Grid>
 
             <Grid >
@@ -20,18 +20,16 @@ const MobHelpSupport = () => {
                     <Typography
                         sx={{
                             px: 1,
-                            py: 1,
+                            pt: 1,
+                            pb:2,
                             mb: 4,
-                            mx: 1,
                             fontSize: 15,
                             color: 'text.primary',
-                            backgroundColor: '#F1E6DD',  // soft blue background
-                            borderRadius: 1,
                             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                             fontWeight: 550,
                             textAlign: 'left',
                             maxWidth: 400,
-                            lineHeight: 1.4,
+                            lineHeight: 1.7,
                             userSelect: 'none',
                         }}
                     >
