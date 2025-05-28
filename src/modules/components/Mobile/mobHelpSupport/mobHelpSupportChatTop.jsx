@@ -27,7 +27,7 @@ const MobHelpSupportChatTop = () => {
                 </IconButton>
 
                 {/* Help Center Icon */}
-                <SupportAgentIcon sx={{ fontSize: 46, color: 'black', mx: 2 }} />
+                <SupportAgentIcon sx={{ fontSize: 46, color: 'black', mr: 2, ml:1 }} />
 
                 <Typography variant="subtitle1" fontWeight={500} fontSize={20}>
                     Help Center

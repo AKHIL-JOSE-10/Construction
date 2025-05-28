@@ -38,27 +38,29 @@ const MobHelpSupport = () => {
                     </Grid>
 
                     <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
-                        <Grid item>
-                            <Link to="/mobile-helpsupportchat" style={{ textDecoration: 'none',color: 'inherit' }}>
+                        <Grid >
+                            <Link to="/mobile-helpsupportchat" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />
                             </Link>
                         </Grid>
-                        <Grid item>
-                            <MobHelpSupportCard title="Call Us" icon={<PhoneIcon />} />
+                        <Grid >
+                            <a href="tel:+18001234567" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <MobHelpSupportCard title="Call Us" icon={<PhoneIcon  />} />
+                            </a>
                         </Grid>
                     </Grid>
 
                     <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
-                        <Grid item>
+                        <Grid >
                             <MobHelpSupportCard title="Raise a Ticket" icon={<ReportProblemIcon />} />
                         </Grid>
-                        <Grid item>
+                        <Grid >
                             <MobHelpSupportCard title="FAQ" icon={<HelpOutlineIcon />} />
                         </Grid>
                     </Grid>
 
                     <Grid container justifyContent="center" sx={{ mb: 5 }}>
-                        <Grid item>
+                        <Grid >
                             <MobHelpSupportCard title="My Tickets" icon={<AssignmentIcon />} />
                         </Grid>
                     </Grid>
