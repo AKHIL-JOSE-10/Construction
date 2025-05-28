@@ -39,7 +39,7 @@ const MobHelpSupport = () => {
 
                     <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
                         <Grid item>
-                            <Link to="/mobile-helpsupportchat" style={{ textDecoration: 'none' }}>
+                            <Link to="/mobile-helpsupportchat" style={{ textDecoration: 'none',color: 'inherit' }}>
                                 <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />
                             </Link>
                         </Grid>

@@ -1,10 +1,8 @@
 import { Grid, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import MobHelpSupportChatBottom from '../../modules/components/Mobile/mobHelpSupportChat/mobHelpSupportChatBottom';
 import MobHelpSupportChatTop from '../../modules/components/Mobile/mobHelpSupportChat/mobHelpSupportChatTop';
 
 const MobHelpSupportChat = () => {
-    const navigate = useNavigate();
 
     return (
         <Grid>
