@@ -19,13 +19,11 @@ const MobHelpSupport = () => {
                 <Grid>
                     <Typography
                         sx={{
-                            px: 1,
-                            pt: 1,
+                            pl: 2,
                             pb:2,
                             mb: 4,
                             fontSize: 15,
                             color: 'text.primary',
-                            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                             fontWeight: 550,
                             textAlign: 'left',
                             maxWidth: 400,
@@ -33,8 +31,7 @@ const MobHelpSupport = () => {
                             userSelect: 'none',
                         }}
                     >
-                        Need help ? Find answers, get in touch with support, or raise tickets to resolve your issues quickly and efficiently.
-                    </Typography>
+  Need help❓Find answers, get in touch with support 💬, or raise tickets 📝 to resolve your issues quickly and efficiently.                 </Typography>
                 </Grid>
 
                 <Box sx={{ display: 'flex', flexDirection: 'row' }}>
