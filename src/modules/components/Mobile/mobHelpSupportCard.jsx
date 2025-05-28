@@ -25,6 +25,7 @@ const MobHelpSupportCard = ({ title, icon }) => {
                         alignItems: 'center',
                         justifyContent: 'center',
                         boxShadow: '0px 2px 8px rgba(90, 69, 1, 0.3)', // 👈 small shadow added
+                        border:'1px solid rgba(184, 147, 87, 0.3)'
                     }}
                 >
                     <Box sx={{ mb: 1 }}>
