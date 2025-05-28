@@ -24,7 +24,7 @@ const MobHelpSupport = () => {
                                 pl: 2,
                                 pr: 2,
                                 pb: 1,
-                                mb: 2,
+                                mb: 4,
                                 fontSize: 17,
                                 color: 'text.primary',
                                 fontWeight: 500,
@@ -45,7 +45,7 @@ const MobHelpSupport = () => {
                         </Grid>
                         <Grid >
                             <a href="tel:+18001234567" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                <MobHelpSupportCard title="Call Us" icon={<PhoneIcon  />} />
+                                <MobHelpSupportCard title="Call Us" icon={<PhoneIcon />} />
                             </a>
                         </Grid>
                     </Grid>
@@ -54,16 +54,17 @@ const MobHelpSupport = () => {
                         <Grid >
                             <MobHelpSupportCard title="Raise a Ticket" icon={<ReportProblemIcon />} />
                         </Grid>
-                        <Grid >
-                            <MobHelpSupportCard title="FAQ" icon={<HelpOutlineIcon />} />
-                        </Grid>
-                    </Grid>
 
-                    <Grid container justifyContent="center" sx={{ mb: 5 }}>
                         <Grid >
                             <MobHelpSupportCard title="My Tickets" icon={<AssignmentIcon />} />
                         </Grid>
                     </Grid>
+
+                    {/* <Grid container justifyContent="center" sx={{ mb: 5 }}>
+                        <Grid >
+                            <MobHelpSupportCard title="FAQ" icon={<HelpOutlineIcon />} />
+                        </Grid>
+                    </Grid> */}
 
                 </Box>
 
