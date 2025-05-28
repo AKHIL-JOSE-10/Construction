@@ -11,7 +11,7 @@ import HelpSupport_img from '../../assets/HelpSupport_img.jpg'
 const MobHelpSupport = () => {
     return (
 <Grid container direction="column">
-  <Grid container direction="column">
+  <Grid >
     <Grid>
       <MobHeading Heading="Help & Support" />
     </Grid>
@@ -68,7 +68,7 @@ const MobHelpSupport = () => {
         position: 'absolute',
         bottom: 0,
         right: 0,
-        width: '80%',
+        width: '83%',
         opacity: 0.5,
         pointerEvents: 'none',
         userSelect: 'none',

@@ -17,8 +17,8 @@ const MobHelpSupportCard = ({ title, icon }) => {
                 <Box
                     sx={{
                         bgcolor: '#F1E6DD',
-                        width: '100px',
-                        height: '105px',
+                        width: '105px',
+                        height: '110px',
                         borderRadius: 1,
                         display: 'flex',
                         flexDirection: 'column',
@@ -28,10 +28,10 @@ const MobHelpSupportCard = ({ title, icon }) => {
                         border:'1px solid rgba(184, 147, 87, 0.3)'
                     }}
                 >
-                    <Box sx={{ mb: 1 }}>
+                    <Box sx={{ mb: 1 ,fontSize:10}}>
                         {icon}
                     </Box>
-                    <Typography sx={{ fontSize: '13px' }}>{title}</Typography>
+                    <Typography sx={{ fontSize: '14px' }}>{title}</Typography>
                 </Box>
             </Box>
         </Grid>
