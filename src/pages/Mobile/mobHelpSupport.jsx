@@ -16,30 +16,30 @@ const MobHelpSupport = () => {
             </Grid>
 
             <Grid >
-<Grid>
-  <Typography
-    sx={{
-      px: 1,
-      py: 1,
-      mb: 5,
-      mx:1,
-      fontSize: 14,
-      color: 'text.primary',
-      backgroundColor: '#E8F0FE',  // soft blue background
-      borderRadius: 1,
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-      fontWeight: 550,
-      textAlign: 'left',
-      maxWidth: 400,
-      lineHeight: 1.4,
-      userSelect: 'none',
-    }}
-  >
-    Need help ? Find answers, get in touch with support, or raise tickets to resolve your issues quickly and efficiently.
-  </Typography>
-</Grid>
+                <Grid>
+                    <Typography
+                        sx={{
+                            px: 1,
+                            py: 1,
+                            mb: 4,
+                            mx: 1,
+                            fontSize: 15,
+                            color: 'text.primary',
+                            backgroundColor: '#F1E6DD',  // soft blue background
+                            borderRadius: 1,
+                            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                            fontWeight: 550,
+                            textAlign: 'left',
+                            maxWidth: 400,
+                            lineHeight: 1.4,
+                            userSelect: 'none',
+                        }}
+                    >
+                        Need help ? Find answers, get in touch with support, or raise tickets to resolve your issues quickly and efficiently.
+                    </Typography>
+                </Grid>
 
-                <Box sx={{ display: 'flex', flexDirection: 'row'}}>
+                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
                     <Grid>
                         <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />
                     </Grid>
