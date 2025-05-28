@@ -10,7 +10,7 @@ const MobHelpSupportCard = ({ title, icon }) => {
                     justifyContent: 'space-between',
                     pr: 3, // side padding
                     mt: 1,
-                    ml: 6,
+                    ml: 4,
                     mb: 3
                 }}
             >
@@ -24,7 +24,7 @@ const MobHelpSupportCard = ({ title, icon }) => {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: '0px 2px 8px rgba(90, 69, 1, 0.3)', // 👈 small shadow added
+                        boxShadow: '0px 2px 8px rgba(90, 69, 1, 0.1)', // 👈 small shadow added
                         border:'1px solid rgba(184, 147, 87, 0.3)'
                     }}
                 >
