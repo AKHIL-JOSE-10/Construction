@@ -18,22 +18,22 @@ const MobHelpSupport = () => {
 
                 <Box sx={{ zIndex: 2 }}>
                     <Grid>
-<Typography
-  sx={{
-    pl: 2,
-    pr: 2,
-    pb: 1,
-    mb: 2,
-    fontSize: 18,
-    color: 'text.primary',
-    fontWeight: 600,
-    textAlign: 'center',
-    lineHeight: 1.7,
-    userSelect: 'none',
-  }}
->
-  Need assistance? Connect with us via chat, call, or raise a support ticket — we're here to help.
-</Typography>
+                        <Typography
+                            sx={{
+                                pl: 2,
+                                pr: 2,
+                                pb: 1,
+                                mb: 2,
+                                fontSize: 17,
+                                color: 'text.primary',
+                                fontWeight: 600,
+                                textAlign: 'center',
+                                lineHeight: 1.7,
+                                userSelect: 'none',
+                            }}
+                        >
+                            Need assistance ? Connect with us via chat, call, or raise a support ticket : we're here to help.
+                        </Typography>
                     </Grid>
 
                     <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
@@ -53,10 +53,12 @@ const MobHelpSupport = () => {
                             <MobHelpSupportCard title="FAQ" icon={<HelpOutlineIcon />} />
                         </Grid>
                     </Grid>
-
-                    <Grid  sx={{ml:6, mb: 5 }} >
-                        <MobHelpSupportCard title="My Tickets" icon={<AssignmentIcon />} />
-                    </Grid>
+                    
+<Grid container justifyContent="center" sx={{ mb: 5 }}>
+  <Grid item>
+    <MobHelpSupportCard title="My Tickets" icon={<AssignmentIcon />} />
+  </Grid>
+</Grid>
 
                 </Box>
 
