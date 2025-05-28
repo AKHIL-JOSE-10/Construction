@@ -6,19 +6,14 @@ const MobHelpSupportCard = ({ title, icon }) => {
         <Grid >
             <Box
                 sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    pr: 3, // side padding
-                    mt: 1,
-                    ml: 5,
-                    mb: 3
+
                 }}
             >
                 <Box
                     sx={{
                         bgcolor: '#F1E6DD',
-                        width: '105px',
-                        height: '110px',
+                        width: '115px',
+                        height: '120px',
                         borderRadius: 1,
                         display: 'flex',
                         flexDirection: 'column',
