@@ -1,4 +1,4 @@
-import { Grid, Box } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
@@ -9,15 +9,37 @@ import MobHelpSupportCard from '../../modules/components/Mobile/mobHelpSupportCa
 
 const MobHelpSupport = () => {
     return (
-        <Grid container direction="column" spacing={2}>
+        <Grid container direction="column">
 
             <Grid >
                 <MobHeading Heading="Help & support" />
             </Grid>
 
             <Grid >
+<Grid>
+  <Typography
+    sx={{
+      px: 3,
+      py: 2,
+      mb: 5,
+      mx:2,
+      fontSize: 16,
+      color: 'text.primary',
+      backgroundColor: '#E8F0FE',  // soft blue background
+      borderRadius: 2,
+      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+      fontWeight: 550,
+      textAlign: 'left',
+      maxWidth: 400,
+      lineHeight: 1.4,
+      userSelect: 'none',
+    }}
+  >
+    Need help ? Find answers, get in touch with support, or raise tickets to resolve your issues quickly and efficiently.
+  </Typography>
+</Grid>
 
-                <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'row'}}>
                     <Grid>
                         <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />
                     </Grid>
