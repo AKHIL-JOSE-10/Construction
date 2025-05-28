@@ -1,15 +1,13 @@
-import { Box, Typography, IconButton, Avatar, Grid } from '@mui/material';
+import { Box, Typography, IconButton, Grid } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import { useNavigate } from 'react-router-dom';
 
 const MobHelpSupportChatTop = () => {
-
     const navigate = useNavigate();
 
     return (
-
-        <Grid container direction="column" >
-
+        <Grid container direction="column">
             <Box
                 sx={{
                     display: 'flex',
@@ -27,17 +25,16 @@ const MobHelpSupportChatTop = () => {
                 <IconButton onClick={() => navigate(-1)}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Avatar
-                    alt="Support"
-                    src="https://randomuser.me/api/portraits/women/79.jpg"
-                    sx={{ width: 45, height: 45, mr: 2, ml: 1 }}
-                />
+
+                {/* Help Center Icon */}
+                <SupportAgentIcon sx={{ fontSize: 46, color: 'black', mx: 2 }} />
+
                 <Typography variant="subtitle1" fontWeight={500} fontSize={20}>
                     Help Center
                 </Typography>
             </Box>
         </Grid>
-    )
-}
+    );
+};
 
-export default MobHelpSupportChatTop
+export default MobHelpSupportChatTop;

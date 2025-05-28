@@ -1,6 +1,6 @@
 import { Grid, Box } from '@mui/material';
-import MobHelpSupportChatBottom from '../../modules/components/Mobile/mobHelpSupportChat/mobHelpSupportChatBottom';
-import MobHelpSupportChatTop from '../../modules/components/Mobile/mobHelpSupportChat/mobHelpSupportChatTop';
+import MobHelpSupportChatBottom from '../../modules/components/Mobile/mobHelpSupport/mobHelpSupportChatBottom';
+import MobHelpSupportChatTop from '../../modules/components/Mobile/mobHelpSupport/mobHelpSupportChatTop';
 
 const MobHelpSupportChat = () => {
 
