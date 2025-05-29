@@ -4,9 +4,9 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import ReportProblemIcon from '@mui/icons-material/ReportProblem';
 import ChatIcon from '@mui/icons-material/Chat';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import MobHeading from '../../modules/components/Mobile/mobileHeading';
-import MobHelpSupportCard from '../../modules/components/Mobile/mobHelpSupport/mobHelpSupportCard';
-import HelpSupport_img from '../../assets/HelpSupport_img.jpg'
+import MobHeading from '../../../modules/components/Mobile/mobileHeading';
+import MobHelpSupportCard from '../../../modules/components/Mobile/mobHelpSupport/mobHelpSupportCard'
+import HelpSupport_img from '../../../assets/HelpSupport_img.jpg'
 import { Link } from 'react-router-dom';
 
 const MobHelpSupport = () => {

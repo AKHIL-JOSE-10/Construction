@@ -17,8 +17,8 @@ import EditInfo from "./modules/pages/EditInfo/EditInfo";
 import RouteListPage from "./RouterListPage";
 import MobMessages from "./pages/Mobile/mobMessages";
 import MobPremium from "./pages/Mobile/mobPremium";
-import MobHelpSupport from "./pages/mobHelpSupport/mobHelpSupport";
-import MobHelpSupportChat from "./pages/mobHelpSupport/mobHelpSupportChat";
+import MobHelpSupport from "./pages/Mobile/mobHelpSupport/mobHelpSupport";
+import MobHelpSupportChat from "./pages/Mobile/mobHelpSupport/mobHelpSupportChat";
 
 function App() {
   return (

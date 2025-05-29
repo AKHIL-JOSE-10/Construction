@@ -103,7 +103,7 @@ export default function EditInfo() {
           sx={{ fontSize: "14px", paddingTop: "8px" }}
         />
       </Grid>
-      <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
+      {/* <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
         <Typography sx={{ fontSize: "16px" }}>Address</Typography>
         <Grid container size={12} spacing={4}>
           <Grid size={4}>
@@ -153,7 +153,7 @@ export default function EditInfo() {
             />
           </Grid>
         </Grid>
-      </Grid>
+      </Grid> */}
       {/* <Grid container direction="column" p={2} pb={0}>
         <Typography sx={{ fontSize: "15px" }}>Add your work title</Typography>
 
