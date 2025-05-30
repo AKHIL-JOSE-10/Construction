@@ -4,11 +4,12 @@ import {
     Box,
     List,
     ListItem,
-    ListItemAvatar,
     IconButton,
     Menu,
     MenuItem,
     Button,
+    ListItemAvatar,
+    Avatar,
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -21,8 +22,9 @@ const MobSavedAddress = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedAddressIndex, setSelectedAddressIndex] = useState(null);
 
-    const handleMenuClick = (event) => {
-        setAnchorEl(event.currentTarget);
+    const handleMenuClick = (event, index) => {
+        event.stopPropagation(); // Prevents triggering selection
+        setAnchorEl({ anchor: event.currentTarget, index });
     };
 
     const handleMenuClose = () => {
@@ -56,46 +58,29 @@ const MobSavedAddress = () => {
                         <Box
                             key={index}
                             sx={{
-                                backgroundColor: selectedAddressIndex === index ? "rgb(251, 244, 236)" : "#f9f9f9", // Light blue when selected
+                                backgroundColor: selectedAddressIndex === index ? "rgb(251, 244, 236)" : "#f9f9f9",
                                 borderRadius: 1,
                                 p: 1,
                                 border: selectedAddressIndex === index ? "2px solid rgb(225, 189, 150)" : "1px solid #e0e0e0",
                                 mb: 1.5,
-                                position: "relative",
-                                transition: "all 0.3s ease-in-out", // Smooth effect
+                                transition: "all 0.3s ease-in-out",
+                                cursor: "pointer",
                             }}
+                            onClick={() => setSelectedAddressIndex(index)}
                         >
-                            {/* Dot selector */}
-                            <IconButton
-                                size="medium"
-                                onClick={() => setSelectedAddressIndex(index)}
-                                sx={{
-                                    position: "absolute",
-                                    top: "30%",
-                                    left: 48,
-                                    transform: "translateY(-50%)",
-                                    zIndex: 2,
-                                    color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
-                                }}
-                            >
-                                {selectedAddressIndex === index ? (
-                                    <RadioButtonCheckedIcon fontSize="small" />
-                                ) : (
-                                    <RadioButtonUncheckedIcon fontSize="small" />
-                                )}
-                            </IconButton>
-
                             <List disablePadding>
                                 <ListItem
                                     disableGutters
                                     secondaryAction={
                                         <>
-                                            <IconButton onClick={handleMenuClick}>
+                                            <IconButton
+                                                onClick={(e) => handleMenuClick(e, index)}
+                                            >
                                                 <MoreVertIcon sx={{ color: "#757575" }} />
                                             </IconButton>
                                             <Menu
-                                                anchorEl={anchorEl}
-                                                open={Boolean(anchorEl)}
+                                                anchorEl={anchorEl?.anchor}
+                                                open={anchorEl?.index === index}
                                                 onClose={handleMenuClose}
                                             >
                                                 <MenuItem onClick={handleMenuClose}>Edit</MenuItem>
@@ -103,31 +88,47 @@ const MobSavedAddress = () => {
                                             </Menu>
                                         </>
                                     }
-                                    sx={{
-                                        pl: 1,
-                                        display: "flex",
-                                        alignItems: "center",
-                                    }}
                                 >
-                                    {/* Location Icon */}
-                                    <LocationOnIcon sx={{ color: "#BFA088", fontSize: 28, mr: 2 }} />
-
-                                    {/* Address text */}
-                                    <Box sx={{ flexGrow: 1 }}>
-                                        <Typography
+                                    <ListItemAvatar>
+                                        <Avatar sx={{ bgcolor: "transparent" }}>
+                                            <LocationOnIcon color="primary" />
+                                        </Avatar>
+                                    </ListItemAvatar>
+                                    <Box sx={{ml:-1}}>
+                                        <Box sx={{display:'flex', flexDirection:'row',ml:-1}}>
+                                        <IconButton
+                                            size="small"
                                             sx={{
-                                                fontSize: "15px",
-                                                fontWeight: selectedAddressIndex === index ? "bold" : "normal",
-                                                mb: 0.5,ml:2.5,
-                                                color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
+                                                color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
+                                                p: 0.5,
+                                                mr: 0.5,
                                             }}
                                         >
-                                            {item.title}
-                                        </Typography>
-                                        <Typography variant="body2" sx={{ color: "text.secondary", fontSize: "14px" }}>
-                                            {item.details}
-                                        </Typography>
-                                    </Box>
+                                            {selectedAddressIndex === index ? (
+                                                <RadioButtonCheckedIcon fontSize="small" />
+                                            ) : (
+                                                <RadioButtonUncheckedIcon fontSize="small" />
+                                            )}
+                                        </IconButton>
+                                        
+                                            <Typography
+                                                sx={{
+                                                    fontSize: "15px",
+                                                    fontWeight: selectedAddressIndex === index ? "bold" : "normal",
+                                                    color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
+                                                }}
+                                            >
+                                                {item.title}
+                                            </Typography>
+                                            </Box>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{ color: "text.secondary", fontSize: "14px", mt: 0.5 }}
+                                            >
+                                                {item.details}
+                                            </Typography>
+                                        </Box>
+                                    
                                 </ListItem>
                             </List>
                         </Box>
