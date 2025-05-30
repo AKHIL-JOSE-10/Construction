@@ -70,7 +70,7 @@ const MobSavedAdress = () => {
                                 onClick={() => setSelectedAddressIndex(index)}
                                 sx={{
                                     position: "absolute",
-                                    top: "50%",
+                                    top: "25%",
                                     left: 8,
                                     transform: "translateY(-50%)",
                                     zIndex: 2,
