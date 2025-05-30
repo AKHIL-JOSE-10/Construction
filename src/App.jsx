@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MobBookingInfo from "./pages/Mobile/mobBookingInfo";
 import MobMyBookings from "./pages/Mobile/mobmyBookings";
-import MobProfilePage from "./pages/Mobile/mobProfile";
+import MobProfilePage from "./pages/Mobile/mobProfile/mobProfile";
 import MobSettings from "./pages/Mobile/mobSettings";
 import MobNotifications from "./pages/Mobile/mobNotifications";
 import Signinpage from "./pages/signinpage";
@@ -17,8 +17,9 @@ import EditInfo from "./modules/pages/EditInfo/EditInfo";
 import RouteListPage from "./RouterListPage";
 import MobMessages from "./pages/Mobile/mobMessages";
 import MobPremium from "./pages/Mobile/mobPremium";
-import MobHelpSupport from "./pages/Mobile/mobHelpSupport/mobHelpSupport";
-import MobHelpSupportChat from "./pages/Mobile/mobHelpSupport/mobHelpSupportChat";
+import MobHelpSupport from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupport";
+import MobHelpSupportChat from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupportChat";
+import MobMyLocation from "./pages/Mobile/mobMyLocation";
 
 function App() {
   return (
@@ -43,8 +44,8 @@ function App() {
         <Route path="/mobile-premium" element={<MobPremium />} />
         <Route path="/mobile-messages" element={<MobMessages />} />
         <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
-         <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
-
+        <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
+        <Route path="/mobile-mylocation" element={<MobMyLocation />} />
       </Routes>
     </Router>
   );

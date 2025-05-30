@@ -16,12 +16,13 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import MobHeading from '../../modules/components/Mobile/mobileHeading';
-import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
+import MobHeading from '../../../modules/components/Mobile/mobileHeading';
+import MobileBottomTab from '../../../modules/components/Mobile/mobileBottomTab';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import StarIcon from '@mui/icons-material/Star';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import PaymentIcon from '@mui/icons-material/Payment';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import GavelIcon from '@mui/icons-material/Gavel';
 import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
@@ -147,6 +148,25 @@ const MobProfilePage = () => {
                 <PaymentIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
                   primary="Payment History"
+                  slotProps={{
+                    primary: {
+                      sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
+                    },
+                  }}
+                />
+                <ArrowForwardIosIcon sx={{ fontSize: '14px' }} />
+              </ListItemButton>
+            </ListItem>
+
+            {/* Location */}
+            <ListItem disablePadding>
+              <ListItemButton
+                component={Link}
+                to="/mobile-mylocation"
+                sx={{ px: 2, py: 1 }}>
+                <LocationOnIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
+                <ListItemText
+                  primary="My Location"
                   slotProps={{
                     primary: {
                       sx: { color: 'black', fontSize: '15px', fontWeight: 500 },
