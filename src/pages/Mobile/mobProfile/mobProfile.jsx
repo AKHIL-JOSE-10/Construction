@@ -162,11 +162,11 @@ const MobProfilePage = () => {
             <ListItem disablePadding>
               <ListItemButton
                 component={Link}
-                to="/mobile-saved-adress"
+                to="/mobile-saved-address"
                 sx={{ px: 2, py: 1 }}>
                 <LocationOnIcon sx={{ mr: 2, color: '#757575', fontSize: '22px' }} />
                 <ListItemText
-                  primary="Saved Adress"
+                  primary="Saved Address"
                   slotProps={{
                     primary: {
                       sx: { color: 'black', fontSize: '15px', fontWeight: 500 },

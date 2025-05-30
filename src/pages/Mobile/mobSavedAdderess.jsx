@@ -17,7 +17,7 @@ import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 import { useState } from "react";
 
-const MobSavedAdress = () => {
+const MobSavedAddress = () => {
     const [anchorEl, setAnchorEl] = useState(null);
     const [selectedAddressIndex, setSelectedAddressIndex] = useState(null);
 
@@ -56,22 +56,23 @@ const MobSavedAdress = () => {
                         <Box
                             key={index}
                             sx={{
-                                backgroundColor: "#f9f9f9",
+                                backgroundColor: selectedAddressIndex === index ? "rgb(251, 244, 236)" : "#f9f9f9", // Light blue when selected
                                 borderRadius: 1,
                                 p: 1,
-                                border: "1px solid #e0e0e0",
+                                border: selectedAddressIndex === index ? "2px solid rgb(225, 189, 150)" : "1px solid #e0e0e0",
                                 mb: 1.5,
                                 position: "relative",
+                                transition: "all 0.3s ease-in-out", // Smooth effect
                             }}
                         >
                             {/* Dot selector */}
                             <IconButton
-                                size="small"
+                                size="medium"
                                 onClick={() => setSelectedAddressIndex(index)}
                                 sx={{
                                     position: "absolute",
-                                    top: "25%",
-                                    left: 8,
+                                    top: "30%",
+                                    left: 48,
                                     transform: "translateY(-50%)",
                                     zIndex: 2,
                                     color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
@@ -103,7 +104,7 @@ const MobSavedAdress = () => {
                                         </>
                                     }
                                     sx={{
-                                        pl: "40px", // to avoid overlap with dot selector
+                                        pl: 1,
                                         display: "flex",
                                         alignItems: "center",
                                     }}
@@ -113,7 +114,14 @@ const MobSavedAdress = () => {
 
                                     {/* Address text */}
                                     <Box sx={{ flexGrow: 1 }}>
-                                        <Typography sx={{ fontSize: "15px", fontWeight: "bold", mb: 0.5 }}>
+                                        <Typography
+                                            sx={{
+                                                fontSize: "15px",
+                                                fontWeight: selectedAddressIndex === index ? "bold" : "normal",
+                                                mb: 0.5,ml:2.5,
+                                                color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
+                                            }}
+                                        >
                                             {item.title}
                                         </Typography>
                                         <Typography variant="body2" sx={{ color: "text.secondary", fontSize: "14px" }}>
@@ -152,4 +160,4 @@ const MobSavedAdress = () => {
     );
 };
 
-export default MobSavedAdress;
+export default MobSavedAddress;
