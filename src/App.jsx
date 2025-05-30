@@ -19,7 +19,7 @@ import MobMessages from "./pages/Mobile/mobMessages";
 import MobPremium from "./pages/Mobile/mobPremium";
 import MobHelpSupport from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupport";
 import MobHelpSupportChat from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupportChat";
-import MobMyLocation from "./pages/Mobile/mobMyLocation";
+import MobSavedAdress from "./pages/Mobile/mobSavedAdderess";
 
 function App() {
   return (
@@ -45,7 +45,7 @@ function App() {
         <Route path="/mobile-messages" element={<MobMessages />} />
         <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
         <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
-        <Route path="/mobile-mylocation" element={<MobMyLocation />} />
+        <Route path="/mobile-saved-adress" element={<MobSavedAdress />} />
       </Routes>
     </Router>
   );

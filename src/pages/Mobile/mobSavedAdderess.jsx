@@ -8,16 +8,18 @@ import {
     IconButton,
     Menu,
     MenuItem,
-    Paper,
     Button,
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MobHeading from "../../modules/components/Mobile/mobileHeading";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
 import { useState } from "react";
 
-const MobMyLocation = () => {
+const MobSavedAdress = () => {
     const [anchorEl, setAnchorEl] = useState(null);
+    const [selectedAddressIndex, setSelectedAddressIndex] = useState(null);
 
     const handleMenuClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -43,7 +45,7 @@ const MobMyLocation = () => {
     ];
 
     return (
-        <Box >
+        <Box sx={{ position: "relative", minHeight: "100vh", pb: "80px" }}>
             <MobHeading Heading="My Addresses" />
             <Grid container>
                 <Typography variant="body2" sx={{ pl: 2, mb: 2 }}>
@@ -56,11 +58,32 @@ const MobMyLocation = () => {
                             sx={{
                                 backgroundColor: "#f9f9f9",
                                 borderRadius: 1,
-                                p: 1.5,
+                                p: 1,
                                 border: "1px solid #e0e0e0",
                                 mb: 1.5,
+                                position: "relative",
                             }}
                         >
+                            {/* Dot selector */}
+                            <IconButton
+                                size="small"
+                                onClick={() => setSelectedAddressIndex(index)}
+                                sx={{
+                                    position: "absolute",
+                                    top: "50%",
+                                    left: 8,
+                                    transform: "translateY(-50%)",
+                                    zIndex: 2,
+                                    color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
+                                }}
+                            >
+                                {selectedAddressIndex === index ? (
+                                    <RadioButtonCheckedIcon fontSize="small" />
+                                ) : (
+                                    <RadioButtonUncheckedIcon fontSize="small" />
+                                )}
+                            </IconButton>
+
                             <List disablePadding>
                                 <ListItem
                                     disableGutters
@@ -79,20 +102,21 @@ const MobMyLocation = () => {
                                             </Menu>
                                         </>
                                     }
+                                    sx={{
+                                        pl: "40px", // to avoid overlap with dot selector
+                                        display: "flex",
+                                        alignItems: "center",
+                                    }}
                                 >
-                                    <ListItemAvatar>
-                                        <LocationOnIcon sx={{ color: "#BFA088", fontSize: 28 }} />
-                                    </ListItemAvatar>
-                                    <Box sx={{ width: "100%", ml:-1 }}>
-                                        <Typography
-                                            sx={{ fontSize: "15px", fontWeight: "bold", mb: 0.5 ,}}
-                                        >
+                                    {/* Location Icon */}
+                                    <LocationOnIcon sx={{ color: "#BFA088", fontSize: 28, mr: 2 }} />
+
+                                    {/* Address text */}
+                                    <Box sx={{ flexGrow: 1 }}>
+                                        <Typography sx={{ fontSize: "15px", fontWeight: "bold", mb: 0.5 }}>
                                             {item.title}
                                         </Typography>
-                                        <Typography
-                                            variant="body2"
-                                            sx={{ color: "text.secondary", fontSize: "14px" }}
-                                        >
+                                        <Typography variant="body2" sx={{ color: "text.secondary", fontSize: "14px" }}>
                                             {item.details}
                                         </Typography>
                                     </Box>
@@ -128,4 +152,4 @@ const MobMyLocation = () => {
     );
 };
 
-export default MobMyLocation;
+export default MobSavedAdress;
