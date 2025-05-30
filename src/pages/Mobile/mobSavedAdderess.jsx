@@ -66,7 +66,6 @@ const MobSavedAddress = () => {
                                 transition: "all 0.3s ease-in-out",
                                 cursor: "pointer",
                             }}
-                            onClick={() => setSelectedAddressIndex(index)}
                         >
                             <List disablePadding>
                                 <ListItem
@@ -94,41 +93,48 @@ const MobSavedAddress = () => {
                                             <LocationOnIcon color="primary" />
                                         </Avatar>
                                     </ListItemAvatar>
-                                    <Box sx={{ml:-1}}>
-                                        <Box sx={{display:'flex', flexDirection:'row',ml:-1}}>
-                                        <IconButton
-                                            size="small"
-                                            sx={{
-                                                color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
-                                                p: 0.5,
-                                                mr: 0.5,
-                                            }}
-                                        >
-                                            {selectedAddressIndex === index ? (
-                                                <RadioButtonCheckedIcon fontSize="small" />
-                                            ) : (
-                                                <RadioButtonUncheckedIcon fontSize="small" />
-                                            )}
-                                        </IconButton>
-                                        
-                                            <Typography
+                                    <Box sx={{ ml: -1 }} onClick={() => setSelectedAddressIndex(index)}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'row', ml: -1 }}>
+                                            <IconButton
+                                                size="small"
                                                 sx={{
-                                                    fontSize: "15px",
-                                                    fontWeight: selectedAddressIndex === index ? "bold" : "normal",
-                                                    color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
+                                                    color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
+                                                    p: 0.5,
+                                                    mr: 0.5,
                                                 }}
                                             >
-                                                {item.title}
-                                            </Typography>
+                                                {selectedAddressIndex === index ? (
+                                                    <RadioButtonCheckedIcon fontSize="small" />
+                                                ) : (
+                                                    <RadioButtonUncheckedIcon fontSize="small" />
+                                                )}
+                                            </IconButton>
+
+                                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                                <Typography
+                                                    sx={{
+                                                        fontSize: "15px",
+                                                        fontWeight: selectedAddressIndex === index ? "bold" : "normal",
+                                                        color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
+                                                    }}
+                                                >
+                                                    {item.title}
+                                                </Typography>
+                                                {selectedAddressIndex === index && (
+                                                    <Typography variant="body2" sx={{ ml: 1, color: "#9c6f38" }}>
+                                                        (default)
+                                                    </Typography>
+                                                )}
                                             </Box>
-                                            <Typography
-                                                variant="body2"
-                                                sx={{ color: "text.secondary", fontSize: "14px", mt: 0.5 }}
-                                            >
-                                                {item.details}
-                                            </Typography>
                                         </Box>
-                                    
+
+                                        <Typography
+                                            variant="body2"
+                                            sx={{ color: "text.secondary", fontSize: "14px", mt: 0.5 }}
+                                        >
+                                            {item.details}
+                                        </Typography>
+                                    </Box>
                                 </ListItem>
                             </List>
                         </Box>
