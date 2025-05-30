@@ -121,7 +121,7 @@ const MobSavedAddress = () => {
                                                     {item.title}
                                                 </Typography>
                                                 {selectedAddressIndex === index && (
-                                                    <Typography variant="body2" sx={{ ml: 1, color: "#9c6f38" }}>
+                                                    <Typography variant="body2" sx={{ ml: 1, color: "grey" }}>
                                                         (default)
                                                     </Typography>
                                                 )}
