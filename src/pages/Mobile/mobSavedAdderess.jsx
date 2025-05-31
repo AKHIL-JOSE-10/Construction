@@ -68,74 +68,78 @@ const MobSavedAddress = () => {
                             }}
                         >
                             <List disablePadding>
-                                <ListItem
-                                    disableGutters
-                                    secondaryAction={
-                                        <>
-                                            <IconButton
-                                                onClick={(e) => handleMenuClick(e, index)}
-                                            >
-                                                <MoreVertIcon sx={{ color: "#757575" }} />
-                                            </IconButton>
-                                            <Menu
-                                                anchorEl={anchorEl?.anchor}
-                                                open={anchorEl?.index === index}
-                                                onClose={handleMenuClose}
-                                            >
-                                                <MenuItem onClick={handleMenuClose}>Edit</MenuItem>
-                                                <MenuItem onClick={handleMenuClose}>Delete</MenuItem>
-                                            </Menu>
-                                        </>
-                                    }
-                                >
-                                    <ListItemAvatar>
-                                        <Avatar sx={{ bgcolor: "transparent" }}>
-                                            <LocationOnIcon color="primary" />
-                                        </Avatar>
-                                    </ListItemAvatar>
-                                    <Box sx={{ ml: -1 }} onClick={() => setSelectedAddressIndex(index)}>
-                                        <Box sx={{ display: 'flex', flexDirection: 'row', ml: -1 }}>
-                                            <IconButton
-                                                size="small"
-                                                sx={{
-                                                    color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
-                                                    p: 0.5,
-                                                    mr: 0.5,
-                                                }}
-                                            >
-                                                {selectedAddressIndex === index ? (
-                                                    <RadioButtonCheckedIcon fontSize="small" />
-                                                ) : (
-                                                    <RadioButtonUncheckedIcon fontSize="small" />
-                                                )}
-                                            </IconButton>
+<ListItem
+    disableGutters
 
-                                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                                <Typography
-                                                    sx={{
-                                                        fontSize: "15px",
-                                                        fontWeight: selectedAddressIndex === index ? "bold" : "normal",
-                                                        color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
-                                                    }}
-                                                >
-                                                    {item.title}
-                                                </Typography>
-                                                {selectedAddressIndex === index && (
-                                                    <Typography variant="body2" sx={{ ml: 1, color: "grey" }}>
-                                                        (default)
-                                                    </Typography>
-                                                )}
-                                            </Box>
-                                        </Box>
+>
+    <IconButton
+        onClick={(e) => handleMenuClick(e, index)}
+        sx={{ mr: 1 }}
+    >
+        <MoreVertIcon sx={{ color: "#757575" }} />
+    </IconButton>
 
-                                        <Typography
-                                            variant="body2"
-                                            sx={{ color: "text.secondary", fontSize: "14px", mt: 0.5 }}
-                                        >
-                                            {item.details}
-                                        </Typography>
-                                    </Box>
-                                </ListItem>
+    <Box
+        sx={{ flex: 1 }}
+        onClick={() => setSelectedAddressIndex(index)}
+    >
+        <Box sx={{ display: 'flex', alignItems: 'center',ml:-1 }}>
+            <IconButton
+                size="small"
+                sx={{
+                    color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
+                    p: 0.5,
+                    mr: 0.5,
+                }}
+            >
+                {selectedAddressIndex === index ? (
+                    <RadioButtonCheckedIcon fontSize="small" />
+                ) : (
+                    <RadioButtonUncheckedIcon fontSize="small" />
+                )}
+            </IconButton>
+
+            <Typography
+                sx={{
+                    fontSize: "15px",
+                    fontWeight: selectedAddressIndex === index ? "bold" : "normal",
+                    color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
+                }}
+            >
+                {item.title}
+            </Typography>
+            {selectedAddressIndex === index && (
+                <Typography variant="body2" sx={{ ml: 1, color: "grey" }}>
+                    (default)
+                </Typography>
+            )}
+        </Box>
+
+        <Typography
+            variant="body2"
+            sx={{ color: "text.secondary", fontSize: "14px", mt: 0.5 }}
+        >
+            {item.details}
+        </Typography>
+    </Box>
+
+    <ListItemAvatar sx={{ minWidth: "auto", ml: 1 }}>
+        <Avatar sx={{ bgcolor: "transparent" }}>
+            <LocationOnIcon color="primary" />
+        </Avatar>
+    </ListItemAvatar>
+
+    {/* Moved outside ListItem to match new IconButton position */}
+    <Menu
+        anchorEl={anchorEl?.anchor}
+        open={anchorEl?.index === index}
+        onClose={handleMenuClose}
+    >
+        <MenuItem onClick={handleMenuClose}>Edit</MenuItem>
+        <MenuItem onClick={handleMenuClose}>Delete</MenuItem>
+    </Menu>
+</ListItem>
+
                             </List>
                         </Box>
                     ))}
