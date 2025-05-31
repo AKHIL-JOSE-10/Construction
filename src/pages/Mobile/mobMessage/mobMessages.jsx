@@ -80,7 +80,7 @@ const MobMessages = () => {
     <Grid>
       <Box sx={{ bgcolor: 'white' }}>
         <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h6" sx={{ p: 2, fontWeight: 600, fontSize: '20px' }}>
+          <Typography variant="h6" sx={{ p: 2,pb:0, fontWeight: 600, fontSize: '20px' }}>
             Chat
           </Typography>
         </Box>

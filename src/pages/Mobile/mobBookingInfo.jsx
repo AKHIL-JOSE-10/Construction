@@ -7,14 +7,16 @@ const MobBookingInfo = () => {
     return (
         <Grid container>
             <MobHeading Heading="Booking info" />
-            <Grid sx={{ px: 1,}}>
+            <Grid sx={{ px: 1,mt:8, width:'100%' }}>
                 <Box>
                     <Typography sx={{ fontSize: '23px', fontWeight: '600' }}>Plumping Service</Typography>
                     <Typography sx={{ fontSize: 14, color: 'grey', mb: 2 }}>Booking ID : #7082195</Typography>
-                    <Typography sx={{ fontSize: '15px', fontWeight: '550' }}>Requesting the provider</Typography>
-                    <Typography sx={{ mt: 1, mb: 4, fontSize: 13, lineHeight: 1.4, textAlign: 'justify', color: 'grey' }}>
-                        We will let you know when Jane Cooper accepts the offer Here the status should be updated like (booking confirmed by worker, in work, completed , give review)
-                    </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                        <Typography sx={{ fontSize: '15px', fontWeight: '550', mr: 1 }}>
+                            Booking Confirmed by worker
+                        </Typography>
+                        <VerifiedIcon sx={{ color: 'green', fontSize: 20 }} />
+                    </Box>
                 </Box>
 
                 <Grid>
@@ -151,7 +153,6 @@ const MobBookingInfo = () => {
 
                         <Typography sx={{ mt: 3, fontSize: 13, lineHeight: 1.2, textAlign: 'justify', color: 'grey' }}>
                             You won’t be charged until the job is completed.
-                            here also status of payment. if client marked completed, then assume payment is done. so update status accordingly
                         </Typography>
 
                     </Grid>
