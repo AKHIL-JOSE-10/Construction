@@ -9,7 +9,7 @@ import Home from "./modules/pages/Home/Mobile/Home";
 import Profile from "./modules/pages/Profile/Profile";
 import MobSignin from "./pages/Mobile/Authentication/mobsignin";
 import MobSignup from "./pages/Mobile/Authentication/mobSignup";
-import MobServiceCategory from "./pages/Mobile/mobServiceCategory";
+import MobAllServiceCategory from './pages/Mobile/mobServiceCategory/mobAllServiceCategory'
 import MobWorkerpage from "./pages/Mobile/mobWorkerpage";
 import MobForgotPassword from "./pages/Mobile/Authentication/mobForgotPassword";
 import Bookings from "./modules/pages/Bookings/Bookings";
@@ -19,7 +19,7 @@ import MobMessages from "./pages/Mobile/mobMessages";
 import MobPremium from "./pages/Mobile/mobPremium";
 import MobHelpSupport from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupport";
 import MobHelpSupportChat from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupportChat";
-import MobSavedAddress from "./pages/Mobile/mobSavedAdderess";
+import MobSavedAddress from "./pages/Mobile/mobProfile/mobSavedAdderess";
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
         <Route path="/mobile-profile" element={<MobProfilePage />} />
         <Route path="/mobile-bookings" element={<MobMyBookings />} />
         <Route path="/mobile-booking-info" element={<MobBookingInfo />} />
-        <Route path="/mobile-service-category" element={<MobServiceCategory />} />
+        <Route path="/mobile-service-category" element={<MobAllServiceCategory />} />
         <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
         <Route path="/mobile-settings" element={<MobSettings />} />
         <Route path="/mobile-notifications" element={<MobNotifications />} />

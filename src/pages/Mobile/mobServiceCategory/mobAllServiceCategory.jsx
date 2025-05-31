@@ -1,25 +1,25 @@
 import { Grid, Box } from '@mui/material';
-import MobHeading from "../../modules/components/Mobile/mobileHeading"
-import MobServiceCategoryList from '../../modules/components/Mobile/mobServiceCategoryList';
-import ArchitectIcon from '../../assets/ArchitectIcon.png'
-import StructuralIcon from '../../assets/StructuralIcon.png'
-import LandscapingIcon from '../../assets/LandscapingIcon.png'
-import InteriorIcon from '../../assets/InteriorIcon.png'
-import CarpentersIcon from '../../assets/CarpentersIcon.png'
-import CivilIcon from '../../assets/CivilIcon.png'
-import ContractorsIcon from '../../assets/ContractorsIcon.png'
-import PlumbersIcon from '../../assets/PlumbersIcon.png'
-import ElectriciansIcon from '../../assets/ElectriciansIcon.png'
-import RoofingIcon from '../../assets/RoofingIcon.png'
-import FlooringIcon from '../../assets/FlooringIcon.png'
-import SteelIcon from '../../assets/SteelIcon.png'
-import GlassIcon from '../../assets/GlassIcon.png'
-import SkillfulIcon from '../../assets/SkillfulIcon.png'
-import ArtisticIcon from '../../assets/ArtisticIcon.png'
-import AluminiumIcon from '../../assets/AluminiumIcon.png'
-import MobileBottomTab from '../../modules/components/Mobile/mobileBottomTab';
+import MobHeading from "../../../modules/components/Mobile/mobileHeading"
+import MobServiceCategoryList from '../../../modules/components/Mobile/mobServiceCategoryList';
+import ArchitectIcon from '../../../assets/ArchitectIcon.png'
+import StructuralIcon from '../../../assets/StructuralIcon.png'
+import LandscapingIcon from '../../../assets/LandscapingIcon.png'
+import InteriorIcon from '../../../assets/InteriorIcon.png'
+import CarpentersIcon from '../../../assets/CarpentersIcon.png'
+import CivilIcon from '../../../assets/CivilIcon.png'
+import ContractorsIcon from '../../../assets/ContractorsIcon.png'
+import PlumbersIcon from '../../../assets/PlumbersIcon.png'
+import ElectriciansIcon from '../../../assets/ElectriciansIcon.png'
+import RoofingIcon from '../../../assets/RoofingIcon.png'
+import FlooringIcon from '../../../assets/FlooringIcon.png'
+import SteelIcon from '../../../assets/SteelIcon.png'
+import GlassIcon from '../../../assets/GlassIcon.png'
+import SkillfulIcon from '../../../assets/SkillfulIcon.png'
+import ArtisticIcon from '../../../assets/ArtisticIcon.png'
+import AluminiumIcon from '../../../assets/AluminiumIcon.png'
+import MobileBottomTab from '../../../modules/components/Mobile/mobileBottomTab';
 
-const MobServiceCategory = () => {
+const MobAllServiceCategory = () => {
     return (
         <Grid container >
             <MobHeading Heading='Service Category' />
@@ -46,4 +46,4 @@ const MobServiceCategory = () => {
     )
 }
 
-export default MobServiceCategory
+export default MobAllServiceCategory
