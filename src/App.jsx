@@ -15,7 +15,7 @@ import MobForgotPassword from "./pages/Mobile/Authentication/mobForgotPassword";
 import Bookings from "./modules/pages/Bookings/Bookings";
 import EditInfo from "./modules/pages/EditInfo/EditInfo";
 import RouteListPage from "./RouterListPage";
-import MobMessages from "./pages/Mobile/mobMessages";
+import MobMessages from "./pages/Mobile/mobMessage/mobMessages";
 import MobPremium from "./pages/Mobile/mobPremium";
 import MobHelpSupport from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupport";
 import MobHelpSupportChat from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupportChat";

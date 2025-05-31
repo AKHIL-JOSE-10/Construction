@@ -1,9 +1,8 @@
-import { Box, Typography, IconButton, Grid } from '@mui/material';
+import { Box, Typography, IconButton, Grid, Avatar } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import { useNavigate } from 'react-router-dom';
 
-const MobHelpSupportChatTop = () => {
+const MobHelpSupportChatTop = ({ name, img }) => {
     const navigate = useNavigate();
 
     return (
@@ -26,11 +25,17 @@ const MobHelpSupportChatTop = () => {
                     <ArrowBackIcon />
                 </IconButton>
 
-                {/* Help Center Icon */}
-                <SupportAgentIcon sx={{ fontSize: 46, color: 'black', mr: 2, ml:1 }} />
+                {/* ✅ Render image as avatar if available */}
+                {img && (
+                    <Avatar
+                        src={img}
+                        alt={name}
+                        sx={{ width: 40, height: 47, mr: 2, ml: 1 }}
+                    />
+                )}
 
                 <Typography variant="subtitle1" fontWeight={500} fontSize={20}>
-                    Help Center
+                    {name}
                 </Typography>
             </Box>
         </Grid>

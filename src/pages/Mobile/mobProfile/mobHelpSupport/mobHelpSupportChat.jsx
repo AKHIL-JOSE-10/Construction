@@ -1,12 +1,13 @@
 import { Grid, Box } from '@mui/material';
 import MobHelpSupportChatBottom from '../../../../modules/components/Mobile/mobHelpSupport/mobHelpSupportChatBottom';
 import MobHelpSupportChatTop from '../../../../modules/components/Mobile/mobHelpSupport/mobHelpSupportChatTop';
+import supportchat_icon from '../../../../assets/supportchat_icon.png' 
 
 const MobHelpSupportChat = () => {
 
     return (
         <Grid>
-            <MobHelpSupportChatTop />
+            <MobHelpSupportChatTop name = "Help Center" img = {supportchat_icon } />
             <Grid container direction="column" spacing={2} sx={{ px: 2, mt: 5, mb: 8 }}>
                 {/* Support message (left aligned) */}
                 <Grid item>
