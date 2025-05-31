@@ -20,6 +20,10 @@ import MobPremium from "./pages/Mobile/mobPremium";
 import MobHelpSupport from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupport";
 import MobHelpSupportChat from "./pages/Mobile/mobProfile/mobHelpSupport/mobHelpSupportChat";
 import MobSavedAddress from "./pages/Mobile/mobProfile/mobSavedAdderess";
+import MobArtisansServices from "./pages/Mobile/mobServiceCategory/mobArtisansServices";
+import MobArchitecturalServices from "./pages/Mobile/mobServiceCategory/mobArchitecturalServices";
+import MobAutomationServices from "./pages/Mobile/mobServiceCategory/mobAutomationServices";
+import MobFabricationServices from "./pages/Mobile/mobServiceCategory/mobFabricationServices";
 
 function App() {
   return (
@@ -46,6 +50,10 @@ function App() {
         <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
         <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
         <Route path="/mobile-saved-address" element={<MobSavedAddress />} />
+        <Route path="/mobile-artisans-services" element={<MobArtisansServices />} />
+        <Route path="/mobile-architectural-services" element={<MobArchitecturalServices />} />
+        <Route path="/mobile-automation-services" element={<MobAutomationServices />} />
+        <Route path="/mobile-fabrication-services" element={<MobFabricationServices />} />
       </Routes>
     </Router>
   );
