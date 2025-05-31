@@ -24,6 +24,7 @@ import MobArtisansServices from "./pages/Mobile/mobServiceCategory/mobArtisansSe
 import MobArchitecturalServices from "./pages/Mobile/mobServiceCategory/mobArchitecturalServices";
 import MobAutomationServices from "./pages/Mobile/mobServiceCategory/mobAutomationServices";
 import MobFabricationServices from "./pages/Mobile/mobServiceCategory/mobFabricationServices";
+import MobMessageChat from "./pages/Mobile/mobMessage/mobMessageChat";
 
 function App() {
   return (
@@ -54,6 +55,8 @@ function App() {
         <Route path="/mobile-architectural-services" element={<MobArchitecturalServices />} />
         <Route path="/mobile-automation-services" element={<MobAutomationServices />} />
         <Route path="/mobile-fabrication-services" element={<MobFabricationServices />} />
+        <Route path="/mobile-message-chat" element={<MobMessageChat />} />
+
       </Routes>
     </Router>
   );
