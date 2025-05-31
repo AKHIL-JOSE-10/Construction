@@ -72,9 +72,7 @@ const MobSavedAddress = () => {
                                     disableGutters
                                     secondaryAction={
                                         <>
-                                            <IconButton
-                                                onClick={(e) => handleMenuClick(e, index)}
-                                            >
+                                            <IconButton onClick={(e) => handleMenuClick(e, index)}>
                                                 <MoreVertIcon sx={{ color: "#757575" }} />
                                             </IconButton>
                                             <Menu
@@ -88,22 +86,38 @@ const MobSavedAddress = () => {
                                         </>
                                     }
                                 >
-                                    <ListItemAvatar>
-                                        <Avatar sx={{ bgcolor: "transparent" }}>
-                                            <LocationOnIcon color="primary" />
-                                        </Avatar>
-                                    </ListItemAvatar>
-                                    <Box sx={{ ml: -1 }} onClick={() => setSelectedAddressIndex(index)}>
-                                        <Box sx={{ display: 'flex', flexDirection: 'row', }}>
-                                            
+                                    {/* Radio button to select address */}
+                                    <IconButton
+                                        size="small"
+                                        sx={{
+                                            color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
+                                            p: 0.5,
+                                            mr: 1.5,
+                                        }}
+                                        onClick={() => setSelectedAddressIndex(index)}
+                                    >
+                                        {selectedAddressIndex === index ? (
+                                            <RadioButtonCheckedIcon fontSize="small" />
+                                        ) : (
+                                            <RadioButtonUncheckedIcon fontSize="small" />
+                                        )}
+                                    </IconButton>
+
+                                    {/* Title and Details */}
+                                    <Box  onClick={() => setSelectedAddressIndex(index)}>
+                                        <Box sx={{ display: 'flex', flexDirection: 'row' ,ml:-0.5}}>
                                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                                 <Typography
                                                     sx={{
                                                         fontSize: "15px",
                                                         fontWeight: selectedAddressIndex === index ? "bold" : "normal",
                                                         color: selectedAddressIndex === index ? "rgb(70, 39, 4)" : "inherit",
+                                                        display: "flex",
+                                                        alignItems: "center",
+                                                        gap: "4px",
                                                     }}
                                                 >
+                                                    <LocationOnIcon color="primary" fontSize="small" />
                                                     {item.title}
                                                 </Typography>
                                                 {selectedAddressIndex === index && (
@@ -112,21 +126,6 @@ const MobSavedAddress = () => {
                                                     </Typography>
                                                 )}
                                             </Box>
-                                        <IconButton
-                                                size="small"
-                                                sx={{
-                                                    color: selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
-                                                    p: 0.5,
-                                                    mr: 0.5,
-                                                }}
-                                            >
-                                                {selectedAddressIndex === index ? (
-                                                    <RadioButtonCheckedIcon fontSize="small" />
-                                                ) : (
-                                                    <RadioButtonUncheckedIcon fontSize="small" />
-                                                )}
-                                            </IconButton>
-
                                         </Box>
                                         <Typography
                                             variant="body2"
@@ -136,6 +135,7 @@ const MobSavedAddress = () => {
                                         </Typography>
                                     </Box>
                                 </ListItem>
+
                             </List>
                         </Box>
                     ))}
