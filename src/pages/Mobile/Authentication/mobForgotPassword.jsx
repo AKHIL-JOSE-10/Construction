@@ -1,11 +1,12 @@
 import { Typography, Box, TextField } from '@mui/material';
 
 import MobAuthLayout from '../../../modules/layouts/Mobile/mobAuthLayout';
+import BottomDrawerLayout from '../../../modules/layouts/BottomDrawer/BottomDrawer';
 
 const MobForgotPassword = () => {
   return (
     <MobAuthLayout heading1={<>Forgot{'                '}</>} heading2="Password">
-      <Box sx={{ height: 'auto', width: '95%', mb: 3, bgcolor: 'white', border: '2px solid #B08B6F', borderRadius: 2 }}>
+      <BottomDrawerLayout open={true}>
         <Typography sx={{ fontSize: { xs: '30px', sm: '40px' }, fontWeight: '600', pt: 3.5, textAlign: 'center', }}>Forgot Password </Typography>
 
         <Box px={3} pb={5} pt={4}>
@@ -41,7 +42,7 @@ const MobForgotPassword = () => {
             * We will send you a message to set or reset your new password
           </Typography>
         </Box>
-      </Box>
+      </BottomDrawerLayout>
     </MobAuthLayout>
   )
 }

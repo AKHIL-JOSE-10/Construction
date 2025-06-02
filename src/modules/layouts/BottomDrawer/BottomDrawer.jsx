@@ -56,7 +56,7 @@ export default function BottomDrawerLayout({ children, open, setOpen }) {
             onClick={() => handleOpen(false)}
           />
 
-          <Box sx={{ height: "92%",position:"relative"}} m={2}>
+          <Box sx={{ height: "92%",position:"relative",overflow:"auto",scrollbarWidth:"none"}} m={2}>
             {children}
           </Box>
         </Box>
