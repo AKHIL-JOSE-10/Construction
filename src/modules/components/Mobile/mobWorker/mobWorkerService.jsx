@@ -9,12 +9,13 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useState } from 'react';
 import dayjs from 'dayjs';
+import UserSpecificBooking from '../../../pages/Bookings/UserSpecificBooking';
 
 
 const MobWorkerservice = () => {
 
   const [date, setDate] = useState(dayjs());
-
+  const [open,setOpen] = useState(false);
   return (
     <Grid>
       <Box sx={{ px: 1 }}>
@@ -159,13 +160,14 @@ const MobWorkerservice = () => {
         </Box>
 
 
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', mt: 3 }}>
-          <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }}>
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', mt: 3 }} >
+          <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }} onClick={()=>setOpen(true)}>
             Book now
           </Button>
         </Box>
       </Box>
-
+     
+      <UserSpecificBooking open={open} setOpen={setOpen}/>
 
     </Grid>
   )
