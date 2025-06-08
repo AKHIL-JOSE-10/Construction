@@ -21,7 +21,7 @@ const MobWorkerservice = () => {
       <Box sx={{ px: 1 }}>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', py: 2, ml: 1 }}>My Services</Typography>
         <Accordion
-          sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
+          sx={{ borderRadius: 1, border: '0.9px solid lightgrey', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -71,7 +71,7 @@ const MobWorkerservice = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
+          sx={{ borderRadius: 1, border: '0.9px solid lightgrey', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"

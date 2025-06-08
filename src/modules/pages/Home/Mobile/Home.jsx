@@ -128,7 +128,7 @@ export default function Home() {
         size={12}
         direction={"column"}
         sx={{
-          bgcolor: color.layoutColor,
+          bgcolor:"white",
           height: "100%",
           paddingBottom: "60px",
         }}

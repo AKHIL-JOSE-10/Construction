@@ -36,7 +36,7 @@ const MobileBottomTab = () => {
     return (
         <>
             <Box sx={{ height: 60 }} />
-            <Box sx={{ mt: 13, position: 'fixed', overflow: 'hidden', bottom: 0, left: 0, right: 0, width: '100%', bgcolor: 'white', zIndex: 10, borderTop: '1px solid #ccc' }}>
+            <Box sx={{ mt: 13, position: 'fixed', overflow: 'hidden', bottom: 0, left: 0, right: 0, width: '100%', bgcolor: 'white', zIndex: 10, borderTop: '1px solid lightgrey' }}>
                 <Tabs
                     value={value}
                     onChange={handleChange}
