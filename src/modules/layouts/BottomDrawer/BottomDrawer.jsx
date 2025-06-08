@@ -1,7 +1,7 @@
 import { Box, Button, Drawer, Grid } from "@mui/material";
 import React, { useState } from "react";
 
-export default function BottomDrawerLayout({ children, open, setOpen }) {
+export default function BottomDrawerLayout({ children, open, setOpen,sx }) {
 
 
   const handleOpen = (toggleOpen) => {
@@ -29,6 +29,7 @@ export default function BottomDrawerLayout({ children, open, setOpen }) {
               width: "100%",
               borderRadius: "22px 22px 0px 0px",
               overflow: "hidden",
+
             },
           },
         }}
@@ -40,6 +41,7 @@ export default function BottomDrawerLayout({ children, open, setOpen }) {
             overflow: "hidden",
             bgcolor: "white",
             position: "relative",
+            ...sx,
           }}
           pt={2}
         >

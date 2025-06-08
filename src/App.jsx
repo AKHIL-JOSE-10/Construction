@@ -26,7 +26,7 @@ import MobAutomationServices from "./pages/Mobile/mobServiceCategory/mobAutomati
 import MobFabricationServices from "./pages/Mobile/mobServiceCategory/mobFabricationServices";
 import MobMessageChat from "./pages/Mobile/mobMessage/mobMessageChat";
 
-import UserSpecificBooking from "./modules/pages/Bookings/UserSpecificBooking";
+import Test from "./test";
 function App() {
   return (
     <Router>
@@ -75,7 +75,7 @@ function App() {
           element={<MobFabricationServices />}
         />
         <Route path="/mobile-message-chat" element={<MobMessageChat />} />
-        <Route path="/test" element={<UserSpecificBooking />} />
+        <Route path="/test" element={<Test/>} />
       </Routes>
     </Router>
   );

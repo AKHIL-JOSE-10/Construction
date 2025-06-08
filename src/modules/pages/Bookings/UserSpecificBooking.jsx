@@ -15,6 +15,8 @@ import {
   Select,
   TextField,
   Tooltip,
+  Checkbox,
+  ListItemText,
   Typography,
 } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -59,14 +61,12 @@ export default function UserSpecificBooking({ open, setOpen }) {
   const hiddenSlotCount = slots.length - 2;
   return (
     <BottomDrawerLayout open={open} setOpen={setOpen}>
-      <Box sx={{backgroundColor:"white"}}>
+      <Box sx={{ backgroundColor: "white" }}>
         <Typography variant={"h6"} fontWeight={700} pl={1} pb={2}>
           Book Now
         </Typography>
       </Box>
-      <Box
-        sx={{ height: "100%", overflow: "auto", scrollbarWidth: "none" }}
-      >
+      <Box sx={{ height: "100%", overflow: "auto", scrollbarWidth: "none" }}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           {/* Global style override to hide the toolbar */}
           <GlobalStyles
@@ -113,11 +113,13 @@ export default function UserSpecificBooking({ open, setOpen }) {
               value={workItem}
               onChange={(e) => setWorkItem(e.target.value)}
               label="Choose one"
+              renderValue={(selected) => selected || "Choose one"}
               displayEmpty
             >
               {work.map((val, index) => (
                 <MenuItem key={index} value={val}>
-                  {val}
+                  <Checkbox checked={workItem === val} />
+                  <ListItemText primary={val} />
                 </MenuItem>
               ))}
             </Select>
@@ -166,7 +168,7 @@ export default function UserSpecificBooking({ open, setOpen }) {
                         height: "20px",
                         width: "20px",
                         backgroundColor: "transparent",
-                        border:"1px solid grey"
+                        border: "1px solid grey",
                       }}
                     >
                       <Add sx={{ fontSize: "18px" }} />
@@ -254,7 +256,7 @@ export default function UserSpecificBooking({ open, setOpen }) {
                 width: "85%",
                 textTransform: "none",
               }}
-              onClick={() => setOpen(true)}
+              onClick={() => setOpen(false)}
             >
               Book now
             </Button>

@@ -1,5 +1,5 @@
 import React from "react";
-import BottomDrawerLayout from "./modules/layouts/BottomDrawer/BottomDrawer";
+import BottomDrawerLayout from "../../../../layouts/BottomDrawer/BottomDrawer";
 import {
   Box,
   Divider,
@@ -12,9 +12,8 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import SearchBar from "./modules/pages/Home/Mobile/SearchBar";
+import SearchBar from "../../Mobile/SearchBar";
 import { Add, KeyboardArrowRight, LocationOn, MyLocation } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
 export const addressList = [
   {
     title: "Home Address",
@@ -30,11 +29,11 @@ export const addressList = [
   },
 ];
 
-export default function Test() {
-  const navigate = useNavigate();
+export default function AddressDrawer({open,setOpen}) {
   return (
     <BottomDrawerLayout
-      open={true}
+      open={open}
+      setOpen={setOpen}
       sx={{ bgcolor: "rgba(231, 231, 228, 0.06)" }}
     >
       <Typography variant={"h6"} fontWeight={700} pl={1} pb={2}>
