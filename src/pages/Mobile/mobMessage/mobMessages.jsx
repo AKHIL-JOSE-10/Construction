@@ -21,52 +21,53 @@ const contacts = [
     id: 1,
     name: 'Anna Thomas',
     message: 'Site visit scheduled at 3 PM.',
-    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    avatar: 'https://randomuser.me/api/portraits/women/47.jpg',
     time: '10:30 AM',
   },
   {
     id: 2,
     name: 'Amanda',
     message: 'The materials have been delivered.',
-    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    avatar: 'https://randomuser.me/api/portraits/women/32.jpg',
     time: 'Yesterday',
   },
   {
     id: 3,
     name: 'Vismaya Rajeev',
     message: 'We need to finalize the plumbing layout.',
-    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
     time: 'Monday',
   },
   {
     id: 4,
     name: 'Elanor',
     message: 'Can you check the electrical wiring plan?',
-    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    avatar: 'https://randomuser.me/api/portraits/women/15.jpg',
     time: '10:30 AM',
   },
   {
     id: 5,
     name: 'Jasmin',
     message: 'Waiting for approval on the floor plan.',
-    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    avatar: 'https://randomuser.me/api/portraits/women/90.jpg',
     time: 'Yesterday',
   },
   {
     id: 6,
     name: 'Meera Thomas',
     message: 'The tiles for the kitchen have arrived.',
-    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    avatar: 'https://randomuser.me/api/portraits/women/26.jpg',
     time: 'Monday',
   },
   {
     id: 7,
     name: 'Henna Varghese',
     message: 'We’ve scheduled the inspection for Thursday.',
-    avatar: 'https://randomuser.me/api/portraits/women/79.jpg',
+    avatar: 'https://randomuser.me/api/portraits/women/73.jpg',
     time: 'Monday',
   },
 ];
+
 
 const MobMessages = () => {
   const [searchQuery, setSearchQuery] = useState('');

@@ -153,7 +153,7 @@ const MobSearchWorker = () => {
             <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
               <NotificationsNoneOutlined sx={{ color: "black", fontSize: "28px", cursor: 'pointer', mr: 1.5, mt: 0.6 }} />
             </Link>
-            <Avatar src="https://randomuser.me/api/portraits/men/45.jpg" />
+            <Avatar src="https://randomuser.me/api/portraits/women/79.jpg"/>
           </Box>
 
         </Grid>
