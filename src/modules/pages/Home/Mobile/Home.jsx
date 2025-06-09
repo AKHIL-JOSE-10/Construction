@@ -119,7 +119,7 @@ export default function Home() {
           onClick={() => navigate('/mobile-search-worker')}
         >
           <SearchIcon sx={{ color: "gray", mr: 1 }} />
-          <Typography sx={{ color: "gray", fontSize: "0.9em" }}>
+          <Typography sx={{ color: "#c0c0c0", fontSize: "0.9em" }}>
             Job title, keyword, worker
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
