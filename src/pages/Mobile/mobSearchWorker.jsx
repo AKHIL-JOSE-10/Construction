@@ -21,7 +21,7 @@ import {
   NotificationsNoneOutlined,
   Search as SearchIcon,
 } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const workers = [
   {
@@ -124,12 +124,14 @@ const MobSearchWorker = () => {
     <Box sx={{ bgcolor: "#fefaf7", minHeight: "100vh" }}>
       <Grid
         container
+        size={12}
         sx={{
           height: "18vh",
           bgcolor: "rgba(176, 139, 111, 0.81)",
           position: "relative",
         }}
         justifyContent={"center"}
+        overflow={"hidden"}
         mb={2}
       >
         <Grid
@@ -139,68 +141,77 @@ const MobSearchWorker = () => {
           mt={1}
           alignItems={"center"}
           spacing={2}
+          size={12}
           p={1}
           pb={0}
         >
-          <Grid item>
+          <Grid size={1}>
             <LocationOnOutlined sx={{ color: "white" }} />
           </Grid>
-          <Grid item flexGrow={1}>
-            <Typography fontSize="10px" color="white">
+          <Grid flexGrow={1} size={7}>
+            <Typography sx={{ fontSize: "10px", color: "rgba(255, 255, 255, 1)" }}>
               Current Location
             </Typography>
             <Grid container>
-              <Typography fontSize="13px" color="white">
+              <Typography sx={{ fontSize: "13px", color: "rgba(255, 255, 255, 1)" }}>
                 Kuala Lumpur, Malaysia
               </Typography>
               <KeyboardArrowDownOutlined sx={{ color: "white" }} />
             </Grid>
           </Grid>
-          <Grid item container alignItems="center" spacing={1.2} justifyContent="space-around" xs={3}>
-            <Link to="/mobile-notifications" style={{ color: "inherit" }}>
-              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "22px", cursor: "pointer" }} />
+          <Grid
+            container
+            alignItems={"center"}
+            spacing={1.2}
+            size={3}
+            justifyContent={"space-around"}
+          >
+            <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
+              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "22px", cursor: 'pointer' }} />
             </Link>
-            <Link to="/editInfo" style={{ color: "inherit" }}>
+            <Link to="/editInfo" style={{ color: 'inherit' }}>
               <Avatar
-                src="https://randomuser.me/api/portraits/women/79.jpg"
+                src={"https://randomuser.me/api/portraits/women/79.jpg"}
                 sx={{ width: "35px", height: "35px" }}
               />
             </Link>
           </Grid>
         </Grid>
 
-        {/* Search bar */}
+        {/* Search Input */}
         <Grid
           sx={{
-            bgcolor: "white",
+            bgcolor: 'white',
             height: "5vh",
             borderRadius: "1000px",
-            display: "flex",
-            alignItems: "center",
-            px: 1,
-            width: "90%",
-            mt: 1,
+            display: "flex"
           }}
+          alignItems={"center"}
+          size={10}
         >
           <Input
-            inputRef={inputRef}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Job title, keyword, worker"
             disableUnderline
             fullWidth
+            inputRef={inputRef}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             startAdornment={
               <InputAdornment position="start">
-                <SearchIcon sx={{ color: "gray", ml: 0.5 }} />
+                <SearchIcon sx={{ color: "gray", marginLeft: "0.3em" }} />
               </InputAdornment>
             }
             sx={{
-              fontSize: "0.9em",
               "& .MuiInputBase-root": {
                 border: "none",
+                backgroundColor: "transparent",
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
               },
               "& .MuiInputBase-input": {
                 padding: "0.5em",
+                fontSize: "0.9em",
               },
             }}
           />
@@ -211,13 +222,13 @@ const MobSearchWorker = () => {
       </Grid>
 
       {/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent="space-between">
+      <Grid container px={1} mt={2} justifyContent='space-between'>
         {filteredWorkers.map((worker, index) => (
-          <Grid key={index} item sx={{ display: "flex" }}>
+          <Grid key={index} sx={{ display: "flex" }}>
             <Box
               sx={{
                 borderRadius: 0.5,
-                minWidth: "168px",
+                minWidth: "165px",
                 mb: 1,
                 border: "0.5px solid #a9a9a9",
                 boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
@@ -245,26 +256,23 @@ const MobSearchWorker = () => {
                         }}
                       >
                         Archisans Verified Worker
-                        <CheckCircleIcon sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }} />
+                        <CheckCircleIcon
+                          sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }}
+                        />
                       </Box>
                     )}
                   </Box>
                 </Box>
 
-                <Typography fontSize={12} color="text.secondary">
-                  <LocationOnOutlined sx={{ fontSize: 15, mr: 0.5 }} />
-                  5.1 km away
-                </Typography>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Typography fontSize={12} color="text.secondary" sx={{ display: "flex", alignItems: "center" }}>
+                    <LocationOnOutlined sx={{ fontSize: 15, mr: 0.5 }} />
+                    5.1 km away
+                  </Typography>
+                </Box>
 
                 <Box display="flex" alignItems="center" gap={1} my={1} flexWrap="wrap">
-                  <AccessTimeIcon
-                    sx={{
-                      fontSize: 16,
-                      color: "white",
-                      bgcolor: "#0492C2",
-                      borderRadius: 10,
-                    }}
-                  />
+                  <AccessTimeIcon sx={{ fontSize: 16, color: "white", bgcolor: "#0492C2", borderRadius: 10 }} />
                   {[17, 18, 19, 20, 21, 22].map((date) => (
                     <Typography key={date} fontSize="11px" color="text.secondary">
                       {date}
@@ -279,14 +287,7 @@ const MobSearchWorker = () => {
                   {worker.price} <small>/hour</small>
                 </Typography>
 
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    my: 1,
-                    width: "140px",
-                  }}
-                >
+                <Box sx={{ display: "flex", justifyContent: "space-between", my: 1, width: '140px' }}>
                   <IconButton size="small">
                     <BookmarkBorder />
                   </IconButton>
@@ -306,7 +307,9 @@ const MobSearchWorker = () => {
                       gap: 1,
                     }}
                   >
-                    <Typography sx={{ fontSize: 10, color: "white" }}>Book</Typography>
+                    <Typography sx={{ fontSize: 10, color: "white" }}>
+                      Book
+                    </Typography>
                     <Box
                       sx={{
                         bgcolor: "#fff",
@@ -329,7 +332,6 @@ const MobSearchWorker = () => {
         ))}
       </Grid>
 
-      {/* View More */}
       <Box mt={2} textAlign="center">
         <Typography
           sx={{
@@ -343,7 +345,6 @@ const MobSearchWorker = () => {
         </Typography>
       </Box>
 
-      {/* Related Searches */}
       <Box mt={3}>
         <Typography fontWeight={600} mb={1}>
           Related Searches
