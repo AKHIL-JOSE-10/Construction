@@ -293,7 +293,7 @@ const MobSearchWorker = () => {
                       height: 30
                     }}
                   >
-                    <Typography sx={{ fontSize: 7, color: "white" }}>
+                    <Typography sx={{ fontSize: 9, color: "white" }}>
                       Book
                     </Typography>
                     <Box
