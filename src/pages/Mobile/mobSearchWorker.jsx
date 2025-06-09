@@ -167,9 +167,9 @@ const MobSearchWorker = () => {
       </Box>
 
       {/* Worker Cards */}
-      <Grid container spacing={1} mt={2} justifyContent="center">
+      <Grid container  px={0} mt={2} justifyContent='space-between'>
         {filteredWorkers.map((worker, index) => (
-          <Grid item xs={6} key={index} sx={{ display: "flex" }}>
+          <Grid key={index} sx={{ display: "flex" ,  }}>
             <Box
               sx={{
                 borderRadius: 0.5,
@@ -196,7 +196,7 @@ const MobSearchWorker = () => {
                           px: 0.5,
                           py: 0.3,
                           borderRadius: 0.2,
-                          fontSize: "7px",
+                          fontSize: "6px",
                           mt: 0.5,
                         }}
                       >
@@ -215,7 +215,7 @@ const MobSearchWorker = () => {
                     color="text.secondary"
                     sx={{ display: "flex", alignItems: "center" }}
                   >
-                    <LocationOnOutlined sx={{ fontSize: 16, mr: 0.5 }} />
+                    <LocationOnOutlined sx={{ fontSize: 15, mr: 0.5 }} />
                     5.1 km away
                   </Typography>
                 </Box>
@@ -231,17 +231,17 @@ const MobSearchWorker = () => {
                     }}
                   />
                   {[17, 18, 19, 20, 21, 22].map((date) => (
-                    <Typography key={date} fontSize="12px" color="text.secondary">
+                    <Typography key={date} fontSize="11px" color="text.secondary">
                       {date}
                     </Typography>
                   ))}
                 </Box>
 
                 {/* Rating and Price */}
-                <Typography fontSize={13}>
+                <Typography fontSize={12}>
                   ⭐ {worker.rating} ({worker.reviews} reviews)
                 </Typography>
-                <Typography fontWeight="bold" fontSize={17} pt={1} pl={0.5}>
+                <Typography fontWeight="bold" fontSize={16} pt={1} pl={0.5}>
                   {worker.price} <small>/hour</small>
                 </Typography>
 
