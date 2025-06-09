@@ -208,7 +208,7 @@ const MobSearchWorker = () => {
             >
               <Box sx={{ p: 1, mt: 0.5 }}>
                 <Box display="flex" alignItems="center" mb={1}>
-                  <Avatar src={worker.img} />
+                  <Avatar src={worker.img} sx={{ml:-0.3}}/>
                   <Box ml={1}>
                     <Typography fontWeight={600} fontSize={15}>
                       {worker.name}
@@ -222,7 +222,7 @@ const MobSearchWorker = () => {
                           color: "#5d4037",
                           px: 0.5,
                           py: 0.3,
-                          borderRadius: 0.2,
+                          borderRadius: 0.5,
                           fontSize: "8px",
                           mt: 0.5,
                         }}
@@ -244,7 +244,7 @@ const MobSearchWorker = () => {
                 </Box>
 
                 <Box display="flex" alignItems="center" gap={0.5} mt={0.5} mb={0.6} flexWrap="wrap">
-                  <AccessTimeIcon sx={{ fontSize: 12, color: "white", bgcolor: "#0492C2", borderRadius: 10 }} />
+                  <AccessTimeIcon sx={{ fontSize: 12, color: "white", bgcolor: "#0492C2", borderRadius: 10 ,ml:0.2}} />
                   {[17, 18, 19, 20, 21, 22].map((date) => (
                     <Typography key={date} fontSize="10px" color="text.secondary">
                       {date}
@@ -253,7 +253,7 @@ const MobSearchWorker = () => {
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                   <Box display="flex" alignItems="center" mr={0.5}>
-  <StarIcon sx={{ fontSize: 14, color: '#fbc02d', mr: 0.4 }} />
+  <StarIcon sx={{ fontSize: 14, color: '#fbc02d', mr: 0.4,}} />
   <Typography fontSize={11} lineHeight={1}>
     {worker.rating}
   </Typography>
