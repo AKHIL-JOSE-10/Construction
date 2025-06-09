@@ -253,7 +253,7 @@ const MobSearchWorker = () => {
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                   <Box display="flex" alignItems="center" mr={0.5}>
-  <StarIcon sx={{ fontSize: 14, color: '#fbc02d', mr: 0.4,}} />
+  <StarIcon sx={{ fontSize: 13, color: '#fbc02d', mr: 0.5,ml:0.2}} />
   <Typography fontSize={11} lineHeight={1}>
     {worker.rating}
   </Typography>
