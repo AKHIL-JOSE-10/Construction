@@ -228,7 +228,7 @@ const MobSearchWorker = () => {
                           ml:-1
                         }}
                       >
-                        Archisans Verified Worker
+                        Archisans Verified
                         <CheckCircleIcon
                           sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }}
                         />
