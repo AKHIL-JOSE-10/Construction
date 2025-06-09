@@ -141,7 +141,7 @@ const MobSearchWorker = () => {
             <Box>
               <Typography fontSize={13}>Current location</Typography>
               <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                <Typography fontWeight="bold" fontSize={15}>Kuala Lumpur, Malaysia</Typography>
+                <Typography fontWeight="bold" fontSize={14}>Kuala Lumpur, Malaysia</Typography>
                 <KeyboardArrowDownOutlined sx={{ color: "black", fontSize: 30 }} />
               </Box>
 
@@ -193,13 +193,13 @@ const MobSearchWorker = () => {
         </IconButton>
       </Box>
       {/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent="center" gap={0.4}>
+      <Grid container px={1} mt={2} justifyContent="center" gap={0.2}>
         {filteredWorkers.map((worker, index) => (
           <Grid key={index} sx={{ display: "flex" }}>
             <Box
               sx={{
                 borderRadius: 0.5,
-                minWidth: "160px",
+                minWidth: "150px",
                 mb: 1,
                 border: "0.5px solid #a9a9a9",
                 boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
@@ -224,6 +224,7 @@ const MobSearchWorker = () => {
                           borderRadius: 0.2,
                           fontSize: "6px",
                           mt: 0.5,
+                          ml:-1
                         }}
                       >
                         Archisans Verified Worker
