@@ -331,7 +331,7 @@ const MobSearchWorker = () => {
 
       {/* Related Searches */}
       <Box mt={3}>
-        <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 25 }}>
+        <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 22 }}>
           Related Searches
         </Typography>
         <Grid container sx={{ overflowX: "auto", flexWrap: "nowrap", gap: 2, px: 1 }}>
