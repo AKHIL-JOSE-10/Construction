@@ -22,6 +22,7 @@ import {
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import StarIcon from '@mui/icons-material/Star';
 
 const workers = [
   {
@@ -57,7 +58,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/men/21.jpg",
   },
   {
-    name: "Amara Singh",
+    name: "Amara",
     price: "$5.45",
     rating: 4.6,
     reviews: 210,
@@ -97,7 +98,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/women/22.jpg",
   },
   {
-    name: "Noah James",
+    name: "Noah",
     price: "$6.95",
     rating: 3.7,
     reviews: 70,
@@ -252,9 +253,12 @@ const MobSearchWorker = () => {
                   ))}
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                  <Typography fontSize={11} mr={0.5} lineHeight={1}>
-                    ⭐ {worker.rating}
-                  </Typography>
+                  <Box display="flex" alignItems="center" mr={0.5}>
+  <StarIcon sx={{ fontSize: 13, color: '#fbc02d', mr: 0.5 }} />
+  <Typography fontSize={11} lineHeight={1}>
+    {worker.rating}
+  </Typography>
+</Box>
                   <Typography fontSize={9} lineHeight={1}>
                     ({worker.reviews} reviews)
                   </Typography>
