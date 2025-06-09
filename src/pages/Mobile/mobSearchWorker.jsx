@@ -199,7 +199,7 @@ const MobSearchWorker = () => {
             <Box
               sx={{
                 borderRadius: 0.5,
-                minWidth: "165px",
+                minWidth: "160px",
                 mb: 1,
                 border: "0.5px solid #a9a9a9",
                 boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
@@ -264,7 +264,7 @@ const MobSearchWorker = () => {
                   {worker.price} <small>/hour</small>
                 </Typography>
 
-                <Box sx={{ display: "flex", justifyContent: "space-between", my: 0.5, width: '150px' }}>
+                <Box sx={{ display: "flex", justifyContent: "space-between", my: 0.5, width: '135px' }}>
                   <Box sx={{ display: "flex", bgcolor: '#e1e1e1', alignItems: 'center', borderRadius: 10, pr: 0.5, pl: 1 }}>
                     <Typography sx={{ fontSize: 9, }}> save </Typography>
                     <IconButton size="small">
@@ -280,16 +280,16 @@ const MobSearchWorker = () => {
                       color: "#fff",
                       borderRadius: "20px",
                       textTransform: "none",
-                      px: 1.5,
+                      px: 1.2,
                       fontSize: 12,
                       mb: 0,
                       display: "flex",
                       alignItems: "center",
-                      gap: 3,
+                      gap: 2,
                       height: 30
                     }}
                   >
-                    <Typography sx={{ fontSize: 8, color: "white" }}>
+                    <Typography sx={{ fontSize: 7, color: "white" }}>
                       Book
                     </Typography>
                     <Box
