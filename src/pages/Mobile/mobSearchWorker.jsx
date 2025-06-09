@@ -151,7 +151,7 @@ const MobSearchWorker = () => {
         <Grid >
           <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
-              <NotificationsNoneOutlined sx={{ color: "black", fontSize: "30px", cursor: 'pointer', mr: 1.5, mt: 0.6 }} />
+              <NotificationsNoneOutlined sx={{ color: "black", fontSize: "28px", cursor: 'pointer', mr: 1.5, mt: 0.6 }} />
             </Link>
             <Avatar src="https://randomuser.me/api/portraits/men/45.jpg" />
           </Box>
@@ -193,7 +193,7 @@ const MobSearchWorker = () => {
         </IconButton>
       </Box>
       {/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent="center" gap={1}>
+      <Grid container px={1} mt={2} justifyContent="center" gap={1.5}>
         {filteredWorkers.map((worker, index) => (
           <Grid key={index} sx={{ display: "flex" }}>
             <Box
