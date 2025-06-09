@@ -116,7 +116,7 @@ const MobSearchWorker = () => {
   );
 
   return (
-    <Box sx={{ padding: 1.5, bgcolor: "#fefaf7", minHeight: "100vh" }}>
+    <Box sx={{ padding: 1, bgcolor: "#fefaf7", minHeight: "100vh" }}>
       {/* Location & Profile Row */}
       <Grid container alignItems="center" justifyContent="space-between" mb={2}>
         <Grid item xs={9}>
@@ -129,7 +129,7 @@ const MobSearchWorker = () => {
           </Box>
         </Grid>
         <Grid item>
-          <Avatar src="https://randomuser.me/api/portraits/men/45.jpg" />
+          <Avatar sx={{ width: 60, height: 60 }} src="https://randomuser.me/api/portraits/men/45.jpg" />
         </Grid>
       </Grid>
 
@@ -138,8 +138,8 @@ const MobSearchWorker = () => {
         sx={{
           bgcolor: "#fff",
           borderRadius: "12px",
-          px: 2,
-          py: 1,
+          px: 1,
+          py: 0.3,
           display: "flex",
           alignItems: "center",
           boxShadow: 1,
@@ -153,6 +153,13 @@ const MobSearchWorker = () => {
           placeholder="Search Services & Workers"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          sx={{
+            fontSize: 13, // actual input text size
+            "&::placeholder": {
+              fontSize: 11, // smaller placeholder text
+              color: "gray",
+            },
+          }}
         />
         <IconButton>
           <Tune />
@@ -166,17 +173,17 @@ const MobSearchWorker = () => {
             <Box
               sx={{
                 borderRadius: 0.5,
-                minWidth: "177px",
+                minWidth: "175px",
                 mb: 1,
                 border: "0.5px solid #a9a9a9",
                 boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <Box sx={{ p: 1 , mt:0.5 }}>
+              <Box sx={{ p: 1, mt: 0.5 }}>
                 <Box display="flex" alignItems="center" mb={1}>
                   <Avatar src={worker.img} />
                   <Box ml={1}>
-                    <Typography fontWeight={600} fontSize={13}>
+                    <Typography fontWeight={600} fontSize={15}>
                       {worker.name}
                     </Typography>
                     {worker.verified && (
