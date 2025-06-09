@@ -236,31 +236,31 @@ const MobSearchWorker = () => {
                 </Box>
 
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Typography fontSize={12} color="text.secondary" sx={{ display: "flex", alignItems: "center", }}>
-                    <LocationOnOutlined sx={{ fontSize: 14, mr: 0.5 }} />
+                  <Typography fontSize={10} color="text.secondary" sx={{ display: "flex", alignItems: "center", }}>
+                    <LocationOnOutlined sx={{ fontSize: 12, mr: 0.5 }} />
                     5.1 km away
                   </Typography>
                 </Box>
 
                 <Box display="flex" alignItems="center" gap={0.5} mt={0.5} mb={0.6} flexWrap="wrap">
-                  <AccessTimeIcon sx={{ fontSize: 16, color: "white", bgcolor: "#0492C2", borderRadius: 10 }} />
+                  <AccessTimeIcon sx={{ fontSize: 12, color: "white", bgcolor: "#0492C2", borderRadius: 10 }} />
                   {[17, 18, 19, 20, 21, 22].map((date) => (
-                    <Typography key={date} fontSize="11px" color="text.secondary">
+                    <Typography key={date} fontSize="10px" color="text.secondary">
                       {date}
                     </Typography>
                   ))}
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                  <Typography fontSize={13} mr={0.5} lineHeight={1}>
+                  <Typography fontSize={11} mr={0.5} lineHeight={1}>
                     ⭐ {worker.rating}
                   </Typography>
-                  <Typography fontSize={10} lineHeight={1}>
+                  <Typography fontSize={9} lineHeight={1}>
                     ({worker.reviews} reviews)
                   </Typography>
                 </Box>
 
 
-                <Typography fontWeight="bold" fontSize={16} pt={1} pl={0.5}>
+                <Typography fontWeight="bold" fontSize={14} pt={1} pl={0.5}>
                   {worker.price} <small>/hour</small>
                 </Typography>
 
