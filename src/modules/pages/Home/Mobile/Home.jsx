@@ -110,38 +110,20 @@ export default function Home() {
             bgcolor: color.layoutColor,
             height: "5vh",
             borderRadius: "1000px",
-            display: "flex"
+            display: "flex",
+            alignItems: "center",
+            px: 1,
+            cursor: "pointer"
           }}
-          alignItems={"center"}
           size={10}
+          onClick={() => navigate('/mobile-search-worker')}
         >
-          <Input
-            placeholder="Job title, keyword, worker"
-            disableUnderline
-            fullWidth
-            onFocus={() => navigate('/mobile-search-worker')}
-            startAdornment={
-              <InputAdornment position="start">
-                <SearchIcon sx={{ color: "gray", marginLeft: "0.3em" }} />
-              </InputAdornment>
-            }
-            sx={{
-              "& .MuiInputBase-root": {
-                border: "none", // Ensure no border
-                backgroundColor: "transparent", // Transparent background
-                display: "flex",
-                alignItems: "center",
-                height: "100%",
-              },
-              "& .MuiInputBase-input": {
-                padding: "0.5em", // Padding for text
-                fontSize: "0.9em", // Font size
-              },
-            }}
-          />
-          <IconButton>
-            <Tune />
-          </IconButton>
+          <SearchIcon sx={{ color: "gray", mr: 1 }} />
+          <Typography sx={{ color: "gray", fontSize: "0.9em" }}>
+            Job title, keyword, worker
+          </Typography>
+          <Box sx={{ flexGrow: 1 }} />
+          <Tune sx={{ color: "gray" }} />
         </Grid>
         {/* <Box
           sx={{
