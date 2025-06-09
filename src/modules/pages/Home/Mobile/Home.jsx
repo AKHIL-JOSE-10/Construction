@@ -4,6 +4,7 @@ import {
   NotificationsNoneOutlined,
   Search as SearchIcon,
   StarOutline,
+  Tune,
 } from "@mui/icons-material";
 import {
   Avatar,
@@ -12,6 +13,7 @@ import {
   Input,
   InputAdornment,
   Typography,
+  IconButton,
 } from "@mui/material";
 import React from "react";
 import {
@@ -28,7 +30,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Home() {
 
   const navigate = useNavigate();
-  
+
   return (
     <Grid container size={12}>
       {/* Top part with search bar and information */}
@@ -100,7 +102,6 @@ export default function Home() {
               >
               </Avatar>
             </Link>
-
           </Grid>
         </Grid>
         {/* Search bar container */}
@@ -138,6 +139,9 @@ export default function Home() {
             },
           }}
           />
+           <IconButton>
+                    <Tune />
+                  </IconButton>
         </Grid>
         {/* <Box
           sx={{
@@ -151,6 +155,7 @@ export default function Home() {
             zIndex: -1000,
           }}
         /> */}
+      
       </Grid>
       <Grid
         container

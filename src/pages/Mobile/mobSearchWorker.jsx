@@ -7,6 +7,7 @@ import {
   Avatar,
   IconButton,
   Button,
+  InputAdornment,
 } from "@mui/material";
 import {
   LocationOnOutlined,
@@ -16,7 +17,12 @@ import {
   CheckCircle as CheckCircleIcon,
   BookmarkBorder,
   ArrowForward as ArrowForwardIcon,
+  KeyboardArrowDownOutlined ,
+  NotificationsNoneOutlined,
+  Search as SearchIcon,
 } from "@mui/icons-material";
+import { Link } from 'react-router-dom';
+
 
 const workers = [
   {
@@ -116,55 +122,130 @@ const MobSearchWorker = () => {
   );
 
   return (
-    <Box sx={{ padding: 1, bgcolor: "#fefaf7", minHeight: "100vh" }}>
-      {/* Location & Profile Row */}
-      <Grid container alignItems="center" justifyContent="space-between" mb={2}>
-        <Grid item xs={9}>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <LocationOnOutlined sx={{ mr: 1 }} />
-            <Box>
-              <Typography fontSize={12}>Current location</Typography>
-              <Typography fontWeight="bold">Kuala Lumpur, Malaysia</Typography>
-            </Box>
-          </Box>
-        </Grid>
-        <Grid item>
-          <Avatar sx={{ width: 60, height: 60 }} src="https://randomuser.me/api/portraits/men/45.jpg" />
-        </Grid>
-      </Grid>
-
-      {/* Search Bar */}
-      <Box
+    <Box sx={{ bgcolor: "#fefaf7", minHeight: "100vh" }}>
+      <Grid
+        container
+        size={12}
         sx={{
-          bgcolor: "#fff",
-          borderRadius: "12px",
-          px: 1,
-          py: 0.3,
-          display: "flex",
-          alignItems: "center",
-          boxShadow: 1,
+          height: "18vh",
+          bgcolor: "rgba(176, 139, 111, 0.81)",
+          position: "relative",
         }}
+        justifyContent={"center"}
+        overflow={"hidden"}
+        mb={2}
       >
-        <Search sx={{ color: "gray", mr: 1 }} />
-        <Input
-          inputRef={inputRef}
-          fullWidth
-          disableUnderline
-          placeholder="Search Services & Workers"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+        {/* Top Header information container */}
+        {/* <Box
           sx={{
-            fontSize: 13, // actual input text size
-            "&::placeholder": {
-              fontSize: 11, // smaller placeholder text
-              color: "gray",
+            width: "70%",
+            height: "18vh",
+            bgcolor: color.dark,
+            borderRadius: "0px 1000px 1000px 0px",
+            position: "absolute",
+            top: -10,
+            left: -20,
+            zIndex: 0,
+          }}
+        /> */}
+        <Grid
+          container
+          direction={"row"}
+          sx={{ position: "relative", zIndex: 1 }}
+          mt={1}
+          alignItems={"center"}
+          spacing={2}
+          size={12}
+          p={1}
+          pb={0}
+        >
+          <Grid size={1}>
+            <LocationOnOutlined sx={{ color: "white" }} />
+          </Grid>
+          <Grid flexGrow={1} size={7}>
+            <Typography sx={{  fontSize: "10px", color:"rgba(255, 255, 255, 1)"}}>
+              Current Location
+            </Typography>
+            <Grid container>
+              <Typography sx={{ fontSize: "10px", color:"rgba(255, 255, 255, 1)" }}>
+                Kuala Lumpur, Malaysia
+              </Typography>
+              <KeyboardArrowDownOutlined sx={{ color: "white" }} />
+            </Grid>
+          </Grid>
+          <Grid
+            container
+            alignItems={"center"}
+            spacing={1.2}
+            size={3}
+            justifyContent={"space-around"}
+          >
+            <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
+              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "22px", cursor: 'pointer' }} />
+            </Link>
+
+            <Link to="/editInfo" style={{ color: 'inherit' }}>
+              <Avatar
+                src={"https://randomuser.me/api/portraits/women/79.jpg"}
+                sx={{ width: "35px", height: "35px" }}
+              >
+              </Avatar>
+            </Link>
+
+          </Grid>
+        </Grid>
+        {/* Search bar container */}
+        <Grid
+          sx={{
+            bgcolor: 'white',
+            height: "5vh",
+            borderRadius: "1000px",
+            display: "flex"
+          }}
+          alignItems={"center"}
+          size={10}
+        >
+          <Input
+            placeholder="Job title, keyword, worker"
+            disableUnderline
+            fullWidth
+            onFocus={() => navigate('/mobile-search-worker')}
+            startAdornment={
+              <InputAdornment position="start">
+                <SearchIcon sx={{ color: "gray", marginLeft: "0.3em" }} />
+              </InputAdornment>
+            }
+          sx={{
+            "& .MuiInputBase-root": {
+              border: "none", // Ensure no border
+              backgroundColor: "transparent", // Transparent background
+              display: "flex",
+              alignItems: "center",
+              height: "100%",
+            },
+            "& .MuiInputBase-input": {
+              padding: "0.5em", // Padding for text
+              fontSize: "0.9em", // Font size
             },
           }}
-        />
-        <IconButton>
+          />
+          <IconButton>
           <Tune />
         </IconButton>
-      </Box>
+        </Grid>
+        {/* <Box
+          sx={{
+            width: "10vh",
+            height: "10vh",
+            bgcolor: color.dark,
+            borderRadius: "100%",
+            position: "absolute",
+            bottom: -30,
+            right: -30,
+            zIndex: -1000,
+          }}
+        /> */}
+      </Grid>
 
       {/* Worker Cards */}
       <Grid container  px={0} mt={2} justifyContent='space-between'>
@@ -173,7 +254,7 @@ const MobSearchWorker = () => {
             <Box
               sx={{
                 borderRadius: 0.5,
-                minWidth: "170px",
+                minWidth: "165px",
                 mb: 1,
                 border: "0.5px solid #a9a9a9",
                 boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
