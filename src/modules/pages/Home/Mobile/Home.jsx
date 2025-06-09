@@ -23,8 +23,12 @@ import {
 import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+
+  const navigate = useNavigate();
+  
   return (
     <Grid container size={12}>
       {/* Top part with search bar and information */}
@@ -114,24 +118,25 @@ export default function Home() {
             placeholder="Job title, keyword, worker"
             disableUnderline
             fullWidth
+            onFocus={() => navigate('/mobile-search-worker')}
             startAdornment={
               <InputAdornment position="start">
                 <SearchIcon sx={{ color: "gray", marginLeft: "0.3em" }} />
               </InputAdornment>
             }
-            sx={{
-              "& .MuiInputBase-root": {
-                border: "none", // Ensure no border
-                backgroundColor: "transparent", // Transparent background
-                display: "flex",
-                alignItems: "center",
-                height: "100%",
-              },
-              "& .MuiInputBase-input": {
-                padding: "0.5em", // Padding for text
-                fontSize: "0.9em", // Font size
-              },
-            }}
+          sx={{
+            "& .MuiInputBase-root": {
+              border: "none", // Ensure no border
+              backgroundColor: "transparent", // Transparent background
+              display: "flex",
+              alignItems: "center",
+              height: "100%",
+            },
+            "& .MuiInputBase-input": {
+              padding: "0.5em", // Padding for text
+              fontSize: "0.9em", // Font size
+            },
+          }}
           />
         </Grid>
         {/* <Box
