@@ -225,7 +225,6 @@ const MobSearchWorker = () => {
                           borderRadius: 0.2,
                           fontSize: "6px",
                           mt: 0.5,
-                          ml:-1
                         }}
                       >
                         Archisans Verified
