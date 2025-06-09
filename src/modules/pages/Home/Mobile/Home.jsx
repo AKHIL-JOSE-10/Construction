@@ -125,23 +125,23 @@ export default function Home() {
                 <SearchIcon sx={{ color: "gray", marginLeft: "0.3em" }} />
               </InputAdornment>
             }
-          sx={{
-            "& .MuiInputBase-root": {
-              border: "none", // Ensure no border
-              backgroundColor: "transparent", // Transparent background
-              display: "flex",
-              alignItems: "center",
-              height: "100%",
-            },
-            "& .MuiInputBase-input": {
-              padding: "0.5em", // Padding for text
-              fontSize: "0.9em", // Font size
-            },
-          }}
+            sx={{
+              "& .MuiInputBase-root": {
+                border: "none", // Ensure no border
+                backgroundColor: "transparent", // Transparent background
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
+              },
+              "& .MuiInputBase-input": {
+                padding: "0.5em", // Padding for text
+                fontSize: "0.9em", // Font size
+              },
+            }}
           />
-           <IconButton>
-                    <Tune />
-                  </IconButton>
+          <IconButton>
+            <Tune />
+          </IconButton>
         </Grid>
         {/* <Box
           sx={{
@@ -155,7 +155,7 @@ export default function Home() {
             zIndex: -1000,
           }}
         /> */}
-      
+
       </Grid>
       <Grid
         container
