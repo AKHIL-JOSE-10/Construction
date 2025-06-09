@@ -223,7 +223,7 @@ const MobSearchWorker = () => {
                           px: 0.5,
                           py: 0.3,
                           borderRadius: 0.2,
-                          fontSize: "6px",
+                          fontSize: "8px",
                           mt: 0.5,
                         }}
                       >
