@@ -212,7 +212,14 @@ const MobSearchWorker = () => {
               "& .MuiInputBase-input": {
                 padding: "0.5em",
                 fontSize: "0.9em",
+                outline: "none",
               },
+              "& input:focus": {
+                outline: "none",
+                boxShadow: "none",
+                border: "none",
+                backgroundColor: "transparent",
+              }
             }}
           />
           <IconButton>
