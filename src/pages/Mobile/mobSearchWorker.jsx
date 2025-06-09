@@ -127,35 +127,35 @@ const MobSearchWorker = () => {
       <Grid container alignItems="center" justifyContent="space-between" mb={2}>
         <Grid item xs={9}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
-                    {/* Back Arrow */}
-        <Box
-          onClick={() => navigate(-1)} // Go back one page
-          sx={{
-            left: 10,
-            cursor: 'pointer',
-          }}
-        >
-          <ArrowBackIosIcon sx={{ fontSize: '20px',color:'grey' }} />
-        </Box>
+            {/* Back Arrow */}
+            <Box
+              onClick={() => navigate(-1)} // Go back one page
+              sx={{
+                left: 10,
+                cursor: 'pointer',
+              }}
+            >
+              <ArrowBackIosIcon sx={{ fontSize: '20px', color: 'grey' }} />
+            </Box>
             <LocationOnOutlined sx={{ mr: 1 }} />
             <Box>
               <Typography fontSize={13}>Current location</Typography>
-              <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+              <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 <Typography fontWeight="bold" fontSize={15}>Kuala Lumpur, Malaysia</Typography>
-                <KeyboardArrowDownOutlined sx={{ color: "black", fontSize:30 }} />
+                <KeyboardArrowDownOutlined sx={{ color: "black", fontSize: 30 }} />
               </Box>
-              
+
             </Box>
           </Box>
         </Grid>
         <Grid >
-          <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
- <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
-              <NotificationsNoneOutlined sx={{ color: "black", fontSize: "30px", cursor: 'pointer',mr:1.5,mt:0.6 }} />
+          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+            <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
+              <NotificationsNoneOutlined sx={{ color: "black", fontSize: "30px", cursor: 'pointer', mr: 1.5, mt: 0.6 }} />
             </Link>
-          <Avatar src="https://randomuser.me/api/portraits/men/45.jpg" />
+            <Avatar src="https://randomuser.me/api/portraits/men/45.jpg" />
           </Box>
-                     
+
         </Grid>
       </Grid>
 
@@ -165,35 +165,35 @@ const MobSearchWorker = () => {
           bgcolor: "#fff",
           borderRadius: "12px",
           px: 1.1,
-          py:0.5,
+          py: 0.5,
           display: "flex",
           alignItems: "center",
           boxShadow: 1,
         }}
       >
         <Search sx={{ color: "gray", mr: 1 }} />
-       <Input
-  inputRef={inputRef}
-  fullWidth
-  disableUnderline
-  placeholder="Search Services & Workers"
-  value={searchTerm}
-  onChange={(e) => setSearchTerm(e.target.value)}
-  sx={{
-    fontSize: 13, 
-    "&::placeholder": {
-      fontSize: 12, 
-      color: "gray", 
-      opacity: 1,    
-    },
-  }}
-/>
+        <Input
+          inputRef={inputRef}
+          fullWidth
+          disableUnderline
+          placeholder="Search Services & Workers"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          sx={{
+            fontSize: 13,
+            "&::placeholder": {
+              fontSize: 12,
+              color: "gray",
+              opacity: 1,
+            },
+          }}
+        />
         <IconButton>
           <Tune />
         </IconButton>
       </Box>
-{/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent="center" gap={1}>
+      {/* Worker Cards */}
+      <Grid container px={1} mt={2} justifyContent="center" gap={0.4}>
         {filteredWorkers.map((worker, index) => (
           <Grid key={index} sx={{ display: "flex" }}>
             <Box
@@ -250,14 +250,14 @@ const MobSearchWorker = () => {
                     </Typography>
                   ))}
                 </Box>
-<Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-  <Typography fontSize={13} mr={0.5} lineHeight={1}>
-    ⭐ {worker.rating}
-  </Typography>
-  <Typography fontSize={10} lineHeight={1}>
-    ({worker.reviews} reviews)
-  </Typography>
-</Box>
+                <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                  <Typography fontSize={13} mr={0.5} lineHeight={1}>
+                    ⭐ {worker.rating}
+                  </Typography>
+                  <Typography fontSize={10} lineHeight={1}>
+                    ({worker.reviews} reviews)
+                  </Typography>
+                </Box>
 
 
                 <Typography fontWeight="bold" fontSize={16} pt={1} pl={0.5}>
@@ -265,12 +265,12 @@ const MobSearchWorker = () => {
                 </Typography>
 
                 <Box sx={{ display: "flex", justifyContent: "space-between", my: 0.5, width: '150px' }}>
-                 <Box sx={{ display: "flex", bgcolor:'#e1e1e1',alignItems: 'center',borderRadius:10,pr:0.5,pl:1 }}>
-                 <Typography sx={{fontSize:9,}}> save </Typography>
-                  <IconButton size="small">
-                    <BookmarkBorder sx={{fontSize:13}}/>
-                  </IconButton>
-                 </Box>
+                  <Box sx={{ display: "flex", bgcolor: '#e1e1e1', alignItems: 'center', borderRadius: 10, pr: 0.5, pl: 1 }}>
+                    <Typography sx={{ fontSize: 9, }}> save </Typography>
+                    <IconButton size="small">
+                      <BookmarkBorder sx={{ fontSize: 13 }} />
+                    </IconButton>
+                  </Box>
 
                   <Button
                     variant="contained"
@@ -286,7 +286,7 @@ const MobSearchWorker = () => {
                       display: "flex",
                       alignItems: "center",
                       gap: 3,
-                      height:30
+                      height: 30
                     }}
                   >
                     <Typography sx={{ fontSize: 8, color: "white" }}>
@@ -330,44 +330,46 @@ const MobSearchWorker = () => {
 
       {/* Related Searches */}
       <Box mt={3}>
-        <Typography sx={{fontWeight:600, mb:1, fontSize:25}}>
+        <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 25 }}>
           Related Searches
         </Typography>
         <Grid container sx={{ overflowX: "auto", flexWrap: "nowrap", gap: 2, px: 1 }}>
-  {relatedSearches.map((item, idx) => (
-    <Grid item key={idx} sx={{ flexShrink: 0 }}>
-      <Box
-        sx={{
-          bgcolor: "#fff",
-          width: 120,
-          height: 80,
-          borderRadius: 1,
-          boxShadow: 1,
-          pl: 2,
-          pt: 1,
-          position: "relative", // for positioning inner shadow
-          overflow: "hidden",   // to clip the shadow to the box
-        }}
-      >
-        <Typography fontSize={14}>{item}</Typography>
+          {relatedSearches.map((item, idx) => (
+            <Grid item key={idx} sx={{ flexShrink: 0 }}>
+              <Box
+                sx={{
+                  bgcolor: "#fff",
+                  width: 120,
+                  height: 80,
+                  borderRadius: 0.5,
+                  boxShadow: 0.5,
+                  mb: 2,
+                  pl: 2,
+                  pt: 1,
+                  pb: 1,
+                  position: "relative", // for positioning inner shadow
+                  overflow: "hidden",   // to clip the shadow to the box
+                }}
+              >
+                <Typography fontSize={14}>{item}</Typography>
 
-        {/* Circular shadow at bottom-right inside each box */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: -40,
-            right: -20,
-            width: 100,
-            height: 100,
-            borderRadius: "50%",
-            background: "radial-gradient(circle at center, rgba(62, 149, 30, 0.3))",
-            pointerEvents: "none",
-          }}
-        />
-      </Box>
-    </Grid>
-  ))}
-</Grid>
+                {/* Circular shadow at bottom-right inside each box */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: -40,
+                    right: -20,
+                    width: 100,
+                    height: 100,
+                    borderRadius: "50%",
+                    background: "radial-gradient(circle at center, rgba(62, 149, 30, 0.3))",
+                    pointerEvents: "none",
+                  }}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
       </Box>
     </Box>
   );
@@ -376,4 +378,3 @@ const MobSearchWorker = () => {
 export default MobSearchWorker;
 
 
-      
