@@ -194,7 +194,7 @@ const MobSearchWorker = () => {
         </IconButton>
       </Box>
       {/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent="center" gap={1.5}>
+      <Grid container px={0} mt={2} justifyContent="center" gap={3.5}>
         {filteredWorkers.map((worker, index) => (
           <Grid key={index} sx={{ display: "flex" }}>
             <Box
@@ -268,13 +268,12 @@ const MobSearchWorker = () => {
                   {worker.price} <small>/hour</small>
                 </Typography>
 
-                <Box sx={{ display: "flex", justifyContent: "space-between", my: 0.5, width: '135px' }}>
-                  <Box sx={{ display: "flex", bgcolor: '#e1e1e1', alignItems: 'center', borderRadius: 10, pr: 0.5, pl: 1 }}>
-                    <Typography sx={{ fontSize: 9, }}> save </Typography>
+                <Box sx={{ display: "flex", justifyContent: "center",gap:2, my: 0.5, width: '135px' }}>
+                 
                     <IconButton size="small">
-                      <BookmarkBorder sx={{ fontSize: 13 }} />
+                      <BookmarkBorder sx={{ fontSize: 22 }} />
                     </IconButton>
-                  </Box>
+                  
 
                   <Button
                     variant="contained"
