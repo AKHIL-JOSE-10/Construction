@@ -193,7 +193,7 @@ const MobSearchWorker = () => {
         </IconButton>
       </Box>
       {/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent="center" gap={0.2}>
+      <Grid container px={1} mt={2} justifyContent="center" gap={0.4}>
         {filteredWorkers.map((worker, index) => (
           <Grid key={index} sx={{ display: "flex" }}>
             <Box
