@@ -169,11 +169,11 @@ const MobSearchWorker = () => {
       {/* Worker Cards */}
       <Grid container  px={0} mt={2} justifyContent='space-between'>
         {filteredWorkers.map((worker, index) => (
-          <Grid key={index} sx={{ display: "flex" ,  }}>
+          <Grid key={index} sx={{ display: "flex"  }}>
             <Box
               sx={{
                 borderRadius: 0.5,
-                minWidth: "175px",
+                minWidth: "170px",
                 mb: 1,
                 border: "0.5px solid #a9a9a9",
                 boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
@@ -245,7 +245,7 @@ const MobSearchWorker = () => {
                   {worker.price} <small>/hour</small>
                 </Typography>
 
-                <Box display="flex" justifyContent="space-between" mt={1} mb={1}>
+                <Box sx={{ display:"flex", justifyContent:"space-between",my:1, width:'140px'}}>
                   <IconButton size="small">
                     <BookmarkBorder />
                   </IconButton>
@@ -257,7 +257,7 @@ const MobSearchWorker = () => {
                       color: "#fff",
                       borderRadius: "20px",
                       textTransform: "none",
-                      px: 2,
+                      px: 1.5,
                       fontSize: 12,
                       mb: 0,
                       display: "flex",
@@ -265,7 +265,7 @@ const MobSearchWorker = () => {
                       gap: 1,
                     }}
                   >
-                    <Typography sx={{ mr: 2, fontSize: 10, color: "white" }}>
+                    <Typography sx={{ fontSize: 10, color: "white" }}>
                       Book
                     </Typography>
                     <Box
