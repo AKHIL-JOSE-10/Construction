@@ -7,7 +7,6 @@ import {
   Avatar,
   IconButton,
   Button,
-  InputAdornment,
 } from "@mui/material";
 import {
   LocationOnOutlined,
@@ -17,11 +16,12 @@ import {
   CheckCircle as CheckCircleIcon,
   BookmarkBorder,
   ArrowForward as ArrowForwardIcon,
-  KeyboardArrowDownOutlined,
   NotificationsNoneOutlined,
-  Search as SearchIcon,
+  KeyboardArrowDownOutlined,
 } from "@mui/icons-material";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const workers = [
   {
@@ -49,7 +49,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    name: "Carlos Mendez",
+    name: "Carlos",
     price: "$6.20",
     rating: 4.1,
     reviews: 95,
@@ -109,6 +109,7 @@ const workers = [
 const relatedSearches = ["Architects", "Steel Fabricators", "Civil Engineers"];
 
 const MobSearchWorker = () => {
+  const navigate = useNavigate();
   const inputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -121,115 +122,78 @@ const MobSearchWorker = () => {
   );
 
   return (
-    <Box sx={{ bgcolor: "#fefaf7", minHeight: "100vh" }}>
-      <Grid
-        container
-        size={12}
-        sx={{
-          height: "18vh",
-          bgcolor: "rgba(176, 139, 111, 0.81)",
-          position: "relative",
-        }}
-        justifyContent={"center"}
-        overflow={"hidden"}
-        mb={2}
-      >
-        <Grid
-          container
-          direction={"row"}
-          sx={{ position: "relative", zIndex: 1 }}
-          mt={1}
-          alignItems={"center"}
-          spacing={2}
-          size={12}
-          p={1}
-          pb={0}
-        >
-          <Grid size={1}>
-            <LocationOnOutlined sx={{ color: "white" }} />
-          </Grid>
-          <Grid flexGrow={1} size={7}>
-            <Typography sx={{ fontSize: "10px", color: "rgba(255, 255, 255, 1)" }}>
-              Current Location
-            </Typography>
-            <Grid container>
-              <Typography sx={{ fontSize: "13px", color: "rgba(255, 255, 255, 1)" }}>
-                Kuala Lumpur, Malaysia
-              </Typography>
-              <KeyboardArrowDownOutlined sx={{ color: "white" }} />
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            alignItems={"center"}
-            spacing={1.2}
-            size={3}
-            justifyContent={"space-around"}
-          >
-            <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
-              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "22px", cursor: 'pointer' }} />
-            </Link>
-            <Link to="/editInfo" style={{ color: 'inherit' }}>
-              <Avatar
-                src={"https://randomuser.me/api/portraits/women/79.jpg"}
-                sx={{ width: "35px", height: "35px" }}
-              />
-            </Link>
-          </Grid>
-        </Grid>
-
-        {/* Search Input */}
-        <Grid
+    <Box sx={{ padding: 1.5, bgcolor: "#fefaf7", minHeight: "100vh" }}>
+      {/* Location & Profile Row */}
+      <Grid container alignItems="center" justifyContent="space-between" mb={2}>
+        <Grid item xs={9}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+                    {/* Back Arrow */}
+        <Box
+          onClick={() => navigate(-1)} // Go back one page
           sx={{
-            bgcolor: 'white',
-            height: "5vh",
-            borderRadius: "1000px",
-            display: "flex"
+            left: 10,
+            cursor: 'pointer',
           }}
-          alignItems={"center"}
-          size={10}
         >
-          <Input
-            placeholder="Job title, keyword, worker"
-            disableUnderline
-            fullWidth
-            inputRef={inputRef}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            startAdornment={
-              <InputAdornment position="start">
-                <SearchIcon sx={{ color: "gray", marginLeft: "0.3em" }} />
-              </InputAdornment>
-            }
-            sx={{
-              "& .MuiInputBase-root": {
-                border: "none",
-                backgroundColor: "transparent",
-                display: "flex",
-                alignItems: "center",
-                height: "100%",
-              },
-              "& .MuiInputBase-input": {
-                padding: "0.5em",
-                fontSize: "0.9em",
-                outline: "none",
-              },
-              "& input:focus": {
-                outline: "none",
-                boxShadow: "none",
-                border: "none",
-                backgroundColor: "transparent",
-              }
-            }}
-          />
-          <IconButton>
-            <Tune />
-          </IconButton>
+          <ArrowBackIosIcon sx={{ fontSize: '20px',color:'grey' }} />
+        </Box>
+            <LocationOnOutlined sx={{ mr: 1 }} />
+            <Box>
+              <Typography fontSize={13}>Current location</Typography>
+              <Box sx={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+                <Typography fontWeight="bold" fontSize={15}>Kuala Lumpur, Malaysia</Typography>
+                <KeyboardArrowDownOutlined sx={{ color: "black", fontSize:30 }} />
+              </Box>
+              
+            </Box>
+          </Box>
+        </Grid>
+        <Grid >
+          <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+ <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
+              <NotificationsNoneOutlined sx={{ color: "black", fontSize: "30px", cursor: 'pointer',mr:1.5,mt:0.6 }} />
+            </Link>
+          <Avatar src="https://randomuser.me/api/portraits/men/45.jpg" />
+          </Box>
+                     
         </Grid>
       </Grid>
 
-      {/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent='space-between'>
+      {/* Search Bar */}
+      <Box
+        sx={{
+          bgcolor: "#fff",
+          borderRadius: "12px",
+          px: 1.1,
+          py:0.5,
+          display: "flex",
+          alignItems: "center",
+          boxShadow: 1,
+        }}
+      >
+        <Search sx={{ color: "gray", mr: 1 }} />
+       <Input
+  inputRef={inputRef}
+  fullWidth
+  disableUnderline
+  placeholder="Search Services & Workers"
+  value={searchTerm}
+  onChange={(e) => setSearchTerm(e.target.value)}
+  sx={{
+    fontSize: 13, 
+    "&::placeholder": {
+      fontSize: 12, 
+      color: "gray", 
+      opacity: 1,    
+    },
+  }}
+/>
+        <IconButton>
+          <Tune />
+        </IconButton>
+      </Box>
+{/* Worker Cards */}
+      <Grid container px={1} mt={2} justifyContent="center" gap={1}>
         {filteredWorkers.map((worker, index) => (
           <Grid key={index} sx={{ display: "flex" }}>
             <Box
@@ -272,13 +236,13 @@ const MobSearchWorker = () => {
                 </Box>
 
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Typography fontSize={12} color="text.secondary" sx={{ display: "flex", alignItems: "center" }}>
-                    <LocationOnOutlined sx={{ fontSize: 15, mr: 0.5 }} />
+                  <Typography fontSize={12} color="text.secondary" sx={{ display: "flex", alignItems: "center", }}>
+                    <LocationOnOutlined sx={{ fontSize: 14, mr: 0.5 }} />
                     5.1 km away
                   </Typography>
                 </Box>
 
-                <Box display="flex" alignItems="center" gap={1} my={1} flexWrap="wrap">
+                <Box display="flex" alignItems="center" gap={0.5} mt={0.5} mb={0.6} flexWrap="wrap">
                   <AccessTimeIcon sx={{ fontSize: 16, color: "white", bgcolor: "#0492C2", borderRadius: 10 }} />
                   {[17, 18, 19, 20, 21, 22].map((date) => (
                     <Typography key={date} fontSize="11px" color="text.secondary">
@@ -286,18 +250,28 @@ const MobSearchWorker = () => {
                     </Typography>
                   ))}
                 </Box>
+<Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+  <Typography fontSize={13} mr={0.5} lineHeight={1}>
+    ⭐ {worker.rating}
+  </Typography>
+  <Typography fontSize={10} lineHeight={1}>
+    ({worker.reviews} reviews)
+  </Typography>
+</Box>
 
-                <Typography fontSize={12}>
-                  ⭐ {worker.rating} ({worker.reviews} reviews)
-                </Typography>
+
                 <Typography fontWeight="bold" fontSize={16} pt={1} pl={0.5}>
                   {worker.price} <small>/hour</small>
                 </Typography>
 
-                <Box sx={{ display: "flex", justifyContent: "space-between", my: 1, width: '140px' }}>
+                <Box sx={{ display: "flex", justifyContent: "space-between", my: 0.5, width: '150px' }}>
+                 <Box sx={{ display: "flex", bgcolor:'#e1e1e1',alignItems: 'center',borderRadius:10,pr:0.5,pl:1 }}>
+                 <Typography sx={{fontSize:9,}}> save </Typography>
                   <IconButton size="small">
-                    <BookmarkBorder />
+                    <BookmarkBorder sx={{fontSize:13}}/>
                   </IconButton>
+                 </Box>
+
                   <Button
                     variant="contained"
                     size="small"
@@ -311,10 +285,11 @@ const MobSearchWorker = () => {
                       mb: 0,
                       display: "flex",
                       alignItems: "center",
-                      gap: 1,
+                      gap: 3,
+                      height:30
                     }}
                   >
-                    <Typography sx={{ fontSize: 10, color: "white" }}>
+                    <Typography sx={{ fontSize: 8, color: "white" }}>
                       Book
                     </Typography>
                     <Box
@@ -339,6 +314,7 @@ const MobSearchWorker = () => {
         ))}
       </Grid>
 
+      {/* View More */}
       <Box mt={2} textAlign="center">
         <Typography
           sx={{
@@ -352,31 +328,52 @@ const MobSearchWorker = () => {
         </Typography>
       </Box>
 
+      {/* Related Searches */}
       <Box mt={3}>
-        <Typography fontWeight={600} mb={1}>
+        <Typography sx={{fontWeight:600, mb:1, fontSize:25}}>
           Related Searches
         </Typography>
-        <Grid container spacing={2}>
-          {relatedSearches.map((item, idx) => (
-            <Grid item key={idx}>
-              <Box
-                sx={{
-                  bgcolor: "#fff",
-                  px: 3,
-                  py: 1.5,
-                  borderRadius: 2,
-                  boxShadow: 1,
-                  textAlign: "center",
-                }}
-              >
-                <Typography fontSize={13}>{item}</Typography>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
+        <Grid container sx={{ overflowX: "auto", flexWrap: "nowrap", gap: 2, px: 1 }}>
+  {relatedSearches.map((item, idx) => (
+    <Grid item key={idx} sx={{ flexShrink: 0 }}>
+      <Box
+        sx={{
+          bgcolor: "#fff",
+          width: 120,
+          height: 80,
+          borderRadius: 1,
+          boxShadow: 1,
+          pl: 2,
+          pt: 1,
+          position: "relative", // for positioning inner shadow
+          overflow: "hidden",   // to clip the shadow to the box
+        }}
+      >
+        <Typography fontSize={14}>{item}</Typography>
+
+        {/* Circular shadow at bottom-right inside each box */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: -40,
+            right: -20,
+            width: 100,
+            height: 100,
+            borderRadius: "50%",
+            background: "radial-gradient(circle at center, rgba(62, 149, 30, 0.3))",
+            pointerEvents: "none",
+          }}
+        />
+      </Box>
+    </Grid>
+  ))}
+</Grid>
       </Box>
     </Box>
   );
 };
 
 export default MobSearchWorker;
+
+
+      
