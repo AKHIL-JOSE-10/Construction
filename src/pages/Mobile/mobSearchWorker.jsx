@@ -193,7 +193,7 @@ const MobSearchWorker = () => {
         </IconButton>
       </Box>
       {/* Worker Cards */}
-      <Grid container px={1} mt={2} justifyContent="center" gap={0.4}>
+      <Grid container px={1} mt={2} justifyContent="center" gap={0.5}>
         {filteredWorkers.map((worker, index) => (
           <Grid key={index} sx={{ display: "flex" }}>
             <Box
@@ -323,6 +323,7 @@ const MobSearchWorker = () => {
             fontWeight: 500,
             textDecoration: "underline",
             cursor: "pointer",
+            fontSize:14
           }}
         >
           View More
@@ -331,7 +332,7 @@ const MobSearchWorker = () => {
 
       {/* Related Searches */}
       <Box mt={3}>
-        <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 22 }}>
+        <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 20 }}>
           Related Searches
         </Typography>
         <Grid container sx={{ overflowX: "auto", flexWrap: "nowrap", gap: 2, px: 1 }}>
