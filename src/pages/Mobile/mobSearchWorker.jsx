@@ -232,11 +232,11 @@ const MobSearchWorker = () => {
       pointerEvents: "7one",
     }}
   />
-                <Box sx={{ p: 1, mt: 0.5 }}>
-                  <Box display="flex"  mb={1}>
-                    <Avatar src={worker.img} sx={{ ml: -0.3 }} />
+                <Box sx={{ p: 1, mt: 0.5, alignItems:'center'}}>
+                  <Box display="flex"  mb={1} >
+                    <Avatar src={worker.img} sx={{ ml: -0.3, width:45, height:45 }} />
                     <Box ml={1}>
-                      <Typography fontWeight={600} fontSize={15}>
+                      <Typography fontWeight={600} fontSize={15} >
                         {worker.name}
                       </Typography>
                       {worker.verified && (

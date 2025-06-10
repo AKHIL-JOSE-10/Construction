@@ -107,7 +107,7 @@ export default function Home() {
           alignItems={"center"}
           spacing={2}
           size={12}
-          p={1}
+          px={1}
           pb={0}
         >
           <Grid size={1}>
@@ -152,7 +152,6 @@ export default function Home() {
             borderRadius: "1000px",
             display: "flex",
             alignItems: "center",
-            px: 1,
             cursor: "pointer"
           }}
           size={10}
