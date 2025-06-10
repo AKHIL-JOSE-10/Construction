@@ -293,7 +293,7 @@ const MobSearchWorker = () => {
                         fontSize: 12,
                         display: "flex",
                         alignItems: "center",
-                        gap: 5,
+                        gap: 4,
                         height: 30,
                       }}
                     >
