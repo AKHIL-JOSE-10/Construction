@@ -18,12 +18,12 @@ import {
   ArrowForward as ArrowForwardIcon,
   NotificationsNoneOutlined,
   KeyboardArrowDownOutlined,
+  Bookmark,
 } from "@mui/icons-material";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { Link, useNavigate } from 'react-router-dom';
-import StarIcon from '@mui/icons-material/Star';
-import VerifiedIcon from '@mui/icons-material/Verified';
-
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { Link, useNavigate } from "react-router-dom";
+import StarIcon from "@mui/icons-material/Star";
+import VerifiedIcon from "@mui/icons-material/Verified";
 
 // Randomly generate 2 unavailable dates per worker from the set
 const generateUnavailableDates = () => {
@@ -38,6 +38,7 @@ const generateUnavailableDates = () => {
 
 const workers = [
   {
+    id: 1,
     name: "Shang Chi",
     price: "$5.99",
     rating: 4.8,
@@ -46,6 +47,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/men/11.jpg",
   },
   {
+    id: 2,
     name: "Tim Brevis",
     price: "$6.88",
     rating: 3.8,
@@ -54,6 +56,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/men/12.jpg",
   },
   {
+    id: 3,
     name: "Lana Wu",
     price: "$7.50",
     rating: 4.3,
@@ -62,6 +65,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
+    id: 4,
     name: "Carlos",
     price: "$6.20",
     rating: 4.1,
@@ -78,6 +82,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/women/47.jpg",
   },
   {
+    id: 5,
     name: "Ethan Clark",
     price: "$7.10",
     rating: 4.2,
@@ -86,6 +91,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/men/35.jpg",
   },
   {
+    id: 6,
     name: "Aisha Khan",
     price: "$5.75",
     rating: 3.9,
@@ -94,6 +100,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/women/28.jpg",
   },
   {
+    id: 7,
     name: "Liam Chen",
     price: "$6.30",
     rating: 4.4,
@@ -102,6 +109,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/men/49.jpg",
   },
   {
+    id: 8,
     name: "Maya Patel",
     price: "$5.60",
     rating: 4.5,
@@ -110,6 +118,7 @@ const workers = [
     img: "https://randomuser.me/api/portraits/women/22.jpg",
   },
   {
+    id: 9,
     name: "Noah",
     price: "$6.95",
     rating: 3.7,
@@ -134,32 +143,75 @@ const MobSearchWorker = () => {
     worker.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const [bookmarkedWorkers, setBookmarkedWorkers] = useState([]);
+
+  const handleBookmarkClick = (event, workerId) => {
+    event.stopPropagation(); // Prevent navigation
+    setBookmarkedWorkers((prev) =>
+      prev.includes(workerId)
+        ? prev.filter((id) => id !== workerId)
+        : [...prev, workerId]
+    );
+  };
+
   return (
     <Box sx={{ bgcolor: "#fefaf7", minHeight: "100vh" }}>
       <Grid sx={{ px: 1.5, pt: 1.5 }}>
-        <Grid container alignItems="center" justifyContent="space-between" mb={2}>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="space-between"
+          mb={2}
+        >
           <Grid item xs={9}>
             <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Box onClick={() => navigate(-1)} sx={{ left: 10, cursor: 'pointer' }}>
-                <ArrowBackIosIcon sx={{ fontSize: '20px', color: 'grey' }} />
+              <Box
+                onClick={() => navigate(-1)}
+                sx={{ left: 10, cursor: "pointer" }}
+              >
+                <ArrowBackIosIcon sx={{ fontSize: "20px", color: "grey" }} />
               </Box>
               <LocationOnOutlined sx={{ mr: 1 }} />
               <Box>
                 <Typography fontSize={13}>Current location</Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                  <Typography fontWeight="bold" fontSize={15}>Kuala Lumpur, Malaysia</Typography>
-                  <KeyboardArrowDownOutlined sx={{ color: "black", fontSize: 30 }} />
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography fontWeight="bold" fontSize={15}>
+                    Kuala Lumpur, Malaysia
+                  </Typography>
+                  <KeyboardArrowDownOutlined
+                    sx={{ color: "black", fontSize: 30 }}
+                  />
                 </Box>
               </Box>
             </Box>
           </Grid>
           <Grid>
-            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-              <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
-                <NotificationsNoneOutlined sx={{ color: "black", fontSize: "28px", cursor: 'pointer', mr: 1.5, mt: 0.6 }} />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Link to="/mobile-notifications" style={{ color: "inherit" }}>
+                <NotificationsNoneOutlined
+                  sx={{
+                    color: "black",
+                    fontSize: "28px",
+                    cursor: "pointer",
+                    mr: 1.5,
+                    mt: 0.6,
+                  }}
+                />
               </Link>
-              <Link to="/editInfo" style={{ color: 'inherit' }}>
-              <Avatar src="https://randomuser.me/api/portraits/women/79.jpg" />
+              <Link to="/editInfo" style={{ color: "inherit" }}>
+                <Avatar src="https://randomuser.me/api/portraits/women/79.jpg" />
               </Link>
             </Box>
           </Grid>
@@ -201,42 +253,54 @@ const MobSearchWorker = () => {
       </Grid>
 
       {/* Worker Cards */}
-      <Grid container px={0} mt={2} sx={{ justifyContent: 'space-evenly' }}>
+      <Grid container px={0} mt={2} sx={{ justifyContent: "space-evenly" }}>
         {filteredWorkers.map((worker, index) => {
           const unavailableDates = generateUnavailableDates();
           return (
-            <Grid key={index} sx={{ display: "flex",width:'48%' }}>
-<Box
-  onClick={() => navigate('/mobile-workerpage')}
-  sx={{
-    position: "relative",
-    borderRadius: 0.5,
-    width: '100%',
-    mb: 1,
-    border:'1px solid rgba(184, 147, 87, 0.3)',
-    boxShadow: '0px 2px 8px rgba(90, 69, 1, 0.1)',
-    overflow: "hidden",
-    cursor: 'pointer', // Optional for visual cue
-  }}
->
-  {/* Gradient Circle - bottom right */}
-  <Box
-    sx={{
-      position: "absolute",
-      bottom: '-24%',
-      right: '-16%',
-      width: '78%',
-      height: '65%',
-      borderRadius: "47%",
-      background: "radial-gradient(circle at center, rgba(194, 137, 67, 0.2))",
-      pointerEvents: "7one",
-    }}
-  />
-                <Box sx={{ p: 1, mt: 0.5, alignItems:'center'}}>
-                  <Box display="flex"  mb={1} >
-                    <Avatar src={worker.img} sx={{ ml: -0.3, width:45, height:45 }} />
+            <Grid key={index} sx={{ display: "flex", width: "48%" }}>
+              <Box
+                onClick={() => navigate("/mobile-workerpage")}
+                sx={{
+                  position: "relative",
+                  borderRadius: 0.5,
+                  width: "100%",
+                  height: "fit-content",
+                  mb: 1,
+                  border: "1px solid rgba(184, 147, 87, 0.3)",
+                  boxShadow: "0px 2px 8px rgba(90, 69, 1, 0.1)",
+                  overflow: "hidden",
+                  cursor: "pointer", // Optional for visual cue
+                }}
+              >
+                {/* Gradient Circle - bottom right */}
+                {/* <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "-24%",
+                    right: "-16%",
+                    width: "78%",
+                    height: "65%",
+                    borderRadius: "47%",
+                    background:
+                      "radial-gradient(circle at center, rgba(194, 137, 67, 0.2))",
+                    pointerEvents: "7one",
+                  }}
+                /> */}
+                <Box
+                  sx={{
+                    p: 1,
+                    mt: 0.5,
+                    alignItems: "center",
+                    position: "relative",
+                  }}
+                >
+                  <Box display="flex" mb={1}>
+                    <Avatar
+                      src={worker.img}
+                      sx={{ ml: -0.3, width: 45, height: 45 }}
+                    />
                     <Box ml={1}>
-                      <Typography fontWeight={600} fontSize={15} >
+                      <Typography fontWeight={600} fontSize={15}>
                         {worker.name}
                       </Typography>
                       {worker.verified && (
@@ -254,35 +318,70 @@ const MobSearchWorker = () => {
                           }}
                         >
                           Archisans Verified
-                          <VerifiedIcon sx={{ fontSize: 10, ml: 0.3, color: "green" }} />
+                          <VerifiedIcon
+                            sx={{ fontSize: 10, ml: 0.3, color: "green" }}
+                          />
                         </Box>
                       )}
                     </Box>
                   </Box>
 
                   <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Typography fontSize={10} color="text.secondary" sx={{ display: "flex", alignItems: "center" }}>
-                      <LocationOnOutlined sx={{ fontSize: 13, mr: 0.5, ml:0.12 }} />
+                    <Typography
+                      fontSize={10}
+                      color="text.secondary"
+                      sx={{ display: "flex", alignItems: "center" }}
+                    >
+                      <LocationOnOutlined
+                        sx={{ fontSize: 13, mr: 0.5, ml: 0.12 }}
+                      />
                       5.1 km away
                     </Typography>
                   </Box>
 
-                  <Box display="flex" alignItems="center" gap={0.5} mt={0.5} mb={0.6} flexWrap="wrap">
-                    <AccessTimeIcon sx={{ fontSize: 13, color: "white", bgcolor: "#0492C2", borderRadius: 10, ml: 0.2 }} />
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    gap={0.5}
+                    mt={0.5}
+                    mb={0.6}
+                    flexWrap="wrap"
+                  >
+                    <AccessTimeIcon
+                      sx={{
+                        fontSize: 13,
+                        color: "white",
+                        bgcolor: "#0492C2",
+                        borderRadius: 10,
+                        ml: 0.2,
+                      }}
+                    />
                     {[17, 18, 19, 20, 21, 22].map((date) => (
                       <Typography
                         key={date}
                         fontSize="11px"
-                        sx={{ color: unavailableDates.includes(date) ? "red" : "text.secondary" }}
+                        sx={{
+                          color: unavailableDates.includes(date)
+                            ? "red"
+                            : "text.secondary",
+                        }}
                       >
                         {date}
                       </Typography>
                     ))}
                   </Box>
 
-                  <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                    }}
+                  >
                     <Box display="flex" alignItems="center" mr={0.5}>
-                      <StarIcon sx={{ fontSize: 15.5, color: '#fbc02d', mr: 0.5 }} />
+                      <StarIcon
+                        sx={{ fontSize: 15.5, color: "#fbc02d", mr: 0.5 }}
+                      />
                       <Typography fontSize={11.5} lineHeight={1}>
                         {worker.rating}
                       </Typography>
@@ -296,11 +395,32 @@ const MobSearchWorker = () => {
                     {worker.price} <small>/hour</small>
                   </Typography>
 
-                  <Box sx={{ display: "flex", justifyContent: "center", gap:4, my: 0.5, width: '99%' }}>
-                    <IconButton size="small">
-                      <BookmarkBorder sx={{ fontSize: 23 }} />
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      bottom: -2,
+                      right: 2,
+                      display: "flex",
+                      justifyContent: "end",
+                      gap: 4,
+                      my: 0.5,
+                      width: "99%",
+                    }}
+                  >
+                    <IconButton
+                      size="small"
+                      onClick={(event) => handleBookmarkClick(event, worker.id)}
+                    >
+                      {bookmarkedWorkers.includes(worker.id) ? (
+                        <Bookmark sx={{ fontSize: 23, color: "#B49176" }} /> // Filled icon
+                      ) : (
+                        <BookmarkBorder
+                          sx={{ fontSize: 23, color: "inherit" }}
+                        /> // Outlined icon
+                      )}
                     </IconButton>
-                    <Button
+
+                    {/* <Button
                       variant="contained"
                       size="small"
                       sx={{
@@ -331,7 +451,7 @@ const MobSearchWorker = () => {
                       >
                         <ArrowForwardIcon sx={{ fontSize: 14 }} />
                       </Box>
-                    </Button>
+                    </Button> */}
                   </Box>
                 </Box>
               </Box>
@@ -359,7 +479,10 @@ const MobSearchWorker = () => {
         <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 20 }}>
           Related Searches
         </Typography>
-        <Grid container sx={{ overflowX: "auto", flexWrap: "nowrap", gap: 2, px: 1 }}>
+        <Grid
+          container
+          sx={{ overflowX: "auto", flexWrap: "nowrap", gap: 2, px: 1 }}
+        >
           {relatedSearches.map((item, idx) => (
             <Grid item key={idx} sx={{ flexShrink: 0 }}>
               <Box
@@ -386,7 +509,8 @@ const MobSearchWorker = () => {
                     width: 100,
                     height: 100,
                     borderRadius: "50%",
-                    background: "radial-gradient(circle at center, rgba(62, 149, 30, 0.3))",
+                    background:
+                      "radial-gradient(circle at center, rgba(62, 149, 30, 0.3))",
                     pointerEvents: "none",
                   }}
                 />
