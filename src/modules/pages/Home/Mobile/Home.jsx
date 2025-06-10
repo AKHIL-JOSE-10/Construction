@@ -2,36 +2,46 @@ import {
   KeyboardArrowDownOutlined,
   LocationOnOutlined,
   NotificationsNoneOutlined,
+  Search as SearchIcon,
   StarOutline,
+  Tune,
 } from "@mui/icons-material";
 import {
   Avatar,
   Box,
   Grid,
-  IconButton,
+  Input,
+  InputAdornment,
   Typography,
+  IconButton,
 } from "@mui/material";
-import { color, ServiceList, textDecoration } from "./constants";
+import React from "react";
+import {
+  color,
+  ServiceList,
+  ServiceListValues,
+  textDecoration,
+} from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
-import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
-import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
-import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
 export default function Home() {
+
   const navigate = useNavigate();
 
   //animation in search bar
-
+  
   const TypewriterText = () => {
+
     const fullText = "Job title, keyword, worker";
     const [displayedText, setDisplayedText] = useState("");
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-      const typingSpeed = 90;
+      const typingSpeed = 90; 
       const delayBeforeRepeat = 1200;
 
       if (index < fullText.length) {
@@ -52,27 +62,15 @@ export default function Home() {
     }, [index]);
 
     return (
-      <Typography
-        sx={{ color: "#c0c0c0", fontSize: "0.9em", whiteSpace: "nowrap" }}
-      >
+      <Typography sx={{ color: "#c0c0c0", fontSize: "0.9em", whiteSpace: "nowrap" }}>
         {displayedText}
-        <Box
-          component="span"
-          sx={{
-            display: "inline-block",
-            width: "6px",
-            bgcolor: "#c0c0c0",
-            ml: 0.5,
-          }}
-        />
+        <Box component="span" sx={{ display: "inline-block", width: "6px", bgcolor: "#c0c0c0", ml: 0.5 }} />
       </Typography>
     );
   };
 
-  const [open, setOpen] = useState(false);
-  const handleOpen = (isOpen) => {
-    setOpen(isOpen);
-  };
+
+
   return (
     <Grid container size={12}>
       {/* Top part with search bar and information */}
@@ -123,9 +121,7 @@ export default function Home() {
               <Typography sx={{ ...textDecoration.headerPrimary }}>
                 Kuala Lumpur, Malaysia
               </Typography>
-              <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
-                <KeyboardArrowDownOutlined sx={{ color: "white" }} />
-              </IconButton>
+              <KeyboardArrowDownOutlined sx={{ color: "white" }} />
             </Grid>
           </Grid>
           <Grid
@@ -135,22 +131,36 @@ export default function Home() {
             size={3}
             justifyContent={"space-around"}
           >
-            <Link to="/mobile-notifications" style={{ color: "inherit" }}>
-              <NotificationsNoneOutlined
-                sx={{ color: "white", fontSize: "22px", cursor: "pointer" }}
-              />
+            <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
+              <NotificationsNoneOutlined sx={{ color: "white", fontSize: "22px", cursor: 'pointer' }} />
             </Link>
 
-            <Link to="/editInfo" style={{ color: "inherit" }}>
+            <Link to="/editInfo" style={{ color: 'inherit' }}>
               <Avatar
                 src={"https://randomuser.me/api/portraits/women/79.jpg"}
                 sx={{ width: "35px", height: "35px" }}
-              ></Avatar>
+              >
+              </Avatar>
             </Link>
           </Grid>
         </Grid>
         {/* Search bar container */}
-        <SearchBar onClick={() => navigate("/mobile-search-worker")} />
+        <Grid
+          sx={{
+            bgcolor: color.layoutColor,
+            height: "5vh",
+            borderRadius: "1000px",
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer"
+          }}
+          size={10}
+          onClick={() => navigate('/mobile-search-worker')}
+        >
+          <SearchIcon sx={{ color: "gray", mr: 1 }} />
+          <TypewriterText />
+          <Box sx={{ flexGrow: 1 }} />
+        </Grid>
         {/* <Box
           sx={{
             width: "10vh",
@@ -163,13 +173,14 @@ export default function Home() {
             zIndex: -1000,
           }}
         /> */}
+
       </Grid>
       <Grid
         container
         size={12}
         direction={"column"}
         sx={{
-          bgcolor: "white",
+          bgcolor: color.layoutColor,
           height: "100%",
           paddingBottom: "60px",
         }}
@@ -344,7 +355,7 @@ export default function Home() {
               <Link
                 to="/mobile-workerpage"
                 key={index}
-                style={{ textDecoration: "none", color: "inherit" }}
+                style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <Grid
                   container
@@ -396,19 +407,12 @@ export default function Home() {
                       </Typography>
                     </Grid>
                     <Grid item mt={1}>
-                      <Typography
-                        sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
-                      >
+                      <Typography sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}>
                         Perry Wilson
                       </Typography>
                     </Grid>
                     <Grid item>
-                      <Typography
-                        sx={{
-                          color: "rgba(123, 123, 123, 1)",
-                          fontSize: "10px",
-                        }}
-                      >
+                      <Typography sx={{ color: "rgba(123, 123, 123, 1)", fontSize: "10px" }}>
                         Location
                       </Typography>
                     </Grid>
@@ -436,9 +440,9 @@ export default function Home() {
             to="/mobile-service-category"
             sx={{
               color: "hsl(26, 29.10%, 56.30%)",
-              textDecoration: "none",
-              cursor: "pointer",
-              fontWeight: 500,
+              textDecoration: 'none',
+              cursor: 'pointer',
+              fontWeight: 500
             }}
           >
             View all services
@@ -446,7 +450,6 @@ export default function Home() {
         </Grid>
       </Grid>
       <MobileBottomTab />
-      <AddressDrawer open={open} setOpen={setOpen} />
     </Grid>
   );
 }
