@@ -212,8 +212,8 @@ const MobSearchWorker = () => {
     borderRadius: 0.5,
     width: '100%',
     mb: 1,
-    border: "0.5px solid #a9a9a9",
-    boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
+    border:'1px solid rgba(184, 147, 87, 0.3)',
+    boxShadow: '0px 2px 8px rgba(90, 69, 1, 0.1)',
     overflow: "hidden", // Optional: ensures the circle doesn't overflow
   }}
 >
