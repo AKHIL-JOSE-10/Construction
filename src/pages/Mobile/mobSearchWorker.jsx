@@ -206,15 +206,17 @@ const MobSearchWorker = () => {
           const unavailableDates = generateUnavailableDates();
           return (
             <Grid key={index} sx={{ display: "flex",width:'48%' }}>
-              <Box
+<Box
+  onClick={() => navigate('/mobile-workerpage')}
   sx={{
-    position: "relative", // ✅ Added
+    position: "relative",
     borderRadius: 0.5,
     width: '100%',
     mb: 1,
     border:'1px solid rgba(184, 147, 87, 0.3)',
     boxShadow: '0px 2px 8px rgba(90, 69, 1, 0.1)',
-    overflow: "hidden", // Optional: ensures the circle doesn't overflow
+    overflow: "hidden",
+    cursor: 'pointer', // Optional for visual cue
   }}
 >
   {/* Gradient Circle - bottom right */}
