@@ -13,7 +13,13 @@ import {
   Typography,
 } from "@mui/material";
 import SearchBar from "../../Mobile/SearchBar";
-import { Add, KeyboardArrowRight, LocationOn, MyLocation } from "@mui/icons-material";
+import {
+  Add,
+  KeyboardArrowRight,
+  LocationOn,
+  MyLocation,
+} from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 export const addressList = [
   {
     title: "Home Address",
@@ -29,7 +35,8 @@ export const addressList = [
   },
 ];
 
-export default function AddressDrawer({open,setOpen}) {
+export default function AddressDrawer({ open, setOpen }) {
+  const navigate = useNavigate();
   return (
     <BottomDrawerLayout
       open={open}
@@ -79,6 +86,7 @@ export default function AddressDrawer({open,setOpen}) {
               sx={{
                 width: "100%",
               }}
+              onClick={()=>navigate("/add-address")}
             >
               <ListItemIcon>
                 <Add sx={{ color: "#B49176" }} />
@@ -100,58 +108,56 @@ export default function AddressDrawer({open,setOpen}) {
         Your saved Address
       </Typography>
       <Grid mt={2}>
-          <Box  pt={0} sx={{ width: "100%" }}>
-            {addressList.map((item, index) => (
-              <Box
-                key={index}
-                sx={{
-                  borderRadius: 1,
-                  p: 1,
-                  border:"1px solid #e0e0e0",
-                  mb: 1.5,
-                }}
-              >
-                <List disablePadding>
-                  <ListItem
-                    disableGutters
-                  >
-                    {/* Title and Details */}
-                    <Box>
-                      <Box
-                        sx={{ display: "flex", flexDirection: "row", ml: -0.5 }}
-                      >
-                        <Box sx={{ display: "flex", alignItems: "center" }}>
-                          <Typography
-                            sx={{
-                              fontSize: "15px",
-                              fontWeight:"normal",
-                              color:"inherit",
-                              display: "flex",
-                              alignItems: "center",
-                              gap: "4px",
-                            }}
-                          >
-                            <LocationOn color="primary" fontSize="small" />
-                            {item.title}
-                          </Typography>
-                        </Box>
+        <Box pt={0} sx={{ width: "100%" }}>
+          {addressList.map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                borderRadius: 1,
+                p: 1,
+                border: "1px solid #e0e0e0",
+                mb: 1.5,
+              }}
+            >
+              <List disablePadding>
+                <ListItem disableGutters>
+                  {/* Title and Details */}
+                  <Box>
+                    <Box
+                      sx={{ display: "flex", flexDirection: "row", ml: -0.5 }}
+                    >
+                      <Box sx={{ display: "flex", alignItems: "center" }}>
+                        <Typography
+                          sx={{
+                            fontSize: "15px",
+                            fontWeight: "normal",
+                            color: "inherit",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "4px",
+                          }}
+                        >
+                          <LocationOn color="primary" fontSize="small" />
+                          {item.title}
+                        </Typography>
                       </Box>
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          color: "text.secondary",
-                          fontSize: "14px",
-                          mt: 0.5,
-                        }}
-                      >
-                        {item.details}
-                      </Typography>
                     </Box>
-                  </ListItem>
-                </List>
-              </Box>
-            ))}
-          </Box>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "text.secondary",
+                        fontSize: "14px",
+                        mt: 0.5,
+                      }}
+                    >
+                      {item.details}
+                    </Typography>
+                  </Box>
+                </ListItem>
+              </List>
+            </Box>
+          ))}
+        </Box>
       </Grid>
     </BottomDrawerLayout>
   );

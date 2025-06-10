@@ -27,6 +27,7 @@ import MobFabricationServices from "./pages/Mobile/mobServiceCategory/mobFabrica
 import MobMessageChat from "./pages/Mobile/mobMessage/mobMessageChat";
 
 import Test from "./test";
+import AddressDetails from "./modules/pages/Home/Address/AdressDetails/AddressDetails";
 function App() {
   return (
     <Router>
@@ -75,7 +76,8 @@ function App() {
           element={<MobFabricationServices />}
         />
         <Route path="/mobile-message-chat" element={<MobMessageChat />} />
-        <Route path="/test" element={<Test/>} />
+        <Route path="/add-address" element={<AddressDetails />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
