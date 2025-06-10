@@ -223,11 +223,11 @@ const MobSearchWorker = () => {
       position: "absolute",
       bottom: -41,
       right: -25,
-      width: 130,
-      height: 125,
+      width: '70%',
+      height: '65%',
       borderRadius: "47%",
       background: "radial-gradient(circle at center, rgba(30, 149, 91, 0.2))",
-      pointerEvents: "none",
+      pointerEvents: "7one",
     }}
   />
                 <Box sx={{ p: 1, mt: 0.5 }}>
