@@ -203,11 +203,11 @@ const MobSearchWorker = () => {
         {filteredWorkers.map((worker, index) => {
           const unavailableDates = generateUnavailableDates();
           return (
-            <Grid key={index} sx={{ display: "flex" }}>
+            <Grid key={index} sx={{ display: "flex",width:'45%' }}>
               <Box
                 sx={{
                   borderRadius: 0.5,
-                  minWidth: "160px",
+                  width: '110%',
                   mb: 1,
                   border: "0.5px solid #a9a9a9",
                   boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
@@ -243,7 +243,7 @@ const MobSearchWorker = () => {
 
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Typography fontSize={10} color="text.secondary" sx={{ display: "flex", alignItems: "center" }}>
-                      <LocationOnOutlined sx={{ fontSize: 12, mr: 0.5 }} />
+                      <LocationOnOutlined sx={{ fontSize: 12, mr: 0.5, ml:0.12 }} />
                       5.1 km away
                     </Typography>
                   </Box>
