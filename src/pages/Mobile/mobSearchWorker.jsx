@@ -20,9 +20,19 @@ import {
   KeyboardArrowDownOutlined,
 } from "@mui/icons-material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import StarIcon from '@mui/icons-material/Star';
+
+// Randomly generate 2 unavailable dates per worker from the set
+const generateUnavailableDates = () => {
+  const allDates = [17, 18, 19, 20, 21, 22];
+  const unavailable = new Set();
+  while (unavailable.size < 2) {
+    const rand = allDates[Math.floor(Math.random() * allDates.length)];
+    unavailable.add(rand);
+  }
+  return [...unavailable];
+};
 
 const workers = [
   {
@@ -123,201 +133,194 @@ const MobSearchWorker = () => {
   );
 
   return (
-    <Box sx={{ padding: 1.5, bgcolor: "#fefaf7", minHeight: "100vh" }}>
-      {/* Location & Profile Row */}
-      <Grid container alignItems="center" justifyContent="space-between" mb={2}>
-        <Grid item xs={9}>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            {/* Back Arrow */}
-            <Box
-              onClick={() => navigate(-1)} // Go back one page
-              sx={{
-                left: 10,
-                cursor: 'pointer',
-              }}
-            >
-              <ArrowBackIosIcon sx={{ fontSize: '20px', color: 'grey' }} />
-            </Box>
-            <LocationOnOutlined sx={{ mr: 1 }} />
-            <Box>
-              <Typography fontSize={13}>Current location</Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                <Typography fontWeight="bold" fontSize={14}>Kuala Lumpur, Malaysia</Typography>
-                <KeyboardArrowDownOutlined sx={{ color: "black", fontSize: 30 }} />
+    <Box sx={{ bgcolor: "#fefaf7", minHeight: "100vh" }}>
+      <Grid sx={{ px: 1.5, pt: 1.5 }}>
+        <Grid container alignItems="center" justifyContent="space-between" mb={2}>
+          <Grid item xs={9}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <Box onClick={() => navigate(-1)} sx={{ left: 10, cursor: 'pointer' }}>
+                <ArrowBackIosIcon sx={{ fontSize: '20px', color: 'grey' }} />
               </Box>
-
-            </Box>
-          </Box>
-        </Grid>
-        <Grid >
-          <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-            <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
-              <NotificationsNoneOutlined sx={{ color: "black", fontSize: "28px", cursor: 'pointer', mr: 1.5, mt: 0.6 }} />
-            </Link>
-            <Avatar src="https://randomuser.me/api/portraits/women/79.jpg"/>
-          </Box>
-
-        </Grid>
-      </Grid>
-
-      {/* Search Bar */}
-      <Box
-        sx={{
-          bgcolor: "#fff",
-          borderRadius: "12px",
-          px: 1.1,
-          py: 0.5,
-          display: "flex",
-          alignItems: "center",
-          boxShadow: 1,
-        }}
-      >
-        <Search sx={{ color: "gray", mr: 1 }} />
-        <Input
-          inputRef={inputRef}
-          fullWidth
-          disableUnderline
-          placeholder="Search Services & Workers"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          sx={{
-            fontSize: 13,
-            "&::placeholder": {
-              fontSize: 12,
-              color: "gray",
-              opacity: 1,
-            },
-          }}
-        />
-        <IconButton>
-          <Tune />
-        </IconButton>
-      </Box>
-      {/* Worker Cards */}
-      <Grid container px={0} mt={2} sx={{justifyContent:'space-evenly'}}>
-        {filteredWorkers.map((worker, index) => (
-          <Grid key={index} sx={{ display: "flex" }}>
-            <Box
-              sx={{
-                borderRadius: 0.5,
-                minWidth: "155px",
-                mb: 1,
-                border: "0.5px solid #a9a9a9",
-                boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <Box sx={{ p: 1, mt: 0.5 }}>
-                <Box display="flex" alignItems="center" mb={1}>
-                  <Avatar src={worker.img} sx={{ml:-0.3}}/>
-                  <Box ml={1}>
-                    <Typography fontWeight={600} fontSize={15}>
-                      {worker.name}
-                    </Typography>
-                    {worker.verified && (
-                      <Box
-                        sx={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          bgcolor: "#f3e5d7",
-                          color: "#5d4037",
-                          px: 0.5,
-                          py: 0.3,
-                          borderRadius: 0.5,
-                          fontSize: "8px",
-                          mt: 0.5,
-                        }}
-                      >
-                        Archisans Verified
-                        <CheckCircleIcon
-                          sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }}
-                        />
-                      </Box>
-                    )}
-                  </Box>
-                </Box>
-
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Typography fontSize={10} color="text.secondary" sx={{ display: "flex", alignItems: "center", }}>
-                    <LocationOnOutlined sx={{ fontSize: 12, mr: 0.5 }} />
-                    5.1 km away
-                  </Typography>
-                </Box>
-
-                <Box display="flex" alignItems="center" gap={0.5} mt={0.5} mb={0.6} flexWrap="wrap">
-                  <AccessTimeIcon sx={{ fontSize: 12, color: "white", bgcolor: "#0492C2", borderRadius: 10 ,ml:0.2}} />
-                  {[17, 18, 19, 20, 21, 22].map((date) => (
-                    <Typography key={date} fontSize="10px" color="text.secondary">
-                      {date}
-                    </Typography>
-                  ))}
-                </Box>
+              <LocationOnOutlined sx={{ mr: 1 }} />
+              <Box>
+                <Typography fontSize={13}>Current location</Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                  <Box display="flex" alignItems="center" mr={0.5}>
-  <StarIcon sx={{ fontSize: 13, color: '#fbc02d', mr: 0.5,ml:0.2}} />
-  <Typography fontSize={11} lineHeight={1}>
-    {worker.rating}
-  </Typography>
-</Box>
-                  <Typography fontSize={9} lineHeight={1}>
-                    ({worker.reviews} reviews)
-                  </Typography>
-                </Box>
-
-
-                <Typography fontWeight="bold" fontSize={14} pt={1} pl={0.5}>
-                  {worker.price} <small>/hour</small>
-                </Typography>
-
-                <Box sx={{ display: "flex", justifyContent: "center",gap:2, my: 0.5, width: '135px' }}>
-                 
-                    <IconButton size="small">
-                      <BookmarkBorder sx={{ fontSize: 22 }} />
-                    </IconButton>
-                  
-
-                  <Button
-                    variant="contained"
-                    size="small"
-                    sx={{
-                      bgcolor: "#b0876d",
-                      color: "#fff",
-                      borderRadius: "20px",
-                      textTransform: "none",
-                      px: 1.2,
-                      fontSize: 12,
-                      mb: 0,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 2,
-                      height: 30
-                    }}
-                  >
-                    <Typography sx={{ fontSize: 9, color: "white" }}>
-                      Book
-                    </Typography>
-                    <Box
-                      sx={{
-                        bgcolor: "#fff",
-                        color: "#b0876d",
-                        borderRadius: "50%",
-                        width: 18,
-                        height: 18,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <ArrowForwardIcon sx={{ fontSize: 10 }} />
-                    </Box>
-                  </Button>
+                  <Typography fontWeight="bold" fontSize={15}>Kuala Lumpur, Malaysia</Typography>
+                  <KeyboardArrowDownOutlined sx={{ color: "black", fontSize: 30 }} />
                 </Box>
               </Box>
             </Box>
           </Grid>
-        ))}
+          <Grid>
+            <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <Link to="/mobile-notifications" style={{ color: 'inherit' }}>
+                <NotificationsNoneOutlined sx={{ color: "black", fontSize: "28px", cursor: 'pointer', mr: 1.5, mt: 0.6 }} />
+              </Link>
+              <Link to="/editInfo" style={{ color: 'inherit' }}>
+              <Avatar src="https://randomuser.me/api/portraits/women/79.jpg" />
+              </Link>
+            </Box>
+          </Grid>
+        </Grid>
+
+        {/* Search Bar */}
+        <Box
+          sx={{
+            bgcolor: "#fff",
+            borderRadius: "12px",
+            px: 1.1,
+            py: 0.5,
+            display: "flex",
+            alignItems: "center",
+            boxShadow: 1,
+          }}
+        >
+          <Search sx={{ color: "gray", mr: 1 }} />
+          <Input
+            inputRef={inputRef}
+            fullWidth
+            disableUnderline
+            placeholder="Search Services & Workers"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            sx={{
+              fontSize: 13,
+              "&::placeholder": {
+                fontSize: 12,
+                color: "gray",
+                opacity: 1,
+              },
+            }}
+          />
+          <IconButton>
+            <Tune />
+          </IconButton>
+        </Box>
       </Grid>
 
-      {/* View More */}
+      {/* Worker Cards */}
+      <Grid container px={0} mt={2} sx={{ justifyContent: 'space-evenly' }}>
+        {filteredWorkers.map((worker, index) => {
+          const unavailableDates = generateUnavailableDates();
+          return (
+            <Grid key={index} sx={{ display: "flex" }}>
+              <Box
+                sx={{
+                  borderRadius: 0.5,
+                  minWidth: "160px",
+                  mb: 1,
+                  border: "0.5px solid #a9a9a9",
+                  boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <Box sx={{ p: 1, mt: 0.5 }}>
+                  <Box display="flex" alignItems="center" mb={1}>
+                    <Avatar src={worker.img} sx={{ ml: -0.3 }} />
+                    <Box ml={1}>
+                      <Typography fontWeight={600} fontSize={15}>
+                        {worker.name}
+                      </Typography>
+                      {worker.verified && (
+                        <Box
+                          sx={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            bgcolor: "#f3e5d7",
+                            color: "#5d4037",
+                            px: 0.5,
+                            py: 0.3,
+                            borderRadius: 0.5,
+                            fontSize: "8px",
+                            mt: 0.5,
+                          }}
+                        >
+                          Archisans Verified
+                          <CheckCircleIcon sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }} />
+                        </Box>
+                      )}
+                    </Box>
+                  </Box>
+
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Typography fontSize={10} color="text.secondary" sx={{ display: "flex", alignItems: "center" }}>
+                      <LocationOnOutlined sx={{ fontSize: 12, mr: 0.5 }} />
+                      5.1 km away
+                    </Typography>
+                  </Box>
+
+                  <Box display="flex" alignItems="center" gap={0.5} mt={0.5} mb={0.6} flexWrap="wrap">
+                    <AccessTimeIcon sx={{ fontSize: 12, color: "white", bgcolor: "#0492C2", borderRadius: 10, ml: 0.2 }} />
+                    {[17, 18, 19, 20, 21, 22].map((date) => (
+                      <Typography
+                        key={date}
+                        fontSize="10px"
+                        sx={{ color: unavailableDates.includes(date) ? "red" : "text.secondary" }}
+                      >
+                        {date}
+                      </Typography>
+                    ))}
+                  </Box>
+
+                  <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                    <Box display="flex" alignItems="center" mr={0.5}>
+                      <StarIcon sx={{ fontSize: 14.5, color: '#fbc02d', mr: 0.5 }} />
+                      <Typography fontSize={11} lineHeight={1}>
+                        {worker.rating}
+                      </Typography>
+                    </Box>
+                    <Typography fontSize={9} lineHeight={1}>
+                      ({worker.reviews} reviews)
+                    </Typography>
+                  </Box>
+
+                  <Typography fontWeight="bold" fontSize={14} pt={1} pl={0.5}>
+                    {worker.price} <small>/hour</small>
+                  </Typography>
+
+                  <Box sx={{ display: "flex", justifyContent: "center", gap: 3, my: 0.5, width: '135px' }}>
+                    <IconButton size="small">
+                      <BookmarkBorder sx={{ fontSize: 22 }} />
+                    </IconButton>
+                    <Button
+                      variant="contained"
+                      size="small"
+                      sx={{
+                        bgcolor: "#b0876d",
+                        color: "#fff",
+                        borderRadius: "20px",
+                        textTransform: "none",
+                        px: 1.2,
+                        fontSize: 12,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 3,
+                        height: 30,
+                      }}
+                    >
+                      <Typography sx={{ fontSize: 9, color: "white" }}>Book</Typography>
+                      <Box
+                        sx={{
+                          bgcolor: "#fff",
+                          color: "#b0876d",
+                          borderRadius: "50%",
+                          width: 18,
+                          height: 18,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <ArrowForwardIcon sx={{ fontSize: 10 }} />
+                      </Box>
+                    </Button>
+                  </Box>
+                </Box>
+              </Box>
+            </Grid>
+          );
+        })}
+      </Grid>
+
       <Box mt={2} textAlign="center">
         <Typography
           sx={{
@@ -325,7 +328,7 @@ const MobSearchWorker = () => {
             fontWeight: 500,
             textDecoration: "underline",
             cursor: "pointer",
-            fontSize:14
+            fontSize: 14,
           }}
         >
           View More
@@ -333,7 +336,7 @@ const MobSearchWorker = () => {
       </Box>
 
       {/* Related Searches */}
-      <Box mt={3}>
+      <Box sx={{ mt: 3, px: 1.5 }}>
         <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 20 }}>
           Related Searches
         </Typography>
@@ -351,13 +354,11 @@ const MobSearchWorker = () => {
                   pl: 2,
                   pt: 1,
                   pb: 1,
-                  position: "relative", // for positioning inner shadow
-                  overflow: "hidden",   // to clip the shadow to the box
+                  position: "relative",
+                  overflow: "hidden",
                 }}
               >
                 <Typography fontSize={14}>{item}</Typography>
-
-                {/* Circular shadow at bottom-right inside each box */}
                 <Box
                   sx={{
                     position: "absolute",
@@ -380,5 +381,3 @@ const MobSearchWorker = () => {
 };
 
 export default MobSearchWorker;
-
-

@@ -26,10 +26,50 @@ import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
   const navigate = useNavigate();
+
+  //animation in search bar
+  
+  const TypewriterText = () => {
+
+    const fullText = "Job title, keyword, worker";
+    const [displayedText, setDisplayedText] = useState("");
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+      const typingSpeed = 90; 
+      const delayBeforeRepeat = 1200;
+
+      if (index < fullText.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText((prev) => prev + fullText.charAt(index));
+          setIndex((prev) => prev + 1);
+        }, typingSpeed);
+
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout(() => {
+          setDisplayedText("");
+          setIndex(0);
+        }, delayBeforeRepeat);
+
+        return () => clearTimeout(timeout);
+      }
+    }, [index]);
+
+    return (
+      <Typography sx={{ color: "#c0c0c0", fontSize: "0.9em", whiteSpace: "nowrap" }}>
+        {displayedText}
+        <Box component="span" sx={{ display: "inline-block", width: "6px", bgcolor: "#c0c0c0", ml: 0.5 }} />
+      </Typography>
+    );
+  };
+
+
 
   return (
     <Grid container size={12}>
@@ -119,11 +159,8 @@ export default function Home() {
           onClick={() => navigate('/mobile-search-worker')}
         >
           <SearchIcon sx={{ color: "gray", mr: 1 }} />
-          <Typography sx={{ color: "#c0c0c0", fontSize: "0.9em" }}>
-            Job title, keyword, worker
-          </Typography>
+          <TypewriterText />
           <Box sx={{ flexGrow: 1 }} />
-          <Tune sx={{ color: "gray" }} />
         </Grid>
         {/* <Box
           sx={{
