@@ -260,17 +260,17 @@ const MobSearchWorker = () => {
 
                   <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Typography fontSize={10} color="text.secondary" sx={{ display: "flex", alignItems: "center" }}>
-                      <LocationOnOutlined sx={{ fontSize: 12, mr: 0.5, ml:0.12 }} />
+                      <LocationOnOutlined sx={{ fontSize: 13, mr: 0.5, ml:0.12 }} />
                       5.1 km away
                     </Typography>
                   </Box>
 
                   <Box display="flex" alignItems="center" gap={0.5} mt={0.5} mb={0.6} flexWrap="wrap">
-                    <AccessTimeIcon sx={{ fontSize: 12, color: "white", bgcolor: "#0492C2", borderRadius: 10, ml: 0.2 }} />
+                    <AccessTimeIcon sx={{ fontSize: 13, color: "white", bgcolor: "#0492C2", borderRadius: 10, ml: 0.2 }} />
                     {[17, 18, 19, 20, 21, 22].map((date) => (
                       <Typography
                         key={date}
-                        fontSize="10px"
+                        fontSize="11px"
                         sx={{ color: unavailableDates.includes(date) ? "red" : "text.secondary" }}
                       >
                         {date}
@@ -280,8 +280,8 @@ const MobSearchWorker = () => {
 
                   <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                     <Box display="flex" alignItems="center" mr={0.5}>
-                      <StarIcon sx={{ fontSize: 14.5, color: '#fbc02d', mr: 0.5 }} />
-                      <Typography fontSize={11} lineHeight={1}>
+                      <StarIcon sx={{ fontSize: 15.5, color: '#fbc02d', mr: 0.5 }} />
+                      <Typography fontSize={11.5} lineHeight={1}>
                         {worker.rating}
                       </Typography>
                     </Box>
@@ -290,7 +290,7 @@ const MobSearchWorker = () => {
                     </Typography>
                   </Box>
 
-                  <Typography fontWeight="bold" fontSize={14} pt={1} pl={0.5}>
+                  <Typography fontWeight="bold" fontSize={15} pt={1} pl={0.5}>
                     {worker.price} <small>/hour</small>
                   </Typography>
 
