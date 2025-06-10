@@ -207,14 +207,29 @@ const MobSearchWorker = () => {
           return (
             <Grid key={index} sx={{ display: "flex",width:'48%' }}>
               <Box
-                sx={{
-                  borderRadius: 0.5,
-                  width: '100%',
-                  mb: 1,
-                  border: "0.5px solid #a9a9a9",
-                  boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
-                }}
-              >
+  sx={{
+    position: "relative", // ✅ Added
+    borderRadius: 0.5,
+    width: '100%',
+    mb: 1,
+    border: "0.5px solid #a9a9a9",
+    boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
+    overflow: "hidden", // Optional: ensures the circle doesn't overflow
+  }}
+>
+  {/* Gradient Circle - bottom right */}
+  <Box
+    sx={{
+      position: "absolute",
+      bottom: -41,
+      right: -25,
+      width: 130,
+      height: 125,
+      borderRadius: "47%",
+      background: "radial-gradient(circle at center, rgba(30, 149, 91, 0.2))",
+      pointerEvents: "none",
+    }}
+  />
                 <Box sx={{ p: 1, mt: 0.5 }}>
                   <Box display="flex"  mb={1}>
                     <Avatar src={worker.img} sx={{ ml: -0.3 }} />
