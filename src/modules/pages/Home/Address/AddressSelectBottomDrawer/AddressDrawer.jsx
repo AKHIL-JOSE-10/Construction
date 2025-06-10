@@ -86,7 +86,7 @@ export default function AddressDrawer({ open, setOpen }) {
               sx={{
                 width: "100%",
               }}
-              onClick={()=>navigate("/add-address")}
+              onClick={()=>navigate("/address")}
             >
               <ListItemIcon>
                 <Add sx={{ color: "#B49176" }} />

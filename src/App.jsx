@@ -76,7 +76,7 @@ function App() {
           element={<MobFabricationServices />}
         />
         <Route path="/mobile-message-chat" element={<MobMessageChat />} />
-        <Route path="/add-address" element={<AddressDetails />} />
+        <Route path="/address" element={<AddressDetails />} />
         <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
