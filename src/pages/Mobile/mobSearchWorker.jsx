@@ -203,11 +203,11 @@ const MobSearchWorker = () => {
         {filteredWorkers.map((worker, index) => {
           const unavailableDates = generateUnavailableDates();
           return (
-            <Grid key={index} sx={{ display: "flex",width:'45%' }}>
+            <Grid key={index} sx={{ display: "flex",width:'48%' }}>
               <Box
                 sx={{
                   borderRadius: 0.5,
-                  width: '110%',
+                  width: '100%',
                   mb: 1,
                   border: "0.5px solid #a9a9a9",
                   boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
@@ -277,9 +277,9 @@ const MobSearchWorker = () => {
                     {worker.price} <small>/hour</small>
                   </Typography>
 
-                  <Box sx={{ display: "flex", justifyContent: "center", gap: 3, my: 0.5, width: '135px' }}>
+                  <Box sx={{ display: "flex", justifyContent: "center", gap:4, my: 0.5, width: '99%' }}>
                     <IconButton size="small">
-                      <BookmarkBorder sx={{ fontSize: 22 }} />
+                      <BookmarkBorder sx={{ fontSize: 23 }} />
                     </IconButton>
                     <Button
                       variant="contained"
@@ -289,15 +289,15 @@ const MobSearchWorker = () => {
                         color: "#fff",
                         borderRadius: "20px",
                         textTransform: "none",
-                        px: 1.2,
+                        px: 3,
                         fontSize: 12,
                         display: "flex",
                         alignItems: "center",
-                        gap: 3,
+                        gap: 5,
                         height: 30,
                       }}
                     >
-                      <Typography sx={{ fontSize: 9, color: "white" }}>Book</Typography>
+                      <Typography sx={{ fontSize: 11, color: "white" }}>Book</Typography>
                       <Box
                         sx={{
                           bgcolor: "#fff",
@@ -310,7 +310,7 @@ const MobSearchWorker = () => {
                           justifyContent: "center",
                         }}
                       >
-                        <ArrowForwardIcon sx={{ fontSize: 10 }} />
+                        <ArrowForwardIcon sx={{ fontSize: 14 }} />
                       </Box>
                     </Button>
                   </Box>
