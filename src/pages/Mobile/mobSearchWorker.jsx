@@ -214,7 +214,7 @@ const MobSearchWorker = () => {
                 }}
               >
                 <Box sx={{ p: 1, mt: 0.5 }}>
-                  <Box display="flex" alignItems="center" mb={1}>
+                  <Box display="flex"  mb={1}>
                     <Avatar src={worker.img} sx={{ ml: -0.3 }} />
                     <Box ml={1}>
                       <Typography fontWeight={600} fontSize={15}>
