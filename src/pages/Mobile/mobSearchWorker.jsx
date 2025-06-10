@@ -223,9 +223,9 @@ const MobSearchWorker = () => {
       position: "absolute",
       bottom: -41,
       right: -25,
-      width: '70%',
+      width: '75%',
       height: '65%',
-      borderRadius: "47%",
+      borderRadius: "55%",
       background: "radial-gradient(circle at center, rgba(30, 149, 91, 0.2))",
       pointerEvents: "7one",
     }}
