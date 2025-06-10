@@ -9,19 +9,18 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useState } from 'react';
 import dayjs from 'dayjs';
-import UserSpecificBooking from '../../../pages/Bookings/UserSpecificBooking';
 
 
 const MobWorkerservice = () => {
 
   const [date, setDate] = useState(dayjs());
-  const [open,setOpen] = useState(false);
+
   return (
     <Grid>
       <Box sx={{ px: 1 }}>
         <Typography sx={{ fontSize: '18px', fontWeight: '600', py: 2, ml: 1 }}>My Services</Typography>
         <Accordion
-          sx={{ borderRadius: 1, border: '0.9px solid lightgrey', overflow: 'hidden', mb: 1 }}>
+          sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -71,7 +70,7 @@ const MobWorkerservice = () => {
           </AccordionDetails>
         </Accordion>
         <Accordion
-          sx={{ borderRadius: 1, border: '0.9px solid lightgrey', overflow: 'hidden', mb: 1 }}>
+          sx={{ borderRadius: 1, border: '0.9px solid black', overflow: 'hidden', mb: 1 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1-content"
@@ -160,14 +159,13 @@ const MobWorkerservice = () => {
         </Box>
 
 
-        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', mt: 3 }} >
-          <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }} onClick={()=>setOpen(true)}>
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center', mt: 3 }}>
+          <Button sx={{ height: '50px', borderRadius: '20px', bgcolor: '#B08B6F', color: 'white', width: '85%', textTransform: 'none' }}>
             Book now
           </Button>
         </Box>
       </Box>
-     
-      <UserSpecificBooking open={open} setOpen={setOpen}/>
+
 
     </Grid>
   )
