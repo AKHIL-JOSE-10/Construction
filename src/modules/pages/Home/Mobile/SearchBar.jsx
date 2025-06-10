@@ -2,7 +2,7 @@ import { Search } from "@mui/icons-material";
 import { Grid, Input, InputAdornment } from "@mui/material";
 import React from "react";
 import { color } from "./constants";
-export default function SearchBar({sx,text}) {
+export default function SearchBar({sx,text,onClick}) {
   return (
     <Grid
       sx={{     
@@ -14,6 +14,7 @@ export default function SearchBar({sx,text}) {
       }}
       alignItems={"center"}
       size={10}
+      onClick={onClick}
     >
       <Input
         placeholder= {text ? text : "Job title, keyword, worker"}

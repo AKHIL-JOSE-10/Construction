@@ -4,11 +4,7 @@ const MobHelpSupportCard = ({ title, icon }) => {
     return (
 
         <Grid >
-            <Box
-                sx={{
-
-                }}
-            >
+            <Box>
                 <Box
                     sx={{
                         bgcolor: '#F1E6DD',

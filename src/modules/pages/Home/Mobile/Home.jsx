@@ -2,7 +2,6 @@ import {
   KeyboardArrowDownOutlined,
   LocationOnOutlined,
   NotificationsNoneOutlined,
-  Search as SearchIcon,
   StarOutline,
 } from "@mui/icons-material";
 import {
@@ -10,28 +9,70 @@ import {
   Box,
   Grid,
   IconButton,
-  Input,
-  InputAdornment,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
-import {
-  color,
-  ServiceList,
-  ServiceListValues,
-  textDecoration,
-} from "./constants";
+import { color, ServiceList, textDecoration } from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [open,setOpen] = useState(false);
-  const handleOpen = (isOpen) =>{
+  const navigate = useNavigate();
+
+  //animation in search bar
+
+  const TypewriterText = () => {
+    const fullText = "Job title, keyword, worker";
+    const [displayedText, setDisplayedText] = useState("");
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+      const typingSpeed = 90;
+      const delayBeforeRepeat = 1200;
+
+      if (index < fullText.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText((prev) => prev + fullText.charAt(index));
+          setIndex((prev) => prev + 1);
+        }, typingSpeed);
+
+        return () => clearTimeout(timeout);
+      } else {
+        const timeout = setTimeout(() => {
+          setDisplayedText("");
+          setIndex(0);
+        }, delayBeforeRepeat);
+
+        return () => clearTimeout(timeout);
+      }
+    }, [index]);
+
+    return (
+      <Typography
+        sx={{ color: "#c0c0c0", fontSize: "0.9em", whiteSpace: "nowrap" }}
+      >
+        {displayedText}
+        <Box
+          component="span"
+          sx={{
+            display: "inline-block",
+            width: "6px",
+            bgcolor: "#c0c0c0",
+            ml: 0.5,
+          }}
+        />
+      </Typography>
+    );
+  };
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = (isOpen) => {
     setOpen(isOpen);
-  }
+  };
   return (
     <Grid container size={12}>
       {/* Top part with search bar and information */}
@@ -68,7 +109,7 @@ export default function Home() {
           alignItems={"center"}
           spacing={2}
           size={12}
-          p={1}
+          px={1}
           pb={0}
         >
           <Grid size={1}>
@@ -82,7 +123,7 @@ export default function Home() {
               <Typography sx={{ ...textDecoration.headerPrimary }}>
                 Kuala Lumpur, Malaysia
               </Typography>
-              <IconButton onClick={()=>handleOpen(true)} sx={{padding:0}}>
+              <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
                 <KeyboardArrowDownOutlined sx={{ color: "white" }} />
               </IconButton>
             </Grid>
@@ -109,7 +150,7 @@ export default function Home() {
           </Grid>
         </Grid>
         {/* Search bar container */}
-        <SearchBar />
+        <SearchBar onClick={() => navigate("/mobile-search-worker")} />
         {/* <Box
           sx={{
             width: "10vh",
@@ -128,7 +169,7 @@ export default function Home() {
         size={12}
         direction={"column"}
         sx={{
-          bgcolor:"white",
+          bgcolor: "white",
           height: "100%",
           paddingBottom: "60px",
         }}
