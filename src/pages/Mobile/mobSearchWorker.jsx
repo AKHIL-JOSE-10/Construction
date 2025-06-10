@@ -221,8 +221,8 @@ const MobSearchWorker = () => {
   <Box
     sx={{
       position: "absolute",
-      bottom: -45,
-      right: -29,
+      bottom: '-24%',
+      right: '-16%',
       width: '78%',
       height: '65%',
       borderRadius: "47%",
