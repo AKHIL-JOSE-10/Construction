@@ -22,12 +22,14 @@ import {
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link, useNavigate } from 'react-router-dom';
 import StarIcon from '@mui/icons-material/Star';
+import VerifiedIcon from '@mui/icons-material/Verified';
+
 
 // Randomly generate 2 unavailable dates per worker from the set
 const generateUnavailableDates = () => {
   const allDates = [17, 18, 19, 20, 21, 22];
   const unavailable = new Set();
-  while (unavailable.size < 2) {
+  while (unavailable.size < 3) {
     const rand = allDates[Math.floor(Math.random() * allDates.length)];
     unavailable.add(rand);
   }
@@ -235,7 +237,7 @@ const MobSearchWorker = () => {
                           }}
                         >
                           Archisans Verified
-                          <CheckCircleIcon sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }} />
+                          <VerifiedIcon sx={{ fontSize: 10, ml: 0.3, color: "green" }} />
                         </Box>
                       )}
                     </Box>
