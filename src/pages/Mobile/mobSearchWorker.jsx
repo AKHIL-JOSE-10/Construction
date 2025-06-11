@@ -273,19 +273,19 @@ const MobSearchWorker = () => {
                 }}
               >
                 {/* Gradient Circle - bottom right */}
-                {/* <Box
+                <Box
                   sx={{
                     position: "absolute",
-                    bottom: "-24%",
+                    bottom: "60%",
                     right: "-16%",
-                    width: "78%",
+                    width: "118%",
                     height: "65%",
                     borderRadius: "47%",
                     background:
                       "radial-gradient(circle at center, rgba(194, 137, 67, 0.2))",
                     pointerEvents: "7one",
                   }}
-                /> */}
+                />
                 <Box
                   sx={{
                     p: 1,
@@ -296,8 +296,9 @@ const MobSearchWorker = () => {
                 >
                   <Box display="flex" mb={1}>
                     <Avatar
+                  
                       src={worker.img}
-                      sx={{ ml: -0.3, width: 45, height: 45 }}
+                      sx={{ ml: -0.3, width: 45, height: 45,border: '3px solid white' }}
                     />
                     <Box ml={1}>
                       <Typography fontWeight={600} fontSize={15}>
@@ -333,9 +334,9 @@ const MobSearchWorker = () => {
                       sx={{ display: "flex", alignItems: "center" }}
                     >
                       <LocationOnOutlined
-                        sx={{ fontSize: 13, mr: 0.5, ml: 0.12 }}
+                        sx={{ fontSize: 16, mr: 0.5, ml: 0.12 }}
                       />
-                      5.1 km away
+                      <Typography sx={{fontSize:'100%',color:'grey'}}>5.1 km away </Typography>
                     </Typography>
                   </Box>
 
@@ -349,7 +350,7 @@ const MobSearchWorker = () => {
                   >
                     <AccessTimeIcon
                       sx={{
-                        fontSize: 13,
+                        fontSize: 15,
                         color: "white",
                         bgcolor: "#0492C2",
                         borderRadius: 10,
@@ -359,7 +360,7 @@ const MobSearchWorker = () => {
                     {[17, 18, 19, 20, 21, 22].map((date) => (
                       <Typography
                         key={date}
-                        fontSize="11px"
+                        fontSize="12px"
                         sx={{
                           color: unavailableDates.includes(date)
                             ? "red"
@@ -380,9 +381,9 @@ const MobSearchWorker = () => {
                   >
                     <Box display="flex" alignItems="center" mr={0.5}>
                       <StarIcon
-                        sx={{ fontSize: 15.5, color: "#fbc02d", mr: 0.5 }}
+                        sx={{ fontSize: 16.5, color: "#fbc02d", mr: 0.5 }}
                       />
-                      <Typography fontSize={11.5} lineHeight={1}>
+                      <Typography fontSize={12.5} lineHeight={1}>
                         {worker.rating}
                       </Typography>
                     </Box>
@@ -391,7 +392,7 @@ const MobSearchWorker = () => {
                     </Typography>
                   </Box>
 
-                  <Typography fontWeight="bold" fontSize={15} pt={1} pl={0.5}>
+                  <Typography fontWeight="bold" fontSize={16} pt={1} pl={0.5}>
                     {worker.price} <small>/hour</small>
                   </Typography>
 
@@ -408,14 +409,13 @@ const MobSearchWorker = () => {
                     }}
                   >
                     <IconButton
-                      size="small"
                       onClick={(event) => handleBookmarkClick(event, worker.id)}
                     >
                       {bookmarkedWorkers.includes(worker.id) ? (
-                        <Bookmark sx={{ fontSize: 23, color: "#B49176" }} /> // Filled icon
+                        <Bookmark sx={{ fontSize: 27, color: "#B49176" }} /> // Filled icon
                       ) : (
                         <BookmarkBorder
-                          sx={{ fontSize: 23, color: "inherit" }}
+                          sx={{ fontSize: 27, color: "inherit" }}
                         /> // Outlined icon
                       )}
                     </IconButton>
