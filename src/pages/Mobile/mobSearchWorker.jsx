@@ -289,7 +289,7 @@ const MobSearchWorker = () => {
                 <Box
                   sx={{
                     p: 1,
-                    mt: 0.5,
+                    mt: 0,
                     alignItems: "center",
                     position: "relative",
                   }}
@@ -301,7 +301,7 @@ const MobSearchWorker = () => {
                       sx={{ ml: -0.3, width: 45, height: 45, border: '3px solid white' }}
                     />
                     <Box ml={1}>
-                      <Typography fontWeight={600} fontSize={15}>
+                      <Typography fontWeight={600} fontSize={15} mt={0.7}>
                         {worker.name}
                       </Typography>
                       {worker.verified && (
@@ -418,7 +418,7 @@ const MobSearchWorker = () => {
 
                   </Box>
 
-                  <Typography fontWeight="bold" fontSize={16} pt={0.4} pl={0.55}>
+                  <Typography fontWeight="bold" fontSize={16} pt={0.5} pl={0.55}>
                     {worker.price} <small>/hour</small>
                   </Typography>
 
@@ -436,7 +436,7 @@ const MobSearchWorker = () => {
                   >
                     <IconButton
                       onClick={(event) => handleBookmarkClick(event, worker.id)}
-                      sx={{ position: 'absolute', right: -5, bottom: -5 }}
+                      sx={{ position: 'absolute', right: -8, bottom: -8 }}
                     >
                       {bookmarkedWorkers.includes(worker.id) ? (
                         <Bookmark sx={{ fontSize: 25, color: "#B49176" }} /> // Filled icon
