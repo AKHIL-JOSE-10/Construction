@@ -29,7 +29,7 @@ const MobHelpSupport = () => {
                                 color: 'text.primary',
                                 fontWeight: 500,
                                 textAlign: 'center',
-                                lineHeight: 1.6,
+                                lineHeight: 1.3,
                                 userSelect: 'none',
                             }}
                         >
@@ -37,7 +37,7 @@ const MobHelpSupport = () => {
                         </Typography>
                     </Grid>
 
-                    <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
+                    <Grid container justifyContent="space-evenly" sx={{ mb: 5 }}>
                         <Grid >
                             <Link to="/mobile-helpsupportchat" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />

@@ -415,10 +415,10 @@ const MobSearchWorker = () => {
                        sx={{ position: 'relative'}}
                     >
                       {bookmarkedWorkers.includes(worker.id) ? (
-                        <Bookmark sx={{ fontSize: 25, color: "#B49176", position: "relative",right:-5, bottom:-5 }} /> // Filled icon
+                        <Bookmark sx={{ fontSize: 25, color: "#B49176", position: "relative", right:-5 }} /> // Filled icon
                       ) : (
                         <BookmarkBorder
-                          sx={{ fontSize: 25, color: "inherit", position: "relative", right:-5, bottom:-5 }}
+                          sx={{ fontSize: 25, color: "inherit", position: "relative",right:-5, bottom:-5 }}
                         /> // Outlined icon
                       )}
                     </IconButton>
