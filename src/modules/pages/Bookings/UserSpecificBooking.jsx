@@ -35,7 +35,7 @@ export const textStyle = {
     fontWeight: "560",
   },
 };
-export const work = ["Plumbing", "Education", "Welding", "Electrical"];
+export const work = ["Plumping", "Electrical"];
 export const address = ["Address1", "Address2", "Address3", "Address4"];
 export const slots = [
   "Any Time(Recommended)",
