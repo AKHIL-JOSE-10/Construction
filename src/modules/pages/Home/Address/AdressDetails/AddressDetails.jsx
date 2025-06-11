@@ -42,7 +42,7 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
   ];
   return (
     <BottomDrawerLayout open={open} setOpen={setOpen}>
-      <Typography variant={"h6"} fontWeight={700} pb={2} sx={{position:"fixed",backgroundColor:"white",width:"100%",zIndex:2000}}>
+      <Typography variant={"h6"} fontWeight={700} pb={1} sx={{position:"fixed",backgroundColor:"white",width:"100%",zIndex:2000}}>
         Enter complete Address
       </Typography>
       <Box pt={7}/>

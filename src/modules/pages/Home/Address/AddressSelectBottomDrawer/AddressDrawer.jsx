@@ -48,7 +48,7 @@ export default function AddressDrawer({ open, setOpen }) {
       </Typography>
       <SearchBar
         sx={{
-          border: "2px solid lightgrey",
+          border: "1px solid lightgrey",
           borderRadius: "8px",
           bgcolor: "white",
         }}
@@ -59,7 +59,9 @@ export default function AddressDrawer({ open, setOpen }) {
           elevation={2}
           sx={{
             borderRadius: "6px",
+            border:"0.5px solid lightgrey",
             p: 1,
+            py:0,
             bgcolor: "#fff",
           }}
         >
@@ -67,13 +69,17 @@ export default function AddressDrawer({ open, setOpen }) {
             <ListItemButton
               sx={{
                 width: "100%",
+                padding:0,
+                paddingX:2
               }}
+              
             >
               <ListItemIcon>
                 <MyLocation sx={{ color: "#B49176" }} />
               </ListItemIcon>
               <ListItemText
                 primary="Current Location"
+                secondary="Siruseri, Tamil Nadu"
                 slotProps={{
                   primary: {
                     color: "#B49176",
@@ -82,11 +88,12 @@ export default function AddressDrawer({ open, setOpen }) {
               />
               <KeyboardArrowRight sx={{ color: "grey" }} />
             </ListItemButton>
+            <Divider />
             <ListItemButton
               sx={{
                 width: "100%",
               }}
-              onClick={()=>navigate("/address")}
+              onClick={() => navigate("/address")}
             >
               <ListItemIcon>
                 <Add sx={{ color: "#B49176" }} />

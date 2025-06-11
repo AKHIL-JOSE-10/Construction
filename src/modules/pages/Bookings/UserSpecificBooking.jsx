@@ -67,43 +67,58 @@ export default function UserSpecificBooking({ open, setOpen }) {
         </Typography>
       </Box>
       <Box sx={{ height: "100%", overflow: "auto", scrollbarWidth: "none" }}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          {/* Global style override to hide the toolbar */}
-          <GlobalStyles
-            styles={{
-              ".MuiPickersToolbar-root": {
-                display: "none !important",
-              },
-              ".MuiPickersCalendarHeader-root": {
-                paddingTop: "0px", // adjust spacing if needed
-              },
-            }}
-          />
-
-          <Paper
-            elevation={3}
-            sx={{
-              borderRadius: 2,
-              border: "1px solid #ccc",
-              boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
-              p: 1,
-            }}
-          >
-            <StaticDatePicker
-              orientation="portrait"
-              openTo="day"
-              value={date}
-              onChange={(newValue) => setDate(newValue)}
-              slotProps={{
-                actionBar: { actions: [] },
+        <Grid container size={12} justifyContent={"center"}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            {/* Global style override to hide the toolbar */}
+            <GlobalStyles
+              styles={{
+                ".MuiPickersToolbar-root": {
+                  display: "none !important",
+                },
+                ".MuiPickersCalendarHeader-root": {
+                  paddingTop: "0px", // adjust spacing if needed
+                },
               }}
             />
-          </Paper>
-        </LocalizationProvider>
+
+            <Paper
+              elevation={3}
+              sx={{
+                display: "inline-block", // shrink-wrap content
+                borderRadius: 2,
+                border: "1px solid #ccc",
+                boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
+                width: "auto", // instead of 90vw, let it fit content
+              }}
+            >
+              <StaticDatePicker
+                orientation="portrait"
+                openTo="day"
+                value={date}
+                onChange={(newValue) => setDate(newValue)}
+                slotProps={{
+                  actionBar: {
+                    actions: [],
+                    sx: {
+                      height: 0,
+                      minHeight: 0,
+                      padding: 0,
+                      margin: 0,
+                      display: "none", // fully hide
+                    },
+                  },
+                }}
+                sx={{
+                  borderRadius: 2,
+                  border: "1px solid #ccc",
+                }}
+              />
+            </Paper>
+          </LocalizationProvider>
+        </Grid>
         <Grid container flexDirection={"column"} size={12} pb={2}>
           <Grid container alignItems={"center"}>
             <Typography {...textStyle.BasicHeading}>Type of Work?</Typography>
-            <Typography variant={"subtitle2"}>(Optional)</Typography>
           </Grid>
           <FormControl sx={{ m: 1, minWidth: 200, paddingBottom: 0 }}>
             <InputLabel id="work-select-label">Choose one</InputLabel>
