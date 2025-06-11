@@ -8,7 +8,7 @@ const MobArchitecturalServices = () => {
   return (
     <Grid container>
       <MobHeading Heading='Architectural Services' />
-      <Box sx={{ width: '100%', mt: 8 }}>
+      <Box sx={{ width: '100%', mt: 8,mb:7}}>
         <MobServiceCategoryList
           icon={<EngineeringIcon fontSize="large" />}
           heading="Architects"
