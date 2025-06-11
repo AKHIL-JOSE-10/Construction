@@ -5,11 +5,16 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import MobWorkerTopTab from "../../modules/components/Mobile/mobWorker/mobWorkerTopTab";
-import { ArrowBackIos } from "@mui/icons-material";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const MobWorkerpage = () => {
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const { name, img } = location.state || {};
+
   return (
     <Grid container sx={{ height: "auto" }}>
       <Grid sx={{ position: "relative" }}>
@@ -20,17 +25,15 @@ const MobWorkerpage = () => {
             width: 40,
             height: 40,
             top: 16,
-            left: 16,
+            left: 10,
             zIndex: 10,
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            borderRadius: "8px",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
         >
-          <ArrowBackIos sx={{ fontSize: "20px", color: "#fff" }} />
+          <ArrowBackIosIcon sx={{ fontSize: "25px", color: "#fff", bgcolor: "transparent" }} />
         </Box>
 
         <Box sx={{ position: "relative", display: "inline-block" }}>
@@ -55,7 +58,7 @@ const MobWorkerpage = () => {
             }}
           >
             <Avatar
-              src="https://randomuser.me/api/portraits/women/79.jpg"
+              src={img}
               sx={{
                 width: 85,
                 height: 85,
@@ -90,7 +93,7 @@ const MobWorkerpage = () => {
           }}
         >
           <Typography sx={{ fontSize: "26px", fontWeight: "600" }}>
-            Jane Cooper
+            {name}
           </Typography>
           <Button
             variant="contained"

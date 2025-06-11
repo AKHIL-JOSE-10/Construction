@@ -24,6 +24,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Link, useNavigate } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import VerifiedIcon from "@mui/icons-material/Verified";
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 
 // Randomly generate 2 unavailable dates per worker from the set
 const generateUnavailableDates = () => {
@@ -45,88 +46,80 @@ const workers = [
     reviews: 320,
     verified: true,
     img: "https://randomuser.me/api/portraits/men/11.jpg",
+    services: ["Plumbing", "Electrician"],
   },
   {
     id: 2,
-    name: "Tim Brevis",
-    price: "$6.88",
-    rating: 3.8,
-    reviews: 40,
-    verified: false,
-    img: "https://randomuser.me/api/portraits/men/12.jpg",
+    name: "Kumar G",
+    price: "$9.49",
+    rating: 4.5,
+    reviews: 210,
+    verified: true,
+    img: "https://randomuser.me/api/portraits/men/9.jpg",
+    services: ["Carpentry", "Painter"],
   },
   {
     id: 3,
-    name: "Lana Wu",
-    price: "$7.50",
-    rating: 4.3,
-    reviews: 120,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Rajesh P",
+    price: "$7.99",
+    rating: 4.2,
+    reviews: 150,
+    verified: false,
+    img: "https://randomuser.me/api/portraits/men/20.jpg",
+    services: ["AC Repair", "Electrician"],
   },
   {
     id: 4,
-    name: "Carlos",
-    price: "$6.20",
-    rating: 4.1,
-    reviews: 95,
-    verified: false,
-    img: "https://randomuser.me/api/portraits/men/21.jpg",
-  },
-  {
-    name: "Amara",
-    price: "$5.45",
-    rating: 4.6,
-    reviews: 210,
+    name: "Arun T",
+    price: "$8.20",
+    rating: 4.5,
+    reviews: 185,
     verified: true,
-    img: "https://randomuser.me/api/portraits/women/47.jpg",
+    img: "https://randomuser.me/api/portraits/men/45.jpg",
+    services: ["Security", "Driving"]
   },
   {
     id: 5,
-    name: "Ethan Clark",
-    price: "$7.10",
-    rating: 4.2,
-    reviews: 150,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/men/35.jpg",
+    name: "Suresh V",
+    price: "$8.75",
+    rating: 4.6,
+    reviews: 195,
+    verified: false,
+    img: "https://randomuser.me/api/portraits/men/30.jpg",
+    services: ["Gardening", "Masonry"],
   },
   {
     id: 6,
-    name: "Aisha Khan",
-    price: "$5.75",
-    rating: 3.9,
-    reviews: 88,
-    verified: false,
-    img: "https://randomuser.me/api/portraits/women/28.jpg",
+    name: "Priya M",
+    price: "$7.00",
+    rating: 4.4,
+    reviews: 160,
+    verified: true,
+    img: "https://randomuser.me/api/portraits/women/25.jpg",
+    services: ["Cooking", "Cleaning"],
   },
   {
     id: 7,
-    name: "Liam Chen",
-    price: "$6.30",
-    rating: 4.4,
-    reviews: 134,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/men/49.jpg",
+    name: "Deepak R",
+    price: "$6.50",
+    rating: 4.3,
+    reviews: 140,
+    verified: false,
+    img: "https://randomuser.me/api/portraits/men/35.jpg",
+    services: ["Driver", "Delivery"]
   },
   {
     id: 8,
-    name: "Maya Patel",
-    price: "$5.60",
-    rating: 4.5,
-    reviews: 200,
+    name: "Meera S",
+    price: "$7.80",
+    rating: 4.6,
+    reviews: 175,
     verified: true,
-    img: "https://randomuser.me/api/portraits/women/22.jpg",
-  },
-  {
-    id: 9,
-    name: "Noah",
-    price: "$6.95",
-    rating: 3.7,
-    reviews: 70,
-    verified: false,
-    img: "https://randomuser.me/api/portraits/men/14.jpg",
+    img: "https://randomuser.me/api/portraits/women/40.jpg",
+    services: ["Nanny", "Cooking"]
   },
 ];
+
 
 const relatedSearches = ["Architects", "Steel Fabricators", "Civil Engineers"];
 
@@ -152,6 +145,15 @@ const MobSearchWorker = () => {
         ? prev.filter((id) => id !== workerId)
         : [...prev, workerId]
     );
+  };
+
+  const handleClick = (worker) => {
+    navigate("/mobile-workerpage", {
+      state: {
+        name: worker.name,
+        img: worker.img,
+      },
+    });
   };
 
   return (
@@ -184,9 +186,6 @@ const MobSearchWorker = () => {
                   <Typography fontWeight="bold" fontSize={15}>
                     Kuala Lumpur, Malaysia
                   </Typography>
-                  <KeyboardArrowDownOutlined
-                    sx={{ color: "black", fontSize: 30 }}
-                  />
                 </Box>
               </Box>
             </Box>
@@ -258,8 +257,7 @@ const MobSearchWorker = () => {
           const unavailableDates = generateUnavailableDates();
           return (
             <Grid key={index} sx={{ display: "flex", width: "48%" }}>
-              <Box
-                onClick={() => navigate("/mobile-workerpage")}
+              <Box onClick={() => handleClick(worker)}
                 sx={{
                   position: "relative",
                   borderRadius: 0.5,
@@ -298,9 +296,9 @@ const MobSearchWorker = () => {
                 >
                   <Box display="flex" mb={1}>
                     <Avatar
-                  
+
                       src={worker.img}
-                      sx={{ ml: -0.3, width: 45, height: 45,border: '3px solid white' }}
+                      sx={{ ml: -0.3, width: 45, height: 45, border: '3px solid white' }}
                     />
                     <Box ml={1}>
                       <Typography fontWeight={600} fontSize={15}>
@@ -329,18 +327,25 @@ const MobSearchWorker = () => {
                     </Box>
                   </Box>
 
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Typography
-                      fontSize={10}
-                      color="text.secondary"
-                      sx={{ display: "flex", alignItems: "center" }}
-                    >
-                      <LocationOnOutlined
-                        sx={{ fontSize: 16, mr: 0.5, ml: 0.12 }}
-                      />
-                      <Typography sx={{fontSize:'100%',color:'grey'}}>5.1 km away </Typography>
-                    </Typography>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+
+
+                    <Box display="flex" alignItems="center">
+                      <LocationOnOutlined sx={{ fontSize: 16, mr: 0.5, mb: 0.5, ml: -0.2 }} />
+                      <Typography fontSize={12.5} color="grey">
+                        5.1 km away
+                      </Typography>
+                    </Box>
+
+                    <Box display="flex" alignItems="center" mr={0.5}>
+                      <StarIcon sx={{ fontSize: 18, color: "#fbc02d", mr: 0.5, mb: 0.25 }} />
+                      <Typography fontSize={13} lineHeight={2}>
+                        {worker.rating}
+                      </Typography>
+                    </Box>
                   </Box>
+
+
 
                   <Box
                     display="flex"
@@ -374,27 +379,47 @@ const MobSearchWorker = () => {
                     ))}
                   </Box>
 
+                  {worker.services && worker.services.length > 0 && (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        ml: 0.5,
+                        alignItems: "center",
+                      }}
+                    >
+                      < WorkOutlineIcon sx={{ fontSize: 14, mr: 0.5, ml: -0.3 }} />
+                      {worker.services.map((service, idx) => (
+                        <Typography
+                          key={idx}
+                          sx={{
+                            fontSize: "13px",
+                            color: "#5d4037",
+                            display: "flex",
+                            alignItems: "center",
+                            pr: 1,
+                            py: 0.2,
+                          }}
+                        >
+
+                          {service}
+                          {idx < worker.services.length - 1 && ","}
+                        </Typography>
+                      ))}
+                    </Box>
+                  )}
+
                   <Box
                     sx={{
                       display: "flex",
-                      flexDirection: "row",
                       alignItems: "center",
                     }}
                   >
-                    <Box display="flex" alignItems="center" mr={0.5}>
-                      <StarIcon
-                        sx={{ fontSize: 16.5, color: "#fbc02d", mr: 0.5 }}
-                      />
-                      <Typography fontSize={12.5} lineHeight={1}>
-                        {worker.rating}
-                      </Typography>
-                    </Box>
-                    <Typography fontSize={9.5} lineHeight={1}>
-                      ({worker.reviews} reviews)
-                    </Typography>
+
+
                   </Box>
 
-                  <Typography fontWeight="bold" fontSize={16} pt={1} pl={0.5}>
+                  <Typography fontWeight="bold" fontSize={16} pt={0.4} pl={0.55}>
                     {worker.price} <small>/hour</small>
                   </Typography>
 
@@ -412,10 +437,10 @@ const MobSearchWorker = () => {
                   >
                     <IconButton
                       onClick={(event) => handleBookmarkClick(event, worker.id)}
-                       sx={{ position: 'absolute',right:-5, bottom:-5}}
+                      sx={{ position: 'absolute', right: -5, bottom: -5 }}
                     >
                       {bookmarkedWorkers.includes(worker.id) ? (
-                        <Bookmark sx={{ fontSize: 25, color: "#B49176"}} /> // Filled icon
+                        <Bookmark sx={{ fontSize: 25, color: "#B49176" }} /> // Filled icon
                       ) : (
                         <BookmarkBorder
                           sx={{ fontSize: 25, color: "inherit" }}
@@ -456,7 +481,7 @@ const MobSearchWorker = () => {
                       </Box>
                     </Button> */}
                   </Box>
-                  
+
                 </Box>
               </Box>
             </Grid>
