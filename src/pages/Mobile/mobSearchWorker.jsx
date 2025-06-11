@@ -269,7 +269,8 @@ const MobSearchWorker = () => {
                   border: "1px solid rgba(184, 147, 87, 0.3)",
                   boxShadow: "0px 2px 8px rgba(90, 69, 1, 0.1)",
                   overflow: "hidden",
-                  cursor: "pointer", // Optional for visual cue
+                  cursor: "pointer", // Optional for visual cue,
+                  WebkitTapHighlightColor: "transparent",
                 }}
               >
                 {/* Gradient Circle - bottom right */}
@@ -398,8 +399,8 @@ const MobSearchWorker = () => {
                   <Box
                     sx={{
                       position: "absolute",
-                      bottom: -2,
-                      right: 2,
+                      bottom: 1,
+                      right: 4,
                       display: "flex",
                       justifyContent: "end",
                       gap: 4,
