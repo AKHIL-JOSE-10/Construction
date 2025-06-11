@@ -278,11 +278,11 @@ const MobSearchWorker = () => {
                   sx={{
                     position: "absolute",
                     bottom: "63%",
-                    right: "-16%",
+                    right: "-14%",
                     width: "116%",
                     height: "65%",
                     borderRadius: "47%",
-                    borderBottomRightRadius: "43%",
+                    borderBottomRightRadius: "41%",
                     background:
                       "radial-gradient(circle at center, rgba(194, 137, 67, 0.2))",
                     pointerEvents: "7one",
@@ -352,7 +352,7 @@ const MobSearchWorker = () => {
                   >
                     <AccessTimeIcon
                       sx={{
-                        fontSize: 15,
+                        fontSize: 14,
                         color: "white",
                         bgcolor: "#0492C2",
                         borderRadius: 10,
@@ -362,7 +362,7 @@ const MobSearchWorker = () => {
                     {[17, 18, 19, 20, 21, 22].map((date) => (
                       <Typography
                         key={date}
-                        fontSize="12px"
+                        fontSize="11.5px"
                         sx={{
                           color: unavailableDates.includes(date)
                             ? "red"
@@ -389,7 +389,7 @@ const MobSearchWorker = () => {
                         {worker.rating}
                       </Typography>
                     </Box>
-                    <Typography fontSize={9} lineHeight={1}>
+                    <Typography fontSize={9.5} lineHeight={1}>
                       ({worker.reviews} reviews)
                     </Typography>
                   </Box>
@@ -412,12 +412,13 @@ const MobSearchWorker = () => {
                   >
                     <IconButton
                       onClick={(event) => handleBookmarkClick(event, worker.id)}
+                       sx={{ position: 'relative'}}
                     >
                       {bookmarkedWorkers.includes(worker.id) ? (
-                        <Bookmark sx={{ fontSize: 25, color: "#B49176" }} /> // Filled icon
+                        <Bookmark sx={{ fontSize: 25, color: "#B49176", position: "relative",right:-5, bottom:-5 }} /> // Filled icon
                       ) : (
                         <BookmarkBorder
-                          sx={{ fontSize: 25, color: "inherit" }}
+                          sx={{ fontSize: 25, color: "inherit", position: "relative", right:-5, bottom:-5 }}
                         /> // Outlined icon
                       )}
                     </IconButton>
@@ -455,6 +456,7 @@ const MobSearchWorker = () => {
                       </Box>
                     </Button> */}
                   </Box>
+                  
                 </Box>
               </Box>
             </Grid>
