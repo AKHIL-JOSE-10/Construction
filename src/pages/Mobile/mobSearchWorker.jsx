@@ -277,11 +277,12 @@ const MobSearchWorker = () => {
                 <Box
                   sx={{
                     position: "absolute",
-                    bottom: "60%",
+                    bottom: "63%",
                     right: "-16%",
-                    width: "118%",
+                    width: "116%",
                     height: "65%",
                     borderRadius: "47%",
+                    borderBottomRightRadius: "43%",
                     background:
                       "radial-gradient(circle at center, rgba(194, 137, 67, 0.2))",
                     pointerEvents: "7one",
@@ -413,10 +414,10 @@ const MobSearchWorker = () => {
                       onClick={(event) => handleBookmarkClick(event, worker.id)}
                     >
                       {bookmarkedWorkers.includes(worker.id) ? (
-                        <Bookmark sx={{ fontSize: 27, color: "#B49176" }} /> // Filled icon
+                        <Bookmark sx={{ fontSize: 25, color: "#B49176" }} /> // Filled icon
                       ) : (
                         <BookmarkBorder
-                          sx={{ fontSize: 27, color: "inherit" }}
+                          sx={{ fontSize: 25, color: "inherit" }}
                         /> // Outlined icon
                       )}
                     </IconButton>
