@@ -42,10 +42,20 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
   ];
   return (
     <BottomDrawerLayout open={open} setOpen={setOpen}>
-      <Typography variant={"h6"} fontWeight={700} pb={1} sx={{position:"fixed",backgroundColor:"white",width:"100%",zIndex:2000}}>
+      <Typography
+        variant={"h6"}
+        fontWeight={700}
+        pb={1}
+        sx={{
+          position: "fixed",
+          backgroundColor: "white",
+          width: "100%",
+          zIndex: 2000,
+        }}
+      >
         Enter complete Address
       </Typography>
-      <Box pt={7}/>
+      <Box pt={7} />
       <Typography color="textSecondary" sx={{ fontSize: "0.8em" }}>
         Save address as *
       </Typography>
@@ -165,7 +175,7 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
           }}
           fullWidth
         />
-             <TextField
+        <TextField
           label={"Enter your name"}
           slotProps={{
             inputLabel: {
@@ -206,8 +216,11 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
           }}
           fullWidth
         />
-        <Button variant="contained" fullWidth>Save Address</Button>
+        <Button variant="contained" fullWidth>
+          Save Address
+        </Button>
       </Grid>
+      <Box pb={4} />
     </BottomDrawerLayout>
   );
 };

@@ -23,7 +23,7 @@ export default function BottomDrawerLayout({ children, open, setOpen, sx }) {
       slotProps={{
         paper: {
           sx: {
-            height: "60vh",
+            height: "74vh",
             width: "100%",
             borderRadius: "22px 22px 0px 0px",
             overflow: "hidden",
@@ -65,7 +65,6 @@ export default function BottomDrawerLayout({ children, open, setOpen, sx }) {
           m={2}
         >
           {children}
-          <Box pb={4} />
         </Box>
       </Box>
     </Drawer>

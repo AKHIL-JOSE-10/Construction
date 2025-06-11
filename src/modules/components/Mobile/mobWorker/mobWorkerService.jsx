@@ -85,7 +85,7 @@ const MobWorkerservice = () => {
               />
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
 
-                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '550' }}>Electrician </Typography>
+                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '550' }}>Electrical </Typography>
                 <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your plumping needs </Typography>
               </Box>
 

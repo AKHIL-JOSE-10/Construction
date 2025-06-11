@@ -412,13 +412,13 @@ const MobSearchWorker = () => {
                   >
                     <IconButton
                       onClick={(event) => handleBookmarkClick(event, worker.id)}
-                       sx={{ position: 'relative'}}
+                       sx={{ position: 'absolute',right:-5, bottom:-5}}
                     >
                       {bookmarkedWorkers.includes(worker.id) ? (
-                        <Bookmark sx={{ fontSize: 25, color: "#B49176", position: "relative", right:-5 }} /> // Filled icon
+                        <Bookmark sx={{ fontSize: 25, color: "#B49176"}} /> // Filled icon
                       ) : (
                         <BookmarkBorder
-                          sx={{ fontSize: 25, color: "inherit", position: "relative",right:-5, bottom:-5 }}
+                          sx={{ fontSize: 25, color: "inherit" }}
                         /> // Outlined icon
                       )}
                     </IconButton>

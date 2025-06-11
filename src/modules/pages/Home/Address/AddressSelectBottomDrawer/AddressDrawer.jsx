@@ -59,9 +59,9 @@ export default function AddressDrawer({ open, setOpen }) {
           elevation={2}
           sx={{
             borderRadius: "6px",
-            border:"0.5px solid lightgrey",
+            border: "0.5px solid lightgrey",
             p: 1,
-            py:0,
+            py: 0,
             bgcolor: "#fff",
           }}
         >
@@ -69,10 +69,9 @@ export default function AddressDrawer({ open, setOpen }) {
             <ListItemButton
               sx={{
                 width: "100%",
-                padding:0,
-                paddingX:2
+                padding: 0,
+                paddingX: 2,
               }}
-              
             >
               <ListItemIcon>
                 <MyLocation sx={{ color: "#B49176" }} />
@@ -84,6 +83,10 @@ export default function AddressDrawer({ open, setOpen }) {
                   primary: {
                     color: "#B49176",
                   },
+                  secondary:{
+                    marginLeft:"8px",
+                    fontSize:"10px"
+                  }
                 }}
               />
               <KeyboardArrowRight sx={{ color: "grey" }} />
@@ -92,6 +95,7 @@ export default function AddressDrawer({ open, setOpen }) {
             <ListItemButton
               sx={{
                 width: "100%",
+                height:"inherit"
               }}
               onClick={() => navigate("/address")}
             >
@@ -112,7 +116,7 @@ export default function AddressDrawer({ open, setOpen }) {
         </Paper>
       </Grid>
       <Typography sx={{ color: "grey" }} color="primary" mt={2} pl={1}>
-        Your saved Address
+        Your Saved Address
       </Typography>
       <Grid mt={2}>
         <Box pt={0} sx={{ width: "100%" }}>
@@ -166,6 +170,7 @@ export default function AddressDrawer({ open, setOpen }) {
           ))}
         </Box>
       </Grid>
+      <Box pb={3} />
     </BottomDrawerLayout>
   );
 }

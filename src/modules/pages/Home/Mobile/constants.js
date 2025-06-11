@@ -114,21 +114,27 @@ export const ServiceListValues = [
 
 export const ServiceList = [
   {
-    name: "Architectural"
+    name: "Architectural",
+    path: "/mobile-architectural-services",
   },
   {
     name: "Artisans",
+    path: "/mobile-artisans-services",
   },
   {
     name: "Fabrication",
+    path: "/mobile-fabrication-services",
   },
   {
     name: "Automation",
+    path: "/mobile-automation-services",
   },
-    {
+  {
     name: "Educational",
+    path: "",
   },
   {
     name: "Legal",
+    path: "",
   },
 ];

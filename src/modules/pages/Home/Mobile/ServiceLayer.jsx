@@ -1,8 +1,9 @@
 import { Grid, Typography } from "@mui/material";
 import { textDecoration, color } from "./constants";
+import { useNavigate } from "react-router-dom";
 export const ServiceLayer = (props) => {
   const { name, path } = props?.data || {};
-
+  const navigate = useNavigate();
   return (
     <Grid
       container
@@ -11,6 +12,10 @@ export const ServiceLayer = (props) => {
       alignItems={"center"}
       justifyContent={"center"}
       size={4}
+      sx={{
+        WebkitTapHighlightColor: "transparent",
+      }}
+      onClick={() => navigate(path)}
       flexWrap
     >
       <Grid
@@ -29,7 +34,7 @@ export const ServiceLayer = (props) => {
         alignItems={"center"}
         textAlign={"center"}
       >
-        <Typography sx={{fontSize:"12px"}}>{name}</Typography>
+        <Typography sx={{ fontSize: "12px" }}>{name}</Typography>
       </Grid>
     </Grid>
   );
