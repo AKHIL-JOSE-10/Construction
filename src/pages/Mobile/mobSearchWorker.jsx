@@ -329,13 +329,12 @@ const MobSearchWorker = () => {
 
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
 
-
-                    <Box display="flex" alignItems="center">
-                      <LocationOnOutlined sx={{ fontSize: 16, mr: 0.5, mb: 0.5, ml: -0.2 }} />
-                      <Typography fontSize={12.5} color="grey">
-                        5.1 km away
-                      </Typography>
-                    </Box>
+<Box display="flex" alignItems="center">
+  <LocationOnOutlined sx={{ fontSize: 16, mr: 0.5, ml: -0.2 }} />
+  <Typography fontSize={11.8} color="grey">
+    5.1 km away
+  </Typography>
+</Box>
 
                     <Box display="flex" alignItems="center" mr={0.5}>
                       <StarIcon sx={{ fontSize: 18, color: "#fbc02d", mr: 0.5, mb: 0.25 }} />
@@ -393,11 +392,11 @@ const MobSearchWorker = () => {
                         <Typography
                           key={idx}
                           sx={{
-                            fontSize: "13px",
+                            fontSize: "12px",
                             color: "#5d4037",
                             display: "flex",
                             alignItems: "center",
-                            pr: 1,
+                            pr: 0.2,
                             py: 0.2,
                           }}
                         >
