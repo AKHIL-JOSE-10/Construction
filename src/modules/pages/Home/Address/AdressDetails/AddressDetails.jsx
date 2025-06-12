@@ -242,8 +242,8 @@ export default function AddressDetails() {
       <Grid
         container
         size={12}
-        sx={{ backgroundColor: "lightgrey", height: "60vh" }}
-      ></Grid>
+        sx={{ backgroundColor: "lightgrey", height: "64.2vh" }}
+      />
       <Grid
         container
         justifyContent={"center"}
@@ -256,7 +256,7 @@ export default function AddressDetails() {
         />
       </Grid>
 
-      <Grid container size={12} spacing={2} pt={2} justifyContent={"center"}>
+      <Grid container size={12} spacing={2} pt={2} justifyContent={"center"} >
         <Grid
           container
           sx={{
@@ -282,13 +282,15 @@ export default function AddressDetails() {
             </Button>
           </Grid>
         </Grid>
-        <Button
-          variant="contained"
-          sx={{ width: "80vw", height: "3em", fontSize: "1em" }}
-          onClick={() => handleOpen(true)}
-        >
-          Add More Address Details
-        </Button>
+        <Grid container>
+          <Button
+            variant="contained"
+            sx={{ width: "80vw", height: "3em", fontSize: "1em" }}
+            onClick={() => handleOpen(true)}
+          >
+            Add More Address Details
+          </Button>
+        </Grid>
       </Grid>
       <AddressDetailsDrawer open={open} setOpen={setOpen} />
     </Grid>
