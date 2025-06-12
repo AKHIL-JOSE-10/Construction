@@ -4,13 +4,7 @@ import {
   NotificationsNoneOutlined,
   StarOutline,
 } from "@mui/icons-material";
-import {
-  Avatar,
-  Box,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Grid, IconButton, Typography } from "@mui/material";
 import { color, ServiceList, textDecoration } from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
 import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
@@ -19,7 +13,6 @@ import SearchBar from "./SearchBar";
 import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 
 export default function Home() {
   const navigate = useNavigate();
@@ -192,7 +185,7 @@ export default function Home() {
             sx={{ overflow: "hidden", height: "38vh" }}
           >
             {ServiceList.slice(0, 6).map((data) => (
-              <ServiceLayer key={data.name} data={data} img/>
+              <ServiceLayer key={data.name} data={data} img />
             ))}
           </Grid>
         </Grid>
@@ -342,80 +335,76 @@ export default function Home() {
             }}
           >
             {[...Array(4)].map((_, index) => (
-              <Link
-                to="/mobile-workerpage"
-                key={index}
-                style={{ textDecoration: "none", color: "inherit" }}
+              <Grid
+                container
+                direction="column"
+                height="28vh"
+                minWidth="15vh"
+                mt={2}
+                sx={{
+                  border: "1px solid rgba(237, 237, 237, 1)",
+                  borderRadius: "12px",
+                  cursor: "pointer",
+                  overflow: "hidden",
+                  WebkitTapHighlightColor: "transparent",
+                }}
+                onClick={() => navigate("/mobile-workerpage")}
               >
                 <Grid
-                  container
-                  direction="column"
-                  height="28vh"
-                  minWidth="15vh"
-                  mt={2}
+                  item
+                  height="50%"
                   sx={{
-                    border: "1px solid rgba(237, 237, 237, 1)",
-                    borderRadius: "12px",
-                    cursor: "pointer",
-                    overflow: "hidden",
+                    borderTopRightRadius: "12px",
+                    borderTopLeftRadius: "12px",
                   }}
                 >
+                  <img
+                    src="/assets/DummyImages/Sample-2.jpg"
+                    width="100%"
+                    height="100%"
+                    alt="Worker"
+                  />
+                </Grid>
+                <Grid item container direction="column" height="40%" ml={1}>
                   <Grid
                     item
-                    height="50%"
+                    container
+                    direction="row"
                     sx={{
-                      borderTopRightRadius: "12px",
-                      borderTopLeftRadius: "12px",
+                      bgcolor: "rgba(254, 252, 232, 1)",
+                      width: "40px",
+                      borderRadius: "6px",
                     }}
+                    justifyContent="space-around"
                   >
-                    <img
-                      src="/assets/DummyImages/Sample-2.jpg"
-                      width="100%"
-                      height="100%"
-                      alt="Worker"
+                    <StarOutline
+                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
                     />
-                  </Grid>
-                  <Grid item container direction="column" height="40%" ml={1}>
-                    <Grid
-                      item
-                      container
-                      direction="row"
-                      sx={{
-                        bgcolor: "rgba(254, 252, 232, 1)",
-                        width: "40px",
-                        borderRadius: "6px",
-                      }}
-                      justifyContent="space-around"
+                    <Typography
+                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
                     >
-                      <StarOutline
-                        sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
-                      />
-                      <Typography
-                        sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
-                      >
-                        5.0
-                      </Typography>
-                    </Grid>
-                    <Grid item mt={1}>
-                      <Typography
-                        sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
-                      >
-                        Perry Wilson
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <Typography
-                        sx={{
-                          color: "rgba(123, 123, 123, 1)",
-                          fontSize: "10px",
-                        }}
-                      >
-                        Location
-                      </Typography>
-                    </Grid>
+                      5.0
+                    </Typography>
+                  </Grid>
+                  <Grid item mt={1}>
+                    <Typography
+                      sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
+                    >
+                      Perry Wilson
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        color: "rgba(123, 123, 123, 1)",
+                        fontSize: "10px",
+                      }}
+                    >
+                      Location
+                    </Typography>
                   </Grid>
                 </Grid>
-              </Link>
+              </Grid>
             ))}
           </Box>
         </Grid>
