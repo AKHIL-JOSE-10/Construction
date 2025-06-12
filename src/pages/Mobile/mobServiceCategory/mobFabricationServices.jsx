@@ -1,13 +1,14 @@
 import { Grid, Box } from '@mui/material';
 import MobHeading from "../../../modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from '../../../modules/components/Mobile/mobServiceCategoryList';
-
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import RoofingIcon from '@mui/icons-material/Roofing';
 import BuildIcon from '@mui/icons-material/Build';
 import LayersIcon from '@mui/icons-material/Layers';
-
+import Roofing from '../../../assets/Roofing.png';
+import Glass from '../../../assets/Glass.png';
+import Steel from '../../../assets/Steel.png';
 import MobileBottomTab from '../../../modules/components/Mobile/mobileBottomTab';
 
 const MobFabricationServices = () => {
@@ -21,12 +22,12 @@ const MobFabricationServices = () => {
           subheading="Doors, windows, and structural fittings"
         />
         <MobServiceCategoryList
-          img={<HandymanIcon />}
+          img={Steel}
           heading="Stainless Steel"
           subheading="Railings, grills, and modern steel designs"
         />
         <MobServiceCategoryList
-          img={<RoofingIcon />}
+          img={Roofing}
           heading="Roofing Solutions"
           subheading="Metal, sheet, and industrial roof works"
         />
@@ -36,7 +37,7 @@ const MobFabricationServices = () => {
           subheading="Mild steel gates, frames, and supports"
         />
         <MobServiceCategoryList
-          img={<LayersIcon />}
+          img={Glass}
           heading="Glass Fabrication"
           subheading="Partitions, railings, and glass structures"
         />
