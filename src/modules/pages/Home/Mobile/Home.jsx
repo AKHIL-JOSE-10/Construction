@@ -129,13 +129,25 @@ export default function Home() {
             size={3}
             justifyContent={"space-around"}
           >
-            <Link to="/mobile-notifications" style={{ color: "inherit" }}>
+            <Link
+              to="/mobile-notifications"
+              style={{
+                color: "inherit",
+                WebkitTapHighlightColor: "transparent",
+              }}
+            >
               <NotificationsNoneOutlined
                 sx={{ color: "white", fontSize: "22px", cursor: "pointer" }}
               />
             </Link>
 
-            <Link to="/editInfo" style={{ color: "inherit" }}>
+            <Link
+              to="/editInfo"
+              style={{
+                color: "inherit",
+                WebkitTapHighlightColor: "transparent",
+              }}
+            >
               <Avatar
                 src={"https://randomuser.me/api/portraits/women/79.jpg"}
                 sx={{ width: "35px", height: "35px" }}
