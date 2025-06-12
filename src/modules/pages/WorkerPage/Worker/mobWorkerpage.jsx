@@ -13,8 +13,8 @@ const MobWorkerpage = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { name, img } = location.state || {};
-  console.log(img)
+  const { name, img,contact } = location.state || {};
+
   return (
     <Grid container sx={{ height: "auto" }}>
       <Grid sx={{ position: "relative" }}>
@@ -97,6 +97,7 @@ const MobWorkerpage = () => {
           </Typography>
           <Button
             variant="contained"
+            onClick={()=>navigate("/mobile-message-chat",{state:{img,name,contact}})}
             sx={{ borderRadius: 4, textTransform: "none", bgcolor: "#CCB09B" }}
           >
             <Typography sx={{ fontSize: "15px", fontWeight: "500" }}>
