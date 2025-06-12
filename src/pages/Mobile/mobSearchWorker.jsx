@@ -313,24 +313,29 @@ const MobSearchWorker = () => {
                       </Typography>
                       {worker.verified && (
                         <Box
-                          sx={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            bgcolor: "#f3e5d7",
-                            color: "black",
-                            px: 0.5,
-                            py: 0.3,
-                            borderRadius: 0.5,
-                            fontSize: "8px",
-                            mt: 0.5,
-                            border:'1px solid brown'
-                          }}
-                        >
-                          Archisans Verified
-                          <VerifiedIcon
-                            sx={{ fontSize: 10, ml: 0.3, color: "green" }}
-                          />
-                        </Box>
+  sx={{
+    display: "inline-flex",
+    alignItems: "center",
+    bgcolor: "#f3e5d7",
+    color: "black",
+    px: 0.5,
+    py: 0.3,
+    borderRadius: 0.5,
+    fontSize: "8px",
+    mt: 0.5,
+  }}
+>
+  <Typography
+    sx={{
+      fontSize: "8px",
+      textDecoration: "underline",
+    }}
+  >
+    Archisans Verified
+  </Typography>
+  <VerifiedIcon sx={{ fontSize: 10, ml: 0.3, color: "green" }} />
+</Box>
+
                       )}
                     </Box>
                   </Box>

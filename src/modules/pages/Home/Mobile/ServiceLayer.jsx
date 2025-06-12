@@ -33,8 +33,8 @@ export const ServiceLayer = (props) => {
           src={image}
           alt={name}
           style={{
-            maxWidth: "55%",
-            maxHeight: "60%",
+            maxWidth: "58%",
+            maxHeight: "63%",
             objectFit: "contain",
           }}
         />
