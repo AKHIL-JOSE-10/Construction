@@ -449,6 +449,7 @@ export default function Home() {
               textDecoration: "none",
               cursor: "pointer",
               fontWeight: 500,
+              WebkitTapHighlightColor: "transparent",
             }}
           >
             View all services

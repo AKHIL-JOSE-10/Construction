@@ -55,6 +55,7 @@ const MobMessageChat = () => {
             top: "50%",
             transform: "translateY(-50%)",
             cursor: "pointer",
+            WebkitTapHighlightColor: "transparent",
           }}
         >
           <ArrowBackIosIcon sx={{ fontSize: "20px" }} />

@@ -176,7 +176,11 @@ const MobSearchWorker = () => {
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <Box
                 onClick={() => navigate(-1)}
-                sx={{ left: 10, cursor: "pointer" }}
+                sx={{
+                  left: 10,
+                  cursor: "pointer",
+                  WebkitTapHighlightColor: "transparent",
+                }}
               >
                 <ArrowBackIosIcon sx={{ fontSize: "20px", color: "grey" }} />
               </Box>
@@ -313,7 +317,11 @@ const MobSearchWorker = () => {
                       }}
                     />
                     <Box ml={1}>
-                      <Typography fontWeight={600} fontSize={15} sx={{mt:worker.verified ? "none":1.8}}>
+                      <Typography
+                        fontWeight={600}
+                        fontSize={15}
+                        sx={{ mt: worker.verified ? "none" : 1.8 }}
+                      >
                         {worker.name}
                       </Typography>
                       {worker.verified && (
@@ -321,7 +329,7 @@ const MobSearchWorker = () => {
                           sx={{
                             display: "inline-flex",
                             alignItems: "center",
-                            justifyContent:"center",
+                            justifyContent: "center",
                             bgcolor: "white",
                             px: 0.5,
                             py: 0.3,
@@ -333,8 +341,8 @@ const MobSearchWorker = () => {
                           <Typography
                             sx={{
                               fontSize: "8px",
-                              fontWeight:600,
-                              color:"green"
+                              fontWeight: 600,
+                              color: "green",
                             }}
                           >
                             Archisans Verified
@@ -353,9 +361,7 @@ const MobSearchWorker = () => {
                       color="text.secondary"
                       sx={{ display: "flex", alignItems: "center" }}
                     >
-                      <LocationOnOutlined
-                        sx={{ fontSize: 16, mr: 0.5 }}
-                      />
+                      <LocationOnOutlined sx={{ fontSize: 16, mr: 0.5 }} />
                       <Typography sx={{ fontSize: "100%", color: "grey" }}>
                         5.1 km away{" "}
                       </Typography>

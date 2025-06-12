@@ -13,8 +13,15 @@ import {
 } from "@mui/material";
 import MobileBottomTab from "../../components/Mobile/mobileBottomTab";
 import MobHeading from "../../components/Mobile/mobileHeading";
+import { useState } from "react";
 export default function EditInfo() {
-  let edit = true;
+  const [edit, setEdit] = useState(true);
+  const [values, setValues] = useState({
+    name: "Jane",
+    phoneNumber: "+91 1234567899",
+    email: "jane@example.com",
+    dateOfBirth: "10 January 1999",
+  });
   const workTitles = ["Mason", "Plumber", "Electrician"];
   return (
     <Grid
@@ -25,8 +32,7 @@ export default function EditInfo() {
       pt={0}
       pb={10}
     >
-
-      <MobHeading Heading="Account Info"/>
+      <MobHeading Heading="Account Info" />
 
       {/*Avatar with name and edit button*/}
       <Grid
@@ -64,13 +70,13 @@ export default function EditInfo() {
 
         <Grid container direction={"column"} size={7.5}>
           <Typography sx={{ fontSize: "16px" }}>Name</Typography>
-          <Input disabled={edit} value={"Jane"} sx={{ fontSize: "13px" }} />
+          <Input
+            disabled={edit}
+            value={values.name}
+            onChange={(e) => setValues({ ...values, name: e.target.value })}
+            sx={{ fontSize: "13px" }}
+          />
         </Grid>
-        <Box sx={{ position: "absolute", top: 0, right: 14 }}>
-          <Button variant="outlined" color="black" sx={{ height: "2em" }}>
-            Edit
-          </Button>
-        </Box>
       </Grid>
 
       {/* Contents after Avatar and name */}
@@ -78,7 +84,10 @@ export default function EditInfo() {
         <Typography sx={{ fontSize: "16px" }}>Phone Number</Typography>
         <Input
           disabled={edit}
-          value={"+91 1234567899"}
+          value={values.phoneNumber}
+          onChange={(e) =>
+            setValues({ ...values, phoneNumber: e.target.value })
+          }
           sx={{ fontSize: "14px" }}
         />
       </Grid>
@@ -86,20 +95,26 @@ export default function EditInfo() {
         <Typography sx={{ fontSize: "16px" }}>Email</Typography>
         <Input
           disabled={edit}
-          value={"jane@example.com"}
+          value={values.email}
+          onChange={(e) => setValues({ ...values, email: e.target.value })}
           sx={{ fontSize: "14px", paddingTop: "8px" }}
         />
       </Grid>
 
       <Grid container direction={"column"} size={12} p={2} pt={2.5} pb={2}>
-        <Box sx={{display:'flex',flexDirection:'row'}}>
-        <Typography sx={{ fontSize: "16px",mr:1 }}>Date of Birth</Typography> 
-        <Typography variant="body2">(optional)</Typography>
+        <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <Typography sx={{ fontSize: "16px", mr: 1 }}>
+            Date of Birth
+          </Typography>
+          <Typography variant="body2">(optional)</Typography>
         </Box>
 
         <Input
           disabled={edit}
-          value={"10 January 1999"}
+          value={values.dateOfBirth}
+          onChange={(e) =>
+            setValues({ ...values, dateOfBirth: e.target.value })
+          }
           sx={{ fontSize: "14px", paddingTop: "8px" }}
         />
       </Grid>
@@ -217,6 +232,16 @@ export default function EditInfo() {
       {/* <Grid size={12} p={2} pt={2.5} pb={0} sx={{ position: "relative" }}>
         <Typography sx={{ fontSize: "15px" }}>Change Password</Typography>
       </Grid> */}
+      <Box p={5}>
+        <Button
+          variant="contained"
+          sx={{ height: "3em" }}
+          fullWidth
+          onClick={() => setEdit((prev) => !prev)}
+        >
+          {edit ? "Edit" : "Save"}
+        </Button>
+      </Box>
       <MobileBottomTab />
     </Grid>
   );
