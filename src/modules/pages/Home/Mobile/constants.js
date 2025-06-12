@@ -1,6 +1,6 @@
 import Architectural from '../../../../assets/Architectural.png';
 import Fabrication from '../../../../assets/Fabrication.png'
-import Artisans from '../../../../assets/Artisans.jpeg';
+import Artisans from '../../../../assets/Artisans.png';
 import Automation from '../../../../assets/Automation.png';
 import Education from '../../../../assets/Education.png';
 import Legal from '../../../../assets/Legal.png';
