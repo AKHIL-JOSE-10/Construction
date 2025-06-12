@@ -317,12 +317,13 @@ const MobSearchWorker = () => {
                             display: "inline-flex",
                             alignItems: "center",
                             bgcolor: "#f3e5d7",
-                            color: "#5d4037",
+                            color: "black",
                             px: 0.5,
                             py: 0.3,
                             borderRadius: 0.5,
                             fontSize: "8px",
                             mt: 0.5,
+                            border:'1px solid brown'
                           }}
                         >
                           Archisans Verified
