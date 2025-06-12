@@ -1,35 +1,21 @@
-import { Grid, Box } from '@mui/material';
-<<<<<<< HEAD:src/pages/Mobile/mobServiceCategory/mobArtisansServices.jsx
-import MobHeading from "../../../modules/components/Mobile/mobileHeading";
-import MobServiceCategoryList from '../../../modules/components/Mobile/mobServiceCategoryList';
-=======
+import { Grid, Box } from "@mui/material";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
-import MobServiceCategoryList from '@/modules/components/Mobile/mobServiceCategoryList';
-
->>>>>>> 1cfc283819ca55cb73dbbfc34d4d0f640fdfbcde:src/modules/pages/Services/mobServiceCategory/mobArtisansServices.jsx
-import ConstructionIcon from '@mui/icons-material/Construction';
-import CarpenterIcon from '@mui/icons-material/Carpenter';
-import BuildIcon from '@mui/icons-material/Build';
-import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices';
-import PlumbingIcon from '@mui/icons-material/Plumbing';
-import FormatPaintIcon from '@mui/icons-material/FormatPaint';
-import WaterDamageIcon from '@mui/icons-material/WaterDamage';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import Electrician from '../../../assets/Electrician.png';
-import Plumber from '../../../assets/Plumber.png';
-import Painter from '../../../assets/Painter.png';
-import Flooring from '../../../assets/Flooring.png';
-import Carpentry from '../../../assets/Carpentry.png';
-import Masonary from '../../../assets/Masonary.png';
-import WaterProofing from '../../../assets/WaterProofing.png';
-
-import MobileBottomTab from '@/modules/components/Mobile/mobileBottomTab';
+import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
+import BuildIcon from "@mui/icons-material/Build";
+import Electrician from "@/assets/Electrician.png";
+import Plumber from "@/assets/Plumber.png";
+import Painter from "@/assets/Painter.png";
+import Flooring from "@/assets/Flooring.png";
+import Carpentry from "@/assets/Carpentry.png";
+import Masonary from "@/assets/Masonary.png";
+import WaterProofing from "@/assets/WaterProofing.png";
+import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 const MobArtisansServices = () => {
   return (
-    <Grid container >
-      <MobHeading Heading='Artisans Services' />
-      <Box sx={{ width: '100%', mt:8,pb:7 }}>
+    <Grid container>
+      <MobHeading Heading="Artisans Services" />
+      <Box sx={{ width: "100%", mt: 8, pb: 7 }}>
         <MobServiceCategoryList
           img={Masonary}
           heading="Masonry"
@@ -46,7 +32,7 @@ const MobArtisansServices = () => {
           subheading="Metalwork for frames and structures"
         />
         <MobServiceCategoryList
-          img={Electrician }
+          img={Electrician}
           heading="Electrical"
           subheading="Wiring, lighting and electrical fixes"
         />

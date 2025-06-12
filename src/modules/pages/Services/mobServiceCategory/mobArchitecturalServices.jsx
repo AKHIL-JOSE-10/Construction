@@ -1,21 +1,13 @@
 import { Grid, Box } from '@mui/material';
-<<<<<<< HEAD:src/pages/Mobile/mobServiceCategory/mobArchitecturalServices.jsx
-import MobHeading from "../../../modules/components/Mobile/mobileHeading";
-import MobServiceCategoryList from '../../../modules/components/Mobile/mobServiceCategoryList';
-import LandScaping from '../../../assets/LandScaping.png';
-import CivilEngineer from '../../../assets/CivilEngineer.png';
-import InteriorDesign from '../../../assets/InteriorDesign.png';
-import PoolDesigning from '../../../assets/PoolDesigning.png';
-import Architect from '../../../assets/Architect.png';
-import Contractor from '../../../assets/Architect.png';
-
-import MobileBottomTab from '../../../modules/components/Mobile/mobileBottomTab';
-=======
-import EngineeringIcon from '@mui/icons-material/Engineering';
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from '@/modules/components/Mobile/mobServiceCategoryList';
+import LandScaping from '@/assets/LandScaping.png';
+import CivilEngineer from '@/assets/CivilEngineer.png';
+import InteriorDesign from '@/assets/InteriorDesign.png';
+import PoolDesigning from '@/assets/PoolDesigning.png';
+import Architect from '@/assets/Architect.png';
+import Contractor from '@/assets/Architect.png';
 import MobileBottomTab from '@/modules/components/Mobile/mobileBottomTab';
->>>>>>> 1cfc283819ca55cb73dbbfc34d4d0f640fdfbcde:src/modules/pages/Services/mobServiceCategory/mobArchitecturalServices.jsx
 
 const MobArchitecturalServices = () => {
   return (
