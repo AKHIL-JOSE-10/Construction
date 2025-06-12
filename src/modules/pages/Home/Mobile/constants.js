@@ -36,8 +36,8 @@ export const textDecoration = {
     color: color.primary,
   },
   serviceLayout: {
-    Height:'10px',
-    width:'90px',
+    minHeight:'70px',
+    width:'85px',
     borderRadius:20,
     bgcolor: "rgba(207, 159, 95, 0.55)",
   },
