@@ -242,8 +242,8 @@ export default function AddressDetails() {
       <Grid
         container
         size={12}
-        sx={{ backgroundColor: "lightgrey", height: "60vh" }}
-      ></Grid>
+        sx={{ backgroundColor: "lightgrey", height: "62vh" }}
+      />
       <Grid
         container
         justifyContent={"center"}
@@ -256,12 +256,12 @@ export default function AddressDetails() {
         />
       </Grid>
 
-      <Grid container size={12} spacing={2} pt={2} justifyContent={"center"}>
+      <Grid container size={12} spacing={2} pt={2} justifyContent={"center"} >
         <Grid
           container
           sx={{
             backgroundColor: "rgb(242, 242, 242)",
-            height: "15vh",
+            height: "12vh",
             width: "94vw",
             borderRadius: "10px",
           }}
