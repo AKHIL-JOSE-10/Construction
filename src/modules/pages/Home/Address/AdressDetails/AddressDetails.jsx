@@ -242,7 +242,7 @@ export default function AddressDetails() {
       <Grid
         container
         size={12}
-        sx={{ backgroundColor: "lightgrey", height: "62vh" }}
+        sx={{ backgroundColor: "lightgrey", height: "64vh" }}
       />
       <Grid
         container
