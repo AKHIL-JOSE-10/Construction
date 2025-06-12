@@ -317,7 +317,7 @@ const MobSearchWorker = () => {
     display: "inline-flex",
     alignItems: "center",
     bgcolor: "#f3e5d7",
-    color: "black",
+    color: "brown",
     px: 0.5,
     py: 0.3,
     borderRadius: 0.5,
@@ -327,6 +327,7 @@ const MobSearchWorker = () => {
 >
   <Typography
     sx={{
+      color:'brown',
       fontSize: "8px",
       textDecoration: "underline",
     }}
