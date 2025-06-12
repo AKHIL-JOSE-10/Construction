@@ -360,7 +360,7 @@ export default function Home() {
                   overflow: "hidden",
                   WebkitTapHighlightColor: "transparent",
                 }}
-                onClick={() => navigate("/mobile-workerpage")}
+                onClick={() => navigate("/mobile-workerpage",{state: {name:"WorkerSample",img:"/assets/DummyImages/Sample-2.jpg"}})}
               >
                 <Grid
                   item

@@ -14,7 +14,7 @@ const MobWorkerpage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { name, img } = location.state || {};
-
+  console.log(img)
   return (
     <Grid container sx={{ height: "auto" }}>
       <Grid sx={{ position: "relative" }}>
