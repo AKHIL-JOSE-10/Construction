@@ -4,6 +4,7 @@ import Artisans from '../../../../assets/Artisans.png';
 import Automation from '../../../../assets/Automation.png';
 import Education from '../../../../assets/Education.png';
 import Legal from '../../../../assets/Legal.png';
+import { Height } from '@mui/icons-material';
 
 
 
@@ -35,7 +36,10 @@ export const textDecoration = {
     color: color.primary,
   },
   serviceLayout: {
-    bgcolor: "white",
+    Height:'10px',
+    width:'90px',
+    borderRadius:20,
+    bgcolor: "rgba(207, 159, 95, 0.55)",
   },
 };
 
