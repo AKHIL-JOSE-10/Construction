@@ -4,9 +4,9 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const MobServiceCategoryList = ({ img, heading, subheading }) => {
     return (
         <Grid >
-            <Box sx={{display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                 <List disablePadding sx={{ width: '100%' }}>
-                    <ListItem disablePadding sx={{ width: '100%', border:'0.5px solid #e0e0e0' }}>
+                    <ListItem disablePadding sx={{ width: '100%', border: '0.5px solid #e0e0e0' }}>
                         <ListItemButton
                             sx={{
                                 width: '100%',
@@ -18,9 +18,13 @@ const MobServiceCategoryList = ({ img, heading, subheading }) => {
                                 },
                             }}
                         >
-                            <Avatar alt="icon" sx={{ width: 35, height: 35, mr: 2, borderRadius: 0,color:"white" }} >{img}</Avatar>
-                            <Box sx={{ display: 'flex',justifyContent: 'space-between',alignItems: 'center', width: '100%',}}>
-                                <ListItemText  primary={heading} secondary={subheading}
+                            <Avatar
+                                alt="icon"
+                                src={img}
+                                sx={{ width: 35, height: 35, mr: 2, borderRadius: 0 }}
+                            />
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', }}>
+                                <ListItemText primary={heading} secondary={subheading}
                                     slotProps={{
                                         primary: {
                                             sx: { fontSize: '1rem', fontWeight: '600' },
