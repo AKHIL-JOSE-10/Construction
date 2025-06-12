@@ -20,6 +20,7 @@ import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -191,7 +192,7 @@ export default function Home() {
             sx={{ overflow: "hidden", height: "38vh" }}
           >
             {ServiceList.slice(0, 6).map((data) => (
-              <ServiceLayer key={data.name} data={data} />
+              <ServiceLayer key={data.name} data={data} img/>
             ))}
           </Grid>
         </Grid>

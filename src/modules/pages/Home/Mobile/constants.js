@@ -1,3 +1,13 @@
+import Architectural from '../../../../assets/Architectural.png';
+import Fabrication from '../../../../assets/Fabrication.png'
+import Artisans from '../../../../assets/Artisans.jpeg';
+import Automation from '../../../../assets/Automation.png';
+import Education from '../../../../assets/Education.png';
+import Legal from '../../../../assets/Legal.png';
+
+
+
+
 export const color = {
   primary: "rgba(176, 139, 111, 0.81)",
   dark: "rgba(114, 97, 84, 0.33)",
@@ -25,7 +35,7 @@ export const textDecoration = {
     color: color.primary,
   },
   serviceLayout: {
-    bgcolor: "rgba(227, 227, 227, 0.55)",
+    bgcolor: "white",
   },
 };
 
@@ -116,25 +126,31 @@ export const ServiceList = [
   {
     name: "Architectural",
     path: "/mobile-architectural-services",
+    image: Architectural
   },
   {
     name: "Artisans",
     path: "/mobile-artisans-services",
+    image: Artisans
   },
   {
     name: "Fabrication",
     path: "/mobile-fabrication-services",
+    image: Fabrication
   },
   {
     name: "Automation",
     path: "/mobile-automation-services",
+    image: Automation
   },
   {
     name: "Educational",
     path: "",
+    image: Education
   },
   {
     name: "Legal",
     path: "",
+    image: Legal
   },
 ];

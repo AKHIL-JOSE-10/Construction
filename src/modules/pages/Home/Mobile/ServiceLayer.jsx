@@ -2,9 +2,11 @@ import { Grid, Typography } from "@mui/material";
 import { textDecoration, color } from "./constants";
 import { useNavigate } from "react-router-dom";
 export const ServiceLayer = (props) => {
-  const { name, path } = props?.data || {};
+  const { name, path , image} = props?.data || {};
   const navigate = useNavigate();
+  console.log(image)
   return (
+    
     <Grid
       container
       direction={"column"}
@@ -27,7 +29,15 @@ export const ServiceLayer = (props) => {
         justifyContent={"center"}
         alignItems={"center"}
       >
-        {/* <img src={`/assets/Images/Icons/${encodeURIComponent(`${name}.png`)}`} width={"60%"} height={"60%"}/> */}
+         <img
+          src={image}
+          alt={name}
+          style={{
+            maxWidth: "100%",
+            maxHeight: "100%",
+            objectFit: "contain",
+          }}
+        />
       </Grid>
       <Grid
         justifyContent={"center"}
