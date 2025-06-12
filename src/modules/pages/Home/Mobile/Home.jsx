@@ -369,6 +369,7 @@ export default function Home() {
                   <Grid
                     item
                     container
+                    mt={1}
                     direction="row"
                     sx={{
                       bgcolor: "rgba(254, 252, 232, 1)",

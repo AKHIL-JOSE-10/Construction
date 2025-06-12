@@ -261,7 +261,7 @@ export default function AddressDetails() {
           container
           sx={{
             backgroundColor: "rgb(242, 242, 242)",
-            height: "12vh",
+            height: "15vh",
             width: "94vw",
             borderRadius: "10px",
           }}
@@ -282,13 +282,15 @@ export default function AddressDetails() {
             </Button>
           </Grid>
         </Grid>
-        <Button
-          variant="contained"
-          sx={{ width: "80vw", height: "3em", fontSize: "1em" }}
-          onClick={() => handleOpen(true)}
-        >
-          Add More Address Details
-        </Button>
+        <Grid container>
+          <Button
+            variant="contained"
+            sx={{ width: "80vw", height: "3em", fontSize: "1em" }}
+            onClick={() => handleOpen(true)}
+          >
+            Add More Address Details
+          </Button>
+        </Grid>
       </Grid>
       <AddressDetailsDrawer open={open} setOpen={setOpen} />
     </Grid>
