@@ -7,7 +7,6 @@ const MobNotifications = () => {
         <Grid>
             <MobHeading Heading='Notifications' />
             <MobNotificationTopTab />
-            <MobileBottomTab />
         </Grid>
 
     )

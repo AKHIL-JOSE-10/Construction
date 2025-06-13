@@ -69,7 +69,6 @@ const MobArtisansServices = () => {
           />
         ))}
       </Box>
-      <MobileBottomTab />
     </Grid>
   );
 };

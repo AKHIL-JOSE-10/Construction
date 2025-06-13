@@ -43,7 +43,6 @@ const MobAutomationServices = () => {
           />
         ))}
       </Box>
-      <MobileBottomTab />
     </Grid>
   );
 };
