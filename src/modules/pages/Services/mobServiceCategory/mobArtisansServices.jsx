@@ -9,6 +9,8 @@ import Flooring from "@/assets/Flooring.png";
 import Carpentry from "@/assets/Carpentry.png";
 import Masonary from "@/assets/Masonary.png";
 import WaterProofing from "@/assets/WaterProofing.png";
+import MetalFabrication from "@/assets/MetalFabrication.png";
+
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 const MobArtisansServices = () => {
@@ -25,7 +27,7 @@ const MobArtisansServices = () => {
     },
     {
       service: "Metal Fabrication",
-      img: BuildIcon,
+      img: MetalFabrication,
       description: "Metalwork for frames and structures",
     },
     {
