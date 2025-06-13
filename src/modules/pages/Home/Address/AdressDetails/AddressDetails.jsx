@@ -236,13 +236,13 @@ export default function AddressDetails() {
       direction={"column"}
       spacing={0}
       size={12}
-      sx={{ height: "100vh",overflow:"hidden" }}
+      sx={{ height: "100%"}}
     >
       <MobHeading Heading={"Add address"} />
       <Grid
         container
         size={12}
-        sx={{ backgroundColor: "lightgrey", height: "62%" }}
+        sx={{ backgroundColor: "lightgrey", minHeight: "65%" }}
       />
       <Grid
         container
@@ -256,7 +256,7 @@ export default function AddressDetails() {
         />
       </Grid>
 
-      <Grid container size={12} spacing={2} pt={2} justifyContent={"center"} sx={{height:"20%"}} >
+      <Grid container size={12} spacing={2} pt={2} justifyContent={"center"} sx={{height:"20%"}} pb={2} >
         <Grid
           container
           sx={{
@@ -282,7 +282,7 @@ export default function AddressDetails() {
             </Button>
           </Grid>
         </Grid>
-        <Grid container>
+        <Grid container pb={2}>
           <Button
             variant="contained"
             sx={{ width: "80vw", height: "3em", fontSize: "1em" }}

@@ -12,50 +12,60 @@ import WaterProofing from "@/assets/WaterProofing.png";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 const MobArtisansServices = () => {
+  const artisansServices = [
+    {
+      service: "Masonry Work",
+      img: Masonary,
+      description: "Brickwork and structural craftsmanship",
+    },
+    {
+      service: "Carpentry Services",
+      img: Carpentry,
+      description: "Woodwork for furniture and fittings",
+    },
+    {
+      service: "Metal Fabrication",
+      img: BuildIcon,
+      description: "Metalwork for frames and structures",
+    },
+    {
+      service: "Electrical Services",
+      img: Electrician,
+      description: "Wiring, lighting and electrical fixes",
+    },
+    {
+      service: "Plumbing Services",
+      img: Plumber,
+      description: "Water supply and pipe installations",
+    },
+    {
+      service: "Painting Services",
+      img: Painter,
+      description: "Interior and exterior painting",
+    },
+    {
+      service: "Waterproofing Solutions",
+      img: WaterProofing,
+      description: "Sealants and moisture protection",
+    },
+    {
+      service: "Flooring Installation",
+      img: Flooring,
+      description: "Tile, marble, and wooden floor work",
+    },
+  ];
   return (
     <Grid container>
       <MobHeading Heading="Artisans Services" />
       <Box sx={{ width: "100%", mt: 8, pb: 7 }}>
-        <MobServiceCategoryList
-          img={Masonary}
-          heading="Masonry"
-          subheading="Brickwork and structural craftsmanship"
-        />
-        <MobServiceCategoryList
-          img={Carpentry}
-          heading="Carpentry"
-          subheading="Woodwork for furniture and fittings"
-        />
-        <MobServiceCategoryList
-          img={<BuildIcon fontSize="large" />}
-          heading="Fabrications"
-          subheading="Metalwork for frames and structures"
-        />
-        <MobServiceCategoryList
-          img={Electrician}
-          heading="Electrical"
-          subheading="Wiring, lighting and electrical fixes"
-        />
-        <MobServiceCategoryList
-          img={Plumber}
-          heading="Plumbing"
-          subheading="Water supply and pipe installations"
-        />
-        <MobServiceCategoryList
-          img={Painter}
-          heading="Painting"
-          subheading="Interior and exterior painting"
-        />
-        <MobServiceCategoryList
-          img={WaterProofing}
-          heading="Waterproofing"
-          subheading="Sealants and moisture protection"
-        />
-        <MobServiceCategoryList
-          img={Flooring}
-          heading="Flooring"
-          subheading="Tile, marble, and wooden floor work"
-        />
+        {artisansServices.map((service, index) => (
+          <MobServiceCategoryList
+            key={index}
+            img={service.img}
+            heading={service.service}
+            subheading={service.description}
+          />
+        ))}
       </Box>
       <MobileBottomTab />
     </Grid>

@@ -20,16 +20,17 @@ export default function BottomDrawerLayout({ children, open, setOpen, sx }) {
       {open && (
         <Box
           sx={{
-            height:"30px",
-            width:"30px",
-            display:"flex",
-            justifyContent:"center",
-            alignItems:"center",
+            height: "40px",
+            width: "40px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             borderRadius: "50%",
             color: "lightgrey",
-            bgcolor: "rgba(39, 39, 39, 0.17)",
+            bgcolor: "rgba(39, 39, 39, 0.37)",
             position: "fixed",
-            left: "48%",
+            left: "50%",
+            transform: "translateX(-50%)",
             bottom: "75vh", // slightly above the Drawer
             zIndex: 2001, // above Drawer (Drawer default is 1200–1300)
           }}

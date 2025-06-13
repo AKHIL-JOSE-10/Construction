@@ -1,64 +1,75 @@
-import { Grid, Box } from '@mui/material';
+import { Grid, Box } from "@mui/material";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
-import MobServiceCategoryList from '@/modules/components/Mobile/mobServiceCategoryList';
-import LandScaping from '@/assets/LandScaping.png';
-import CivilEngineer from '@/assets/CivilEngineer.png';
-import InteriorDesign from '@/assets/InteriorDesign.png';
-import PoolDesigning from '@/assets/PoolDesigning.png';
-import Architect from '@/assets/Architect.png';
-import Contractor from '@/assets/Architect.png';
-import MobileBottomTab from '@/modules/components/Mobile/mobileBottomTab';
+import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
+import LandScaping from "@/assets/LandScaping.png";
+import CivilEngineer from "@/assets/CivilEngineer.png";
+import InteriorDesign from "@/assets/InteriorDesign.png";
+import PoolDesigning from "@/assets/PoolDesigning.png";
+import Architect from "@/assets/Architect.png";
+import Contractor from "@/assets/Architect.png";
+import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 const MobArchitecturalServices = () => {
+  const architecturalServices = [
+    {
+      service: "Architectural Design",
+      img: Architect,
+      description: "Create innovative building designs and plans",
+    },
+    {
+      service: "Civil Engineering",
+      img: CivilEngineer,
+      description: "Plan, design, and oversee construction",
+    },
+    {
+      service: "Interior Design",
+      img: InteriorDesign,
+      description: "Enhance interior functionality and aesthetics",
+    },
+    {
+      service: "Landscaping",
+      img: LandScaping,
+      description: "Design and maintain outdoor environments",
+    },
+    {
+      service: "Structural Engineering",
+      img: "",
+      description: "Ensure building stability and strength",
+    },
+    {
+      service: "MEP Services",
+      img: "",
+      description: "Design mechanical, electrical, and plumbing systems",
+    },
+    {
+      service: "Pool Design",
+      img: PoolDesigning,
+      description: "Plan and design residential and commercial pools",
+    },
+    {
+      service: "Steel Fabrication",
+      img: "",
+      description: "Create structural steel components and assemblies",
+    },
+    {
+      service: "Construction Contracting",
+      img: Contractor,
+      description: "Execute and manage full construction projects",
+    },
+  ];
+
   return (
     <Grid container>
-      <MobHeading Heading='Architectural Services' />
-      <Box sx={{ width: '100%', mt: 8,mb:7}}>
-        <MobServiceCategoryList
-          img={Architect}
-          heading="Architects"
-          subheading="Create innovative building designs and plans"
-        />
-        <MobServiceCategoryList
-          img={CivilEngineer}
-          heading="Civil Engineers"
-          subheading="Plan, design, and oversee construction"
-        />
-        <MobServiceCategoryList
-          img={InteriorDesign}
-          heading="Interior Designers"
-          subheading="Enhance interior functionality and aesthetics"
-        />
-        <MobServiceCategoryList
-          img={LandScaping}
-          heading="Landscapers"
-          subheading="Design and maintain outdoor environments"
-        />
-        <MobServiceCategoryList
-          img={""}
-          heading="Structural"
-          subheading="Ensure building stability and strength"
-        />
-        <MobServiceCategoryList
-          img={""}
-          heading="MEP"
-          subheading="Design mechanical, electrical, and plumbing systems"
-        />
-        <MobServiceCategoryList
-          img={PoolDesigning}
-          heading="Pool Designers"
-          subheading="Plan and design residential and commercial pools"
-        />
-        <MobServiceCategoryList
-          img={""}
-          heading="Steel Fabricators"
-          subheading="Create structural steel components and assemblies"
-        />
-        <MobServiceCategoryList
-          img={Contractor}
-          heading="Contractors"
-          subheading="Execute and manage full construction projects"
-        />
+      <MobHeading Heading="Architectural Services" />
+      <Box sx={{ width: "100%", mt: 8, mb: 7 }}>
+        {architecturalServices.map((service, index) => (
+          <MobServiceCategoryList
+            key={index}
+            img={service.img}
+            heading={service.service}
+            subheading={service.description}
+          />
+        ))}
       </Box>
       <MobileBottomTab />
     </Grid>
