@@ -1,21 +1,27 @@
 import { Grid, Box } from "@mui/material";
+
+// Components
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 // Icons
-import { Build, PrecisionManufacturing } from "@mui/icons-material";
+import {
+  Build,
+  PrecisionManufacturing as PrecisionManufacturingIcon,
+  Handyman as HandymanIcon,
+  Roofing as RoofingIcon,
+  Build as BuildIcon,
+  Layers as LayersIcon,
+} from "@mui/icons-material";
 
 // Assets
 import StructuralIcon from "@/assets/StructuralIcon.png";
 import SkillfulIcon from "@/assets/SkillfulIcon.png";
 import ArtisticIcon from "@/assets/ArtisticIcon.png";
-import LandScaping from "@/assets/LandScaping.png";
 import CivilEngineer from "@/assets/CivilEngineer.png";
 import InteriorDesign from "@/assets/InteriorDesign.png";
 import PoolDesigning from "@/assets/PoolDesigning.png";
-import Architect from "@/assets/Architect.png";
-import Contractor from "@/assets/Architect.png";
 import Electrician from "@/assets/Electrician.png";
 import Plumber from "@/assets/Plumber.png";
 import Painter from "@/assets/Painter.png";
@@ -30,151 +36,144 @@ import CCTV from "@/assets/CCTV.png";
 import Automation from "@/assets/Automation.png";
 import AudioVideo from "@/assets/AudioVideo.png";
 import SmartLock from "@/assets/SmartLock.png";
-
-// Optional assets (placeholders if missing)
-const HVAC = null; // You can replace with actual import
-const MEP = null;
+import LandScaping from "@/assets/LandScaping.png";
+import Contractor from "@/assets/Architect.png";
+import MetalFabrication from "@/assets/MetalFabrication.png";
+import StructuralEngineering from "@/assets/StructuralEngineering.png";
+import MEP from "@/assets/MEP.png";
+import Architect from "@/assets/Architect.png";
 
 const MobAllServiceCategory = () => {
   const serviceCategories = [
     {
+      service: "Architectural Design",
       img: Architect,
-      heading: "Architects",
-      subheading: "Create innovative building designs and plans",
+      description: "Create innovative building designs and plans",
     },
     {
-      img: StructuralIcon,
-      heading: "Structural",
-      subheading: "Ensure building stability and strength",
-    },
-    {
-      img: LandScaping,
-      heading: "Landscapers",
-      subheading: "Design and maintain outdoor environments",
-    },
-    {
-      img: InteriorDesign,
-      heading: "Interior Designers",
-      subheading: "Enhance interior functionality and aesthetics",
-    },
-    {
+      service: "Civil Engineering",
       img: CivilEngineer,
-      heading: "Civil Engineers",
-      subheading: "Plan, design, and oversee construction",
+      description: "Plan, design, and oversee construction",
     },
     {
-      img: Contractor,
-      heading: "Contractors",
-      subheading: "Execute and manage full construction projects",
+      service: "Interior Design",
+      img: InteriorDesign,
+      description: "Enhance interior functionality and aesthetics",
     },
     {
-      img: Carpentry,
-      heading: "Carpentry",
-      subheading: "Woodwork for furniture and fittings",
+      service: "Landscaping",
+      img: LandScaping,
+      description: "Design and maintain outdoor environments",
     },
     {
-      img: Plumber,
-      heading: "Plumbing",
-      subheading: "Fix pipes and water systems",
+      service: "Structural Engineering",
+      img: StructuralEngineering,
+      description: "Ensure building stability and strength",
     },
     {
-      img: Electrician,
-      heading: "Electrical",
-      subheading: "Install and repair wiring",
+      service: "MEP Services",
+      img: MEP,
+      description: "Design mechanical, electrical, and plumbing systems",
     },
     {
-      img: Roofing,
-      heading: "Roofing",
-      subheading: "Work on roofs and coverings",
-    },
-    {
-      img: Flooring,
-      heading: "Flooring",
-      subheading: "Install and finish all types of floors",
-    },
-    {
-      img: <PrecisionManufacturing />,
-      heading: "Aluminium",
-      subheading: "Craft doors, windows, and frames",
-    },
-    {
-      img: Steel,
-      heading: "Stainless Steel",
-      subheading: "Shape and weld structural metal",
-    },
-    {
-      img: Glass,
-      heading: "Glass",
-      subheading: "Cut and install glass fittings",
-    },
-    {
-      img: <Build />,
-      heading: "M.S. Fabrication",
-      subheading: "Mild steel gates, frames, and supports",
-    },
-    {
-      img: Painter,
-      heading: "Painting",
-      subheading: "Interior and exterior painting",
-    },
-    {
-      img: WaterProofing,
-      heading: "Waterproofing",
-      subheading: "Sealants and moisture protection",
-    },
-    {
+      service: "Pool Design",
       img: PoolDesigning,
-      heading: "Pool Designers",
-      subheading: "Plan and design residential and commercial pools",
+      description: "Plan and design residential and commercial pools",
     },
     {
+      service: "Steel Fabrication",
+      img: MetalFabrication,
+      description: "Create structural steel components and assemblies",
+    },
+    {
+      service: "Construction Contracting",
+      img: Contractor,
+      description: "Execute and manage full construction projects",
+    },
+    {
+      service: "Masonry Work",
       img: Masonary,
-      heading: "Masonry",
-      subheading: "Brickwork and structural craftsmanship",
+      description: "Brickwork and structural craftsmanship",
     },
-
-    // Automation
     {
+      service: "Carpentry Services",
+      img: Carpentry,
+      description: "Woodwork for furniture and fittings",
+    },
+    {
+      service: "Metal Fabrication",
+      img: MetalFabrication,
+      description: "Metalwork for frames and structures",
+    },
+    {
+      service: "Electrical Services",
+      img: Electrician,
+      description: "Wiring, lighting and electrical fixes",
+    },
+    {
+      service: "Plumbing Services",
+      img: Plumber,
+      description: "Water supply and pipe installations",
+    },
+    {
+      service: "Painting Services",
+      img: Painter,
+      description: "Interior and exterior painting",
+    },
+    {
+      service: "Waterproofing Solutions",
+      img: WaterProofing,
+      description: "Sealants and moisture protection",
+    },
+    {
+      service: "Flooring Installation",
+      img: Flooring,
+      description: "Tile, marble, and wooden floor work",
+    },
+    {
+      service: "Security & Surveillance",
       img: CCTV,
-      heading: "Security & Surveillance",
-      subheading: "Install and manage smart monitoring systems",
+      description: "Plan, design, and oversee construction",
     },
     {
+      service: "Smart Home Automation",
       img: Automation,
-      heading: "Smart Home Automation",
-      subheading: "Automate lighting, climate, and appliances",
+      description: "Enhance interior functionality and aesthetics",
     },
     {
+      service: "Audio & Video Systems",
       img: AudioVideo,
-      heading: "Audio & Video Systems",
-      subheading: "Home theatres, speakers, and media setups",
+      description: "Design and maintain outdoor environments",
     },
     {
+      service: "Automated Smart Locks",
       img: SmartLock,
-      heading: "Automated Smart Locks",
-      subheading: "Smart access and security solutions",
-    },
-
-    // Other
-    {
-      img: HVAC || "",
-      heading: "HVAC Solutions",
-      subheading: "Air conditioning, heating, and ventilation systems",
+      description: "Ensure building stability and strength",
     },
     {
-      img: SkillfulIcon,
-      heading: "Skillful",
-      subheading: "Specialized hands-on work",
+      service: "Aluminium Fabrication",
+      img: MetalFabrication,
+      description: "Doors, windows, and structural fittings",
     },
     {
-      img: ArtisticIcon,
-      heading: "Artistic",
-      subheading: "Design, branding, and creative art",
+      service: "Stainless Steel Fabrication",
+      img: MetalFabrication,
+      description: "Railings, grills, and modern steel designs",
     },
     {
-      img: MEP || "",
-      heading: "MEP",
-      subheading: "Design mechanical, electrical, and plumbing systems",
+      service: "Roofing Solutions",
+      img: Roofing,
+      description: "Metal, sheet, and industrial roof works",
+    },
+    {
+      service: "Mild Steel Fabrication",
+      img: MetalFabrication,
+      description: "Mild steel gates, frames, and supports",
+    },
+    {
+      service: "Glass Fabrication",
+      img: Glass,
+      description: "Partitions, railings, and glass structures",
     },
   ];
 
@@ -186,8 +185,8 @@ const MobAllServiceCategory = () => {
           <MobServiceCategoryList
             key={index}
             img={service.img}
-            heading={service.heading}
-            subheading={service.subheading}
+            heading={service.service}
+            subheading={service.description}
           />
         ))}
       </Box>
