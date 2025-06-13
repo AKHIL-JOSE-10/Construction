@@ -2,24 +2,25 @@ import { Search } from "@mui/icons-material";
 import { Grid, Input, InputAdornment } from "@mui/material";
 import React from "react";
 import { color } from "./constants";
-export default function SearchBar({sx,text,onClick}) {
+export default function SearchBar({ sx, text, onClick }) {
   return (
     <Grid
-      sx={{     
+      sx={{
         bgcolor: color.layoutColor,
         height: "5vh",
         borderRadius: "1000px",
         display: "flex",
-          ...sx, 
+        ...sx,
       }}
       alignItems={"center"}
       size={10}
       onClick={onClick}
     >
       <Input
-        placeholder= {text ? text : "Job title, keyword, worker"}
+        placeholder={text ? text : "Job title, keyword, worker"}
         disableUnderline
         fullWidth
+        inputProps={{ readOnly: true }}
         startAdornment={
           <InputAdornment position="start">
             <Search sx={{ color: "gray", marginLeft: "0.3em" }} />
