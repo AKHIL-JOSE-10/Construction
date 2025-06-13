@@ -23,18 +23,19 @@ export const ServiceLayer = (props) => {
       <Grid
         container
         size={1}
-        height={"4em"}
-        width={"4em"}
+        height={"6em"}
+        width={"5em"}
         sx={{ ...textDecoration.serviceLayout }}
         justifyContent={"center"}
         alignItems={"center"}
+        pt={2}
       >
          <img
           src={image}
           alt={name}
           style={{
-            maxWidth: "63%",
-            maxHeight: "68%",
+            maxWidth: "53%",
+            maxHeight: "55%",
             objectFit: "contain",
           }}
         />
