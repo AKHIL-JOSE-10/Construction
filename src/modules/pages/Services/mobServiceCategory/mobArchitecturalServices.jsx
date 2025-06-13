@@ -7,6 +7,9 @@ import InteriorDesign from "@/assets/InteriorDesign.png";
 import PoolDesigning from "@/assets/PoolDesigning.png";
 import Architect from "@/assets/Architect.png";
 import Contractor from "@/assets/Architect.png";
+import MetalFabrication from "@/assets/MetalFabrication.png";
+import StructuralEngineering from "@/assets/StructuralEngineering.png";
+import MEP from "@/assets/MEP.png";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 const MobArchitecturalServices = () => {
@@ -33,12 +36,12 @@ const MobArchitecturalServices = () => {
     },
     {
       service: "Structural Engineering",
-      img: "",
+      img:StructuralEngineering,
       description: "Ensure building stability and strength",
     },
     {
       service: "MEP Services",
-      img: "",
+      img:MEP,
       description: "Design mechanical, electrical, and plumbing systems",
     },
     {
@@ -48,7 +51,7 @@ const MobArchitecturalServices = () => {
     },
     {
       service: "Steel Fabrication",
-      img: "",
+      img: MetalFabrication,
       description: "Create structural steel components and assemblies",
     },
     {

@@ -10,17 +10,18 @@ import Roofing from "@/assets/Roofing.png";
 import Glass from "@/assets/Glass.png";
 import Steel from "@/assets/Steel.png";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
+import MetalFabrication from "@/assets/MetalFabrication.png";
 
 const MobFabricationServices = () => {
   const fabricationServices = [
     {
       service: "Aluminium Fabrication",
-      img: PrecisionManufacturingIcon,
+      img: MetalFabrication,
       description: "Doors, windows, and structural fittings",
     },
     {
       service: "Stainless Steel Fabrication",
-      img: Steel,
+      img: MetalFabrication,
       description: "Railings, grills, and modern steel designs",
     },
     {
@@ -30,7 +31,7 @@ const MobFabricationServices = () => {
     },
     {
       service: "Mild Steel Fabrication",
-      img: BuildIcon,
+      img: MetalFabrication,
       description: "Mild steel gates, frames, and supports",
     },
     {
