@@ -5,15 +5,14 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import MobWorkerTopTab from "@/modules/components/Mobile/mobWorker/mobWorkerTopTab";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const MobWorkerpage = () => {
-
   const navigate = useNavigate();
   const location = useLocation();
-  const { name, img,contact } = location.state || {};
+  const { name, img, contact } = location.state || {};
 
   return (
     <Grid container sx={{ height: "auto" }}>
@@ -31,9 +30,12 @@ const MobWorkerpage = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            WebkitTapHighlightColor: "transparent",
           }}
         >
-          <ArrowBackIosIcon sx={{ fontSize: "25px", color: "#fff", bgcolor: "transparent" }} />
+          <ArrowBackIosIcon
+            sx={{ fontSize: "25px", color: "#fff", bgcolor: "transparent" }}
+          />
         </Box>
 
         <Box sx={{ position: "relative", display: "inline-block" }}>
@@ -97,7 +99,11 @@ const MobWorkerpage = () => {
           </Typography>
           <Button
             variant="contained"
-            onClick={()=>navigate("/mobile-message-chat",{state:{img,name,contact}})}
+            onClick={() =>
+              navigate("/mobile-message-chat", {
+                state: { img, name, contact },
+              })
+            }
             sx={{ borderRadius: 4, textTransform: "none", bgcolor: "#CCB09B" }}
           >
             <Typography sx={{ fontSize: "15px", fontWeight: "500" }}>

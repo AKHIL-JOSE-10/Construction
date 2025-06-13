@@ -54,7 +54,7 @@ const MobProfilePage = () => {
     >
       <Grid container direction="column">
         <Grid item xs={12}>
-          <MobHeading Heading="Profile" />
+          <MobHeading Heading="Profile" backArrow={false} />
           <Box
             sx={{
               width: "100%",

@@ -55,7 +55,7 @@ const IOSSwitch = styled((props) => <Switch focusVisibleClassName=".Mui-focusVis
 
 const MobSettings = () => {
   return (
-    <Grid>
+    <Grid height={"100vh"} sx={{overflow:"hidden"}}>
       <MobHeading Heading="Settings" />
       <Box sx={{ ml: 0, width:'100%',mt:-1 }}>
         <List>

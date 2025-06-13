@@ -213,6 +213,7 @@ export default function Home() {
               <Typography
                 mt={0.4}
                 sx={{ ...textDecoration.headingPrimaryColored }}
+                onClick={()=>navigate("/mobile-artisans-services")}
               >
                 See all
               </Typography>
@@ -321,6 +322,7 @@ export default function Home() {
               <Typography
                 mt={0.4}
                 sx={{ ...textDecoration.headingPrimaryColored }}
+                onClick={()=>navigate("/mobile-search-worker")}
               >
                 See all
               </Typography>
@@ -449,6 +451,7 @@ export default function Home() {
               textDecoration: "none",
               cursor: "pointer",
               fontWeight: 500,
+              WebkitTapHighlightColor: "transparent",
             }}
           >
             View all services
