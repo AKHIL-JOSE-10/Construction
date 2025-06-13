@@ -36,10 +36,10 @@ export const textDecoration = {
     color: color.primary,
   },
 serviceLayout: {
-  Height: '95%',
-  width: '99%',
+  minHeight: '82%',
+  width: '97%',
   borderRadius: 60,
-  backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M317,303Q298,366,231,371.5Q164,377,109,327Q54,277,72.5,196.5Q91,116,169,106Q247,96,307.5,148Q368,200,317,303Z' fill='%23edd9b9'/%3E%3C/svg%3E")`,
+  backgroundImage: `url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M317,303Q298,366,231,371.5Q164,377,109,327Q54,277,72.5,196.5Q91,116,169,106Q247,96,307.5,148Q368,200,317,303Z' fill='%23f4e7d3'/%3E%3C/svg%3E")`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   backgroundPosition: 'center',

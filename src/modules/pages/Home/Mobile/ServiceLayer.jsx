@@ -35,7 +35,7 @@ export const ServiceLayer = (props) => {
           alt={name}
           style={{
             maxWidth: "40%",
-            maxHeight: "50%",
+            maxHeight: "48%",
             objectFit: "contain",
           }}
         />
