@@ -26,6 +26,7 @@ import MobAutomationServices from "./modules/pages/Services/mobServiceCategory/m
 import MobFabricationServices from "./modules/pages/Services/mobServiceCategory/mobFabricationServices";
 import MobMessageChat from "./modules/pages/Message/mobMessage/mobMessageChat"
 import MobSearchWorker from "./modules/pages/WorkerPage/SearchWorker/mobSearchWorker";
+import MobSavedWorkers from "./modules/pages/Profile/Mobile/mobSavedWorkers";
 // import Test from "./test";
 import AddressDetails from "./modules/pages/Home/Address/AdressDetails/AddressDetails";
 function App() {
@@ -78,6 +79,8 @@ function App() {
         <Route path="/mobile-message-chat" element={<MobMessageChat />} />
         <Route path="/mobile-search-worker" element={<MobSearchWorker />} />
         <Route path="/address" element={<AddressDetails />} />
+        <Route path="/mobile-saved-workers" element={<MobSavedWorkers />} />
+
         {/* <Route path="/test" element={<Test />} /> */}
       </Routes>
     </Router>

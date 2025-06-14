@@ -133,12 +133,13 @@ const MobProfilePage = () => {
               </ListItemButton>
             </ListItem>
 
-            {/* Saved Workers */}
             <ListItem disablePadding>
-              <ListItemButton sx={{ px: 2, py: 1 }}>
-                <BookmarkIcon
-                  sx={{ mr: 2, color: "#757575", fontSize: "22px" }}
-                />
+              <ListItemButton
+                component={Link}
+                to="/mobile-saved-workers"
+                sx={{ px: 2, py: 1 }}
+              >
+                <BookmarkIcon sx={{ mr: 2, color: "#757575", fontSize: "22px" }} />
                 <ListItemText
                   primary="Saved Workers"
                   slotProps={{
