@@ -1,7 +1,7 @@
 import { Grid, Box } from "@mui/material";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
-import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
+
 
 // Icons
 import { Build, PrecisionManufacturing } from "@mui/icons-material";
