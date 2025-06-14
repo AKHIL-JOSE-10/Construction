@@ -156,7 +156,7 @@ export default function Home() {
           </Grid>
         </Grid>
         {/* Search bar container */}
-        <SearchBar onClick={() => navigate("/mobile-search-worker")} />
+        <SearchBar onClick={() => navigate("/mobile-Recent-Search")} />
         {/* <Box
           sx={{
             width: "10vh",
