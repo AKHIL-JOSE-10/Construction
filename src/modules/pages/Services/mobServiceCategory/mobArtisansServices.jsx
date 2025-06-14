@@ -10,63 +10,38 @@ import Carpentry from "@/assets/Carpentry.png";
 import Masonary from "@/assets/Masonary.png";
 import WaterProofing from "@/assets/WaterProofing.png";
 import MetalFabrication from "@/assets/MetalFabrication.png";
-
-import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
+import { useNavigate } from "react-router-dom";
 
 const MobArtisansServices = () => {
+  const navigate = useNavigate();
+
   const artisansServices = [
-    {
-      service: "Masonry Work",
-      img: Masonary,
-      description: "Brickwork and structural craftsmanship",
-    },
-    {
-      service: "Carpentry Services",
-      img: Carpentry,
-      description: "Woodwork for furniture and fittings",
-    },
-    {
-      service: "Metal Fabrication",
-      img: MetalFabrication,
-      description: "Metalwork for frames and structures",
-    },
-    {
-      service: "Electrical Services",
-      img: Electrician,
-      description: "Wiring, lighting and electrical fixes",
-    },
-    {
-      service: "Plumbing Services",
-      img: Plumber,
-      description: "Water supply and pipe installations",
-    },
-    {
-      service: "Painting Services",
-      img: Painter,
-      description: "Interior and exterior painting",
-    },
-    {
-      service: "Waterproofing Solutions",
-      img: WaterProofing,
-      description: "Sealants and moisture protection",
-    },
-    {
-      service: "Flooring Installation",
-      img: Flooring,
-      description: "Tile, marble, and wooden floor work",
-    },
+    { service: "Masonry Work", img: Masonary, description: "Brickwork and structural craftsmanship" },
+    { service: "Carpentry Services", img: Carpentry, description: "Woodwork for furniture and fittings" },
+    { service: "Metal Fabrication", img: MetalFabrication, description: "Metalwork for frames and structures" },
+    { service: "Electrical Services", img: Electrician, description: "Wiring, lighting and electrical fixes" },
+    { service: "Plumbing Services", img: Plumber, description: "Water supply and pipe installations" },
+    { service: "Painting Services", img: Painter, description: "Interior and exterior painting" },
+    { service: "Waterproofing Solutions", img: WaterProofing, description: "Sealants and moisture protection" },
+    { service: "Flooring Installation", img: Flooring, description: "Tile, marble, and wooden floor work" },
   ];
+
+  const handleClick = () => {
+    navigate("/mobile-search-worker");
+  };
+
   return (
     <Grid container>
       <MobHeading Heading="Artisans Services" />
       <Box sx={{ width: "100%", mt: 8, pb: 7 }}>
         {artisansServices.map((service, index) => (
-          <MobServiceCategoryList
-            key={index}
-            img={service.img}
-            heading={service.service}
-            subheading={service.description}
-          />
+          <Box key={index} onClick={handleClick} sx={{ cursor: "pointer" }}>
+            <MobServiceCategoryList
+              img={service.img}
+              heading={service.service}
+              subheading={service.description}
+            />
+          </Box>
         ))}
       </Box>
     </Grid>

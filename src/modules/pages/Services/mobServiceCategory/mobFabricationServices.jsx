@@ -11,8 +11,11 @@ import Glass from "@/assets/Glass.png";
 import Steel from "@/assets/Steel.png";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 import MetalFabrication from "@/assets/MetalFabrication.png";
+import { useNavigate } from "react-router-dom";
 
 const MobFabricationServices = () => {
+  const navigate = useNavigate();
+
   const fabricationServices = [
     {
       service: "Aluminium Fabrication",
@@ -40,17 +43,23 @@ const MobFabricationServices = () => {
       description: "Partitions, railings, and glass structures",
     },
   ];
+
+  const handleClick = () => {
+    navigate("/mobile-search-worker");
+  };
+
   return (
     <Grid container>
       <MobHeading Heading="Fabrication Services" />
       <Box sx={{ width: "100%", mt: 8 }}>
         {fabricationServices.map((service, index) => (
-          <MobServiceCategoryList
-            key={index}
-            img={service.img}
-            heading={service.service}
-            subheading={service.description}
-          />
+          <Box key={index} onClick={handleClick} sx={{ cursor: "pointer" }}>
+            <MobServiceCategoryList
+              img={service.img}
+              heading={service.service}
+              subheading={service.description}
+            />
+          </Box>
         ))}
       </Box>
     </Grid>

@@ -6,8 +6,11 @@ import CCTV from "@/assets/CCTV.png";
 import Automation from "@/assets/Automation.png";
 import AudioVideo from "@/assets/AudioVideo.png";
 import SmartLock from "@/assets/SmartLock.png";
+import { useNavigate } from "react-router-dom";
 
 const MobAutomationServices = () => {
+  const navigate = useNavigate();
+
   const automationServices = [
     {
       service: "Security & Surveillance",
@@ -30,20 +33,25 @@ const MobAutomationServices = () => {
       description: "Ensure building stability and strength",
     },
   ];
+
+  const handleClick = () => {
+    navigate("/mobile-search-worker");
+  };
+
   return (
     <Grid container>
       <MobHeading Heading="Automation Services" />
       <Box sx={{ width: "100%", mt: 8 }}>
         {automationServices.map((service, index) => (
-          <MobServiceCategoryList
-            key={index}
-            img={service.img}
-            heading={service.service}
-            subheading={service.description}
-          />
+          <Box key={index} onClick={handleClick} sx={{ cursor: "pointer" }}>
+            <MobServiceCategoryList
+              img={service.img}
+              heading={service.service}
+              subheading={service.description}
+            />
+          </Box>
         ))}
       </Box>
-
     </Grid>
   );
 };
