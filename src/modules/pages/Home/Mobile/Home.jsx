@@ -194,7 +194,7 @@ export default function Home() {
             spacing={2}
             alignItems={"flex-start"}
             justifyContent={"center"}
-            sx={{ overflow: "hidden", height: "38vh" }}
+            sx={{ overflow: "hidden", height: "40vh" }}
           >
             {ServiceList.slice(0, 6).map((data) => (
               <ServiceLayer key={data.name} data={data} img />

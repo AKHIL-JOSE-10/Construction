@@ -74,7 +74,7 @@ const MobArchitecturalServices = () => {
           />
         ))}
       </Box>
-      <MobileBottomTab />
+
     </Grid>
   );
 };

@@ -242,7 +242,6 @@ export default function EditInfo() {
           {edit ? "Edit" : "Save"}
         </Button>
       </Box>
-      <MobileBottomTab />
     </Grid>
   );
 }

@@ -1,63 +1,73 @@
-import { Box, Grid, List, ListItem, ListItemButton, ListItemText, Switch, styled } from '@mui/material'
-import MobHeading from '@/modules/components/Mobile/mobileHeading'
-import MobileBottomTab from '@/modules/components/Mobile/mobileBottomTab'
+import {
+  Box,
+  Grid,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Switch,
+  styled,
+} from "@mui/material";
+import MobHeading from "@/modules/components/Mobile/mobileHeading";
+import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 // iOS-style Switch
-const IOSSwitch = styled((props) => <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />)(
-  ({ theme }) => ({
-    width: 42,
-    height: 26,
-    padding: 0,
-    '& .MuiSwitch-switchBase': {
-      padding: 1,
-      margin: 2,
-      transitionDuration: '300ms',
-      '&.Mui-checked': {
-        transform: 'translateX(16px)',
-        color: '#fff',
-        '& + .MuiSwitch-track': {
-          backgroundColor: '#65C466',
-          opacity: 1,
-          border: 0,
-        },
-        '&.Mui-disabled + .MuiSwitch-track': {
-          opacity: 0.5,
-        },
+const IOSSwitch = styled((props) => (
+  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+))(({ theme }) => ({
+  width: 42,
+  height: 26,
+  padding: 0,
+  "& .MuiSwitch-switchBase": {
+    padding: 1,
+    margin: 2,
+    transitionDuration: "300ms",
+    "&.Mui-checked": {
+      transform: "translateX(16px)",
+      color: "#fff",
+      "& + .MuiSwitch-track": {
+        backgroundColor: "#65C466",
+        opacity: 1,
+        border: 0,
       },
-      '&.Mui-focusVisible .MuiSwitch-thumb': {
-        color: '#33cf4d',
-        border: '6px solid #fff',
+      "&.Mui-disabled + .MuiSwitch-track": {
+        opacity: 0.5,
       },
-      '&.Mui-disabled .MuiSwitch-thumb': {
-        color: theme.palette.mode === 'light'
+    },
+    "&.Mui-focusVisible .MuiSwitch-thumb": {
+      color: "#33cf4d",
+      border: "6px solid #fff",
+    },
+    "&.Mui-disabled .MuiSwitch-thumb": {
+      color:
+        theme.palette.mode === "light"
           ? theme.palette.grey[100]
           : theme.palette.grey[600],
-      },
-      '&.Mui-disabled + .MuiSwitch-track': {
-        opacity: theme.palette.mode === 'light' ? 0.7 : 0.3,
-      },
     },
-    '& .MuiSwitch-thumb': {
-      boxSizing: 'border-box',
-      width: 22,
-      height: 22,
+    "&.Mui-disabled + .MuiSwitch-track": {
+      opacity: theme.palette.mode === "light" ? 0.7 : 0.3,
     },
-    '& .MuiSwitch-track': {
-      borderRadius: 26 / 2,
-      backgroundColor: theme.palette.mode === 'light' ? '#E9E9EA' : '#39393D',
-      opacity: 1,
-      transition: theme.transitions.create(['background-color'], {
-        duration: 500,
-      }),
-    },
-  })
-)
+  },
+  "& .MuiSwitch-thumb": {
+    boxSizing: "border-box",
+    width: 22,
+    height: 22,
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 26 / 2,
+    backgroundColor: theme.palette.mode === "light" ? "#E9E9EA" : "#39393D",
+    opacity: 1,
+    transition: theme.transitions.create(["background-color"], {
+      duration: 500,
+    }),
+  },
+}));
 
 const MobSettings = () => {
   return (
-    <Grid height={"100vh"} sx={{overflow:"hidden"}}>
+    <Grid height={"100vh"} sx={{ overflow: "hidden" }}>
       <MobHeading Heading="Settings" />
-      <Box sx={{ ml: 0, width:'100%',mt:-1 }}>
+      <Box sx={{ ml: 0, width: "100%", mt: -1 }}>
         <List>
           {[
             "Notifications",
@@ -66,24 +76,30 @@ const MobSettings = () => {
             "Recieve Security Alerts",
             "Change Password",
           ].map((label, index) => (
-            <ListItem disablePadding sx={{ borderBottom:'0.5px solid #e0e0e0',}} key={index}>
-              <ListItemButton sx={{py:2, }}>
+            <ListItem
+              disablePadding
+              sx={{ borderBottom: "0.5px solid #e0e0e0" }}
+              key={index}
+            >
+              <ListItemButton sx={{ py: 2 }}>
                 <ListItemText
                   primary={label}
-                  secondary={label === "Notifications" ? "via email and whatsapp" : null}
+                  secondary={
+                    label === "Notifications" ? "via email and whatsapp" : null
+                  }
                   slotProps={{
                     primary: {
                       sx: {
-                        fontSize: '17px',
-                         fontWeight: 540,
-                        color: 'black', // Primary text color
+                        fontSize: "17px",
+                        fontWeight: 540,
+                        color: "black", // Primary text color
                       },
                       variant: "body2",
                     },
                     secondary: {
                       sx: {
-                        color: 'black', // Secondary text color
-                        fontSize: '0.90rem',
+                        color: "black", // Secondary text color
+                        fontSize: "0.90rem",
                         mt: 0.5,
                       },
                     },
@@ -95,9 +111,8 @@ const MobSettings = () => {
           ))}
         </List>
       </Box>
-      <MobileBottomTab />
     </Grid>
-  )
-}
+  );
+};
 
-export default MobSettings
+export default MobSettings;

@@ -53,7 +53,6 @@ const MobFabricationServices = () => {
           />
         ))}
       </Box>
-      <MobileBottomTab />
     </Grid>
   );
 };
