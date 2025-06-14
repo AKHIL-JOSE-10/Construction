@@ -106,7 +106,7 @@ const MobRecentSearch = () => {
         <Box display="flex" alignItems="center" gap={2}>
           <NotificationsNone sx={{ fontSize: "28px" }} />
           <Avatar
-            src="https://randomuser.me/api/portraits/men/76.jpg"
+            src="https://randomuser.me/api/portraits/women/79.jpg"
             sx={{ width: 35, height: 35 }}
           />
         </Box>
