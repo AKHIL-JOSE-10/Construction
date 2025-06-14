@@ -174,7 +174,8 @@ const MobRecentSearch = () => {
         <Box sx={{
           borderBottom: "1px solid rgba(0, 0, 0, 0.1)",
           boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-          px:1
+          px:1,
+          pb:1.5
         }}>
           <Typography sx={{
             fontSize: '115%', fontWeight: 600, mb: 2, mt: 3,
