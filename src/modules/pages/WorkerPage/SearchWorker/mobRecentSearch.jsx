@@ -23,6 +23,9 @@ import Artisans from '../../../../assets/Artisans.png';
 import CCTV from '../../../../assets/CCTV.png';
 import Architectural from '../../../../assets/Architectural.png';
 import Legal from '../../../../assets/Legal.png';
+import Education from '../../../../assets/Education.png';
+import Acoustic from '../../../../assets/Acoustic.png';
+
 
 const MobRecentSearch = () => {
 
@@ -44,13 +47,11 @@ const MobRecentSearch = () => {
   ];
 
   const popularSearches = [
-    "Indoor Cleaning",
-    "Plumbing Drain Repair",
-    "Electrical Help",
-    "Interior Painting",
-    "Packing and unpacking",
-    "Home Repairs",
-    "Laundry Service",
+    "Masonry Work",
+    "Carpentry Services",
+    "Metal Fabrication",
+    "Plumbing Services",
+    "Painting Services",
   ];
 
   const topServices = [
@@ -68,22 +69,26 @@ const MobRecentSearch = () => {
     },
     {
       name: "Acoustic Services",
-      image: Legal
+      image: Acoustic
     },
     {
       name: "Legal Services",
       image: Legal
     },
+    {
+      name: "Education Services",
+      image: Education
+    },
   ];
 
   return (
-    <Box p={2} sx={{ fontFamily: "sans-serif" }}>
+    <Box py={2} sx={{ fontFamily: "sans-serif" }}>
       {/* Header */}
-      <Box display="flex" justifyContent="space-between" alignItems="center" >
+      <Box display="flex" justifyContent="space-between" alignItems="center" px={1}>
         {/* Left Side: Back Arrow + Location Info */}
-        <Box display="flex" alignItems="flex-start">
+        <Box display="flex" alignItems="flex-start" >
           <ArrowBackIos
-            sx={{ fontSize: 22, cursor: "pointer", mt: 0.4 ,color:'grey'}}
+            sx={{ fontSize: 22, cursor: "pointer", mt: 0.4, color: 'grey' }}
             onClick={() => navigate(-1)}
           />
           <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: 'black' }} />
@@ -91,7 +96,7 @@ const MobRecentSearch = () => {
             <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
               Current Location
             </Typography>
-            <Typography  sx={{ fontWeight:'Bold', fontSize: 15 }}>
+            <Typography sx={{ fontWeight: 'Bold', fontSize: 15 }}>
               Kuala Lumpur, Malaysia
             </Typography>
           </Box>
@@ -99,10 +104,10 @@ const MobRecentSearch = () => {
 
         {/* Right Side: Notification + Avatar */}
         <Box display="flex" alignItems="center" gap={2}>
-          <NotificationsNone sx={{ fontSize: "28px"}}/>
+          <NotificationsNone sx={{ fontSize: "28px" }} />
           <Avatar
             src="https://randomuser.me/api/portraits/men/76.jpg"
-            sx={{ width: 35, height: 35}}
+            sx={{ width: 35, height: 35 }}
           />
         </Box>
       </Box>
@@ -116,15 +121,16 @@ const MobRecentSearch = () => {
         borderRadius={1}
         px={1}
         py={1}
+        mx={1}
       >
         <Search sx={{ mr: 1, cursor: 'pointer' }} onClick={() => navigate('/mobile-search-worker')} />
         <InputBase placeholder="Search Services & Workers" fullWidth />
         <Tune sx={{ color: "#888" }} />
       </Box>
 
-      <Box>
+      <Box >
         {/* Recent Searches */}
-        <Box mt={3} borderBottom="1px solid rgba(0, 0, 0, 0.1)" boxShadow='0px 2px 4px rgba(0, 0, 0, 0.1)'>
+        <Box mt={3} borderBottom="1px solid rgba(0, 0, 0, 0.1)" boxShadow='0px 2px 4px rgba(0, 0, 0, 0.1)' px={1}>
           <Typography fontWeight={500} mb={1} color="grey">
             Recent searches
           </Typography>
@@ -141,7 +147,7 @@ const MobRecentSearch = () => {
               {/* Left: Clock for first 2, Search for rest */}
               <Box display="flex" alignItems="center" gap={1}>
                 {index < 2 ? (
-                  <AccessTimeIcon sx={{ fontSize: 25, color: "gray" }} />
+                  <AccessTimeIcon sx={{ fontSize: 22, color: "gray" }} />
                 ) : (
                   <Search sx={{ fontSize: 25, color: "gray" }} />
                 )}
@@ -165,35 +171,44 @@ const MobRecentSearch = () => {
         </Box>
 
         {/* Popular Services */}
-        <Typography sx={{ fontSize: '115%', fontWeight: 600, mb: 2, mt: 3 }}>
-          Popular services
-        </Typography>
-        <Box display="flex" flexWrap="wrap" gap={1} bgcolor={'white'}>
-          {popularSearches.map((item, idx) => (
-            <Chip
-              key={idx}
-              label={item}
-              clickable
-              onClick={() => navigate('/mobile-search-worker')}
-              sx={{
-                borderRadius: 2,
-                backgroundColor: "white",
-                border: '1px solid #D3D3D3',
-                mb: 1,
-                '& .MuiChip-deleteIcon': {
-                  color: '#555555',
-                  fontSize: 20,
-                  marginRight: '4px',
-                },
-              }}
-              deleteIcon={<ArrowOutward />}
-              onDelete={() => { }}
-            />
-          ))}
+        <Box sx={{
+          borderBottom: "1px solid rgba(0, 0, 0, 0.1)",
+          boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+          px:1
+        }}>
+          <Typography sx={{
+            fontSize: '115%', fontWeight: 600, mb: 2, mt: 3,
+          }} >
+            Popular services
+          </Typography>
+          <Box display="flex" flexWrap="wrap" gap={1} bgcolor={'white'} >
+            {popularSearches.map((item, idx) => (
+              <Chip
+                key={idx}
+                label={item}
+                clickable
+                onClick={() => navigate('/mobile-search-worker')}
+                sx={{
+                  borderRadius: 2,
+                  backgroundColor: "white",
+                  border: '1px solid #D3D3D3',
+                  mb: 1,
+                  '& .MuiChip-deleteIcon': {
+                    color: '#555555',
+                    fontSize: 20,
+                    marginRight: '4px',
+                  },
+                }}
+                deleteIcon={<ArrowOutward />}
+                onDelete={() => { }}
+              />
+            ))}
+          </Box>
         </Box>
 
+
         {/* Top Services */}
-        <Box mt={5}>
+        <Box mt={5} px={1}>
           <Typography fontWeight={600} fontSize={'115%'} mb={2}>
             Top services on Archisans
           </Typography>
