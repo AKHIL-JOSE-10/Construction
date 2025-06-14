@@ -79,19 +79,19 @@ const MobRecentSearch = () => {
   return (
     <Box p={2} sx={{ fontFamily: "sans-serif" }}>
       {/* Header */}
-      <Box display="flex" justifyContent="space-between" alignItems="center" mt={1.5}>
+      <Box display="flex" justifyContent="space-between" alignItems="center" >
         {/* Left Side: Back Arrow + Location Info */}
         <Box display="flex" alignItems="flex-start">
           <ArrowBackIos
-            sx={{ fontSize: 25, cursor: "pointer", mt: 0.4 }}
+            sx={{ fontSize: 22, cursor: "pointer", mt: 0.4 ,color:'grey'}}
             onClick={() => navigate(-1)}
           />
-          <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: 'grey' }} />
+          <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: 'black' }} />
           <Box display="flex" flexDirection="column">
             <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
               Current Location
             </Typography>
-            <Typography variant="body2" sx={{ fontWeight: 600, fontSize: 15 }}>
+            <Typography  sx={{ fontWeight:'Bold', fontSize: 15 }}>
               Kuala Lumpur, Malaysia
             </Typography>
           </Box>
@@ -99,10 +99,10 @@ const MobRecentSearch = () => {
 
         {/* Right Side: Notification + Avatar */}
         <Box display="flex" alignItems="center" gap={2}>
-          <NotificationsNone />
+          <NotificationsNone sx={{ fontSize: "28px"}}/>
           <Avatar
             src="https://randomuser.me/api/portraits/men/76.jpg"
-            sx={{ width: 32, height: 32 }}
+            sx={{ width: 35, height: 35}}
           />
         </Box>
       </Box>
@@ -124,8 +124,8 @@ const MobRecentSearch = () => {
 
       <Box>
         {/* Recent Searches */}
-        <Box mt={3}>
-          <Typography fontWeight={500} mb={1} color="gray">
+        <Box mt={3} borderBottom="1px solid rgba(0, 0, 0, 0.1)" boxShadow='0px 2px 4px rgba(0, 0, 0, 0.1)'>
+          <Typography fontWeight={500} mb={1} color="grey">
             Recent searches
           </Typography>
           {recentSearches.map((item, index) => (
