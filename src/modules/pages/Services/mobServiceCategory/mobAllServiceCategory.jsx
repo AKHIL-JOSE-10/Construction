@@ -1,19 +1,9 @@
 import { Grid, Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
-
-
-// Icons
-import {
-  Build,
-  PrecisionManufacturing as PrecisionManufacturingIcon,
-  Handyman as HandymanIcon,
-  Roofing as RoofingIcon,
-  Build as BuildIcon,
-  Layers as LayersIcon,
-} from "@mui/icons-material";
 
 // Assets
 import StructuralIcon from "@/assets/StructuralIcon.png";
@@ -44,137 +34,39 @@ import MEP from "@/assets/MEP.png";
 import Architect from "@/assets/Architect.png";
 
 const MobAllServiceCategory = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/mobile-search-worker");
+  };
+
   const serviceCategories = [
-    {
-      service: "Architectural Design",
-      img: Architect,
-      description: "Create innovative building designs and plans",
-    },
-    {
-      service: "Civil Engineering",
-      img: CivilEngineer,
-      description: "Plan, design, and oversee construction",
-    },
-    {
-      service: "Interior Design",
-      img: InteriorDesign,
-      description: "Enhance interior functionality and aesthetics",
-    },
-    {
-      service: "Landscaping",
-      img: LandScaping,
-      description: "Design and maintain outdoor environments",
-    },
-    {
-      service: "Structural Engineering",
-      img: StructuralEngineering,
-      description: "Ensure building stability and strength",
-    },
-    {
-      service: "MEP Services",
-      img: MEP,
-      description: "Design mechanical, electrical, and plumbing systems",
-    },
-    {
-      service: "Pool Design",
-      img: PoolDesigning,
-      description: "Plan and design residential and commercial pools",
-    },
-    {
-      service: "Steel Fabrication",
-      img: MetalFabrication,
-      description: "Create structural steel components and assemblies",
-    },
-    {
-      service: "Construction Contracting",
-      img: Contractor,
-      description: "Execute and manage full construction projects",
-    },
-    {
-      service: "Masonry Work",
-      img: Masonary,
-      description: "Brickwork and structural craftsmanship",
-    },
-    {
-      service: "Carpentry Services",
-      img: Carpentry,
-      description: "Woodwork for furniture and fittings",
-    },
-    {
-      service: "Metal Fabrication",
-      img: MetalFabrication,
-      description: "Metalwork for frames and structures",
-    },
-    {
-      service: "Electrical Services",
-      img: Electrician,
-      description: "Wiring, lighting and electrical fixes",
-    },
-    {
-      service: "Plumbing Services",
-      img: Plumber,
-      description: "Water supply and pipe installations",
-    },
-    {
-      service: "Painting Services",
-      img: Painter,
-      description: "Interior and exterior painting",
-    },
-    {
-      service: "Waterproofing Solutions",
-      img: WaterProofing,
-      description: "Sealants and moisture protection",
-    },
-    {
-      service: "Flooring Installation",
-      img: Flooring,
-      description: "Tile, marble, and wooden floor work",
-    },
-    {
-      service: "Security & Surveillance",
-      img: CCTV,
-      description: "Plan, design, and oversee construction",
-    },
-    {
-      service: "Smart Home Automation",
-      img: Automation,
-      description: "Enhance interior functionality and aesthetics",
-    },
-    {
-      service: "Audio & Video Systems",
-      img: AudioVideo,
-      description: "Design and maintain outdoor environments",
-    },
-    {
-      service: "Automated Smart Locks",
-      img: SmartLock,
-      description: "Ensure building stability and strength",
-    },
-    {
-      service: "Aluminium Fabrication",
-      img: MetalFabrication,
-      description: "Doors, windows, and structural fittings",
-    },
-    {
-      service: "Stainless Steel Fabrication",
-      img: MetalFabrication,
-      description: "Railings, grills, and modern steel designs",
-    },
-    {
-      service: "Roofing Solutions",
-      img: Roofing,
-      description: "Metal, sheet, and industrial roof works",
-    },
-    {
-      service: "Mild Steel Fabrication",
-      img: MetalFabrication,
-      description: "Mild steel gates, frames, and supports",
-    },
-    {
-      service: "Glass Fabrication",
-      img: Glass,
-      description: "Partitions, railings, and glass structures",
-    },
+    { service: "Architectural Design", img: Architect, description: "Create innovative building designs and plans" },
+    { service: "Civil Engineering", img: CivilEngineer, description: "Plan, design, and oversee construction" },
+    { service: "Interior Design", img: InteriorDesign, description: "Enhance interior functionality and aesthetics" },
+    { service: "Landscaping", img: LandScaping, description: "Design and maintain outdoor environments" },
+    { service: "Structural Engineering", img: StructuralEngineering, description: "Ensure building stability and strength" },
+    { service: "MEP Services", img: MEP, description: "Design mechanical, electrical, and plumbing systems" },
+    { service: "Pool Design", img: PoolDesigning, description: "Plan and design residential and commercial pools" },
+    { service: "Steel Fabrication", img: MetalFabrication, description: "Create structural steel components and assemblies" },
+    { service: "Construction Contracting", img: Contractor, description: "Execute and manage full construction projects" },
+    { service: "Masonry Work", img: Masonary, description: "Brickwork and structural craftsmanship" },
+    { service: "Carpentry Services", img: Carpentry, description: "Woodwork for furniture and fittings" },
+    { service: "Metal Fabrication", img: MetalFabrication, description: "Metalwork for frames and structures" },
+    { service: "Electrical Services", img: Electrician, description: "Wiring, lighting and electrical fixes" },
+    { service: "Plumbing Services", img: Plumber, description: "Water supply and pipe installations" },
+    { service: "Painting Services", img: Painter, description: "Interior and exterior painting" },
+    { service: "Waterproofing Solutions", img: WaterProofing, description: "Sealants and moisture protection" },
+    { service: "Flooring Installation", img: Flooring, description: "Tile, marble, and wooden floor work" },
+    { service: "Security & Surveillance", img: CCTV, description: "Plan, design, and oversee construction" },
+    { service: "Smart Home Automation", img: Automation, description: "Enhance interior functionality and aesthetics" },
+    { service: "Audio & Video Systems", img: AudioVideo, description: "Design and maintain outdoor environments" },
+    { service: "Automated Smart Locks", img: SmartLock, description: "Ensure building stability and strength" },
+    { service: "Aluminium Fabrication", img: MetalFabrication, description: "Doors, windows, and structural fittings" },
+    { service: "Stainless Steel Fabrication", img: MetalFabrication, description: "Railings, grills, and modern steel designs" },
+    { service: "Roofing Solutions", img: Roofing, description: "Metal, sheet, and industrial roof works" },
+    { service: "Mild Steel Fabrication", img: MetalFabrication, description: "Mild steel gates, frames, and supports" },
+    { service: "Glass Fabrication", img: Glass, description: "Partitions, railings, and glass structures" },
   ];
 
   return (
@@ -182,12 +74,13 @@ const MobAllServiceCategory = () => {
       <MobHeading Heading="Service Category" />
       <Box sx={{ width: "100%", mt: 8 }}>
         {serviceCategories.map((service, index) => (
-          <MobServiceCategoryList
-            key={index}
-            img={service.img}
-            heading={service.service}
-            subheading={service.description}
-          />
+          <Box key={index} onClick={handleClick} sx={{ cursor: "pointer" }}>
+            <MobServiceCategoryList
+              img={service.img}
+              heading={service.service}
+              subheading={service.description}
+            />
+          </Box>
         ))}
       </Box>
     </Grid>
