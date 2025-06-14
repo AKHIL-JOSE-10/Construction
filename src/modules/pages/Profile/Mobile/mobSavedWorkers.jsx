@@ -205,11 +205,11 @@ const MobSavedWorkers = () => {
             </Grid>
 
             {/* Worker Cards */}
-            <Grid container px={0} mt={2}  sx={{ justifyContent: "space-evenly" }}>
+            <Grid container px={0} mt={2} sx={{ justifyContent: "space-evenly" }}>
                 {filteredWorkers.map((worker, index) => {
                     const unavailableDates = generateUnavailableDates();
                     return (
-                        <Grid key={index} sx={{ display: "flex", width: "48%" , mb:2 }}>
+                        <Grid key={index} sx={{ display: "flex", width: "48%",mb:2 }}>
                             <Box
                                 onClick={() => handleClick(worker)}
                                 sx={{

@@ -18,6 +18,7 @@ import {
   Work,
 } from "@mui/icons-material";
 import BottomDrawerLayout from "../../../../layouts/BottomDrawer/BottomDrawer";
+import googlemapImage from "../../../../../assets/googlemapImage.png"; 
 
 const AddressDetailsDrawer = ({ open, setOpen }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -242,7 +243,8 @@ export default function AddressDetails() {
       <Grid
         container
         size={12}
-        sx={{ backgroundColor: "lightgrey", minHeight: "65%" }}
+        background
+        sx={{ backgroundImage: `url(${googlemapImage})`, minHeight: "65%",minWidth:'100%' }}
       />
       <Grid
         container
