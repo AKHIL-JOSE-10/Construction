@@ -140,39 +140,39 @@ const WorkerRequestDetail = () => {
 
             {/* Details */}
             <Box
-  sx={{
-    px: 1,
-    py: 2,
-    border: '1px solid #e0e0e0', // light grey border
-    borderRadius: 1,
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)', // subtle shadow
-    backgroundColor: 'white', // optional for better contrast
-  }}
->
+                sx={{
+                    px: 1,
+                    py: 2,
+                    border: '1px solid #e0e0e0', // light grey border
+                    borderRadius: 1,
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)', // subtle shadow
+                    backgroundColor: 'white', // optional for better contrast
+                }}
+            >
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
                     <CalendarToday fontSize="small" />
-                    <Typography>Sunday, 21 Jan</Typography>
+                    <Typography sx={{ fontSize: '0.9rem' }}>Sunday, 21 Jan</Typography>
                 </Stack>
 
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
                     <AccessTime fontSize="small" />
-                    <Typography>09:30 am – 10:30 am</Typography>
+                    <Typography sx={{ fontSize: '0.9rem' }}>09:30 am – 10:30 am</Typography>
                 </Stack>
 
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
-                    <Person fontSize="small" />
+
                     <Avatar src="https://randomuser.me/api/portraits/women/75.jpg" sx={{ width: '2rem', height: '2rem' }} />
-                    <Typography>Alin Tomy</Typography>
+                    <Typography sx={{ fontSize: '0.9rem' }}>Alin Tomy</Typography>
                 </Stack>
 
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
                     <Phone fontSize="small" />
-                    <Typography>+91 8828743213</Typography>
+                    <Typography sx={{ fontSize: '0.9rem' }}>+91 8828743213</Typography>
                 </Stack>
 
                 <Stack direction="row" alignItems="center" spacing={1}>
                     <LocationOn fontSize="small" />
-                    <Typography>Hyundai Ofc, Boston</Typography>
+                    <Typography sx={{ fontSize: '0.9rem' }}>Hyundai Ofc, Boston</Typography>
                 </Stack>
             </Box>
 
