@@ -131,7 +131,7 @@ const WorkerRequestDetail = () => {
                     }}
                 />
                 <Stack direction="column" spacing={1} mb={2} sx={{ position: 'relative', zIndex: 1 }}>
-                    <Work sx={{ fontSize: '3rem', color: '#000036 ' }} />
+                    <Work sx={{ fontSize: '3rem', color: '#002366 ' }} />
                     <Typography sx={{ fontSize: '2rem', color: '#000036 ' }} fontWeight="bold">
                         Plumbing
                     </Typography>
@@ -139,7 +139,7 @@ const WorkerRequestDetail = () => {
             </Box>
 
             {/* Details */}
-            <Box>
+            <Box sx={{px:0.5}}>
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
                     <CalendarToday fontSize="small" />
                     <Typography>Sunday, 21 Jan</Typography>
