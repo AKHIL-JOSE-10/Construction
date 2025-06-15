@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 import MobBookingInfo from "./modules/pages/Bookings/Mobile/mobBookingInfo";
 import MobMyBookings from "./modules/pages/Bookings/Mobile/mobmyBookings";
 import MobProfilePage from "./modules/pages/Profile/Mobile/mobProfile"
@@ -33,6 +34,7 @@ import AddressDetails from "./modules/pages/Home/Address/AdressDetails/AddressDe
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<RouteListPage />} />
         <Route path="/signin" element={<Signinpage />} />
