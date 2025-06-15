@@ -8,8 +8,10 @@ export default function SearchBar({ sx, text, onClick }) {
       sx={{
         bgcolor: color.layoutColor,
         height: "5vh",
-        borderRadius: "1000px",
+        width: "95vw",
+        borderRadius: "50px",
         display: "flex",
+        padding: "5px",
         ...sx,
       }}
       alignItems={"center"}
@@ -35,7 +37,6 @@ export default function SearchBar({ sx, text, onClick }) {
             height: "100%",
           },
           "& .MuiInputBase-input": {
-            padding: "0.5em", // Padding for text
             fontSize: "0.9em", // Font size
           },
         }}
