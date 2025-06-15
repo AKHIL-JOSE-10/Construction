@@ -5,9 +5,9 @@ import MobMyBookingsTopTab from "../../../components/Mobile/mobMyBookings/mobMyB
 
 const MobMyBookings = () => {
   return (
-    <Grid container sx={{ width: "100vw" }}>
+    <Grid container sx={{ width: "100vw" , bgcolor: "#fefaf7"}}>
       <MobHeading Heading="My Bookings" backArrow={false} />
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%",  }}>
         <MobMyBookingsTopTab />
         <MobileBottomTab />
       </Box>
