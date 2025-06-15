@@ -42,23 +42,23 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
           alignItems: 'center',
         }}
       >
-        <Box sx={{ alignSelf: 'center',mr:'2rem' }}>
+        <Box sx={{ alignSelf: 'center',mr:'3rem' }}>
           <Stack direction="row" spacing={1} alignItems="center" my={1.5}>
             <LocationOn fontSize="small" color="disabled" />
-            <Typography variant="body2" color="#b87d51">{location}</Typography>
+            <Typography sx={{fontSize:'0.7rem'}} color="#b87d51">{location}</Typography>
           </Stack>
 
           <Stack direction="row" spacing={1} alignItems="center" mt={0.5}>
-            <CalendarToday fontSize="small" color="disabled" />
-            <Typography variant="body2" color="#b87d51">{time}</Typography>
+            <CalendarToday sx={{fontSize:"1rem"}} color="disabled" />
+            <Typography sx={{fontSize:'0.7rem'}} color="#b87d51">{time}</Typography>
           </Stack>
         </Box>
 
         <Box sx={{ alignSelf: 'center', mt: 1.5 }}>
           <Typography variant="caption" color="#b87d51" ml={0.5}>Client</Typography>
           <Stack direction="row" alignItems="center" spacing={1} mt={0.5}>
-            <Avatar src={avatar} sx={{ width: 24, height: 24 }} />
-            <Typography sx={{fontWeight:'550', fontSize:'1rem'}}>{client}</Typography>
+            <Avatar src={avatar} sx={{ width:'2rem', height:'2rem' }} />
+            <Typography sx={{fontWeight:'550', fontSize:'0.7rem'}}>{client}</Typography>
           </Stack>
         </Box>
       </Box>
