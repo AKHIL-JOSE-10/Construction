@@ -19,7 +19,7 @@ const requests = [
         title: 'Steel Fabrication',
         location: 'Hyundai Ofc, Boston',
         time: '09:00am, Jan 21',
-        client: 'Athul Murali T',
+        client: 'Athul Murali',
         avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
         week: 'this',
     },
@@ -118,8 +118,8 @@ export default function WorkerRequestConfirmation() {
                         spacing={1}
                         sx={{ mt: 4, mb: 1, color: 'white' }}
                     >
-                        <FactCheckIcon fontSize="small" sx={{ color: 'white' }} />
-                        <Typography variant="body2" sx={{ color: 'white' }}>
+                        <FactCheckIcon  sx={{ fontSize:"19px", color: 'white' }} />
+                        <Typography variant="body2" sx={{fontSize:"13px", color: 'white' }}>
                             4 Pending Requests.
                         </Typography>
                     </Stack>

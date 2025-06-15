@@ -118,8 +118,8 @@ export default function WorkerRequestConfirmed() {
                         spacing={1}
                         sx={{ mt: 4, mb: 1, color: 'white' }}
                     >
-                        <FactCheckIcon fontSize="small" sx={{ color: 'white' }} />
-                        <Typography variant="body2" sx={{ color: 'white' }}>
+                        <FactCheckIcon  sx={{fontSize:"13px", color: 'white' }} />
+                        <Typography variant="body2" sx={{fontSize:"13px", color: 'white' }}>
                             5 works scheduled for this week.
                         </Typography>
                     </Stack>
