@@ -111,7 +111,7 @@ export default function WorkerRequestConfirmation() {
                 {/* Content */}
                 <Box sx={{ position: 'relative', zIndex: 1000 }}>
                     <Box>
-                        <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white', pr: 11 }}>
+                        <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white', pr: 14 }}>
                             You have a pretty busy week
                         </Typography>
                     </Box>
