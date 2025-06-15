@@ -104,7 +104,7 @@ const WorkerRequestConfirmationCard = ({ title, location, time, client, avatar }
               height: '30px',
               border: '1px solid black',
               borderRadius: 2,
-              mt: 2,
+              mt: 3,
               px: 4,
               mr: '4rem',
             }}
