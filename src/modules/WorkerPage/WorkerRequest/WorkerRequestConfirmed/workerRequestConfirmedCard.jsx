@@ -52,7 +52,7 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
             open={open}
             onClose={handleMenuClose}
             anchorOrigin={{
-              vertical: 'bottom',
+              vertical: 'top',
               horizontal: 'right',
             }}
             transformOrigin={{
