@@ -131,12 +131,8 @@ const relatedSearches = ["Architects", "Steel Fabricators", "Civil Engineers"];
 
 const MobSearchWorker = () => {
   const navigate = useNavigate();
-  const inputRef = useRef(null);
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
 
   const filteredWorkers = workers.filter((worker) =>
     worker.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -240,7 +236,6 @@ const MobSearchWorker = () => {
         >
           <Search sx={{ color: "gray", mr: 1 }} />
           <Input
-            inputRef={inputRef}
             fullWidth
             disableUnderline
             placeholder="Search Services & Workers"
