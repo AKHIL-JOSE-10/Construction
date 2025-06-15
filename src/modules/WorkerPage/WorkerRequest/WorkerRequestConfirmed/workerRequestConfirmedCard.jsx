@@ -43,7 +43,7 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
         }}
       >
         <Box sx={{ alignSelf: 'center',mr:'3rem' }}>
-          <Stack direction="row" spacing={1} alignItems="center" my={1.5}>
+          <Stack direction="row" spacing={1} alignItems="center" my={1.5} ml={-0.4}>
             <LocationOn fontSize="small" color="disabled" />
             <Typography sx={{fontSize:'0.7rem'}} color="#b87d51">{location}</Typography>
           </Stack>
