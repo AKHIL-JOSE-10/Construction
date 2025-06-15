@@ -39,11 +39,10 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
         sx={{
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'space-between',
           alignItems: 'center',
         }}
       >
-        <Box sx={{ alignSelf: 'center' }}>
+        <Box sx={{ alignSelf: 'center',mr:6 }}>
           <Stack direction="row" spacing={1} alignItems="center" my={1.5}>
             <LocationOn fontSize="small" color="disabled" />
             <Typography variant="body2" color="#b87d51">{location}</Typography>
