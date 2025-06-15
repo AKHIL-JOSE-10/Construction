@@ -42,7 +42,7 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
           alignItems: 'center',
         }}
       >
-        <Box sx={{ alignSelf: 'center',mr:3 }}>
+        <Box sx={{ alignSelf: 'center',mr:'2rem' }}>
           <Stack direction="row" spacing={1} alignItems="center" my={1.5}>
             <LocationOn fontSize="small" color="disabled" />
             <Typography variant="body2" color="#b87d51">{location}</Typography>
@@ -58,7 +58,7 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
           <Typography variant="caption" color="#b87d51" ml={0.5}>Client</Typography>
           <Stack direction="row" alignItems="center" spacing={1} mt={0.5}>
             <Avatar src={avatar} sx={{ width: 24, height: 24 }} />
-            <Typography variant="body2" fontWeight={550}>{client}</Typography>
+            <Typography sx={{fontWeight:'550', fontSize:'1rem'}}>{client}</Typography>
           </Stack>
         </Box>
       </Box>
