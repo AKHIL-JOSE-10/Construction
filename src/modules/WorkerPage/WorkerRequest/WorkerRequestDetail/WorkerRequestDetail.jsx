@@ -131,15 +131,24 @@ const WorkerRequestDetail = () => {
                     }}
                 />
                 <Stack direction="column" spacing={1} mb={2} sx={{ position: 'relative', zIndex: 1 }}>
-                    <Work sx={{ fontSize: '3rem', color: '#321414' }} />
-                    <Typography sx={{ fontSize: '2rem', color: '#321414' }} fontWeight="bold">
+                    <Work sx={{ fontSize: '3rem', color: '#321430' }} />
+                    <Typography sx={{ fontSize: '2rem', color: '#321430' }} fontWeight="bold">
                         Plumbing
                     </Typography>
                 </Stack>
             </Box>
 
             {/* Details */}
-            <Box sx={{px:0.5}}>
+            <Box
+  sx={{
+    px: 1,
+    py: 2,
+    border: '1px solid #e0e0e0', // light grey border
+    borderRadius: 1,
+    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)', // subtle shadow
+    backgroundColor: 'white', // optional for better contrast
+  }}
+>
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
                     <CalendarToday fontSize="small" />
                     <Typography>Sunday, 21 Jan</Typography>
@@ -161,7 +170,7 @@ const WorkerRequestDetail = () => {
                     <Typography>+91 8828743213</Typography>
                 </Stack>
 
-                <Stack direction="row" alignItems="center" spacing={1} mb={3}>
+                <Stack direction="row" alignItems="center" spacing={1}>
                     <LocationOn fontSize="small" />
                     <Typography>Hyundai Ofc, Boston</Typography>
                 </Stack>
