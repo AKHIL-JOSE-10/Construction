@@ -131,8 +131,8 @@ const WorkerRequestDetail = () => {
                     }}
                 />
                 <Stack direction="column" spacing={1} mb={2} sx={{ position: 'relative', zIndex: 1 }}>
-                    <Work sx={{ fontSize: '3rem', color: '#002366' }} />
-                    <Typography sx={{ fontSize: '2rem', color: '#002366' }} fontWeight="bold">
+                    <Work sx={{ fontSize: '3rem', color: '#000036 ' }} />
+                    <Typography sx={{ fontSize: '2rem', color: '#000036 ' }} fontWeight="bold">
                         Plumbing
                     </Typography>
                 </Stack>
