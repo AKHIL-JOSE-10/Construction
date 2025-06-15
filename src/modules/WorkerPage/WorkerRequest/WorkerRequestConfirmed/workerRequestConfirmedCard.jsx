@@ -42,7 +42,7 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
           alignItems: 'center',
         }}
       >
-        <Box sx={{ alignSelf: 'center',mr:6 }}>
+        <Box sx={{ alignSelf: 'center',mr:4 }}>
           <Stack direction="row" spacing={1} alignItems="center" my={1.5}>
             <LocationOn fontSize="small" color="disabled" />
             <Typography variant="body2" color="#b87d51">{location}</Typography>
