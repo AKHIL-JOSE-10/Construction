@@ -9,7 +9,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useState } from 'react';
 import dayjs from 'dayjs';
-import UserSpecificBooking from '../../../pages/Bookings/UserSpecificBooking';
+import UserSpecificBooking from '../../../ClientPages/Bookings/UserSpecificBooking';
 
 
 const MobWorkerservice = () => {
