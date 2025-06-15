@@ -54,6 +54,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          userSelect: 'none',
+        },
+      },
+    },
   },
 });
 
