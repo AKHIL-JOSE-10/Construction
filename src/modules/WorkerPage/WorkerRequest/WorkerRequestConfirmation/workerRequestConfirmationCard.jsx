@@ -58,7 +58,7 @@ const WorkerRequestConfirmationCard = ({ title, location, time, client, avatar }
             </Box>
 
             <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}} >
-                <Button variant='outlined' sx={{height:"30px" ,border:'1px solid black' , borderRadius:2, mt:2, px:4, mr:9}}> Confirm</Button>
+                <Button variant='outlined' sx={{height:"30px" ,border:'1px solid black' , borderRadius:2, mt:2, px:4, mr:7}}> Confirm</Button>
                 <Box sx={{ alignSelf: 'center', }}>
                     <Typography variant="caption" color="#b87d51" ml={0.5}>Client</Typography>
                     <Stack direction="row" alignItems="center" spacing={1} mt={0.5}>
