@@ -19,7 +19,7 @@ const requests = [
         title: 'Steel Fabrication',
         location: 'Hyundai Ofc, Boston',
         time: '09:00am, Jan 21',
-        client: 'Athul Murali',
+        client: 'Athul',
         avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
         week: 'this',
     },
@@ -28,7 +28,7 @@ const requests = [
         title: 'Steel Fabrication',
         location: 'Hyundai Ofc, Boston',
         time: '09:00am, Jan 21',
-        client: 'Alin Rose',
+        client: 'Alin',
         avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
         week: 'this',
     },
@@ -37,7 +37,7 @@ const requests = [
         title: 'Steel Fabrication',
         location: 'Hyundai Ofc, Boston',
         time: '09:00am, Jan 21',
-        client: 'Joshy John',
+        client: 'Joshy',
         avatar: 'https://randomuser.me/api/portraits/men/12.jpg',
         week: 'next',
     },
@@ -69,12 +69,13 @@ export default function WorkerRequestConfirmation() {
             {/* Highlight Card */}
             <Box
                 sx={{
+                    width: '96%',
+                    height: '120px',
                     bgcolor: 'rgba(171, 124, 43, 0.73)',
                     color: 'white',
                     borderRadius: 1,
                     py: 2,
                     pl: 2,
-                    pr: 13,
                     my: 3,
                     position: 'relative',
                     overflow: 'hidden',
@@ -109,18 +110,21 @@ export default function WorkerRequestConfirmation() {
 
                 {/* Content */}
                 <Box sx={{ position: 'relative', zIndex: 1000 }}>
-                    <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white' }}>
-                        You have a pretty busy week
-                    </Typography>
+                    <Box>
+                        <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white', pr: 11 }}>
+                            You have a pretty busy week
+                        </Typography>
+                    </Box>
+
                     <Stack
                         direction="row"
                         alignItems="center"
                         spacing={1}
                         sx={{ mt: 4, mb: 1, color: 'white' }}
                     >
-                        <FactCheckIcon  sx={{ fontSize:"19px", color: 'white' }} />
-                        <Typography variant="body2" sx={{fontSize:"13px", color: 'white' }}>
-                            4 Pending Requests.
+                        <FactCheckIcon sx={{ fontSize: "15px", color: 'white' }} />
+                        <Typography variant="body2" sx={{ fontSize: "14px", color: 'white' }}>
+                            4  Pending requests.
                         </Typography>
                     </Stack>
                 </Box>
