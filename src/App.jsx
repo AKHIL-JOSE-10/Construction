@@ -29,8 +29,15 @@ import MobMessageChat from "./modules/ClientPages/Message/mobMessage/mobMessageC
 import MobSearchWorker from "./modules/ClientPages/WorkerPage/SearchWorker/mobSearchWorker";
 import MobSavedWorkers from "./modules/ClientPages/Profile/Mobile/mobSavedWorkers";
 import MobRecentSearch from "./modules/ClientPages/WorkerPage/SearchWorker/mobRecentSearch";
-// import Test from "./test";
 import AddressDetails from "./modules/ClientPages/Home/Address/AdressDetails/AddressDetails";
+
+//worker pages
+
+import WorkerRequestConfirmed from "./modules/WorkerPage/WorkerRequest/WorkerRequestConfirmed/workerRequestConfirmed";
+import WorkerRequestConfirmation from "./modules/WorkerPage/WorkerRequest/WorkerRequestConfirmation/workerRequestConfirmation";
+
+
+
 function App() {
   return (
     <Router>
@@ -84,7 +91,14 @@ function App() {
         <Route path="/address" element={<AddressDetails />} />
         <Route path="/mobile-saved-workers" element={<MobSavedWorkers />} />
         <Route path="/mobile-Recent-Search" element={<MobRecentSearch />} />
-        {/* <Route path="/test" element={<Test />} /> */}
+
+
+        {/* worker page routes */}
+        <Route path="/mobile-worker-request-confirmed" element={<WorkerRequestConfirmed />} />
+        <Route path="/mobile-worker-request-confirmation" element={<WorkerRequestConfirmation />} />
+
+
+
       </Routes>
     </Router>
   );
