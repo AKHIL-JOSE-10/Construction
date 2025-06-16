@@ -29,19 +29,16 @@ const MobMyBookingsTopTab = () => {
 
   return (
     <TabContext value={value.toString()}>
-      <Box sx={{ width: "100%" }}>
+      <Box mb={1} sx={{ width: "100%" }}>
         {/* Tabs */}
         <Box
           sx={{
             width: "100%",
-            position: "fixed",
-            top: "60px",
+            marginTop: "15px",
             borderBottom: 1,
             borderColor: "divider",
             display: "flex",
             justifyContent: "center",
-            bgcolor: "white",
-            zIndex: 1000
           }}
         >
           <Tabs
@@ -56,14 +53,14 @@ const MobMyBookingsTopTab = () => {
               }
             }}
           >
-            <Tab label="In progress" sx={{fontSize:'17px'}}/>
-            <Tab label="Completed" sx={{fontSize:'17px'}}/>
-            <Tab label="Cancelled" sx={{fontSize:'17px'}}/>
+            <Tab label="In progress" sx={{fontSize:'15px'}}/>
+            <Tab label="Completed" sx={{fontSize:'15px'}}/>
+            <Tab label="Cancelled" sx={{fontSize:'15px'}}/>
           </Tabs>
         </Box>
 
         {/* Filter */}
-        <Grid
+        {/*<Grid
           container
           sx={{
             width: "100%",
@@ -89,7 +86,7 @@ const MobMyBookingsTopTab = () => {
               </Select>
             </FormControl>
           </Box>
-        </Grid>
+        </Grid>*/}
 
         {/* Swipeable Views */}
         <SwipeableViews index={value} onChangeIndex={handleSwipeChangeIndex}>
