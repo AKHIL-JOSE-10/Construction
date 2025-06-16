@@ -64,8 +64,8 @@ const WorkerForm3 = () => {
                 <Typography variant="body2" fontWeight="bold" mb={1}>
                     Let Archisans choose a bio for you
                 </Typography>
-                <Paper elevation={1} sx={{ p: 2, mb: 3, fontSize: '0.9rem' }}>
-                    {defaultBio}
+                <Paper elevation={2} sx={{ p: 2, mb: 3, }}>
+                    <Typography sx={{fontSize: '0.9rem'}}>{defaultBio}</Typography>
                 </Paper>
 
                 {/* Write your own bio */}
