@@ -9,7 +9,6 @@ import {
   styled,
 } from "@mui/material";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
-import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 
 // iOS-style Switch
 const IOSSwitch = styled((props) => (
@@ -65,9 +64,9 @@ const IOSSwitch = styled((props) => (
 
 const MobSettings = () => {
   return (
-    <Grid height={"100vh"} sx={{ overflow: "hidden" }}>
+    <Grid sx={{ overflow: "hidden" }}>
       <MobHeading Heading="Settings" />
-      <Box sx={{ ml: 0, width: "100%", mt: -1 }}>
+      <Box mt={-3}>
         <List>
           {[
             "Notifications",
@@ -90,8 +89,8 @@ const MobSettings = () => {
                   slotProps={{
                     primary: {
                       sx: {
-                        fontSize: "17px",
-                        fontWeight: 540,
+                        fontSize: "16px",
+                        fontWeight: 500,
                         color: "black", // Primary text color
                       },
                       variant: "body2",
