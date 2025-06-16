@@ -61,7 +61,7 @@ const WorkerForm1 = () => {
           ))}
         </Stepper>
 
-        <Box sx={{ px: 2 }}>
+        <Box sx={{ px: 2, mb:8 }}>
           {/* Title */}
           <Typography sx={{ fontSize: '1.4rem', fontWeight: "bold", mb: 3, mt: 4 }}>
             Tell us more about yourself
