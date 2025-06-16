@@ -21,12 +21,13 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 const WorkerForm1 = () => {
 
   const [gender, setGender] = React.useState('');
-  const steps = ['', '', '', '', '']; // Stepper placeholder
+  const steps = [ '', '', '', '']; // Stepper placeholder
 const navigate = useNavigate(); 
 
 const handleNext = () => {
     navigate('/mobile-worker-form2'); 
   };
+
   return (
     <Box>
   <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} p={2}>
@@ -34,7 +35,7 @@ const handleNext = () => {
     <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
   </IconButton>
   <Typography fontSize="0.95rem" fontWeight="bold">
-    <Typography> 2 / 5</Typography>
+    <Typography> 1 / 5</Typography>
   </Typography>
 </Box>
     <Box
@@ -51,7 +52,7 @@ const handleNext = () => {
 
 
       {/* Top Progress Bar */}
-      <Stepper activeStep={1} alternativeLabel >
+      <Stepper activeStep={0} alternativeLabel >
         {steps.map((_, index) => (
           <Step key={index}>
             <StepLabel></StepLabel>

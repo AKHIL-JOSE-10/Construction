@@ -38,6 +38,9 @@ import WorkerRequestConfirmation from "./modules/WorkerPage/WorkerRequest/Worker
 import WorkerRequestDetail from "./modules/WorkerPage/WorkerRequest/WorkerRequestDetail/WorkerRequestDetail";
 import WorkerForm1 from "./modules/WorkerPage/WorkerForm/workerForm1";
 import WorkerForm2 from "./modules/WorkerPage/WorkerForm/workerForm2";
+import WorkerForm3 from "./modules/WorkerPage/WorkerForm/workerForm3";
+import WorkerForm4 from "./modules/WorkerPage/WorkerForm/workerForm4";
+
 
 function App() {
   return (
@@ -100,6 +103,8 @@ function App() {
         <Route path="/mobile-worker-request-detail" element={<WorkerRequestDetail />} />
         <Route path="/mobile-worker-form1" element={<WorkerForm1 />} />
         <Route path="/mobile-worker-form2" element={<WorkerForm2 />} />
+        <Route path="/mobile-worker-form3" element={<WorkerForm3 />} />
+        <Route path="/mobile-worker-form4" element={<WorkerForm4 />} />
 
 
       </Routes>
