@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Tabs, Tab } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -10,7 +10,19 @@ const MobileBottomTab = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [value, setValue] = useState(0);
-  const disabledPaths = ["/mobile-message-chat"];
+  const allowedPaths = [
+    "/home",
+    "/mobile-messages",
+    "/mobile-bookings",
+    "/mobile-profile",
+  ];
+
+  useEffect(() => {
+    const tabValue = allowedPaths.indexOf(location.pathname);
+    if (tabValue != -1) {
+      setValue(tabValue);
+    }
+  }, [location.pathname])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -20,7 +32,7 @@ const MobileBottomTab = () => {
     else if (newValue === 3) navigate("/mobile-profile");
   };
 
-  if (disabledPaths.includes(location.pathname)) {
+  if (!allowedPaths.includes(location.pathname)) {
     return null;
   }
 
