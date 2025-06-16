@@ -25,7 +25,7 @@ const MobWorkerReviewCard = ({name,rate,date}) => {
             </Box>
 
             <Box sx={{ maxWidth: 600, mx: 'auto' }}>
-                <Typography sx={{ mt: 3, fontSize: 15, lineHeight: 1.4, textAlign: 'justify' }}>
+                <Typography sx={{ mt: 3, fontSize: 14, lineHeight: 1.4, textAlign: 'justify' }}>
                     The service was quick and efficient. The electrician arrived on time, diagnosed the issue in minutes,
                     and completed the repair professionally. I really appreciate the clear communication and fair pricing.
                     Would definitely recommend !

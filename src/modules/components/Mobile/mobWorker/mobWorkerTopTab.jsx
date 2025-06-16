@@ -20,7 +20,7 @@ const MobWorkerTopTab = () => {
   return (
     <Box>
       {/* Tabs Header */}
-      <Box sx={{ borderBottom: 1, borderColor: 'divider', p: 2 }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider', p: 0 }}>
         <Tabs value={value} onChange={handleTabChange} centered>
           <Tab label="Services" />
           <Tab label="About" sx={{ mx: 3 }} />

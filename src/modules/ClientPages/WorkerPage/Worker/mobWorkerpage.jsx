@@ -106,7 +106,7 @@ const MobWorkerpage = () => {
             }
             sx={{ borderRadius: 4, textTransform: "none", bgcolor: "#CCB09B" }}
           >
-            <Typography sx={{ fontSize: "15px", fontWeight: "500" }}>
+            <Typography sx={{ fontSize: "15px", color: "#FFF" }}>
               Message
             </Typography>
           </Button>
