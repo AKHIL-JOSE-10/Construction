@@ -11,7 +11,6 @@ import {
   Input,
   Typography,
 } from "@mui/material";
-import MobileBottomTab from "../../components/Mobile/mobileBottomTab";
 import MobHeading from "../../components/Mobile/mobileHeading";
 import { useState } from "react";
 export default function EditInfo() {
@@ -38,7 +37,6 @@ export default function EditInfo() {
       <Grid
         container
         size={12}
-        height={"14vh"}
         alignItems={"center"}
         sx={{ position: "relative" }}
       >
@@ -106,7 +104,6 @@ export default function EditInfo() {
           <Typography sx={{ fontSize: "16px", mr: 1 }}>
             Date of Birth
           </Typography>
-          <Typography variant="body2">(optional)</Typography>
         </Box>
 
         <Input
