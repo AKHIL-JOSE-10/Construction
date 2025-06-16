@@ -3,7 +3,6 @@ import {
   Box,
   Typography,
   TextField,
-  Button,
   Avatar,
   IconButton,
   FormControl,
@@ -17,6 +16,7 @@ import {
 import { PhotoCamera } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import BottomButton from './bottomButton';
 
 const WorkerForm1 = () => {
 
@@ -29,9 +29,9 @@ const WorkerForm1 = () => {
   };
 
   return (
-    <Box sx={{ px: 2 }}>
+    <Box >
 
-      <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5}>
+      <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
         <IconButton onClick={() => navigate(-1)}>
           <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
         </IconButton>
@@ -53,7 +53,7 @@ const WorkerForm1 = () => {
 
 
         {/* Top Progress Bar */}
-        <Stepper activeStep={0} alternativeLabel >
+        <Stepper activeStep={0} alternativeLabel sx={{ px: -1 }}>
           {steps.map((_, index) => (
             <Step key={index}>
               <StepLabel></StepLabel>
@@ -61,7 +61,7 @@ const WorkerForm1 = () => {
           ))}
         </Stepper>
 
-        <Box>
+        <Box sx={{ px: 2 }}>
           {/* Title */}
           <Typography sx={{ fontSize: '1.7rem', fontWeight: "bold", mb: 3, mt: 4 }}>
             Tell us more about yourself
@@ -179,26 +179,7 @@ const WorkerForm1 = () => {
             }}
           />
         </Box>
-
-        {/* Bottom Next Button */}
-        <Box display="flex" justifyContent="center">
-          <Button
-            variant="contained"
-            onClick={handleNext}
-            sx={{
-              bgcolor: '#a47763',
-              borderRadius: 5,
-              width: '100%',
-              py: 1.2,
-              textTransform: 'none',
-              fontWeight: 'bold',
-              mt: 3,
-              mb: 1
-            }}
-          >
-            Next
-          </Button>
-        </Box>
+        <BottomButton handleNext={handleNext} />
       </Box>
     </Box>
 

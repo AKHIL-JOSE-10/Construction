@@ -3,31 +3,65 @@ import {
     Box,
     Typography,
     TextField,
-    Button,
     IconButton,
     Stepper,
     Step,
     StepLabel,
     Chip,
-    Stack
+    Stack,
+    Select,
+    MenuItem,
+    FormControl,
+    InputLabel,
+    Button
 } from '@mui/material';
-import { ArrowForward } from '@mui/icons-material';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from 'react-router-dom';
+import BottomButton from './bottomButton';
 
 const WorkerForm2 = () => {
     const navigate = useNavigate();
 
     const [experience, setExperience] = useState('');
-    const [customService, setCustomService] = useState('');
+    const [selectedService, setSelectedService] = useState('');
     const [addedServices, setAddedServices] = useState([]);
-    const steps = ['', '', '', '']; // Total 5 steps
+
+    const steps = ['', '', '', ''];
+
+    const availableServices = [
+        "Architectural Design",
+        "Civil Engineering",
+        "Interior Design",
+        "Landscaping",
+        "Structural Engineering",
+        "MEP Services",
+        "Pool Design",
+        "Steel Fabrication",
+        "Construction Contracting",
+        "Masonry Work",
+        "Carpentry Services",
+        "Metal Fabrication",
+        "Electrical Services",
+        "Plumbing Services",
+        "Painting Services",
+        "Waterproofing Solutions",
+        "Flooring Installation",
+        "Security & Surveillance",
+        "Smart Home Automation",
+        "Audio & Video Systems",
+        "Automated Smart Locks",
+        "Aluminium Fabrication",
+        "Stainless Steel Fabrication",
+        "Roofing Solutions",
+        "Mild Steel Fabrication",
+        "Glass Fabrication",
+    ];
+
 
     const handleAddService = () => {
-        const trimmed = customService.trim();
-        if (trimmed && !addedServices.includes(trimmed)) {
-            setAddedServices((prev) => [...prev, trimmed]);
-            setCustomService('');
+        if (selectedService && !addedServices.includes(selectedService)) {
+            setAddedServices((prev) => [...prev, selectedService]);
+            setSelectedService('');
         }
     };
 
@@ -40,75 +74,37 @@ const WorkerForm2 = () => {
     };
 
     return (
-
-        <Box sx={{ px: 2 }}>
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5}>
+        <Box>
+            {/* Top Header */}
+            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
                 <IconButton onClick={() => navigate(-1)}>
                     <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
                 </IconButton>
-                <Typography fontSize="0.95rem" fontWeight="bold">
-                    <Typography> 2 / 4</Typography>
-                </Typography>
+                <Typography fontSize="0.95rem" fontWeight="bold">2 / 4</Typography>
             </Box>
-            <Box
-                sx={{
-                    bgcolor: 'white',
-                    pb: 3.5,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                }}
-            >
-                {/* Stepper showing progress */}
+
+            <Box sx={{ bgcolor: 'white', pb: 7, display: 'flex', flexDirection: 'column' }}>
+                {/* Stepper */}
                 <Stepper activeStep={1} alternativeLabel sx={{ mb: 3 }}>
                     {steps.map((_, index) => (
-                        <Step key={index}>
-                            <StepLabel></StepLabel>
-                        </Step>
+                        <Step key={index}><StepLabel /></Step>
                     ))}
                 </Stepper>
 
-                <Typography sx={{ fontSize: '1.7rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
-                    Your Services & Experience
-                </Typography>
+                <Box px={2}>
+                    <Typography sx={{ fontSize: '1.7rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
+                        Your Services & Experience
+                    </Typography>
 
-                {/* Experience Field */}
-                <Typography variant="body2" mb={0.5}>Years of Experience</Typography>
-                <TextField
-                    type="number"
-                    placeholder="Enter your experience in years"
-                    variant="outlined"
-                    fullWidth
-                    value={experience}
-                    onChange={(e) => setExperience(e.target.value)}
-                    slotProps={{
-                        input: {
-                            sx: {
-                                bgcolor: 'white',
-                                height: 40,
-                                px: 1.2,
-                                fontSize: '0.9rem',
-                            }
-                        }
-                    }}
-                    sx={{ mb: 3 }}
-                />
-
-                {/* Custom Service Input */}
-                <Typography variant="body2" mb={0.5}>Add Your Own Services</Typography>
-                <Box display="flex" alignItems="center" gap={1} sx={{ mb: 2 }}>
+                    {/* Experience */}
+                    <Typography variant="body2" mb={0.5}>Years of Experience</Typography>
                     <TextField
-                        placeholder="Enter service name (e.g., Painting)"
+                        type="number"
+                        placeholder="Enter your experience in years"
                         variant="outlined"
                         fullWidth
-                        value={customService}
-                        onChange={(e) => setCustomService(e.target.value)}
-                        onKeyDown={(e) => {
-                            if (e.key === 'Enter') {
-                                e.preventDefault();
-                                handleAddService();
-                            }
-                        }}
+                        value={experience}
+                        onChange={(e) => setExperience(e.target.value)}
                         slotProps={{
                             input: {
                                 sx: {
@@ -119,55 +115,69 @@ const WorkerForm2 = () => {
                                 }
                             }
                         }}
+                        sx={{ mb: 3 }}
                     />
-                    <IconButton
-                        color="primary"
-                        onClick={handleAddService}
-                        sx={{ bgcolor: '#eee', height: 40, width: 40 }}
-                    >
-                        <ArrowForward />
-                    </IconButton>
-                </Box>
 
-                {/* Display Added Services */}
-                {addedServices.length > 0 && (
-                    <Box mb={3}>
-                        <Typography variant="body2" mb={1}>Added Services</Typography>
-                        <Stack direction="row" gap={1.5} pb={2} flexWrap="wrap">
-                            {addedServices.map((srv, idx) => (
-                                <Chip
-                                    key={idx}
-                                    label={srv}
-                                    color="primary"
-                                    variant="outlined"
-                                    onDelete={() => handleDeleteService(idx)}
-                                />
-                            ))}
-                        </Stack>
+                    {/* Select Service */}
+                    <Typography variant="body2" mb={0.5}>Select Your Services</Typography>
+                    <Box display="flex" gap={1} alignItems="center" sx={{ mb: 3 }}>
+                        <FormControl fullWidth>
+                            <InputLabel>Select a service</InputLabel>
+                            <Select
+                                value={selectedService}
+                                onChange={(e) => setSelectedService(e.target.value)}
+                                label="Select a service"
+                            >
+                                {availableServices.filter(s => !addedServices.includes(s)).map((service, idx) => (
+                                    <MenuItem key={idx} value={service}>
+                                        {service}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                        <Button
+                            variant="contained"
+                            onClick={handleAddService}
+                            disabled={!selectedService}
+                            sx={{
+                                bgcolor: '#d7b49e',
+                                color: '#4b2e2e',
+                                textTransform: 'none',
+                                fontWeight: 'bold',
+                                height: 40,
+                                px: 3,
+                                '&:hover': {
+                                    bgcolor: '#c19a84'
+                                }
+                            }}
+                        >
+                            Add
+                        </Button>
                     </Box>
-                )}
 
-                {/* Submit Button */}
-                <Box display="flex" justifyContent="center">
-                    <Button
-                        variant="contained"
-                        onClick={handleNext}
-                        sx={{
-                            bgcolor: '#a47763',
-                            borderRadius: 5,
-                            width: '100%',
-                            py: 1.2,
-                            textTransform: 'none',
-                            fontWeight: 'bold',
-                            mt: 4
-                        }}
-                    >
-                        Next
-                    </Button>
+                    {/* Added Services */}
+                    {addedServices.length > 0 && (
+                        <Box mb={3}>
+                            <Typography variant="body2" mb={1}>Added Services</Typography>
+                            <Stack direction="row" gap={1.5} flexWrap="wrap">
+                                {addedServices.map((srv, idx) => (
+                                    <Chip
+                                        key={idx}
+                                        label={srv}
+                                        color="primary"
+                                        variant="outlined"
+                                        onDelete={() => handleDeleteService(idx)}
+                                    />
+                                ))}
+                            </Stack>
+                        </Box>
+                    )}
                 </Box>
+
+                {/* Bottom Button */}
+                <BottomButton handleNext={handleNext} />
             </Box>
         </Box>
-
     );
 };
 
