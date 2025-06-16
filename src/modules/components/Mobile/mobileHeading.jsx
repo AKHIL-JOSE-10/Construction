@@ -6,7 +6,7 @@ const MobHeading = ({ Heading, backArrow = true }) => {
   const navigate = useNavigate(); // Initialize navigate
 
   return (
-    <Grid sx={{ mb: 8 }}>
+    <Box sx={{ paddingBottom: "60px" }}>
       <Box
         sx={{
           display: "flex",
@@ -14,8 +14,12 @@ const MobHeading = ({ Heading, backArrow = true }) => {
           width: "100%",
           position: "fixed",
           top: 0,
+          left: 0,
+          right: 0,
           zIndex: 1000,
           height: "60px",
+          bgcolor: "#FFF",
+          paddingTop: "env(safe-area-inset-top)",
         }}
       >
         {/* Back Arrow */}
@@ -35,13 +39,13 @@ const MobHeading = ({ Heading, backArrow = true }) => {
             overflow: "hidden",
             textOverflow: "ellipsis",
             whiteSpace: "nowrap",
-            marginLeft: "15px"
+            marginLeft: "15px",
           }}
         >
           {Heading}
         </Typography>
       </Box>
-    </Grid>
+    </Box>
   );
 };
 
