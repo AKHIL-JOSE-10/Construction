@@ -52,14 +52,14 @@ export default function AddressDrawer({ open, setOpen }) {
           borderRadius: "8px",
           bgcolor: "white",
         }}
-        text={"Searh for area,street name..."}
+        text={"Searh for area, street name..."}
       />
       <Grid mt={2}>
         <Paper
-          elevation={2}
+          elevation={0}
           sx={{
             borderRadius: "6px",
-            border: "0.5px solid lightgrey",
+            border: "1px solid lightgrey",
             p: 1,
             py: 0,
             bgcolor: "#fff",
@@ -84,8 +84,7 @@ export default function AddressDrawer({ open, setOpen }) {
                     color: "#B49176",
                   },
                   secondary:{
-                    marginLeft:"8px",
-                    fontSize:"10px"
+                    fontSize:"12px"
                   }
                 }}
               />
@@ -133,8 +132,9 @@ export default function AddressDrawer({ open, setOpen }) {
               <List disablePadding>
                 <ListItem disableGutters>
                   {/* Title and Details */}
-                  <Box>
+                  <Box px={1}>
                     <Box
+                      py={0.5}
                       sx={{ display: "flex", flexDirection: "row", ml: -0.5 }}
                     >
                       <Box sx={{ display: "flex", alignItems: "center" }}>
