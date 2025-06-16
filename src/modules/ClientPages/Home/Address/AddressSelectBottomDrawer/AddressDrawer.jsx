@@ -51,6 +51,7 @@ export default function AddressDrawer({ open, setOpen }) {
           border: "1px solid lightgrey",
           borderRadius: "8px",
           bgcolor: "white",
+          maxWidth: "100%"
         }}
         text={"Searh for area, street name..."}
       />
