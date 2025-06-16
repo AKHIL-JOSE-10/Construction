@@ -41,33 +41,33 @@ const WorkerForm2 = () => {
 
     return (
 
-        <Box>
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} p={2}>
+        <Box sx={{ px: 2 }}>
+            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5}>
                 <IconButton onClick={() => navigate(-1)}>
                     <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
                 </IconButton>
-                <Typography fontSize="0.95rem" fontWeight="bold">
-                    <Typography> 2 / 5</Typography>
-                </Typography>
-            </Box>
-            <Box
-                sx={{
-                    bgcolor: 'white',
-                    px: 2,
-                    pb: 3.5,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                }}
-            >
                 {/* Stepper showing progress */}
-                <Stepper activeStep={1} alternativeLabel sx={{ mb: 3 }}>
+                <Stepper activeStep={1} alternativeLabel >
                     {steps.map((_, index) => (
                         <Step key={index}>
                             <StepLabel></StepLabel>
                         </Step>
                     ))}
                 </Stepper>
+                <Typography fontSize="0.95rem" fontWeight="bold">
+                    <Typography> 2 / 4</Typography>
+                </Typography>
+            </Box>
+            <Box
+                sx={{
+                    bgcolor: 'white',
+                    pb: 3.5,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                }}
+            >
+
 
                 <Typography sx={{ fontSize: '1.7rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
                     Your Services & Experience

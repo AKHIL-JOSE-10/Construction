@@ -20,26 +20,35 @@ const WorkerForm3 = () => {
     const steps = ['', '', '', '',];
     const defaultBio =
         " I’ve been working as a professional Carpenter/Handyman for over 5 years, handling both residential and commercial jobs with precision and dedication. I’m committed to delivering high-quality, dependable, and efficient workmanship on every project. Whether it’s a small repair or a complete renovation, I’m here to help. Don’t hesitate to reach out with any questions or service needs!"
-    
-    const handleNext = () => {
-    navigate('/mobile-worker-form4'); 
-  };
 
-    
-        return (
-        <Box>
-          <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} p={2}>
-          <IconButton onClick={() => navigate(-1)}>
-            <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
-          </IconButton>
-          <Typography fontSize="0.95rem" fontWeight="bold">
-            <Typography> 3 / 4</Typography>
-          </Typography>
-        </Box>            
+    const handleNext = () => {
+        navigate('/mobile-worker-form4');
+    };
+
+
+    return (
+        <Box sx={{ px: 2 }}>
+            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5}>
+                <IconButton onClick={() => navigate(-1)}>
+                    <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
+                </IconButton>
+
+                {/* Stepper */}
+                <Stepper activeStep={2} alternativeLabel >
+                    {steps.map((_, index) => (
+                        <Step key={index}>
+                            <StepLabel></StepLabel>
+                        </Step>
+                    ))}
+                </Stepper>
+
+                <Typography fontSize="0.95rem" fontWeight="bold">
+                    <Typography> 3 / 4</Typography>
+                </Typography>
+            </Box>
             <Box
                 sx={{
                     bgcolor: 'white',
-                    px: 2,
                     pb: 3.5,
                     display: 'flex',
                     flexDirection: 'column',
@@ -47,14 +56,7 @@ const WorkerForm3 = () => {
                 }}
             >
 
-                {/* Stepper */}
-                <Stepper activeStep={2} alternativeLabel sx={{ mb: 3 }}>
-                    {steps.map((_, index) => (
-                        <Step key={index}>
-                            <StepLabel></StepLabel>
-                        </Step>
-                    ))}
-                </Stepper>
+
 
                 {/* Heading */}
                 <Typography sx={{ fontSize: '1.7rem', fontWeight: 'bold', mb: 3 }}>
