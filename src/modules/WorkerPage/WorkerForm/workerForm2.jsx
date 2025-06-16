@@ -60,7 +60,7 @@ const WorkerForm2 = () => {
                 }}
             >
                 {/* Stepper showing progress */}
-                <Stepper activeStep={2} alternativeLabel sx={{ mb: 3 }}>
+                <Stepper activeStep={1} alternativeLabel sx={{ mb: 3 }}>
                     {steps.map((_, index) => (
                         <Step key={index}>
                             <StepLabel></StepLabel>

@@ -53,7 +53,7 @@ const WorkerForm1 = () => {
 
 
         {/* Top Progress Bar */}
-        <Stepper activeStep={1} alternativeLabel >
+        <Stepper activeStep={0} alternativeLabel >
           {steps.map((_, index) => (
             <Step key={index}>
               <StepLabel></StepLabel>
