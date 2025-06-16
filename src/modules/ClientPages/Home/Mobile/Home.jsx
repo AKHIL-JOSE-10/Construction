@@ -189,10 +189,10 @@ export default function Home() {
           </Grid>
           <Grid
             container
-            spacing={2}
+            columnSpacing={2}
             alignItems={"flex-start"}
             justifyContent={"center"}
-            sx={{ overflow: "hidden", height: "32vh" }}
+            sx={{ overflow: "hidden", height: "35vh" }}
           >
             {ServiceList.slice(0, 6).map((data) => (
               <ServiceLayer key={data.name} data={data} img />
