@@ -18,6 +18,7 @@ import {
   NotificationsNoneOutlined,
   KeyboardArrowDownOutlined,
   Bookmark,
+  ArrowBackIos,
 } from "@mui/icons-material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Link, useNavigate } from "react-router-dom";
@@ -159,68 +160,26 @@ const MobSearchWorker = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: "#fefaf7", minHeight: "100vh" }}>
+    <Box>
       <Grid sx={{ px: 1.5, pt: 1.5 }}>
-        <Grid
-          container
-          alignItems="center"
-          justifyContent="space-between"
-          mb={2}
-        >
-          <Grid item xs={9}>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Box
-                onClick={() => navigate(-1)}
-                sx={{
-                  left: 10,
-                  cursor: "pointer",
-                  WebkitTapHighlightColor: "transparent",
-                }}
-              >
-                <ArrowBackIosIcon sx={{ fontSize: "20px", color: "grey" }} />
-              </Box>
-              <LocationOnOutlined sx={{ mr: 1 }} />
-              <Box>
-                <Typography fontSize={13}>Current location</Typography>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography fontWeight="bold" fontSize={15}>
-                    Kuala Lumpur, Malaysia
-                  </Typography>
-                </Box>
-              </Box>
+      <Box px={0} display="flex" alignItems="center">
+        {/* Left Side: Back Arrow + Location Info */}
+          <ArrowBackIos
+            sx={{ fontSize: 23, cursor: "pointer", color: 'grey' }}
+            onClick={() => navigate(-1)}
+          />
+          <Box display="flex">
+            <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: 'black' }} />
+            <Box display="flex" flexDirection="column">
+              <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
+                Current Location
+              </Typography>
+              <Typography sx={{ fontWeight: 'Bold', fontSize: 15 }}>
+                Kuala Lumpur, Malaysia
+              </Typography>
             </Box>
-          </Grid>
-          <Grid>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              <Link to="/mobile-notifications" style={{ color: "inherit" }}>
-                <NotificationsNoneOutlined
-                  sx={{
-                    color: "black",
-                    fontSize: "28px",
-                    cursor: "pointer",
-                    mr: 1.5,
-                    mt: 0.6,
-                  }}
-                />
-              </Link>
-              <Link to="/editInfo" style={{ color: "inherit" }}>
-                <Avatar src="https://randomuser.me/api/portraits/women/79.jpg" />
-              </Link>
-            </Box>
-          </Grid>
-        </Grid>
+          </Box>
+      </Box>
 
         {/* Search Bar */}
         <Box
@@ -228,10 +187,11 @@ const MobSearchWorker = () => {
             bgcolor: "#fff",
             borderRadius: "12px",
             px: 1.1,
-            py: 0.5,
+            py: 0.3,
+            my: 1.5,
             display: "flex",
             alignItems: "center",
-            boxShadow: 1,
+            border: "0.5px solid grey"
           }}
         >
           <Search sx={{ color: "gray", mr: 1 }} />
@@ -241,14 +201,7 @@ const MobSearchWorker = () => {
             placeholder="Search Services & Workers"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            sx={{
-              fontSize: 13,
-              "&::placeholder": {
-                fontSize: 12,
-                color: "gray",
-                opacity: 1,
-              },
-            }}
+            sx={{ fontSize: 14 }}
           />
           <IconButton>
             <Tune />
@@ -261,7 +214,7 @@ const MobSearchWorker = () => {
         {filteredWorkers.map((worker, index) => {
           const unavailableDates = generateUnavailableDates();
           return (
-            <Grid key={index} sx={{ display: "flex", width: "48%" }}>
+            <Grid key={index} sx={{ display: "flex", width: "45%" }}>
               <Box
                 onClick={() => handleClick(worker)}
                 sx={{
@@ -269,7 +222,7 @@ const MobSearchWorker = () => {
                   borderRadius: 0.5,
                   width: "100%",
                   height: "fit-content",
-                  mb: 1,
+                  mb: 1.5,
                   border: "1px solid rgba(184, 147, 87, 0.3)",
                   boxShadow: "0px 2px 8px rgba(90, 69, 1, 0.1)",
                   overflow: "hidden",
@@ -334,12 +287,12 @@ const MobSearchWorker = () => {
                         >
                           <Typography
                             sx={{
-                              fontSize: "8px",
+                              fontSize: "9px",
                               fontWeight: 600,
                               color: "green",
                             }}
                           >
-                            Archisans Verified
+                            Archisans
                           </Typography>
                           <VerifiedIcon
                             sx={{ fontSize: 10, ml: 0.3, color: "green" }}
@@ -483,19 +436,19 @@ const MobSearchWorker = () => {
         })}
       </Grid>
 
-      <Box mt={2} textAlign="center">
         <Typography
+          my={1}
           sx={{
             color: "#888",
             fontWeight: 500,
             textDecoration: "underline",
             cursor: "pointer",
             fontSize: 14,
+            textAlign: "center",
           }}
         >
           View More
         </Typography>
-      </Box>
 
       {/* Related Searches */}
       <Box sx={{ mt: 3, px: 1.5 }}>
@@ -512,9 +465,9 @@ const MobSearchWorker = () => {
                 sx={{
                   bgcolor: "#fff",
                   width: 120,
-                  height: 80,
+                  height: 90,
                   borderRadius: 0.5,
-                  boxShadow: 0.5,
+                  border: "0.5px solid grey",
                   mb: 2,
                   pl: 2,
                   pt: 1,
