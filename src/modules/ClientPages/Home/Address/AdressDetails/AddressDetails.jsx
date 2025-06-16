@@ -112,15 +112,17 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
           label={"Floor (Optional)"}
           sx={{
             backgroundColor: "white",
+            fontSize: 13,
             "& .MuiInputLabel-root": {
               color: "grey", // Change label color
+              fontSize: 13,
             },
             "& .MuiInputLabel-root.Mui-focused": {
               color: "#B49176", // Change label color
             },
             "& .MuiOutlinedInput-root": {
               borderRadius: "6px",
-              height: "3em", // Ensure this is applied to the wrapper
+              fontSize: 13,
             },
           }}
           fullWidth
@@ -146,13 +148,14 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
             backgroundColor: "white",
             "& .MuiInputLabel-root": {
               color: "grey", // Change label color
+              fontSize: 13,
             },
             "& .MuiInputLabel-root.Mui-focused": {
               color: "#B49176", // Change label color
             },
             "& .MuiOutlinedInput-root": {
               borderRadius: "6px",
-              height: "3em", // Ensure this is applied to the wrapper
+              fontSize: 13,
             },
           }}
           fullWidth
@@ -165,13 +168,14 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
             backgroundColor: "white",
             "& .MuiInputLabel-root": {
               color: "grey", // Change label color
+              fontSize: 13,
             },
             "& .MuiInputLabel-root.Mui-focused": {
               color: "#B49176", // Change label color
             },
             "& .MuiOutlinedInput-root": {
               borderRadius: "6px",
-              height: "3em", // Ensure this is applied to the wrapper
+              fontSize: 13,
             },
           }}
           fullWidth
@@ -201,7 +205,12 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
         />
 
         <TextField
-          label={"Enter your phone number (Optional)"}
+          label={"Enter your phone number"}
+          slotProps={{
+            inputLabel: {
+              shrink: true,
+            },
+          }}
           sx={{
             backgroundColor: "white",
             "& .MuiInputLabel-root": {
@@ -212,10 +221,10 @@ const AddressDetailsDrawer = ({ open, setOpen }) => {
             },
             "& .MuiOutlinedInput-root": {
               borderRadius: "6px",
-              height: "3em", // Ensure this is applied to the wrapper
             },
           }}
           fullWidth
+          required
         />
         <Button variant="contained" fullWidth>
           Save Address
@@ -237,20 +246,12 @@ export default function AddressDetails() {
       direction={"column"}
       spacing={0}
       size={12}
-      sx={{ height: "100%"}}
     >
       <MobHeading Heading={"Add address"} />
       <Grid
         container
-        size={12}
-        background
-        sx={{ backgroundImage: `url(${googlemapImage})`, minHeight: "65%",minWidth:'100%' }}
-      />
-      <Grid
-        container
         justifyContent={"center"}
         pt={2}
-        sx={{ position: "fixed", top: 60, width: "100vw", zIndex: 1000 }}
       >
         <SearchBar
           sx={{ border: "1px solid grey", backgroundColor: "white" }}
@@ -258,7 +259,7 @@ export default function AddressDetails() {
         />
       </Grid>
 
-      <Grid container size={12} spacing={2} pt={2} justifyContent={"center"} sx={{height:"20%"}} pb={2} >
+      <Grid container size={12} spacing={2} mt={2} justifyContent={"center"}>
         <Grid
           container
           sx={{
@@ -266,6 +267,7 @@ export default function AddressDetails() {
             height: "12vh",
             width: "94vw",
             borderRadius: "10px",
+            border: "0.5px solid grey"
           }}
           alignItems={"center"}
           spacing={2}
