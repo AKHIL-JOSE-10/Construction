@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Tabs, Tab } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MessageIcon from "@mui/icons-material/Message";
@@ -8,7 +8,9 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const MobileBottomTab = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [value, setValue] = useState(0);
+  const disabledPaths = ["/mobile-message-chat"];
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -17,6 +19,10 @@ const MobileBottomTab = () => {
     else if (newValue === 2) navigate("/mobile-bookings");
     else if (newValue === 3) navigate("/mobile-profile");
   };
+
+  if (disabledPaths.includes(location.pathname)) {
+    return null;
+  }
 
   return (
     <Box
