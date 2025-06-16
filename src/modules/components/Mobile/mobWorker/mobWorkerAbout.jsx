@@ -41,7 +41,6 @@ const MobWorkerAbout = () => {
                     <Typography sx={{ fontSize: '13px', px: 1 }}>0.2 km away</Typography>
                 </Grid>
             </Grid>
-            <Box component="img" src={googlemap} alt="Main" sx={{ width: '100%', borderRadius: 2, display: 'block', }} />
         </Grid>
     )
 }
