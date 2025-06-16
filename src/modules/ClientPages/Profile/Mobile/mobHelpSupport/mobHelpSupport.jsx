@@ -30,15 +30,14 @@ const MobHelpSupport = () => {
                 fontWeight: 500,
                 textAlign: "center",
                 lineHeight: 1.3,
-                userSelect: "none",
               }}
             >
-              Need assistance ? Connect with us via chat, call, or raise a
-              support ticket : we're here to help.
+              Need assistance? Connect with us via chat, call, or raise a
+              support ticket.
             </Typography>
           </Grid>
 
-          <Grid container justifyContent="space-evenly" sx={{ mb: 5 }}>
+          <Grid container spacing={6} justifyContent="center" sx={{ mb: 5 }}>
             <Grid>
               <Link
                 to="/mobile-helpsupportchat"
@@ -48,7 +47,7 @@ const MobHelpSupport = () => {
                   WebkitTapHighlightColor: "transparent",
                 }}
               >
-                <MobHelpSupportCard title="Chat Support" icon={<ChatIcon />} />
+                <MobHelpSupportCard title="Chat Support" icon={<ChatIcon sx={{ fontSize: "35px" }} />} />
               </Link>
             </Grid>
             <Grid>
@@ -60,23 +59,23 @@ const MobHelpSupport = () => {
                   WebkitTapHighlightColor: "transparent",
                 }}
               >
-                <MobHelpSupportCard title="Call Us" icon={<PhoneIcon />} />
+                <MobHelpSupportCard title="Call Us" icon={<PhoneIcon sx={{ fontSize: "35px"}} />} />
               </a>
             </Grid>
           </Grid>
 
-          <Grid container spacing={8} justifyContent="center" sx={{ mb: 5 }}>
+          <Grid container spacing={6} justifyContent="center" sx={{ mb: 5 }}>
             <Grid>
               <MobHelpSupportCard
                 title="Raise a Ticket"
-                icon={<ReportProblemIcon />}
+                icon={<ReportProblemIcon sx={{ fontSize: "35px"}} />}
               />
             </Grid>
 
             <Grid>
               <MobHelpSupportCard
                 title="My Tickets"
-                icon={<AssignmentIcon />}
+                icon={<AssignmentIcon sx={{ fontSize: "35px"}} />}
               />
             </Grid>
           </Grid>
@@ -87,23 +86,6 @@ const MobHelpSupport = () => {
                         </Grid>
                     </Grid> */}
         </Box>
-
-        {/* Background image pinned to the bottom-right of the screen */}
-        <Box
-          component="img"
-          src={HelpSupport_img}
-          alt="Background Decorative"
-          sx={{
-            position: "absolute",
-            bottom: 0,
-            right: 0,
-            width: "95%",
-            opacity: 0.5,
-            pointerEvents: "none",
-            userSelect: "none",
-            zIndex: -1,
-          }}
-        />
       </Grid>
     </Grid>
   );
