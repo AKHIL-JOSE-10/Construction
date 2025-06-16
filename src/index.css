@@ -1,4 +1,5 @@
 body {
     background-color: "#FFFFFF";
     font-family: 'Poppins';
+    -webkit-tap-highlight-color: transparent;
 }
