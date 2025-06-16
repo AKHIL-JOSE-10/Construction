@@ -37,7 +37,7 @@ const WorkerForm4 = () => {
                 variant="contained"
                 sx={{
                     mt: 4,
-                    bgcolor: 'rgba(142, 82, 8, 0.58)',
+                    bgcolor: '#a47763',
                     borderRadius: 50,
                     px: 5,
                     py: 1.5,
@@ -45,7 +45,7 @@ const WorkerForm4 = () => {
                     fontWeight: 'bold',
                     fontSize: '1rem',
                     '&:hover': {
-                        bgcolor: 'rgba(212, 142, 57, 0.58)',
+                        bgcolor: '#a47763',
                     },
                 }}
             >
