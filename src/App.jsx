@@ -37,6 +37,7 @@ import WorkerRequestConfirmed from "./modules/WorkerPage/WorkerRequest/WorkerReq
 import WorkerRequestConfirmation from "./modules/WorkerPage/WorkerRequest/WorkerRequestConfirmation/workerRequestConfirmation";
 import WorkerRequestDetail from "./modules/WorkerPage/WorkerRequest/WorkerRequestDetail/WorkerRequestDetail";
 import WorkerForm1 from "./modules/WorkerPage/WorkerForm/workerForm1";
+import WorkerForm2 from "./modules/WorkerPage/WorkerForm/workerForm2";
 
 function App() {
   return (
@@ -97,7 +98,9 @@ function App() {
         <Route path="/mobile-worker-request-confirmed" element={<WorkerRequestConfirmed />} />
         <Route path="/mobile-worker-request-confirmation" element={<WorkerRequestConfirmation />} />
         <Route path="/mobile-worker-request-detail" element={<WorkerRequestDetail />} />
-        <Route path="/mobile-worker-profile" element={<WorkerForm1 />} />
+        <Route path="/mobile-worker-form1" element={<WorkerForm1 />} />
+        <Route path="/mobile-worker-form2" element={<WorkerForm2 />} />
+
 
       </Routes>
     </Router>

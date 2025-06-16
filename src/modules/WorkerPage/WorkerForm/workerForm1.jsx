@@ -14,24 +14,42 @@ import {
   Step,
   StepLabel
 } from '@mui/material';
-import { PhotoCamera, CalendarToday } from '@mui/icons-material';
+import { PhotoCamera } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 const WorkerForm1 = () => {
+
   const [gender, setGender] = React.useState('');
   const steps = ['', '', '', '', '']; // Stepper placeholder
+const navigate = useNavigate(); 
 
+const handleNext = () => {
+    navigate('/mobile-worker-form2'); 
+  };
   return (
+    <Box>
+  <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} p={2}>
+  <IconButton onClick={() => navigate(-1)}>
+    <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
+  </IconButton>
+  <Typography fontSize="0.95rem" fontWeight="bold">
+    <Typography> 2 / 5</Typography>
+  </Typography>
+</Box>
     <Box
       sx={{
-        
+
         bgcolor: 'white',
-        px: 3,
-        py: 2,
+        px: 2,
+        pb: 3.5,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
       }}
     >
+
+
       {/* Top Progress Bar */}
       <Stepper activeStep={1} alternativeLabel >
         {steps.map((_, index) => (
@@ -43,7 +61,7 @@ const WorkerForm1 = () => {
 
       <Box>
         {/* Title */}
-        <Typography sx={{ fontSize: '1.7rem', fontWeight: "bold", mb: 3, mt:4}}>
+        <Typography sx={{ fontSize: '1.7rem', fontWeight: "bold", mb: 3, mt: 4 }}>
           Tell us more about yourself
         </Typography>
 
@@ -79,7 +97,7 @@ const WorkerForm1 = () => {
                 bgcolor: 'white',
                 height: 40,
                 px: 1.2,
-                fontSize:'0.9rem'
+                fontSize: '0.9rem'
               }
             }
           }}
@@ -87,28 +105,27 @@ const WorkerForm1 = () => {
 
         {/* Date of Birth */}
         <Typography variant="body2" mb={0.5}>
-  Date of Birth
-</Typography>
-<TextField
-  type="date"
-  variant="outlined"
-  fullWidth
-  sx={{ mb: 2 }}
-  slotProps={{
-    input: {
-      sx: {
-        bgcolor: 'white',
-        height: 40,
-        px: 1.2,
-        fontSize: '0.9rem',
-        color: '#000',
-      }
-    },
-    textField: {
-      InputLabelProps: { shrink: true },
-    }
-  }}
-/>
+          Date of Birth
+        </Typography>
+        <TextField
+          type="date"
+          fullWidth
+          sx={{ mb: 2 }}
+          slotProps={{
+            input: {
+              sx: {
+                bgcolor: 'white',
+                height: 40,
+                px: 1.2,
+                fontSize: '0.9rem',
+                color: '#000',
+              }
+            },
+            textField: {
+              InputLabelProps: { shrink: true },
+            }
+          }}
+        />
 
         {/* Gender */}
         <Typography variant="body2" mb={0.5}>
@@ -154,7 +171,7 @@ const WorkerForm1 = () => {
                 bgcolor: 'white',
                 height: 40,
                 px: 1.2,
-                 fontSize:'0.9rem'
+                fontSize: '0.9rem'
               }
             }
           }}
@@ -162,9 +179,10 @@ const WorkerForm1 = () => {
       </Box>
 
       {/* Bottom Next Button */}
-      <Box  display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center">
         <Button
           variant="contained"
+          onClick={handleNext} 
           sx={{
             bgcolor: '#a47763',
             borderRadius: 5,
@@ -172,13 +190,16 @@ const WorkerForm1 = () => {
             py: 1.2,
             textTransform: 'none',
             fontWeight: 'bold',
-            mt:3
+            mt: 3,
+            mb: 1
           }}
         >
           Next
         </Button>
       </Box>
     </Box>
+    </Box>
+
   );
 };
 
