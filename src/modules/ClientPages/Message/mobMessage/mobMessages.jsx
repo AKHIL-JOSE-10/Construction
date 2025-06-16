@@ -12,9 +12,9 @@ import {
   InputAdornment,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import MobileBottomTab from '../../../components/Mobile/mobileBottomTab';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import MobHeading from '@/modules/components/Mobile/mobileHeading';
 
 const contacts = [
   {
@@ -68,7 +68,6 @@ const contacts = [
   },
 ];
 
-
 const MobMessages = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -79,16 +78,12 @@ const MobMessages = () => {
 
   return (
     <Grid>
-      <Box sx={{ bgcolor: 'white' }}>
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography variant="h6" sx={{ p: 2,pb:0, fontWeight: 600, fontSize: '20px' }}>
-            Chat
-          </Typography>
-        </Box>
+      <Box>
+        <MobHeading Heading={"Messages"} backArrow={false} />
 
         <Box sx={{ px: 2, py: 1 }}>
           <TextField
-            placeholder="Search chats"
+            placeholder="Search messages"
             variant="outlined"
             size="small"
             fullWidth
@@ -101,6 +96,7 @@ const MobMessages = () => {
                 </InputAdornment>
               ),
             }}
+            sx={{ bgcolor: "#f9f9f9" }}
           />
         </Box>
 
@@ -136,7 +132,6 @@ const MobMessages = () => {
           ))}
         </List>
       </Box>
-      <MobileBottomTab />
     </Grid>
   );
 };
