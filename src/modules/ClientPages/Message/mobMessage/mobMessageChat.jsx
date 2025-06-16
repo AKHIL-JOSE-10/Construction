@@ -3,6 +3,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import CallIcon from "@mui/icons-material/Call";
 import { useNavigate, useLocation } from "react-router-dom";
 import MobHelpSupportChatBottom from "../../../components/Mobile/mobHelpSupport/mobHelpSupportChatBottom";
+import theme from "@/config/Theme/customTheme";
 
 const MobMessageChat = () => {
   const navigate = useNavigate();
@@ -27,14 +28,7 @@ const MobMessageChat = () => {
   // }
 
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        bgcolor: "white",
-      }}
-    >
+    <Box>
       {/* Top Bar */}
       <Box
         sx={{
@@ -111,7 +105,7 @@ const MobMessageChat = () => {
           <Box
             sx={{
               maxWidth: "75%",
-              bgcolor: "#d1e7dd",
+              bgcolor: theme.palette.primary.light,
               p: 1.5,
               borderRadius: 2,
               fontSize: 14,
@@ -142,7 +136,7 @@ const MobMessageChat = () => {
           <Box
             sx={{
               maxWidth: "75%",
-              bgcolor: "#d1e7dd",
+              bgcolor: theme.palette.primary.light,
               p: 1.5,
               borderRadius: 2,
               fontSize: 14,
