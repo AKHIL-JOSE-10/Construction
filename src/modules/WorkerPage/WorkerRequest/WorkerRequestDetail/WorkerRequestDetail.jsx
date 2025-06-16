@@ -54,10 +54,11 @@ const WorkerRequestDetail = () => {
                 <IconButton onClick={() => navigate(-1)}>
                     <ArrowBackIosIcon />
                 </IconButton>
+                <Typography  sx={{fontSize:'1.3rem'}}>Work Detail</Typography>
                 <IconButton onClick={handleMenuClick}>
                     <MoreVert sx={{ fontSize: '2rem' }} />
                 </IconButton>
-
+                
                 {/* Dropdown Menu */}
                 <Menu
                     anchorEl={anchorEl}
