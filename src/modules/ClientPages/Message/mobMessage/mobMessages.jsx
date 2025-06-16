@@ -114,14 +114,14 @@ const MobMessages = () => {
                 <ListItemText
                   primary={
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <Typography fontWeight={600}>{contact.name}</Typography>
+                      <Typography fontWeight={600} sx={{ fontSize: "15px"}}>{contact.name}</Typography>
                       <Typography variant="caption" color="text.secondary">
                         {contact.time}
                       </Typography>
                     </Box>
                   }
                   secondary={
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="text.secondary" sx={{ fontSize: "13px"}}>
                       {contact.message}
                     </Typography>
                   }
