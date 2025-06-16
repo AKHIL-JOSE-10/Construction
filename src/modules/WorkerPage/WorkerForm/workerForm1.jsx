@@ -35,14 +35,6 @@ const WorkerForm1 = () => {
         <IconButton onClick={() => navigate(-1)}>
           <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
         </IconButton>
-        {/* Top Progress Bar */}
-        <Stepper activeStep={0} alternativeLabel >
-          {steps.map((_, index) => (
-            <Step key={index}>
-              <StepLabel></StepLabel>
-            </Step>
-          ))}
-        </Stepper>
         <Typography fontSize="0.95rem" fontWeight="bold">
           <Typography> 1 / 4</Typography>
         </Typography>
@@ -51,6 +43,7 @@ const WorkerForm1 = () => {
         sx={{
 
           bgcolor: 'white',
+          px: 0,
           pb: 3.5,
           display: 'flex',
           flexDirection: 'column',
@@ -59,7 +52,14 @@ const WorkerForm1 = () => {
       >
 
 
-
+        {/* Top Progress Bar */}
+        <Stepper activeStep={1} alternativeLabel >
+          {steps.map((_, index) => (
+            <Step key={index}>
+              <StepLabel></StepLabel>
+            </Step>
+          ))}
+        </Stepper>
 
         <Box>
           {/* Title */}

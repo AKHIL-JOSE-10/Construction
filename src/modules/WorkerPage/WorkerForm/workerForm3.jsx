@@ -32,16 +32,6 @@ const WorkerForm3 = () => {
                 <IconButton onClick={() => navigate(-1)}>
                     <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
                 </IconButton>
-
-                {/* Stepper */}
-                <Stepper activeStep={2} alternativeLabel >
-                    {steps.map((_, index) => (
-                        <Step key={index}>
-                            <StepLabel></StepLabel>
-                        </Step>
-                    ))}
-                </Stepper>
-
                 <Typography fontSize="0.95rem" fontWeight="bold">
                     <Typography> 3 / 4</Typography>
                 </Typography>
@@ -56,7 +46,14 @@ const WorkerForm3 = () => {
                 }}
             >
 
-
+                {/* Stepper */}
+                <Stepper activeStep={3} alternativeLabel sx={{ mb: 3 }}>
+                    {steps.map((_, index) => (
+                        <Step key={index}>
+                            <StepLabel></StepLabel>
+                        </Step>
+                    ))}
+                </Stepper>
 
                 {/* Heading */}
                 <Typography sx={{ fontSize: '1.7rem', fontWeight: 'bold', mb: 3 }}>

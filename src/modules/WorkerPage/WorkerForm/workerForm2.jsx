@@ -46,14 +46,6 @@ const WorkerForm2 = () => {
                 <IconButton onClick={() => navigate(-1)}>
                     <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
                 </IconButton>
-                {/* Stepper showing progress */}
-                <Stepper activeStep={1} alternativeLabel >
-                    {steps.map((_, index) => (
-                        <Step key={index}>
-                            <StepLabel></StepLabel>
-                        </Step>
-                    ))}
-                </Stepper>
                 <Typography fontSize="0.95rem" fontWeight="bold">
                     <Typography> 2 / 4</Typography>
                 </Typography>
@@ -67,7 +59,14 @@ const WorkerForm2 = () => {
                     justifyContent: 'space-between',
                 }}
             >
-
+                {/* Stepper showing progress */}
+                <Stepper activeStep={2} alternativeLabel sx={{ mb: 3 }}>
+                    {steps.map((_, index) => (
+                        <Step key={index}>
+                            <StepLabel></StepLabel>
+                        </Step>
+                    ))}
+                </Stepper>
 
                 <Typography sx={{ fontSize: '1.7rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
                     Your Services & Experience
