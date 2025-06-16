@@ -39,7 +39,7 @@ const WorkerForm3 = () => {
             <Box
                 sx={{
                     bgcolor: 'white',
-                    px: 3,
+                    px: 2,
                     pb: 3.5,
                     display: 'flex',
                     flexDirection: 'column',

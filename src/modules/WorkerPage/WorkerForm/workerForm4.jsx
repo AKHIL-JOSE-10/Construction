@@ -15,7 +15,7 @@ const WorkerForm4 = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        px: 3,
+        px: 2,
         pt:17
       }}
     >
