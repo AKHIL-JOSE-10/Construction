@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import {
     Box,
     Grid,
@@ -132,12 +132,7 @@ const relatedSearches = ["Architects", "Steel Fabricators", "Civil Engineers"];
 
 const MobSavedWorkers = () => {
     const navigate = useNavigate();
-    const inputRef = useRef(null);
     const [searchTerm, setSearchTerm] = useState("");
-
-    useEffect(() => {
-        inputRef.current?.focus();
-    }, []);
 
     const filteredWorkers = workers.filter((worker) =>
         worker.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -183,7 +178,6 @@ const MobSavedWorkers = () => {
                 >
                     <Search sx={{ color: "gray", mr: 1 }} />
                     <Input
-                        inputRef={inputRef}
                         fullWidth
                         disableUnderline
                         placeholder="Search Services & Workers"
