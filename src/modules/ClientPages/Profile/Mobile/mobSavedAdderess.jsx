@@ -48,7 +48,7 @@ const MobSavedAddress = () => {
   ];
 
   return (
-    <Box sx={{ position: "relative", minHeight: "100vh", pb: "80px" }}>
+    <Box sx={{ position: "relative", pb: "80px" }}>
       <MobHeading Heading="My Addresses" />
       <Grid container>
         <Typography variant="body2" sx={{ pl: 2, mb: 2 }}>
@@ -150,7 +150,7 @@ const MobSavedAddress = () => {
                       variant="body2"
                       sx={{
                         color: "text.secondary",
-                        fontSize: "14px",
+                        fontSize: "13px",
                         mt: 0.5,
                       }}
                     >

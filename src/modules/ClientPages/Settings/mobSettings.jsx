@@ -89,16 +89,15 @@ const MobSettings = () => {
                   slotProps={{
                     primary: {
                       sx: {
-                        fontSize: "16px",
-                        fontWeight: 500,
-                        color: "black", // Primary text color
+                        fontSize: "15px",
+                        fontWeight: 600,
+                        color: "#434966"
                       },
                       variant: "body2",
                     },
                     secondary: {
                       sx: {
-                        color: "black", // Secondary text color
-                        fontSize: "0.90rem",
+                        fontSize: "13px",
                         mt: 0.5,
                       },
                     },
