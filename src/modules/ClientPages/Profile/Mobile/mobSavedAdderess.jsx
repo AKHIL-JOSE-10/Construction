@@ -98,7 +98,7 @@ const MobSavedAddress = () => {
                     size="small"
                     sx={{
                       color:
-                        selectedAddressIndex === index ? "#1976d2" : "#bdbdbd",
+                        selectedAddressIndex === index ? "primary" : "#bdbdbd",
                       p: 0.5,
                       mr: 1.5,
                     }}
