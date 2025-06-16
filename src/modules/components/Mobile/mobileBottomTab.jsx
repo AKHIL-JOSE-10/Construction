@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Tabs, Tab } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import MessageIcon from "@mui/icons-material/Message";
@@ -8,21 +8,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const MobileBottomTab = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const getTabValue = (pathname) => {
-    if (pathname.startsWith("/home")) return 0;
-    if (pathname.startsWith("/mobile-messages")) return 1;
-    if (pathname.startsWith("/mobile-bookings")) return 2;
-    if (pathname.startsWith("/mobile-profile")) return 3;
-    return 0;
-  };
-
-  const [value, setValue] = useState(getTabValue(location.pathname));
-
-  useEffect(() => {
-    setValue(getTabValue(location.pathname));
-  }, [location.pathname]);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
