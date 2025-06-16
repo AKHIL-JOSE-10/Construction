@@ -19,7 +19,7 @@ export default function EditInfo() {
     name: "Jane",
     phoneNumber: "+91 1234567899",
     email: "jane@example.com",
-    dateOfBirth: "10 January 1999",
+    dateOfBirth: "1999-01-10",
   });
   const workTitles = ["Mason", "Plumber", "Electrician"];
   return (
@@ -109,6 +109,7 @@ export default function EditInfo() {
         <Input
           disabled={edit}
           value={values.dateOfBirth}
+          type={"date"}
           onChange={(e) =>
             setValues({ ...values, dateOfBirth: e.target.value })
           }
