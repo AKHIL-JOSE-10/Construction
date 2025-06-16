@@ -1,5 +1,5 @@
 import {Grid, Box, Typography} from '@mui/material';
-import MobileBottomTab from '../../components/Mobile/mobileBottomTab';
+
 const MobPremium = () => {
     return (
         <Grid>
@@ -23,7 +23,6 @@ const MobPremium = () => {
                     🚧 Work in Progress 🚧
                 </Typography>
             </Box>
-            <MobileBottomTab />
         </Grid>
 
     );
