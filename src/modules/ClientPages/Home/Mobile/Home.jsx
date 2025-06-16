@@ -7,7 +7,6 @@ import {
 import { Avatar, Box, Grid, IconButton, Typography } from "@mui/material";
 import { color, ServiceList, textDecoration } from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
-import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
@@ -115,7 +114,7 @@ export default function Home() {
               Current Location
             </Typography>
             <Grid container>
-              <Typography sx={{ ...textDecoration.headerPrimary }}>
+              <Typography sx={{ ...textDecoration.headerPrimary, fontWeight: "bold" }}>
                 Kuala Lumpur, Malaysia
               </Typography>
               <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
@@ -138,7 +137,7 @@ export default function Home() {
               }}
             >
               <NotificationsNoneOutlined
-                sx={{ color: "white", fontSize: "22px", cursor: "pointer" }}
+                sx={{ color: "white", fontSize: "25px", cursor: "pointer" }}
               />
             </Link>
 
@@ -176,13 +175,12 @@ export default function Home() {
         size={12}
         direction={"column"}
         sx={{
-          bgcolor: "white",
           height: "100%",
           paddingBottom: "60px",
         }}
       >
         <Grid container>
-          <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
+          <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
               <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
                 Service Category
@@ -191,11 +189,10 @@ export default function Home() {
           </Grid>
           <Grid
             container
-            p={1}
             spacing={2}
             alignItems={"flex-start"}
             justifyContent={"center"}
-            sx={{ overflow: "hidden", height: "40vh" }}
+            sx={{ overflow: "hidden", height: "32vh" }}
           >
             {ServiceList.slice(0, 6).map((data) => (
               <ServiceLayer key={data.name} data={data} img />
@@ -216,8 +213,9 @@ export default function Home() {
             />
           </Grid>
         </Grid>
-        <Grid container size={12} sx={{ mt: 1 }}>
-          <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
+
+        <Grid container size={12} sx={{ mt: 3 }}>
+          <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
               <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
                 Popular Service on Archisans
@@ -472,7 +470,6 @@ export default function Home() {
           </Typography>
         </Grid>
       </Grid>
-      <MobileBottomTab />
       <AddressDrawer open={open} setOpen={setOpen} />
     </Grid>
   );
