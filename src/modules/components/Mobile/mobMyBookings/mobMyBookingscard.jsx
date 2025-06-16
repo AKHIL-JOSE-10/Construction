@@ -7,7 +7,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 const MobMyBookingcard = ({ children, Heading }) => {
     return (
         <Grid>
-            <Grid sx={{ mx: 1, mt: 2, border: "1px solid rgba(184, 147, 87, 0.3)", borderRadius: 0.5 ,  }}>
+            <Grid sx={{ mx: 1, mt: 2, border: "1px solid rgba(0, 0, 0, 0.3)", borderRadius: 0.5 ,  }}>
                 <Box sx={{ p: 2, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', bgcolor:'rgba(222, 183, 136, 0.2)' }}>
                     <Typography sx={{ fontSize: 16, fontWeight: '550' }}>Indoor Cleaning</Typography>
                     <Typography sx={{ fontSize: 14 }}>{Heading}</Typography>
