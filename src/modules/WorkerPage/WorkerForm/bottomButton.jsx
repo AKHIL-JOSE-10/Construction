@@ -14,6 +14,7 @@ const BottomButton = ({ handleNext }) => {
         px: 2, // keep this light
         boxShadow: '0 -2px 8px rgba(0,0,0,0.1)',
         zIndex: 1000,
+        mt:8
       }}
     >
       <Button
