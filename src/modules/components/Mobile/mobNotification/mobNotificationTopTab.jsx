@@ -61,7 +61,7 @@ const MobNotificationTopTab = () => {
                 </Box>
 
                 {/* Swipeable Views */}
-                <Grid sx={{ mt: 6, width: "100%" }}>
+                <Grid sx={{ mt: 4, width: "100%" }}>
                     <SwipeableViews index={value} onChangeIndex={handleSwipeChangeIndex}>
                         <TabPanel value="0" sx={{ p: 0 }}>
                             <MobNotificationAll />
