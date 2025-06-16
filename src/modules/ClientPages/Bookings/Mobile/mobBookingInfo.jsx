@@ -15,7 +15,7 @@ const MobBookingInfo = () => {
   return (
     <Grid container>
       <MobHeading Heading="Booking info" />
-      <Grid sx={{ px: 1, mt: 8, width: "100%" }}>
+      <Grid sx={{ px: 2, mt: 8, width: "100%" }}>
         <Box>
           <Typography sx={{ fontSize: "23px", fontWeight: "600" }}>
             Plumping Service
@@ -41,7 +41,7 @@ const MobBookingInfo = () => {
               borderRadius: 1,
               border: "1px solid brown",
               overflow: "hidden",
-              mb: 1,
+              mb: 3,
             }}
           >
             <AccordionSummary
@@ -73,7 +73,7 @@ const MobBookingInfo = () => {
                   <Typography sx={{ fontSize: "15px", color: "grey" }}>
                     Start date
                   </Typography>
-                  <Typography sx={{ fontSize: "15px", fontWeight: "550" }}>
+                  <Typography sx={{ fontSize: "14px", fontWeight: "550" }}>
                     Wed, march 7
                   </Typography>
                 </Box>
@@ -81,7 +81,7 @@ const MobBookingInfo = () => {
                   <Typography sx={{ fontSize: "15px", color: "grey" }}>
                     Time Slot
                   </Typography>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "550" }}>
+                  <Typography sx={{ fontSize: "14px", fontWeight: "550" }}>
                     9:00 am-5 pm
                   </Typography>
                 </Box>
@@ -98,7 +98,7 @@ const MobBookingInfo = () => {
                 </Typography>
                 <Box sx={{ display: "flex", flexDirection: "row" }}>
                   <Typography
-                    sx={{ fontSize: "16px", fontWeight: "550", mr: 1 }}
+                    sx={{ fontSize: "14px", fontWeight: "550", mr: 1 }}
                   >
                     Jane Cooper
                   </Typography>
@@ -123,7 +123,7 @@ const MobBookingInfo = () => {
                   <Typography sx={{ fontSize: "15px", color: "grey" }}>
                     Worker contact info
                   </Typography>
-                  <Typography sx={{ fontSize: "15px", fontWeight: "550" }}>
+                  <Typography sx={{ fontSize: "14px", fontWeight: "550" }}>
                     +91 98xxxxxxxx
                   </Typography>
                 </Box>
@@ -131,7 +131,7 @@ const MobBookingInfo = () => {
                   <Typography sx={{ fontSize: "15px", color: "grey" }}>
                     Service Duration
                   </Typography>
-                  <Typography sx={{ fontSize: "16px", fontWeight: "550" }}>
+                  <Typography sx={{ fontSize: "14px", fontWeight: "550" }}>
                     1 month
                   </Typography>
                 </Box>
@@ -148,7 +148,7 @@ const MobBookingInfo = () => {
                 </Typography>
                 <Box>
                   <Typography
-                    sx={{ fontSize: "16px", fontWeight: "550", mr: 1 }}
+                    sx={{ fontSize: "14px", fontWeight: "550", mr: 1 }}
                   >
                     Gate is locked, call on arrival
                   </Typography>
@@ -166,9 +166,9 @@ const MobBookingInfo = () => {
                 </Typography>
                 <Box>
                   <Typography
-                    sx={{ fontSize: "16px", fontWeight: "550", mr: 1 }}
+                    sx={{ fontSize: "14px", fontWeight: "550", mr: 1 }}
                   >
-                    Kollam , 3 Bale Close Ifako, Gbagada
+                    Thrissur, arnattukara, National Studio
                   </Typography>
                 </Box>
               </Box>
@@ -288,15 +288,15 @@ const MobBookingInfo = () => {
           <Box sx={{ display: "flex", flexDirection: "row", gap: 2, my: 2 }}>
             <Button
               variant="outlined"
-              sx={{ bgcolor: "red", color: "white", borderRadius: 5 }}
+              sx={{ borderRadius: 5, border: "1px solid black", color: "#434966", fontWeight: "600" }}
             >
-              Cancel Booking
+              Cancel booking
             </Button>
             <Button
               variant="contained"
-              sx={{ bgcolor: "#00aae4", color: "white", borderRadius: 5 }}
+              sx={{ borderRadius: 5 }}
             >
-              Click to Pay
+              Pay now
             </Button>
           </Box>
         </Grid>
