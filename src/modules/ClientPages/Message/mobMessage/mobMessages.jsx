@@ -79,7 +79,7 @@ const MobMessages = () => {
   return (
     <Grid>
       <Box>
-        <MobHeading Heading={"Messages"} backArrow={false} />
+        <MobHeading Heading={"My Messages"} backArrow={false} />
 
         <Box sx={{ px: 2, py: 1 }}>
           <TextField
