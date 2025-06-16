@@ -17,7 +17,6 @@ import {
 import { Link } from "react-router-dom";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MobHeading from "../../../components/Mobile/mobileHeading";
-import MobileBottomTab from "../../../components/Mobile/mobileBottomTab";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import StarIcon from "@mui/icons-material/Star";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
@@ -42,28 +41,18 @@ const MobProfilePage = () => {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100vw",
-        minHeight: "100vh",
-        overflowX: "hidden",
-        boxSizing: "border-box",
-        bgcolor: "#fff",
-        mb: 10,
-      }}
-    >
+    <Box>
       <Grid container direction="column">
         <Grid item xs={12}>
-          <MobHeading Heading="Profile" backArrow={false} />
+          <MobHeading Heading="My Account" backArrow={false} />
           <Box
             sx={{
-              width: "100%",
-              px: 2, // horizontal padding
               mb: 1,
               mt: -1,
             }}
           >
             <Box
+              px={2}
               sx={{
                 display: "flex",
                 flexDirection: "row",
@@ -100,8 +89,6 @@ const MobProfilePage = () => {
             <Box
               sx={{
                 boxShadow: "0 4px 6px -4px rgba(0, 0, 0, 0.3)",
-                ml: -0.5,
-                mr: 3,
                 pb: 1.5,
                 mt: -1,
               }}
@@ -328,8 +315,6 @@ const MobProfilePage = () => {
           </List>
         </Grid>
       </Grid>
-
-      <MobileBottomTab activePage="profile" />
 
       {/* Logout Confirmation Dialog */}
       <Dialog open={open} onClose={handleClose}>
