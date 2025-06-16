@@ -84,32 +84,23 @@ const MobRecentSearch = () => {
   return (
     <Box py={2} sx={{ fontFamily: "sans-serif" }}>
       {/* Header */}
-      <Box display="flex" justifyContent="space-between" alignItems="center" px={1}>
+      <Box px={1} display="flex" alignItems="center">
         {/* Left Side: Back Arrow + Location Info */}
-        <Box display="flex" alignItems="flex-start" >
           <ArrowBackIos
-            sx={{ fontSize: 22, cursor: "pointer", mt: 0.4, color: 'grey' }}
+            sx={{ fontSize: 23, cursor: "pointer", color: 'grey' }}
             onClick={() => navigate(-1)}
           />
-          <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: 'black' }} />
-          <Box display="flex" flexDirection="column">
-            <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
-              Current Location
-            </Typography>
-            <Typography sx={{ fontWeight: 'Bold', fontSize: 15 }}>
-              Kuala Lumpur, Malaysia
-            </Typography>
+          <Box display="flex">
+            <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: 'black' }} />
+            <Box display="flex" flexDirection="column">
+              <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
+                Current Location
+              </Typography>
+              <Typography sx={{ fontWeight: 'Bold', fontSize: 15 }}>
+                Kuala Lumpur, Malaysia
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-
-        {/* Right Side: Notification + Avatar */}
-        <Box display="flex" alignItems="center" gap={2}>
-          <NotificationsNone sx={{ fontSize: "28px" }} />
-          <Avatar
-            src="https://randomuser.me/api/portraits/women/79.jpg"
-            sx={{ width: 35, height: 35 }}
-          />
-        </Box>
       </Box>
 
       {/* Search Bar */}
@@ -124,7 +115,7 @@ const MobRecentSearch = () => {
         mx={1}
       >
         <Search sx={{ mr: 1, cursor: 'pointer' }} onClick={() => navigate('/mobile-search-worker')} />
-        <InputBase placeholder="Search Services & Workers" fullWidth />
+        <InputBase sx={{ fontSize: "14px" }} placeholder="Search Services & Workers" fullWidth />
         <Tune sx={{ color: "#888" }} />
       </Box>
 
