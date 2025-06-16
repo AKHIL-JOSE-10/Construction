@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
     Box,
     Typography,
-    TextField,
     IconButton,
     Stepper,
     Step,
@@ -22,54 +21,47 @@ import BottomButton from './bottomButton';
 const WorkerForm2 = () => {
     const navigate = useNavigate();
 
-    const [experience, setExperience] = useState('');
     const [selectedService, setSelectedService] = useState('');
-    const [addedServices, setAddedServices] = useState([]);
+    const [selectedExperience, setSelectedExperience] = useState('');
+    const [addedServiceExperience, setAddedServiceExperience] = useState([]);
 
     const steps = ['', '', '', ''];
 
     const availableServices = [
-        "Architectural Design",
-        "Civil Engineering",
-        "Interior Design",
-        "Landscaping",
-        "Structural Engineering",
-        "MEP Services",
-        "Pool Design",
-        "Steel Fabrication",
-        "Construction Contracting",
-        "Masonry Work",
-        "Carpentry Services",
-        "Metal Fabrication",
-        "Electrical Services",
-        "Plumbing Services",
-        "Painting Services",
-        "Waterproofing Solutions",
-        "Flooring Installation",
-        "Security & Surveillance",
-        "Smart Home Automation",
-        "Audio & Video Systems",
-        "Automated Smart Locks",
-        "Aluminium Fabrication",
-        "Stainless Steel Fabrication",
-        "Roofing Solutions",
-        "Mild Steel Fabrication",
+        "Architectural Design", "Civil Engineering", "Interior Design", "Landscaping",
+        "Structural Engineering", "MEP Services", "Pool Design", "Steel Fabrication",
+        "Construction Contracting", "Masonry Work", "Carpentry Services", "Metal Fabrication",
+        "Electrical Services", "Plumbing Services", "Painting Services", "Waterproofing Solutions",
+        "Flooring Installation", "Security & Surveillance", "Smart Home Automation",
+        "Audio & Video Systems", "Automated Smart Locks", "Aluminium Fabrication",
+        "Stainless Steel Fabrication", "Roofing Solutions", "Mild Steel Fabrication",
         "Glass Fabrication",
     ];
 
+    const years = Array.from({ length: 51 }, (_, i) => i); // 0-50 years
 
     const handleAddService = () => {
-        if (selectedService && !addedServices.includes(selectedService)) {
-            setAddedServices((prev) => [...prev, selectedService]);
-            setSelectedService('');
+        if (selectedService && selectedExperience !== '') {
+            const alreadyAdded = addedServiceExperience.some(
+                (item) => item.service === selectedService
+            );
+            if (!alreadyAdded) {
+                setAddedServiceExperience([
+                    ...addedServiceExperience,
+                    { service: selectedService, experience: selectedExperience },
+                ]);
+                setSelectedService('');
+                setSelectedExperience('');
+            }
         }
     };
 
     const handleDeleteService = (indexToRemove) => {
-        setAddedServices((prev) => prev.filter((_, idx) => idx !== indexToRemove));
+        setAddedServiceExperience(prev => prev.filter((_, idx) => idx !== indexToRemove));
     };
 
     const handleNext = () => {
+        // You can pass `addedServiceExperience` to the next step
         navigate('/mobile-worker-form3');
     };
 
@@ -91,79 +83,76 @@ const WorkerForm2 = () => {
                     ))}
                 </Stepper>
 
-                <Box sx={{ px: 2, mb:8 }}>
+                <Box sx={{ px: 2, mb: 8 }}>
                     <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
                         Your Services & Experience
                     </Typography>
 
-                    {/* Experience */}
-                    <Typography variant="body2" mb={0.5}>Years of Experience</Typography>
-                    <TextField
-                        type="number"
-                        placeholder="Enter your experience in years"
-                        variant="outlined"
-                        fullWidth
-                        value={experience}
-                        onChange={(e) => setExperience(e.target.value)}
-                        slotProps={{
-                            input: {
-                                sx: {
-                                    bgcolor: 'white',
-                                    height: 40,
-                                    px: 1.2,
-                                    fontSize: '0.9rem',
-                                }
-                            }
-                        }}
-                        sx={{ mb: 3 }}
-                    />
-
                     {/* Select Service */}
-                    <Typography variant="body2" mb={0.5}>Select Your Services</Typography>
-                    <Box display="flex" gap={1} alignItems="center" sx={{ mb: 3 }}>
-                        <FormControl fullWidth>
-                            <InputLabel>Select a service</InputLabel>
-                            <Select
-                                value={selectedService}
-                                onChange={(e) => setSelectedService(e.target.value)}
-                                label="Select a service"
-                            >
-                                {availableServices.filter(s => !addedServices.includes(s)).map((service, idx) => (
+                    <Typography variant="body2" mb={0.5}>Select Service</Typography>
+                    <FormControl fullWidth sx={{ mb: 2 }}>
+                        <InputLabel>Select a service</InputLabel>
+                        <Select
+                            value={selectedService}
+                            onChange={(e) => setSelectedService(e.target.value)}
+                            label="Select a service"
+                        >
+                            {availableServices
+                                .filter(s => !addedServiceExperience.some(item => item.service === s))
+                                .map((service, idx) => (
                                     <MenuItem key={idx} value={service}>
                                         {service}
                                     </MenuItem>
                                 ))}
-                            </Select>
-                        </FormControl>
-                        <Button
-                            variant="contained"
-                            onClick={handleAddService}
-                            disabled={!selectedService}
-                            sx={{
-                                bgcolor: '#d7b49e',
-                                color: '#4b2e2e',
-                                textTransform: 'none',
-                                fontWeight: 'bold',
-                                height: 40,
-                                px: 3,
-                                '&:hover': {
-                                    bgcolor: '#c19a84'
-                                }
-                            }}
-                        >
-                            Add
-                        </Button>
-                    </Box>
+                        </Select>
+                    </FormControl>
 
-                    {/* Added Services */}
-                    {addedServices.length > 0 && (
+                    {/* Select Experience */}
+                    <Typography variant="body2" mb={0.5}>Years of Experience</Typography>
+                    <FormControl fullWidth sx={{ mb: 2 }}>
+                        <InputLabel>Experience</InputLabel>
+                        <Select
+                            value={selectedExperience}
+                            onChange={(e) => setSelectedExperience(e.target.value)}
+                            label="Experience"
+                        >
+                            {years.map((year) => (
+                                <MenuItem key={year} value={year}>
+                                    {year} {year === 1 ? 'year' : 'years'}
+                                </MenuItem>
+                            ))}
+                        </Select>
+                    </FormControl>
+
+                    <Button
+                        variant="contained"
+                        onClick={handleAddService}
+                        disabled={!selectedService || selectedExperience === ''}
+                        sx={{
+                            bgcolor: '#d7b49e',
+                            color: '#4b2e2e',
+                            textTransform: 'none',
+                            fontWeight: 'bold',
+                            height: 40,
+                            px: 3,
+                            mb: 3,
+                            '&:hover': {
+                                bgcolor: '#c19a84'
+                            }
+                        }}
+                    >
+                        Add
+                    </Button>
+
+                    {/* Display Added Service-Experience */}
+                    {addedServiceExperience.length > 0 && (
                         <Box mb={3}>
                             <Typography variant="body2" mb={1}>Added Services</Typography>
                             <Stack direction="row" gap={1.5} flexWrap="wrap">
-                                {addedServices.map((srv, idx) => (
+                                {addedServiceExperience.map((item, idx) => (
                                     <Chip
                                         key={idx}
-                                        label={srv}
+                                        label={`${item.service} - ${item.experience} ${item.experience === 1 ? 'year' : 'years'}`}
                                         color="primary"
                                         variant="outlined"
                                         onDelete={() => handleDeleteService(idx)}
