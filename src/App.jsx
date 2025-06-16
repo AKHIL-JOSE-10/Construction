@@ -36,7 +36,7 @@ import AddressDetails from "./modules/ClientPages/Home/Address/AdressDetails/Add
 import WorkerRequestConfirmed from "./modules/WorkerPage/WorkerRequest/WorkerRequestConfirmed/workerRequestConfirmed";
 import WorkerRequestConfirmation from "./modules/WorkerPage/WorkerRequest/WorkerRequestConfirmation/workerRequestConfirmation";
 import WorkerRequestDetail from "./modules/WorkerPage/WorkerRequest/WorkerRequestDetail/WorkerRequestDetail";
-
+import WorkerForm1 from "./modules/WorkerPage/WorkerForm/workerForm1";
 
 function App() {
   return (
@@ -97,8 +97,7 @@ function App() {
         <Route path="/mobile-worker-request-confirmed" element={<WorkerRequestConfirmed />} />
         <Route path="/mobile-worker-request-confirmation" element={<WorkerRequestConfirmation />} />
         <Route path="/mobile-worker-request-detail" element={<WorkerRequestDetail />} />
-
-
+        <Route path="/mobile-worker-profile" element={<WorkerForm1 />} />
 
       </Routes>
     </Router>
