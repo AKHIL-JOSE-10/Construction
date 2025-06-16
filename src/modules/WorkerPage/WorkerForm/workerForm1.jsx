@@ -63,7 +63,7 @@ const WorkerForm1 = () => {
 
         <Box sx={{ px: 2 }}>
           {/* Title */}
-          <Typography sx={{ fontSize: '1.7rem', fontWeight: "bold", mb: 3, mt: 4 }}>
+          <Typography sx={{ fontSize: '1.4rem', fontWeight: "bold", mb: 3, mt: 4 }}>
             Tell us more about yourself
           </Typography>
 

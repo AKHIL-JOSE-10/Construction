@@ -92,7 +92,7 @@ const WorkerForm2 = () => {
                 </Stepper>
 
                 <Box px={2}>
-                    <Typography sx={{ fontSize: '1.7rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
+                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
                         Your Services & Experience
                     </Typography>
 
