@@ -109,9 +109,9 @@ export default function WorkerRequestConfirmation() {
                 />
 
                 {/* Content */}
-                <Box sx={{ position: 'relative', zIndex: 1000 }}>
+                <Box sx={{ position: 'relative', zIndex: 1000 ,height:'100%'}}>
                     <Box>
-                        <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white', pr: 14 }}>
+                        <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white', pr: 14 , mt:0.5}}>
                             You have a pretty busy week
                         </Typography>
                     </Box>
@@ -120,7 +120,7 @@ export default function WorkerRequestConfirmation() {
                         direction="row"
                         alignItems="center"
                         spacing={1}
-                        sx={{ mt: 4, mb: 1, color: 'white' }}
+                        sx={{ mt: 4, mb: 1, color: 'white' ,position: 'absolute', bottom:1}}
                     >
                         <FactCheckIcon sx={{ fontSize: "15px", color: 'white' }} />
                         <Typography variant="body2" sx={{ fontSize: "14px", color: 'white' }}>
