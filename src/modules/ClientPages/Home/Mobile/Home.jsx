@@ -174,10 +174,6 @@ export default function Home() {
         container
         size={12}
         direction={"column"}
-        sx={{
-          height: "100%",
-          paddingBottom: "60px",
-        }}
       >
         <Grid container>
           <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
