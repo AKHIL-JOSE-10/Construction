@@ -83,7 +83,7 @@ const workers = [
   },
   {
     id: 5,
-    name: "Ethan Clark",
+    name: "Ethan",
     price: "$7.10",
     rating: 4.2,
     reviews: 150,
@@ -289,13 +289,13 @@ const MobSearchWorker = () => {
                             sx={{
                               fontSize: "9px",
                               fontWeight: 600,
-                              color: "green",
+                              color: "#0492C2",
                             }}
                           >
                             Archisans
                           </Typography>
                           <VerifiedIcon
-                            sx={{ fontSize: 10, ml: 0.3, color: "green" }}
+                            sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }}
                           />
                         </Box>
                       )}
@@ -308,7 +308,7 @@ const MobSearchWorker = () => {
                       color="text.secondary"
                       sx={{ display: "flex", alignItems: "center" }}
                     >
-                      <LocationOnOutlined sx={{ fontSize: 16, mr: 0.5 }} />
+                      <LocationOnOutlined sx={{ fontSize: 13, mr: 0.3 }} />
                       <Typography sx={{ fontSize: "100%", color: "grey" }}>
                         5.1 km away{" "}
                       </Typography>
@@ -356,7 +356,7 @@ const MobSearchWorker = () => {
                   >
                     <Box display="flex" alignItems="center" mr={0.5}>
                       <StarIcon
-                        sx={{ fontSize: 14, color: "#fbc02d", mr: 0.5 }}
+                        sx={{ fontSize: 14, color: "#fbc02d", mr: 0.4 }}
                       />
                       <Typography fontSize={11} lineHeight={1}>
                         {worker.rating}
