@@ -202,8 +202,8 @@ export default function Home() {
             ))}
           </Grid>
         </Grid>
-        <Grid container justifyContent="center" width={'100%'}>
-          <Grid >
+        <Grid container justifyContent="center">
+          <Grid sx={{my:2}}>
             <Box
               component="img"
               src={AdIcon}
