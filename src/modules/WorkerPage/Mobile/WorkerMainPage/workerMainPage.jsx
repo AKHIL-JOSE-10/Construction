@@ -112,40 +112,42 @@ const WorkerMainPage = () => {
 </Card>
 
 
- <Card
+<Card
   sx={{
     flex: 1,
     boxShadow: 2,
     height: '8rem',
     borderRadius: 1,
-    bgcolor: 'rgb(154, 87, 33)', // brown shade
+    bgcolor: 'rgb(181, 97, 13)', // lighter brown shade
     position: 'relative',
   }}
 >
-  {/* Tilted Square */}
+  {/* Tilted Square 1 */}
   <Box
     sx={{
       width: 100,
       height: 90,
-      bgcolor: 'rgb(178, 109, 53)',
+      bgcolor: 'rgb(224, 167, 114)', // matching but slightly lighter
       position: 'absolute',
       top: -120,
       right: -20,
       transform: 'translate(10%, 90%) rotate(55deg)',
-      border: '2px solidrgb(173, 109, 57)',
+      border: '2px solid rgb(219, 158, 104)',
       zIndex: 1,
     }}
   />
-    <Box
+
+  {/* Tilted Square 2 */}
+  <Box
     sx={{
       width: 100,
       height: 90,
-      bgcolor: 'rgb(169, 105, 54)',
+      bgcolor: 'rgb(210, 150, 100)', // another close match
       position: 'absolute',
       top: 10,
       right: 90,
       transform: 'translate(10%, 90%) rotate(55deg)',
-      border: '2px solidrgb(152, 92, 44)',
+      border: '2px solid rgb(198, 132, 82)',
       zIndex: 1,
     }}
   />
@@ -156,6 +158,7 @@ const WorkerMainPage = () => {
     </Typography>
   </CardContent>
 </Card>
+
 
       </Box>
     </Grid>
