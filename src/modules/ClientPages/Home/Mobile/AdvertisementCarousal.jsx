@@ -48,7 +48,7 @@ const AdvertisementCarousal = () => {
       <Box
         sx={{
           position: 'absolute',
-          bottom: 20,
+          bottom: 15,
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
