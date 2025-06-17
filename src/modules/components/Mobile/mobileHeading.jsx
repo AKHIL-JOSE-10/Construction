@@ -6,56 +6,46 @@ const MobHeading = ({ Heading, backArrow = true }) => {
   const navigate = useNavigate(); // Initialize navigate
 
   return (
-    <Grid sx={{ mb: 8 }}>
+    <Box sx={{ paddingBottom: "60px" }}>
       <Box
         sx={{
           display: "flex",
+          alignItems: "center",
           width: "100%",
           position: "fixed",
           top: 0,
+          left: 0,
+          right: 0,
           zIndex: 1000,
           height: "60px",
-          bgcolor: "white",
+          bgcolor: "#FFF",
+          paddingTop: "env(safe-area-inset-top)",
         }}
       >
         {/* Back Arrow */}
         {backArrow && (
-          <Box
-            onClick={() => navigate(-1)} // Go back one page
-            sx={{
-              position: "absolute",
-              left: 10,
-              top: "50%",
-              transform: "translateY(-50%)",
-              cursor: "pointer",
-              WebkitTapHighlightColor: "transparent",
-            }}
-          >
-            <ArrowBackIosIcon sx={{ fontSize: "20px" }} />
-          </Box>
+          <ArrowBackIosIcon
+            onClick={() => navigate(-1)}
+            sx={{ fontSize: "20px", marginLeft: "15px" }}
+          />
         )}
 
         {/* Centered Heading */}
         <Typography
           noWrap
           sx={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            fontSize: "21px",
-            fontWeight: 500,
-            maxWidth: "80%",
+            fontSize: "20px",
+            fontWeight: 600,
             overflow: "hidden",
             textOverflow: "ellipsis",
             whiteSpace: "nowrap",
-            textAlign: "center",
+            marginLeft: "15px",
           }}
         >
           {Heading}
         </Typography>
       </Box>
-    </Grid>
+    </Box>
   );
 };
 

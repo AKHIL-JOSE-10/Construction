@@ -24,7 +24,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Poppins, Roboto, Arial, sans-serif',
+    fontFamily: 'Poppins, Arial, sans-serif',
     h1: { fontSize: '2.5rem', fontWeight: 700, color: '#434966' },
     h2: { fontSize: '2rem', fontWeight: 600, color: '#434966' },
     body1: { fontSize: '1rem', fontWeight: 400, color: '#434966' },
@@ -51,6 +51,13 @@ const theme = createTheme({
           borderRadius: 8,
           backgroundColor: '#E7E9EF',
           fontFamily: 'Poppins, sans-serif',
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          userSelect: 'none',
         },
       },
     },

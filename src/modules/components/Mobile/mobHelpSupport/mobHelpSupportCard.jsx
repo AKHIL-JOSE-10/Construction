@@ -8,8 +8,8 @@ const MobHelpSupportCard = ({ title, icon }) => {
                 <Box
                     sx={{
                         bgcolor: '#F1E6DD',
-                        width: '115px',
-                        height: '120px',
+                        width: '140px',
+                        height: '140px',
                         borderRadius: 1,
                         display: 'flex',
                         flexDirection: 'column',
@@ -19,7 +19,7 @@ const MobHelpSupportCard = ({ title, icon }) => {
                         border:'1px solid rgba(184, 147, 87, 0.3)'
                     }}
                 >
-                    <Box sx={{ mb: 1 ,fontSize:10}}>
+                    <Box sx={{ mb: 2 ,fontSize:0}}>
                         {icon}
                     </Box>
                     <Typography sx={{ fontSize: '14px' }}>{title}</Typography>

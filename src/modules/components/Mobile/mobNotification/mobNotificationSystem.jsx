@@ -12,13 +12,13 @@ const MobNotificationSystem = () => {
                         img={<InfoOutlinedIcon sx={{ color: '#4A90E2' }} />}
                         heading="Archisans"
                         subheading="Renew Subscription."
-                        datetime="12-03-2025 | 9:00 am"
+                        datetime="9:00 am"
                     />
                     <MobNotificationList
                         img={<InfoOutlinedIcon sx={{ color: '#4A90E2' }} />}
                         heading="Password Updated Successfully."
                         subheading="Your password has been updated successfully."
-                        datetime="12-03-2025 | 9:00 am"
+                        datetime="8:00 am"
                     />
                 </Box>
             </Grid>

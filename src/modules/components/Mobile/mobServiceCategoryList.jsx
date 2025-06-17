@@ -27,8 +27,11 @@ const MobServiceCategoryList = ({ img, heading, subheading }) => {
                                 <ListItemText primary={heading} secondary={subheading}
                                     slotProps={{
                                         primary: {
-                                            sx: { fontSize: '1rem', fontWeight: '600' },
+                                            sx: { fontSize: '15px', fontWeight: '600' },
                                         },
+                                        secondary: {
+                                            sx: { fontSize: '13px', width: "98%" }
+                                        }
                                     }}
                                     sx={{ flexGrow: 1 }}
                                 />

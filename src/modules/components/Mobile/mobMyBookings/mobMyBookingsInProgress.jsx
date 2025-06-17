@@ -15,7 +15,6 @@ const MobMyBookingsInProgress = () => {
       <MobMyBookingcard Heading="Processing">
         <Button
           variant="outlined"
-          onClick={(e) => e.stopPropagation()} // Prevents triggering Link if button is clicked
           sx={{
             borderRadius: "50px",
             textTransform: "none",
