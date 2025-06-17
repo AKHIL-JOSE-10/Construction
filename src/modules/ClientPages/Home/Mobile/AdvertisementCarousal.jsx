@@ -23,7 +23,7 @@ const AdvertisementCarousal = () => {
         height: '176px',
         overflow: 'hidden',
         position: 'relative',
-        bgcolor: '#f5f5f5',
+        bgcolor: 'white',
         ml:1
       }}
     >
