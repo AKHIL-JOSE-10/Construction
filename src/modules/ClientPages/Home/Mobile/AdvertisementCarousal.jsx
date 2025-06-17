@@ -23,6 +23,7 @@ const AdvertisementCarousal = () => {
         overflow: 'hidden',
         position: 'relative',
         bgcolor: 'white',
+        mx:1
       }}
     >
       {/* Image display */}
@@ -39,7 +40,6 @@ const AdvertisementCarousal = () => {
             objectFit: 'contain',
             opacity: currentIndex === index ? 1 : 0,
             transition: 'opacity 1s ease-in-out',
-            
           }}
         />
       ))}
