@@ -42,45 +42,12 @@ const MobSignup = () => {
             <TextField
               size="small"
               required
+              fullWidth
+              placeholder="Enter your full name"
               sx={{
-                width: { xs: "38vh", sm: "55vh", md: "64vh" },
-                mb: 2,
-                "& .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-              slotProps={{
-                input: {
-                  sx: {
-                    height: { xs: "4.5vh", sm: "5vh", md: "5vh" },
-                    fontSize: { xs: "16px", sm: "24px", md: "25px" },
-                  },
-                },
-              }}
-            />
-
-            <Typography
-              sx={{
-                fontSize: { xs: "15px", sm: "26px", md: "26px" },
-                color: "#666666",
-                fontWeight: "550",
-                mb: 1,
-                ml: 0.5,
-              }}
-            >
-              Email
-            </Typography>
-            <TextField
-              size="small"
-              required
-              sx={{
-                width: { xs: "38vh", sm: "55vh", md: "64vh" },
+                backgroundColor: "white",
+                border: "0.5px solid grey",
+                placeholder:"Enter your full name",
                 mb: 2,
                 "& .MuiOutlinedInput-notchedOutline": {
                   border: "none",
@@ -116,9 +83,12 @@ const MobSignup = () => {
             <TextField
               size="small"
               required
+              fullWidth
+              type="number"
               sx={{
-                width: { xs: "38vh", sm: "55vh", md: "64vh" },
                 mb: 2,
+                backgroundColor: "white",
+                border: "0.5px solid grey",
                 "& .MuiOutlinedInput-notchedOutline": {
                   border: "none",
                 },
@@ -153,8 +123,51 @@ const MobSignup = () => {
               size="small"
               required
               type="password"
+              placeholder="Enter your password"
+              fullWidth
               sx={{
-                width: { xs: "38vh", sm: "55vh", md: "64vh" },
+                backgroundColor: "white",
+                border: "0.5px solid grey",
+                mb: 2,
+                "& .MuiOutlinedInput-notchedOutline": {
+                  border: "none",
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  border: "none",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  border: "none",
+                },
+              }}
+              slotProps={{
+                input: {
+                  sx: {
+                    height: { xs: "4.5vh", sm: "5vh", md: "5vh" },
+                    fontSize: { xs: "16px", sm: "24px", md: "25px" },
+                  },
+                },
+              }}
+            />
+                   <Typography
+              sx={{
+                fontSize: { xs: "15px", sm: "26px", md: "26px" },
+                color: "#666666",
+                fontWeight: "550",
+                mb: 1,
+                ml: 0.5,
+              }}
+            >
+            Confirm Password
+            </Typography>
+            <TextField
+              size="small"
+              required
+              type="password"
+              placeholder="Enter your password"
+              fullWidth
+              sx={{
+                backgroundColor: "white",
+                border: "0.5px solid grey",
                 mb: 2,
                 "& .MuiOutlinedInput-notchedOutline": {
                   border: "none",
