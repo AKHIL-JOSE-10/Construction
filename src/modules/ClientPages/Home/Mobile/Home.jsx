@@ -175,9 +175,9 @@ export default function Home() {
         size={12}
         direction={"column"}
       >
-         <Grid sx={{mb:3 , }}>
-            <AdvertisementCarousal />
-          </Grid> 
+        <Grid sx={{ mb: 3, }}>
+          <AdvertisementCarousal />
+        </Grid>
 
         <Grid container>
           <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
@@ -199,16 +199,22 @@ export default function Home() {
             ))}
           </Grid>
         </Grid>
+
+
+
         <Grid container justifyContent="center">
-          <Grid sx={{my:2, px:1}}>
+          <Grid sx={{ my: 2, px: 1 }}>
             <Box
               component="img"
               src={AdIcon}
               alt="Sample"
+              onClick={() => navigate("/mobile-worker-form1")}
               sx={{
                 width: '100%',
                 height: 'auto',
                 objectFit: 'cover',
+                cursor: 'pointer', // Make it clickable
+                WebkitTapHighlightColor: "transparent", // Removes mobile highlight
               }}
             />
           </Grid>
@@ -230,19 +236,19 @@ export default function Home() {
                 See all
               </Typography>
             </Grid>
-<Box
-  sx={{
-    display: "flex",
-    flexDirection: "row",
-    overflowX: "auto",
-    width: "100vw",
-    gap: "20px",
-    scrollbarWidth: "none", // Firefox
-    "&::-webkit-scrollbar": {
-      display: "none", // Chrome, Safari, Edge
-    },
-  }}
->
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                overflowX: "auto",
+                width: "100vw",
+                gap: "20px",
+                scrollbarWidth: "none", // Firefox
+                "&::-webkit-scrollbar": {
+                  display: "none", // Chrome, Safari, Edge
+                },
+              }}
+            >
               {[...Array(4)].map((_, index) => (
                 <Grid
                   key={index}
@@ -333,19 +339,19 @@ export default function Home() {
               </Typography>
             </Grid>
           </Grid>
-<Box
-  sx={{
-    display: "flex",
-    flexDirection: "row",
-    overflowX: "auto",
-    width: "100vw",
-    gap: "20px",
-    scrollbarWidth: "none", // Firefox
-    "&::-webkit-scrollbar": {
-      display: "none", // Chrome, Safari, Edge
-    },
-  }}
->
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              overflowX: "auto",
+              width: "100vw",
+              gap: "20px",
+              scrollbarWidth: "none", // Firefox
+              "&::-webkit-scrollbar": {
+                display: "none", // Chrome, Safari, Edge
+              },
+            }}
+          >
             {[...Array(4)].map((_, index) => (
               <Grid
                 container

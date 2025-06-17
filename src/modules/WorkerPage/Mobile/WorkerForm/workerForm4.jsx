@@ -32,7 +32,6 @@ const WorkerForm4 = () => {
                 completed
             </Typography>
 
-            {/* Move to Worker Page Button */}
             <Button
                 variant="contained"
                 sx={{
@@ -48,6 +47,7 @@ const WorkerForm4 = () => {
                         bgcolor: '#a47763',
                     },
                 }}
+                onClick={() => navigate("/mobile-worker-mainpage")} // ✅ Added this line
             >
                 Move to Worker Page
             </Button>

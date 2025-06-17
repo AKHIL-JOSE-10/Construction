@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
-import { Box, Paper, Grid, Typography, GlobalStyles, Card, CardContent } from '@mui/material';
+import { Box, Paper, Typography, GlobalStyles, Card, CardContent } from '@mui/material';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import RoomIcon from '@mui/icons-material/Room';
 import dayjs from 'dayjs';
-import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import { useNavigate } from 'react-router-dom';
+import WorkerBottomBar from './workerBottomBar';
 
 const WorkerMainPage = () => {
     const navigate = useNavigate();
     const [date, setDate] = useState(dayjs());
 
     return (
-        <Grid sx={{ px: 2, py: 3, bgcolor: '#fff7f0', minHeight: '100vh' }}>
+        <Box sx={{ px: 2, py: 3, bgcolor: '#fff7f0', pb: '10px' }}>
             {/* Header */}
             <Box sx={{ mb: 2 }}>
                 <Typography variant="h5" fontWeight="bold">
@@ -33,12 +32,8 @@ const WorkerMainPage = () => {
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <GlobalStyles
                         styles={{
-                            '.MuiPickersToolbar-root': {
-                                display: 'none !important',
-                            },
-                            '.MuiPickersCalendarHeader-root': {
-                                paddingTop: '0px',
-                            },
+                            '.MuiPickersToolbar-root': { display: 'none !important' },
+                            '.MuiPickersCalendarHeader-root': { paddingTop: '0px' },
                         }}
                     />
                     <Paper
@@ -55,15 +50,13 @@ const WorkerMainPage = () => {
                             openTo="day"
                             value={date}
                             onChange={(newValue) => setDate(newValue)}
-                            slotProps={{
-                                actionBar: { actions: [] },
-                            }}
+                            slotProps={{ actionBar: { actions: [] } }}
                         />
                     </Paper>
                 </LocalizationProvider>
             </Box>
 
-            {/* Request and Confirmed Cards */}
+            {/* Cards */}
             <Box
                 sx={{
                     display: 'flex',
@@ -79,11 +72,10 @@ const WorkerMainPage = () => {
                         boxShadow: 2,
                         height: '8rem',
                         borderRadius: 1,
-                        bgcolor: 'rgb(154, 87, 33)', // brown shade
+                        bgcolor: 'rgb(154, 87, 33)',
                         position: 'relative',
                     }}
                 >
-                    {/* Tilted Square 1 */}
                     <Box
                         sx={{
                             width: 100,
@@ -97,7 +89,6 @@ const WorkerMainPage = () => {
                             zIndex: 1,
                         }}
                     />
-                    {/* Tilted Square 2 */}
                     <Box
                         sx={{
                             width: 100,
@@ -111,8 +102,6 @@ const WorkerMainPage = () => {
                             zIndex: 1,
                         }}
                     />
-
-                    {/* Bottom-right Icons: Work + Pending */}
                     <Box
                         sx={{
                             position: 'absolute',
@@ -126,14 +115,12 @@ const WorkerMainPage = () => {
                     >
                         <NotificationsNoneOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
                     </Box>
-
                     <CardContent sx={{ zIndex: 2, position: 'relative' }}>
                         <Typography fontWeight="bold" align="left" color="white">
                             Work Requests
                         </Typography>
                     </CardContent>
                 </Card>
-
 
                 <Card
                     onClick={() => navigate('/mobile-worker-request-confirmed')}
@@ -142,11 +129,10 @@ const WorkerMainPage = () => {
                         boxShadow: 2,
                         height: '8rem',
                         borderRadius: 1,
-                        bgcolor: 'rgb(154, 87, 33)', // brown shade
+                        bgcolor: 'rgb(154, 87, 33)',
                         position: 'relative',
                     }}
                 >
-                    {/* Tilted Square 1 */}
                     <Box
                         sx={{
                             width: 100,
@@ -160,8 +146,6 @@ const WorkerMainPage = () => {
                             zIndex: 1,
                         }}
                     />
-
-                    {/* Tilted Square 2 */}
                     <Box
                         sx={{
                             width: 100,
@@ -175,8 +159,6 @@ const WorkerMainPage = () => {
                             zIndex: 1,
                         }}
                     />
-
-                    {/* Bottom-right Icons: Work + Tick */}
                     <Box
                         sx={{
                             position: 'absolute',
@@ -190,16 +172,17 @@ const WorkerMainPage = () => {
                     >
                         <CheckCircleIcon sx={{ color: 'white', fontSize: 27 }} />
                     </Box>
-
                     <CardContent sx={{ zIndex: 2, position: 'relative' }}>
                         <Typography fontWeight="bold" align="left" color="white">
                             Confirmed Works
                         </Typography>
                     </CardContent>
                 </Card>
-
             </Box>
-        </Grid>
+
+            {/* Fixed Bottom Bar */}
+            <WorkerBottomBar />
+        </Box>
     );
 };
 
