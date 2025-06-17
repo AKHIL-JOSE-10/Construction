@@ -10,7 +10,7 @@ import { Height } from '@mui/icons-material';
 
 
 export const color = {
-  primary: "rgba(176, 139, 111, 0.81)",
+  primary: "rgba(145, 98, 65, 0.81)",
   dark: "rgba(114, 97, 84, 0.33)",
   layoutColor: "rgba(255, 252, 249, 1)",
   TextColorMain: "rgba(10, 6, 20, 0.75)",

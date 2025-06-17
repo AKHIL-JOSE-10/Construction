@@ -75,7 +75,13 @@ export default function Home() {
         size={12}
         sx={{
           height: "18vh",
-          bgcolor: color.primary,
+          background: `linear-gradient(
+      to bottom left,
+      rgba(200, 150, 120, 0.3),
+      rgba(145, 98, 65, 0.81),
+      rgba(100, 60, 40, 1)
+    )`,
+          position: "relative",
           position: "relative",
         }}
         justifyContent={"center"}
