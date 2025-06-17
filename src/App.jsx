@@ -40,7 +40,7 @@ import WorkerForm1 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm1";
 import WorkerForm2 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm2";
 import WorkerForm3 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm3";
 import WorkerForm4 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm4";
-
+import WorkerMainPage from "./modules/WorkerPage/Mobile/WorkerMainPage/workerMainPage";
 
 function App() {
   return (
@@ -56,7 +56,7 @@ function App() {
         <Route path="/mobile-profile" element={<MobProfilePage />} />
         <Route path="/mobile-bookings" element={<MobMyBookings />} />
         <Route path="/mobile-booking-info" element={<MobBookingInfo />} />
-        <Route path="/mobile-service-category" element={<MobAllServiceCategory />}/>
+        <Route path="/mobile-service-category" element={<MobAllServiceCategory />} />
         <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
         <Route path="/mobile-settings" element={<MobSettings />} />
         <Route path="/mobile-notifications" element={<MobNotifications />} />
@@ -68,12 +68,12 @@ function App() {
         <Route path="/mobile-premium" element={<MobPremium />} />
         <Route path="/mobile-messages" element={<MobMessages />} />
         <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
-        <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />}/>
+        <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
         <Route path="/mobile-saved-address" element={<MobSavedAddress />} />
-        <Route path="/mobile-artisans-services" element={<MobArtisansServices />}/>
+        <Route path="/mobile-artisans-services" element={<MobArtisansServices />} />
         <Route path="/mobile-architectural-services" element={<MobArchitecturalServices />} />
-        <Route path="/mobile-automation-services" element={<MobAutomationServices />}/>
-        <Route path="/mobile-fabrication-services" element={<MobFabricationServices />}/>
+        <Route path="/mobile-automation-services" element={<MobAutomationServices />} />
+        <Route path="/mobile-fabrication-services" element={<MobFabricationServices />} />
         <Route path="/mobile-message-chat" element={<MobMessageChat />} />
         <Route path="/mobile-search-worker" element={<MobSearchWorker />} />
         <Route path="/address" element={<AddressDetails />} />
@@ -89,6 +89,8 @@ function App() {
         <Route path="/mobile-worker-form2" element={<WorkerForm2 />} />
         <Route path="/mobile-worker-form3" element={<WorkerForm3 />} />
         <Route path="/mobile-worker-form4" element={<WorkerForm4 />} />
+        <Route path="/mobile-worker-mainpage" element={<WorkerMainPage />} />
+
 
 
       </Routes>
