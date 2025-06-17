@@ -121,7 +121,6 @@ const WorkerMainPage = () => {
     }}
   >
     <WorkOutlineIcon sx={{ color: 'white', fontSize: 28 }} />
-    <PendingActionsIcon sx={{ color: 'white', fontSize: 24 }} />
   </Box>
 
   <CardContent sx={{ zIndex: 2, position: 'relative' }}>
