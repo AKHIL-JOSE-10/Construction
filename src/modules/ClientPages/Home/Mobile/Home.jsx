@@ -321,7 +321,7 @@ export default function Home() {
           direction={"column"}
           p={1}
           pt={4}
-          sx={{ overflow: "hidden", mt: 1,borderTop:'1px solid #ccc', borderBottom:'1px solid #ccc', boxShadow: '0 -2px 5px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.08)', }}
+          sx={{ overflow: "hidden", mt: 2.5,borderTop:'1px solid #ccc', borderBottom:'1px solid #ccc', boxShadow: '0 -2px 5px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.08)', }}
         >
                   
 
