@@ -77,9 +77,9 @@ export default function Home() {
           height: "18vh",
           background: `linear-gradient(
       to bottom left,
-      rgba(200, 151, 120, 0.72),
-      rgba(120, 82, 54, 0.85),
-      rgb(96, 57, 38)
+      rgb(223, 168, 134),
+      rgba(120, 82, 54, 0.91),
+      rgb(60, 37, 25)
     )`,
           position: "relative",
           position: "relative",
