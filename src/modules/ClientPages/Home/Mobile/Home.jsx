@@ -13,6 +13,8 @@ import SearchBar from "./SearchBar";
 import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import AdvertisementCarousal from "./AdvertisementCarousal";
+
 
 export default function Home() {
   const navigate = useNavigate();
@@ -201,7 +203,9 @@ export default function Home() {
             ))}
           </Grid>
         </Grid>
-
+<Grid>
+  <AdvertisementCarousal />
+</Grid>
         <Grid container size={12} sx={{ mt: 1 }}>
           <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>

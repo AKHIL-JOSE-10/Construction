@@ -79,7 +79,7 @@ const WorkerForm2 = () => {
                 <TopProgressBar activeStep={1} />
 
                 <Box sx={{ px: 2, mb: 8 }}>
-                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4, mt: 1 }}>
+                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4, mt: 4 }}>
                         Your Services & Experience
                     </Typography>
 

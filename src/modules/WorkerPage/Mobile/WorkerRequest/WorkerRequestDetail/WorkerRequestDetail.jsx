@@ -26,7 +26,7 @@ import {
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ReportIcon from '@mui/icons-material/Report';
 import MessageIcon from '@mui/icons-material/Message';
-import googlemap from '../../../../assets/googlemap.jpeg';
+import googlemap from '../../../../../assets/googlemap.jpeg';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const WorkerRequestDetail = () => {
