@@ -24,6 +24,7 @@ const AdvertisementCarousal = () => {
         overflow: 'hidden',
         position: 'relative',
         bgcolor: '#f5f5f5',
+        ml:1
       }}
     >
       {/* Image display */}
@@ -35,11 +36,12 @@ const AdvertisementCarousal = () => {
           alt={`slide-${index}`}
           sx={{
             position: 'absolute',
-            width: '99%',
+            width: '96%',
             height: '100%',
             objectFit: 'contain',
             opacity: currentIndex === index ? 1 : 0,
             transition: 'opacity 1s ease-in-out',
+            
           }}
         />
       ))}
