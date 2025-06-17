@@ -5,6 +5,9 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import RoomIcon from '@mui/icons-material/Room';
 import dayjs from 'dayjs';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline'; 
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import PendingActionsIcon from '@mui/icons-material/PendingActions';
 
 const WorkerMainPage = () => {
   const [date, setDate] = useState(dayjs());
@@ -66,7 +69,7 @@ const WorkerMainPage = () => {
           gap: 2,
         }}
       >
- <Card
+<Card
   sx={{
     flex: 1,
     boxShadow: 2,
@@ -76,7 +79,7 @@ const WorkerMainPage = () => {
     position: 'relative',
   }}
 >
-  {/* Tilted Square */}
+  {/* Tilted Square 1 */}
   <Box
     sx={{
       width: 100,
@@ -86,11 +89,12 @@ const WorkerMainPage = () => {
       top: -120,
       right: -20,
       transform: 'translate(10%, 90%) rotate(55deg)',
-      border: '2px solidrgb(173, 109, 57)',
+      border: '2px solid rgb(173, 109, 57)',
       zIndex: 1,
     }}
   />
-    <Box
+  {/* Tilted Square 2 */}
+  <Box
     sx={{
       width: 100,
       height: 90,
@@ -99,10 +103,26 @@ const WorkerMainPage = () => {
       top: 10,
       right: 90,
       transform: 'translate(10%, 90%) rotate(55deg)',
-      border: '2px solidrgb(152, 92, 44)',
+      border: '2px solid rgb(152, 92, 44)',
       zIndex: 1,
     }}
   />
+
+  {/* Bottom-right Icons: Work + Pending */}
+  <Box
+    sx={{
+      position: 'absolute',
+      bottom: 8,
+      right: 8,
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
+      zIndex: 2,
+    }}
+  >
+    <WorkOutlineIcon sx={{ color: 'white', fontSize: 28 }} />
+    <PendingActionsIcon sx={{ color: 'white', fontSize: 24 }} />
+  </Box>
 
   <CardContent sx={{ zIndex: 2, position: 'relative' }}>
     <Typography fontWeight="bold" align="left" color="white">
@@ -118,7 +138,7 @@ const WorkerMainPage = () => {
     boxShadow: 2,
     height: '8rem',
     borderRadius: 1,
-    bgcolor: 'rgb(181, 97, 13)', // lighter brown shade
+    bgcolor: 'rgb(154, 87, 33)', // brown shade
     position: 'relative',
   }}
 >
@@ -127,12 +147,12 @@ const WorkerMainPage = () => {
     sx={{
       width: 100,
       height: 90,
-      bgcolor: 'rgb(224, 167, 114)', // matching but slightly lighter
+      bgcolor: 'rgb(178, 109, 53)',
       position: 'absolute',
       top: -120,
       right: -20,
       transform: 'translate(10%, 90%) rotate(55deg)',
-      border: '2px solid rgb(219, 158, 104)',
+      border: '2px solid rgb(173, 109, 57)',
       zIndex: 1,
     }}
   />
@@ -142,15 +162,31 @@ const WorkerMainPage = () => {
     sx={{
       width: 100,
       height: 90,
-      bgcolor: 'rgb(210, 150, 100)', // another close match
+      bgcolor: 'rgb(169, 105, 54)',
       position: 'absolute',
       top: 10,
       right: 90,
       transform: 'translate(10%, 90%) rotate(55deg)',
-      border: '2px solid rgb(198, 132, 82)',
+      border: '2px solid rgb(152, 92, 44)',
       zIndex: 1,
     }}
   />
+
+  {/* Bottom-right Icons: Work + Tick */}
+  <Box
+    sx={{
+      position: 'absolute',
+      bottom: 8,
+      right: 8,
+      display: 'flex',
+      alignItems: 'center',
+      gap: '4px',
+      zIndex: 2,
+    }}
+  >
+    <WorkOutlineIcon sx={{ color: 'white', fontSize: 28 }} />
+    <CheckCircleIcon sx={{ color: 'white', fontSize: 24 }} />
+  </Box>
 
   <CardContent sx={{ zIndex: 2, position: 'relative' }}>
     <Typography fontWeight="bold" align="left" color="white">
@@ -158,7 +194,6 @@ const WorkerMainPage = () => {
     </Typography>
   </CardContent>
 </Card>
-
 
       </Box>
     </Grid>
