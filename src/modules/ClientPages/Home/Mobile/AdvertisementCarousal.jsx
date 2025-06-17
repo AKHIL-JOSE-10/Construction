@@ -19,12 +19,10 @@ const AdvertisementCarousal = () => {
   return (
     <Box
       sx={{
-        width: '100%',
-        height: '176px',
+        height: '170px',
         overflow: 'hidden',
         position: 'relative',
         bgcolor: 'white',
-        ml:1
       }}
     >
       {/* Image display */}
@@ -36,7 +34,7 @@ const AdvertisementCarousal = () => {
           alt={`slide-${index}`}
           sx={{
             position: 'absolute',
-            width: '96%',
+            width: '100%',
             height: '100%',
             objectFit: 'contain',
             opacity: currentIndex === index ? 1 : 0,

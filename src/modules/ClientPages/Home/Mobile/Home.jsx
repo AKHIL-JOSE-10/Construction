@@ -175,7 +175,7 @@ export default function Home() {
         size={12}
         direction={"column"}
       >
-         <Grid sx={{mb:3}}>
+         <Grid sx={{mb:3 , }}>
             <AdvertisementCarousal />
           </Grid> 
         <Grid container>
