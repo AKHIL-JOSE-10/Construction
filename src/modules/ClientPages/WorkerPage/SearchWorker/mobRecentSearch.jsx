@@ -82,7 +82,7 @@ const MobRecentSearch = () => {
   ];
 
   return (
-    <Box py={2} sx={{ fontFamily: "sans-serif" }}>
+    <Box py={2}>
       {/* Header */}
       <Box px={1} display="flex" alignItems="center">
         {/* Left Side: Back Arrow + Location Info */}
