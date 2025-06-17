@@ -230,26 +230,19 @@ export default function Home() {
                 See all
               </Typography>
             </Grid>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row", // Horizontal layout
-                overflowX: "auto", // Enable horizontal scrolling
-                width: "100vw", // Full viewport width
-                gap: "20px",
-                scrollbarWidth: "thin",
-                "&::-webkit-scrollbar": {
-                  height: "8px", // Height for horizontal scrollbar
-                },
-                "&::-webkit-scrollbar-thumb": {
-                  backgroundColor: "#aaa",
-                  borderRadius: "4px",
-                },
-                "&::-webkit-scrollbar-track": {
-                  backgroundColor: "#f0f0f0",
-                },
-              }}
-            >
+<Box
+  sx={{
+    display: "flex",
+    flexDirection: "row",
+    overflowX: "auto",
+    width: "100vw",
+    gap: "20px",
+    scrollbarWidth: "none", // Firefox
+    "&::-webkit-scrollbar": {
+      display: "none", // Chrome, Safari, Edge
+    },
+  }}
+>
               {[...Array(4)].map((_, index) => (
                 <Grid
                   key={index}
@@ -340,26 +333,19 @@ export default function Home() {
               </Typography>
             </Grid>
           </Grid>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              overflowX: "auto",
-              width: "100vw",
-              gap: "20px",
-              scrollbarWidth: "thin",
-              "&::-webkit-scrollbar": {
-                height: "8px",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                backgroundColor: "#aaa",
-                borderRadius: "4px",
-              },
-              "&::-webkit-scrollbar-track": {
-                backgroundColor: "#f0f0f0",
-              },
-            }}
-          >
+<Box
+  sx={{
+    display: "flex",
+    flexDirection: "row",
+    overflowX: "auto",
+    width: "100vw",
+    gap: "20px",
+    scrollbarWidth: "none", // Firefox
+    "&::-webkit-scrollbar": {
+      display: "none", // Chrome, Safari, Edge
+    },
+  }}
+>
             {[...Array(4)].map((_, index) => (
               <Grid
                 container
