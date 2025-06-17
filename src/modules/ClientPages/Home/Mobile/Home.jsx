@@ -211,7 +211,6 @@ export default function Home() {
               sx={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: 1,
                 objectFit: 'cover',
               }}
             />
