@@ -13,7 +13,7 @@ import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AdIcon from '../../../../assets/AdIcon.png'
-
+import AdvertisementCarousal from "./AdvertisementCarousal";
 export default function Home() {
   const navigate = useNavigate();
 
@@ -175,7 +175,13 @@ export default function Home() {
         size={12}
         direction={"column"}
       >
+         <Grid sx={{mb:3}}>
+            <AdvertisementCarousal />
+          </Grid> 
         <Grid container>
+          
+         
+
           <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
               <Typography sx={{ ...textDecoration.headingPrimaryDark }}>

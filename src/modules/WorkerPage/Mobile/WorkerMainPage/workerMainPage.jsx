@@ -188,7 +188,7 @@ const WorkerMainPage = () => {
                             zIndex: 2,
                         }}
                     >
-                        <CheckCircleIcon sx={{ color: 'white', fontSize: 24 }} />
+                        <CheckCircleIcon sx={{ color: 'white', fontSize: 27 }} />
                     </Box>
 
                     <CardContent sx={{ zIndex: 2, position: 'relative' }}>
