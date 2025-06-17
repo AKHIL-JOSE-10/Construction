@@ -3,9 +3,6 @@ import {
     Box,
     Typography,
     IconButton,
-    Stepper,
-    Step,
-    StepLabel,
     Chip,
     Stack,
     Select,
@@ -17,6 +14,7 @@ import {
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from 'react-router-dom';
 import BottomButton from './bottomButton';
+import TopProgressBar from './topProgressBar';
 
 const WorkerForm2 = () => {
     const navigate = useNavigate();
@@ -25,7 +23,6 @@ const WorkerForm2 = () => {
     const [selectedExperience, setSelectedExperience] = useState('');
     const [addedServiceExperience, setAddedServiceExperience] = useState([]);
 
-    const steps = ['', '', '', ''];
 
     const availableServices = [
         "Architectural Design", "Civil Engineering", "Interior Design", "Landscaping",
@@ -76,12 +73,10 @@ const WorkerForm2 = () => {
             </Box>
 
             <Box sx={{ bgcolor: 'white', pb: 7, display: 'flex', flexDirection: 'column' }}>
-                {/* Stepper */}
-                <Stepper activeStep={1} alternativeLabel sx={{ mb: 3 }}>
-                    {steps.map((_, index) => (
-                        <Step key={index}><StepLabel /></Step>
-                    ))}
-                </Stepper>
+
+                {/* Top Progress Bar */}
+
+                <TopProgressBar activeStep={1} />
 
                 <Box sx={{ px: 2, mb: 8 }}>
                     <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4, mt: 1 }}>

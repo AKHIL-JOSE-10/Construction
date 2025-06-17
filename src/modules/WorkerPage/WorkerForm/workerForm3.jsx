@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import {
     Box,
     Typography,
-    Stepper,
-    Step,
-    StepLabel,
     IconButton,
     TextField,
     Radio,
@@ -14,6 +11,7 @@ import {
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from 'react-router-dom';
 import BottomButton from './bottomButton';
+import TopProgressBar from './topProgressBar';
 
 const WorkerForm3 = () => {
     const navigate = useNavigate();
@@ -39,14 +37,12 @@ const WorkerForm3 = () => {
             </Box>
 
             <Box sx={{ bgcolor: 'white', pb: 7, display: 'flex', flexDirection: 'column' }}>
-                {/* Stepper */}
-                <Stepper activeStep={2} alternativeLabel sx={{ mb: 3 }}>
-                    {steps.map((_, index) => (
-                        <Step key={index}><StepLabel /></Step>
-                    ))}
-                </Stepper>
 
-                <Box sx={{ px: 2, mb:8 }}>
+                {/* Top Progress Bar */}
+
+                <TopProgressBar activeStep={2} />
+
+                <Box sx={{ px: 2, mb: 8 }}>
                     {/* Main Heading */}
                     <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 3 }}>
                         Write a small bio of you

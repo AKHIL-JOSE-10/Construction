@@ -9,19 +9,17 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Stepper,
-  Step,
-  StepLabel
 } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import BottomButton from './bottomButton';
+import TopProgressBar from './topProgressBar';
 
 const WorkerForm1 = () => {
 
   const [gender, setGender] = React.useState('');
-  const steps = ['', '', '', '']; // Stepper placeholder
+
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -53,15 +51,9 @@ const WorkerForm1 = () => {
 
 
         {/* Top Progress Bar */}
-        <Stepper activeStep={0} alternativeLabel sx={{ px: -1 }}>
-          {steps.map((_, index) => (
-            <Step key={index}>
-              <StepLabel></StepLabel>
-            </Step>
-          ))}
-        </Stepper>
+        <TopProgressBar activeStep={0} />
 
-        <Box sx={{ px: 2, mb:8 }}>
+        <Box sx={{ px: 2, mb: 8 }}>
           {/* Title */}
           <Typography sx={{ fontSize: '1.4rem', fontWeight: "bold", mb: 3, mt: 4 }}>
             Tell us more about yourself
