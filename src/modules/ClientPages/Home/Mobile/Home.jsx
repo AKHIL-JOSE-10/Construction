@@ -203,7 +203,7 @@ export default function Home() {
             ))}
           </Grid>
         </Grid>
-<Grid sx={{width:'100%'}}>
+<Grid sx={{width:'100%',mt:-4}}>
   <AdvertisementCarousal />
 </Grid>
         <Grid container size={12} sx={{ mt: 1 }}>
