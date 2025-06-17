@@ -23,6 +23,7 @@ const AdvertisementCarousal = () => {
         overflow: 'hidden',
         position: 'relative',
         bgcolor: 'white',
+        mx:1
       }}
     >
       {/* Image display */}
