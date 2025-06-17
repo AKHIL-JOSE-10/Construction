@@ -203,7 +203,7 @@ export default function Home() {
 
 
         <Grid container justifyContent="center">
-          <Grid sx={{ my: 2, px: 1 }}>
+          <Grid sx={{ my: 3, px: 1 }}>
             <Box
               component="img"
               src={AdIcon}
