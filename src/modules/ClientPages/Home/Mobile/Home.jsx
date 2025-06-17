@@ -220,7 +220,7 @@ export default function Home() {
           </Grid>
         </Grid>
 
-        <Grid container size={12} sx={{ mt: 3 ,pt:2, borderTop:'1px solid #ccc', borderBottom:'1px solid #ccc', boxShadow: '0 -2px 5px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.1)',}}>
+        <Grid container size={12} sx={{ mt: 3 ,pt:2, borderTop:'1px solid #ccc', borderBottom:'1px solid #ccc', boxShadow: '0 -2px 5px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.08)',}}>
           <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
               <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
@@ -321,8 +321,10 @@ export default function Home() {
           direction={"column"}
           p={1}
           pt={4}
-          sx={{ overflow: "hidden", mt: 1 }}
+          sx={{ overflow: "hidden", mt: 1,borderTop:'1px solid #ccc', borderBottom:'1px solid #ccc', boxShadow: '0 -2px 5px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.08)', }}
         >
+                  
+
           <Grid container size={12} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
               <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
