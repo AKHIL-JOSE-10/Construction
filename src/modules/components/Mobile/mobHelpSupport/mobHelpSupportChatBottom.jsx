@@ -17,7 +17,6 @@ const MobHelpSupportChatBottom = () => {
         alignItems: "center",
         px: 1,
         py: 1,
-        zIndex: 10,
         gap: 1,
         zIndex: 1000,
         borderTop: "1px solid lightgrey",
