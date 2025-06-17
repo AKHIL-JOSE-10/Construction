@@ -19,11 +19,10 @@ const AdvertisementCarousal = () => {
   return (
     <Box
       sx={{
-        height: '170px',
+        height: '173px',
         overflow: 'hidden',
         position: 'relative',
         bgcolor: 'white',
-        mx:1
       }}
     >
       {/* Image display */}
@@ -63,6 +62,7 @@ const AdvertisementCarousal = () => {
               height: 10,
               bgcolor: currentIndex === index ? '#1976d2' : '#ccc',
               transition: 'background-color 0.s ease',
+              borderRadius:"50%"
             }}
           />
         ))}
