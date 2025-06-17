@@ -132,7 +132,7 @@ const WorkerRequestDetail = () => {
                     }}
                 />
                 <Stack direction="column" spacing={1} mb={2} sx={{  zIndex: 1 }}>
-                    <Work sx={{ fontSize: '3rem', color: '#321420', zIndex: 100 }} />
+                    <Work sx={{ fontSize: '3rem', color: 'white', zIndex: 100 }} />
                     <Box>
                         <Typography sx={{ fontSize: '1.7rem', color: 'white', bottom:20, position:'absolute' }} fontWeight="bold">
                         Steel Fabrication
