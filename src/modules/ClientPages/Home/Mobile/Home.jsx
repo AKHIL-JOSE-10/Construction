@@ -175,13 +175,11 @@ export default function Home() {
         size={12}
         direction={"column"}
       >
-         {/* <Grid sx={{mb:3 , }}>
+         <Grid sx={{mb:3 , }}>
             <AdvertisementCarousal />
-          </Grid>  */}
-        <Grid container>
-          
-         
+          </Grid> 
 
+        <Grid container>
           <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
               <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
