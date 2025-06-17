@@ -83,12 +83,16 @@ const MobSignin = () => {
               ml: 0.5,
             }}
           >
-            Email
+            Phone Number
           </Typography>
           <TextField
             size="small"
             required
+            placeholder="Enter your phone number"
+            type="number"
             sx={{
+              backgroundColor: "white",
+              border: "0.5px solid grey",
               width: { xs: "38vh", sm: "55vh", md: "64vh" },
               mb: 2,
               "& .MuiOutlinedInput-notchedOutline": {
@@ -125,8 +129,11 @@ const MobSignin = () => {
           <TextField
             size="small"
             required
+            placeholder="Enter your password"
             type="password"
             sx={{
+              backgroundColor: "white",
+              border: "0.5px solid grey",
               width: { xs: "38vh", sm: "55vh", md: "64vh" },
               mb: 2,
               "& .MuiOutlinedInput-notchedOutline": {
