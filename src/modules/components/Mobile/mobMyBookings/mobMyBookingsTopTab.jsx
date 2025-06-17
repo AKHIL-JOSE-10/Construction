@@ -7,7 +7,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
-  Grid
+  Grid,
 } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import { TabContext, TabPanel } from "@mui/lab";
@@ -29,38 +29,40 @@ const MobMyBookingsTopTab = () => {
 
   return (
     <TabContext value={value.toString()}>
-      <Box mb={1} sx={{ width: "100%" }}>
-        {/* Tabs */}
-        <Box
-          sx={{
-            width: "100%",
-            marginTop: "15px",
-            borderBottom: 1,
-            borderColor: "divider",
-            display: "flex",
-            justifyContent: "center",
+      {/* Tabs */}
+      <Box
+        sx={{
+          wmt: -1,
+          position: "fixed",
+          zIndex: 1000,
+          width: "100%",
+          backgroundColor: "#fff",
+          borderBottom: 1,
+          borderColor: "divider",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Tabs
+          value={value}
+          onChange={handleTabChange}
+          aria-label="booking tabs"
+          slotProps={{
+            indicator: {
+              sx: {
+                backgroundColor: "#BFA088",
+              },
+            },
           }}
         >
-          <Tabs
-            value={value}
-            onChange={handleTabChange}
-            aria-label="booking tabs"
-            slotProps={{
-              indicator: {
-                sx: {
-                  backgroundColor: "#BFA088"
-                }
-              }
-            }}
-          >
-            <Tab label="In progress" sx={{fontSize:'15px'}}/>
-            <Tab label="Completed" sx={{fontSize:'15px'}}/>
-            <Tab label="Cancelled" sx={{fontSize:'15px'}}/>
-          </Tabs>
-        </Box>
+          <Tab label="In progress" sx={{ fontSize: "15px" }} />
+          <Tab label="Completed" sx={{ fontSize: "15px" }} />
+          <Tab label="Cancelled" sx={{ fontSize: "15px" }} />
+        </Tabs>
+      </Box>
 
-        {/* Filter */}
-        {/*<Grid
+      {/* Filter */}
+      {/*<Grid
           container
           sx={{
             width: "100%",
@@ -88,19 +90,22 @@ const MobMyBookingsTopTab = () => {
           </Box>
         </Grid>*/}
 
-        {/* Swipeable Views */}
-        <SwipeableViews index={value} onChangeIndex={handleSwipeChangeIndex}>
-          <TabPanel value="0" sx={{ p: 0 }}>
-            <MobMyBookingsInProgress />
-          </TabPanel>
-          <TabPanel value="1" sx={{ p: 0 }}>
-            <MobMyBookingsCompleted />
-          </TabPanel>
-          <TabPanel value="2" sx={{ p: 0 }}>
-            <MobMyBookingsCancelled />
-          </TabPanel>
-        </SwipeableViews>
-      </Box>
+      {/* Swipeable Views */}
+      <SwipeableViews
+        style={{ paddingTop: "45px", paddingBottom: "10px" }}
+        index={value}
+        onChangeIndex={handleSwipeChangeIndex}
+      >
+        <TabPanel value="0" sx={{ p: 0 }}>
+          <MobMyBookingsInProgress />
+        </TabPanel>
+        <TabPanel value="1" sx={{ p: 0 }}>
+          <MobMyBookingsCompleted />
+        </TabPanel>
+        <TabPanel value="2" sx={{ p: 0 }}>
+          <MobMyBookingsCancelled />
+        </TabPanel>
+      </SwipeableViews>
     </TabContext>
   );
 };
