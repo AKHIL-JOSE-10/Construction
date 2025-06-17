@@ -19,7 +19,7 @@ const AdvertisementCarousal = () => {
   return (
     <Box
       sx={{
-        height: '171px',
+        height: '210px',
         overflow: 'hidden',
         position: 'relative',
         bgcolor: 'white',
@@ -35,7 +35,7 @@ const AdvertisementCarousal = () => {
           sx={{
             position: 'absolute',
             width: '100%',
-            height: '100%',
+            height: '175px',
             objectFit: 'contain',
             opacity: currentIndex === index ? 1 : 0,
             transition: 'opacity 1s ease-in-out',
