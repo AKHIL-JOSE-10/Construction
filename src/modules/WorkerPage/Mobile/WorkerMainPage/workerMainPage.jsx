@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'; 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 
 const WorkerMainPage = () => {
   const [date, setDate] = useState(dayjs());
@@ -120,7 +121,7 @@ const WorkerMainPage = () => {
       zIndex: 2,
     }}
   >
-    <WorkOutlineIcon sx={{ color: 'white', fontSize: 28 }} />
+    <NotificationsNoneOutlinedIcon sx={{ color: 'white', fontSize: 30 }} />
   </Box>
 
   <CardContent sx={{ zIndex: 2, position: 'relative' }}>
@@ -183,7 +184,6 @@ const WorkerMainPage = () => {
       zIndex: 2,
     }}
   >
-    <WorkOutlineIcon sx={{ color: 'white', fontSize: 28 }} />
     <CheckCircleIcon sx={{ color: 'white', fontSize: 24 }} />
   </Box>
 
