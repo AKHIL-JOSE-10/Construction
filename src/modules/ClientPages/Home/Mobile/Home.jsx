@@ -13,8 +13,7 @@ import SearchBar from "./SearchBar";
 import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AdvertisementCarousal from "./AdvertisementCarousal";
-
+import AdIcon from '../../../../assets/AdIcon.png'
 
 export default function Home() {
   const navigate = useNavigate();
@@ -203,9 +202,21 @@ export default function Home() {
             ))}
           </Grid>
         </Grid>
-<Grid sx={{width:'100%',}}>
-  <AdvertisementCarousal />
-</Grid>
+        <Grid container justifyContent="center" width={'100%'}>
+          <Grid >
+            <Box
+              component="img"
+              src={AdIcon}
+              alt="Sample"
+              sx={{
+                width: '100%',
+                height: 'auto',
+                borderRadius: 1,
+                objectFit: 'cover',
+              }}
+            />
+          </Grid>
+        </Grid>
         <Grid container size={12} sx={{ mt: 1 }}>
           <Grid container size={12} p={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
@@ -217,7 +228,7 @@ export default function Home() {
               <Typography
                 mt={0.4}
                 sx={{ ...textDecoration.headingPrimaryColored }}
-                onClick={()=>navigate("/mobile-artisans-services")}
+                onClick={() => navigate("/mobile-artisans-services")}
               >
                 See all
               </Typography>
@@ -326,7 +337,7 @@ export default function Home() {
               <Typography
                 mt={0.4}
                 sx={{ ...textDecoration.headingPrimaryColored }}
-                onClick={()=>navigate("/mobile-search-worker")}
+                onClick={() => navigate("/mobile-search-worker")}
               >
                 See all
               </Typography>
