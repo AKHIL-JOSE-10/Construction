@@ -10,7 +10,7 @@ import {
 } from '@mui/icons-material';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-
+import { useNavigate } from 'react-router-dom';
 import WorkerRequestConfirmationCard from './workerRequestConfirmationCard';
 
 const requests = [
@@ -44,7 +44,7 @@ const requests = [
 ];
 
 export default function WorkerRequestConfirmation() {
-
+    const navigate = useNavigate();
     const thisWeek = requests.filter(r => r.week === 'this');
     const nextWeek = requests.filter(r => r.week === 'next');
 
@@ -52,7 +52,10 @@ export default function WorkerRequestConfirmation() {
         <Box sx={{ bgcolor: '#fefaf7', minHeight: '100vh', p: 2 }}>
             {/* Header */}
             <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-                <ArrowBackIosIcon sx={{ fontSize: "23px", color: "grey", mt: '1.5%' }} />
+                <ArrowBackIosIcon
+                    onClick={() => navigate(-1)}
+                    sx={{ fontSize: "23px", color: "grey", mt: '1.5%', cursor: 'pointer' }}
+                />
                 <Box sx={{ display: 'flex', flexDirection: 'column', ml: 1 }}>
                     <Typography variant="h6" fontWeight="bold">
                         Hi, Athul Murali T
@@ -109,9 +112,9 @@ export default function WorkerRequestConfirmation() {
                 />
 
                 {/* Content */}
-                <Box sx={{ position: 'relative', zIndex: 1000 ,height:'100%'}}>
+                <Box sx={{ position: 'relative', zIndex: 1000, height: '100%' }}>
                     <Box>
-                        <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white', pr: 14 , mt:0.5}}>
+                        <Typography sx={{ fontWeight: '550', fontSize: '120%', color: 'white', pr: 14, mt: 0.5 }}>
                             You have a pretty busy week
                         </Typography>
                     </Box>
@@ -120,7 +123,7 @@ export default function WorkerRequestConfirmation() {
                         direction="row"
                         alignItems="center"
                         spacing={1}
-                        sx={{ mt: 4, mb: 1, color: 'white' ,position: 'absolute', bottom:1}}
+                        sx={{ mt: 4, mb: 1, color: 'white', position: 'absolute', bottom: 1 }}
                     >
                         <FactCheckIcon sx={{ fontSize: "15px", color: 'white' }} />
                         <Typography variant="body2" sx={{ fontSize: "14px", color: 'white' }}>
