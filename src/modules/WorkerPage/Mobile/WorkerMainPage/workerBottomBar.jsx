@@ -137,7 +137,7 @@ const WorkerBottomBar = () => {
         />
 
         <Tab
-          icon={<EventAvailableIcon sx={{ width: 22, height: 22, ml:0.2}} />}
+          icon={<EventAvailableIcon sx={{ width: 22, height: 22, ml:0.1}} />}
           label="Bookings"
           sx={tabStyle}
         />
