@@ -84,8 +84,8 @@ const WorkerBottomBar = () => {
       >
         <Box
           sx={{
-            width: 45,
-            height: 45,
+            width: 48,
+            height: 48,
             bgcolor: "rgba(163, 84, 15, 0.94)",
             borderRadius: "50%",
             border: "4px solid rgb(107, 56, 5)",
@@ -93,6 +93,7 @@ const WorkerBottomBar = () => {
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
+            mt:1
           }}
         >
           <WorkIcon sx={{ color: "rgba(251, 248, 248, 0.91)", fontSize: 30 }} />
@@ -118,7 +119,7 @@ const WorkerBottomBar = () => {
           sx={tabStyle}
         />
         <Tab
-          icon={<MessageIcon sx={{ width: 22, height: 22 }} />}
+          icon={<MessageIcon sx={{ width: 22, height: 22 , mr:0.5 }} />}
           label="Messages"
           sx={tabStyle}
         />
@@ -136,7 +137,7 @@ const WorkerBottomBar = () => {
         />
 
         <Tab
-          icon={<EventAvailableIcon sx={{ width: 22, height: 22 }} />}
+          icon={<EventAvailableIcon sx={{ width: 22, height: 22, ml:0.5}} />}
           label="Bookings"
           sx={tabStyle}
         />
