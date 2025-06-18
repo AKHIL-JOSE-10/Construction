@@ -12,7 +12,7 @@ import SearchBar from "./SearchBar";
 import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AdIcon from '../../../../assets/AdIcon.png'
+import AdIcon from "../../../../assets/AdIcon.png";
 import AdvertisementCarousal from "./AdvertisementCarousal";
 export default function Home() {
   const navigate = useNavigate();
@@ -75,7 +75,13 @@ export default function Home() {
         size={12}
         sx={{
           height: "18vh",
-          bgcolor: color.primary,
+          background: `linear-gradient(
+      to bottom left,
+      rgb(223, 168, 134),
+      rgba(120, 82, 54, 0.91),
+      rgb(60, 37, 25)
+    )`,
+          position: "relative",
           position: "relative",
         }}
         justifyContent={"center"}
@@ -114,7 +120,9 @@ export default function Home() {
               Current Location
             </Typography>
             <Grid container>
-              <Typography sx={{ ...textDecoration.headerPrimary, fontWeight: "bold" }}>
+              <Typography
+                sx={{ ...textDecoration.headerPrimary, fontWeight: "bold" }}
+              >
                 Kuala Lumpur, Malaysia
               </Typography>
               <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
@@ -170,17 +178,11 @@ export default function Home() {
           }}
         /> */}
       </Grid>
-      <Grid
-        container
-        size={12}
-        direction={"column"}
-      >
-        <Grid sx={{ mb: 3, }}>
-          <AdvertisementCarousal />
-        </Grid>
+      <Grid container size={12} direction={"column"}>
+        <AdvertisementCarousal />
 
         <Grid container>
-          <Grid container size={12}  px={1} sx={{ height: "fit-content" }}>
+          <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
               <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
                 Service Category
@@ -192,15 +194,13 @@ export default function Home() {
             columnSpacing={2}
             alignItems={"flex-start"}
             justifyContent={"center"}
-            sx={{ overflow: "hidden", height: "35vh" }}
+            sx={{ overflow: "hidden", height: "37vh" }}
           >
             {ServiceList.slice(0, 6).map((data) => (
               <ServiceLayer key={data.name} data={data} img />
             ))}
           </Grid>
         </Grid>
-
-
 
         <Grid container justifyContent="center">
           <Grid sx={{ my: 3, px: 1 }}>
@@ -210,10 +210,10 @@ export default function Home() {
               alt="Sample"
               onClick={() => navigate("/mobile-worker-form1")}
               sx={{
-                width: '100%',
-                height: 'auto',
-                objectFit: 'cover',
-                cursor: 'pointer', // Make it clickable
+                width: "100%",
+                height: "auto",
+                objectFit: "cover",
+                cursor: "pointer", // Make it clickable
                 WebkitTapHighlightColor: "transparent", // Removes mobile highlight
               }}
             />

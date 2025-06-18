@@ -47,7 +47,7 @@ const AdvertisementCarousal = () => {
       <Box
         sx={{
           position: 'absolute',
-          bottom: 10,
+          bottom: 15,
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
@@ -58,8 +58,8 @@ const AdvertisementCarousal = () => {
           <Box
             key={index}
             sx={{
-              width: 10,
-              height: 10,
+              width: 8,
+              height: 8,
               bgcolor: currentIndex === index ? '#D2B48C' : '#ccc',
               transition: 'background-color 0.s ease',
               borderRadius:"50%"
