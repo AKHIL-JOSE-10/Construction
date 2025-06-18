@@ -15,7 +15,7 @@ const WorkerBottomBar = () => {
   const allowedPaths = [
     "/home",
     "/mobile-messages",
-    "/mobile-worker-mainpage",       // New tab for 'Works'
+    "/mobile-worker-mainpage", // Works
     "/mobile-bookings",
     "/mobile-profile",
   ];
@@ -34,7 +34,7 @@ const WorkerBottomBar = () => {
         navigate("/home");
         break;
       case 1:
-        navigate("/mobile-messages",);
+        navigate("/mobile-messages");
         break;
       case 2:
         navigate("/mobile-worker-mainpage");
@@ -43,7 +43,7 @@ const WorkerBottomBar = () => {
         navigate("/mobile-bookings");
         break;
       case 4:
-        navigate( "/mobile-profile");
+        navigate("/mobile-profile");
         break;
       default:
         break;
@@ -61,43 +61,88 @@ const WorkerBottomBar = () => {
         bottom: 0,
         left: 0,
         right: 0,
-        width: "100%",
-        height: "60px",
         bgcolor: "white",
         zIndex: 1000,
         borderTop: "1px solid lightgrey",
-        paddingBottom: "env(safe-area-inset-bottom)",
+        height: 60,
+        overflow: "visible", // critical!
       }}
     >
+      {/* Wrapper for popping icon */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: -30,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 1100,
+        }}
+        onClick={() => {
+          setValue(2);
+          navigate("/mobile-worker-mainpage");
+        }}
+      >
+        <Box
+          sx={{
+            width: 60,
+            height: 60,
+            bgcolor: "rgba(130, 60, 11, 0.86)",
+            borderRadius: "50%",
+            border: "3px solid rgba(212, 124, 35, 0.84)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0px 4px 12px rgb(168, 165, 157)",
+            cursor: "pointer",
+          }}
+        >
+          <WorkIcon sx={{ color: "rgba(255, 178, 96, 0.91)", fontSize: 30 }} />
+        </Box>
+      </Box>
+
       <Tabs
         value={value}
         onChange={handleChange}
-        aria-label="worker bottom tabs"
         variant="fullWidth"
-        sx={{ minHeight: 45, height: 48, pt: 1 }}
+        sx={{
+          height: "100%",
+          overflow: "visible",
+          ".MuiTabs-flexContainer": {
+            overflow: "visible",
+            position: "relative",
+          },
+        }}
       >
         <Tab
-          icon={<HomeOutlinedIcon sx={{ width: 25, height: 25 }} />}
+          icon={<HomeOutlinedIcon sx={{ width: 24, height: 24 }} />}
           label="Home"
           sx={tabStyle}
         />
         <Tab
-          icon={<MessageIcon sx={{ width: 23, height: 23 }} />}
+          icon={<MessageIcon sx={{ width: 22, height: 22 }} />}
           label="Messages"
           sx={tabStyle}
         />
+
+        {/* Empty tab for spacing */}
         <Tab
-          icon={<WorkIcon sx={{ width: 23, height: 23 }} />}
-          label="Works"
-          sx={tabStyle}
+          sx={{
+            minWidth: 0,
+            width: "20px",
+            height: "60px",
+            padding: 0,
+            margin: 0,
+          }}
+          disabled
         />
+
         <Tab
-          icon={<EventAvailableIcon sx={{ width: 23, height: 23 }} />}
+          icon={<EventAvailableIcon sx={{ width: 22, height: 22 }} />}
           label="Bookings"
           sx={tabStyle}
         />
         <Tab
-          icon={<AccountCircleIcon sx={{ width: 23, height: 23 }} />}
+          icon={<AccountCircleIcon sx={{ width: 22, height: 22 }} />}
           label="Profile"
           sx={tabStyle}
         />
@@ -109,13 +154,12 @@ const WorkerBottomBar = () => {
 const tabStyle = {
   fontSize: "0.6rem",
   minWidth: 0,
-  px: 0.8,
+  px: 1,
   mx: 0.4,
   py: 0.2,
-  my: 0.2,
   textTransform: "none",
-  minHeight: 45,
-  height: 45,
+  minHeight: 48,
+  height: 48,
 };
 
 export default WorkerBottomBar;
