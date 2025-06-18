@@ -123,7 +123,7 @@ export default function Home() {
               <Typography
                 sx={{ ...textDecoration.headerPrimary, fontWeight: "bold" }}
               >
-                Kuala Lumpur, Malaysia
+                Thrissur , Kerala
               </Typography>
               <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
                 <KeyboardArrowDownOutlined sx={{ color: "white" }} />
@@ -157,7 +157,7 @@ export default function Home() {
               }}
             >
               <Avatar
-                src={"https://randomuser.me/api/portraits/women/79.jpg"}
+                src={"https://randomuser.me/api/portraits/men/83.jpg"}
                 sx={{ width: "35px", height: "35px" }}
               ></Avatar>
             </Link>
@@ -384,7 +384,7 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src="/assets/DummyImages/Sample-2.jpg"
+                    src="https://randomuser.me/api/portraits/men/83.jpg"
                     width="100%"
                     height="100%"
                     alt="Worker"
@@ -416,7 +416,7 @@ export default function Home() {
                     <Typography
                       sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
                     >
-                      Perry Wilson
+                      Daison Babu
                     </Typography>
                   </Grid>
                   <Grid item>
@@ -426,7 +426,7 @@ export default function Home() {
                         fontSize: "10px",
                       }}
                     >
-                      Location
+                      Thrissur
                     </Typography>
                   </Grid>
                 </Grid>
