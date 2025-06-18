@@ -15,7 +15,7 @@ const WorkerMainPage = () => {
     const [date, setDate] = useState(dayjs());
 
     return (
-        <Box sx={{ px: 2, pt: 3, bgcolor: '#fff7f0', pb: '45px' }}>
+        <Box sx={{ px: 2, pt: 3, pb: '65px' }}>
             {/* Header */}
             <Box sx={{ mb: 2 }}>
                 <Typography variant="h5" fontWeight="bold">
