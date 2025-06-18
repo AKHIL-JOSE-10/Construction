@@ -86,17 +86,16 @@ const WorkerBottomBar = () => {
           sx={{
             width: 60,
             height: 60,
-            bgcolor: "rgba(130, 60, 11, 0.86)",
+            bgcolor: "rgba(163, 84, 15, 0.94)",
             borderRadius: "50%",
-            border: "3px solid rgba(212, 124, 35, 0.84)",
+            border: "4px solid rgb(107, 56, 5)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: "0px 4px 12px rgb(168, 165, 157)",
             cursor: "pointer",
           }}
         >
-          <WorkIcon sx={{ color: "rgba(255, 178, 96, 0.91)", fontSize: 30 }} />
+          <WorkIcon sx={{ color: "rgba(251, 248, 248, 0.91)", fontSize: 30 }} />
         </Box>
       </Box>
 
