@@ -175,7 +175,7 @@ const MobSearchWorker = () => {
                 Current Location
               </Typography>
               <Typography sx={{ fontWeight: 'Bold', fontSize: 15 }}>
-                Kuala Lumpur, Malaysia
+                Thrissur, Kerala
               </Typography>
             </Box>
           </Box>
