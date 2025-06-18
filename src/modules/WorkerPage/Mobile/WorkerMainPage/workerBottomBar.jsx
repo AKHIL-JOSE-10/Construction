@@ -137,13 +137,13 @@ const WorkerBottomBar = () => {
         />
 
         <Tab
-          icon={<EventAvailableIcon sx={{ width: 22, height: 22, ml:0.5}} />}
+          icon={<EventAvailableIcon sx={{ width: 22, height: 22, ml:0.2}} />}
           label="Bookings"
           sx={tabStyle}
         />
         <Tab
           icon={<AccountCircleIcon sx={{ width: 22, height: 22 }} />}
-          label="Profile"
+          label="Profile" 
           sx={tabStyle}
         />
       </Tabs>
