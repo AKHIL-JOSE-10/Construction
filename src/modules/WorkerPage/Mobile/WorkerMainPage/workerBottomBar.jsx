@@ -93,7 +93,7 @@ const WorkerBottomBar = () => {
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
-            mt:1
+            mt:1.5
           }}
         >
           <WorkIcon sx={{ color: "rgba(251, 248, 248, 0.91)", fontSize: 30 }} />
