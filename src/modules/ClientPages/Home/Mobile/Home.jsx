@@ -369,8 +369,8 @@ export default function Home() {
                 onClick={() =>
                   navigate("/mobile-workerpage", {
                     state: {
-                      name: "WorkerSample",
-                      img: "/assets/DummyImages/Sample-2.jpg",
+                      name: "Daison Babu",
+                      img: "https://randomuser.me/api/portraits/men/83.jpg",
                     },
                   })
                 }
