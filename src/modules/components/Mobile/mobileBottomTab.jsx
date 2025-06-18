@@ -64,7 +64,7 @@ const MobileBottomTab = () => {
       >
         <Tab
           icon={<HomeOutlinedIcon sx={{ width: 25, height: 25 }} />}
-          label="Explore"
+          label="Home"
           sx={{
             fontSize: "0.6rem",
             minWidth: 0,
