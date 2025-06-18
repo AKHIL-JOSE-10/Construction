@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 
 import img1 from '../../../../assets/AdIcon.png';
-import img2 from '../../../../assets/AdIcon.png';
-import img3 from '../../../../assets/AdIcon.png';
+import img2 from '../../../../assets/Interior.png';
 
 const AdvertisementCarousal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [img1, img2, img3];
+  const images = [img1, img2];
 
   useEffect(() => {
     const interval = setInterval(() => {
