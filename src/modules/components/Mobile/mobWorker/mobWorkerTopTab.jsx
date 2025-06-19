@@ -3,7 +3,7 @@ import { useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
 import MobWorkerservice from './mobWorkerService';
-import MobWorkerMyProfle from './MobWorkerMyProfle';
+import MobWorkerMyProfle from './mobWorkerMyProfle';
 
 const MobWorkerTopTab = ({service}) => {
   const [value, setValue] = useState(0);
