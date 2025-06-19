@@ -23,15 +23,15 @@ import { useNavigate } from "react-router-dom";
 export const addressList = [
   {
     title: "Home Address",
-    details: "Jane Cooper, Pudukkad House, Thrissur, Kerala, Ph: 93648576",
+    details: "Daison Babu, Pudukkad House, Thrissur, Kerala, Ph: 93648576",
   },
   {
     title: "Work Address",
-    details: "Jane Cooper, Gandhi nagar, Trivandrum, Kerala, Ph: 93648576",
+    details: "Daison Babu, Gandhi nagar, Trivandrum, Kerala, Ph: 93648576",
   },
   {
     title: "Current Address",
-    details: "Jane Cooper, Near Lulu Mall, Kochi, Kerala, Ph: 93648576",
+    details: "Daison Babu, Near Lulu Mall, Kochi, Kerala, Ph: 93648576",
   },
 ];
 
