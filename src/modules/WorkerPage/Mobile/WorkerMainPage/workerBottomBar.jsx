@@ -116,7 +116,7 @@ const WorkerBottomBar = () => {
         <Tab
           icon={<HomeOutlinedIcon sx={{ width: 25, height: 25 , pt:0.5}} />}
           label="Home"
-          sx={{...tabStyle,pt:0.2 }}
+          sx={{...tabStyle,pt:0.1 }}
         />
         <Tab
           icon={<MessageIcon sx={{ width: 22, height: 22 }} />}
@@ -142,7 +142,7 @@ const WorkerBottomBar = () => {
           sx={{...tabStyle, pt:0.8}}
         />
         <Tab
-          icon={<AccountCircleIcon sx={{ width: 23, height: 23 , mt:0.3 }} />}
+          icon={<AccountCircleIcon sx={{ width: 24, height: 24 , mt:0.3 }} />}
           label="Profile" 
           sx={{...tabStyle}}
         />

@@ -48,7 +48,7 @@ const WorkerRequestDetail = () => {
     };
 
     return (
-        <Box sx={{ p: 2, maxWidth: 400, mx: 'auto' }}>
+        <Box sx={{ px: 2, pt:1, pb:2,  maxWidth: 400, mx: 'auto' }}>
             {/* Header Icons */}
             <Stack direction="row" justifyContent="space-between" alignItems="center" mb={2} ml={-1}>
                 <IconButton onClick={() => navigate(-1)}>
