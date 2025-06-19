@@ -21,7 +21,7 @@ const MobWorkerReviewCard = ({name,rate,date}) => {
                     </Box>
 
                 </Box>
-                <Typography sx={{ color: 'grey', fontSize: '14px',fontWeight:'500', pr: 1 }}>{date}</Typography>
+                <Typography sx={{ color: 'grey', fontSize: '12px',fontWeight:'500', pr: 1 }}>{date}</Typography>
             </Box>
 
             <Box sx={{ maxWidth: 600, mx: 'auto' }}>
