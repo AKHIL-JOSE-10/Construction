@@ -16,7 +16,7 @@ import TopProgressBar from './topProgressBar';
 const WorkerForm3 = () => {
     const navigate = useNavigate();
     const [customBio, setCustomBio] = useState('');
-    const [selectedOption, setSelectedOption] = useState('archisans'); // 'archisans' | 'custom'
+    const [selectedOption, setSelectedOption] = useState('custom'); // 'archisans' | 'custom'
 
     const steps = ['', '', '', ''];
     const defaultBio =
@@ -52,33 +52,7 @@ const WorkerForm3 = () => {
                         value={selectedOption}
                         onChange={(e) => setSelectedOption(e.target.value)}
                     >
-                        {/* Option 1: Archisans bio */}
-                        <FormControlLabel
-                            value="archisans"
-                            control={<Radio />}
-                            label={
-                                <Typography fontWeight="bold">
-                                    Let Archisans choose a bio for you
-                                </Typography>
-                            }
-                            sx={{ alignItems: 'center', mb: 1 }}
-                        />
-                        {selectedOption === 'archisans' && (
-                            <Box
-                                sx={{
-                                    bgcolor: '#f5f5f5',
-                                    borderRadius: 2,
-                                    p: 2,
-                                    mb: 3,
-                                    fontSize: '0.9rem',
-                                    color: 'text.secondary',
-                                }}
-                            >
-                                {defaultBio}
-                            </Box>
-                        )}
-
-                        {/* Option 2: Custom bio */}
+                        {/* Option 1: Custom bio */}
                         <FormControlLabel
                             value="custom"
                             control={<Radio />}
@@ -107,6 +81,33 @@ const WorkerForm3 = () => {
                                 sx={{ mb: 3 }}
                             />
                         )}
+
+                        {/* Option 2: Archisans bio */}
+                        <FormControlLabel
+                            value="archisans"
+                            control={<Radio />}
+                            label={
+                                <Typography fontWeight="bold">
+                                    Let Archisans choose a bio for you
+                                </Typography>
+                            }
+                            sx={{ alignItems: 'center', mb: 1 }}
+                        />
+                        {selectedOption === 'archisans' && (
+                            <Box
+                                sx={{
+                                    bgcolor: '#f5f5f5',
+                                    borderRadius: 2,
+                                    p: 2,
+                                    mb: 3,
+                                    fontSize: '0.9rem',
+                                    color: 'text.secondary',
+                                }}
+                            >
+                                {defaultBio}
+                            </Box>
+                        )}
+
                     </RadioGroup>
                 </Box>
 
