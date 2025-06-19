@@ -45,7 +45,7 @@ export const slots = [
   "Night",
 ];
 
-export default function UserSpecificBooking({ open, setOpen }) {
+export default function UserSpecificBooking({ open, setOpen,setIsAlert }) {
   const [date, setDate] = useState(dayjs());
   const [workItem, setWorkItem] = useState("");
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -271,7 +271,13 @@ export default function UserSpecificBooking({ open, setOpen }) {
                 width: "85%",
                 textTransform: "none",
               }}
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false)
+                setIsAlert(true)
+                setTimeout(()=>{
+                  setIsAlert(false)
+                },2000)
+              }}
             >
               Book now
             </Button>
