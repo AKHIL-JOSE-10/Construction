@@ -97,7 +97,7 @@ const WorkerRequestDetail = () => {
             {/* Title Section */}
             <Grid sx={{ px: 2, pt: 1, pb: 2, maxWidth: 400, mx: 'auto' }}>
                 <Box  >
-                    <Stack direction="Row" mb={3} alignItems={'center'} ml={0.2}>
+                    <Stack direction="Row" mb={3} alignItems={'center'}>
                         <Work sx={{ fontSize: '2.5rem', color: 'Black', }} />
                         <Typography sx={{ fontSize: '1.5rem', color: 'Black', ml: 2, mt: 1 }} fontWeight="bold">
                             Steel Fabrication
@@ -159,7 +159,7 @@ const WorkerRequestDetail = () => {
                     <Typography fontWeight={600}>Comments</Typography>
                 </Stack>
                 <Typography variant="body2" color="text.secondary" mb={2}>
-                    Jan 21 you will be in Tokyo. Book a flight ticket. This is in clash with other meeting
+                    Jan 21 you will be in Trivandrum. This is in clash with other Work
                 </Typography>
 
                 <Box>
