@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import MobWorkerAbout from '@/modules/components/Mobile/mobWorker/mobWorkerAbout';
 import MobWorkerReview from '@/modules/components/Mobile/mobWorker/mobWorkerReview';
-import MobWorkerMyWorks from '@/modules/components/Mobile/mobWorker/mobWorkerMyWorks'; // Import this
+import MobWorkerMyWorks from './MobWorkerMyWorks';
 
 const MobWorkerMyProfle = () => {
   return (
