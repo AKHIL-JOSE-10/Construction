@@ -98,8 +98,8 @@ const WorkerRequestDetail = () => {
             <Grid sx={{ px: 2, pt: 1, pb: 2, maxWidth: 400, mx: 'auto' }}>
                 <Box  >
                     <Stack direction="Row" mb={3} alignItems={'center'} ml={0.2}>
-                        <Work sx={{ fontSize: '3rem', color: 'Black', }} />
-                        <Typography sx={{ fontSize: '1.7rem', color: 'Black', ml: 2, mt: 1 }} fontWeight="bold">
+                        <Work sx={{ fontSize: '2.5rem', color: 'Black', }} />
+                        <Typography sx={{ fontSize: '1.5rem', color: 'Black', ml: 2, mt: 1 }} fontWeight="bold">
                             Steel Fabrication
                         </Typography>
                         <Box>
