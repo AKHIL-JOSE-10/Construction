@@ -112,7 +112,6 @@ export default function Home() {
       rgb(60, 37, 25)
     )`,
           position: "relative",
-          position: "relative",
         }}
         justifyContent={"center"}
         overflow={"hidden"}
