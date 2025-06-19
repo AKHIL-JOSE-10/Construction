@@ -34,9 +34,7 @@ const WorkerRequestConfirmedCard = ({ title, location, time, client, avatar }) =
   const handleMenuClose = () => setAnchorEl(null);
 
   const handleCardClick = () => {
-    navigate('/mobile-worker-request-detail', {
-      state: { isFromConfirmation: false },
-    });
+    navigate('/mobile-worker-request-detail', { state: { isFromConfirmation: true , location, client, avatar} });
   };
 
   return (

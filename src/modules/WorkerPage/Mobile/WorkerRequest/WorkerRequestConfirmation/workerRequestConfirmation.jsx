@@ -17,28 +17,28 @@ const requests = [
     {
         id: 1,
         title: 'Steel Fabrication',
-        location: 'Hyundai Ofc, Boston',
+        location: 'Ernakulam, Kerala',
         time: '09:00am, Jan 21',
-        client: 'Athul Murali',
-        avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
+        client:  'Santhosh',
+        avatar: 'https://randomuser.me/api/portraits/men/14.jpg',
         week: 'this',
     },
     {
         id: 2,
         title: 'Steel Fabrication',
-        location: 'Hyundai Ofc, Boston',
+        location: 'Thrissur, Kerala',
         time: '09:00am, Jan 21',
-        client: 'Alin Rose',
-        avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+        client: 'Kumaran',
+        avatar: 'https://randomuser.me/api/portraits/men/30.jpg',
         week: 'this',
     },
     {
         id: 3,
         title: 'Steel Fabrication',
-        location: 'Hyundai Ofc, Boston',
+        location: 'Thrissur, Kerala',
         time: '09:00am, Jan 21',
-        client: 'Joshy John',
-        avatar: 'https://randomuser.me/api/portraits/men/12.jpg',
+        client: 'Nikhil Babu',
+        avatar: 'https://randomuser.me/api/portraits/men/35.jpg',
         week: 'next',
     },
 ];
@@ -58,12 +58,12 @@ export default function WorkerRequestConfirmation() {
                 />
                 <Box sx={{ display: 'flex', flexDirection: 'column', ml: 1 }}>
                     <Typography variant="h6" fontWeight="bold">
-                        Hi, Athul Murali T
+                        Hi, Daison Babu
                     </Typography>
                     <Stack direction="row" alignItems="center">
                         <LocationOn sx={{ fontSize: "13px", mr: 0.5, color: 'grey' }} />
                         <Typography variant="body2" color="text.secondary">
-                            Boston, USA
+                            Thrissur , Kerala
                         </Typography>
                     </Stack>
                 </Box>

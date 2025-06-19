@@ -28,11 +28,11 @@ import ReportIcon from '@mui/icons-material/Report';
 import MessageIcon from '@mui/icons-material/Message';
 import googlemap from '../../../../../assets/googlemap.jpeg';
 import { useLocation, useNavigate } from 'react-router-dom';
-
 const WorkerRequestDetail = () => {
 
-    const location = useLocation();
-    const { isFromConfirmation } = location.state || {};
+    const { state } = useLocation();
+    const { isFromConfirmation, location, client, avatar } = state || {};
+
 
     const navigate = useNavigate();
 
@@ -54,11 +54,11 @@ const WorkerRequestDetail = () => {
                 <IconButton onClick={() => navigate(-1)}>
                     <ArrowBackIosIcon />
                 </IconButton>
-                <Typography  sx={{fontSize:'1.3rem'}}>Work Detail</Typography>
+                <Typography sx={{ fontSize: '1.3rem' }}>Work Detail</Typography>
                 <IconButton onClick={handleMenuClick}>
                     <MoreVert sx={{ fontSize: '2rem' }} />
                 </IconButton>
-                
+
                 {/* Dropdown Menu */}
                 <Menu
                     anchorEl={anchorEl}
@@ -91,53 +91,15 @@ const WorkerRequestDetail = () => {
             </Stack>
 
             {/* Title Section */}
-            <Box
-                sx={{
-                    width: '96%',
-                    height: '120px',
-                    bgcolor: 'rgba(171, 124, 43, 0.73)',
-                    color: 'white',
-                    borderRadius: 1,
-                    py: 2,
-                    pl: 2,
-                    my: 3,
-                    position: 'relative',
-                    overflow: 'hidden',
-                    zIndex: 1,
-                }}
-            >
-                {/* Circle Background Design */}
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: -280,
-                        left: -120,
-                        width: 420,
-                        height: 450,
-                        borderRadius: '50%',
-                        backgroundColor: '#b87d51',
-                        zIndex: 0,
-                    }}
-                />
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        top: -285,
-                        left: -60,
-                        width: 420,
-                        height: 450,
-                        borderRadius: '50%',
-                        backgroundColor: 'rgba(213, 189, 169, 0.96)',
-                        zIndex: -1,
-                    }}
-                />
-                <Stack direction="column" spacing={1} mb={2} sx={{  zIndex: 1 }}>
-                    <Work sx={{ fontSize: '3rem', color: 'white', zIndex: 100 }} />
-                    <Box>
-                        <Typography sx={{ fontSize: '1.7rem', color: 'white', bottom:20, position:'absolute' }} fontWeight="bold">
+            <Box  >
+                <Stack direction="Row" mb={3} alignItems={'center'} ml={0.2}>
+                    <Work sx={{ fontSize: '3rem', color: 'Black', }} />
+                    <Typography sx={{ fontSize: '1.7rem', color: 'Black', ml: 2, mt: 1 }} fontWeight="bold">
                         Steel Fabrication
                     </Typography>
-                        </Box>
+                    <Box>
+
+                    </Box>
                 </Stack>
             </Box>
 
@@ -146,8 +108,7 @@ const WorkerRequestDetail = () => {
                 sx={{
                     px: 1.5,
                     py: 2.5,
-                    border: '1px solid #e0e0e0', // light grey border
-                    borderRadius: 1,
+                    border: '1px solid #e0e0e0',
                     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)', // subtle shadow
                     backgroundColor: 'white', // optional for better contrast
                 }}
@@ -164,8 +125,8 @@ const WorkerRequestDetail = () => {
 
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
 
-                    <Avatar src="https://randomuser.me/api/portraits/women/75.jpg" sx={{ width: '2rem', height: '2rem' }} />
-                    <Typography sx={{ fontSize: '0.9rem' }}>Alin Tomy</Typography>
+                    <Avatar src={avatar} sx={{ width: '2rem', height: '2rem' }} />
+                    <Typography sx={{ fontSize: '0.9rem' }}>{client}</Typography>
                 </Stack>
 
                 <Stack direction="row" alignItems="center" spacing={1} mb={3}>
@@ -175,7 +136,7 @@ const WorkerRequestDetail = () => {
 
                 <Stack direction="row" alignItems="center" spacing={1}>
                     <LocationOn fontSize="small" />
-                    <Typography sx={{ fontSize: '0.9rem' }}>Hyundai Ofc, Boston</Typography>
+                    <Typography sx={{ fontSize: '0.9rem' }}>{location}</Typography>
                 </Stack>
             </Box>
 
@@ -196,40 +157,42 @@ const WorkerRequestDetail = () => {
                 Jan 21 you will be in Tokyo. Book a flight ticket. This is in clash with other meeting
             </Typography>
 
-            <Divider sx={{ mb: 2 }} />
+            <Box>
+                <Divider sx={{ mb: 2 }} />
 
-            {/* Confirm & Cancel Buttons */}
-            {isFromConfirmation && (
-                <Stack direction="row" spacing={2} justifyContent="center">
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        startIcon={<CheckCircle />}
-                        sx={{
-                            backgroundColor: '#865B3C',
-                            '&:hover': { backgroundColor: '#6d4831' },
-                            textTransform: 'none',
-                            px: 4,
-                            borderRadius: 5,
-                        }}
-                    >
-                        Confirm
-                    </Button>
-                    <Button
-                        variant="outlined"
-                        startIcon={<Cancel />}
-                        sx={{
-                            borderColor: '#ea6c6c',
-                            color: '#ea6c6c',
-                            textTransform: 'none',
-                            px: 4,
-                            borderRadius: 5,
-                        }}
-                    >
-                        Cancel
-                    </Button>
-                </Stack>
-            )}
+                {/* Confirm & Cancel Buttons */}
+                {isFromConfirmation && (
+                    <Stack direction="row" spacing={2} justifyContent="center">
+                        <Button
+                            variant="contained"
+                            color="secondary"
+                            startIcon={<CheckCircle />}
+                            sx={{
+                                backgroundColor: '#865B3C',
+                                '&:hover': { backgroundColor: '#6d4831' },
+                                textTransform: 'none',
+                                px: 4,
+                                borderRadius: 5,
+                            }}
+                        >
+                            Confirm
+                        </Button>
+                        <Button
+                            variant="outlined"
+                            startIcon={<Cancel />}
+                            sx={{
+                                borderColor: '#ea6c6c',
+                                color: '#ea6c6c',
+                                textTransform: 'none',
+                                px: 4,
+                                borderRadius: 5,
+                            }}
+                        >
+                            Cancel
+                        </Button>
+                    </Stack>
+                )}
+            </Box>
 
         </Box>
     );

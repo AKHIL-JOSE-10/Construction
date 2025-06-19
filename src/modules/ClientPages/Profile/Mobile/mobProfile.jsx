@@ -62,8 +62,8 @@ const MobProfilePage = () => {
             >
               <Avatar
                 sx={{ height: 80, width: 80, mr: 2, ml: 0.5 }}
-                src="https://randomuser.me/api/portraits/women/79.jpg"
-                alt="Jane"
+                src="https://randomuser.me/api/portraits/men/83.jpg"
+                alt="Daison Babu"
               />
               <Box>
                 <Typography
@@ -74,10 +74,10 @@ const MobProfilePage = () => {
                     mt: 1.5,
                   }}
                 >
-                  Jane Cooper
+                  Daison Babu
                 </Typography>
                 <Typography sx={{ fontSize: "14px", color: "grey", pb: 0.5 }}>
-                  janecooper@gmail.com
+                  daisonbabu@gmail.com
                 </Typography>
                 <Typography sx={{ fontSize: "13px", color: "grey", pb: 1 }}>
                   +91 9736458763

@@ -16,9 +16,9 @@ import { useState } from "react";
 export default function EditInfo() {
   const [edit, setEdit] = useState(true);
   const [values, setValues] = useState({
-    name: "Jane",
+    name: "Daison Babu",
     phoneNumber: "+91 1234567899",
-    email: "jane@example.com",
+    email: "daisonbabu@example.com",
     dateOfBirth: "1999-01-10",
   });
   const workTitles = ["Mason", "Plumber", "Electrician"];
@@ -60,7 +60,7 @@ export default function EditInfo() {
             }
           >
             <Avatar
-              src="https://randomuser.me/api/portraits/women/79.jpg"
+              src="https://randomuser.me/api/portraits/men/83.jpg"
               sx={{ height: "70px", width: "70px" }}
             />
           </Badge>

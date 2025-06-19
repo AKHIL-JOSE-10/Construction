@@ -57,10 +57,7 @@ function App() {
           <Route path="/mobile-profile" element={<MobProfilePage />} />
           <Route path="/mobile-bookings" element={<MobMyBookings />} />
           <Route path="/mobile-booking-info" element={<MobBookingInfo />} />
-          <Route
-            path="/mobile-service-category"
-            element={<MobAllServiceCategory />}
-          />
+          <Route path="/mobile-service-category" element={<MobAllServiceCategory />} />
           <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
           <Route path="/mobile-settings" element={<MobSettings />} />
           <Route path="/mobile-notifications" element={<MobNotifications />} />
@@ -72,27 +69,12 @@ function App() {
           <Route path="/mobile-premium" element={<MobPremium />} />
           <Route path="/mobile-messages" element={<MobMessages />} />
           <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
-          <Route
-            path="/mobile-helpsupportchat"
-            element={<MobHelpSupportChat />}
-          />
+          <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
           <Route path="/mobile-saved-address" element={<MobSavedAddress />} />
-          <Route
-            path="/mobile-artisans-services"
-            element={<MobArtisansServices />}
-          />
-          <Route
-            path="/mobile-architectural-services"
-            element={<MobArchitecturalServices />}
-          />
-          <Route
-            path="/mobile-automation-services"
-            element={<MobAutomationServices />}
-          />
-          <Route
-            path="/mobile-fabrication-services"
-            element={<MobFabricationServices />}
-          />
+          <Route path="/mobile-artisans-services" element={<MobArtisansServices />} />
+          <Route path="/mobile-architectural-services" element={<MobArchitecturalServices />} />
+          <Route path="/mobile-automation-services" element={<MobAutomationServices />}/>
+          <Route path="/mobile-fabrication-services" element={<MobFabricationServices />} />
           <Route path="/mobile-message-chat" element={<MobMessageChat />} />
           <Route path="/mobile-search-worker" element={<MobSearchWorker />} />
           <Route path="/address" element={<AddressDetails />} />
@@ -100,18 +82,9 @@ function App() {
           <Route path="/mobile-Recent-Search" element={<MobRecentSearch />} />
 
           {/* worker page routes */}
-          <Route
-            path="/mobile-worker-request-confirmed"
-            element={<WorkerRequestConfirmed />}
-          />
-          <Route
-            path="/mobile-worker-request-confirmation"
-            element={<WorkerRequestConfirmation />}
-          />
-          <Route
-            path="/mobile-worker-request-detail"
-            element={<WorkerRequestDetail />}
-          />
+          <Route path="/mobile-worker-request-confirmed" element={<WorkerRequestConfirmed />}/>
+          <Route path="/mobile-worker-request-confirmation" element={<WorkerRequestConfirmation />} />
+          <Route path="/mobile-worker-request-detail" element={<WorkerRequestDetail />} />
           <Route path="/mobile-worker-form1" element={<WorkerForm1 />} />
           <Route path="/mobile-worker-form2" element={<WorkerForm2 />} />
           <Route path="/mobile-worker-form3" element={<WorkerForm3 />} />
