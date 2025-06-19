@@ -345,109 +345,127 @@ export default function Home() {
           </Grid>
         </Grid>
 
- <Grid container direction="column" p={1} pt={4} sx={{ overflow: "hidden", mt: 1 }}>
-      <Grid container sx={{ height: "fit-content" }}>
-        <Grid flexGrow={1}>
-          <Typography sx={{ fontWeight: 600, fontSize: 18 }}>
-            Top Workers Near You
-          </Typography>
-        </Grid>
-        <Grid>
-          <Typography
-            mt={0.4}
-            sx={{ color: "#b87d51", cursor: "pointer", fontWeight: 500 }}
-            onClick={() => navigate("/mobile-search-worker")}
-          >
-            See all
-          </Typography>
-        </Grid>
-      </Grid>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          overflowX: "auto",
-          width: "100vw",
-          gap: "10px",
-          scrollbarWidth: "none",
-          "&::-webkit-scrollbar": { display: "none" },
-        }}
-      >
-        {workers.map((worker, index) => (
-          <Grid
-            key={index}
-            container
-            direction="column"
-            height="28vh"
-            minWidth="15vh"
-            mt={2}
-            sx={{
-              border: "1px solid rgba(237, 237, 237, 1)",
-              borderRadius: "12px",
-              cursor: "pointer",
-              overflow: "hidden",
-              WebkitTapHighlightColor: "transparent",
-            }}
-            onClick={() =>
-              navigate("/mobile-workerpage", {
-                state: { name: worker.name, img: worker.img, location: worker.location },
-              })
-            }
-          >
-            <Grid item height="50%">
-              <img
-                src={worker.img}
-                width="100%"
-                height="100%"
-                alt={worker.name}
-              />
+        <Grid
+          container
+          size={12}
+          direction={"column"}
+          p={1}
+          pt={4}
+          sx={{ overflow: "hidden", mt: 1 }}
+        >
+          <Grid container size={12} sx={{ height: "fit-content" }}>
+            <Grid flexGrow={1}>
+              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
+                Top Workers Near You
+              </Typography>
             </Grid>
-
-            <Grid item container direction="column" height="40%" ml={1}>
-              <Grid
-                item
-                container
-                mt={1}
-                direction="row"
-                sx={{
-                  bgcolor: "rgba(254, 252, 232, 1)",
-                  width: "40px",
-                  borderRadius: "6px",
-                }}
-                justifyContent="space-around"
+            <Grid>
+              <Typography
+                mt={0.4}
+                sx={{ ...textDecoration.headingPrimaryColored }}
+                onClick={() => navigate("/mobile-search-worker")}
               >
-                <StarOutline
-                  sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
-                />
-                <Typography
-                  sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
-                >
-                  {worker.rating}
-                </Typography>
-              </Grid>
-              <Grid item mt={1}>
-                <Typography
-                  sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
-                >
-                  {worker.name}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography
-                  sx={{
-                    color: "rgba(123, 123, 123, 1)",
-                    fontSize: "10px",
-                  }}
-                >
-                  {worker.location}
-                </Typography>
-              </Grid>
+                See all
+              </Typography>
             </Grid>
           </Grid>
-        ))}
-      </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              overflowX: "auto",
+              width: "100vw",
+              gap: "10px",
+              scrollbarWidth: "none", // Firefox
+              "&::-webkit-scrollbar": {
+                display: "none", // Chrome, Safari, Edge
+              },
+            }}
+          >
+{workers.map((worker, index) => (
+  <Grid
+    key={index}
+    container
+    direction="column"
+    height="28vh"
+    minWidth="15vh"
+    mt={2}
+    sx={{
+      border: "1px solid rgba(237, 237, 237, 1)",
+      borderRadius: "12px",
+      cursor: "pointer",
+      overflow: "hidden",
+      WebkitTapHighlightColor: "transparent",
+    }}
+    onClick={() =>
+      navigate("/mobile-workerpage", {
+        state: {
+          name: worker.name,
+          img: worker.img,
+          location: worker.location,
+        },
+      })
+    }
+  >
+    <Grid
+      item
+      height="50%"
+      sx={{
+        borderTopRightRadius: "12px",
+        borderTopLeftRadius: "12px",
+      }}
+    >
+      <img
+        src={worker.img}
+        width="100%"
+        height="100%"
+        alt="Worker"
+      />
     </Grid>
+    <Grid item container direction="column" height="40%" ml={1}>
+      <Grid
+        item
+        container
+        mt={1}
+        direction="row"
+        sx={{
+          bgcolor: "rgba(254, 252, 232, 1)",
+          width: "40px",
+          borderRadius: "6px",
+        }}
+        justifyContent="space-around"
+      >
+        <StarOutline
+          sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
+        />
+        <Typography
+          sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
+        >
+          {worker.rating}
+        </Typography>
+      </Grid>
+      <Grid item mt={1}>
+        <Typography
+          sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
+        >
+          {worker.name}
+        </Typography>
+      </Grid>
+      <Grid item>
+        <Typography
+          sx={{
+            color: "rgba(123, 123, 123, 1)",
+            fontSize: "10px",
+          }}
+        >
+          {worker.location}
+        </Typography>
+      </Grid>
+    </Grid>
+  </Grid>
+))}
+          </Box>
+        </Grid>
         <Grid
           container
           direction={"column"}
