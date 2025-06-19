@@ -12,7 +12,7 @@ import dayjs from 'dayjs';
 import UserSpecificBooking from '../../../ClientPages/Bookings/UserSpecificBooking';
 
 
-const MobWorkerservice = ({selectedService}) => {
+const MobWorkerservice = ({selectedService,setIsAlert}) => {
   const [date, setDate] = useState(dayjs());
   const [open,setOpen] = useState(false);
   return (
@@ -116,7 +116,7 @@ const MobWorkerservice = ({selectedService}) => {
         </Box>
       </Box>
      
-      <UserSpecificBooking open={open} setOpen={setOpen}/>
+      <UserSpecificBooking open={open} setIsAlert={setIsAlert} setOpen={setOpen}/>
 
     </Grid>
   )

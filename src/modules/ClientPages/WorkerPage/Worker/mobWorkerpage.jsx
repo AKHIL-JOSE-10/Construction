@@ -1,4 +1,4 @@
-import { Grid, Typography, Avatar, Box, Button } from "@mui/material";
+import { Grid, Typography, Avatar, Box, Button, Alert, Fade } from "@mui/material";
 import workerimg from "@/assets/workerimg.jpg";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
@@ -8,14 +8,37 @@ import MobWorkerTopTab from "@/modules/components/Mobile/mobWorker/mobWorkerTopT
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+
+const AlertMessage = ({isAlert}) => {
+  return (
+    <Fade in={isAlert} timeout={{ enter: 300, exit: 500 }}>
+      <Box
+        sx={{
+          width: "100%",
+          position: "absolute",
+          top: 1,
+          height: "20vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Alert color="success" sx={{ position: "fixed", width: "80%" }}>
+          Booked worker successfully
+        </Alert>
+      </Box>
+    </Fade>
+  );
+};
 
 const MobWorkerpage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { name, img, contact , selectedService } = location.state || {};
-
+  const { name, img, contact, selectedService } = location.state || {};
+  const [isAlert, setIsAlert] = useState(false);
   return (
-    <Grid container sx={{ height: "auto" }}>
+    <Grid container sx={{ height: "auto", position: "relative" }}>
       <Grid sx={{ position: "relative" }}>
         <Box
           onClick={() => navigate(-1)}
@@ -135,8 +158,9 @@ const MobWorkerpage = () => {
         </Box>
       </Grid>
       <Grid sx={{ width: "100%" }}>
-        <MobWorkerTopTab service={selectedService}/>
+        <MobWorkerTopTab service={selectedService} setIsAlert={setIsAlert} />
       </Grid>
+     <AlertMessage isAlert={isAlert} />
     </Grid>
   );
 };

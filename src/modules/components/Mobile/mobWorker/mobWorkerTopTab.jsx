@@ -5,7 +5,7 @@ import SwipeableViews from 'react-swipeable-views';
 import MobWorkerservice from './mobWorkerService';
 import MobWorkerMyProfle from './mobWorkerMyProfle';
 
-const MobWorkerTopTab = ({ service }) => {
+const MobWorkerTopTab = ({ service,setIsAlert }) => {
   const [value, setValue] = useState(0);
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
@@ -32,7 +32,7 @@ const MobWorkerTopTab = ({ service }) => {
 
       {/* Swipeable Views */}
       <SwipeableViews index={value} onChangeIndex={handleSwipeChange}>
-        <Box sx={{ p: 1 }}>{value === 0 && <MobWorkerservice selectedService={service} />}</Box>
+        <Box sx={{ p: 1 }}>{value === 0 && <MobWorkerservice setIsAlert={setIsAlert} selectedService={service} />}</Box>
         <Box sx={{ p: 1 }}>{value === 1 && <MobWorkerMyProfle />}</Box>
       </SwipeableViews>
     </Box>
