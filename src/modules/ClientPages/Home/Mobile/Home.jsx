@@ -14,7 +14,37 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AdIcon from "../../../../assets/AdIcon.png";
 import AdvertisementCarousal from "./AdvertisementCarousal";
+
+
 export default function Home() {
+
+  const workers = [
+  {
+    name: "Akhil Raj",
+    location: "Kozhikode",
+    img: "https://randomuser.me/api/portraits/men/11.jpg",
+    rating: 4.8,
+  },
+  {
+    name: "Bhaskaran",
+    location: "Palakkad",
+    img: "https://randomuser.me/api/portraits/men/12.jpg",
+    rating: 4.6,
+  },
+  {
+    name: "Nikhil Babu",
+    location: "Ernakulam",
+    img: "https://randomuser.me/api/portraits/men/35.jpg",
+    rating: 4.9,
+  },
+  {
+    name: "Santhosh",
+    location: "Thrissur",
+    img: "https://randomuser.me/api/portraits/men/49.jpg",
+    rating: 5.0,
+  },
+];
+
   const navigate = useNavigate();
 
   //animation in search bar
@@ -116,7 +146,7 @@ export default function Home() {
             <LocationOnOutlined sx={{ color: "white" }} />
           </Grid>
           <Grid flexGrow={1} size={7}>
-            <Typography sx={{ ...textDecoration.headerSecondary }}>
+            <Typography sx={{ ...textDecoration.headerSecondary }} onClick={() => handleOpen(true)} >
               Current Location
             </Typography>
             <Grid container>
@@ -315,125 +345,109 @@ export default function Home() {
           </Grid>
         </Grid>
 
-        <Grid
-          container
-          size={12}
-          direction={"column"}
-          p={1}
-          pt={4}
-          sx={{ overflow: "hidden", mt: 1 }}
-        >
-          <Grid container size={12} sx={{ height: "fit-content" }}>
-            <Grid flexGrow={1}>
-              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
-                Top Workers Near You
-              </Typography>
-            </Grid>
-            <Grid>
-              <Typography
-                mt={0.4}
-                sx={{ ...textDecoration.headingPrimaryColored }}
-                onClick={() => navigate("/mobile-search-worker")}
-              >
-                See all
-              </Typography>
-            </Grid>
-          </Grid>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              overflowX: "auto",
-              width: "100vw",
-              gap: "20px",
-              scrollbarWidth: "none", // Firefox
-              "&::-webkit-scrollbar": {
-                display: "none", // Chrome, Safari, Edge
-              },
-            }}
+ <Grid container direction="column" p={1} pt={4} sx={{ overflow: "hidden", mt: 1 }}>
+      <Grid container sx={{ height: "fit-content" }}>
+        <Grid flexGrow={1}>
+          <Typography sx={{ fontWeight: 600, fontSize: 18 }}>
+            Top Workers Near You
+          </Typography>
+        </Grid>
+        <Grid>
+          <Typography
+            mt={0.4}
+            sx={{ color: "#b87d51", cursor: "pointer", fontWeight: 500 }}
+            onClick={() => navigate("/mobile-search-worker")}
           >
-            {[...Array(4)].map((_, index) => (
+            See all
+          </Typography>
+        </Grid>
+      </Grid>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          overflowX: "auto",
+          width: "100vw",
+          gap: "10px",
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
+        }}
+      >
+        {workers.map((worker, index) => (
+          <Grid
+            key={index}
+            container
+            direction="column"
+            height="28vh"
+            minWidth="15vh"
+            mt={2}
+            sx={{
+              border: "1px solid rgba(237, 237, 237, 1)",
+              borderRadius: "12px",
+              cursor: "pointer",
+              overflow: "hidden",
+              WebkitTapHighlightColor: "transparent",
+            }}
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: { name: worker.name, img: worker.img, location: worker.location },
+              })
+            }
+          >
+            <Grid item height="50%">
+              <img
+                src={worker.img}
+                width="100%"
+                height="100%"
+                alt={worker.name}
+              />
+            </Grid>
+
+            <Grid item container direction="column" height="40%" ml={1}>
               <Grid
+                item
                 container
-                direction="column"
-                height="28vh"
-                minWidth="15vh"
-                mt={2}
+                mt={1}
+                direction="row"
                 sx={{
-                  border: "1px solid rgba(237, 237, 237, 1)",
-                  borderRadius: "12px",
-                  cursor: "pointer",
-                  overflow: "hidden",
-                  WebkitTapHighlightColor: "transparent",
+                  bgcolor: "rgba(254, 252, 232, 1)",
+                  width: "40px",
+                  borderRadius: "6px",
                 }}
-                onClick={() =>
-                  navigate("/mobile-workerpage", {
-                    state: {
-                      name: "Daison Babu",
-                      img: "https://randomuser.me/api/portraits/men/83.jpg",
-                    },
-                  })
-                }
+                justifyContent="space-around"
               >
-                <Grid
-                  item
-                  height="50%"
+                <StarOutline
+                  sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
+                />
+                <Typography
+                  sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
+                >
+                  {worker.rating}
+                </Typography>
+              </Grid>
+              <Grid item mt={1}>
+                <Typography
+                  sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
+                >
+                  {worker.name}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
                   sx={{
-                    borderTopRightRadius: "12px",
-                    borderTopLeftRadius: "12px",
+                    color: "rgba(123, 123, 123, 1)",
+                    fontSize: "10px",
                   }}
                 >
-                  <img
-                    src="https://randomuser.me/api/portraits/men/83.jpg"
-                    width="100%"
-                    height="100%"
-                    alt="Worker"
-                  />
-                </Grid>
-                <Grid item container direction="column" height="40%" ml={1}>
-                  <Grid
-                    item
-                    container
-                    mt={1}
-                    direction="row"
-                    sx={{
-                      bgcolor: "rgba(254, 252, 232, 1)",
-                      width: "40px",
-                      borderRadius: "6px",
-                    }}
-                    justifyContent="space-around"
-                  >
-                    <StarOutline
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
-                    />
-                    <Typography
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
-                    >
-                      5.0
-                    </Typography>
-                  </Grid>
-                  <Grid item mt={1}>
-                    <Typography
-                      sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
-                    >
-                      Daison Babu
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography
-                      sx={{
-                        color: "rgba(123, 123, 123, 1)",
-                        fontSize: "10px",
-                      }}
-                    >
-                      Thrissur
-                    </Typography>
-                  </Grid>
-                </Grid>
+                  {worker.location}
+                </Typography>
               </Grid>
-            ))}
-          </Box>
-        </Grid>
+            </Grid>
+          </Grid>
+        ))}
+      </Box>
+    </Grid>
         <Grid
           container
           direction={"column"}

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 
-import img1 from '../../../../assets/AdIcon.png';
-import img2 from '../../../../assets/Interior.png';
+import img1 from '../../../../assets/Interior.png';
+import img2 from '../../../../assets/AdIcon.png';
 
 const AdvertisementCarousal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

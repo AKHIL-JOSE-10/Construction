@@ -254,7 +254,7 @@ const MobSavedWorkers = () => {
                             sx={{
                               fontSize: "9px",
                               fontWeight: 600,
-                              color: "green",
+                              color: "#0492C2",
                             }}
                           >
                             Archisans
