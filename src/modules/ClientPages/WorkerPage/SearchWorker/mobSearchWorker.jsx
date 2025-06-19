@@ -19,7 +19,7 @@ import {
 import { useNavigate,useLocation } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import VerifiedIcon from "@mui/icons-material/Verified";
-
+import AdvertisementCarousal from "../../Home/Mobile/AdvertisementCarousal";
 
 // Randomly generate 2 unavailable dates per worker from the set
 const generateUnavailableDates = () => {
@@ -191,7 +191,9 @@ const MobSearchWorker = () => {
           </IconButton>
         </Box>
       </Grid>
-
+<Box>
+  <AdvertisementCarousal />
+</Box>
       {/* Worker Cards */}
       <Grid container px={0} mt={2} sx={{ justifyContent: "space-evenly" }}>
         {filteredWorkers.map((worker, index) => {
