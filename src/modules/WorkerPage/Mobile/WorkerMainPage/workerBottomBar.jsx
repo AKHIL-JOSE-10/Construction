@@ -116,12 +116,12 @@ const WorkerBottomBar = () => {
         <Tab
           icon={<HomeOutlinedIcon sx={{ width: 25, height: 25 }} />}
           label="Home"
-          sx={tabStyle}
+          sx={{...tabStyle, pt:0.5}}
         />
         <Tab
           icon={<MessageIcon sx={{ width: 22, height: 22 ,}} />}
           label="Messages"
-          sx={{...tabStyle, pt:0.6}}
+          sx={{...tabStyle, pt:0.8}}
         />
 
         {/* Empty tab for spacing */}
@@ -139,7 +139,7 @@ const WorkerBottomBar = () => {
         <Tab 
           icon={<EventAvailableIcon sx={{ width: 22, height: 22,}} />}
           label="Bookings"
-          sx={{...tabStyle, pt:0.5}}
+          sx={{...tabStyle, pt:0.8}}
         />
         <Tab
           icon={<AccountCircleIcon sx={{ width: 23, height: 23 ,mt:0.3 }} />}
