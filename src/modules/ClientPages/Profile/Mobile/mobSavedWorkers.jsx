@@ -102,7 +102,7 @@ const workers = [
   },
   {
     id: 8,
-    name: "Abdul Fahad",
+    name: "Abdul",
     price: "$6.45",
     rating: 4.3,
     reviews: 160,

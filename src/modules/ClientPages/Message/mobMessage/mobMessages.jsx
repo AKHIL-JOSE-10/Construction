@@ -19,54 +19,62 @@ import MobHeading from '@/modules/components/Mobile/mobileHeading';
 const contacts = [
   {
     id: 1,
-    name: 'Anna Thomas',
+    name: 'Akhil Raj',
     message: 'Site visit scheduled at 3 PM.',
-    avatar: 'https://randomuser.me/api/portraits/women/47.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
     time: '10:30 AM',
   },
   {
     id: 2,
-    name: 'Amanda',
+    name: 'Bhaskaran',
     message: 'The materials have been delivered.',
-    avatar: 'https://randomuser.me/api/portraits/women/32.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/12.jpg',
     time: 'Yesterday',
   },
   {
     id: 3,
-    name: 'Vismaya Rajeev',
+    name: 'Shekaran',
     message: 'We need to finalize the plumbing layout.',
-    avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/21.jpg',
     time: 'Monday',
   },
   {
     id: 4,
-    name: 'Elanor',
+    name: 'Nikhil Babu',
     message: 'Can you check the electrical wiring plan?',
-    avatar: 'https://randomuser.me/api/portraits/women/15.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/35.jpg',
     time: '10:30 AM',
   },
   {
     id: 5,
-    name: 'Jasmin',
+    name: 'Arjun',
     message: 'Waiting for approval on the floor plan.',
-    avatar: 'https://randomuser.me/api/portraits/women/90.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/49.jpg',
     time: 'Yesterday',
   },
   {
     id: 6,
-    name: 'Meera Thomas',
+    name: 'Santhosh',
     message: 'The tiles for the kitchen have arrived.',
-    avatar: 'https://randomuser.me/api/portraits/women/26.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/14.jpg',
     time: 'Monday',
   },
   {
     id: 7,
-    name: 'Henna Varghese',
+    name: 'Kumaran',
     message: 'We’ve scheduled the inspection for Thursday.',
-    avatar: 'https://randomuser.me/api/portraits/women/73.jpg',
+    avatar: 'https://randomuser.me/api/portraits/men/30.jpg',
     time: 'Monday',
   },
+  {
+    id: 8,
+    name: 'Abdul',
+    message: 'Please confirm the paint selection by evening.',
+    avatar: 'https://randomuser.me/api/portraits/men/18.jpg',
+    time: 'Today',
+  },
 ];
+
 
 const MobMessages = () => {
   const [searchQuery, setSearchQuery] = useState('');

@@ -114,14 +114,14 @@ const WorkerBottomBar = () => {
         }}
       >
         <Tab
-          icon={<HomeOutlinedIcon sx={{ width: 24, height: 24 }} />}
+          icon={<HomeOutlinedIcon sx={{ width: 25, height: 25 }} />}
           label="Home"
           sx={tabStyle}
         />
         <Tab
-          icon={<MessageIcon sx={{ width: 22, height: 22 , mr:0.5 }} />}
+          icon={<MessageIcon sx={{ width: 22, height: 22 ,}} />}
           label="Messages"
-          sx={tabStyle}
+          sx={{...tabStyle, pt:0.6}}
         />
 
         {/* Empty tab for spacing */}
@@ -136,15 +136,15 @@ const WorkerBottomBar = () => {
           disabled
         />
 
-        <Tab
-          icon={<EventAvailableIcon sx={{ width: 22, height: 22, ml:0.1}} />}
+        <Tab 
+          icon={<EventAvailableIcon sx={{ width: 22, height: 22,}} />}
           label="Bookings"
-          sx={tabStyle}
+          sx={{...tabStyle, pt:0.5}}
         />
         <Tab
-          icon={<AccountCircleIcon sx={{ width: 22, height: 22 }} />}
+          icon={<AccountCircleIcon sx={{ width: 23, height: 23 ,mt:0.3 }} />}
           label="Profile" 
-          sx={tabStyle}
+          sx={{...tabStyle}}
         />
       </Tabs>
     </Box>
@@ -152,9 +152,9 @@ const WorkerBottomBar = () => {
 };
 
 const tabStyle = {
-  fontSize: "0.6rem",
+fontSize: "0.6rem",
   minWidth: 0,
-  px: 1,
+  px: 0,
   mx: 0.4,
   py: 0.2,
   textTransform: "none",
