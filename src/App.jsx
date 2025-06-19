@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import ScrollToTop from "./ScrollToTop";
 import MobBookingInfo from "./modules/ClientPages/Bookings/Mobile/mobBookingInfo";
 import MobMyBookings from "./modules/ClientPages/Bookings/Mobile/mobmyBookings";
@@ -43,10 +44,39 @@ import WorkerForm4 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm4";
 import WorkerMainPage from "./modules/WorkerPage/Mobile/WorkerMainPage/workerMainPage";
 
 import MobileLayout from "./modules/components/Mobile/MobileLayout";
+import AccessDenied from "./Error/AccessDenied";
 
 function App() {
+  const [searchParams] = useSearchParams();
+  const [accessGranted, setAccessGranted] = useState(false);
+
+  useEffect(() => {
+    const tokenFromUrl = searchParams.get("access_token");
+    const savedToken = localStorage.getItem("access_token");
+    const allowedToken = import.meta.env.VITE_ACCESS_TOKEN;
+
+    if (tokenFromUrl) {
+      console.log(tokenFromUrl);
+      console.log("Allowed Token:", allowedToken);
+      if (tokenFromUrl === allowedToken) {
+        localStorage.setItem("access_token", tokenFromUrl);
+        setAccessGranted(true);
+      } else {
+        setAccessGranted(false);
+      }
+    } else if (savedToken === allowedToken) {
+      setAccessGranted(true);
+    } else {
+      setAccessGranted(false);
+    }
+  }, [searchParams]);
+
+  if (!accessGranted) {
+    return <AccessDenied />;
+  }
+
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <Routes>
         <Route element={<MobileLayout />}>
@@ -57,7 +87,10 @@ function App() {
           <Route path="/mobile-profile" element={<MobProfilePage />} />
           <Route path="/mobile-bookings" element={<MobMyBookings />} />
           <Route path="/mobile-booking-info" element={<MobBookingInfo />} />
-          <Route path="/mobile-service-category" element={<MobAllServiceCategory />} />
+          <Route
+            path="/mobile-service-category"
+            element={<MobAllServiceCategory />}
+          />
           <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
           <Route path="/mobile-settings" element={<MobSettings />} />
           <Route path="/mobile-notifications" element={<MobNotifications />} />
@@ -69,12 +102,27 @@ function App() {
           <Route path="/mobile-premium" element={<MobPremium />} />
           <Route path="/mobile-messages" element={<MobMessages />} />
           <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
-          <Route path="/mobile-helpsupportchat" element={<MobHelpSupportChat />} />
+          <Route
+            path="/mobile-helpsupportchat"
+            element={<MobHelpSupportChat />}
+          />
           <Route path="/mobile-saved-address" element={<MobSavedAddress />} />
-          <Route path="/mobile-artisans-services" element={<MobArtisansServices />} />
-          <Route path="/mobile-architectural-services" element={<MobArchitecturalServices />} />
-          <Route path="/mobile-automation-services" element={<MobAutomationServices />}/>
-          <Route path="/mobile-fabrication-services" element={<MobFabricationServices />} />
+          <Route
+            path="/mobile-artisans-services"
+            element={<MobArtisansServices />}
+          />
+          <Route
+            path="/mobile-architectural-services"
+            element={<MobArchitecturalServices />}
+          />
+          <Route
+            path="/mobile-automation-services"
+            element={<MobAutomationServices />}
+          />
+          <Route
+            path="/mobile-fabrication-services"
+            element={<MobFabricationServices />}
+          />
           <Route path="/mobile-message-chat" element={<MobMessageChat />} />
           <Route path="/mobile-search-worker" element={<MobSearchWorker />} />
           <Route path="/address" element={<AddressDetails />} />
@@ -82,9 +130,18 @@ function App() {
           <Route path="/mobile-Recent-Search" element={<MobRecentSearch />} />
 
           {/* worker page routes */}
-          <Route path="/mobile-worker-request-confirmed" element={<WorkerRequestConfirmed />}/>
-          <Route path="/mobile-worker-request-confirmation" element={<WorkerRequestConfirmation />} />
-          <Route path="/mobile-worker-request-detail" element={<WorkerRequestDetail />} />
+          <Route
+            path="/mobile-worker-request-confirmed"
+            element={<WorkerRequestConfirmed />}
+          />
+          <Route
+            path="/mobile-worker-request-confirmation"
+            element={<WorkerRequestConfirmation />}
+          />
+          <Route
+            path="/mobile-worker-request-detail"
+            element={<WorkerRequestDetail />}
+          />
           <Route path="/mobile-worker-form1" element={<WorkerForm1 />} />
           <Route path="/mobile-worker-form2" element={<WorkerForm2 />} />
           <Route path="/mobile-worker-form3" element={<WorkerForm3 />} />
@@ -92,7 +149,7 @@ function App() {
           <Route path="/mobile-worker-mainpage" element={<WorkerMainPage />} />
         </Route>
       </Routes>
-    </Router>
+    </>
   );
 }
 
