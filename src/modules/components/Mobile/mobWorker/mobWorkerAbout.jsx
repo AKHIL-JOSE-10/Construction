@@ -35,7 +35,7 @@ const MobWorkerAbout = () => {
                         </Typography>
                     </Box>
                 </Grid>
-                <Grid sx={{ display: 'flex', flexDirection: 'column',mb:3 }}>
+                <Grid sx={{ display: 'flex', flexDirection: 'column',mb:1 }}>
                     <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 2, px: 1, py: 1 }}>Location</Typography>
                     <Typography sx={{ fontSize: '15px', fontWeight: '500', px: 1, }}>Aranattukara, Thrissur</Typography>
                     <Typography sx={{ fontSize: '13px', px: 1 }}>0.2 km away</Typography>

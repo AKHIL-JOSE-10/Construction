@@ -19,7 +19,7 @@ const MobWorkerMyWorks = () => {
         sx={{
           overflowX: "auto",
           flexWrap: "nowrap",
-          px: 2,
+          pr: 2,
           gap: 2,
           scrollbarWidth: "none", // for Firefox
           "&::-webkit-scrollbar": { display: "none" }, // Chrome/Safari

@@ -14,9 +14,9 @@ const MobWorkerReview = () => {
     return (
         <Grid>
             <Box>
-                <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 5, px: 1, py: 1 }}>Reviews</Typography>
+                <Typography sx={{ fontSize: '18px', fontWeight: '600', mt: 3.5, px: 1, py: 1 }}>Reviews</Typography>
             </Box>
-            <Grid sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2, mb: 2, border: '3px solid #eaeaea', p: 1, borderRadius: 1 }}>
+            <Grid sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2, mb: 2, border: '2px solid #eaeaea', p: 1, borderRadius: 1 }}>
                 <Stack spacing={0.5} sx={{ pl: 1.5 }}>
                     <Stack direction="row" spacing={1} alignItems="center" >
                         <Typography sx={{ fontWeight: 'bold', fontSize: '22px' }}>4.5</Typography>
