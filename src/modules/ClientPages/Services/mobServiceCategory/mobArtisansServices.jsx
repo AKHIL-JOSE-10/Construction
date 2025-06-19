@@ -1,7 +1,6 @@
 import { Grid, Box } from "@mui/material";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
-import BuildIcon from "@mui/icons-material/Build";
 import Electrician from "@/assets/Electrician.png";
 import Plumber from "@/assets/Plumber.png";
 import Painter from "@/assets/Painter.png";
@@ -26,8 +25,8 @@ const MobArtisansServices = () => {
     { service: "Flooring Installation", img: Flooring, description: "Tile, marble, and wooden floor work" },
   ];
 
-  const handleClick = () => {
-    navigate("/mobile-search-worker");
+  const handleClick = (serviceName) => {
+    navigate("/mobile-search-worker", { state: { selectedService: serviceName } });
   };
 
   return (
@@ -35,7 +34,11 @@ const MobArtisansServices = () => {
       <MobHeading Heading="Artisans Services" />
       <Box sx={{ width: "100%", mt: 8, pb: 7 }}>
         {artisansServices.map((service, index) => (
-          <Box key={index} onClick={handleClick} sx={{ cursor: "pointer" }}>
+          <Box
+            key={index}
+            onClick={() => handleClick(service.service)}
+            sx={{ cursor: "pointer" }}
+          >
             <MobServiceCategoryList
               img={service.img}
               heading={service.service}

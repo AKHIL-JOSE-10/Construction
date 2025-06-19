@@ -33,8 +33,8 @@ const MobAutomationServices = () => {
     },
   ];
 
-  const handleClick = () => {
-    navigate("/mobile-search-worker");
+  const handleClick = (serviceName) => {
+    navigate("/mobile-search-worker", { state: { selectedService: serviceName } });
   };
 
   return (
@@ -42,7 +42,11 @@ const MobAutomationServices = () => {
       <MobHeading Heading="Automation Services" />
       <Box sx={{ width: "100%", mt: 8 }}>
         {automationServices.map((service, index) => (
-          <Box key={index} onClick={handleClick} sx={{ cursor: "pointer" }}>
+          <Box
+            key={index}
+            onClick={() => handleClick(service.service)}
+            sx={{ cursor: "pointer" }}
+          >
             <MobServiceCategoryList
               img={service.img}
               heading={service.service}

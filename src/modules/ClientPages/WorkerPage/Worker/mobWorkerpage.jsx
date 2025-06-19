@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 const MobWorkerpage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { name, img, contact } = location.state || {};
+  const { name, img, contact , selectedService } = location.state || {};
 
   return (
     <Grid container sx={{ height: "auto" }}>
@@ -135,7 +135,7 @@ const MobWorkerpage = () => {
         </Box>
       </Grid>
       <Grid sx={{ width: "100%" }}>
-        <MobWorkerTopTab />
+        <MobWorkerTopTab service={selectedService}/>
       </Grid>
     </Grid>
   );

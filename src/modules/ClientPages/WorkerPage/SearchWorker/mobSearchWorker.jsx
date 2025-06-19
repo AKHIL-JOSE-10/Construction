@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useState } from "react";
 import {
   Box,
   Grid,
@@ -12,18 +12,14 @@ import {
   Search,
   Tune,
   AccessTime as AccessTimeIcon,
-  CheckCircle as CheckCircleIcon,
   BookmarkBorder,
-  ArrowForward as ArrowForwardIcon,
-  NotificationsNoneOutlined,
-  KeyboardArrowDownOutlined,
   Bookmark,
   ArrowBackIos,
 } from "@mui/icons-material";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import VerifiedIcon from "@mui/icons-material/Verified";
+
 
 // Randomly generate 2 unavailable dates per worker from the set
 const generateUnavailableDates = () => {
@@ -114,6 +110,9 @@ const workers = [
 const relatedSearches = ["Architects", "Steel Fabricators", "Civil Engineers"];
 
 const MobSearchWorker = () => {
+
+  const location = useLocation();
+  const selectedService = location.state?.selectedService;
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -138,6 +137,7 @@ const MobSearchWorker = () => {
       state: {
         name: worker.name,
         img: worker.img,
+        selectedService: location.state?.selectedService,
       },
     });
   };

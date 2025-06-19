@@ -6,9 +6,8 @@ import MobWorkerservice from './mobWorkerService';
 import MobWorkerReview from './mobWorkerReview';
 import MobWorkerAbout from './mobWorkerAbout';
 
-const MobWorkerTopTab = () => {
+const MobWorkerTopTab = ({service}) => {
   const [value, setValue] = useState(0);
-
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -30,7 +29,7 @@ const MobWorkerTopTab = () => {
 
       {/* Swipeable Views */}
       <SwipeableViews index={value} onChangeIndex={handleSwipeChange}>
-        <Box sx={{ p: 1 }}>{value === 0 && <MobWorkerservice />}</Box>
+        <Box sx={{ p: 1 }}>{value === 0 && <MobWorkerservice selectedService={service}/>}</Box>
         <Box sx={{ p: 1 }}>{value === 1 && <MobWorkerAbout />}</Box>
         <Box sx={{ p: 1 }}>{value === 2 && <MobWorkerReview />}</Box>
       </SwipeableViews>

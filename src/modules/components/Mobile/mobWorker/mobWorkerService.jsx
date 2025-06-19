@@ -12,8 +12,7 @@ import dayjs from 'dayjs';
 import UserSpecificBooking from '../../../ClientPages/Bookings/UserSpecificBooking';
 
 
-const MobWorkerservice = () => {
-
+const MobWorkerservice = ({selectedService}) => {
   const [date, setDate] = useState(dayjs());
   const [open,setOpen] = useState(false);
   return (
@@ -35,8 +34,8 @@ const MobWorkerservice = () => {
               />
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
 
-                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '600', fontSize: "16px" }}>Plumping </Typography>
-                <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your plumping needs </Typography>
+                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '600', fontSize: "16px" }}>{selectedService || "Plumbing" } </Typography>
+                <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your {selectedService?.toLowerCase() || "Plumbing"} needs </Typography>
               </Box>
 
             </Box>
@@ -45,57 +44,7 @@ const MobWorkerservice = () => {
             <Box>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <AccessTimeIcon color="primary" />
-                  <Typography variant="subtitle1" fontWeight="500" fontSize={15}>Base rate</Typography>
-                </Box>
-                <Typography variant="subtitle1" color="text.secondary" fontSize={15}>300 rs / Hour</Typography>
-              </Box>
-
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <Brightness3Icon color='primary' />
-                  <Typography variant="subtitle1" fontWeight="500" fontSize={15}>Evening rate</Typography>
-                </Box>
-                <Typography variant="subtitle1" color="text.secondary" fontSize={15}>200 rs / Hour</Typography>
-              </Box>
-
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <EventIcon color="primary" />
-                  <Typography variant="subtitle1" fontWeight="500" fontSize={15}>Holiday rate</Typography>
-                </Box>
-                <Typography variant="subtitle1" color="text.secondary" fontSize={15}>250 rs / Hour</Typography>
-              </Box>
-              <Typography sx={{ fontSize: '12px', color: 'grey', mt: 2 }}>" Final pricing will be determined based on the scope of additional work and time required."</Typography>
-            </Box>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          sx={{ borderRadius: 1, border: '0.9px solid lightgrey', overflow: 'hidden', mb: 1 }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1-content"
-            id="panel1-header"
-          >
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexDirection: 'row' }}>
-              <Avatar
-                src={serviceImg}
-                alt="Worker"
-                sx={{ width: 40, height: 40 }}
-              />
-              <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-
-                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '600', fontSize: "16px" }}>Electrical</Typography>
-                <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your electrical needs</Typography>
-              </Box>
-
-            </Box>
-          </AccordionSummary>
-          <AccordionDetails>
-          <Box>
-              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <AccessTimeIcon color="primary" />
+                  <AccessTimeIcon color="primary" /> 
                   <Typography variant="subtitle1" fontWeight="500" fontSize={15}>Base rate</Typography>
                 </Box>
                 <Typography variant="subtitle1" color="text.secondary" fontSize={15}>300 rs / Hour</Typography>
