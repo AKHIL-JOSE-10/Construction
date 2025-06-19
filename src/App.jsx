@@ -56,8 +56,6 @@ function App() {
     const allowedToken = import.meta.env.VITE_ACCESS_TOKEN;
 
     if (tokenFromUrl) {
-      console.log(tokenFromUrl);
-      console.log("Allowed Token:", allowedToken);
       if (tokenFromUrl === allowedToken) {
         localStorage.setItem("access_token", tokenFromUrl);
         setAccessGranted(true);
