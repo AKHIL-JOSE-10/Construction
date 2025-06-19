@@ -19,31 +19,31 @@ import AdvertisementCarousal from "./AdvertisementCarousal";
 export default function Home() {
 
   const workers = [
-  {
-    name: "Akhil Raj",
-    location: "Kozhikode",
-    img: "https://randomuser.me/api/portraits/men/11.jpg",
-    rating: 4.8,
-  },
-  {
-    name: "Bhaskaran",
-    location: "Palakkad",
-    img: "https://randomuser.me/api/portraits/men/12.jpg",
-    rating: 4.6,
-  },
-  {
-    name: "Nikhil Babu",
-    location: "Ernakulam",
-    img: "https://randomuser.me/api/portraits/men/35.jpg",
-    rating: 4.9,
-  },
-  {
-    name: "Santhosh",
-    location: "Thrissur",
-    img: "https://randomuser.me/api/portraits/men/49.jpg",
-    rating: 5.0,
-  },
-];
+    {
+      name: "Akhil Raj",
+      location: "Kozhikode",
+      img: "https://randomuser.me/api/portraits/men/11.jpg",
+      rating: 4.8,
+    },
+    {
+      name: "Bhaskaran",
+      location: "Palakkad",
+      img: "https://randomuser.me/api/portraits/men/12.jpg",
+      rating: 4.6,
+    },
+    {
+      name: "Nikhil Babu",
+      location: "Ernakulam",
+      img: "https://randomuser.me/api/portraits/men/35.jpg",
+      rating: 4.9,
+    },
+    {
+      name: "Santhosh",
+      location: "Thrissur",
+      img: "https://randomuser.me/api/portraits/men/49.jpg",
+      rating: 5.0,
+    },
+  ];
 
   const navigate = useNavigate();
 
@@ -382,88 +382,88 @@ export default function Home() {
               },
             }}
           >
-{workers.map((worker, index) => (
-  <Grid
-    key={index}
-    container
-    direction="column"
-    height="28vh"
-    minWidth="15vh"
-    mt={2}
-    sx={{
-      border: "1px solid rgba(237, 237, 237, 1)",
-      borderRadius: "12px",
-      cursor: "pointer",
-      overflow: "hidden",
-      WebkitTapHighlightColor: "transparent",
-    }}
-    onClick={() =>
-      navigate("/mobile-workerpage", {
-        state: {
-          name: worker.name,
-          img: worker.img,
-          location: worker.location,
-        },
-      })
-    }
-  >
-    <Grid
-      item
-      height="50%"
-      sx={{
-        borderTopRightRadius: "12px",
-        borderTopLeftRadius: "12px",
-      }}
-    >
-      <img
-        src={worker.img}
-        width="100%"
-        height="100%"
-        alt="Worker"
-      />
-    </Grid>
-    <Grid item container direction="column" height="40%" ml={1}>
-      <Grid
-        item
-        container
-        mt={1}
-        direction="row"
-        sx={{
-          bgcolor: "rgba(254, 252, 232, 1)",
-          width: "40px",
-          borderRadius: "6px",
-        }}
-        justifyContent="space-around"
-      >
-        <StarOutline
-          sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
-        />
-        <Typography
-          sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
-        >
-          {worker.rating}
-        </Typography>
-      </Grid>
-      <Grid item mt={1}>
-        <Typography
-          sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
-        >
-          {worker.name}
-        </Typography>
-      </Grid>
-      <Grid item>
-        <Typography
-          sx={{
-            color: "rgba(123, 123, 123, 1)",
-            fontSize: "10px",
-          }}
-        >
-          {worker.location}
-        </Typography>
-      </Grid>
-    </Grid>
-  </Grid>
-))}
+            {workers.map((worker, index) => (
+              <Grid
+                key={index}
+                container
+                direction="column"
+                height="28vh"
+                minWidth="15vh"
+                mt={2}
+                sx={{
+                  border: "1px solid rgba(237, 237, 237, 1)",
+                  borderRadius: "12px",
+                  cursor: "pointer",
+                  overflow: "hidden",
+                  WebkitTapHighlightColor: "transparent",
+                }}
+                onClick={() =>
+                  navigate("/mobile-workerpage", {
+                    state: {
+                      name: worker.name,
+                      img: worker.img,
+                      location: worker.location,
+                    },
+                  })
+                }
+              >
+                <Grid
+                  item
+                  height="50%"
+                  sx={{
+                    borderTopRightRadius: "12px",
+                    borderTopLeftRadius: "12px",
+                  }}
+                >
+                  <img
+                    src={worker.img}
+                    width="100%"
+                    height="100%"
+                    alt="Worker"
+                  />
+                </Grid>
+                <Grid item container direction="column" height="40%" ml={1}>
+                  <Grid
+                    item
+                    container
+                    mt={1}
+                    direction="row"
+                    sx={{
+                      bgcolor: "rgba(254, 252, 232, 1)",
+                      width: "40px",
+                      borderRadius: "6px",
+                    }}
+                    justifyContent="space-around"
+                  >
+                    <StarOutline
+                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
+                    />
+                    <Typography
+                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
+                    >
+                      {worker.rating}
+                    </Typography>
+                  </Grid>
+                  <Grid item mt={1}>
+                    <Typography
+                      sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
+                    >
+                      {worker.name}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography
+                      sx={{
+                        color: "rgba(123, 123, 123, 1)",
+                        fontSize: "10px",
+                      }}
+                    >
+                      {worker.location}
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Grid>
+            ))}
           </Box>
         </Grid>
         <Grid
