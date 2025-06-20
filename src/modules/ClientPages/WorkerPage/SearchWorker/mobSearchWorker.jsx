@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Grid,
@@ -16,7 +16,7 @@ import {
   Bookmark,
   ArrowBackIos,
 } from "@mui/icons-material";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import AdvertisementCarousal from "../../Home/Mobile/AdvertisementCarousal";
@@ -33,7 +33,7 @@ const generateUnavailableDates = () => {
 };
 
 const workers = [
-    {
+  {
     id: 1,
     name: "Akhil Raj",
     price: "$5.99",
@@ -71,7 +71,7 @@ const workers = [
   },
   {
     id: 5,
-    name: "Arjun", 
+    name: "Arjun",
     price: "$6.30",
     rating: 4.4,
     reviews: 134,
@@ -145,8 +145,8 @@ const MobSearchWorker = () => {
   return (
     <Box>
       <Grid sx={{ px: 1.5, pt: 1.5 }}>
-      <Box px={0} display="flex" alignItems="center">
-        {/* Left Side: Back Arrow + Location Info */}
+        <Box px={0} display="flex" alignItems="center">
+          {/* Left Side: Back Arrow + Location Info */}
           <ArrowBackIos
             sx={{ fontSize: 23, cursor: "pointer", color: 'grey' }}
             onClick={() => navigate(-1)}
@@ -162,7 +162,7 @@ const MobSearchWorker = () => {
               </Typography>
             </Box>
           </Box>
-      </Box>
+        </Box>
 
         {/* Search Bar */}
         <Box
@@ -191,9 +191,9 @@ const MobSearchWorker = () => {
           </IconButton>
         </Box>
       </Grid>
-<Box>
-  <AdvertisementCarousal />
-</Box>
+      <Box>
+        <AdvertisementCarousal />
+      </Box>
       {/* Worker Cards */}
       <Grid container px={0} mt={2} sx={{ justifyContent: "space-evenly" }}>
         {filteredWorkers.map((worker, index) => {
@@ -421,19 +421,19 @@ const MobSearchWorker = () => {
         })}
       </Grid>
 
-        <Typography
-          my={1}
-          sx={{
-            color: "#888",
-            fontWeight: 500,
-            textDecoration: "underline",
-            cursor: "pointer",
-            fontSize: 14,
-            textAlign: "center",
-          }}
-        >
-          View More
-        </Typography>
+      <Typography
+        my={1}
+        sx={{
+          color: "#888",
+          fontWeight: 500,
+          textDecoration: "underline",
+          cursor: "pointer",
+          fontSize: 14,
+          textAlign: "center",
+        }}
+      >
+        View More
+      </Typography>
 
       {/* Related Searches */}
       <Box sx={{ mt: 3, px: 1.5 }}>
