@@ -14,7 +14,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import MobHeading from '@/modules/components/Mobile/mobileHeading';
+import MobHeading from '@/modules/ClientPages/MobileView/MobTopBarHeading/mobTopBarHeading';
 
 const contacts = [
   {
