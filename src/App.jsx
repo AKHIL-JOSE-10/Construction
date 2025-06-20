@@ -1,54 +1,54 @@
 import { Routes, Route, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ScrollToTop from "./ScrollToTop";
-import MobBookingInfo from "./modules/ClientPages/Bookings/Mobile/mobBookingInfo";
-import MobMyBookings from "./modules/ClientPages/Bookings/Mobile/mobmyBookings";
-import MobProfilePage from "./modules/ClientPages/Profile/Mobile/mobProfile";
-import MobSettings from "./modules/ClientPages/Settings/mobSettings";
-import MobNotifications from "./modules/ClientPages/NotificationPage/mobNotifications";
-import Signinpage from "./modules/ClientPages/Authentication/signinpage";
-import Home from "./modules/ClientPages/Home/Mobile/Home";
-import Profile from "./modules/ClientPages/Profile/Profile";
-import MobSignin from "./modules/ClientPages/Authentication/Mobile/mobsignin";
-import MobSignup from "./modules/ClientPages/Authentication/Mobile/mobSignup";
-import MobAllServiceCategory from "./modules/ClientPages/Services/mobServiceCategory/mobAllServiceCategory";
-import MobWorkerpage from "./modules/ClientPages/WorkerPage/Worker/mobWorkerpage";
-import MobForgotPassword from "./modules/ClientPages/Authentication/Mobile/mobForgotPassword";
-import Bookings from "./modules/ClientPages/Bookings/Bookings";
-import EditInfo from "./modules/ClientPages/EditInfo/EditInfo";
+import MobBookingInfo from "./modules/ClientPages/MobileView/MobBookings/MobBookingInfo/mobBookingInfo";
+import MobMyBookings from "./modules/ClientPages/MobileView/MobBookings/MobMyBookings/mobmyBookings";
+import MobProfilePage from "./modules/ClientPages/MobileView/MobProfile/mobProfile";
+import MobSettings from "./modules/ClientPages/MobileView/MobProfile/MobSettings/mobSettings";
+import MobNotifications from "./modules/ClientPages/MobileView/MobNotification/mobNotifications";
+import Signinpage from "./modules/ClientPages/ComputerView/Authentication/signinpage";
+import Home from "./modules/ClientPages/MobileView/MobHome/Home";
+import Profile from "./modules/ClientPages/ComputerView/Profile/Profile";
+import MobSignin from "./modules/ClientPages/MobileView/MobAuthentication/Mobsignin/mobsignin";
+import MobSignup from "./modules/ClientPages/MobileView/MobAuthentication/MobSignup/mobSignup";
+import MobAllServiceCategory from "./modules/ClientPages/MobileView/MobServices/MobAllServices.jsx/mobAllServices";
+import MobViewWorkerProfile from "./modules/ClientPages/MobileView/MobViewWorkerProfile/mobViewWorkerprofile";
+import MobForgotPassword from "./modules/ClientPages/MobileView/MobAuthentication/MobForgotPassword/mobForgotPassword";
+import Bookings from "./modules/ClientPages/ComputerView/Bookings/Bookings";
+import EditInfo from "./modules/ClientPages/MobileView/MobProfile/AccountInfo/AccountInfo";
 import RouteListPage from "./RouterListPage";
-import MobMessages from "./modules/ClientPages/Message/mobMessage/mobMessages";
-import MobPremium from "./modules/ClientPages/Premium/mobPremium";
-import MobHelpSupport from "./modules/ClientPages/Profile/Mobile/mobHelpSupport/mobHelpSupport";
-import MobHelpSupportChat from "./modules/ClientPages/Profile/Mobile/mobHelpSupport/mobHelpSupportChat";
-import MobSavedAddress from "./modules/ClientPages/Profile/Mobile/mobSavedAdderess";
-import MobArtisansServices from "./modules/ClientPages/Services/mobServiceCategory/mobArtisansServices";
-import MobArchitecturalServices from "./modules/ClientPages/Services/mobServiceCategory/mobArchitecturalServices";
-import MobAutomationServices from "./modules/ClientPages/Services/mobServiceCategory/mobAutomationServices";
-import MobFabricationServices from "./modules/ClientPages/Services/mobServiceCategory/mobFabricationServices";
-import MobMessageChat from "./modules/ClientPages/Message/mobMessage/mobMessageChat";
-import MobSearchWorker from "./modules/ClientPages/WorkerPage/SearchWorker/mobSearchWorker";
-import MobSavedWorkers from "./modules/ClientPages/Profile/Mobile/mobSavedWorkers";
-import MobRecentSearch from "./modules/ClientPages/WorkerPage/SearchWorker/mobRecentSearch";
-import AddressDetails from "./modules/ClientPages/Home/Address/AdressDetails/AddressDetails";
+import MobMessages from "./modules/ClientPages/MobileView/MobMessage/mobMessages";
+import MobPremium from "./modules/ClientPages/MobileView/MobPremium/mobPremium";
+import MobHelpSupport from "./modules/ClientPages/MobileView/MobProfile/MobHelpSupport/mobHelpSupport";
+import MobHelpSupportChat from "./modules/ClientPages/MobileView/MobProfile/MobHelpSupport/MobHelpSupportChat/mobHelpSupportChat";
+import MobSavedAddress from "./modules/ClientPages/MobileView/MobProfile/MobSavedAddress/mobSavedAddress";
+import MobArtisansServices from "./modules/ClientPages/MobileView/MobServices/MobArtisansServices/mobArtisansServices";
+import MobArchitecturalServices from "./modules/ClientPages/MobileView/MobServices/MobArchitecturalServices/mobArchitecturalServices";
+import MobAutomationServices from "./modules/ClientPages/MobileView/MobServices/MobAutomationServices/mobAutomationServices";
+import MobFabricationServices from "./modules/ClientPages/MobileView/MobServices/MobFabricationServices/mobFabricationServices";
+import MobMessageChat from "./modules/ClientPages/MobileView/MobMessage/MobMessageChat/mobMessageChat";
+import MobSearchWorker from "./modules/ClientPages/MobileView/MobSearchWorker/mobSearchWorker";
+import MobSavedWorkers from "./modules/ClientPages/MobileView/MobProfile/MobSavedWorkers/mobSavedWorkers";
+import MobRecentSearch from "./modules/ClientPages/MobileView/MobSearchWorker/mobRecentSearch";
+import AddressDetails from "./modules/ClientPages/MobileView/MobHome/Address/AdressDetails/AddressDetails";
 
 //worker pages
 
-import WorkerRequestConfirmed from "./modules/WorkerPage/Mobile/WorkerRequest/WorkerRequestConfirmed/workerRequestConfirmed";
-import WorkerRequestConfirmation from "./modules/WorkerPage/Mobile/WorkerRequest/WorkerRequestConfirmation/workerRequestConfirmation";
-import WorkerRequestDetail from "./modules/WorkerPage/Mobile/WorkerRequest/WorkerRequestDetail/WorkerRequestDetail";
-import WorkerForm1 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm1";
-import WorkerForm2 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm2";
-import WorkerForm3 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm3";
-import WorkerForm4 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm4";
-import WorkerMainPage from "./modules/WorkerPage/Mobile/WorkerMainPage/workerMainPage";
+import MobClientWorkRequestConfirmed from "./modules/WorkerPages/MobileView/MobClientRequests/MobClientWorkRequestConfirmed/mobClientWorkRequestConfirmed";
+import MobClientWorkRequestConfirmation from "./modules/WorkerPages/MobileView/MobClientRequests/MobClientWorkRequestConfirmation/mobClientWorkRequestConfirmation";
+import MobClientRequestDetails from "./modules/WorkerPages/MobileView/MobClientRequests/MobClientRequestDetails/mobClientRequestDetails";
+import MobWorkerForm1 from "./modules/WorkerPages/MobileView/MobWorkerForm/MobWorkerForm1/mobWorkerForm1";
+import MobWorkerForm2 from "./modules/WorkerPages/MobileView/MobWorkerForm/MobWorkerForm2/mobWorkerForm2";
+import MobWorkerForm3 from "./modules/WorkerPages/MobileView/MobWorkerForm/MobWorkerForm3/mobWorkerForm3";
+import MobWorkerForm4 from "./modules/WorkerPages/MobileView/MobWorkerForm/MobWorkerForm4/mobWorkerForm4";
+import MobWorkerMainPage from "./modules/WorkerPages/MobileView/MobWorkerMainPage/mobWorkerMainPage";
 
-import MobileLayout from "./modules/components/Mobile/MobileLayout";
+import MobileLayout from "./modules/ClientPages/MobileView/MobBottomTab/MobileLayout";
 import AccessDenied from "./Error/AccessDenied";
 
 function App() {
   const [searchParams] = useSearchParams();
-  const [accessGranted, setAccessGranted] = useState(false);
+  const [accessGranted, setAccessGranted] = useState(true);
 
   useEffect(() => {
     const tokenFromUrl = searchParams.get("access_token");
@@ -89,7 +89,7 @@ function App() {
             path="/mobile-service-category"
             element={<MobAllServiceCategory />}
           />
-          <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
+          <Route path="/mobile-workerpage" element={<MobViewWorkerProfile />} />
           <Route path="/mobile-settings" element={<MobSettings />} />
           <Route path="/mobile-notifications" element={<MobNotifications />} />
           <Route path="/home" element={<Home />} />
@@ -130,21 +130,21 @@ function App() {
           {/* worker page routes */}
           <Route
             path="/mobile-worker-request-confirmed"
-            element={<WorkerRequestConfirmed />}
+            element={<MobClientWorkRequestConfirmed />}
           />
           <Route
             path="/mobile-worker-request-confirmation"
-            element={<WorkerRequestConfirmation />}
+            element={<MobClientWorkRequestConfirmation />}
           />
           <Route
             path="/mobile-worker-request-detail"
-            element={<WorkerRequestDetail />}
+            element={<MobClientRequestDetails />}
           />
-          <Route path="/mobile-worker-form1" element={<WorkerForm1 />} />
-          <Route path="/mobile-worker-form2" element={<WorkerForm2 />} />
-          <Route path="/mobile-worker-form3" element={<WorkerForm3 />} />
-          <Route path="/mobile-worker-form4" element={<WorkerForm4 />} />
-          <Route path="/mobile-worker-mainpage" element={<WorkerMainPage />} />
+          <Route path="/mobile-worker-form1" element={<MobWorkerForm1 />} />
+          <Route path="/mobile-worker-form2" element={<MobWorkerForm2 />} />
+          <Route path="/mobile-worker-form3" element={<MobWorkerForm3 />} />
+          <Route path="/mobile-worker-form4" element={<MobWorkerForm4 />} />
+          <Route path="/mobile-worker-mainpage" element={<MobWorkerMainPage />} />
         </Route>
       </Routes>
     </>
