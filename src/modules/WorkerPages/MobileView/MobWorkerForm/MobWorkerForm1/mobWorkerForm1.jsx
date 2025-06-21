@@ -33,8 +33,8 @@ const MobWorkerForm1 = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        px: 2,
-        py: 4,
+        px: 0.5,
+        pb:5,
         overflow: 'hidden',
         '::before': {
           content: '""',
@@ -42,9 +42,9 @@ const MobWorkerForm1 = () => {
           top: 0,
           left: 0,
           width: '100%',
-          height: '180px',
+          height: '135px',
           backgroundColor: '#E0CBB2',
-          transform: 'skewY(-6deg)',
+          transform: 'skewY(-3deg)',
           transformOrigin: 'top left',
           zIndex: 0,
         },
@@ -125,7 +125,7 @@ const MobWorkerForm1 = () => {
             sx={{ mb: 3 }}
             InputProps={{
               disableUnderline: false,
-              sx: { fontSize: '0.95rem' },
+              sx: { fontSize: '0.95rem', bgcolor:'white' },
             }}
           />
 
@@ -137,7 +137,7 @@ const MobWorkerForm1 = () => {
             sx={{ mb: 3 }}
             InputProps={{
               disableUnderline: false,
-              sx: { fontSize: '0.95rem' },
+              sx: { fontSize: '0.95rem', bgcolor:'white' },
             }}
             InputLabelProps={{ shrink: true }}
           />
@@ -170,7 +170,7 @@ const MobWorkerForm1 = () => {
             sx={{ mb: 3 }}
             InputProps={{
               disableUnderline: false,
-              sx: { fontSize: '0.95rem' },
+              sx: { fontSize: '0.95rem' , bgcolor:'white'},
             }}
           />
         </Box>
