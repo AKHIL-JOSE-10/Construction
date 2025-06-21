@@ -53,9 +53,9 @@ const MobSearchWorkerFilter = () => {
         <Grid
             sx={{
                 p: 2,
-                bgcolor: "#fdfdfd",
                 fontFamily: "'Poppins', sans-serif",
-                pb: 10, // space for bottom button
+                pb: 10, 
+                bgcolor: "#fff",
             }}
         >
             {/* Header */}
@@ -276,7 +276,6 @@ const MobSearchWorkerFilter = () => {
                     bgcolor: "#fff",
                     px: 2,
                     py: 1.5,
-                    boxShadow: "0 -2px 8px rgba(0,0,0,0.1)",
                     zIndex: 1300,
                 }}
             >
