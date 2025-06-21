@@ -10,10 +10,6 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-  Divider,
 } from "@mui/material";
 import MobHeading from "@/modules/ClientPages/MobileView/MobTopBarHeading/mobTopBarHeading";
 import RoomIcon from "@mui/icons-material/Room";
@@ -58,15 +54,27 @@ const MobSearchWorkerFilter = () => {
 
   const [openDateDialog, setOpenDateDialog] = useState(false);
   const [dateOption, setDateOption] = useState("all");
-  const [customDate, setCustomDate] = useState("");
+  const [customDateRange, setCustomDateRange] = useState({ from: "", to: "" });
+
+  const [tempDateOption, setTempDateOption] = useState(dateOption);
+  const [tempCustomDateRange, setTempCustomDateRange] = useState(customDateRange);
 
   return (
-    <Grid sx={{ p: 2, fontFamily: "'Poppins', sans-serif", pb: 10, bgcolor: "#fff" }}>
+    <Grid
+      sx={{
+        p: 2,
+        fontFamily: "'Poppins', sans-serif",
+        pb: 10,
+        bgcolor: "#fff",
+      }}
+    >
       <MobHeading Heading="Filter" />
 
-      {/* Category of Services */}
+      {/* Category */}
       <Box sx={{ mb: 2 }}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>Category of Services</Typography>
+        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
+          Category of Services
+        </Typography>
         <Box
           onClick={() => setShowServices((prev) => !prev)}
           sx={{
@@ -82,12 +90,15 @@ const MobSearchWorkerFilter = () => {
           }}
         >
           <Typography sx={{ color: "#111", fontSize: 14 }}>
-            {selectedServices.length > 0 ? selectedServices.join(", ") : "Select Services"}
+            {selectedServices.length > 0
+              ? selectedServices.join(", ")
+              : "Select Services"}
           </Typography>
           <ArrowForwardIosIcon sx={{ fontSize: "14px" }} />
         </Box>
       </Box>
 
+      {/* Collapsible Service List */}
       <Collapse in={showServices}>
         <Box
           sx={{
@@ -107,7 +118,9 @@ const MobSearchWorkerFilter = () => {
                 key={idx}
                 onClick={() =>
                   setSelectedServices((prev) =>
-                    isSelected ? prev.filter((s) => s !== service) : [...prev, service]
+                    isSelected
+                      ? prev.filter((s) => s !== service)
+                      : [...prev, service]
                   )
                 }
                 sx={{
@@ -135,7 +148,9 @@ const MobSearchWorkerFilter = () => {
 
       {/* Price Range */}
       <Box sx={{ mb: 3, width: "100%", mt: 2 }}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>Price Range (Rs)</Typography>
+        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
+          Price Range (Rs)
+        </Typography>
         <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
           <Box sx={{ flex: 1 }}>
             <Typography sx={{ fontSize: 12, mb: 0.5 }}>Min Price</Typography>
@@ -210,10 +225,16 @@ const MobSearchWorkerFilter = () => {
       </Box>
 
       {/* Available on Date Selector */}
-      <Box sx={{ mb: 2 , mt:4}}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>Select Worker Available Date</Typography>
+      <Box sx={{ mb: 2, mt: 4 }}>
+        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
+          Select Worker Available Date
+        </Typography>
         <Box
-          onClick={() => setOpenDateDialog(true)}
+          onClick={() => {
+            setTempDateOption(dateOption);
+            setTempCustomDateRange(customDateRange);
+            setOpenDateDialog(true);
+          }}
           sx={{
             mt: 1,
             p: 1.3,
@@ -232,8 +253,8 @@ const MobSearchWorkerFilter = () => {
               ? "Today"
               : dateOption === "tomorrow"
               ? "Tomorrow"
-              : customDate
-              ? `Custom: ${customDate}`
+              : customDateRange.from && customDateRange.to
+              ? `From: ${customDateRange.from} To: ${customDateRange.to}`
               : "Choose Date"}
           </Typography>
           <ArrowForwardIosIcon sx={{ fontSize: "14px", color: "#999" }} />
@@ -241,47 +262,93 @@ const MobSearchWorkerFilter = () => {
       </Box>
 
       {/* Date Dialog */}
-      <Dialog open={openDateDialog} onClose={() => setOpenDateDialog(false)}>
-        <DialogTitle sx={{ fontSize: 16, fontWeight: 600 }}>
-          Choose the date when the worker is available
-        </DialogTitle>
+      <Dialog open={openDateDialog} onClose={() => setOpenDateDialog(false)} fullWidth>
+        <DialogTitle>Select Date Option</DialogTitle>
         <DialogContent>
-          <Typography sx={{ mb: 1, color: "#777", fontSize: 14 }}>
-            Thrissur, Kerala
-          </Typography>
-          <RadioGroup
-            value={dateOption}
-            onChange={(e) => setDateOption(e.target.value)}
-          >
-            <FormControlLabel value="all" control={<Radio />} label="All Dates" />
-            <FormControlLabel value="today" control={<Radio />} label="Today" />
-            <FormControlLabel value="tomorrow" control={<Radio />} label="Tomorrow" />
-            <FormControlLabel value="custom" control={<Radio />} label="Choose from Calendar" />
-          </RadioGroup>
-          {dateOption === "custom" && (
-            <input
-              type="date"
-              value={customDate}
-              onChange={(e) => setCustomDate(e.target.value)}
-              style={{
-                marginTop: "10px",
-                width: "100%",
-                padding: "8px",
-                borderRadius: "8px",
-                border: "1px solid #ccc",
-                fontSize: "14px",
+          {["all", "today", "tomorrow", "custom"].map((opt) => (
+            <Box
+              key={opt}
+              onClick={() => setTempDateOption(opt)}
+              sx={{
+                p: 1,
+                cursor: "pointer",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
               }}
-            />
+            >
+              <Typography>
+                {opt === "all"
+                  ? "All Dates"
+                  : opt === "today"
+                  ? "Today"
+                  : opt === "tomorrow"
+                  ? "Tomorrow"
+                  : "Choose from Calendar"}
+              </Typography>
+              {tempDateOption === opt && (
+                <CheckCircleIcon sx={{ color: "#B08B6F", fontSize: 18 }} />
+              )}
+            </Box>
+          ))}
+
+          {tempDateOption === "custom" && (
+            <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+              <Box sx={{ flex: 1 }}>
+                <Typography sx={{ fontSize: 12, mb: 0.5 }}>From</Typography>
+                <input
+                  type="date"
+                  value={tempCustomDateRange.from}
+                  onChange={(e) =>
+                    setTempCustomDateRange({
+                      ...tempCustomDateRange,
+                      from: e.target.value,
+                    })
+                  }
+                  style={{
+                    width: "80%",
+                    padding: "8px",
+                    borderRadius: "8px",
+                    border: "1px solid #ccc",
+                    fontSize: "14px",
+                  }}
+                />
+              </Box>
+              <Box sx={{ flex: 1 }}>
+                <Typography sx={{ fontSize: 12, mb: 0.5 }}>To</Typography>
+                <input
+                  type="date"
+                  value={tempCustomDateRange.to}
+                  onChange={(e) =>
+                    setTempCustomDateRange({
+                      ...tempCustomDateRange,
+                      to: e.target.value,
+                    })
+                  }
+                  style={{
+                    width: "80%",
+                    padding: "8px",
+                    borderRadius: "8px",
+                    border: "1px solid #ccc",
+                    fontSize: "14px",
+                  }}
+                />
+              </Box>
+            </Box>
           )}
         </DialogContent>
-        <Divider />
         <DialogActions>
+          <Button onClick={() => setOpenDateDialog(false)}>Cancel</Button>
           <Button
-            fullWidth
-            onClick={() => setOpenDateDialog(false)}
-            sx={{ color: "red", textTransform: "none" }}
+            variant="contained"
+            sx={{ bgcolor: "#B08B6F" }}
+            onClick={() => {
+              setDateOption(tempDateOption);
+              setCustomDateRange(tempCustomDateRange);
+              setOpenDateDialog(false);
+            }}
           >
-            Cancel
+            OK
           </Button>
         </DialogActions>
       </Dialog>
