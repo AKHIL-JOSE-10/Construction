@@ -1,272 +1,283 @@
 import React, { useState } from "react";
 import {
-  Grid,
-  Box,
-  Typography,
-  Button,
-  Collapse,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
+    Box,
+    Button,
+    Typography,
+    Grid,
+    Collapse,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    DialogActions,
+    Radio,
+    RadioGroup,
+    FormControlLabel,
 } from "@mui/material";
+import MobHeading from "@/modules/ClientPages/MobileView/MobTopBarHeading/mobTopBarHeading";
 import RoomIcon from "@mui/icons-material/Room";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import dayjs from "dayjs";
-import MobHeading from "@/modules/ClientPages/MobileView/MobTopBarHeading/mobTopBarHeading";
 
 const serviceCategories = [
-  "Architectural Design", "Civil Engineering", "Interior Design", "Landscaping",
-  "Structural Engineering", "MEP Services", "Pool Design", "Steel Fabrication",
-  "Construction Contracting", "Masonry Work", "Carpentry Services", "Metal Fabrication",
-  "Electrical Services", "Plumbing Services", "Painting Services", "Waterproofing Solutions",
-  "Flooring Installation", "Security & Surveillance", "Smart Home Automation", "Audio & Video Systems",
-  "Automated Smart Locks", "Aluminium Fabrication", "Stainless Steel Fabrication",
-  "Roofing Solutions", "Mild Steel Fabrication", "Glass Fabrication",
+    "Architectural Design",
+    "Civil Engineering",
+    "Interior Design",
+    "Landscaping",
+    "Structural Engineering",
+    "MEP Services",
+    "Pool Design",
+    "Steel Fabrication",
+    "Construction Contracting",
+    "Masonry Work",
+    "Carpentry Services",
+    "Metal Fabrication",
+    "Electrical Services",
+    "Plumbing Services",
+    "Painting Services",
+    "Waterproofing Solutions",
+    "Flooring Installation",
+    "Security & Surveillance",
+    "Smart Home Automation",
+    "Audio & Video Systems",
+    "Automated Smart Locks",
+    "Aluminium Fabrication",
+    "Stainless Steel Fabrication",
+    "Roofing Solutions",
+    "Mild Steel Fabrication",
+    "Glass Fabrication",
 ];
 
 const MobSearchWorkerFilter = () => {
-  const [selectedServices, setSelectedServices] = useState([]);
-  const [showServices, setShowServices] = useState(false);
-  const [priceRange, setPriceRange] = useState(["", ""]);
-  const [openDateDialog, setOpenDateDialog] = useState(false);
-  const [selectedDates, setSelectedDates] = useState([]);
-  const [tempSelectedDates, setTempSelectedDates] = useState([]);
-  const [dateOption, setDateOption] = useState("all");
+    const [selectedServices, setSelectedServices] = useState([]);
+    const [showServices, setShowServices] = useState(false);
+    const [priceRange, setPriceRange] = useState(["", ""]);
+    const [openDateDialog, setOpenDateDialog] = useState(false);
+    const [dateOption, setDateOption] = useState("all");
+    const [selectedDates, setSelectedDates] = useState([]);
 
-  const handleCalendarDateClick = (date) => {
-    const formatted = dayjs(date).format("YYYY-MM-DD");
-    setTempSelectedDates((prev) =>
-      prev.includes(formatted) ? prev.filter((d) => d !== formatted) : [...prev, formatted]
-    );
-  };
+    const handleCalendarSelect = (date) => {
+        const formatted = dayjs(date).format("YYYY-MM-DD");
+        setSelectedDates((prev) =>
+            prev.includes(formatted)
+                ? prev.filter((d) => d !== formatted)
+                : [...prev, formatted]
+        );
+    };
 
-  const handleQuickOption = (option) => {
-    setDateOption(option);
-    if (option === "all") setSelectedDates([]);
-    else if (option === "today") setSelectedDates([dayjs().format("YYYY-MM-DD")]);
-    else if (option === "tomorrow") setSelectedDates([dayjs().add(1, "day").format("YYYY-MM-DD")]);
-    setOpenDateDialog(false);
-  };
+    return (
+        <Grid sx={{ p: 2, fontFamily: "'Poppins', sans-serif", pb: 10, bgcolor: "#fff" }}>
 
-  return (
-    <Grid sx={{ p: 2, fontFamily: "'Poppins', sans-serif", pb: 10, bgcolor: "#fff" }}>
-      <MobHeading Heading="Filter" />
+            {/* Header */}
+            <MobHeading Heading="Filter" />
 
-      {/* Category */}
-      <Box sx={{ mb: 2 }}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>Category of Services</Typography>
-        <Box
-          onClick={() => setShowServices((prev) => !prev)}
-          sx={{
-            mt: 1, p: 1.3, border: "1px solid #ccc", borderRadius: "12px",
-            display: "flex", justifyContent: "space-between", alignItems: "center",
-            cursor: "pointer",
-          }}
-        >
-          <Typography sx={{ fontSize: 14 }}>
-            {selectedServices.length ? selectedServices.join(", ") : "Select Services"}
-          </Typography>
-          <ArrowForwardIosIcon sx={{ fontSize: 14 }} />
-        </Box>
-      </Box>
-
-      <Collapse in={showServices}>
-        <Box sx={{ border: "1px solid #ddd", borderRadius: 2, mt: 1, mb: 2, maxHeight: 250, overflowY: "auto", px: 1 }}>
-          {serviceCategories.map((service, idx) => {
-            const isSelected = selectedServices.includes(service);
-            return (
-              <Box
-                key={idx}
-                onClick={() =>
-                  setSelectedServices((prev) =>
-                    isSelected ? prev.filter((s) => s !== service) : [...prev, service]
-                  )
-                }
-                sx={{
-                  display: "flex", justifyContent: "space-between", alignItems: "center",
-                  py: 1, px: 1, cursor: "pointer", bgcolor: isSelected ? "#f7f2ee" : "#fff",
-                  borderBottom: "1px solid #eee",
-                }}
-              >
-                <Typography sx={{ fontSize: 14 }}>{service}</Typography>
-                {isSelected ? (
-                  <CheckCircleIcon sx={{ color: "#B08B6F", fontSize: 18 }} />
-                ) : (
-                  <RadioButtonUncheckedIcon sx={{ fontSize: 18, color: "#ccc" }} />
-                )}
-              </Box>
-            );
-          })}
-        </Box>
-      </Collapse>
-
-      {/* Price Range */}
-      <Box sx={{ mb: 3, mt: 2 }}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>Price Range (Rs)</Typography>
-        <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
-          <Box sx={{ flex: 1 }}>
-            <Typography sx={{ fontSize: 12 }}>Min Price</Typography>
-            <input
-              type="number"
-              value={priceRange[0]}
-              onChange={(e) => setPriceRange([e.target.value, priceRange[1]])}
-              style={{ width: "90%", padding: "8px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "14px" }}
-            />
-          </Box>
-          <Box sx={{ flex: 1 }}>
-            <Typography sx={{ fontSize: 12 }}>Max Price</Typography>
-            <input
-              type="number"
-              value={priceRange[1]}
-              onChange={(e) => setPriceRange([priceRange[0], e.target.value])}
-              style={{ width: "90%", padding: "8px", borderRadius: "8px", border: "1px solid #ccc", fontSize: "14px" }}
-            />
-          </Box>
-        </Box>
-      </Box>
-
-      {/* Location */}
-      <Box sx={{ mb: 2, mt: 4 }}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>Where would you like to Appoint your Service?</Typography>
-        <Box
-          sx={{
-            mt: 1, px: 1.5, py: 1.3, border: "1px solid #ccc", borderRadius: "12px",
-            display: "flex", alignItems: "center", justifyContent: "space-between",
-            cursor: "pointer",
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <RoomIcon sx={{ color: "gray", fontSize: 20 }} />
-            <Typography sx={{ fontSize: 15, color: "#aaa", fontStyle: "italic" }}>
-              Thrissur, Kerala
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-
-      {/* Available Dates */}
-      <Box sx={{ mb: 2, mt: 4 }}>
-        <Typography sx={{ fontSize: 14, fontWeight: 500 }}>Select Worker Available Dates</Typography>
-        <Box
-          onClick={() => {
-            setTempSelectedDates(selectedDates);
-            setOpenDateDialog(true);
-          }}
-          sx={{
-            mt: 1, p: 1.3, border: "1px solid #ccc", borderRadius: "12px",
-            display: "flex", justifyContent: "space-between", alignItems: "center",
-            cursor: "pointer",
-          }}
-        >
-          <Typography sx={{ fontSize: 14, color: "#444" }}>
-            {dateOption === "all"
-              ? "All Dates"
-              : `Selected: ${selectedDates.join(", ")}`}
-          </Typography>
-          <ArrowForwardIosIcon sx={{ fontSize: "14px", color: "#999" }} />
-        </Box>
-      </Box>
-
-      {/* Date Picker Dialog */}
-      <Dialog open={openDateDialog} onClose={() => setOpenDateDialog(false)} fullWidth>
-        <DialogTitle>Select Available Dates</DialogTitle>
-        <DialogContent>
-          <Box sx={{ display: "flex", justifyContent: "space-around", mb: 2 }}>
-            {["all", "today", "tomorrow"].map((opt) => (
-              <Button
-                key={opt}
-                variant={dateOption === opt ? "contained" : "outlined"}
-                size="small"
-                onClick={() => handleQuickOption(opt)}
-              >
-                {opt === "all" ? "All Dates" : opt === "today" ? "Today" : "Tomorrow"}
-              </Button>
-            ))}
-          </Box>
-
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DateCalendar
-              disablePast
-              value={null}
-              onChange={handleCalendarDateClick}
-              renderDay={(day, _value, DayComponentProps) => {
-                const dateStr = dayjs(day).format("YYYY-MM-DD");
-                const selected = tempSelectedDates.includes(dateStr);
-                return (
-                  <div
-                    {...DayComponentProps}
-                    onClick={() => handleCalendarDateClick(day)}
-                    style={{
-                      backgroundColor: selected ? "#B08B6F" : "transparent",
-                      color: selected ? "#fff" : undefined,
-                      borderRadius: "50%",
-                      padding: 8,
-                      cursor: "pointer",
-                      textAlign: "center",
-                    }}
-                  >
-                    {day.date()}
-                  </div>
-                );
-              }}
-            />
-          </LocalizationProvider>
-
-          {tempSelectedDates.length > 0 && (
-            <Box sx={{ mt: 2 }}>
-              <Typography variant="body2" fontWeight="bold">Selected Dates:</Typography>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1 }}>
-                {tempSelectedDates.map((date, idx) => (
-                  <Box key={idx} sx={{ px: 1.5, py: 0.5, bgcolor: "#eee", borderRadius: "8px", fontSize: 13 }}>
-                    {date}
-                  </Box>
-                ))}
-              </Box>
+            {/* Category of Services */}
+            <Box sx={{ mb: 2 }}>
+                <Typography fontSize={14} fontWeight={500}>Category of Services</Typography>
+                <Box
+                    onClick={() => setShowServices(!showServices)}
+                    sx={{ mt: 1, p: 1.2, border: "1px solid #ccc", borderRadius: "12px", cursor: "pointer" }}
+                >
+                    <Typography fontSize={14} color="#444">
+                        {selectedServices.length ? selectedServices.join(", ") : "Select Services"}
+                    </Typography>
+                </Box>
             </Box>
-          )}
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpenDateDialog(false)}>Cancel</Button>
-          <Button
-            variant="contained"
-            sx={{ bgcolor: "#B08B6F" }}
-            onClick={() => {
-              setSelectedDates(tempSelectedDates);
-              setDateOption("custom");
-              setOpenDateDialog(false);
-            }}
-          >
-            OK
-          </Button>
-        </DialogActions>
-      </Dialog>
 
-      {/* Apply Filter Button */}
-      <Box sx={{ position: "fixed", bottom: 0, left: 0, right: 0, bgcolor: "#fff", px: 2, py: 1.5, zIndex: 1300 }}>
-        <Button
-          variant="contained"
-          fullWidth
-          sx={{
-            bgcolor: "#B08B6F",
-            borderRadius: "12px",
-            textTransform: "none",
-            fontSize: "16px",
-            fontWeight: "bold",
-            py: 1.4,
-            "&:hover": { bgcolor: "#9e775c" },
-          }}
-        >
-          Apply Filter
-        </Button>
-      </Box>
-    </Grid>
-  );
+            <Collapse in={showServices}>
+                <Box border="1px solid #eee" borderRadius={2} maxHeight={200} overflow="auto">
+                    {serviceCategories.map((service, idx) => (
+                        <Box
+                            key={idx}
+                            onClick={() =>
+                                setSelectedServices((prev) =>
+                                    prev.includes(service)
+                                        ? prev.filter((s) => s !== service)
+                                        : [...prev, service]
+                                )
+                            }
+                            sx={{
+                                px: 2,
+                                py: 1,
+                                cursor: "pointer",
+                                borderBottom: "1px solid #eee",
+                                bgcolor: selectedServices.includes(service) ? "#f7f2ee" : "#fff",
+                            }}
+                        >
+                            <Typography fontSize={14}>{service}</Typography>
+                        </Box>
+                    ))}
+                </Box>
+            </Collapse>
+
+            {/* Price Range */}
+            <Box sx={{ mt: 3 }}>
+                <Typography fontSize={14} fontWeight={500}>Price Range (Rs)</Typography>
+                <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
+                    <Box sx={{ flex: 1 }}>
+                        <Typography fontSize={12} mb={0.5}>Min</Typography>
+                        <input
+                            type="number"
+                            value={priceRange[0]}
+                            onChange={(e) => setPriceRange([e.target.value, priceRange[1]])}
+                            style={{
+                                width: "90%",
+                                padding: "8px",
+                                borderRadius: "8px",
+                                border: "1px solid #ccc",
+                                fontSize: "14px",
+                            }}
+                        />
+                    </Box>
+                    <Box sx={{ flex: 1 }}>
+                        <Typography fontSize={12} mb={0.5}>Max</Typography>
+                        <input
+                            type="number"
+                            value={priceRange[1]}
+                            onChange={(e) => setPriceRange([priceRange[0], e.target.value])}
+                            style={{
+                                width: "90%",
+                                padding: "8px",
+                                borderRadius: "8px",
+                                border: "1px solid #ccc",
+                                fontSize: "14px",
+                            }}
+                        />
+                    </Box>
+                </Box>
+            </Box>
+
+            {/* Location */}
+            <Box sx={{ mb: 2, mt: 4 }}>
+                <Typography fontSize={14} fontWeight={500}>Location</Typography>
+                <Box
+                    sx={{
+                        mt: 1,
+                        px: 1.5,
+                        py: 1.3,
+                        border: "1px solid #ccc",
+                        borderRadius: "12px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        cursor: "pointer",
+                    }}
+                >
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                        <RoomIcon sx={{ color: "gray", fontSize: 20 }} />
+                        <Typography
+                            sx={{
+                                fontSize: 15,
+                                color: "#aaa",
+                                fontStyle: "italic",
+                            }}
+                        >
+                            Thrissur, Kerala
+                        </Typography>
+                    </Box>
+                </Box>
+            </Box>
+
+            {/* Select Worker Available Date */}
+            <Box sx={{ mt: 4, mb: 2 }}>
+                <Typography fontSize={14} fontWeight={500}>Select Worker Available Date</Typography>
+                <Box
+                    onClick={() => setOpenDateDialog(true)}
+                    sx={{ mt: 1, p: 1.2, border: "1px solid #ccc", borderRadius: "12px", cursor: "pointer" }}
+                >
+                    <Typography fontSize={14} color="#444">
+                        {dateOption === "all"
+                            ? "All Dates"
+                            : dateOption === "today"
+                                ? "Today"
+                                : dateOption === "tomorrow"
+                                    ? "Tomorrow"
+                                    : selectedDates.length
+                                        ? `Selected: ${selectedDates.length} day(s)`
+                                        : "Choose from Calendar"}
+                    </Typography>
+                </Box>
+            </Box>
+
+            {/* Date Dialog */}
+            <Dialog open={openDateDialog} onClose={() => setOpenDateDialog(false)} fullWidth>
+                <DialogTitle sx={{ bgcolor: "#f7f2ee", fontWeight: 600 }}>Choose Date</DialogTitle>
+                <DialogContent sx={{ bgcolor: "#fff" }}>
+                    <RadioGroup value={dateOption} onChange={(e) => setDateOption(e.target.value)}>
+                        <FormControlLabel value="all" control={<Radio />} label="All Dates" />
+                        <FormControlLabel value="today" control={<Radio />} label="Today" />
+                        <FormControlLabel value="tomorrow" control={<Radio />} label="Tomorrow" />
+                        <FormControlLabel value="custom" control={<Radio />} label="Choose from Calendar" />
+                    </RadioGroup>
+
+                    {dateOption === "custom" && (
+                        <Box mt={2}>
+                            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                <DateCalendar
+                                    disablePast
+                                    onChange={handleCalendarSelect}
+                                    slots={{
+                                        day: (props) => {
+                                            const formatted = dayjs(props.day).format("YYYY-MM-DD");
+                                            const isSelected = selectedDates.includes(formatted);
+                                            return (
+                                                <Box
+                                                    onClick={() => handleCalendarSelect(props.day)}
+                                                    sx={{
+                                                        width: 36,
+                                                        height: 36,
+                                                        display: "flex",
+                                                        alignItems: "center",
+                                                        justifyContent: "center",
+                                                        bgcolor: isSelected ? "#B08B6F" : "transparent",
+                                                        borderRadius: "50%",
+                                                        color: isSelected ? "#fff" : "#000",
+                                                        cursor: "pointer",
+                                                    }}
+                                                >
+                                                    {dayjs(props.day).date()}
+                                                </Box>
+                                            );
+                                        },
+                                    }}
+                                />
+                            </LocalizationProvider>
+                        </Box>
+                    )}
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setOpenDateDialog(false)}>Cancel</Button>
+                    <Button
+                        variant="contained"
+                        sx={{ bgcolor: "#B08B6F" }}
+                        onClick={() => setOpenDateDialog(false)}
+                    >
+                        OK
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
+            {/* Apply Filter Button */}
+            <Box position="fixed" bottom={0} left={0} right={0} bgcolor="#fff" px={2} py={1.5} zIndex={1300}>
+                <Button
+                    variant="contained"
+                    fullWidth
+                    sx={{
+                        bgcolor: "#B08B6F",
+                        borderRadius: "12px",
+                        textTransform: "none",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                        py: 1.4,
+                        "&:hover": { bgcolor: "#9e775c" },
+                    }}
+                >
+                    Apply Filter
+                </Button>
+            </Box>
+        </Grid>
+    );
 };
 
 export default MobSearchWorkerFilter;
