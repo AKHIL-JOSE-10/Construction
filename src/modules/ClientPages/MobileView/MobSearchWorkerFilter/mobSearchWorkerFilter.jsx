@@ -184,7 +184,7 @@ const MobSearchWorkerFilter = () => {
       </Box>
 
       {/* Location */}
-      <Box sx={{ mb: 2 , mt:2}}>
+      <Box sx={{ mb: 2 , mt:4}}>
         <Typography variant="body2" sx={{ color: "#888", fontSize: 14 }}>
           Where would you like to Appoint your Service?
         </Typography>
@@ -217,7 +217,7 @@ const MobSearchWorkerFilter = () => {
       </Box>
 
       {/* Radius */}
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: 3 , mt:5}}>
         <Box
           sx={{
             display: "flex",
