@@ -306,7 +306,7 @@ const MobSearchWorkerFilter = () => {
                     })
                   }
                   style={{
-                    width: "80%",
+                    width: "85%",
                     padding: "8px",
                     borderRadius: "8px",
                     border: "1px solid #ccc",
@@ -326,7 +326,7 @@ const MobSearchWorkerFilter = () => {
                     })
                   }
                   style={{
-                    width: "80%",
+                    width: "85%",
                     padding: "8px",
                     borderRadius: "8px",
                     border: "1px solid #ccc",
