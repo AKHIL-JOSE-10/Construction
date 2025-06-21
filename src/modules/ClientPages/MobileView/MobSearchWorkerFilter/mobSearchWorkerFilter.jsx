@@ -63,7 +63,7 @@ const MobSearchWorkerFilter = () => {
 
             {/* Category */}
             <Box sx={{ mb: 2 }}>
-                <Typography sx={{ fontSize: 15, fontWeight: 500 }}>
+                <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
                     Category of Services
                 </Typography>
                 <Box
@@ -139,7 +139,7 @@ const MobSearchWorkerFilter = () => {
 
             {/* Price Range */}
             <Box sx={{ mb: 3, width: "100%", mt: 2 }}>
-                <Typography sx={{ fontSize: 15, fontWeight: 500 }}>
+                <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
                     Price Range (Rs)
                 </Typography>
                 <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
@@ -184,7 +184,7 @@ const MobSearchWorkerFilter = () => {
 
             {/* Location */}
             <Box sx={{ mb: 2, mt: 4 }}>
-                <Typography sx={{ fontSize: 15, fontWeight: 500 }}>
+                <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
                     Where would you like to Appoint your Service?
                 </Typography>
                 <Box
@@ -226,10 +226,12 @@ const MobSearchWorkerFilter = () => {
                     mt: 4
                 }}
             >
-                <Typography sx={{ fontSize: 15, fontWeight: 500 }}>
+                <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
                     Show available Workers in given Date
                 </Typography>
-
+                <Typography variant="body2">
+                    (optional)
+                </Typography>
             </Box>
             <Box sx={{ mb: 3, mt: 2 }}>
                 <Box sx={{ display: "flex", gap: 2 }}>

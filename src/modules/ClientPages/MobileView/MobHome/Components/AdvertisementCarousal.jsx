@@ -35,10 +35,9 @@ const AdvertisementCarousal = () => {
           sx={{
             position: 'absolute',
             width: '100%',
-            height: '175px',
-            objectFit: 'contain',
             opacity: currentIndex === index ? 1 : 0,
             transition: 'opacity 1s ease-in-out',
+            borderRadius: 1.5
           }}
         />
       ))}
