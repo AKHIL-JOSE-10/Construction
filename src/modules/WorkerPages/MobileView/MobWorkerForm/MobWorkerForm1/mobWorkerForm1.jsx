@@ -14,12 +14,10 @@ import { PhotoCamera } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import MobWorkerFormbottomButton from '../Components/mobWorkerFormbottomButton';
-import MobWorkerFormTopProgressBar from '../Components/mobWorkerFormTopProgressBar';
+import CustomProgressBar from '../Components/mobWorkerFormTopProgressBar';
 
 const MobWorkerForm1 = () => {
-
   const [gender, setGender] = React.useState('');
-
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -27,39 +25,80 @@ const MobWorkerForm1 = () => {
   };
 
   return (
-    <Box >
-
-      <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
-        <IconButton onClick={() => navigate(-1)}>
-          <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
-        </IconButton>
-        <Typography fontSize="0.95rem" fontWeight="bold">
-          <Typography> 1 / 4</Typography>
-        </Typography>
-      </Box>
+    <Box
+      sx={{
+        position: 'relative',
+        minHeight: '100vh',
+        bgcolor: '#F8F1E8',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        px: 2,
+        py: 4,
+        overflow: 'hidden',
+        '::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '180px',
+          backgroundColor: '#E0CBB2',
+          transform: 'skewY(-6deg)',
+          transformOrigin: 'top left',
+          zIndex: 0,
+        },
+        '::after': {
+          content: '""',
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          width: '100%',
+          height: '180px',
+          backgroundColor: '#E0CBB2',
+          transform: 'skewY(-5deg)',
+          transformOrigin: 'bottom right',
+          zIndex: 0,
+        },
+      }}
+    >
+      {/* Top Controls */}
       <Box
         sx={{
-
-          bgcolor: 'white',
-          px: 0,
-          pb: 3.5,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
+          position: 'relative',
+          zIndex: 2,
+          width: '100%',
+          maxWidth: 420,
         }}
       >
+        <Box display="flex" alignItems="center" justifyContent="space-between" px={0.5}>
+          <IconButton onClick={() => navigate(-1)}>
+            <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
+          </IconButton>
+          <Typography fontSize="0.95rem" fontWeight="bold">1 / 4</Typography>
+        </Box>
+        <CustomProgressBar activeStep={0} />
+      </Box>
 
-
-        {/* Top Progress Bar */}
-        <MobWorkerFormTopProgressBar activeStep={0} />
-
-        <Box sx={{ px: 2, mb: 8 }}>
-          {/* Title */}
+      {/* Form Card */}
+      <Box
+        sx={{
+          position: 'relative',
+          zIndex: 1,
+          bgcolor: 'white',
+          borderRadius: 3,
+          boxShadow: 3,
+          width: '100%',
+          maxWidth: 420,
+          p: 2,
+          mt: 1,
+        }}
+      >
+        <Box sx={{ px: 1, mb: 8 }}>
           <Typography sx={{ fontSize: '1.4rem', fontWeight: "bold", mb: 3, mt: 4 }}>
             Tell us more about yourself
           </Typography>
 
-          {/* Avatar upload */}
           <Box display="flex" justifyContent="center" mb={3}>
             <IconButton color="primary" component="label">
               <Avatar
@@ -76,67 +115,40 @@ const MobWorkerForm1 = () => {
             </IconButton>
           </Box>
 
-          {/* Full Name */}
           <Typography variant="body2" mb={0.5}>
             Full Name <Typography component="span" fontSize={12} color="text.secondary">(as mentioned in adhaar)</Typography>
           </Typography>
           <TextField
             placeholder="Enter your Full Name"
-            variant="outlined"
+            variant="standard"
             fullWidth
-            sx={{ mb: 2 }}
-            slotProps={{
-              input: {
-                sx: {
-                  bgcolor: 'white',
-                  height: 40,
-                  px: 1.2,
-                  fontSize: '0.9rem'
-                }
-              }
+            sx={{ mb: 3 }}
+            InputProps={{
+              disableUnderline: false,
+              sx: { fontSize: '0.95rem' },
             }}
           />
 
-          {/* Date of Birth */}
-          <Typography variant="body2" mb={0.5}>
-            Date of Birth
-          </Typography>
+          <Typography variant="body2" mb={0.5}>Date of Birth</Typography>
           <TextField
             type="date"
             fullWidth
-            sx={{ mb: 2 }}
-            slotProps={{
-              input: {
-                sx: {
-                  bgcolor: 'white',
-                  height: 40,
-                  px: 1.2,
-                  fontSize: '0.9rem',
-                  color: '#000',
-                }
-              },
-              textField: {
-                InputLabelProps: { shrink: true },
-              }
+            variant="standard"
+            sx={{ mb: 3 }}
+            InputProps={{
+              disableUnderline: false,
+              sx: { fontSize: '0.95rem' },
             }}
+            InputLabelProps={{ shrink: true }}
           />
 
-          {/* Gender */}
-          <Typography variant="body2" mb={0.5}>
-            Gender
-          </Typography>
-          <FormControl fullWidth variant="outlined" sx={{ mb: 2 }}>
+          <Typography variant="body2" mb={0.5}>Gender</Typography>
+          <FormControl fullWidth variant="standard" sx={{ mb: 3 }}>
             <InputLabel>Select</InputLabel>
             <Select
               value={gender}
               onChange={(e) => setGender(e.target.value)}
               label="Select"
-              sx={{
-                bgcolor: 'white',
-                height: 50,
-                display: 'flex',
-                alignItems: 'center'
-              }}
             >
               <MenuItem value={'Male'}>Male</MenuItem>
               <MenuItem value={'Female'}>Female</MenuItem>
@@ -144,13 +156,10 @@ const MobWorkerForm1 = () => {
             </Select>
           </FormControl>
 
-          {/* Aadhaar Number */}
-          <Typography variant="body2" mb={0.5}>
-            Aadhaar Number
-          </Typography>
+          <Typography variant="body2" mb={0.5}>Aadhaar Number</Typography>
           <TextField
             placeholder="Enter your Aadhaar number"
-            variant="outlined"
+            variant="standard"
             fullWidth
             type="text"
             inputProps={{
@@ -158,23 +167,17 @@ const MobWorkerForm1 = () => {
               pattern: '[0-9]{12}',
               maxLength: 12,
             }}
-            sx={{ mb: 2 }}
-            slotProps={{
-              input: {
-                sx: {
-                  bgcolor: 'white',
-                  height: 40,
-                  px: 1.2,
-                  fontSize: '0.9rem'
-                }
-              }
+            sx={{ mb: 3 }}
+            InputProps={{
+              disableUnderline: false,
+              sx: { fontSize: '0.95rem' },
             }}
           />
         </Box>
+
         <MobWorkerFormbottomButton handleNext={handleNext} />
       </Box>
     </Box>
-
   );
 };
 
