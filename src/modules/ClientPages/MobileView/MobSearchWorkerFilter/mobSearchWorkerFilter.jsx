@@ -54,7 +54,7 @@ const MobSearchWorkerFilter = () => {
             sx={{
                 p: 2,
                 fontFamily: "'Poppins', sans-serif",
-                pb: 10, 
+                pb: 10,
                 bgcolor: "#fff",
             }}
         >
@@ -227,11 +227,11 @@ const MobSearchWorkerFilter = () => {
                 }}
             >
                 <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
-                    Show available Workers in given Date
-                </Typography>
-                <Typography variant="body2">
+                    Show available Workers in given Date <Typography sx={{ fontSize: 11, color: 'grey' }}></Typography>
                     (optional)
+
                 </Typography>
+
             </Box>
             <Box sx={{ mb: 3, mt: 2 }}>
                 <Box sx={{ display: "flex", gap: 2 }}>
