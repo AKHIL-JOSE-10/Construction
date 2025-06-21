@@ -31,7 +31,7 @@ import MobSearchWorker from "./modules/ClientPages/MobileView/MobSearchWorker/mo
 import MobSavedWorkers from "./modules/ClientPages/MobileView/MobProfile/MobSavedWorkers/mobSavedWorkers";
 import MobRecentSearch from "./modules/ClientPages/MobileView/MobSearchWorker/mobRecentSearch";
 import AddressDetails from "./modules/ClientPages/MobileView/MobHome/Address/AdressDetails/AddressDetails";
-import MobSearchWorkerFilter from "./modules/ClientPages/MobileView/MobSearchWorkerFilter/mobSearchWorkerFilter";
+import MobSearchWorkerFilter from "./modules/ClientPages/MobileView/SearchWorkerFilter/mobSearchWorkerFilter";
 
 //worker pages
 

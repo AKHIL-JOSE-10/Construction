@@ -201,7 +201,7 @@ const MobSearchWorkerFilter = () => {
             </Box>
 
             {/* Date Dialog */}
-            <Dialog open={openDateDialog} onClose={() => setOpenDateDialog(false)} sx={{width:'105%', ml:-1}}>
+            <Dialog open={openDateDialog} onClose={() => setOpenDateDialog(false)} sx={{width:'112%', ml:-3}}>
                 <DialogTitle sx={{ bgcolor: "#f7f2ee", fontWeight: 600 }}>Choose Date</DialogTitle>
                 <DialogContent sx={{ bgcolor: "#fff" }}>
                     <RadioGroup value={dateOption} onChange={(e) => setDateOption(e.target.value)}>
