@@ -14,16 +14,14 @@ import {
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from 'react-router-dom';
 import MobWorkerFormbottomButton from '../Components/mobWorkerFormbottomButton';
-import MobWorkerFormTopProgressBar from '../Components/mobWorkerFormTopProgressBar';
+import CustomProgressBar from '../Components/mobWorkerFormTopProgressBar'; // updated to use CustomProgressBar
 
 const MobWorkerForm2 = () => {
-
     const navigate = useNavigate();
 
     const [selectedService, setSelectedService] = useState('');
     const [selectedExperience, setSelectedExperience] = useState('');
     const [addedServiceExperience, setAddedServiceExperience] = useState([]);
-
 
     const availableServices = [
         "Architectural Design", "Civil Engineering", "Interior Design", "Landscaping",
@@ -59,34 +57,89 @@ const MobWorkerForm2 = () => {
     };
 
     const handleNext = () => {
-        // You can pass `addedServiceExperience` to the next step
         navigate('/mobile-worker-form3');
     };
 
     return (
-        <Box>
-            {/* Top Header */}
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
-                <IconButton onClick={() => navigate(-1)}>
-                    <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
-                </IconButton>
-                <Typography fontSize="0.95rem" fontWeight="bold">2 / 4</Typography>
+        <Box
+            sx={{
+                position: 'relative',
+                minHeight: '100vh',
+                bgcolor: '#F8F1E8',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                px: 0.5,
+                pb: 5,
+                pt: 1,
+                overflow: 'hidden',
+                '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '135px',
+                    backgroundColor: '#E0CBB2',
+                    transform: 'skewY(-3deg)',
+                    transformOrigin: 'top left',
+                    zIndex: 0,
+                },
+                '::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: 0,
+                    right: 0,
+                    width: '100%',
+                    height: '280px',
+                    backgroundColor: '#E0CBB2',
+                    transform: 'skewY(-5deg)',
+                    transformOrigin: 'bottom right',
+                    zIndex: 0,
+                },
+            }}
+        >
+            {/* Top Controls */}
+            <Box
+                sx={{
+                    position: 'relative',
+                    zIndex: 2,
+                    width: '100%',
+                    maxWidth: 420,
+                }}
+            >
+                <Box display="flex" alignItems="center" justifyContent="space-between" px={0.5}>
+                    <IconButton onClick={() => navigate(-1)}>
+                        <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
+                    </IconButton>
+                    <Typography fontSize="0.95rem" fontWeight="bold">2 / 4</Typography>
+                </Box>
+                <CustomProgressBar activeStep={1} />
             </Box>
 
-            <Box sx={{ bgcolor: 'white', pb: 7, display: 'flex', flexDirection: 'column' }}>
-
-                {/* Top Progress Bar */}
-
-                <MobWorkerFormTopProgressBar activeStep={1} />
-
-                <Box sx={{ px: 2, mb: 8 }}>
+            {/* Form Card */}
+            <Box
+                sx={{
+                    position: 'relative',
+                    zIndex: 1,
+                    bgcolor: 'white',
+                    borderRadius: 3,
+                    boxShadow: 3,
+                    width: '100%',
+                    maxWidth: 420,
+                    px: 2,
+                    pt: 2,
+                    mt: 1,
+                }}
+            >
+                <Box sx={{ px: 1, mb: 8 }}>
                     <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4, mt: 4 }}>
                         Your Services & Experience
                     </Typography>
 
                     {/* Select Service */}
                     <Typography variant="body2" mb={0.5}>Select Service</Typography>
-                    <FormControl fullWidth sx={{ mb: 2 }}>
+                    <FormControl fullWidth sx={{ mb: 2 }} variant="standard">
                         <InputLabel>Select a service</InputLabel>
                         <Select
                             value={selectedService}
@@ -105,7 +158,7 @@ const MobWorkerForm2 = () => {
 
                     {/* Select Experience */}
                     <Typography variant="body2" mb={0.5}>Years of Experience</Typography>
-                    <FormControl fullWidth sx={{ mb: 2 }}>
+                    <FormControl fullWidth sx={{ mb: 2 }} variant="standard">
                         <InputLabel>Experience</InputLabel>
                         <Select
                             value={selectedExperience}
@@ -120,6 +173,7 @@ const MobWorkerForm2 = () => {
                         </Select>
                     </FormControl>
 
+                    {/* Add Button */}
                     <Button
                         variant="contained"
                         onClick={handleAddService}
@@ -131,7 +185,7 @@ const MobWorkerForm2 = () => {
                             fontWeight: 'bold',
                             height: 40,
                             px: 3,
-                            mb: 3,
+                            mb: 5,
                             '&:hover': {
                                 bgcolor: '#c19a84'
                             }

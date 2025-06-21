@@ -35,6 +35,7 @@ const MobWorkerForm1 = () => {
         alignItems: 'center',
         px: 0.5,
         pb:5,
+        pt:1,
         overflow: 'hidden',
         '::before': {
           content: '""',
@@ -54,7 +55,7 @@ const MobWorkerForm1 = () => {
           bottom: 0,
           right: 0,
           width: '100%',
-          height: '180px',
+          height: '280px',
           backgroundColor: '#E0CBB2',
           transform: 'skewY(-5deg)',
           transformOrigin: 'bottom right',
@@ -90,7 +91,8 @@ const MobWorkerForm1 = () => {
           boxShadow: 3,
           width: '100%',
           maxWidth: 420,
-          p: 2,
+          px: 2,
+          pt:2,
           mt: 1,
         }}
       >
@@ -115,7 +117,7 @@ const MobWorkerForm1 = () => {
             </IconButton>
           </Box>
 
-          <Typography variant="body2" mb={0.5}>
+          <Typography variant="body2" mb={1}>
             Full Name <Typography component="span" fontSize={12} color="text.secondary">(as mentioned in adhaar)</Typography>
           </Typography>
           <TextField
@@ -167,7 +169,7 @@ const MobWorkerForm1 = () => {
               pattern: '[0-9]{12}',
               maxLength: 12,
             }}
-            sx={{ mb: 3 }}
+            
             InputProps={{
               disableUnderline: false,
               sx: { fontSize: '0.95rem' , bgcolor:'white'},

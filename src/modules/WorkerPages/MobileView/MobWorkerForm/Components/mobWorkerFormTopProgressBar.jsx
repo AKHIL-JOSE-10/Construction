@@ -2,7 +2,7 @@
 import { Stepper, Step, StepLabel } from '@mui/material';
 import React from 'react';
 
-const steps = ['Basic Info', 'Experience', 'Skills', 'Review'];
+const steps = ['Basic Info', 'Experience', 'Bio', 'Complete'];
 
 const CustomProgressBar = ({ activeStep }) => {
   return (
