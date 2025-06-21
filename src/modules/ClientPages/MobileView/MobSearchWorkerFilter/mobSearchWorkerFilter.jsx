@@ -216,28 +216,6 @@ const MobSearchWorkerFilter = () => {
         </Box>
       </Box>
 
-      {/* Radius */}
-      <Box sx={{ mb: 3 , mt:5}}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            mb: 1,
-          }}
-        >
-          <Typography sx={{ fontSize: 14, color: "#555" }}>Radius</Typography>
-          <Typography sx={{ fontSize: 14, color: "#555" }}>KM</Typography>
-        </Box>
-        <Slider
-          value={radius}
-          onChange={(e, val) => setRadius(val)}
-          max={100}
-          sx={{ color: "#B08B6F" }}
-        />
-        <Typography align="right" sx={{ fontSize: 14 }}>
-          {radius}
-        </Typography>
-      </Box>
 
       {/* Show available toggle */}
       <Box
