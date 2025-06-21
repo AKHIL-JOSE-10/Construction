@@ -186,7 +186,7 @@ const MobSearchWorker = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             sx={{ fontSize: 14 }}
           />
-          <IconButton>
+          <IconButton  onClick={() => navigate("/mobile-search-worker-filter")}>
             <Tune />
           </IconButton>
         </Box>

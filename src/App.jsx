@@ -31,6 +31,7 @@ import MobSearchWorker from "./modules/ClientPages/MobileView/MobSearchWorker/mo
 import MobSavedWorkers from "./modules/ClientPages/MobileView/MobProfile/MobSavedWorkers/mobSavedWorkers";
 import MobRecentSearch from "./modules/ClientPages/MobileView/MobSearchWorker/mobRecentSearch";
 import AddressDetails from "./modules/ClientPages/MobileView/MobHome/Address/AdressDetails/AddressDetails";
+import MobSearchWorkerFilter from "./modules/ClientPages/MobileView/MobSearchWorkerFilter/mobSearchWorkerFilter";
 
 //worker pages
 
@@ -47,31 +48,31 @@ import MobileLayout from "./modules/ClientPages/MobileView/MobBottomTab/MobileLa
 import AccessDenied from "./Error/AccessDenied";
 
 function App() {
-  const [searchParams] = useSearchParams();
-  const [accessGranted, setAccessGranted] = useState(true);
+  // const [searchParams] = useSearchParams();
+  // const [accessGranted, setAccessGranted] = useState(true);
 
-  useEffect(() => {
-    const tokenFromUrl = searchParams.get("access_token");
-    const savedToken = localStorage.getItem("access_token");
-    const allowedToken = import.meta.env.VITE_ACCESS_TOKEN;
+  // useEffect(() => {
+  //   const tokenFromUrl = searchParams.get("access_token");
+  //   const savedToken = localStorage.getItem("access_token");
+  //   const allowedToken = import.meta.env.VITE_ACCESS_TOKEN;
 
-    if (tokenFromUrl) {
-      if (tokenFromUrl === allowedToken) {
-        localStorage.setItem("access_token", tokenFromUrl);
-        setAccessGranted(true);
-      } else {
-        setAccessGranted(false);
-      }
-    } else if (savedToken === allowedToken) {
-      setAccessGranted(true);
-    } else {
-      setAccessGranted(false);
-    }
-  }, [searchParams]);
+  //   if (tokenFromUrl) {
+  //     if (tokenFromUrl === allowedToken) {
+  //       localStorage.setItem("access_token", tokenFromUrl);
+  //       setAccessGranted(true);
+  //     } else {
+  //       setAccessGranted(false);
+  //     }
+  //   } else if (savedToken === allowedToken) {
+  //     setAccessGranted(true);
+  //   } else {
+  //     setAccessGranted(false);
+  //   }
+  // }, [searchParams]);
 
-  if (!accessGranted) {
-    return <AccessDenied />;
-  }
+  // if (!accessGranted) {
+  //   return <AccessDenied />;
+  // }
 
   return (
     <>
@@ -126,6 +127,10 @@ function App() {
           <Route path="/address" element={<AddressDetails />} />
           <Route path="/mobile-saved-workers" element={<MobSavedWorkers />} />
           <Route path="/mobile-Recent-Search" element={<MobRecentSearch />} />
+          <Route path="/mobile-search-worker-filter" element={<MobSearchWorkerFilter />} />
+
+
+
 
           {/* worker page routes */}
           <Route
