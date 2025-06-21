@@ -18,7 +18,7 @@ const AdvertisementCarousal = () => {
   return (
     <Box
       sx={{
-        height: '195px',
+        height: '193px',
         overflow: 'hidden',
         position: 'relative',
         bgcolor: 'white',

@@ -226,12 +226,13 @@ const MobSearchWorkerFilter = () => {
                     mt: 4
                 }}
             >
-                <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
-                    Show available Workers in given Date <Typography sx={{ fontSize: 11, color: 'grey' }}></Typography>
-                    (optional)
+                <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1, alignItems: 'center' }}>
+                    <Typography sx={{ fontSize: 14, fontWeight: 500 }}>
+                        Show available Workers in given Date</Typography>
+                    <Typography sx={{ fontSize: 11, color: 'grey' }}>(optional)</Typography>
 
-                </Typography>
 
+                </Box>
             </Box>
             <Box sx={{ mb: 3, mt: 2 }}>
                 <Box sx={{ display: "flex", gap: 2 }}>
