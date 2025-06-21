@@ -11,14 +11,13 @@ import {
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from 'react-router-dom';
 import MobWorkerFormbottomButton from '../Components/mobWorkerFormbottomButton';
-import MobWorkerFormTopProgressBar from '../Components/mobWorkerFormTopProgressBar';
+import CustomProgressBar from '../Components/mobWorkerFormTopProgressBar'; // updated import
 
 const MobWorkerForm3 = () => {
     const navigate = useNavigate();
     const [customBio, setCustomBio] = useState('');
-    const [selectedOption, setSelectedOption] = useState('custom'); // 'archisans' | 'custom'
+    const [selectedOption, setSelectedOption] = useState('custom');
 
-    const steps = ['', '', '', ''];
     const defaultBio =
         "I’ve been working as a professional Carpenter/Handyman for over 5 years, handling both residential and commercial jobs with precision and dedication. I’m committed to delivering high-quality, dependable, and efficient workmanship on every project. Whether it’s a small repair or a complete renovation, I’m here to help. Don’t hesitate to reach out with any questions or service needs!";
 
@@ -27,24 +26,80 @@ const MobWorkerForm3 = () => {
     };
 
     return (
-        <Box>
-            {/* Top Navigation */}
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
-                <IconButton onClick={() => navigate(-1)}>
-                    <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
-                </IconButton>
-                <Typography fontSize="0.95rem" fontWeight="bold">3 / 4</Typography>
+        <Box
+            sx={{
+                position: 'relative',
+                minHeight: '100vh',
+                bgcolor: '#F8F1E8',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                px: 0.5,
+                pb: 5,
+                pt: 1,
+                overflow: 'hidden',
+                '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '135px',
+                    backgroundColor: '#E0CBB2',
+                    transform: 'skewY(-3deg)',
+                    transformOrigin: 'top left',
+                    zIndex: 0,
+                },
+                '::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: 0,
+                    right: 0,
+                    width: '100%',
+                    height: '280px',
+                    backgroundColor: '#E0CBB2',
+                    transform: 'skewY(-5deg)',
+                    transformOrigin: 'bottom right',
+                    zIndex: 0,
+                },
+            }}
+        >
+            {/* Top Controls */}
+            <Box
+                sx={{
+                    position: 'relative',
+                    zIndex: 2,
+                    width: '100%',
+                    maxWidth: 420,
+                }}
+            >
+                <Box display="flex" alignItems="center" justifyContent="space-between" px={0.5}>
+                    <IconButton onClick={() => navigate(-1)}>
+                        <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
+                    </IconButton>
+                    <Typography fontSize="0.95rem" fontWeight="bold">3 / 4</Typography>
+                </Box>
+                <CustomProgressBar activeStep={2} />
             </Box>
 
-            <Box sx={{ bgcolor: 'white', pb: 7, display: 'flex', flexDirection: 'column' }}>
-
-                {/* Top Progress Bar */}
-
-                <MobWorkerFormTopProgressBar activeStep={2} />
-
-                <Box sx={{ px: 2, mb: 8 }}>
+            {/* Form Card */}
+            <Box
+                sx={{
+                    position: 'relative',
+                    zIndex: 1,
+                    bgcolor: 'white',
+                    borderRadius: 3,
+                    boxShadow: 3,
+                    width: '100%',
+                    maxWidth: 420,
+                    px: 2,
+                    pt: 2,
+                    mt: 1,
+                }}
+            >
+                <Box sx={{ px: 1, mb: 8 }}>
                     {/* Main Heading */}
-                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 3 ,mt:4 }}>
+                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 3, mt: 4 }}>
                         Write a small bio of you
                     </Typography>
 
@@ -52,7 +107,6 @@ const MobWorkerForm3 = () => {
                         value={selectedOption}
                         onChange={(e) => setSelectedOption(e.target.value)}
                     >
-                        {/* Option 1: Custom bio */}
                         <FormControlLabel
                             value="custom"
                             control={<Radio />}
@@ -78,11 +132,10 @@ const MobWorkerForm3 = () => {
                                         padding: '12px',
                                     },
                                 }}
-                                sx={{ mb: 3 }}
+                                sx={{ mb: 3}}
                             />
                         )}
 
-                        {/* Option 2: Archisans bio */}
                         <FormControlLabel
                             value="archisans"
                             control={<Radio />}
@@ -107,11 +160,9 @@ const MobWorkerForm3 = () => {
                                 {defaultBio}
                             </Box>
                         )}
-
                     </RadioGroup>
                 </Box>
 
-                {/* Bottom Button */}
                 <MobWorkerFormbottomButton handleNext={handleNext} />
             </Box>
         </Box>
