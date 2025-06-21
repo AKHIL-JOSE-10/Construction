@@ -116,7 +116,7 @@ const MobRecentSearch = () => {
       >
         <Search sx={{ mr: 1, cursor: 'pointer' }} onClick={() => navigate('/mobile-search-worker')} />
         <InputBase sx={{ fontSize: "14px" }} placeholder="Search Services & Workers" fullWidth />
-        <Tune sx={{ color: "#888" }} />
+        <Tune onClick={() => navigate("/mobile-search-worker-filter")} sx={{ color: "#888" }} />
       </Box>
 
       <Box >
