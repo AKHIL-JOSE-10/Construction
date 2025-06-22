@@ -1,73 +1,52 @@
-import React, { useEffect, useState } from 'react';
-import { Box } from '@mui/material';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 import img1 from '../../../../assets/Interior.png';
 import img2 from '../../../../assets/AdIcon.png';
 
+import { Card, CardMedia, Box, GlobalStyles } from '@mui/material';
+
+const imageData = [
+  { img: img1 },
+  { img: img2 },
+];
+
 const AdvertisementCarousal = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [img1, img2];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
   return (
-    <Box
-      sx={{
-        height: '205px',
-        overflow: 'hidden',
-        position: 'relative',
-        bgcolor: 'white',
-        mx:1
-      }}
-    >
-      {/* Image display */}
-      {images.map((img, index) => (
-        <Box
-          key={index}
-          component="img"
-          src={img}
-          alt={`slide-${index}`}
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '175px',
-            objectFit: 'contain',
-            opacity: currentIndex === index ? 1 : 0,
-            transition: 'opacity 1s ease-in-out',
-          }}
-        />
-      ))}
-
-      {/* Circle indicators */}
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: 15,
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 1,
+    <>
+      {/* Global CSS to fix pagination position */}
+      <GlobalStyles
+        styles={{
+          '.ad-swiper .swiper-pagination': {
+            position: 'static',
+            textAlign: 'center',
+          },
         }}
-      >
-        {images.map((_, index) => (
-          <Box
-            key={index}
-            sx={{
-              width: 8,
-              height: 8,
-              bgcolor: currentIndex === index ? '#D2B48C' : '#ccc',
-              transition: 'background-color 0.s ease',
-              borderRadius:"50%"
-            }}
-          />
-        ))}
+      />
+
+      <Box sx={{ width: '95%', margin: 'auto', mt: 4 }}>
+        <Swiper
+          className="ad-swiper"
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          loop={true}
+          spaceBetween={20}
+          slidesPerView={1}
+        >
+          {imageData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Card sx={{ borderRadius: 2, mb: 1 }}>
+                <CardMedia component="img" height='200px'  image={item.img} />
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Box>
-    </Box>
+    </>
   );
 };
 
