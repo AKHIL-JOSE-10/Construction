@@ -27,7 +27,7 @@ const AdvertisementCarousal = () => {
         }}
       />
 
-      <Box sx={{ width: '95%', margin: 'auto', mt: 4 }}>
+      <Box sx={{ width: '95%', margin: 'auto', }}>
         <Swiper
           className="ad-swiper"
           modules={[Autoplay, Pagination]}
@@ -39,7 +39,7 @@ const AdvertisementCarousal = () => {
         >
           {imageData.map((item, index) => (
             <SwiperSlide key={index}>
-              <Card sx={{ borderRadius: 1, mb: 1 }}>
+              <Card sx={{ borderRadius: 1, }}>
                 <CardMedia component="img" height='auto'  image={item.img} />
               </Card>
             </SwiperSlide>
