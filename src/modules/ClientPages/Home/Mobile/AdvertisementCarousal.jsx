@@ -39,7 +39,7 @@ const AdvertisementCarousal = () => {
         >
           {imageData.map((item, index) => (
             <SwiperSlide key={index}>
-              <Card sx={{ borderRadius: 2, mb: 1 }}>
+              <Card sx={{ borderRadius: 1, mb: 1 }}>
                 <CardMedia component="img" height='auto'  image={item.img} />
               </Card>
             </SwiperSlide>
