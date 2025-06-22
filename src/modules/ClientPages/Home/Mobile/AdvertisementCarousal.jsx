@@ -1,53 +1,67 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
+
+import { Box, Card, CardMedia, Typography } from '@mui/material';
 
 import img1 from '../../../../assets/Interior.png';
 import img2 from '../../../../assets/AdIcon.png';
+import img3 from '../../../../assets/AdIcon.png';
 
-import { Card, CardMedia, Box, GlobalStyles } from '@mui/material';
+
 
 const imageData = [
   { img: img1 },
   { img: img2 },
+  { img: img3 },
+  { img: img1 },
+
+  // Add more images
 ];
 
-const AdvertisementCarousal = () => {
+const AdvertisementCarousel = () => {
   return (
-    <>
-      {/* Global CSS to fix pagination position */}
-      <GlobalStyles
-        styles={{
-          '.ad-swiper .swiper-pagination': {
-            position: 'static',
-            textAlign: 'center',
-          },
-        }}
-      />
-
-      <Box sx={{ width: '95%', margin: 'auto', }}>
-        <Swiper
-          className="ad-swiper"
-          modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          loop={true}
-          spaceBetween={20}
-          slidesPerView={1}
-        >
-          {imageData.map((item, index) => (
-            <SwiperSlide key={index}>
-              <Card sx={{ borderRadius: 1, }}>
-                <CardMedia component="img" height='auto'  image={item.img} />
-              </Card>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Box>
-    </>
+    <Box sx={{ width: '95%', px: 1, py: 1 }}>
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop
+        slidesPerView={1.2}
+        centeredSlides={true}
+        spaceBetween={1}
+      >
+        {imageData.map((item, index) => (
+          <SwiperSlide key={index}>
+            <Box
+              sx={{
+                transition: 'all 0.4s ease',
+                transform: 'scale(0.95)',
+                height: 'auto',
+                borderRadius: 1,
+                overflow: 'hidden',
+                boxShadow: 1,
+                backgroundColor: '#f5f5f5',
+              }}
+              className="slide-box"
+            >
+              <CardMedia
+                component="img"
+                image={item.img}
+                alt={`Slide ${index}`}
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+            </Box>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Box>
   );
 };
 
-export default AdvertisementCarousal;
+export default AdvertisementCarousel;
+
