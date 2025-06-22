@@ -7,15 +7,14 @@ import { Box, Card, CardMedia, Typography } from '@mui/material';
 
 import img1 from '../../../../assets/Interior.png';
 import img2 from '../../../../assets/AdIcon.png';
-import img3 from '../../../../assets/AdIcon.png';
 
 
 
 const imageData = [
   { img: img1 },
   { img: img2 },
-  { img: img3 },
   { img: img1 },
+  { img: img2 },
 
   // Add more images
 ];
