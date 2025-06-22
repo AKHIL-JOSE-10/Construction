@@ -21,7 +21,7 @@ const imageData = [
 
 const AdvertisementCarousel = () => {
   return (
-    <Box sx={{ width: '95%', px: 1, py: 1 }}>
+    <Box sx={{ width: '95%', px: 1, py: 1 , pb:2}}>
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
