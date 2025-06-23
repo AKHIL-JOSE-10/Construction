@@ -23,7 +23,7 @@ const WorkerMainPage = () => {
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', color: 'gray', mt: 0.5 }}>
                     <RoomIcon fontSize="small" sx={{ mr: 0.5 }} />
-                    <Typography fontSize="14px">Boston, USA</Typography>
+                    <Typography fontSize="14px">Thrissur, Kerala</Typography>
                 </Box>
             </Box>
 
