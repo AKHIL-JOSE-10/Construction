@@ -19,7 +19,7 @@ const WorkerMainPage = () => {
             {/* Header */}
             <Box sx={{ mb: 2 }}>
                 <Typography variant="h5" fontWeight="bold">
-                    Hi, Athul Murali T
+                    Hi, Daison Babu
                 </Typography>
                 <Box sx={{ display: 'flex', alignItems: 'center', color: 'gray', mt: 0.5 }}>
                     <RoomIcon fontSize="small" sx={{ mr: 0.5 }} />
