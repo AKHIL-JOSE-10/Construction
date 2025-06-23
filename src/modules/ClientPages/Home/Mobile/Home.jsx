@@ -12,7 +12,7 @@ import SearchBar from "./SearchBar";
 import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AdIcon from "../../../../assets/AdIcon.png";
+import ArchisansWorker from "../../../../assets/ArchisansWorker.jpg";
 import AdvertisementCarousal from "./AdvertisementCarousal";
 
 
@@ -235,7 +235,7 @@ export default function Home() {
           <Grid sx={{ my: 3, px: 1 }}>
             <Box
               component="img"
-              src={AdIcon}
+              src={ArchisansWorker}
               alt="Sample"
               onClick={() => navigate("/mobile-worker-form1")}
               sx={{
