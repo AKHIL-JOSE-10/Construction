@@ -242,6 +242,7 @@ export default function Home() {
                 width: "100%",
                 height: "auto",
                 objectFit: "cover",
+                borderRadius:1,
                 cursor: "pointer", // Make it clickable
                 WebkitTapHighlightColor: "transparent", // Removes mobile highlight
               }}
