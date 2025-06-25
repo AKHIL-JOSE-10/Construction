@@ -18,7 +18,6 @@ const WorkerForm3 = () => {
     const [customBio, setCustomBio] = useState('');
     const [selectedOption, setSelectedOption] = useState('custom'); // 'archisans' | 'custom'
 
-    const steps = ['', '', '', ''];
     const defaultBio =
         "I’ve been working as a professional Carpenter/Handyman for over 5 years, handling both residential and commercial jobs with precision and dedication. I’m committed to delivering high-quality, dependable, and efficient workmanship on every project. Whether it’s a small repair or a complete renovation, I’m here to help. Don’t hesitate to reach out with any questions or service needs!";
 
@@ -27,24 +26,27 @@ const WorkerForm3 = () => {
     };
 
     return (
-        <Box>
-            {/* Top Navigation */}
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
-                <IconButton onClick={() => navigate(-1)}>
-                    <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
-                </IconButton>
-                <Typography fontSize="0.95rem" fontWeight="bold">3 / 4</Typography>
-            </Box>
+        <Box sx={{ bgcolor: '#f1e4d4', pt: 5 }}>
+            {/* Top Progress Bar */}
+            <TopProgressBar activeStep={2} />
 
-            <Box sx={{ bgcolor: 'white', pb: 7, display: 'flex', flexDirection: 'column' }}>
-
-                {/* Top Progress Bar */}
-
-                <TopProgressBar activeStep={2} />
-
-                <Box sx={{ px: 2, mb: 8 }}>
-                    {/* Main Heading */}
-                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 3 ,mt:4 }}>
+            {/* Main Form Box with Rounded Top */}
+            <Box
+                sx={{
+                    mt: 4,
+                    bgcolor: 'white',
+                    borderTopLeftRadius: 30,
+                    borderTopRightRadius: 30,
+                    px: 2,
+                    py: 3.5,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                }}
+            >
+                <Box sx={{ mb: 8 }}>
+                    {/* Heading */}
+                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 3 }}>
                         Write a small bio of you
                     </Typography>
 
@@ -52,7 +54,7 @@ const WorkerForm3 = () => {
                         value={selectedOption}
                         onChange={(e) => setSelectedOption(e.target.value)}
                     >
-                        {/* Option 1: Custom bio */}
+                        {/* Option 1: Custom Bio */}
                         <FormControlLabel
                             value="custom"
                             control={<Radio />}
@@ -82,7 +84,7 @@ const WorkerForm3 = () => {
                             />
                         )}
 
-                        {/* Option 2: Archisans bio */}
+                        {/* Option 2: Archisans Bio */}
                         <FormControlLabel
                             value="archisans"
                             control={<Radio />}
@@ -107,11 +109,10 @@ const WorkerForm3 = () => {
                                 {defaultBio}
                             </Box>
                         )}
-
                     </RadioGroup>
                 </Box>
 
-                {/* Bottom Button */}
+                {/* Bottom Next Button */}
                 <BottomButton handleNext={handleNext} />
             </Box>
         </Box>

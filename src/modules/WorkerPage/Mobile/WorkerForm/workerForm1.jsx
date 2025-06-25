@@ -12,14 +12,11 @@ import {
 } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import BottomButton from './bottomButton';
 import TopProgressBar from './topProgressBar';
 
 const WorkerForm1 = () => {
-
   const [gender, setGender] = React.useState('');
-
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -27,35 +24,28 @@ const WorkerForm1 = () => {
   };
 
   return (
-    <Box >
+<Box sx={{ bgcolor: '#f1e4d4', pt: 5 }}>
+  {/* Top Progress Bar */}
+  <TopProgressBar activeStep={0} />
 
-      <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
-        <IconButton onClick={() => navigate(-1)}>
-          <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
-        </IconButton>
-        <Typography fontSize="0.95rem" fontWeight="bold">
-          <Typography> 1 / 4</Typography>
-        </Typography>
-      </Box>
+      {/* Main Form Box with Rounded Top */}
       <Box
         sx={{
-
+          mt:4,
           bgcolor: 'white',
-          px: 0,
-          pb: 3.5,
+          borderTopLeftRadius: 30,
+          borderTopRightRadius: 30,
+          px: 2,
+          py: 3.5,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
       >
-
-
-        {/* Top Progress Bar */}
-        <TopProgressBar activeStep={0} />
-
-        <Box sx={{ px: 2, mb: 8 }}>
+        {/* Form Content */}
+        <Box sx={{ mb: 8 }}>
           {/* Title */}
-          <Typography sx={{ fontSize: '1.4rem', fontWeight: "bold", mb: 3, mt: 4 }}>
+          <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 3 }}>
             Tell us more about yourself
           </Typography>
 
@@ -78,22 +68,23 @@ const WorkerForm1 = () => {
 
           {/* Full Name */}
           <Typography variant="body2" mb={0.5}>
-            Full Name <Typography component="span" fontSize={12} color="text.secondary">(as mentioned in adhaar)</Typography>
+            Full Name{' '}
+            <Typography component="span" fontSize={12} color="text.secondary">
+              (as mentioned in Aadhaar)
+            </Typography>
           </Typography>
           <TextField
             placeholder="Enter your Full Name"
             variant="outlined"
             fullWidth
             sx={{ mb: 2 }}
-            slotProps={{
-              input: {
-                sx: {
-                  bgcolor: 'white',
-                  height: 40,
-                  px: 1.2,
-                  fontSize: '0.9rem'
-                }
-              }
+            inputProps={{
+              style: {
+                bgcolor: 'white',
+                height: 40,
+                padding: '0 10px',
+                fontSize: '0.9rem',
+              },
             }}
           />
 
@@ -105,19 +96,14 @@ const WorkerForm1 = () => {
             type="date"
             fullWidth
             sx={{ mb: 2 }}
-            slotProps={{
-              input: {
-                sx: {
-                  bgcolor: 'white',
-                  height: 40,
-                  px: 1.2,
-                  fontSize: '0.9rem',
-                  color: '#000',
-                }
+            InputLabelProps={{ shrink: true }}
+            inputProps={{
+              style: {
+                bgcolor: 'white',
+                height: 40,
+                padding: '0 10px',
+                fontSize: '0.9rem',
               },
-              textField: {
-                InputLabelProps: { shrink: true },
-              }
             }}
           />
 
@@ -135,7 +121,7 @@ const WorkerForm1 = () => {
                 bgcolor: 'white',
                 height: 50,
                 display: 'flex',
-                alignItems: 'center'
+                alignItems: 'center',
               }}
             >
               <MenuItem value={'Male'}>Male</MenuItem>
@@ -157,24 +143,21 @@ const WorkerForm1 = () => {
               inputMode: 'numeric',
               pattern: '[0-9]{12}',
               maxLength: 12,
+              style: {
+                bgcolor: 'white',
+                height: 40,
+                padding: '0 10px',
+                fontSize: '0.9rem',
+              },
             }}
             sx={{ mb: 2 }}
-            slotProps={{
-              input: {
-                sx: {
-                  bgcolor: 'white',
-                  height: 40,
-                  px: 1.2,
-                  fontSize: '0.9rem'
-                }
-              }
-            }}
           />
         </Box>
+
+        {/* Bottom Buttons */}
         <BottomButton handleNext={handleNext} />
       </Box>
     </Box>
-
   );
 };
 

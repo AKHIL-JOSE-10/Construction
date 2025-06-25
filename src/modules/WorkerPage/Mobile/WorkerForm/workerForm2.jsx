@@ -23,7 +23,6 @@ const WorkerForm2 = () => {
     const [selectedExperience, setSelectedExperience] = useState('');
     const [addedServiceExperience, setAddedServiceExperience] = useState([]);
 
-
     const availableServices = [
         "Architectural Design", "Civil Engineering", "Interior Design", "Landscaping",
         "Structural Engineering", "MEP Services", "Pool Design", "Steel Fabrication",
@@ -58,28 +57,31 @@ const WorkerForm2 = () => {
     };
 
     const handleNext = () => {
-        // You can pass `addedServiceExperience` to the next step
         navigate('/mobile-worker-form3');
     };
 
     return (
-        <Box>
-            {/* Top Header */}
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} pt={1.5} px={1}>
-                <IconButton onClick={() => navigate(-1)}>
-                    <ArrowBackIosIcon sx={{ fontSize: '1.5rem' }} />
-                </IconButton>
-                <Typography fontSize="0.95rem" fontWeight="bold">2 / 4</Typography>
-            </Box>
+        <Box sx={{ bgcolor: '#f1e4d4', pt: 5 }}>
+            {/* Top Progress Bar */}
+            <TopProgressBar activeStep={1} />
 
-            <Box sx={{ bgcolor: 'white', pb: 7, display: 'flex', flexDirection: 'column' }}>
+            {/* Main Form Box with Rounded Top */}
+            <Box
+                sx={{
+                    mt: 4,
+                    bgcolor: 'white',
+                    borderTopLeftRadius: 30,
+                    borderTopRightRadius: 30,
+                    px: 2,
+                    py: 3.5,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                }}
+            >
 
-                {/* Top Progress Bar */}
-
-                <TopProgressBar activeStep={1} />
-
-                <Box sx={{ px: 2, mb: 8 }}>
-                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4, mt: 4 }}>
+                <Box sx={{ mb: 8 }}>
+                    <Typography sx={{ fontSize: '1.4rem', fontWeight: 'bold', mb: 4 }}>
                         Your Services & Experience
                     </Typography>
 
@@ -119,6 +121,7 @@ const WorkerForm2 = () => {
                         </Select>
                     </FormControl>
 
+                    {/* Add Button */}
                     <Button
                         variant="contained"
                         onClick={handleAddService}
