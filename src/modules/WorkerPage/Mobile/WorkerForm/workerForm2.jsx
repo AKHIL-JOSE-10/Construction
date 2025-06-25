@@ -61,7 +61,7 @@ const WorkerForm2 = () => {
     };
 
     return (
-        <Box sx={{ bgcolor: '#f1e4d4', pt: 5 }}>
+        <Box sx={{ bgcolor: '#f1e4d4', pt: 4 }}>
             {/* Top Progress Bar */}
             <TopProgressBar activeStep={1} />
 
