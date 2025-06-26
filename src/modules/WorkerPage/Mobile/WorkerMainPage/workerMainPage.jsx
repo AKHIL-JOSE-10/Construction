@@ -21,7 +21,7 @@ const WorkerMainPage = () => {
   const [date, setDate] = useState(dayjs());
 
   return (
-    <Box sx={{ px: 2, pt: 2.5 , pb: '65px', bgcolor: '#eef1fd' }}>
+    <Box sx={{ px: 2, pt: 2.5 , pb: '65px', bgcolor: 'white' }}>
           <Box sx={{ mb:2}}>
         <Typography fontSize='150%' fontWeight="bold">
           Welcome, Daison! <Box component="span" sx={{ fontSize: '1.7rem' }}>👋</Box>
