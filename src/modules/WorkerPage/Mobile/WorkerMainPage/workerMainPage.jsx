@@ -80,7 +80,7 @@ const WorkerMainPage = () => {
               textAlign: 'center',
             }}
           >
-            Work Requests
+            Work <br />Requests
           </Typography>
         </Card>
 
@@ -122,7 +122,7 @@ const WorkerMainPage = () => {
               textAlign: 'center',
             }}
           >
-            Confirmed Works
+            Confirmed <br /> Works
           </Typography>
         </Card>
       </Box>
