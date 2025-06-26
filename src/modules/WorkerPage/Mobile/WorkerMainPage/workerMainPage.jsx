@@ -22,21 +22,21 @@ const WorkerMainPage = () => {
 
   return (
     <Box sx={{ px: 2, pt: 2.5 , pb: '65px', bgcolor: '#eef1fd' }}>
-          <Box sx={{display:'flex' ,justifyContent:'center' , mb:1.5}}>
+          <Box sx={{ mb:1.5}}>
         <Typography fontSize='140%' fontWeight="bold">
           Welcome, Daison! <Box component="span" sx={{ fontSize: '1.7rem' }}>👋</Box>
         </Typography>
       </Box>
       {/* Top Bar */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center',mb:1, px:0.5  }}>
-        <Avatar alt="Profile" src="https://randomuser.me/api/portraits/men/11.jpg" sx={{ height: 55, width: 55 }} />
+        <Avatar alt="Profile" src="https://randomuser.me/api/portraits/men/11.jpg" sx={{ height: 60, width: 60 }} />
         <Box sx={{ display: 'flex', gap: 1 }}>
           <NotificationsNoneOutlinedIcon sx={{ color: 'black', height: 26, width: 26, borderRadius: 50, bgcolor: 'white', border: '12px solid white' }} />
         </Box>
       </Box>
 
 
-                <Typography fontWeight="bold" fontSize="19px" my={4}>
+                <Typography fontWeight="bold" fontSize="19px" mt={5} mb={3}>
           My  Works
         </Typography>
 
