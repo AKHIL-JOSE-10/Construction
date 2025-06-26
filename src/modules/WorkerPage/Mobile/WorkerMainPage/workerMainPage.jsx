@@ -22,8 +22,8 @@ const WorkerMainPage = () => {
 
   return (
     <Box sx={{ px: 2, pt: 2.5 , pb: '65px', bgcolor: '#eef1fd' }}>
-          <Box sx={{ mb:1.5}}>
-        <Typography fontSize='140%' fontWeight="bold">
+          <Box sx={{ mb:2}}>
+        <Typography fontSize='150%' fontWeight="bold">
           Welcome, Daison! <Box component="span" sx={{ fontSize: '1.7rem' }}>👋</Box>
         </Typography>
       </Box>
