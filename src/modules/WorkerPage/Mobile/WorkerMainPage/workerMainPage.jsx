@@ -129,7 +129,7 @@ const WorkerMainPage = () => {
 
       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1, mt: 5 }}>
         <Typography fontWeight="bold" fontSize="19px">
-          My  Availabily
+          My  Availability
         </Typography>
         <EditOutlinedIcon sx={{ color: 'gray', fontSize: 20, cursor: 'pointer' }} />
       </Box>
