@@ -21,21 +21,25 @@ const WorkerMainPage = () => {
   const [date, setDate] = useState(dayjs());
 
   return (
-    <Box sx={{ px: 2, pt: 3, pb: '65px', bgcolor: '#eef1fd' }}>
-      {/* Top Bar */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 ,px:1 }}>
-        <Avatar alt="Profile" src="https://randomuser.me/api/portraits/men/11.jpg" sx={{ height: 55, width: 55 }} />
-        <Box sx={{ display: 'flex', gap: 1.5 }}>
-          <CalendarMonthIcon sx={{ color: 'black', height: 30, width: 30, bgcolor: 'white', borderRadius: 50, border: '12px solid white' }} />
-          <NotificationsNoneOutlinedIcon sx={{ color: 'black', height: 30, width: 30, borderRadius: 50, bgcolor: 'white', border: '12px solid white' }} />
-        </Box>
-      </Box>
+    <Box sx={{ px: 2, pt: 4, pb: '65px', bgcolor: '#eef1fd' }}>
 
-      <Box sx={{ mb: 5 }}>
-        <Typography variant="h5" fontWeight="bold">
+      {/* Top Bar */}
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 , }}>
+        <Avatar alt="Profile" src="https://randomuser.me/api/portraits/men/11.jpg" sx={{ height: 55, width: 55 }} />
+                    <Box sx={{ mb: 0 }}>
+        <Typography fontSize='125%' fontWeight="bold">
           Hey, Daison! <Box component="span" sx={{ fontSize: '1.7rem' }}>👋</Box>
         </Typography>
       </Box>
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <CalendarMonthIcon sx={{ color: 'black', height: 26, width: 26, bgcolor: 'white', borderRadius: 50, border: '12px solid white' }} />
+          <NotificationsNoneOutlinedIcon sx={{ color: 'black', height: 26, width: 26, borderRadius: 50, bgcolor: 'white', border: '12px solid white' }} />
+        </Box>
+      </Box>
+
+                <Typography fontWeight="bold" fontSize="19px" my={4}>
+          My  Works
+        </Typography>
 
       <Box sx={{ display: 'flex', gap: 2 }}>
         {/* Work Requests Card */}
