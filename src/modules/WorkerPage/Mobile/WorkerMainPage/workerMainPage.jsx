@@ -23,7 +23,7 @@ const WorkerMainPage = () => {
   return (
     <Box sx={{ px: 2, pt: 3, pb: '65px', bgcolor: '#eef1fd' }}>
       {/* Top Bar */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 ,px:1 }}>
         <Avatar alt="Profile" src="https://randomuser.me/api/portraits/men/11.jpg" sx={{ height: 55, width: 55 }} />
         <Box sx={{ display: 'flex', gap: 1.5 }}>
           <CalendarMonthIcon sx={{ color: 'black', height: 30, width: 30, bgcolor: 'white', borderRadius: 50, border: '12px solid white' }} />
