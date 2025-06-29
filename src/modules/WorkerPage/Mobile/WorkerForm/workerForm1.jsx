@@ -83,13 +83,16 @@ const WorkerForm1 = () => {
           placeholder="Enter your Full Name"
           variant="outlined"
           fullWidth
-          slotProps={{
-            input: {
-              style: {
-                height: '40px',
-                fontSize: '0.9rem',
-                backgroundColor: 'white',
-              },
+          type="text"
+          inputProps={{
+            inputMode: 'numeric',
+            pattern: '[0-9]{12}',
+            maxLength: 12,
+            style: {
+              height: '40px',
+              padding: '0 10px',
+              fontSize: '0.9rem',
+              backgroundColor: 'white',
             },
           }}
           sx={{
