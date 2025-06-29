@@ -54,7 +54,7 @@ const WorkerForm1 = () => {
 
         <Typography
           sx={{
-            fontSize: '1.rem',
+            fontSize: '1.1rem',
             fontWeight: 'bold',
             mb: 4,
             pb: 1,
