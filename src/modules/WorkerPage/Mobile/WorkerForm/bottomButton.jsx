@@ -17,6 +17,7 @@ const BottomButton = ({ handleNext, pgnum }) => {
         bgcolor: 'white',
         py: 2,
         px: 2,
+        boxShadow: '0 -2px 8px rgba(0,0,0,0.1)',
         zIndex: 1000,
       }}
     >
@@ -27,8 +28,8 @@ const BottomButton = ({ handleNext, pgnum }) => {
           startIcon={<ArrowBackIosIcon sx={{ fontSize: 16 }} />}
           sx={{
             borderRadius: 5,
-            px: 4,
-            py: 1.2,
+            px: 2.5,
+            py: 0.5,
             textTransform: 'none',
             fontWeight: 'bold',
             borderColor: '#a47763',
@@ -49,8 +50,8 @@ const BottomButton = ({ handleNext, pgnum }) => {
           sx={{
             bgcolor: '#a47763',
             borderRadius: 5,
-            px: 4,
-            py: 1.2,
+            px: 2.5,
+            py: 0.5,
             textTransform: 'none',
             fontWeight: 'bold',
             '&:hover': {
