@@ -24,7 +24,7 @@ const WorkerForm1 = () => {
   };
 
   return (
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ p: 2 ,  mb: 3}}>
 
       {/* Form Content */}
 
