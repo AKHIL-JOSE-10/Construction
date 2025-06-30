@@ -29,7 +29,7 @@ const BottomButton = ({ handleNext, pgnum }) => {
           sx={{
             borderRadius: 5,
             px: 2.5,
-            py: 0.5,
+            py: 0.7,
             textTransform: 'none',
             fontWeight: 'bold',
             borderColor: '#a47763',
@@ -51,7 +51,7 @@ const BottomButton = ({ handleNext, pgnum }) => {
             bgcolor: '#a47763',
             borderRadius: 5,
             px: 2.5,
-            py: 0.5,
+            py: 0.7,
             textTransform: 'none',
             fontWeight: 'bold',
             '&:hover': {
