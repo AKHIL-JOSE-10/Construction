@@ -7,6 +7,9 @@ import { useNavigate } from 'react-router-dom';
 const BottomButton = ({ handleNext, pgnum }) => {
   const navigate = useNavigate();
 
+  // Check if current page is the first page
+  const isFirstPage = pgnum.startsWith('1/');
+
   return (
     <Box
       sx={{
@@ -21,11 +24,18 @@ const BottomButton = ({ handleNext, pgnum }) => {
         zIndex: 1000,
       }}
     >
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
         <Button
           variant="outlined"
           onClick={() => navigate(-1)}
           startIcon={<ArrowBackIosIcon sx={{ fontSize: 16 }} />}
+          disabled={isFirstPage} // ✅ Disable if on first page
           sx={{
             borderRadius: 5,
             px: 2.5,
@@ -38,11 +48,17 @@ const BottomButton = ({ handleNext, pgnum }) => {
               borderColor: '#a47763',
               bgcolor: '#f7f3f2',
             },
+            '&.Mui-disabled': {
+              color: '#ccc',
+              borderColor: '#ccc',
+            },
           }}
         >
           Prev
         </Button>
-        <Typography sx={{ fontWeight: '550' }}> {pgnum}</Typography>
+
+        <Typography sx={{ fontWeight: '550' }}>{pgnum}</Typography>
+
         <Button
           variant="contained"
           onClick={handleNext}
