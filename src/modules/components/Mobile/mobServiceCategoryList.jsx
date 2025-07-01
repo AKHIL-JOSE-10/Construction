@@ -21,13 +21,13 @@ const MobServiceCategoryList = ({ img, heading, subheading }) => {
                             <Avatar
                                 alt="icon"
                                 src={img}
-                                sx={{ width: 85, height: 75, mr: 2, borderRadius: 0 }}
+                                sx={{ width: 35, height: 35, mr: 2, borderRadius: 0 }}
                             />
                             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', }}>
                                 <ListItemText primary={heading} secondary={subheading}
                                     slotProps={{
                                         primary: {
-                                            sx: { fontSize: '18px', fontWeight: '600' },
+                                            sx: { fontSize: '15px', fontWeight: '600' },
                                         },
                                         secondary: {
                                             sx: { fontSize: '13px', width: "98%" }
