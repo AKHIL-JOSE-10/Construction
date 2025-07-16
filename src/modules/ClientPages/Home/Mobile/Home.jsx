@@ -217,8 +217,8 @@ export default function Home() {
             <Grid flexGrow={1}>
 
 
-<Grid container alignItems="center"  spacing={2} sx={{ width: "100%" }}>
-      {/* Left: Animation */}
+{/* <Grid container alignItems="center"  spacing={2} sx={{ width: "100%" }}>
+      
       <Grid item xs={6}>
         <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
           <DotLottieReact
@@ -230,7 +230,7 @@ export default function Home() {
         </Box>
       </Grid>
 
-      {/* Right: Text + Button */}
+      
       <Grid item xs={6}>
         <Box
           sx={{
@@ -240,9 +240,6 @@ export default function Home() {
             gap: 1,
           }}
         >
-          {/* <Typography sx={{fontSize:'14px', fontWeight: "bold" }}>
-            Immediate Services
-          </Typography> */}
           <Button
             variant="contained"
             sx={{
@@ -255,7 +252,7 @@ export default function Home() {
           </Button>
         </Box>
       </Grid>
-    </Grid>
+    </Grid> */}
 
               <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
                 Service Category
