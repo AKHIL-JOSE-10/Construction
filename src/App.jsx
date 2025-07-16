@@ -48,33 +48,33 @@ import MobileLayout from "./modules/components/Mobile/MobileLayout";
 import AccessDenied from "./Error/AccessDenied";
 
 function App() {
-  const [searchParams] = useSearchParams();
-  const [accessGranted, setAccessGranted] = useState(false);
+  // const [searchParams] = useSearchParams();
+  // const [accessGranted, setAccessGranted] = useState(false);
 
-  useEffect(() => {
-    const tokenFromUrl = searchParams.get("access_token");
-    const savedToken = localStorage.getItem("access_token");
-    const allowedToken = import.meta.env.VITE_ACCESS_TOKEN;
+  // useEffect(() => {
+  //   const tokenFromUrl = searchParams.get("access_token");
+  //   const savedToken = localStorage.getItem("access_token");
+  //   const allowedToken = import.meta.env.VITE_ACCESS_TOKEN;
 
-    if (tokenFromUrl) {
-      console.log(tokenFromUrl);
-      console.log("Allowed Token:", allowedToken);
-      if (tokenFromUrl === allowedToken) {
-        localStorage.setItem("access_token", tokenFromUrl);
-        setAccessGranted(true);
-      } else {
-        setAccessGranted(false);
-      }
-    } else if (savedToken === allowedToken) {
-      setAccessGranted(true);
-    } else {
-      setAccessGranted(false);
-    }
-  }, [searchParams]);
+  //   if (tokenFromUrl) {
+  //     console.log(tokenFromUrl);
+  //     console.log("Allowed Token:", allowedToken);
+  //     if (tokenFromUrl === allowedToken) {
+  //       localStorage.setItem("access_token", tokenFromUrl);
+  //       setAccessGranted(true);
+  //     } else {
+  //       setAccessGranted(false);
+  //     }
+  //   } else if (savedToken === allowedToken) {
+  //     setAccessGranted(true);
+  //   } else {
+  //     setAccessGranted(false);
+  //   }
+  // }, [searchParams]);
 
-  if (!accessGranted) {
-    return <AccessDenied />;
-  }
+  // if (!accessGranted) {
+  //   return <AccessDenied />;
+  // }
 
   return (
     <>

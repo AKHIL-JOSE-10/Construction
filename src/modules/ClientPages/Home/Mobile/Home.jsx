@@ -4,7 +4,7 @@ import {
   NotificationsNoneOutlined,
   StarOutline,
 } from "@mui/icons-material";
-import { Avatar, Box, Grid, IconButton, Typography } from "@mui/material";
+import { Avatar, Box, Grid, IconButton, Typography, Button } from "@mui/material";
 import { color, ServiceList, textDecoration } from "./constants";
 import { ServiceLayer } from "./ServiceLayer";
 import { Link } from "react-router-dom";
@@ -14,6 +14,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ArchisansWorker from "../../../../assets/ArchisansWorker.jpg";
 import AdvertisementCarousal from "./AdvertisementCarousal";
+import React from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 export default function Home() {
@@ -213,6 +215,48 @@ export default function Home() {
         <Grid container>
           <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
             <Grid flexGrow={1}>
+
+
+<Grid container alignItems="center"  spacing={2} sx={{ width: "100%" }}>
+      {/* Left: Animation */}
+      <Grid item xs={6}>
+        <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
+          <DotLottieReact
+            src="https://lottie.host/9c0dd527-6e0a-4043-b7d1-826256f76fd9/pLxjPbrNe3.lottie"
+            loop
+            autoplay
+            style={{ width: "600%", height: "150px" }} // adjust size as needed
+          />
+        </Box>
+      </Grid>
+
+      {/* Right: Text + Button */}
+      <Grid item xs={6}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          {/* <Typography sx={{fontSize:'14px', fontWeight: "bold" }}>
+            Immediate Services
+          </Typography> */}
+          <Button
+            variant="contained"
+            sx={{
+              minWidth: "40px",
+              borderRadius: "50%",
+              backgroundColor: "#BFA088",
+            }}
+          >
+            &gt;
+          </Button>
+        </Box>
+      </Grid>
+    </Grid>
+
               <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
                 Service Category
               </Typography>

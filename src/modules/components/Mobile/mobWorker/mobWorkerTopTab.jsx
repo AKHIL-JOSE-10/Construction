@@ -1,24 +1,20 @@
 import { Box, Tabs, Tab } from '@mui/material';
 import { useState } from 'react';
-import SwipeableViews from 'react-swipeable-views';
 
 import MobWorkerservice from './mobWorkerService';
 import MobWorkerMyProfle from './mobWorkerMyProfle';
 
-const MobWorkerTopTab = ({ service,setIsAlert }) => {
+const MobWorkerTopTab = ({ service, setIsAlert }) => {
   const [value, setValue] = useState(0);
+
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
-  };
-
-  const handleSwipeChange = (index) => {
-    setValue(index);
   };
 
   return (
     <Box>
       {/* Tabs Header */}
-      <Box sx={{ borderBottom: 1, borderColor: 'divider', }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs
           value={value}
           onChange={handleTabChange}
@@ -30,11 +26,11 @@ const MobWorkerTopTab = ({ service,setIsAlert }) => {
         </Tabs>
       </Box>
 
-      {/* Swipeable Views */}
-      <SwipeableViews index={value} onChangeIndex={handleSwipeChange}>
-        <Box sx={{ p: 1 }}>{value === 0 && <MobWorkerservice setIsAlert={setIsAlert} selectedService={service} />}</Box>
-        <Box sx={{ p: 1 }}>{value === 1 && <MobWorkerMyProfle />}</Box>
-      </SwipeableViews>
+      {/* Content */}
+      <Box sx={{ p: 1 }}>
+        {value === 0 && <MobWorkerservice setIsAlert={setIsAlert} selectedService={service} />}
+        {value === 1 && <MobWorkerMyProfle />}
+      </Box>
     </Box>
   );
 };

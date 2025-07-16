@@ -9,7 +9,6 @@ import {
   MenuItem,
   Grid,
 } from "@mui/material";
-import SwipeableViews from "react-swipeable-views";
 import { TabContext, TabPanel } from "@mui/lab";
 
 import MobMyBookingsInProgress from "./mobMyBookingsInProgress";
@@ -17,22 +16,17 @@ import MobMyBookingsCompleted from "./mobMyBookingsCompleted";
 import MobMyBookingsCancelled from "./mobMyBookingsCancelled";
 
 const MobMyBookingsTopTab = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("0");
 
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handleSwipeChangeIndex = (index) => {
-    setValue(index);
-  };
-
   return (
-    <TabContext value={value.toString()}>
+    <TabContext value={value}>
       {/* Tabs */}
       <Box
         sx={{
-          wmt: -1,
           position: "fixed",
           zIndex: 1000,
           width: "100%",
@@ -55,47 +49,13 @@ const MobMyBookingsTopTab = () => {
             },
           }}
         >
-          <Tab label="In progress" sx={{ fontSize: "15px" }} />
-          <Tab label="Completed" sx={{ fontSize: "15px" }} />
-          <Tab label="Cancelled" sx={{ fontSize: "15px" }} />
+          <Tab value="0" label="In progress" sx={{ fontSize: "15px" }} />
+          <Tab value="1" label="Completed" sx={{ fontSize: "15px" }} />
+          <Tab value="2" label="Cancelled" sx={{ fontSize: "15px" }} />
         </Tabs>
       </Box>
 
-      {/* Filter */}
-      {/*<Grid
-          container
-          sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "flex-end",
-            mt: 10,
-            mb: -1.5
-          }}
-        >
-          <Box sx={{ display: "flex", flexDirection: "column", mr: 1, mt: 5, mb:1 }}>
-            <FormControl sx={{ minWidth: 80 }} size="small">
-              <InputLabel id="filter-label" sx={{ fontSize: 14 }}>
-                Sort
-              </InputLabel>
-              <Select
-                labelId="sort-label"
-                id="sort-select"
-                label="Sort"
-                sx={{ borderRadius: 5, height: 36 }}
-              >
-                <MenuItem value={10}>Latest</MenuItem>
-                <MenuItem value={20}>Oldest</MenuItem>
-              </Select>
-            </FormControl>
-          </Box>
-        </Grid>*/}
-
-      {/* Swipeable Views */}
-      <SwipeableViews
-        style={{ paddingTop: "45px", paddingBottom: "10px" }}
-        index={value}
-        onChangeIndex={handleSwipeChangeIndex}
-      >
+      <Box sx={{ paddingTop: "55px", paddingBottom: "10px" }}>
         <TabPanel value="0" sx={{ p: 0 }}>
           <MobMyBookingsInProgress />
         </TabPanel>
@@ -105,7 +65,7 @@ const MobMyBookingsTopTab = () => {
         <TabPanel value="2" sx={{ p: 0 }}>
           <MobMyBookingsCancelled />
         </TabPanel>
-      </SwipeableViews>
+      </Box>
     </TabContext>
   );
 };
