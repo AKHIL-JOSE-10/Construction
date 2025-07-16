@@ -225,7 +225,7 @@ export default function Home() {
             src="https://lottie.host/9c0dd527-6e0a-4043-b7d1-826256f76fd9/pLxjPbrNe3.lottie"
             loop
             autoplay
-            style={{ width: "600%", height: "150px" }} // adjust size as needed
+            style={{ width: "500%", height: "150px" }} // adjust size as needed
           />
         </Box>
       </Grid>
