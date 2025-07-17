@@ -23,7 +23,7 @@ import SearchBar from "./SearchBar";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 import ArchisansWorker from "../../../../assets/ArchisansWorker.jpg";
 import ArchitecturalIcon from "@/assets/Architectural.png";
-import AllIcon from "@/assets/All.jpg";
+import AllIcon from "@/assets/All.png";
 import ArtisansIcon from "@/assets/Artisans.png";
 import FabricationIcon from "@/assets/Fabrication.png";
 import AutomationIcon from "@/assets/Automation.png"
@@ -241,7 +241,6 @@ const MobHome = () => {
                 sx={{
                   width: 26,
                   height: 26,
-                  bgcolor: "#fff",
                   borderRadius: "0px",
                   overflow: "hidden",
                   display: "flex",
@@ -403,9 +402,30 @@ const MobHome = () => {
 
 
       {/* Locations we offer*/}
-      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
-        Locations we offer
-      </Typography>
+<Box
+  sx={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    mt: 2,
+    mb: 1,
+    px: 1.5,
+  }}
+>
+  <Typography sx={{ fontSize: 17, fontWeight: 600 }}>
+    Locations we offer
+  </Typography>
+
+  <Typography
+    sx={{
+      fontSize: 14,
+      fontWeight: 500,
+      color: "#bc9623ff",
+    }}
+  >
+    View All
+  </Typography>
+</Box>
 
       <HorizontalScroll>
         {locations.map((loc) => (
@@ -416,6 +436,7 @@ const MobHome = () => {
               flex: "0 0 auto",
               textAlign: "center",
               mx: 1,
+              mb:2
             }}
           >
             {/* Image container */}
@@ -448,7 +469,7 @@ const MobHome = () => {
       <AdvertisementCarousel />
 
       {/* Architects Near You */}
-      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2.5, mb: 1, px: 1.5 }}>
         Architect’s Near You
       </Typography>
 
