@@ -36,7 +36,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
         placeholder={placeholder}
         sx={{
           flex: 1,
-          fontSize: "1rem",
+          fontSize: "0.8rem",
           color: "#555",
         }}
         inputProps={{ readOnly: true }}

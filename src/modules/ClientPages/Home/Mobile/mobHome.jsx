@@ -175,18 +175,19 @@ const MobHome = () => {
             textAlign: "center",
           }}
         >
-          <Box
-            sx={{
-              fontSize: { xs: "1.8rem", md: "2.5rem" },
-              fontWeight: 900,
-              color: "#FF9800",
-              textShadow: "1px 2px #000",
-              mb: 2,
-              fontFamily: "'Bangers', cursive",
-            }}
-          >
-            INSTANT <br /> SERVICE
-          </Box>
+         <Box
+  sx={{
+    fontSize: { xs: "1.8rem", md: "2.5rem" },
+    fontWeight: 900,
+    color: "#FF9800",
+    textShadow: "1px 2px #000",
+    mb: 2,
+    fontFamily: "'Bangers', cursive",
+    WebkitTextStroke: "1px #FF9800", // adds thickness
+  }}
+>
+  INSTANT <br /> SERVICES
+</Box>
 
           <button
             style={{
@@ -194,7 +195,7 @@ const MobHome = () => {
               color: "#fff",
               border: "none",
               borderRadius: 6,
-              padding: "5px 15px",
+              padding: "8px 15px",
               fontSize: "1rem",
               fontWeight: 600,
               cursor: "pointer",
@@ -268,8 +269,8 @@ const MobHome = () => {
           <Card
             key={arch.name}
             sx={{
-              minWidth: 130,
-              height: 185,
+              minWidth: 120,
+              height: 165,
               border: "1px solid #ccc",
               borderRadius: 0.5,
               position: "relative",
@@ -296,7 +297,7 @@ const MobHome = () => {
                 <Avatar
                   src={arch.image}
                   alt={arch.name}
-                  sx={{ mx: "auto", width: 80, height: 80 }}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
                 />
                 <Typography
                   sx={{
@@ -317,10 +318,10 @@ const MobHome = () => {
                 </Typography>
               </Box>
 
-              <Typography sx={{ fontSize: 14, fontWeight: 600, mt: 2 }}>
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
                 {arch.name}
               </Typography>
-              <Typography sx={{ fontSize: 11, color: "gray", mt: 0.5 }}>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
                 {arch.role}
               </Typography>
               <Rating name="read-only" value={4} sx={{ fontSize: 10 }} readOnly />
@@ -340,7 +341,7 @@ const MobHome = () => {
             key={plumber.name}
             sx={{
               minWidth: 120,
-              height: 185,
+              height: 165,
               border: "1px solid #ccc",
               borderRadius: 0.5,
               position: "relative",
@@ -367,7 +368,7 @@ const MobHome = () => {
                 <Avatar
                   src={plumber.image}
                   alt={plumber.name}
-                  sx={{ mx: "auto", width: 80, height: 80 }}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
                 />
                 <Typography
                   sx={{
@@ -388,10 +389,10 @@ const MobHome = () => {
                 </Typography>
               </Box>
 
-              <Typography sx={{ fontSize: 14, fontWeight: 600, mt: 2 }}>
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
                 {plumber.name}
               </Typography>
-              <Typography sx={{ fontSize: 11, color: "gray", mt: 0.5 }}>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
                 {plumber.role}
               </Typography>
               <Rating name="read-only" value={4} sx={{ fontSize: 10 }} readOnly />
