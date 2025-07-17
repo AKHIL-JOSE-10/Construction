@@ -1,46 +1,48 @@
-import { Search } from "@mui/icons-material";
-import { Grid, Input, InputAdornment } from "@mui/material";
 import React from "react";
-import { color } from "./constants";
-export default function SearchBar({ sx, text, onClick }) {
+import { Box, InputBase } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { useNavigate } from "react-router-dom";
+
+const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/mobile-Recent-Search");
+  };
+
   return (
-    <Grid
+    <Box
       sx={{
-        bgcolor: color.layoutColor,
-        height: "5vh",
-        width: "95vw",
-        borderRadius: "50px",
+        mt: 2,
+        bgcolor: "#f6f6f6",
+        borderRadius: 1,
+        height: 40,
         display: "flex",
-        padding: "5px",
-        ...sx,
+        alignItems: "center",
+        width: "100%",
+        cursor: "pointer",
+        border: '1px solid #ccc',   // subtle light grey border
       }}
-      alignItems={"center"}
-      size={10}
-      onClick={onClick}
+      onClick={handleClick}
     >
-      <Input
-        placeholder={text ? text : "Job title, keyword, worker"}
-        disableUnderline
-        fullWidth
-        inputProps={{ readOnly: true }}
-        startAdornment={
-          <InputAdornment position="start">
-            <Search sx={{ color: "gray", marginLeft: "0.3em" }} />
-          </InputAdornment>
-        }
+      <SearchIcon
         sx={{
-          "& .MuiInputBase-root": {
-            border: "none", // Ensure no border
-            backgroundColor: "transparent", // Transparent background
-            display: "flex",
-            alignItems: "center",
-            height: "100%",
-          },
-          "& .MuiInputBase-input": {
-            fontSize: "0.9em", // Font size
-          },
+          fontSize: 30,              
+          color: "#b0b0b0",        
+          mx: 2
         }}
       />
-    </Grid>
+      <InputBase
+        placeholder={placeholder}
+        sx={{
+          flex: 1,
+          fontSize: "1rem",
+          color: "#555",
+        }}
+        inputProps={{ readOnly: true }}
+      />
+    </Box>
   );
-}
+};
+
+export default SearchBar;

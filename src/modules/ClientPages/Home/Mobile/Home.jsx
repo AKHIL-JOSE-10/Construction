@@ -1,541 +1,328 @@
+import React, { useState } from "react";
 import {
-  KeyboardArrowDownOutlined,
-  LocationOnOutlined,
+  Grid,
+  Box,
+  Typography,
+  Stack,
+  IconButton,
+  Avatar,
+  Card,
+  CardContent,
+  Rating,
+} from "@mui/material";
+import {
   NotificationsNoneOutlined,
-  StarOutline,
+  LocationOnOutlined,
 } from "@mui/icons-material";
-import { Avatar, Box, Grid, IconButton, Typography, Button } from "@mui/material";
-import { color, ServiceList, textDecoration } from "./constants";
-import { ServiceLayer } from "./ServiceLayer";
-import { Link } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
+import MessageIcon from "@mui/icons-material/Message";
+import BookIcon from "@mui/icons-material/Book";
+import PersonIcon from "@mui/icons-material/Person";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import AdvertisementCarousel from "./AdvertisementCarousal";
 import SearchBar from "./SearchBar";
-import AddressDrawer from "../Address/AddressSelectBottomDrawer/AddressDrawer";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 import ArchisansWorker from "../../../../assets/ArchisansWorker.jpg";
-import AdvertisementCarousal from "./AdvertisementCarousal";
-import React from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import ArchitecturalIcon from "@/assets/Architectural.png";
+import AllIcon from "@/assets/All.jpg";
+import ArtisansIcon from "@/assets/Artisans.png";
+import FabricationIcon from "@/assets/Fabrication.png";
 
+const serviceLists = [
+  "Fast",
+  "All",
+  "Architectural",
+  "Artisans",
+  "Fabrication",
+  "Other",
+];
 
-export default function Home() {
+const serviceImages = {
+  Fast: AllIcon,
+  All: AllIcon,
+  Architectural: ArchitecturalIcon,
+  Artisans: ArtisansIcon,
+  Fabrication: FabricationIcon,
+  Other: AllIcon,
+};
 
-  const workers = [
-    {
-      name: "Akhil Raj",
-      location: "Kozhikode",
-      img: "https://randomuser.me/api/portraits/men/11.jpg",
-      rating: 4.8,
-    },
-    {
-      name: "Bhaskaran",
-      location: "Palakkad",
-      img: "https://randomuser.me/api/portraits/men/12.jpg",
-      rating: 4.6,
-    },
-    {
-      name: "Nikhil Babu",
-      location: "Ernakulam",
-      img: "https://randomuser.me/api/portraits/men/35.jpg",
-      rating: 4.9,
-    },
-    {
-      name: "Santhosh",
-      location: "Thrissur",
-      img: "https://randomuser.me/api/portraits/men/49.jpg",
-      rating: 5.0,
-    },
-  ];
+const locations = [
+  { name: "Cochin", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+  { name: "Calicut", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+  { name: "Coorg", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+  { name: "Kusgalnagar", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+  { name: "Thrissur", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+];
 
-  const navigate = useNavigate();
+const architects = [
+  { name: "Athul Murali T", role: "Architect", image: "https://randomuser.me/api/portraits/men/10.jpg" },
+  { name: "Alan Jose", role: "Architect", image: "https://randomuser.me/api/portraits/men/11.jpg" },
+  { name: "Arun Krishna Das", role: "Architect", image: "https://randomuser.me/api/portraits/men/12.jpg" },
+  { name: "Joshy John", role: "Architect", image: "https://randomuser.me/api/portraits/men/13.jpg" },
+];
 
-  //animation in search bar
+const plumbers = [
+  { name: "Akhil Jose", role: "Plumber", image: "https://randomuser.me/api/portraits/men/20.jpg" },
+  { name: "Alwin Mathew", role: "Plumber", image: "https://randomuser.me/api/portraits/men/21.jpg" },
+  { name: "Abhishek P S", role: "Plumber", image: "https://randomuser.me/api/portraits/men/22.jpg" },
+  { name: "Joshy John", role: "Plumber", image: "https://randomuser.me/api/portraits/men/23.jpg" },
+];
 
-  const TypewriterText = () => {
-    const fullText = "Job title, keyword, worker";
-    const [displayedText, setDisplayedText] = useState("");
-    const [index, setIndex] = useState(0);
+const HorizontalScroll = ({ children }) => (
+  <Box className="horizontal-scroll" sx={{ py: 1, px: 1, overflowX: "auto", whiteSpace: "nowrap" }}>
+    <Box sx={{ display: "flex", flexDirection: "row", gap: 1, flexWrap: "nowrap" }}>{children}</Box>
+  </Box>
+);
 
-    useEffect(() => {
-      const typingSpeed = 90;
-      const delayBeforeRepeat = 1200;
+const Home = () => {
+  const [selectedService, setSelectedService] = useState("Fast");
+  const [liked, setLiked] = useState([]);
 
-      if (index < fullText.length) {
-        const timeout = setTimeout(() => {
-          setDisplayedText((prev) => prev + fullText.charAt(index));
-          setIndex((prev) => prev + 1);
-        }, typingSpeed);
-
-        return () => clearTimeout(timeout);
-      } else {
-        const timeout = setTimeout(() => {
-          setDisplayedText("");
-          setIndex(0);
-        }, delayBeforeRepeat);
-
-        return () => clearTimeout(timeout);
-      }
-    }, [index]);
-
-    return (
-      <Typography
-        sx={{ color: "#c0c0c0", fontSize: "0.9em", whiteSpace: "nowrap" }}
-      >
-        {displayedText}
-        <Box
-          component="span"
-          sx={{
-            display: "inline-block",
-            width: "6px",
-            bgcolor: "#c0c0c0",
-            ml: 0.5,
-          }}
-        />
-      </Typography>
+  const toggleLike = (name) => {
+    setLiked((prev) =>
+      prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
     );
   };
 
-  const [open, setOpen] = useState(false);
-  const handleOpen = (isOpen) => {
-    setOpen(isOpen);
-  };
   return (
-    <Grid container size={12}>
-      {/* Top part with search bar and information */}
-      <Grid
-        container
-        size={12}
-        sx={{
-          height: "18vh",
-          background: `linear-gradient(
-      to bottom left,
-      rgb(223, 168, 134),
-      rgba(120, 82, 54, 0.91),
-      rgb(60, 37, 25)
-    )`,
-          position: "relative",
-        }}
-        justifyContent={"center"}
-        overflow={"hidden"}
-        mb={2}
-      >
-        {/* Top Header information container */}
-        {/* <Box
-          sx={{
-            width: "70%",
-            height: "18vh",
-            bgcolor: color.dark,
-            borderRadius: "0px 1000px 1000px 0px",
-            position: "absolute",
-            top: -10,
-            left: -20,
-            zIndex: 0,
-          }}
-        /> */}
-        <Grid
-          container
-          direction={"row"}
-          sx={{ position: "relative", zIndex: 1 }}
-          mt={1}
-          alignItems={"center"}
-          spacing={2}
-          size={12}
-          px={1}
-          pb={0}
-        >
-          <Grid size={1}>
-            <LocationOnOutlined sx={{ color: "white" }} />
-          </Grid>
-          <Grid flexGrow={1} size={7}>
-            <Typography sx={{ ...textDecoration.headerSecondary }} onClick={() => handleOpen(true)} >
+    <Box sx={{ pb: 2, bgcolor: "#fff", minHeight: "100vh" }}>
+      {/* Header */}
+      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mt: 2, px: 2 }}>
+        <Box display="flex">
+          <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: "black" }} />
+          <Box display="flex" flexDirection="column">
+            <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
               Current Location
             </Typography>
-            <Grid container>
-              <Typography
-                sx={{ ...textDecoration.headerPrimary, fontWeight: "bold" }}
-              >
-                Thrissur , Kerala
-              </Typography>
-              <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
-                <KeyboardArrowDownOutlined sx={{ color: "white" }} />
-              </IconButton>
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            alignItems={"center"}
-            spacing={1.2}
-            size={3}
-            justifyContent={"space-around"}
-          >
-            <Link
-              to="/mobile-notifications"
-              style={{
-                color: "inherit",
-                WebkitTapHighlightColor: "transparent",
-              }}
-            >
-              <NotificationsNoneOutlined
-                sx={{ color: "white", fontSize: "25px", cursor: "pointer" }}
-              />
-            </Link>
+            <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
+              Thrissur, Kerala
+            </Typography>
+          </Box>
+        </Box>
+        <Stack direction="row" spacing={1} alignItems="center">
+          <IconButton><NotificationsNoneOutlined /></IconButton>
+          <Avatar sx={{ width: 32, height: 32 }} src={"https://randomuser.me/api/portraits/men/83.jpg"} />
+        </Stack>
+      </Box>
 
-            <Link
-              to="/editInfo"
-              style={{
-                color: "inherit",
-                WebkitTapHighlightColor: "transparent",
-              }}
-            >
-              <Avatar
-                src={"https://randomuser.me/api/portraits/men/83.jpg"}
-                sx={{ width: "35px", height: "35px" }}
-              ></Avatar>
-            </Link>
-          </Grid>
-        </Grid>
-        {/* Search bar container */}
-        <SearchBar onClick={() => navigate("/mobile-Recent-Search")} />
-        {/* <Box
-          sx={{
-            width: "10vh",
-            height: "10vh",
-            bgcolor: color.dark,
-            borderRadius: "100%",
-            position: "absolute",
-            bottom: -30,
-            right: -30,
-            zIndex: -1000,
-          }}
-        /> */}
-      </Grid>
-      <Grid container size={12} direction={"column"}>
-        <AdvertisementCarousal />
+      {/* Search */}
+      <Box sx={{ px: 2, mb: 1.5 }}>
+        <SearchBar />
+      </Box>
 
-        <Grid container>
-          <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
-            <Grid flexGrow={1}>
+      {/* Banner */}
+      <AdvertisementCarousel />
 
+      {/* Services */}
+      <Box sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 1, py: 0.7 }}>
+        <HorizontalScroll>
+          {serviceLists.map((service) => (
+            <Box key={service} onClick={() => setSelectedService(service)} sx={{
+              display: "flex", alignItems: "center", px: 1.5, py: 0.5,
+              borderRadius: 0.6, border: "1px solid #e91e63",
+              backgroundColor: selectedService === service ? "#e91e63" : "#fff",
+              color: selectedService === service ? "#fff" : "#000",
+              mr: 1, cursor: "pointer", fontWeight: 600, fontSize: 13,
+            }}>
+              <Box sx={{
+                width: 26, height: 26, bgcolor: "#fff", borderRadius: "0px",
+                overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", mr: 1,
+              }}>
+                <Box component="img" src={serviceImages[service]} alt={service} sx={{ width: "100%", height: "100%", objectFit: "contain" }} />
+              </Box>
+              {service}
+            </Box>
+          ))}
+        </HorizontalScroll>
+      </Box>
 
-{/* <Grid container alignItems="center"  spacing={2} sx={{ width: "100%" }}>
-      
+      {/* Scooter Animation */}
       <Grid item xs={6}>
         <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
           <DotLottieReact
             src="https://lottie.host/9c0dd527-6e0a-4043-b7d1-826256f76fd9/pLxjPbrNe3.lottie"
-            loop
-            autoplay
-            style={{ width: "500%", height: "150px" }} // adjust size as needed
-          />
+            loop autoplay style={{ width: "100%", height: "auto" }} />
         </Box>
       </Grid>
 
-      
-      <Grid item xs={6}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            gap: 1,
-          }}
-        >
-          <Button
-            variant="contained"
+      {/* Join as Worker */}
+      <Grid container justifyContent="center">
+        <Grid sx={{ my: 3, px: 1 }}>
+          <Box component="img" src={ArchisansWorker} alt="Sample" sx={{
+            width: "100%", height: "auto", objectFit: "cover",
+            borderRadius: 1, cursor: "pointer",
+          }} />
+        </Grid>
+      </Grid>
+
+      {/* Locations */}
+      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+        Locations we offer
+      </Typography>
+
+      <HorizontalScroll>
+        {locations.map((loc) => (
+          <Box key={loc.name} sx={{
+            bgcolor: "#fff", width: 110, borderRadius: 0.5, display: "flex",
+            flexDirection: "column", alignItems: "center", justifyContent: "center",
+            fontSize: 12, fontWeight: 500, border: '1px solid #ccc', flex: '0 0 auto',
+          }}>
+            <Box component="img" src={loc.image} alt={loc.name} sx={{
+              width: '100%', height: 'auto', mb: 0.5, objectFit: "contain",
+            }} />
+            <Typography sx={{ fontSize: 14, mb: 0.8 }}>{loc.name}</Typography>
+          </Box>
+        ))}
+      </HorizontalScroll>
+
+      {/* Architects Near You */}
+      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+        Architect’s Near You
+      </Typography>
+
+      <HorizontalScroll>
+        {architects.map((arch) => (
+          <Card
+            key={arch.name}
             sx={{
-              minWidth: "40px",
-              borderRadius: "50%",
-              backgroundColor: "#BFA088",
+              minWidth: 130,
+              height: 185,
+              border: "1px solid #ccc",
+              borderRadius: 0.5,
+              position: "relative",
             }}
           >
-            &gt;
-          </Button>
-        </Box>
-      </Grid>
-    </Grid> */}
-
-              <Typography sx={{ ...textDecoration.headingPrimaryDark }}>
-                Service Category
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            columnSpacing={2}
-            alignItems={"flex-start"}
-            justifyContent={"center"}
-            sx={{ overflow: "hidden", height: "37vh" }}
-          >
-            {ServiceList.slice(0, 6).map((data) => (
-              <ServiceLayer key={data.name} data={data} img />
-            ))}
-          </Grid>
-        </Grid>
-
-        <Grid container justifyContent="center">
-          <Grid sx={{ my: 3, px: 1 }}>
-            <Box
-              component="img"
-              src={ArchisansWorker}
-              alt="Sample"
-              onClick={() => navigate("/mobile-worker-form1")}
+            <IconButton
+              onClick={() => toggleLike(arch.name)}
               sx={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                borderRadius:1,
-                cursor: "pointer", // Make it clickable
-                WebkitTapHighlightColor: "transparent", // Removes mobile highlight
-              }}
-            />
-          </Grid>
-        </Grid>
-
-        <Grid container size={12} sx={{ mt: 3 }}>
-          <Grid container size={12} px={1} sx={{ height: "fit-content" }}>
-            <Grid flexGrow={1}>
-              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
-                Popular Service on Archisans
-              </Typography>
-            </Grid>
-            <Grid>
-              <Typography
-                mt={0.4}
-                sx={{ ...textDecoration.headingPrimaryColored }}
-                onClick={() => navigate("/mobile-artisans-services")}
-              >
-                See all
-              </Typography>
-            </Grid>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                overflowX: "auto",
-                width: "100vw",
-                gap: "20px",
-                scrollbarWidth: "none", // Firefox
-                "&::-webkit-scrollbar": {
-                  display: "none", // Chrome, Safari, Edge
-                },
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
               }}
             >
-              {[...Array(4)].map((_, index) => (
-                <Grid
-                  key={index}
-                  container
-                  direction={"column"}
-                  size={3}
-                  sx={{
-                    width: "30vh",
-                    minWidth: "30vh", // Prevent shrinking
-                    flexShrink: 0, // Prevent shrinking when overflowing
-                    backgroundColor: "#fff",
-                    borderRadius: "12px",
-                    overflow: "hidden",
-                  }}
-                  mt={2}
-                >
-                  <Grid
-                    size={12}
-                    sx={{
-                      height: "70%",
-                      borderRadius: "12px",
-                      overflow: "hidden",
-                      position: "relative",
-                    }}
-                  >
-                    <img
-                      src="/assets/DummyImages/Sample-1.png"
-                      style={{ width: "100%", height: "100%" }}
-                      alt="Sample"
-                    />
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: 10,
-                        left: 10,
-                        bgcolor: color.primary,
-                        height: "1.4em",
-                        width: "7em",
-                        borderRadius: "50px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Typography
-                        sx={{ color: color.TextColorPrimary, fontSize: "12px" }}
-                      >
-                        Starts @ 100$/hr
-                      </Typography>
-                    </Box>
-                  </Grid>
-                  <Grid item size={12} spacing={1} sx={{ padding: "5px" }}>
-                    <Typography sx={{ fontSize: "10px", fontWeight: "600" }}>
-                      Electrical Help {index + 1}
-                    </Typography>
-                    <Typography sx={{ fontSize: "8px", color: "gray" }}>
-                      The cost of house cleaning depends on the square footage
-                      being cleaned
-                    </Typography>
-                  </Grid>
-                </Grid>
-              ))}
-            </Box>
-          </Grid>
-        </Grid>
+              {liked.includes(arch.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
 
-        <Grid
-          container
-          size={12}
-          direction={"column"}
-          p={1}
-          pt={4}
-          sx={{ overflow: "hidden", mt: 1 }}
-        >
-          <Grid container size={12} sx={{ height: "fit-content" }}>
-            <Grid flexGrow={1}>
-              <Typography sx={{ ...textDecoration.headingPrimaryDark, mb: 2 }}>
-                Top Workers Near You
-              </Typography>
-            </Grid>
-            <Grid>
-              <Typography
-                mt={0.4}
-                sx={{ ...textDecoration.headingPrimaryColored }}
-                onClick={() => navigate("/mobile-search-worker")}
-              >
-                See all
-              </Typography>
-            </Grid>
-          </Grid>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              overflowX: "auto",
-              width: "100vw",
-              gap: "10px",
-              scrollbarWidth: "none", // Firefox
-              "&::-webkit-scrollbar": {
-                display: "none", // Chrome, Safari, Edge
-              },
-            }}
-          >
-            {workers.map((worker, index) => (
-              <Grid
-                key={index}
-                container
-                direction="column"
-                height="28vh"
-                minWidth="15vh"
-                mt={2}
-                sx={{
-                  border: "1px solid rgba(237, 237, 237, 1)",
-                  borderRadius: "12px",
-                  cursor: "pointer",
-                  overflow: "hidden",
-                  WebkitTapHighlightColor: "transparent",
-                }}
-                onClick={() =>
-                  navigate("/mobile-workerpage", {
-                    state: {
-                      name: worker.name,
-                      img: worker.img,
-                      location: worker.location,
-                    },
-                  })
-                }
-              >
-                <Grid
-                  item
-                  height="50%"
+            <CardContent sx={{ textAlign: "center", p: 0, pt: 2,  }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={arch.image}
+                  alt={arch.name}
+                  sx={{ mx: "auto", width: 80, height: 80 }}
+                />
+                <Typography
                   sx={{
-                    borderTopRightRadius: "12px",
-                    borderTopLeftRadius: "12px",
+                    color:'rgba(13, 162, 208, 1)',
+                    position: "absolute",
+                    bottom: -5,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border:'0.5px solid #ccc'
                   }}
                 >
-                  <img
-                    src={worker.img}
-                    width="100%"
-                    height="100%"
-                    alt="Worker"
-                  />
-                </Grid>
-                <Grid item container direction="column" height="40%" ml={1}>
-                  <Grid
-                    item
-                    container
-                    mt={1}
-                    direction="row"
-                    sx={{
-                      bgcolor: "rgba(254, 252, 232, 1)",
-                      width: "40px",
-                      borderRadius: "6px",
-                    }}
-                    justifyContent="space-around"
-                  >
-                    <StarOutline
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "15px" }}
-                    />
-                    <Typography
-                      sx={{ color: "rgba(234, 179, 8, 1)", fontSize: "12px" }}
-                    >
-                      {worker.rating}
-                    </Typography>
-                  </Grid>
-                  <Grid item mt={1}>
-                    <Typography
-                      sx={{ color: "rgba(10, 6, 20, 1)", fontSize: "10px" }}
-                    >
-                      {worker.name}
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography
-                      sx={{
-                        color: "rgba(123, 123, 123, 1)",
-                        fontSize: "10px",
-                      }}
-                    >
-                      {worker.location}
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-            ))}
-          </Box>
-        </Grid>
-        <Grid
-          container
-          direction={"column"}
-          size={12}
-          pt={3}
-          pb={1}
-          justifyContent={"center"}
-          alignItems={"center"}
-        >
-          <Typography sx={{ color: "rgba(119, 119, 119, 1)" }}>
-            Don't see what you are looking for?
-          </Typography>
+                  View Details
+                </Typography>
+              </Box>
 
-          <Typography
-            component={Link}
-            to="/mobile-service-category"
+              <Typography sx={{ fontSize: 14, fontWeight: 600 , mt:2}}>
+                {arch.name}
+              </Typography>
+              <Typography sx={{ fontSize: 11, color: "gray", mt:0.5 }}>
+                {arch.role}
+              </Typography>
+              <Rating name="read-only" value={4} sx={{fontSize:10}} readOnly />
+            </CardContent>
+          </Card>
+        ))}
+      </HorizontalScroll>
+
+
+      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+        Plumber’s Near You
+      </Typography>
+
+      <HorizontalScroll>
+        {plumbers.map((plumber) => (
+          <Card
+            key={plumber.name}
             sx={{
-              color: "hsl(26, 29.10%, 56.30%)",
-              textDecoration: "none",
-              cursor: "pointer",
-              fontWeight: 500,
-              WebkitTapHighlightColor: "transparent",
+              minWidth: 120,
+              height: 185,
+              border: "1px solid #ccc",
+              borderRadius: 0.5,
+              position: "relative",
             }}
           >
-            View all services
-          </Typography>
-        </Grid>
-      </Grid>
-      <AddressDrawer open={open} setOpen={setOpen} />
-    </Grid>
+            <IconButton
+              onClick={() => toggleLike(plumber.name)}
+              sx={{
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
+              }}
+            >
+              {liked.includes(plumber.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
+
+            <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={plumber.image}
+                  alt={plumber.name}
+                  sx={{ mx: "auto", width: 80, height: 80 }}
+                />
+                <Typography
+                 sx={{
+                    color:'rgba(13, 162, 208, 1)',
+                    position: "absolute",
+                    bottom: -9,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border:'0.5px solid #ccc'
+                  }}
+                >
+                  View Details
+                </Typography>
+              </Box>
+
+              <Typography sx={{ fontSize: 14, fontWeight: 600,mt:2 }}>
+                {plumber.name}
+              </Typography>
+              <Typography sx={{ fontSize: 11, color: "gray",mt:0.5 }}>
+                {plumber.role}
+              </Typography>
+              <Rating name="read-only" value={4} sx={{fontSize:10}} readOnly />
+            </CardContent>
+          </Card>
+        ))}
+      </HorizontalScroll>
+
+      {/* Bottom Navigation */}
+      <MobileBottomTab/>
+    </Box>
   );
-}
+};
+
+export default Home;

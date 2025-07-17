@@ -7,7 +7,7 @@ import MobProfilePage from "./modules/ClientPages/Profile/Mobile/mobProfile";
 import MobSettings from "./modules/ClientPages/Settings/mobSettings";
 import MobNotifications from "./modules/ClientPages/NotificationPage/mobNotifications";
 import Signinpage from "./modules/ClientPages/Authentication/signinpage";
-import Home from "./modules/ClientPages/Home/Mobile/Home";
+import Home from "./modules/ClientPages/Home/mobile/Home";
 import Profile from "./modules/ClientPages/Profile/Profile";
 import MobSignin from "./modules/ClientPages/Authentication/Mobile/mobsignin";
 import MobSignup from "./modules/ClientPages/Authentication/Mobile/mobSignup";
@@ -30,7 +30,7 @@ import MobMessageChat from "./modules/ClientPages/Message/mobMessage/mobMessageC
 import MobSearchWorker from "./modules/ClientPages/WorkerPage/SearchWorker/mobSearchWorker";
 import MobSavedWorkers from "./modules/ClientPages/Profile/Mobile/mobSavedWorkers";
 import MobRecentSearch from "./modules/ClientPages/WorkerPage/SearchWorker/mobRecentSearch";
-import AddressDetails from "./modules/ClientPages/Home/Address/AdressDetails/AddressDetails";
+import AddressDetails from "./modules/ClientPages/OldHome/Address/AdressDetails/AddressDetails";
 import MobSearchFilter from "./modules/ClientPages/Filter/mobile/mobSearchFilter";
 
 //worker pages

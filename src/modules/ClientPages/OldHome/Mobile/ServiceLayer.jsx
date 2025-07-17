@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import { textDecoration, color } from "./constants";
+import { textDecoration, color } from "../../Home/mobile/constants";
 import { useNavigate } from "react-router-dom";
 export const ServiceLayer = (props) => {
   const { name, path , image} = props?.data || {};

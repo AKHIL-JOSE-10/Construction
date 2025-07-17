@@ -1,5 +1,17 @@
 body {
-    background-color: "#FFFFFF";
+    background-color: #FFFFFF; /* remove quotes */
     font-family: 'Poppins';
     -webkit-tap-highlight-color: transparent;
+}
+
+.horizontal-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;    /* Firefox */
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
 }
