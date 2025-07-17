@@ -22,7 +22,7 @@ export default function SearchBar({ sx, text, onClick }) {
         placeholder={text ? text : "Job title, keyword, worker"}
         disableUnderline
         fullWidth
-        inputProps={{ readOnly: true }}
+        inputProps={{ readOnly: false }}
         startAdornment={
           <InputAdornment position="start">
             <Search sx={{ color: "gray", marginLeft: "0.3em" }} />
