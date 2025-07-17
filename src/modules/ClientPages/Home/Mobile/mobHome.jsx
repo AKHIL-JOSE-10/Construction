@@ -19,13 +19,14 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AdvertisementCarousel from "./AdvertisementCarousal";
 import SearchBar from "./SearchBar";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+// import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 import ArchisansWorker from "../../../../assets/ArchisansWorker.jpg";
 import ArchitecturalIcon from "@/assets/Architectural.png";
 import AllIcon from "@/assets/All.jpg";
 import ArtisansIcon from "@/assets/Artisans.png";
 import FabricationIcon from "@/assets/Fabrication.png";
+import InstantService from "../../../../assets/InstantService.png"
 import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/AddressDrawer";
 
 const serviceLists = [
@@ -253,7 +254,7 @@ const MobHome = () => {
         </HorizontalScroll>
       </Box>
 
-      <Grid
+      {/* <Grid
         container
         alignItems="center"
         justifyContent="center"
@@ -263,7 +264,7 @@ const MobHome = () => {
           mb: 2,
         }}
       >
-        {/* Lottie Animation */}
+        
         <Grid>
           <Box
             sx={{
@@ -284,7 +285,7 @@ const MobHome = () => {
           </Box>
         </Grid>
 
-        {/* OVERLAY TEXT + BUTTON */}
+        
         <Box
           sx={{
             position: "absolute",
@@ -324,6 +325,15 @@ const MobHome = () => {
             Book Now
           </button>
         </Box>
+      </Grid> */}
+
+          <Grid container justifyContent="center">
+        <Grid sx={{ my: 3, px: 1 }}>
+          <Box component="img" src={InstantService} alt="Sample" sx={{
+            width: "100%", height: "auto", objectFit: "cover",
+            borderRadius: 1, cursor: "pointer",
+          }} />
+        </Grid>
       </Grid>
 
       {/* Join as Worker */}
