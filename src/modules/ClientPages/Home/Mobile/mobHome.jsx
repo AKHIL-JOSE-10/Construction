@@ -177,11 +177,11 @@ const MobHome = () => {
     <Box
       sx={{
         fontSize: { xs: "1.8rem", md: "2.5rem" },
-        fontWeight: 800,
+        fontWeight: 900,
         color: "#FF9800",
-        textShadow: "2px 2px #000",
+        textShadow: "1px 2px #000",
         mb: 2,
-        fontFamily: "'Bangers', cursive", // optional comic font
+        fontFamily: "'Bangers', cursive", 
       }}
     >
       INSTANT <br /> SERVICE
@@ -193,7 +193,7 @@ const MobHome = () => {
         color: "#fff",
         border: "none",
         borderRadius: 6,
-        padding: "8px 20px",
+        padding: "5px 15px",
         fontSize: "1rem",
         fontWeight: 600,
         cursor: "pointer",
