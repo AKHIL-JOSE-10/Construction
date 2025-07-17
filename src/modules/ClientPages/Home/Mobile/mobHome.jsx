@@ -26,6 +26,7 @@ import ArchitecturalIcon from "@/assets/Architectural.png";
 import AllIcon from "@/assets/All.jpg";
 import ArtisansIcon from "@/assets/Artisans.png";
 import FabricationIcon from "@/assets/Fabrication.png";
+import AutomationIcon from "@/assets/Automation.png"
 import InstantService from "../../../../assets/InstantService.png"
 import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/AddressDrawer";
 
@@ -119,6 +120,14 @@ const plumbers = [
     role: "Plumber",
     image: "https://randomuser.me/api/portraits/men/23.jpg",
   },
+];
+
+const popularServices = [
+  { name: "Architectural", icon: ArchitecturalIcon },
+  { name: "Artisans", icon: ArtisansIcon },
+  { name: "Fabrication", icon: FabricationIcon },
+  { name: "Automation", icon: AutomationIcon },
+  { name: "Other", icon: AllIcon },
 ];
 
 const HorizontalScroll = ({ children }) => (
@@ -327,7 +336,7 @@ const MobHome = () => {
         </Box>
       </Grid> */}
 
-          <Grid container justifyContent="center">
+      <Grid container justifyContent="center">
         <Grid sx={{ my: 3, px: 1 }}>
           <Box component="img" src={InstantService} alt="Sample" sx={{
             width: "100%", height: "auto", objectFit: "cover",
@@ -353,6 +362,45 @@ const MobHome = () => {
           />
         </Grid>
       </Grid>
+
+
+      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+        Popular Services
+      </Typography>
+
+      <HorizontalScroll>
+        {popularServices.map((service) => (
+          <Box
+            key={service.name}
+            sx={{
+              flex: "0 0 auto",
+              width: 60,
+              height: 100,
+              textAlign: "center",
+              backgroundColor: "#fff",
+              borderRadius: "80px",
+              boxShadow: "0px 1px 5px rgba(0,0,0,0.1)",
+              padding: 1.2,
+            }}
+          >
+            <Box
+              component="img"
+              src={service.icon}
+              alt={service.name}
+              sx={{
+                width: 60,
+                height: 60,
+                objectFit: "contain",
+                mx: "auto",
+              }}
+            />
+            <Typography sx={{ fontSize: 9, fontWeight: 500, mt: 1 }}>
+              {service.name}
+            </Typography>
+          </Box>
+        ))}
+      </HorizontalScroll>
+
 
       {/* Locations we offer*/}
       <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
@@ -395,6 +443,9 @@ const MobHome = () => {
           </Box>
         ))}
       </HorizontalScroll>
+
+            {/* Banner */}
+      <AdvertisementCarousel />
 
       {/* Architects Near You */}
       <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
