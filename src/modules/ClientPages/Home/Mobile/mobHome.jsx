@@ -134,76 +134,77 @@ const MobHome = () => {
         </HorizontalScroll>
       </Box>
 
-    <Grid
-  container
-  alignItems="center"
-  justifyContent="center"
-  sx={{
-    position: "relative",
-    overflow: "hidden",
-  }}
->
-  {/* Lottie Animation */}
-  <Grid >
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        ml:-15
-      }}
-    >
-      <DotLottieReact
-        src="https://lottie.host/9c0dd527-6e0a-4043-b7d1-826256f76fd9/pLxjPbrNe3.lottie"
-        loop
-        autoplay
-        style={{
-          width: "100%",
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          position: "relative",
+          overflow: "hidden",
+          mb: 2
         }}
-      />
-    </Box>
-  </Grid>
+      >
+        {/* Lottie Animation */}
+        <Grid >
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              ml: -15
+            }}
+          >
+            <DotLottieReact
+              src="https://lottie.host/9c0dd527-6e0a-4043-b7d1-826256f76fd9/pLxjPbrNe3.lottie"
+              loop
+              autoplay
+              style={{
+                width: "100%",
+              }}
+            />
+          </Box>
+        </Grid>
 
-  {/* OVERLAY TEXT + BUTTON */}
-  <Box
-    sx={{
-      position: "absolute",
-      top: "50%",
-      left: "80%",
-      transform: "translate(-50%, -50%)",
-      textAlign: "center",
-    }}
-  >
-    <Box
-      sx={{
-        fontSize: { xs: "1.8rem", md: "2.5rem" },
-        fontWeight: 900,
-        color: "#FF9800",
-        textShadow: "1px 2px #000",
-        mb: 2,
-        fontFamily: "'Bangers', cursive", 
-      }}
-    >
-      INSTANT <br /> SERVICE
-    </Box>
+        {/* OVERLAY TEXT + BUTTON */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "80%",
+            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+          }}
+        >
+          <Box
+            sx={{
+              fontSize: { xs: "1.8rem", md: "2.5rem" },
+              fontWeight: 900,
+              color: "#FF9800",
+              textShadow: "1px 2px #000",
+              mb: 2,
+              fontFamily: "'Bangers', cursive",
+            }}
+          >
+            INSTANT <br /> SERVICE
+          </Box>
 
-    <button
-      style={{
-        backgroundColor: "#FF9800",
-        color: "#fff",
-        border: "none",
-        borderRadius: 6,
-        padding: "5px 15px",
-        fontSize: "1rem",
-        fontWeight: 600,
-        cursor: "pointer",
-        boxShadow: "2px 2px 5px rgba(0,0,0,0.3)",
-      }}
-    >
-      Book Now
-    </button>
-  </Box>
-</Grid>
+          <button
+            style={{
+              backgroundColor: "#FF9800",
+              color: "#fff",
+              border: "none",
+              borderRadius: 6,
+              padding: "5px 15px",
+              fontSize: "1rem",
+              fontWeight: 600,
+              cursor: "pointer",
+              boxShadow: "2px 2px 5px rgba(0,0,0,0.3)",
+            }}
+          >
+            Book Now
+          </button>
+        </Box>
+      </Grid>
 
       {/* Join as Worker */}
       <Grid container justifyContent="center">
