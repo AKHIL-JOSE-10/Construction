@@ -1,17 +1,28 @@
+/* body and scroll styles — optional */
 body {
-    background-color: #FFFFFF; /* remove quotes */
-    font-family: 'Poppins';
-    -webkit-tap-highlight-color: transparent;
+  background-color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .horizontal-scroll {
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none; /* IE/Edge */
-    scrollbar-width: none;    /* Firefox */
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;    /* Firefox */
 }
 
 .horizontal-scroll::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+  display: none; /* Chrome/Safari */
+}
+
+/* carousel scale effect */
+.slide-box {
+  transition: transform 0.4s ease-in-out;
+  transform: scale(0.9);
+}
+
+.slide-box.swiper-slide-active {
+  transform: scale(1.05);
 }

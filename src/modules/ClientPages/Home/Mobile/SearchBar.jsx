@@ -14,7 +14,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
     <Box
       sx={{
         mt: 2,
-        bgcolor: "#f6f6f6",
+        bgcolor: "#fff",
         borderRadius: 1,
         height: 40,
         display: "flex",
@@ -27,7 +27,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
     >
       <SearchIcon
         sx={{
-          fontSize: 30,              
+          fontSize: 26,              
           color: "#b0b0b0",        
           mx: 2
         }}

@@ -14,10 +14,6 @@ import {
   NotificationsNoneOutlined,
   LocationOnOutlined,
 } from "@mui/icons-material";
-import HomeIcon from "@mui/icons-material/Home";
-import MessageIcon from "@mui/icons-material/Message";
-import BookIcon from "@mui/icons-material/Book";
-import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AdvertisementCarousel from "./AdvertisementCarousal";
@@ -120,11 +116,11 @@ const MobHome = () => {
         <HorizontalScroll>
           {serviceLists.map((service) => (
             <Box key={service} onClick={() => setSelectedService(service)} sx={{
-              display: "flex", alignItems: "center", px: 1.5, py: 0.5,
+              display: "flex", alignItems: "center", px: 1.5, py: 0.2, mt: 1,
               borderRadius: 0.6, border: "1px solid #e91e63",
               backgroundColor: selectedService === service ? "#e91e63" : "#fff",
               color: selectedService === service ? "#fff" : "#000",
-              mr: 1, cursor: "pointer", fontWeight: 600, fontSize: 13,
+              cursor: "pointer", fontWeight: 600, fontSize: 13,
             }}>
               <Box sx={{
                 width: 26, height: 26, bgcolor: "#fff", borderRadius: "0px",
@@ -138,14 +134,76 @@ const MobHome = () => {
         </HorizontalScroll>
       </Box>
 
-      {/* Scooter Animation */}
-      <Grid item xs={6}>
-        <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
-          <DotLottieReact
-            src="https://lottie.host/9c0dd527-6e0a-4043-b7d1-826256f76fd9/pLxjPbrNe3.lottie"
-            loop autoplay style={{ width: "100%", height: "auto" }} />
-        </Box>
-      </Grid>
+    <Grid
+  container
+  alignItems="center"
+  justifyContent="center"
+  sx={{
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  {/* Lottie Animation */}
+  <Grid >
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        ml:-15
+      }}
+    >
+      <DotLottieReact
+        src="https://lottie.host/9c0dd527-6e0a-4043-b7d1-826256f76fd9/pLxjPbrNe3.lottie"
+        loop
+        autoplay
+        style={{
+          width: "100%",
+        }}
+      />
+    </Box>
+  </Grid>
+
+  {/* OVERLAY TEXT + BUTTON */}
+  <Box
+    sx={{
+      position: "absolute",
+      top: "50%",
+      left: "80%",
+      transform: "translate(-50%, -50%)",
+      textAlign: "center",
+    }}
+  >
+    <Box
+      sx={{
+        fontSize: { xs: "1.8rem", md: "2.5rem" },
+        fontWeight: 800,
+        color: "#FF9800",
+        textShadow: "2px 2px #000",
+        mb: 2,
+        fontFamily: "'Bangers', cursive", // optional comic font
+      }}
+    >
+      INSTANT <br /> SERVICE
+    </Box>
+
+    <button
+      style={{
+        backgroundColor: "#FF9800",
+        color: "#fff",
+        border: "none",
+        borderRadius: 6,
+        padding: "8px 20px",
+        fontSize: "1rem",
+        fontWeight: 600,
+        cursor: "pointer",
+        boxShadow: "2px 2px 5px rgba(0,0,0,0.3)",
+      }}
+    >
+      Book Now
+    </button>
+  </Box>
+</Grid>
 
       {/* Join as Worker */}
       <Grid container justifyContent="center">
@@ -157,22 +215,44 @@ const MobHome = () => {
         </Grid>
       </Grid>
 
-      {/* Locations */}
+      {/* Locations we offer*/}
       <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
         Locations we offer
       </Typography>
 
       <HorizontalScroll>
         {locations.map((loc) => (
-          <Box key={loc.name} sx={{
-            bgcolor: "#fff", width: 110, borderRadius: 0.5, display: "flex",
-            flexDirection: "column", alignItems: "center", justifyContent: "center",
-            fontSize: 12, fontWeight: 500, border: '1px solid #ccc', flex: '0 0 auto',
-          }}>
-            <Box component="img" src={loc.image} alt={loc.name} sx={{
-              width: '100%', height: 'auto', mb: 0.5, objectFit: "contain",
-            }} />
-            <Typography sx={{ fontSize: 14, mb: 0.8 }}>{loc.name}</Typography>
+          <Box
+            key={loc.name}
+            sx={{
+              width: 120,
+              flex: '0 0 auto',
+              textAlign: 'center',
+              mx: 1,
+            }}
+          >
+            {/* Image container */}
+            <Box
+              component="img"
+              src={loc.image}
+              alt={loc.name}
+              sx={{
+                width: '100%',
+                height: 90,
+                borderRadius: 3,
+                objectFit: 'cover',
+              }}
+            />
+            {/* Text below */}
+            <Box
+              sx={{
+                fontSize: 12,
+                fontWeight: 550,
+                color: '#000',
+              }}
+            >
+              {loc.name}
+            </Box>
           </Box>
         ))}
       </HorizontalScroll>
@@ -210,7 +290,7 @@ const MobHome = () => {
               )}
             </IconButton>
 
-            <CardContent sx={{ textAlign: "center", p: 0, pt: 2,  }}>
+            <CardContent sx={{ textAlign: "center", p: 0, pt: 2, }}>
               <Box sx={{ position: "relative", mb: 1 }}>
                 <Avatar
                   src={arch.image}
@@ -219,7 +299,7 @@ const MobHome = () => {
                 />
                 <Typography
                   sx={{
-                    color:'rgba(13, 162, 208, 1)',
+                    color: 'rgba(13, 162, 208, 1)',
                     position: "absolute",
                     bottom: -5,
                     left: "50%",
@@ -229,20 +309,20 @@ const MobHome = () => {
                     fontSize: 9,
                     fontWeight: 500,
                     borderRadius: 0.2,
-                    border:'0.5px solid #ccc'
+                    border: '0.5px solid #ccc'
                   }}
                 >
                   View Details
                 </Typography>
               </Box>
 
-              <Typography sx={{ fontSize: 14, fontWeight: 600 , mt:2}}>
+              <Typography sx={{ fontSize: 14, fontWeight: 600, mt: 2 }}>
                 {arch.name}
               </Typography>
-              <Typography sx={{ fontSize: 11, color: "gray", mt:0.5 }}>
+              <Typography sx={{ fontSize: 11, color: "gray", mt: 0.5 }}>
                 {arch.role}
               </Typography>
-              <Rating name="read-only" value={4} sx={{fontSize:10}} readOnly />
+              <Rating name="read-only" value={4} sx={{ fontSize: 10 }} readOnly />
             </CardContent>
           </Card>
         ))}
@@ -289,8 +369,8 @@ const MobHome = () => {
                   sx={{ mx: "auto", width: 80, height: 80 }}
                 />
                 <Typography
-                 sx={{
-                    color:'rgba(13, 162, 208, 1)',
+                  sx={{
+                    color: 'rgba(13, 162, 208, 1)',
                     position: "absolute",
                     bottom: -9,
                     left: "50%",
@@ -300,27 +380,27 @@ const MobHome = () => {
                     fontSize: 9,
                     fontWeight: 500,
                     borderRadius: 0.2,
-                    border:'0.5px solid #ccc'
+                    border: '0.5px solid #ccc'
                   }}
                 >
                   View Details
                 </Typography>
               </Box>
 
-              <Typography sx={{ fontSize: 14, fontWeight: 600,mt:2 }}>
+              <Typography sx={{ fontSize: 14, fontWeight: 600, mt: 2 }}>
                 {plumber.name}
               </Typography>
-              <Typography sx={{ fontSize: 11, color: "gray",mt:0.5 }}>
+              <Typography sx={{ fontSize: 11, color: "gray", mt: 0.5 }}>
                 {plumber.role}
               </Typography>
-              <Rating name="read-only" value={4} sx={{fontSize:10}} readOnly />
+              <Rating name="read-only" value={4} sx={{ fontSize: 10 }} readOnly />
             </CardContent>
           </Card>
         ))}
       </HorizontalScroll>
 
       {/* Bottom Navigation */}
-      <MobileBottomTab/>
+      <MobileBottomTab />
     </Box>
   );
 };

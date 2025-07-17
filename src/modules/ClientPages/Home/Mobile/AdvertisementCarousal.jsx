@@ -3,46 +3,45 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import { Box, Card, CardMedia, Typography } from '@mui/material';
+import { Box, CardMedia } from '@mui/material';
 
 import img1 from '../../../../assets/Interior.png';
 import img2 from '../../../../assets/AdIcon.png';
-
-
 
 const imageData = [
   { img: img1 },
   { img: img2 },
   { img: img1 },
   { img: img2 },
-
-  // Add more images
 ];
 
 const AdvertisementCarousel = () => {
   return (
-    <Box sx={{ width: '95%', px: 1, py: 1 , pb:2}}>
+    <Box
+      sx={{
+        width: '100%',
+        mx: 'auto',
+        py: 2,
+      }}
+    >
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
-        slidesPerView={1.2}
-        centeredSlides={true}
-        spaceBetween={1}
+        slidesPerView={1.2} // shows one card and peeks
+        centeredSlides
+        spaceBetween={20} // gap between slides
       >
         {imageData.map((item, index) => (
           <SwiperSlide key={index}>
             <Box
               sx={{
-                transition: 'all 0.4s ease',
-                transform: 'scale(0.95)',
-                height: 'auto',
                 borderRadius: 1,
                 overflow: 'hidden',
-                boxShadow: 1,
-                backgroundColor: '#f5f5f5',
+                boxShadow: 3,
+                backgroundColor: '#fff',
+                aspectRatio: '18/9',
               }}
-              className="slide-box"
             >
               <CardMedia
                 component="img"
@@ -63,4 +62,3 @@ const AdvertisementCarousel = () => {
 };
 
 export default AdvertisementCarousel;
-
