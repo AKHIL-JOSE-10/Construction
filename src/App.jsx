@@ -7,7 +7,7 @@ import MobProfilePage from "./modules/ClientPages/Profile/Mobile/mobProfile";
 import MobSettings from "./modules/ClientPages/Settings/mobSettings";
 import MobNotifications from "./modules/ClientPages/NotificationPage/mobNotifications";
 import Signinpage from "./modules/ClientPages/Authentication/signinpage";
-import Home from "./modules/ClientPages/Home/mobile/Home";
+import MobHome from "./modules/ClientPages/Home/mobile/mobHome";
 import Profile from "./modules/ClientPages/Profile/Profile";
 import MobSignin from "./modules/ClientPages/Authentication/Mobile/mobsignin";
 import MobSignup from "./modules/ClientPages/Authentication/Mobile/mobSignup";
@@ -95,7 +95,7 @@ function App() {
           <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
           <Route path="/mobile-settings" element={<MobSettings />} />
           <Route path="/mobile-notifications" element={<MobNotifications />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<MobHome />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/bookings" element={<Bookings />} />
           <Route path="/forgot-password" element={<MobForgotPassword />} />

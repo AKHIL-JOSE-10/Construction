@@ -76,7 +76,7 @@ const HorizontalScroll = ({ children }) => (
   </Box>
 );
 
-const Home = () => {
+const MobHome = () => {
   const [selectedService, setSelectedService] = useState("Fast");
   const [liked, setLiked] = useState([]);
 
@@ -325,4 +325,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default MobHome;
