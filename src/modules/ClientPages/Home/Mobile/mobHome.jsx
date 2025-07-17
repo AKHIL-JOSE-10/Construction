@@ -29,6 +29,7 @@ import FabricationIcon from "@/assets/Fabrication.png";
 import AutomationIcon from "@/assets/Automation.png"
 import InstantService from "../../../../assets/InstantService.png"
 import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/AddressDrawer";
+import { useNavigate } from "react-router-dom";
 
 const serviceLists = [
   "Fast",
@@ -146,7 +147,7 @@ const HorizontalScroll = ({ children }) => (
 const MobHome = () => {
   const [selectedService, setSelectedService] = useState("Fast");
   const [liked, setLiked] = useState([]);
-
+const navigate = useNavigate();
   const toggleLike = (name) => {
     setLiked((prev) =>
       prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
@@ -477,6 +478,11 @@ const MobHome = () => {
         {architects.map((arch) => (
           <Card
             key={arch.name}
+             onClick={() =>
+        navigate("/mobile-workerpage", {
+          state: { name: arch.name, img: arch.image, selectedService: "Architect", },
+        })
+      }
             sx={{
               minWidth: 120,
               height: 165,
@@ -552,6 +558,11 @@ const MobHome = () => {
         {plumbers.map((plumber) => (
           <Card
             key={plumber.name}
+            onClick={() =>
+        navigate("/mobile-workerpage", {
+          state: { name: plumber.name, img: plumber.image, selectedService: "Plumber",},
+        })
+      }
             sx={{
               minWidth: 120,
               height: 165,
