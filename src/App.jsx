@@ -7,7 +7,7 @@ import MobProfilePage from "./modules/ClientPages/Profile/Mobile/mobProfile";
 import MobSettings from "./modules/ClientPages/Settings/mobSettings";
 import MobNotifications from "./modules/ClientPages/NotificationPage/mobNotifications";
 import Signinpage from "./modules/ClientPages/Authentication/signinpage";
-import MobHome from "./modules/ClientPages/Home/mobile/mobHome";
+import MobHome from "./modules/ClientPages/Home/Mobile/mobHome";
 import Profile from "./modules/ClientPages/Profile/Profile";
 import MobSignin from "./modules/ClientPages/Authentication/Mobile/mobsignin";
 import MobSignup from "./modules/ClientPages/Authentication/Mobile/mobSignup";

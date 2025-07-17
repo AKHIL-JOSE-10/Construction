@@ -5,7 +5,7 @@ import {
   StarOutline,
 } from "@mui/icons-material";
 import { Avatar, Box, Grid, IconButton, Typography, Button } from "@mui/material";
-import { color, ServiceList, textDecoration } from "../../Home/mobile/constants";
+import { color, ServiceList, textDecoration } from "../../Home/Mobile/constants";
 import { ServiceLayer } from "./ServiceLayer";
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
