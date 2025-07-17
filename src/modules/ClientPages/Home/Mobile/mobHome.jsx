@@ -47,8 +47,8 @@ const serviceImages = {
 const locations = [
   { name: "Cochin", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
   { name: "Calicut", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
-  { name: "Coorg", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
-  { name: "Kusgalnagar", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+  { name: "Malappuram", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+  { name: "kannur", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
   { name: "Thrissur", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
 ];
 
@@ -67,8 +67,8 @@ const plumbers = [
 ];
 
 const HorizontalScroll = ({ children }) => (
-  <Box className="horizontal-scroll" sx={{ py: 1, px: 1, overflowX: "auto", whiteSpace: "nowrap" }}>
-    <Box sx={{ display: "flex", flexDirection: "row", gap: 1, flexWrap: "nowrap" }}>{children}</Box>
+  <Box className="horizontal-scroll" sx={{ mr:0.5, py: 1, px: 1, overflowX: "auto", whiteSpace: "nowrap" }}>
+    <Box sx={{ display: "flex", flexDirection: "row", gap: 1, flexWrap: "nowrap",  }}>{children}</Box>
   </Box>
 );
 
@@ -241,7 +241,7 @@ const MobHome = () => {
               sx={{
                 width: '100%',
                 height: 90,
-                borderRadius: 3,
+                borderRadius: 2,
                 objectFit: 'cover',
               }}
             />
