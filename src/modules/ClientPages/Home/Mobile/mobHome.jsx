@@ -13,6 +13,7 @@ import {
 import {
   NotificationsNoneOutlined,
   LocationOnOutlined,
+  KeyboardArrowDownOutlined,
 } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -25,6 +26,7 @@ import ArchitecturalIcon from "@/assets/Architectural.png";
 import AllIcon from "@/assets/All.jpg";
 import ArtisansIcon from "@/assets/Artisans.png";
 import FabricationIcon from "@/assets/Fabrication.png";
+import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/AddressDrawer";
 
 const serviceLists = [
   "Fast",
@@ -45,30 +47,89 @@ const serviceImages = {
 };
 
 const locations = [
-  { name: "Cochin", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
-  { name: "Calicut", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
-  { name: "Malappuram", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
-  { name: "kannur", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
-  { name: "Thrissur", image: "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180" },
+  {
+    name: "Cochin",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180",
+  },
+  {
+    name: "Calicut",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180",
+  },
+  {
+    name: "Malappuram",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180",
+  },
+  {
+    name: "kannur",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180",
+  },
+  {
+    name: "Thrissur",
+    image:
+      "https://tse2.mm.bing.net/th/id/OIP.Sl-g2yvpMdb6q9WABtR3rwHaE8?pid=Api&P=0&h=180",
+  },
 ];
 
 const architects = [
-  { name: "Athul Murali T", role: "Architect", image: "https://randomuser.me/api/portraits/men/10.jpg" },
-  { name: "Alan Jose", role: "Architect", image: "https://randomuser.me/api/portraits/men/11.jpg" },
-  { name: "Arun Krishna Das", role: "Architect", image: "https://randomuser.me/api/portraits/men/12.jpg" },
-  { name: "Joshy John", role: "Architect", image: "https://randomuser.me/api/portraits/men/13.jpg" },
+  {
+    name: "Athul Murali T",
+    role: "Architect",
+    image: "https://randomuser.me/api/portraits/men/10.jpg",
+  },
+  {
+    name: "Alan Jose",
+    role: "Architect",
+    image: "https://randomuser.me/api/portraits/men/11.jpg",
+  },
+  {
+    name: "Arun Krishna Das",
+    role: "Architect",
+    image: "https://randomuser.me/api/portraits/men/12.jpg",
+  },
+  {
+    name: "Joshy John",
+    role: "Architect",
+    image: "https://randomuser.me/api/portraits/men/13.jpg",
+  },
 ];
 
 const plumbers = [
-  { name: "Akhil Jose", role: "Plumber", image: "https://randomuser.me/api/portraits/men/20.jpg" },
-  { name: "Alwin Mathew", role: "Plumber", image: "https://randomuser.me/api/portraits/men/21.jpg" },
-  { name: "Abhishek P S", role: "Plumber", image: "https://randomuser.me/api/portraits/men/22.jpg" },
-  { name: "Joshy John", role: "Plumber", image: "https://randomuser.me/api/portraits/men/23.jpg" },
+  {
+    name: "Akhil Jose",
+    role: "Plumber",
+    image: "https://randomuser.me/api/portraits/men/20.jpg",
+  },
+  {
+    name: "Alwin Mathew",
+    role: "Plumber",
+    image: "https://randomuser.me/api/portraits/men/21.jpg",
+  },
+  {
+    name: "Abhishek P S",
+    role: "Plumber",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
+  },
+  {
+    name: "Joshy John",
+    role: "Plumber",
+    image: "https://randomuser.me/api/portraits/men/23.jpg",
+  },
 ];
 
 const HorizontalScroll = ({ children }) => (
-  <Box className="horizontal-scroll" sx={{ mr:0.5, py: 1, px: 1, overflowX: "auto", whiteSpace: "nowrap" }}>
-    <Box sx={{ display: "flex", flexDirection: "row", gap: 1, flexWrap: "nowrap",  }}>{children}</Box>
+  <Box
+    className="horizontal-scroll"
+    sx={{ mr: 0.5, py: 1, px: 1, overflowX: "auto", whiteSpace: "nowrap" }}
+  >
+    <Box
+      sx={{ display: "flex", flexDirection: "row", gap: 1, flexWrap: "nowrap" }}
+    >
+      {children}
+    </Box>
   </Box>
 );
 
@@ -82,24 +143,54 @@ const MobHome = () => {
     );
   };
 
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (isOpen) => {
+    setOpen(isOpen);
+  };
+
   return (
     <Box sx={{ pb: 2, bgcolor: "#fff", minHeight: "100vh" }}>
       {/* Header */}
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mt: 2, px: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mt: 2,
+          px: 2,
+        }}
+      >
         <Box display="flex">
-          <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: "black" }} />
+          <LocationOnOutlined
+            sx={{ fontSize: 25, mr: 1, mt: 0.5, color: "black" }}
+          />
           <Box display="flex" flexDirection="column">
-            <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
+            <Typography
+              variant="caption"
+              color="gray"
+              sx={{ lineHeight: 1, fontSize: 13 }}
+            >
               Current Location
             </Typography>
-            <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
-              Thrissur, Kerala
-            </Typography>
+            <Grid container>
+              <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
+                Thrissur, Kerala
+              </Typography>
+              <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
+                <KeyboardArrowDownOutlined sx={{ color: "grey" }} />
+              </IconButton>
+            </Grid>
           </Box>
         </Box>
         <Stack direction="row" spacing={1} alignItems="center">
-          <IconButton><NotificationsNoneOutlined /></IconButton>
-          <Avatar sx={{ width: 32, height: 32 }} src={"https://randomuser.me/api/portraits/men/83.jpg"} />
+          <IconButton>
+            <NotificationsNoneOutlined />
+          </IconButton>
+          <Avatar
+            sx={{ width: 32, height: 32 }}
+            src={"https://randomuser.me/api/portraits/men/83.jpg"}
+          />
         </Stack>
       </Box>
 
@@ -112,21 +203,49 @@ const MobHome = () => {
       <AdvertisementCarousel />
 
       {/* Services */}
-      <Box sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 1, py: 0.7 }}>
+      <Box
+        sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 1, py: 0.7 }}
+      >
         <HorizontalScroll>
           {serviceLists.map((service) => (
-            <Box key={service} onClick={() => setSelectedService(service)} sx={{
-              display: "flex", alignItems: "center", px: 1.5, py: 0.2, mt: 1,
-              borderRadius: 0.6, border: "1px solid #e91e63",
-              backgroundColor: selectedService === service ? "#e91e63" : "#fff",
-              color: selectedService === service ? "#fff" : "#000",
-              cursor: "pointer", fontWeight: 600, fontSize: 13,
-            }}>
-              <Box sx={{
-                width: 26, height: 26, bgcolor: "#fff", borderRadius: "0px",
-                overflow: "hidden", display: "flex", alignItems: "center", justifyContent: "center", mr: 1,
-              }}>
-                <Box component="img" src={serviceImages[service]} alt={service} sx={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            <Box
+              key={service}
+              onClick={() => setSelectedService(service)}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                px: 1.5,
+                py: 0.2,
+                mt: 1,
+                borderRadius: 0.6,
+                border: "1px solid #e91e63",
+                backgroundColor:
+                  selectedService === service ? "#e91e63" : "#fff",
+                color: selectedService === service ? "#fff" : "#000",
+                cursor: "pointer",
+                fontWeight: 600,
+                fontSize: 13,
+              }}
+            >
+              <Box
+                sx={{
+                  width: 26,
+                  height: 26,
+                  bgcolor: "#fff",
+                  borderRadius: "0px",
+                  overflow: "hidden",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  mr: 1,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={serviceImages[service]}
+                  alt={service}
+                  sx={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
               </Box>
               {service}
             </Box>
@@ -141,17 +260,17 @@ const MobHome = () => {
         sx={{
           position: "relative",
           overflow: "hidden",
-          mb: 2
+          mb: 2,
         }}
       >
         {/* Lottie Animation */}
-        <Grid >
+        <Grid>
           <Box
             sx={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              ml: -15
+              ml: -15,
             }}
           >
             <DotLottieReact
@@ -175,19 +294,19 @@ const MobHome = () => {
             textAlign: "center",
           }}
         >
-         <Box
-  sx={{
-    fontSize: { xs: "1.8rem", md: "2.5rem" },
-    fontWeight: 900,
-    color: "#FF9800",
-    textShadow: "1px 2px #000",
-    mb: 2,
-    fontFamily: "'Bangers', cursive",
-    WebkitTextStroke: "1px #FF9800", // adds thickness
-  }}
->
-  INSTANT <br /> SERVICES
-</Box>
+          <Box
+            sx={{
+              fontSize: { xs: "1.8rem", md: "2.5rem" },
+              fontWeight: 900,
+              color: "#FF9800",
+              textShadow: "1px 2px #000",
+              mb: 2,
+              fontFamily: "'Bangers', cursive",
+              WebkitTextStroke: "1px #FF9800", // adds thickness
+            }}
+          >
+            INSTANT <br /> SERVICES
+          </Box>
 
           <button
             style={{
@@ -210,10 +329,18 @@ const MobHome = () => {
       {/* Join as Worker */}
       <Grid container justifyContent="center">
         <Grid sx={{ my: 3, px: 1 }}>
-          <Box component="img" src={ArchisansWorker} alt="Sample" sx={{
-            width: "100%", height: "auto", objectFit: "cover",
-            borderRadius: 1, cursor: "pointer",
-          }} />
+          <Box
+            component="img"
+            src={ArchisansWorker}
+            alt="Sample"
+            sx={{
+              width: "100%",
+              height: "auto",
+              objectFit: "cover",
+              borderRadius: 1,
+              cursor: "pointer",
+            }}
+          />
         </Grid>
       </Grid>
 
@@ -228,8 +355,8 @@ const MobHome = () => {
             key={loc.name}
             sx={{
               width: 120,
-              flex: '0 0 auto',
-              textAlign: 'center',
+              flex: "0 0 auto",
+              textAlign: "center",
               mx: 1,
             }}
           >
@@ -239,10 +366,10 @@ const MobHome = () => {
               src={loc.image}
               alt={loc.name}
               sx={{
-                width: '100%',
+                width: "100%",
                 height: 90,
                 borderRadius: 2,
-                objectFit: 'cover',
+                objectFit: "cover",
               }}
             />
             {/* Text below */}
@@ -250,7 +377,7 @@ const MobHome = () => {
               sx={{
                 fontSize: 12,
                 fontWeight: 550,
-                color: '#000',
+                color: "#000",
               }}
             >
               {loc.name}
@@ -292,7 +419,7 @@ const MobHome = () => {
               )}
             </IconButton>
 
-            <CardContent sx={{ textAlign: "center", p: 0, pt: 2, }}>
+            <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
               <Box sx={{ position: "relative", mb: 1 }}>
                 <Avatar
                   src={arch.image}
@@ -301,7 +428,7 @@ const MobHome = () => {
                 />
                 <Typography
                   sx={{
-                    color: 'rgba(13, 162, 208, 1)',
+                    color: "rgba(13, 162, 208, 1)",
                     position: "absolute",
                     bottom: -5,
                     left: "50%",
@@ -311,7 +438,7 @@ const MobHome = () => {
                     fontSize: 9,
                     fontWeight: 500,
                     borderRadius: 0.2,
-                    border: '0.5px solid #ccc'
+                    border: "0.5px solid #ccc",
                   }}
                 >
                   View Details
@@ -324,12 +451,16 @@ const MobHome = () => {
               <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
                 {arch.role}
               </Typography>
-              <Rating name="read-only" value={4} sx={{ fontSize: 10 }} readOnly />
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
             </CardContent>
           </Card>
         ))}
       </HorizontalScroll>
-
 
       <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
         Plumber’s Near You
@@ -372,7 +503,7 @@ const MobHome = () => {
                 />
                 <Typography
                   sx={{
-                    color: 'rgba(13, 162, 208, 1)',
+                    color: "rgba(13, 162, 208, 1)",
                     position: "absolute",
                     bottom: -9,
                     left: "50%",
@@ -382,7 +513,7 @@ const MobHome = () => {
                     fontSize: 9,
                     fontWeight: 500,
                     borderRadius: 0.2,
-                    border: '0.5px solid #ccc'
+                    border: "0.5px solid #ccc",
                   }}
                 >
                   View Details
@@ -395,7 +526,12 @@ const MobHome = () => {
               <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
                 {plumber.role}
               </Typography>
-              <Rating name="read-only" value={4} sx={{ fontSize: 10 }} readOnly />
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
             </CardContent>
           </Card>
         ))}
@@ -403,6 +539,7 @@ const MobHome = () => {
 
       {/* Bottom Navigation */}
       <MobileBottomTab />
+      <AddressDrawer open={open} setOpen={setOpen} />
     </Box>
   );
 };

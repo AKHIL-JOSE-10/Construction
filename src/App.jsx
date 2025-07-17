@@ -1,5 +1,4 @@
-import { Routes, Route, useSearchParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import MobBookingInfo from "./modules/ClientPages/Bookings/Mobile/mobBookingInfo";
 import MobMyBookings from "./modules/ClientPages/Bookings/Mobile/mobmyBookings";
