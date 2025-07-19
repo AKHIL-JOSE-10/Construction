@@ -336,15 +336,83 @@ const navigate = useNavigate();
         </Box>
       </Grid> */}
 
-      <Grid container justifyContent="center">
-        <Grid sx={{ my: 3, px: 1 }}>
-          <Box component="img" src={InstantService} alt="Sample" sx={{
-            width: "100%", height: "auto", objectFit: "cover",
-            borderRadius: 1, cursor: "pointer",
-          }} />
-        </Grid>
-      </Grid>
+<Grid container justifyContent="center">
+  <Grid
+    sx={{
+      my: 3,
+      px: 1,
+      position: 'relative',
+      overflow: 'hidden', // clip extra lines
+      width: '300px', // or your desired width
+      borderRadius: 1,
+    }}
+  >
+    <Box
+      component="img"
+      src={InstantService}
+      alt="Sample"
+      sx={{
+        width: '100%',
+        height: 'auto',
+        display: 'block',
+        borderRadius: 1,
+      }}
+    />
 
+    {/* wind line 1 */}
+    <Box
+      sx={{
+        position: 'absolute',
+        top: '30%',
+        left: '-90%',
+        width: '50%',
+        height: '2px',
+        bgcolor: 'rgba(219, 213, 213, 0.3)',
+        animation: 'windMove 2s linear infinite',
+      }}
+    />
+
+    {/* wind line 2 */}
+    <Box
+      sx={{
+        position: 'absolute',
+        top: '50%',
+        left: '-120%',
+        width: '60%',
+        height: '2px',
+        bgcolor:  'rgba(219, 213, 213, 0.3)',
+        animation: 'windMove 3s linear infinite',
+      }}
+    />
+
+    {/* wind line 3 */}
+    <Box
+      sx={{
+        position: 'absolute',
+        top: '70%',
+        left: '-40%',
+        width: '40%',
+        height: '2px',
+        bgcolor:  'rgba(219, 213, 213, 0.3)',
+        animation: 'windMove 2.5s linear infinite',
+      }}
+    />
+  </Grid>
+</Grid>
+
+
+<style>
+{`
+@keyframes windMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200%); /* Move completely out to the right */
+  }
+}
+`}
+</style>
       {/* Join as Worker */}
       <Grid container justifyContent="center">
         <Grid sx={{ my: 3, px: 1 }}>
