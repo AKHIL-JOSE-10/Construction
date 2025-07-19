@@ -195,10 +195,10 @@ const navigate = useNavigate();
           </Box>
         </Box>
         <Stack direction="row" spacing={1} alignItems="center">
-          <IconButton>
-            <NotificationsNoneOutlined />
+          <IconButton onClick={() => navigate("/mobile-notifications")}>
+            <NotificationsNoneOutlined/>
           </IconButton>
-          <Avatar
+          <Avatar onClick={() => navigate("/editInfo")}
             sx={{ width: 32, height: 32 }}
             src={"https://randomuser.me/api/portraits/men/83.jpg"}
           />
@@ -215,7 +215,7 @@ const navigate = useNavigate();
 
       {/* Services */}
       <Box
-        sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 1, py: 0.7 }}
+        sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 2, py: 0.7 }}
       >
         <HorizontalScroll>
           {serviceLists.map((service) => (
@@ -372,6 +372,7 @@ const navigate = useNavigate();
         {popularServices.map((service) => (
           <Box
             key={service.name}
+            onClick={() => navigate("/mobile-search-worker")}
             sx={{
               flex: "0 0 auto",
               width: 60,
