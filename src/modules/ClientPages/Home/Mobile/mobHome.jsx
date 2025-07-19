@@ -80,22 +80,18 @@ const locations = [
 const architects = [
   {
     name: "Athul Murali T",
-    role: "Architect",
     image: "https://randomuser.me/api/portraits/men/10.jpg",
   },
   {
     name: "Alan Jose",
-    role: "Architect",
     image: "https://randomuser.me/api/portraits/men/11.jpg",
   },
   {
     name: "Arun Krishna Das",
-    role: "Architect",
     image: "https://randomuser.me/api/portraits/men/12.jpg",
   },
   {
-    name: "Joshy John",
-    role: "Architect",
+    name: "Joshya ",
     image: "https://randomuser.me/api/portraits/men/13.jpg",
   },
 ];
@@ -103,23 +99,72 @@ const architects = [
 const plumbers = [
   {
     name: "Akhil Jose",
-    role: "Plumber",
     image: "https://randomuser.me/api/portraits/men/20.jpg",
   },
   {
     name: "Alwin Mathew",
-    role: "Plumber",
     image: "https://randomuser.me/api/portraits/men/21.jpg",
   },
   {
     name: "Abhishek P S",
-    role: "Plumber",
     image: "https://randomuser.me/api/portraits/men/22.jpg",
   },
   {
-    name: "Joshy John",
-    role: "Plumber",
+    name: "Jaison",
     image: "https://randomuser.me/api/portraits/men/23.jpg",
+  },
+];
+
+const electricians = [
+  {
+    name: "Rahul Menon",
+    image: "https://randomuser.me/api/portraits/men/30.jpg",
+  },
+  {
+    name: "Vishnu R",
+    image: "https://randomuser.me/api/portraits/men/31.jpg",
+  },
+  {
+    name: "Nithin K",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    name: "Manu P",
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
+  },
+];
+const painters = [
+  {
+    name: "Ramesh Kumar",
+    image: "https://randomuser.me/api/portraits/men/40.jpg",
+  },
+  {
+    name: "Suresh Nair",
+    image: "https://randomuser.me/api/portraits/men/41.jpg",
+  },
+  {
+    name: "Ganesh Pillai",
+    image: "https://randomuser.me/api/portraits/men/42.jpg",
+  },
+  {
+    name: "Anil Menon",
+    image: "https://randomuser.me/api/portraits/men/43.jpg",
+  },
+  {
+    name: "Manoj Varma",
+    image: "https://randomuser.me/api/portraits/men/44.jpg",
+  },
+  {
+    name: "Rajeev R",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+  },
+  {
+    name: "Shyam Mohan",
+    image: "https://randomuser.me/api/portraits/men/46.jpg",
+  },
+  {
+    name: "Vijay Das",
+    image: "https://randomuser.me/api/portraits/men/47.jpg",
   },
 ];
 
@@ -215,7 +260,7 @@ const navigate = useNavigate();
 
       {/* Services */}
       <Box
-        sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 2, py: 0.7 }}
+        sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 2, }}
       >
         <HorizontalScroll>
           {serviceLists.map((service) => (
@@ -336,83 +381,15 @@ const navigate = useNavigate();
         </Box>
       </Grid> */}
 
-<Grid container justifyContent="center">
-  <Grid
-    sx={{
-      my: 3,
-      px: 1,
-      position: 'relative',
-      overflow: 'hidden', // clip extra lines
-      width: '300px', // or your desired width
-      borderRadius: 1,
-    }}
-  >
-    <Box
-      component="img"
-      src={InstantService}
-      alt="Sample"
-      sx={{
-        width: '100%',
-        height: 'auto',
-        display: 'block',
-        borderRadius: 1,
-      }}
-    />
+      <Grid container justifyContent="center">
+        <Grid sx={{ my: 3, px: 1 }}>
+          <Box component="img" src={InstantService} alt="Sample" sx={{
+            width: "100%", height: "auto", objectFit: "cover",
+            borderRadius: 1, cursor: "pointer",
+          }} />
+        </Grid>
+      </Grid>
 
-    {/* wind line 1 */}
-    <Box
-      sx={{
-        position: 'absolute',
-        top: '30%',
-        left: '-90%',
-        width: '50%',
-        height: '2px',
-        bgcolor: 'rgba(219, 213, 213, 0.3)',
-        animation: 'windMove 2s linear infinite',
-      }}
-    />
-
-    {/* wind line 2 */}
-    <Box
-      sx={{
-        position: 'absolute',
-        top: '50%',
-        left: '-120%',
-        width: '60%',
-        height: '2px',
-        bgcolor:  'rgba(219, 213, 213, 0.3)',
-        animation: 'windMove 3s linear infinite',
-      }}
-    />
-
-    {/* wind line 3 */}
-    <Box
-      sx={{
-        position: 'absolute',
-        top: '70%',
-        left: '-40%',
-        width: '40%',
-        height: '2px',
-        bgcolor:  'rgba(219, 213, 213, 0.3)',
-        animation: 'windMove 2.5s linear infinite',
-      }}
-    />
-  </Grid>
-</Grid>
-
-
-<style>
-{`
-@keyframes windMove {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(200%); /* Move completely out to the right */
-  }
-}
-`}
-</style>
       {/* Join as Worker */}
       <Grid container justifyContent="center">
         <Grid sx={{ my: 3, px: 1 }}>
@@ -606,7 +583,7 @@ const navigate = useNavigate();
                 {arch.name}
               </Typography>
               <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-                {arch.role}
+                2 km away
               </Typography>
               <Rating
                 name="read-only"
@@ -686,7 +663,7 @@ const navigate = useNavigate();
                 {plumber.name}
               </Typography>
               <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-                {plumber.role}
+                5 km away
               </Typography>
               <Rating
                 name="read-only"
@@ -698,6 +675,176 @@ const navigate = useNavigate();
           </Card>
         ))}
       </HorizontalScroll>
+
+<Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+  Electrician’s Near You
+</Typography>
+
+<HorizontalScroll>
+  {electricians.map((electrician) => (
+    <Card
+      key={electrician.name}
+      onClick={() =>
+        navigate("/mobile-workerpage", {
+          state: {
+            name: electrician.name,
+            img: electrician.image,
+            selectedService: "Electrician",
+          },
+        })
+      }
+      sx={{
+        minWidth: 120,
+        height: 165,
+        border: "1px solid #ccc",
+        borderRadius: 0.5,
+        position: "relative",
+      }}
+    >
+      <IconButton
+        onClick={() => toggleLike(electrician.name)}
+        sx={{
+          position: "absolute",
+          top: 2,
+          right: 2,
+          zIndex: 1,
+        }}
+      >
+        {liked.includes(electrician.name) ? (
+          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+        ) : (
+          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+        )}
+      </IconButton>
+
+      <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
+        <Box sx={{ position: "relative", mb: 1 }}>
+          <Avatar
+            src={electrician.image}
+            alt={electrician.name}
+            sx={{ mx: "auto", width: 70, height: 70 }}
+          />
+          <Typography
+            sx={{
+              color: "rgba(13, 162, 208, 1)",
+              position: "absolute",
+              bottom: -9,
+              left: "50%",
+              transform: "translateX(-50%)",
+              bgcolor: "#fff",
+              px: 0.5,
+              fontSize: 9,
+              fontWeight: 500,
+              borderRadius: 0.2,
+              border: "0.5px solid #ccc",
+            }}
+          >
+            View Details
+          </Typography>
+        </Box>
+
+        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+          {electrician.name}
+        </Typography>
+        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+          5 km away
+        </Typography>
+        <Rating
+          name="read-only"
+          value={4}
+          sx={{ fontSize: 10 }}
+          readOnly
+        />
+      </CardContent>
+    </Card>
+  ))}
+</HorizontalScroll>
+
+
+<Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+  Painter’s Near You
+</Typography>
+
+<HorizontalScroll>
+  {painters.map((painter) => (
+    <Card
+      key={painter.name}
+      onClick={() =>
+        navigate("/mobile-workerpage", {
+          state: {
+            name: painter.name,
+            img: painter.image,
+            selectedService: "Painter",
+          },
+        })
+      }
+      sx={{
+        minWidth: 120,
+        height: 165,
+        border: "1px solid #ccc",
+        borderRadius: 0.5,
+        position: "relative",
+      }}
+    >
+      <IconButton
+        onClick={() => toggleLike(painter.name)}
+        sx={{
+          position: "absolute",
+          top: 2,
+          right: 2,
+          zIndex: 1,
+        }}
+      >
+        {liked.includes(painter.name) ? (
+          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+        ) : (
+          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+        )}
+      </IconButton>
+
+      <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
+        <Box sx={{ position: "relative", mb: 1 }}>
+          <Avatar
+            src={painter.image}
+            alt={painter.name}
+            sx={{ mx: "auto", width: 70, height: 70 }}
+          />
+          <Typography
+            sx={{
+              color: "rgba(13, 162, 208, 1)",
+              position: "absolute",
+              bottom: -9,
+              left: "50%",
+              transform: "translateX(-50%)",
+              bgcolor: "#fff",
+              px: 0.5,
+              fontSize: 9,
+              fontWeight: 500,
+              borderRadius: 0.2,
+              border: "0.5px solid #ccc",
+            }}
+          >
+            View Details
+          </Typography>
+        </Box>
+
+        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+          {painter.name}
+        </Typography>
+        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+          5 km away
+        </Typography>
+        <Rating
+          name="read-only"
+          value={4}
+          sx={{ fontSize: 10 }}
+          readOnly
+        />
+      </CardContent>
+    </Card>
+  ))}
+</HorizontalScroll>
+
 
       {/* Bottom Navigation */}
       <MobileBottomTab />
