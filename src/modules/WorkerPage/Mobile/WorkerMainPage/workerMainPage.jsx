@@ -273,7 +273,6 @@ const WorkerMainPage = () => {
                     bgcolor: "#E0F7FA",
                     display: "inline-block",
                     px: 1,
-                    borderRadius: 1,
                 }}
             >
                 New Request
