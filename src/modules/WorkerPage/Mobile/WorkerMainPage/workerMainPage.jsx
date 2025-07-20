@@ -114,7 +114,7 @@ const WorkerMainPage = () => {
                             <Grid item xs={3} key={idx} textAlign="center">
                                 <Avatar
                                     sx={{
-                                        bgcolor: "#5233cbff",
+                                        bgcolor: "#4d2fb8ff",
                                         width: 60,
                                         height: 60,
                                         mx: "auto",
