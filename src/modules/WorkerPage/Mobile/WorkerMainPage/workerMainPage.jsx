@@ -131,7 +131,7 @@ const WorkerMainPage = () => {
                 </Box>
 
                 {/* My Service */}
-                <Box mt={4} pl={1}>
+                <Box mt={4} pl={1} mb={2}>
                     <Stack direction="row" justifyContent="space-between" alignItems="center">
                         <Typography fontWeight={600}>My Service</Typography>
                         <Typography fontSize={12} color="primary" mr={1}>
