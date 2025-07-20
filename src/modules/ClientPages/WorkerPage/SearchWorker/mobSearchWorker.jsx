@@ -160,7 +160,7 @@ const WorkerCard = ({ worker }) => (
                 fontSize: 14,
               }}
             >
-              <Typography sx={{ fontWeight: '600', mb: 0.7 }}>
+              <Typography sx={{ fontWeight: '700', mb: 0.7 }}>
                 {worker.name}
               </Typography>
 
