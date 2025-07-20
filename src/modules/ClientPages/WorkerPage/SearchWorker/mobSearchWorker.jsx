@@ -288,9 +288,6 @@ const MobSearchWorker = () => {
                 <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
                   Thrissur, Kerala
                 </Typography>
-                <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
-                  <KeyboardArrowDownOutlined sx={{ color: "grey" }} />
-                </IconButton>
               </Grid>
             </Box>
           </Box>
