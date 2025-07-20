@@ -86,9 +86,9 @@ const WorkerBottomBar = () => {
           sx={{
             width: 48,
             height: 48,
-            bgcolor: "rgba(163, 84, 15, 0.94)",
+            bgcolor: "#D1004D",
             borderRadius: "50%",
-            border: "4px solid rgb(107, 56, 5)",
+            border: "4px solid rgba(212, 192, 14, 1)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

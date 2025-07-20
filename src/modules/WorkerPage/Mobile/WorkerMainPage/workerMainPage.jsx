@@ -25,6 +25,7 @@ import {
 
 import plumbingImg from '@/assets/plumbingImg.png'
 import AdvertisementCarousel from "@/modules/ClientPages/Home/Mobile/AdvertisementCarousal";
+import WorkerBottomBar from "./workerBottomBar";
 
 const WorkerMainPage = () => {
     return (
@@ -91,7 +92,7 @@ const WorkerMainPage = () => {
             </Box>
 
 
-            <Grid sx={{ bgcolor: 'white', borderRadius: '8px 8px 0 0', }}>
+            <Grid sx={{ bgcolor: 'white', borderRadius: '8px 8px 0 0', mb:9 }}>
                 {/* Action Buttons */}
 
                 <Box >
@@ -113,7 +114,7 @@ const WorkerMainPage = () => {
                             <Grid item xs={3} key={idx} textAlign="center">
                                 <Avatar
                                     sx={{
-                                        bgcolor: "#4d2fb8ff",
+                                        bgcolor: "#2a30a0ff",
                                         width: 60,
                                         height: 60,
                                         mx: "auto",
@@ -306,7 +307,7 @@ const WorkerMainPage = () => {
                 </Box>
 
             </Grid>
-
+<WorkerBottomBar/>
         </Box>
     );
 };
