@@ -92,11 +92,11 @@ const WorkerMainPage = () => {
             </Box>
 
 
-            <Grid sx={{ bgcolor: 'white', borderRadius: '8px 8px 0 0', mb:9 }}>
+            <Grid sx={{ bgcolor: 'white', borderRadius: '8px 8px 0 0', mb:9}}>
                 {/* Action Buttons */}
 
                 <Box >
-                    <Grid container spacing={2} justifyContent="space-around" pt={3}>
+                    <Grid container  justifyContent="space-around" pt={3} px={1}>
                         {[
                             { text: "My Works", icon: <SuitcaseSimpleIcon size={32} color="white" /> },
                             { text: "Availability", icon: <CalendarCheckIcon size={32} color="white" /> },
