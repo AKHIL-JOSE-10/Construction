@@ -70,7 +70,7 @@ const WorkerMainPage = () => {
 
                     <Stack direction="row" spacing={1} alignItems="center">
                         <IconButton onClick={() => navigate("/mobile-notifications")}>
-                            <BellIcon color="white" />
+                            <BellIcon size={22} color="white" />
                         </IconButton>
                         <Avatar
                             onClick={() => navigate("/editInfo")}
@@ -98,14 +98,14 @@ const WorkerMainPage = () => {
                 <Box >
                     <Grid container justifyContent="space-around" pt={3} px={1}>
                         {[
-                            { text: "My Works", icon: <SuitcaseSimpleIcon size={32} color="white" /> },
-                            { text: "Availability", icon: <CalendarCheckIcon size={32} color="white" /> },
-                            { text: "Bank Details", icon: <BankIcon size={32} color="white" /> },
+                            { text: "My Works", icon: <SuitcaseSimpleIcon size={30} color="white" /> },
+                            { text: "Availability", icon: <CalendarCheckIcon size={30} color="white" /> },
+                            { text: "Bank Details", icon: <BankIcon size={30} color="white" /> },
                             {
                                 text: "Work Profile", icon: (
                                     <Box position="relative" display="inline-block">
-                                        <UserIcon size={32} color="#fff" />
-                                        <PencilSimpleIcon size={20} color="#ffffffff"
+                                        <UserIcon size={30} color="#fff" />
+                                        <PencilSimpleIcon size={18} color="#ffffffff"
                                             style={{ zIndex: 1, position: "absolute", bottom: 2, right: -5, }} />
                                     </Box>),
                             }
@@ -115,8 +115,8 @@ const WorkerMainPage = () => {
                                 <Avatar
                                     sx={{
                                         bgcolor: "#2a30a0ff",
-                                        width: 60,
-                                        height: 60,
+                                        width: 55,
+                                        height: 55,
                                         mx: "auto",
                                     }}
                                 >
