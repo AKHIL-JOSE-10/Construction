@@ -238,7 +238,7 @@ const WorkerCard = ({ worker }) => (
             },
           }}
         >
-          <Typography sx={{ fontSize: 14, color: 'white' }}>Book Now</Typography>
+          <Typography sx={{ fontSize: 13, color: 'white' }}>Book Now</Typography>
         </Button>
       </Card>
     </Box>
