@@ -51,17 +51,17 @@ const WorkerMainPage = () => {
                     <Box display="flex">
 
                         {/* Location */}
-                        <MapPinIcon size={22} />
+                        <MapPinIcon size={20} />
                         <Box display="flex" flexDirection="column" ml={1}>
                             <Typography
                                 variant="caption"
                                 color="white"
-                                sx={{ lineHeight: 1, fontSize: 12 }}
+                                sx={{ lineHeight: 1, fontSize: 11 }}
                             >
                                 Current Location
                             </Typography>
                             <Grid container>
-                                <Typography sx={{ fontWeight: "550", fontSize: 15, color: 'white' }}>
+                                <Typography sx={{ fontWeight: "550", fontSize: 14, color: 'white' }}>
                                     Thrissur, Kerala
                                 </Typography>
                             </Grid>
@@ -80,7 +80,7 @@ const WorkerMainPage = () => {
                     </Stack>
                 </Box>
 
-                <Typography mt={2} fontSize={20} fontWeight={600} color="white">
+                <Typography mt={2} fontSize={17} fontWeight={600} color="white">
                     Hi, Athul Murali T
                 </Typography>
                 <Typography fontSize={12} color="#ccc">
