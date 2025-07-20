@@ -79,11 +79,11 @@ const WorkerMainPage = () => {
                         />
                     </Stack>
                 </Box>
-                <Stack ml={1}>
-                    <Typography fontSize={17} fontWeight={600} color="white">
+                <Stack >
+                    <Typography fontSize={16} fontWeight={600} color="white">
                         Hi, Athul Murali T
                     </Typography>
-                    <Typography fontSize={12} color="#ccc">
+                    <Typography fontSize={11} color="#ccc">
                         Welcome to Archisans
                     </Typography>
                 </Stack>
@@ -92,7 +92,7 @@ const WorkerMainPage = () => {
             </Box>
 
 
-            <Grid sx={{ bgcolor: 'white', borderRadius: '8px 8px 0 0', mb: 9 }}>
+            <Grid sx={{ bgcolor: 'rgba(242, 244, 254, 1)', borderRadius: '8px 8px 0 0', mb: 9 }}>
                 {/* Action Buttons */}
 
                 <Box >
@@ -151,30 +151,22 @@ const WorkerMainPage = () => {
                         }}
                     >
                         {[
-                            {
-                                title: 'Plumbing Service',
-                            },
-                            {
-                                title: 'Electrical Service',
-                            },
-                            {
-                                title: 'Carpentry Service',
-                            },
-                            {
-                                title: 'Painting Service',
-                            },
-                            {
-                                title: 'Cleaning Service',
-                            },
+                            { title: 'Plumbing Service' },
+                            { title: 'Electrical Service' },
+                            { title: 'Carpentry Service' },
+                            { title: 'Painting Service' },
+                            { title: 'Cleaning Service' },
                         ].map((service, idx) => (
                             <Card
                                 key={idx}
                                 sx={{
-                                    minWidth: 100,
-                                    maxWidth: 120,
+                                    minWidth: 130,
+                                    maxWidth: 150,
                                     flex: '0 0 auto',
                                     p: 1,
-                                    border: '1px solid #ccc',
+                                    bgcolor: '#fff', // white background
+                                    borderRadius: 1, // optional: soft corners
+                                    boxShadow: '0px 2px 6px rgba(0,0,0,0.1)', // subtle shadow
                                 }}
                             >
                                 <img
@@ -182,7 +174,7 @@ const WorkerMainPage = () => {
                                     alt={service.title}
                                     style={{ width: '100%', borderRadius: 8 }}
                                 />
-                                <Typography fontSize={12} mt={1}>
+                                <Typography fontSize={12} fontWeight={600}>
                                     {service.title}
                                 </Typography>
                                 <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
@@ -264,9 +256,13 @@ const WorkerMainPage = () => {
                                                     mt: 0.5,
                                                 }}
                                             >
-                                                <Typography fontSize={12} color="grey">
-                                                    Palakkad
-                                                </Typography>
+                                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                                                    <MapPinIcon size={14} color="grey" />
+                                                    <Typography fontSize={12} color="grey">
+                                                        Palakkad
+                                                    </Typography>
+                                                </Box>
+
                                                 <Typography
                                                     fontSize={10}
                                                     sx={{
