@@ -79,24 +79,24 @@ const WorkerMainPage = () => {
                         />
                     </Stack>
                 </Box>
-<Stack ml={1}>
-                <Typography mt={2} fontSize={17} fontWeight={600} color="white">
-                    Hi, Athul Murali T
-                </Typography>
-                <Typography fontSize={12} color="#ccc">
-                    Welcome to Archisans
-                </Typography>
-</Stack>
+                <Stack ml={1}>
+                    <Typography fontSize={17} fontWeight={600} color="white">
+                        Hi, Athul Murali T
+                    </Typography>
+                    <Typography fontSize={12} color="#ccc">
+                        Welcome to Archisans
+                    </Typography>
+                </Stack>
 
 
             </Box>
 
 
-            <Grid sx={{ bgcolor: 'white', borderRadius: '8px 8px 0 0', mb:9}}>
+            <Grid sx={{ bgcolor: 'white', borderRadius: '8px 8px 0 0', mb: 9 }}>
                 {/* Action Buttons */}
 
                 <Box >
-                    <Grid container  justifyContent="space-around" pt={3} px={1}>
+                    <Grid container justifyContent="space-around" pt={3} px={1}>
                         {[
                             { text: "My Works", icon: <SuitcaseSimpleIcon size={32} color="white" /> },
                             { text: "Availability", icon: <CalendarCheckIcon size={32} color="white" /> },
@@ -219,7 +219,7 @@ const WorkerMainPage = () => {
                                 p: 2,
                                 mt: 2,
                                 boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-                                border:'1px solid #ccc'
+                                border: '1px solid #ccc'
                             }}
                         >
                             <Stack direction="row" spacing={2} alignItems="center">
@@ -240,46 +240,46 @@ const WorkerMainPage = () => {
                                     </Stack>
                                 </Box>
                             </Stack>
-<Divider sx={{ my: 2, height:2, color: "rgba(243, 235, 235, 1)" }} />
+                            <Divider sx={{ my: 2, height: 2, color: "rgba(243, 235, 235, 1)" }} />
                             <Box mt={2}>
                                 <Box justifyContent="space-between" alignItems="center">
-<Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 1 }}>
-    {/* avatar */}
-    <Avatar
-        src="https://randomuser.me/api/portraits/men/45.jpg"
-        alt="Dr. Joseph Brostito"
-        sx={{ width: 40, height: 40 }}
-    />
-    
-    <Box sx={{ flex: 1 }}>
-        <Typography fontSize={14} fontWeight={600}>
-            Daison Babu
-        </Typography>
+                                    <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 1 }}>
+                                        {/* avatar */}
+                                        <Avatar
+                                            src="https://randomuser.me/api/portraits/men/45.jpg"
+                                            alt="Dr. Joseph Brostito"
+                                            sx={{ width: 40, height: 40 }}
+                                        />
 
-        <Box
-            sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                width: '100%',
-                mt: 0.5,
-            }}
-        >
-            <Typography fontSize={12} color="grey">
-                Palakkad
-            </Typography>
-            <Typography
-                fontSize={10}
-                sx={{
-                    bgcolor: "#E0F7FA",
-                    display: "inline-block",
-                    px: 1,
-                }}
-            >
-                New Request
-            </Typography>
-        </Box>
-    </Box>
-</Box>
+                                        <Box sx={{ flex: 1 }}>
+                                            <Typography fontSize={14} fontWeight={600}>
+                                                Daison Babu
+                                            </Typography>
+
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between',
+                                                    width: '100%',
+                                                    mt: 0.5,
+                                                }}
+                                            >
+                                                <Typography fontSize={12} color="grey">
+                                                    Palakkad
+                                                </Typography>
+                                                <Typography
+                                                    fontSize={10}
+                                                    sx={{
+                                                        bgcolor: "#E0F7FA",
+                                                        display: "inline-block",
+                                                        px: 1,
+                                                    }}
+                                                >
+                                                    New Request
+                                                </Typography>
+                                            </Box>
+                                        </Box>
+                                    </Box>
                                     <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%', mt: 2 }}>
                                         <Button
                                             variant="outlined"
@@ -306,7 +306,7 @@ const WorkerMainPage = () => {
                 </Box>
 
             </Grid>
-<WorkerBottomBar/>
+            <WorkerBottomBar />
         </Box>
     );
 };
