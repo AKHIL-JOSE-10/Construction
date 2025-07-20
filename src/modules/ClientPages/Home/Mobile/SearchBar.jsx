@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, InputBase } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
+import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 
 const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
   const navigate = useNavigate();
@@ -21,16 +21,19 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
         alignItems: "center",
         width: "100%",
         cursor: "pointer",
-        border: '1px solid #ccc',   // subtle light grey border
+        border: "1px solid #ccc",
+        boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.08)", // subtle shadow
+        transition: "box-shadow 0.3s ease",
+        "&:hover": {
+          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.12)", // stronger on hover
+        },
       }}
       onClick={handleClick}
     >
-      <SearchIcon
-        sx={{
-          fontSize: 26,              
-          color: "#b0b0b0",        
-          mx: 2
-        }}
+      <MagnifyingGlassIcon
+        size={20}
+        color="#b0b0b0"
+        style={{ marginLeft: 16, marginRight: 16 }}
       />
       <InputBase
         placeholder={placeholder}

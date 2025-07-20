@@ -1,487 +1,344 @@
-import React, {useState } from "react";
+import React from "react";
 import {
-  Box,
   Grid,
+  Box,
   Typography,
-  Input,
   Avatar,
   IconButton,
+  Button,
+  Stack,
+  Card,
+  InputBase
 } from "@mui/material";
+
+import { useNavigate } from "react-router-dom";
 import {
   LocationOnOutlined,
-  Search,
-  Tune,
-  AccessTime as AccessTimeIcon,
-  BookmarkBorder,
-  Bookmark,
-  ArrowBackIos,
+  KeyboardArrowDownOutlined,
+  ArrowBackIos
 } from "@mui/icons-material";
-import { useNavigate,useLocation } from "react-router-dom";
-import StarIcon from "@mui/icons-material/Star";
-import VerifiedIcon from "@mui/icons-material/Verified";
-import AdvertisementCarousal from "../../OldHome/Mobile/AdvertisementCarousal";
 
-// Randomly generate 2 unavailable dates per worker from the set
-const generateUnavailableDates = () => {
-  const allDates = [17, 18, 19, 20, 21, 22];
-  const unavailable = new Set();
-  while (unavailable.size < 3) {
-    const rand = allDates[Math.floor(Math.random() * allDates.length)];
-    unavailable.add(rand);
-  }
-  return [...unavailable];
-};
+import {
+  BookmarkSimpleIcon,
+  StarIcon,
+  FilePlusIcon,
+  ChatTextIcon,
+  ShareNetworkIcon,
+  PhoneIcon,
+  MapPinIcon,
+  BellIcon,
+  MagnifyingGlassIcon,
+  SlidersHorizontalIcon
+} from "@phosphor-icons/react";
+import SearchBar from "../../Home/Mobile/SearchBar";
 
+// Dummy data
 const workers = [
-    {
-    id: 1,
-    name: "Akhil Raj",
-    price: "$5.99",
+  {
+    name: "Ramesh Nair",
+    location: "Palakkad",
+    rating: 4.7,
+    reviews: 312,
+    image: "https://randomuser.me/api/portraits/men/50.jpg",
+  },
+  {
+    name: "Suresh Kumar",
+    location: "Palakkad",
+    rating: 4.6,
+    reviews: 275,
+    image: "https://randomuser.me/api/portraits/men/51.jpg",
+  },
+  {
+    name: "Arun Pillai",
+    location: "Palakkad",
+    rating: 4.7,
+    reviews: 288,
+    image: "https://randomuser.me/api/portraits/men/52.jpg",
+  },
+  {
+    name: "Vivek Raj",
+    location: "Palakkad",
     rating: 4.8,
     reviews: 320,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/men/11.jpg",
+    image: "https://randomuser.me/api/portraits/men/53.jpg",
   },
   {
-    id: 2,
-    name: "Bhaskaran",
-    price: "$6.88",
-    rating: 3.8,
-    reviews: 40,
-    verified: false,
-    img: "https://randomuser.me/api/portraits/men/12.jpg",
+    name: "Kiran Mohan",
+    location: "Palakkad",
+    rating: 4.7,
+    reviews: 299,
+    image: "https://randomuser.me/api/portraits/men/54.jpg",
   },
   {
-    id: 3,
-    name: "Shekaran",
-    price: "6.20",
-    rating: 4.1,
-    reviews: 95,
-    verified: false,
-    img: "https://randomuser.me/api/portraits/men/21.jpg",
+    name: "Ajay Menon",
+    location: "Palakkad",
+    rating: 4.5,
+    reviews: 267,
+    image: "https://randomuser.me/api/portraits/men/55.jpg",
   },
   {
-    id: 4,
-    name: "Nikhil Babu",
-    price: "$7.10",
-    rating: 4.2,
-    reviews: 150,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/men/35.jpg",
+    name: "Rahul Varma",
+    location: "Palakkad",
+    rating: 4.9,
+    reviews: 330,
+    image: "https://randomuser.me/api/portraits/men/56.jpg",
   },
   {
-    id: 5,
-    name: "Arjun", 
-    price: "$6.30",
-    rating: 4.4,
-    reviews: 134,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/men/49.jpg",
+    name: "Abhishek R",
+    location: "Palakkad",
+    rating: 4.6,
+    reviews: 310,
+    image: "https://randomuser.me/api/portraits/men/57.jpg",
   },
   {
-    id: 6,
-    name: "Santhosh",
-    price: "$6.95",
-    rating: 3.7,
-    reviews: 70,
-    verified: false,
-    img: "https://randomuser.me/api/portraits/men/14.jpg",
+    name: "Nikhil Joseph",
+    location: "Palakkad",
+    rating: 4.7,
+    reviews: 305,
+    image: "https://randomuser.me/api/portraits/men/58.jpg",
   },
   {
-    id: 7,
-    name: "Kumaran",
-    price: "$5.85",
-    rating: 4.0,
-    reviews: 112,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/men/30.jpg",
-  },
-  {
-    id: 8,
-    name: "Abdul",
-    price: "$6.45",
-    rating: 4.3,
-    reviews: 160,
-    verified: true,
-    img: "https://randomuser.me/api/portraits/men/18.jpg",
+    name: "Manoj Das",
+    location: "Palakkad",
+    rating: 4.8,
+    reviews: 315,
+    image: "https://randomuser.me/api/portraits/men/59.jpg",
   },
 ];
 
-const relatedSearches = ["Architects", "Steel Fabricators", "Civil Engineers"];
+const WorkerCard = ({ worker }) => (
+  <Grid sx={{px:1.5}}>
+    <Box
+      sx={{
+        bgcolor: "#fff",
+        borderRadius: 1,
+        boxShadow: "0px 2px 8px rgba(0,0,0,0.1)",
+        mb: 2,
+        p: 2,
+        position: "relative", // Important: make parent relative
+      }}
+    >
+      {/* TOP-LEFT SAVED ICON */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 8,
+          right: 8,
+          width: 32,
+          height: 22,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <BookmarkSimpleIcon size={23} />
+      </Box>
+
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          boxShadow: "none",
+          mb: 1
+        }}
+      >
+        <Stack direction="row" spacing={2} alignItems={'center'}>
+          <Avatar
+            src={worker.image}
+            alt={worker}
+            sx={{ width: 56, height: 56 }}
+          />
+
+          <Box>
+            <Box sx={{ display: "flex", flexDirection: "column", color: "text.secondary", fontSize: 14 }}>
+              <Typography sx={{ fontWeight: '600', mb: 0.7 }}>{worker.name}</Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, alignItems: 'center' }}>
+                <Stack sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                  <MapPinIcon size={16} style={{ marginRight: 4 }} />
+                  <Typography color="#a7a3a3ff" fontSize={14}>{worker.location}</Typography>
+                </Stack>
+                <Box sx={{ display: "flex", flexDirection: 'row', alignItems: "center", mt: 1 }}>
+                  <StarIcon size={14} weight="fill" color="#FFB400" />
+                  <Typography sx={{ fontSize: 13, mx: 0.5 }}>
+                    {worker.rating.toFixed(1)}{" "}
+                  </Typography>
+                  <Typography style={{ color: "grey", fontSize: 10 }}>
+                    ({worker.reviews} reviews)
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+
+          </Box>
+        </Stack>
+
+        {/* <Box sx={{ ml: "auto" }}>
+        <IconButton>
+          <BookmarkSimpleIcon size={20} />
+        </IconButton>
+      </Box> */}
+      </Card>
+
+      <Card
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mt: 1,
+          boxShadow: "none",
+        }}
+      >
+        <Stack direction="row" gap={0.2} ml={-1}>
+          <IconButton>
+            <FilePlusIcon color="black" size={27} />
+          </IconButton>
+          <IconButton>
+            <ChatTextIcon size={27} color="black" />
+          </IconButton>
+          <IconButton>
+            <ShareNetworkIcon size={27} color="black" />
+          </IconButton>
+          <IconButton>
+            <PhoneIcon size={27} color="black" />
+          </IconButton>
+        </Stack>
+
+        <Button
+          variant="contained"
+          disabled
+          sx={{
+            bgcolor: "#D1004D",
+            borderRadius: 0.6,
+            px: 4,
+            py: 0.5,
+            textTransform: "none",
+            fontWeight: 600,
+            "&.Mui-disabled": {
+              bgcolor: "#D1004D",
+              color: "#fff",
+              opacity: 1,
+            },
+          }}
+        >
+          <Typography sx={{ fontSize: 14, color: 'white' }}>Book Now</Typography>
+        </Button>
+      </Card>
+    </Box>
+
+  </Grid>
+);
 
 const MobSearchWorker = () => {
 
-  const location = useLocation();
-  const selectedService = location.state?.selectedService;
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState("");
 
-
-  const filteredWorkers = workers.filter((worker) =>
-    worker.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const [bookmarkedWorkers, setBookmarkedWorkers] = useState([]);
-
-  const handleBookmarkClick = (event, workerId) => {
-    event.stopPropagation(); // Prevent navigation
-    setBookmarkedWorkers((prev) =>
-      prev.includes(workerId)
-        ? prev.filter((id) => id !== workerId)
-        : [...prev, workerId]
-    );
-  };
-
-  const handleClick = (worker) => {
-    navigate("/mobile-workerpage", {
-      state: {
-        name: worker.name,
-        img: worker.img,
-        selectedService: location.state?.selectedService,
-      },
-    });
+  const handleClick = () => {
+    navigate("/mobile-Recent-Search");
   };
 
   return (
-    <Box>
-      <Grid sx={{ px: 1.5, pt: 1.5 }}>
-      <Box px={0} display="flex" alignItems="center">
-        {/* Left Side: Back Arrow + Location Info */}
-          <ArrowBackIos
-            sx={{ fontSize: 23, cursor: "pointer", color: 'grey' }}
-            onClick={() => navigate(-1)}
-          />
-          <Box display="flex">
-            <LocationOnOutlined sx={{ fontSize: 25, mr: 1, mt: 0.5, color: 'black' }} />
-            <Box display="flex" flexDirection="column">
-              <Typography variant="caption" color="gray" sx={{ lineHeight: 1, fontSize: 13 }}>
-                Current Location
-              </Typography>
-              <Typography sx={{ fontWeight: 'Bold', fontSize: 15 }}>
-                Thrissur, Kerala
-              </Typography>
+    <Grid sx={{ bgcolor: "#f8f0f0ff" }}>
+      <Grid sx={{ pt:2}}>
+<Box
+  sx={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    mb: 2,
+    pr:2
+  }}
+>
+  <Box display="flex" alignItems="center">
+    {/* Back Arrow */}
+    <IconButton onClick={() => navigate(-1)} sx={{ mr: 1 }}>
+      <ArrowBackIos sx={{ fontSize: 20, color: "black" }} />
+    </IconButton>
+
+    {/* Location */}
+    <LocationOnOutlined
+      sx={{ fontSize: 25, mr: 1, mt: 0.5, color: "black" }}
+    />
+    <Box display="flex" flexDirection="column">
+      <Typography
+        variant="caption"
+        color="gray"
+        sx={{ lineHeight: 1, fontSize: 13 }}
+      >
+        Current Location
+      </Typography>
+      <Grid container>
+        <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
+          Thrissur, Kerala
+        </Typography>
+        <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
+          <KeyboardArrowDownOutlined sx={{ color: "grey" }} />
+        </IconButton>
+      </Grid>
+    </Box>
+  </Box>
+
+  <Stack direction="row" spacing={1} alignItems="center">
+    <IconButton onClick={() => navigate("/mobile-notifications")}>
+      <BellIcon />
+    </IconButton>
+    <Avatar
+      onClick={() => navigate("/editInfo")}
+      sx={{ width: 32, height: 32 }}
+      src={"https://randomuser.me/api/portraits/men/83.jpg"}
+    />
+  </Stack>
+</Box>
+
+        {/* SearchBar */}
+        <Box sx={{ mb: 3,px:1 }}>
+          <Box
+            sx={{
+              mt: 2,
+              bgcolor: "#fff",
+              borderRadius: 1,
+              height: 40,
+              display: "flex",
+              alignItems: "center",
+              width: "100%",
+              cursor: "pointer",
+              border: "1px solid #ccc",
+              boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.08)",
+              transition: "box-shadow 0.3s ease",
+              "&:hover": {
+                boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.12)",
+              },
+            }}
+            onClick={handleClick}
+          >
+            <MagnifyingGlassIcon
+              size={20}
+              color="#b0b0b0"
+              style={{ marginLeft: 16, marginRight: 16 }}
+            />
+            <InputBase
+              placeholder={'Search for “Plumbing Services”'}
+              sx={{
+                flex: 1,
+                fontSize: "0.8rem",
+                color: "#555",
+              }}
+              inputProps={{ readOnly: true }}
+            />
+            <Box sx={{ pr: 1 }}>
+              <SlidersHorizontalIcon
+                size={20}
+                color="black"
+              />
             </Box>
           </Box>
-      </Box>
-
-        {/* Search Bar */}
-        <Box
-          sx={{
-            bgcolor: "#fff",
-            borderRadius: "12px",
-            px: 1.1,
-            py: 0.3,
-            my: 1.5,
-            display: "flex",
-            alignItems: "center",
-            border: "0.5px solid grey"
-          }}
-        >
-          <Search sx={{ color: "gray", mr: 1 }} />
-          <Input
-            fullWidth
-            disableUnderline
-            placeholder="Search Services & Workers"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            sx={{ fontSize: 14 }}
-          />
-          <IconButton onClick={() => navigate('/mobile-Search-filter')}
-            >
-            <Tune />
-          </IconButton>
         </Box>
+
       </Grid>
-<Box>
-  <AdvertisementCarousal />
-</Box>
-      {/* Worker Cards */}
-      <Grid container px={0} mt={2} sx={{ justifyContent: "space-evenly" }}>
-        {filteredWorkers.map((worker, index) => {
-          const unavailableDates = generateUnavailableDates();
-          return (
-            <Grid key={index} sx={{ display: "flex", width: "45%" }}>
-              <Box
-                onClick={() => handleClick(worker)}
-                sx={{
-                  position: "relative",
-                  borderRadius: 0.5,
-                  width: "100%",
-                  height: "fit-content",
-                  mb: 1.5,
-                  border: "1px solid rgba(184, 147, 87, 0.3)",
-                  boxShadow: "0px 2px 8px rgba(90, 69, 1, 0.1)",
-                  overflow: "hidden",
-                  cursor: "pointer", // Optional for visual cue,
-                  WebkitTapHighlightColor: "transparent",
-                }}
-              >
-                {/* Gradient Circle - bottom right */}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: "58%",
-                    right: "-14%",
-                    width: "116%",
-                    height: "65%",
-                    borderRadius: "47%",
-                    borderBottomRightRadius: "41%",
-                    background:
-                      "radial-gradient(circle at center, rgba(194, 137, 67, 0.2))",
-                    pointerEvents: "7one",
-                  }}
-                />
-                <Box
-                  sx={{
-                    p: 1,
-                    mt: 0.5,
-                    alignItems: "center",
-                    position: "relative",
-                  }}
-                >
-                  <Box display="flex" mb={1}>
-                    <Avatar
-                      src={worker.img}
-                      sx={{
-                        ml: -0.3,
-                        width: 45,
-                        height: 45,
-                        border: "3px solid white",
-                      }}
-                    />
-                    <Box ml={1}>
-                      <Typography
-                        fontWeight={600}
-                        fontSize={15}
-                        sx={{ mt: worker.verified ? "none" : 1.8 }}
-                      >
-                        {worker.name}
-                      </Typography>
-                      {worker.verified && (
-                        <Box
-                          sx={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            bgcolor: "white",
-                            px: 0.5,
-                            py: 0.3,
-                            borderRadius: 0.5,
-                            fontSize: "8px",
-                            mt: 0.5,
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              fontSize: "9px",
-                              fontWeight: 600,
-                              color: "#0492C2",
-                            }}
-                          >
-                            Archisans
-                          </Typography>
-                          <VerifiedIcon
-                            sx={{ fontSize: 10, ml: 0.3, color: "#0492C2" }}
-                          />
-                        </Box>
-                      )}
-                    </Box>
-                  </Box>
-
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Typography
-                      fontSize={10}
-                      color="text.secondary"
-                      sx={{ display: "flex", alignItems: "center" }}
-                    >
-                      <LocationOnOutlined sx={{ fontSize: 13, mr: 0.3 }} />
-                      <Typography sx={{ fontSize: "100%", color: "grey" }}>
-                        5.1 km away{" "}
-                      </Typography>
-                    </Typography>
-                  </Box>
-
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    gap={0.5}
-                    mt={0.5}
-                    mb={0.6}
-                    flexWrap="wrap"
-                  >
-                    <AccessTimeIcon
-                      sx={{
-                        fontSize: 11,
-                        color: "white",
-                        bgcolor: "#0492C2",
-                        borderRadius: 10,
-                        ml: 0.2,
-                      }}
-                    />
-                    {[17, 18, 19, 20, 21, 22].map((date) => (
-                      <Typography
-                        key={date}
-                        fontSize="10px"
-                        sx={{
-                          color: unavailableDates.includes(date)
-                            ? "red"
-                            : "text.secondary",
-                        }}
-                      >
-                        {date}
-                      </Typography>
-                    ))}
-                  </Box>
-
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Box display="flex" alignItems="center" mr={0.5}>
-                      <StarIcon
-                        sx={{ fontSize: 14, color: "#fbc02d", mr: 0.4 }}
-                      />
-                      <Typography fontSize={11} lineHeight={1}>
-                        {worker.rating}
-                      </Typography>
-                    </Box>
-                    <Typography fontSize={9.5} lineHeight={1}>
-                      ({worker.reviews} reviews)
-                    </Typography>
-                  </Box>
-
-                  <Typography fontWeight="bold" fontSize={16} pt={1} pl={0.5}>
-                    {worker.price} <small>/hour</small>
-                  </Typography>
-
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: 1,
-                      right: 4,
-                      display: "flex",
-                      justifyContent: "end",
-                      gap: 4,
-                      my: 0.5,
-                      width: "99%",
-                    }}
-                  >
-                    <IconButton
-                      onClick={(event) => handleBookmarkClick(event, worker.id)}
-                      sx={{ position: "absolute", right: -5, bottom: -5 }}
-                    >
-                      {bookmarkedWorkers.includes(worker.id) ? (
-                        <Bookmark sx={{ fontSize: 25, color: "#B49176" }} /> // Filled icon
-                      ) : (
-                        <BookmarkBorder
-                          sx={{ fontSize: 25, color: "inherit" }}
-                        /> // Outlined icon
-                      )}
-                    </IconButton>
-
-                    {/* <Button
-                      variant="contained"
-                      size="small"
-                      sx={{
-                        bgcolor: "#b0876d",
-                        color: "#fff",
-                        borderRadius: "20px",
-                        textTransform: "none",
-                        px: 3,
-                        fontSize: 12,
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 4,
-                        height: 30,
-                      }}
-                    >
-                      <Typography sx={{ fontSize: 11, color: "white" }}>Book</Typography>
-                      <Box
-                        sx={{
-                          bgcolor: "#fff",
-                          color: "#b0876d",
-                          borderRadius: "50%",
-                          width: 18,
-                          height: 18,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <ArrowForwardIcon sx={{ fontSize: 14 }} />
-                      </Box>
-                    </Button> */}
-                  </Box>
-                </Box>
-              </Box>
-            </Grid>
-          );
-        })}
-      </Grid>
-
-        <Typography
-          my={1}
-          sx={{
-            color: "#888",
-            fontWeight: 500,
-            textDecoration: "underline",
-            cursor: "pointer",
-            fontSize: 14,
-            textAlign: "center",
-          }}
-        >
-          View More
-        </Typography>
-
-      {/* Related Searches */}
-      <Box sx={{ mt: 3, px: 1.5 }}>
-        <Typography sx={{ fontWeight: 600, mb: 1, fontSize: 20 }}>
-          Related Searches
-        </Typography>
-        <Grid
-          container
-          sx={{ overflowX: "auto", flexWrap: "nowrap", gap: 2, px: 1 }}
-        >
-          {relatedSearches.map((item, idx) => (
-            <Grid item key={idx} sx={{ flexShrink: 0 }}>
-              <Box
-                sx={{
-                  bgcolor: "#fff",
-                  width: 120,
-                  height: 90,
-                  borderRadius: 0.5,
-                  border: "0.5px solid grey",
-                  mb: 2,
-                  pl: 2,
-                  pt: 1,
-                  pb: 1,
-                  position: "relative",
-                  overflow: "hidden",
-                }}
-              >
-                <Typography fontSize={14}>{item}</Typography>
-                <Box
-                  sx={{
-                    position: "absolute",
-                    bottom: -40,
-                    right: -20,
-                    width: 100,
-                    height: 100,
-                    borderRadius: "50%",
-                    background:
-                      "radial-gradient(circle at center, rgba(62, 149, 30, 0.3))",
-                    pointerEvents: "none",
-                  }}
-                />
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </Box>
+      {workers.map((worker, index) => (
+        <WorkerCard key={index} worker={worker} />
+      ))}
+    </Grid>
   );
 };
 
