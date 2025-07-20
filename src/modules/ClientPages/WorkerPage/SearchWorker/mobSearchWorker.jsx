@@ -268,7 +268,7 @@ const MobSearchWorker = () => {
         >
           <Box display="flex" alignItems="center">
             {/* Back Arrow */}
-            <IconButton onClick={() => navigate(-1)} sx={{ mr: 1 }}>
+            <IconButton onClick={() => navigate(-1)} >
               <ArrowBackIos sx={{ fontSize: 20, color: "black" }} />
             </IconButton>
 
