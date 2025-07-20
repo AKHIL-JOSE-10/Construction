@@ -79,13 +79,16 @@ const WorkerMainPage = () => {
                         />
                     </Stack>
                 </Box>
-
+<Stack ml={1}>
                 <Typography mt={2} fontSize={17} fontWeight={600} color="white">
                     Hi, Athul Murali T
                 </Typography>
                 <Typography fontSize={12} color="#ccc">
                     Welcome to Archisans
                 </Typography>
+</Stack>
+
+
             </Box>
 
 
