@@ -45,7 +45,6 @@ const WorkerMainPage = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         mb: 2,
-                        pr: 2
                     }}
                 >
                     <Box display="flex">
