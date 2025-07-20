@@ -114,7 +114,7 @@ const WorkerCard = ({ worker }) => (
         borderRadius: 1,
         boxShadow: "0px 2px 8px rgba(0,0,0,0.1)",
         mb: 2,
-        p: 2,
+        p: 1,
         position: "relative", // Important: make parent relative
       }}
     >
@@ -140,44 +140,60 @@ const WorkerCard = ({ worker }) => (
           justifyContent: "space-between",
           alignItems: "center",
           boxShadow: "none",
-          mb: 1
+          p:0.5
         }}
       >
         <Stack direction="row" spacing={2} alignItems={'center'}>
           <Avatar
             src={worker.image}
             alt={worker}
-            sx={{ width: 56, height: 56 }}
+            sx={{ width: 46, height: 46 }}
           />
 
           <Box>
-            <Box sx={{ display: "flex", flexDirection: "column", color: "text.secondary", fontSize: 14 }}>
-              <Typography sx={{ fontWeight: '600', mb: 0.7 }}>{worker.name}</Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'row', gap: 4, alignItems: 'center' }}>
-                <Stack sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                  <MapPinIcon size={16} style={{ marginRight: 4 }} />
-                  <Typography color="#a7a3a3ff" fontSize={14}>{worker.location}</Typography>
-                </Stack>
-                <Box sx={{ display: "flex", flexDirection: 'row', alignItems: "center", mt: 1 }}>
-                  <StarIcon size={14} weight="fill" color="#FFB400" />
-                  <Typography sx={{ fontSize: 13, mx: 0.5 }}>
-                    {worker.rating.toFixed(1)}{" "}
-                  </Typography>
-                  <Typography style={{ color: "grey", fontSize: 10 }}>
-                    ({worker.reviews} reviews)
-                  </Typography>
-                </Box>
-              </Box>
-            </Box>
+<Box
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    color: "text.secondary",
+    fontSize: 14,
+  }}
+>
+  <Typography sx={{ fontWeight: '600', mb: 0.7 }}>
+    {worker.name}
+  </Typography>
+
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: 'row',
+      gap: 4,
+      alignItems: 'center',
+    }}
+  >
+    {/* Location */}
+    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <MapPinIcon size={16} style={{ marginRight: 4 }} />
+      <Typography color="#a7a3a3ff" fontSize={14}>
+        {worker.location}
+      </Typography>
+    </Box>
+
+    {/* Rating */}
+    <Box sx={{ display: "flex", flexDirection: 'row', alignItems: "center" }}>
+      <StarIcon size={14} weight="fill" color="#FFB400" />
+      <Typography sx={{ fontSize: 13, mx: 0.5 }}>
+        {worker.rating.toFixed(1)}{" "}
+      </Typography>
+      <Typography sx={{ color: "grey", fontSize: 10 }}>
+        ({worker.reviews} reviews)
+      </Typography>
+    </Box>
+  </Box>
+</Box>
 
           </Box>
         </Stack>
-
-        {/* <Box sx={{ ml: "auto" }}>
-        <IconButton>
-          <BookmarkSimpleIcon size={20} />
-        </IconButton>
-      </Box> */}
       </Card>
 
       <Card
@@ -185,22 +201,22 @@ const WorkerCard = ({ worker }) => (
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          mt: 1,
           boxShadow: "none",
+          mt:0.5
         }}
       >
-        <Stack direction="row" gap={0.2} ml={-1}>
+        <Stack direction="row" gap={0.2} >
           <IconButton>
-            <FilePlusIcon color="black" size={27} />
+            <FilePlusIcon color="black" size={25} />
           </IconButton>
           <IconButton>
-            <ChatTextIcon size={27} color="black" />
+            <ChatTextIcon size={25} color="black" />
           </IconButton>
           <IconButton>
-            <ShareNetworkIcon size={27} color="black" />
+            <ShareNetworkIcon size={25} color="black" />
           </IconButton>
           <IconButton>
-            <PhoneIcon size={27} color="black" />
+            <PhoneIcon size={25} color="black" />
           </IconButton>
         </Stack>
 
