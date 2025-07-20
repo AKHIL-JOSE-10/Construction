@@ -344,7 +344,7 @@ const MobSearchWorker = () => {
             />
             <Box sx={{ pr: 1 }}>
               <SlidersHorizontalIcon
-                size={20}
+                size={26}
                 color="black"
               />
             </Box>
