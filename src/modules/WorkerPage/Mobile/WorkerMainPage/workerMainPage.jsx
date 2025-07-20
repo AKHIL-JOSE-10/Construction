@@ -92,7 +92,7 @@ const WorkerMainPage = () => {
             </Box>
 
 
-            <Grid sx={{ bgcolor: 'rgba(242, 244, 254, 1)', borderRadius: '8px 8px 0 0', mb: 9 }}>
+            <Grid sx={{ bgcolor: 'rgba(246, 247, 255, 1)', borderRadius: '8px 8px 0 0', mb: 9 }}>
                 {/* Action Buttons */}
 
                 <Box>
