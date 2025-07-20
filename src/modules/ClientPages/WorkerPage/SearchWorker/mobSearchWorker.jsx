@@ -107,7 +107,7 @@ const workers = [
 ];
 
 const WorkerCard = ({ worker }) => (
-  <Grid sx={{px:1.5}}>
+  <Grid sx={{ px: 1.5 }}>
     <Box
       sx={{
         bgcolor: "#fff",
@@ -140,7 +140,8 @@ const WorkerCard = ({ worker }) => (
           justifyContent: "space-between",
           alignItems: "center",
           boxShadow: "none",
-          p:0.5
+          px: 0.5,
+          py: 1
         }}
       >
         <Stack direction="row" spacing={2} alignItems={'center'}>
@@ -151,46 +152,46 @@ const WorkerCard = ({ worker }) => (
           />
 
           <Box>
-<Box
-  sx={{
-    display: "flex",
-    flexDirection: "column",
-    color: "text.secondary",
-    fontSize: 14,
-  }}
->
-  <Typography sx={{ fontWeight: '600', mb: 0.7 }}>
-    {worker.name}
-  </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                color: "text.secondary",
+                fontSize: 14,
+              }}
+            >
+              <Typography sx={{ fontWeight: '600', mb: 0.7 }}>
+                {worker.name}
+              </Typography>
 
-  <Box
-    sx={{
-      display: 'flex',
-      flexDirection: 'row',
-      gap: 4,
-      alignItems: 'center',
-    }}
-  >
-    {/* Location */}
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <MapPinIcon size={16} style={{ marginRight: 4 }} />
-      <Typography color="#a7a3a3ff" fontSize={14}>
-        {worker.location}
-      </Typography>
-    </Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  gap: 4,
+                  alignItems: 'center',
+                }}
+              >
+                {/* Location */}
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <MapPinIcon size={16} style={{ marginRight: 4 }} />
+                  <Typography color="#a7a3a3ff" fontSize={14}>
+                    {worker.location}
+                  </Typography>
+                </Box>
 
-    {/* Rating */}
-    <Box sx={{ display: "flex", flexDirection: 'row', alignItems: "center" }}>
-      <StarIcon size={14} weight="fill" color="#FFB400" />
-      <Typography sx={{ fontSize: 13, mx: 0.5 }}>
-        {worker.rating.toFixed(1)}{" "}
-      </Typography>
-      <Typography sx={{ color: "grey", fontSize: 10 }}>
-        ({worker.reviews} reviews)
-      </Typography>
-    </Box>
-  </Box>
-</Box>
+                {/* Rating */}
+                <Box sx={{ display: "flex", flexDirection: 'row', alignItems: "center" }}>
+                  <StarIcon size={14} weight="fill" color="#FFB400" />
+                  <Typography sx={{ fontSize: 13, mx: 0.5 }}>
+                    {worker.rating.toFixed(1)}{" "}
+                  </Typography>
+                  <Typography sx={{ color: "grey", fontSize: 10 }}>
+                    ({worker.reviews} reviews)
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
 
           </Box>
         </Stack>
@@ -202,7 +203,7 @@ const WorkerCard = ({ worker }) => (
           justifyContent: "space-between",
           alignItems: "center",
           boxShadow: "none",
-          mt:0.5
+          mt: 0.5
         }}
       >
         <Stack direction="row" gap={0.2} >
@@ -255,59 +256,59 @@ const MobSearchWorker = () => {
 
   return (
     <Grid sx={{ bgcolor: "#f8f0f0ff" }}>
-      <Grid sx={{ pt:2}}>
-<Box
-  sx={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    mb: 2,
-    pr:2
-  }}
->
-  <Box display="flex" alignItems="center">
-    {/* Back Arrow */}
-    <IconButton onClick={() => navigate(-1)} sx={{ mr: 1 }}>
-      <ArrowBackIos sx={{ fontSize: 20, color: "black" }} />
-    </IconButton>
+      <Grid sx={{ pt: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 2,
+            pr: 2
+          }}
+        >
+          <Box display="flex" alignItems="center">
+            {/* Back Arrow */}
+            <IconButton onClick={() => navigate(-1)} sx={{ mr: 1 }}>
+              <ArrowBackIos sx={{ fontSize: 20, color: "black" }} />
+            </IconButton>
 
-    {/* Location */}
-    <LocationOnOutlined
-      sx={{ fontSize: 25, mr: 1, mt: 0.5, color: "black" }}
-    />
-    <Box display="flex" flexDirection="column">
-      <Typography
-        variant="caption"
-        color="gray"
-        sx={{ lineHeight: 1, fontSize: 13 }}
-      >
-        Current Location
-      </Typography>
-      <Grid container>
-        <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
-          Thrissur, Kerala
-        </Typography>
-        <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
-          <KeyboardArrowDownOutlined sx={{ color: "grey" }} />
-        </IconButton>
-      </Grid>
-    </Box>
-  </Box>
+            {/* Location */}
+            <LocationOnOutlined
+              sx={{ fontSize: 25, mr: 1, mt: 0.5, color: "black" }}
+            />
+            <Box display="flex" flexDirection="column">
+              <Typography
+                variant="caption"
+                color="gray"
+                sx={{ lineHeight: 1, fontSize: 13 }}
+              >
+                Current Location
+              </Typography>
+              <Grid container>
+                <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
+                  Thrissur, Kerala
+                </Typography>
+                <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
+                  <KeyboardArrowDownOutlined sx={{ color: "grey" }} />
+                </IconButton>
+              </Grid>
+            </Box>
+          </Box>
 
-  <Stack direction="row" spacing={1} alignItems="center">
-    <IconButton onClick={() => navigate("/mobile-notifications")}>
-      <BellIcon />
-    </IconButton>
-    <Avatar
-      onClick={() => navigate("/editInfo")}
-      sx={{ width: 32, height: 32 }}
-      src={"https://randomuser.me/api/portraits/men/83.jpg"}
-    />
-  </Stack>
-</Box>
+          <Stack direction="row" spacing={1} alignItems="center">
+            <IconButton onClick={() => navigate("/mobile-notifications")}>
+              <BellIcon />
+            </IconButton>
+            <Avatar
+              onClick={() => navigate("/editInfo")}
+              sx={{ width: 32, height: 32 }}
+              src={"https://randomuser.me/api/portraits/men/83.jpg"}
+            />
+          </Stack>
+        </Box>
 
         {/* SearchBar */}
-        <Box sx={{ mb: 3,px:1 }}>
+        <Box sx={{ mb: 3, px: 1 }}>
           <Box
             sx={{
               mt: 2,
