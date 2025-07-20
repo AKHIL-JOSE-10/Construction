@@ -95,7 +95,7 @@ const WorkerMainPage = () => {
             <Grid sx={{ bgcolor: 'rgba(242, 244, 254, 1)', borderRadius: '8px 8px 0 0', mb: 9 }}>
                 {/* Action Buttons */}
 
-                <Box >
+                <Box>
                     <Grid container justifyContent="space-around" pt={3} px={1}>
                         {[
                             { text: "My Works", icon: <SuitcaseSimpleIcon size={30} color="white" /> },
@@ -105,11 +105,14 @@ const WorkerMainPage = () => {
                                 text: "Work Profile", icon: (
                                     <Box position="relative" display="inline-block">
                                         <UserIcon size={30} color="#fff" />
-                                        <PencilSimpleIcon size={18} color="#ffffffff"
-                                            style={{ zIndex: 1, position: "absolute", bottom: 2, right: -5, }} />
-                                    </Box>),
+                                        <PencilSimpleIcon
+                                            size={18}
+                                            color="#ffffff"
+                                            style={{ zIndex: 1, position: "absolute", bottom: 2, right: -5 }}
+                                        />
+                                    </Box>
+                                ),
                             }
-
                         ].map(({ text, icon }, idx) => (
                             <Grid item xs={3} key={idx} textAlign="center">
                                 <Avatar
@@ -118,6 +121,7 @@ const WorkerMainPage = () => {
                                         width: 55,
                                         height: 55,
                                         mx: "auto",
+                                        boxShadow: "0px 2px 6px rgba(11, 31, 184, 0.5)",
                                     }}
                                 >
                                     {icon}
