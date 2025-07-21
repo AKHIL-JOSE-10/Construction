@@ -32,6 +32,9 @@ import MobRecentSearch from "./modules/ClientPages/WorkerPage/SearchWorker/mobRe
 import AddressDetails from "./modules/ClientPages/OldHome/Address/AdressDetails/AddressDetails";
 import MobSearchFilter from "./modules/ClientPages/Filter/mobile/mobSearchFilter";
 import MobUrgentServiceRequest from "./modules/ClientPages/Services/mobServiceCategory/mobUrgentService/mobUrgentServiceRequest";
+import MobUrgentServiceRequestConfirmation from "./modules/ClientPages/Services/mobServiceCategory/mobUrgentService/mobUrgentServiceRequestConfirmation";
+
+
 //worker pages
 
 import WorkerRequestConfirmed from "./modules/WorkerPage/Mobile/WorkerRequest/WorkerRequestConfirmed/workerRequestConfirmed";
@@ -128,8 +131,10 @@ function App() {
           <Route path="/address" element={<AddressDetails />} />
           <Route path="/mobile-saved-workers" element={<MobSavedWorkers />} />
           <Route path="/mobile-Recent-Search" element={<MobRecentSearch />} />
-          <Route path="/mobile-Search-filter" element={<MobSearchFilter />} />MobUrgentServiceRequest
+          <Route path="/mobile-Search-filter" element={<MobSearchFilter />} />
           <Route path="/mobile-Urgent-ServiceRequest" element={<MobUrgentServiceRequest />} />
+                    <Route path="/mobile-Urgent-ServiceRequestConfirmation" element={<MobUrgentServiceRequestConfirmation />} />
+
 
           {/* worker page routes */}
           <Route
