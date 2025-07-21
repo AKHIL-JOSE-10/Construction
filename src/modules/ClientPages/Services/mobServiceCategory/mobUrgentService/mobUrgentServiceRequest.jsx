@@ -13,7 +13,7 @@ import {
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { MapPinIcon, WrenchIcon } from "@phosphor-icons/react";
-
+import MobHeading from "@/modules/components/Mobile/mobileHeading";
 const MobUrgentServiceRequest = () => {
     const [service, setService] = useState("plumbing");
 
@@ -26,9 +26,8 @@ const [date, setDate] = useState(new Date());
 
     return (
         <Box sx={{ p: 2, bgcolor: "#f8f9fa", }}>
-            <Typography fontWeight={600} textAlign="center" mb={2}>
-                Fast Booking
-            </Typography>
+
+<MobHeading Heading='Fast booking'/>
 
             <Box
                 sx={{
