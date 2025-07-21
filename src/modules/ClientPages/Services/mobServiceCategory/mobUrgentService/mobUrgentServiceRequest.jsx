@@ -55,10 +55,10 @@ const [date, setDate] = useState(new Date());
                 >
                     <MapPinIcon size={22} />
                     <Box>
-                        <Typography fontWeight={600} fontSize={14}>
+                        <Typography fontWeight={600} fontSize={15}>
                             Thrissur
                         </Typography>
-                        <Typography fontSize={12} color="text.secondary" lineHeight={1.2}>
+                        <Typography fontSize={12} color="text.secondary" lineHeight={2.2}>
                             Indira Gandhi International Airport
                         </Typography>
                     </Box>
@@ -69,7 +69,7 @@ const [date, setDate] = useState(new Date());
         <TextField
   fullWidth
   select
-  size="small"
+  size="medium"
   label="Service"
   value={service}
   onChange={(e) => setService(e.target.value)}
@@ -104,7 +104,7 @@ const [date, setDate] = useState(new Date());
     slotProps={{
       textField: {
         fullWidth: true,
-        size: 'small',
+        size: 'medium',
         sx: {
           mb: 2,
           '& .MuiOutlinedInput-root': {
