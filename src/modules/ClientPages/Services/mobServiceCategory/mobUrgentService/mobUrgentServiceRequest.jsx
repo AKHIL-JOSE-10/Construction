@@ -69,7 +69,7 @@ const [date, setDate] = useState(new Date());
         <TextField
   fullWidth
   select
-  size="small"
+  size="medium"
   label="Service"
   value={service}
   onChange={(e) => setService(e.target.value)}
@@ -104,7 +104,7 @@ const [date, setDate] = useState(new Date());
     slotProps={{
       textField: {
         fullWidth: true,
-        size: 'small',
+        size: 'medium',
         sx: {
           mb: 2,
           '& .MuiOutlinedInput-root': {
@@ -132,7 +132,7 @@ const [date, setDate] = useState(new Date());
       sx: { fontSize: '0.7rem', color:'grey' }, 
     },
     input: {
-      sx: { fontSize: '0.65rem' }, 
+      sx: { fontSize: '0.85rem' }, 
     },
   }}
 />
@@ -151,7 +151,7 @@ const [date, setDate] = useState(new Date());
       sx: { fontSize: '0.7rem', color:'grey' }, // smaller label
     },
     input: {
-      sx: { fontSize: '0.65rem' }, 
+      sx: { fontSize: '0.85rem' }, 
     },
   }}
 />
