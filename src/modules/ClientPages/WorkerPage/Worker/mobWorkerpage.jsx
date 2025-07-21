@@ -1,4 +1,12 @@
-import { Grid, Typography, Avatar, Box, Button, Alert, Fade } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Avatar,
+  Box,
+  Button,
+  Alert,
+  Fade,
+} from "@mui/material";
 import workerimg from "@/assets/workerimg.jpg";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
@@ -6,11 +14,10 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import MobWorkerTopTab from "@/modules/components/Mobile/mobWorker/mobWorkerTopTab";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 
-const AlertMessage = ({isAlert}) => {
+const AlertMessage = ({ isAlert }) => {
   return (
     <Fade in={isAlert} timeout={{ enter: 300, exit: 500 }}>
       <Box
@@ -35,10 +42,22 @@ const AlertMessage = ({isAlert}) => {
 const MobWorkerpage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { name, img, contact, selectedService } = location.state || {};
+
+  // Provide fallback values to avoid undefined errors
+  const {
+    name = "John Doe",
+    img = "https://via.placeholder.com/85",
+    contact = "",
+    selectedService = "",
+  } = location.state || {};
+
   const [isAlert, setIsAlert] = useState(false);
+
   return (
-    <Grid container sx={{ height: "auto", position: "relative" }}>
+    <Grid
+      container
+      sx={{ height: "auto", position: "relative", minHeight: "100vh" }}
+    >
       <Grid sx={{ position: "relative" }}>
         <Box
           onClick={() => navigate(-1)}
@@ -70,6 +89,8 @@ const MobWorkerpage = () => {
             sx={{
               width: "100%",
               display: "block",
+              height: 'auto', 
+              objectFit: "cover",
             }}
           />
 
@@ -107,6 +128,7 @@ const MobWorkerpage = () => {
             </Box>
           </Box>
         </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -134,6 +156,7 @@ const MobWorkerpage = () => {
             </Typography>
           </Button>
         </Box>
+
         <Box sx={{ p: 2, display: "flex", flexDirection: "column" }}>
           <Box sx={{ display: "flex", flexDirection: "row", mb: 2 }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -157,10 +180,12 @@ const MobWorkerpage = () => {
           </Box>
         </Box>
       </Grid>
+
       <Grid sx={{ width: "100%" }}>
         <MobWorkerTopTab service={selectedService} setIsAlert={setIsAlert} />
       </Grid>
-     <AlertMessage isAlert={isAlert} />
+
+      <AlertMessage isAlert={isAlert} />
     </Grid>
   );
 };

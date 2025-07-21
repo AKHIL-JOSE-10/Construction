@@ -14,7 +14,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import {
   LocationOnOutlined,
-  KeyboardArrowDownOutlined,
   ArrowBackIos
 } from "@mui/icons-material";
 
