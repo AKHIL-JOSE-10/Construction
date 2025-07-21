@@ -118,7 +118,7 @@ const MobUrgentServiceRequestConfirmation = () => {
                                 <UserIcon size={20} color="gray" />
                                 <Typography sx={{ fontSize: 15, ml: 1 }}>Worker</Typography>
                             </Box>
-                            <Typography sx={{ fontSize: 14, fontWeight: 600 }}>Mathew Kiayne</Typography>
+                            <Typography sx={{ fontSize: 14, fontWeight: 600 }}>Athul Murali T</Typography>
                         </Box>
 
                         <Box
@@ -149,7 +149,7 @@ const MobUrgentServiceRequestConfirmation = () => {
                                 <PhoneIcon size={20} color="gray" />
                                 <Typography sx={{ fontSize: 15, ml: 1 }}>Phone</Typography>
                             </Box>
-                            <Typography sx={{ fontSize: 14, fontWeight: 600 }}>0214345646</Typography>
+                            <Typography sx={{ fontSize: 14, fontWeight: 600 }}>9864251275</Typography>
                         </Box>
                     </Box>
 
@@ -210,7 +210,7 @@ const MobUrgentServiceRequestConfirmation = () => {
             </Stack>
 
             {/* Hot Offer */}
-            <Typography fontWeight={600} mt={5}>
+            <Typography fontWeight={600} mt={5} mb={1.5}>
                 Hot offer
             </Typography>
             <Grid container spacing={1}>
