@@ -75,7 +75,8 @@ const MobUrgentServiceRequestConfirmation = () => {
                 </Stack>
                 <Box
                     sx={{
-                        p: 2,
+                         py:3,
+                        px: 2,
                         mt: 2,
                         border: '1px solid rgba(226, 223, 223, 1)',
                         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
@@ -159,7 +160,7 @@ const MobUrgentServiceRequestConfirmation = () => {
                         Price Details
                     </Typography>
 
-                    <Stack spacing={1}>
+                    <Stack spacing={1.5}>
                         <Box display="flex" justifyContent="space-between">
                             <Typography sx={{ fontSize: 14 }}>Price</Typography>
                             <Typography sx={{ fontSize: 14 }}>$139.00</Typography>
@@ -168,7 +169,7 @@ const MobUrgentServiceRequestConfirmation = () => {
                             <Typography sx={{ fontSize: 14 }}>Admin fee</Typography>
                             <Typography sx={{ fontSize: 14 }}>$2.50</Typography>
                         </Box>
-                        <Box display="flex" justifyContent="space-between" sx={{ mt: 1 }}>
+                        <Box display="flex" justifyContent="space-between" >
                             <Typography sx={{ fontWeight: 600 }}>Total price</Typography>
                             <Typography sx={{ fontWeight: 600 }}>$141.50</Typography>
                         </Box>
