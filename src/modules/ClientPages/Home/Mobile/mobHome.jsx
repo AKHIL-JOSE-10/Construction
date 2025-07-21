@@ -193,6 +193,7 @@ const MobHome = () => {
   const [selectedService, setSelectedService] = useState("Fast");
   const [liked, setLiked] = useState([]);
 const navigate = useNavigate();
+
   const toggleLike = (name) => {
     setLiked((prev) =>
       prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name]
