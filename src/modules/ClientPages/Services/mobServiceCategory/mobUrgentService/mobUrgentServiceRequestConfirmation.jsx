@@ -69,7 +69,7 @@ const MobUrgentServiceRequestConfirmation = () => {
                         </Stack>
 
                         <Typography sx={{ fontSize: 16, color: "#0077ff", mt: 0.5, ml: 0.3 }}>
-                            $120 <span style={{ color: "gray" }}>/hour</span>
+                            100 Rs <span style={{ color: "gray" }}>/hour</span>
                         </Typography>
                     </Box>
                 </Stack>
