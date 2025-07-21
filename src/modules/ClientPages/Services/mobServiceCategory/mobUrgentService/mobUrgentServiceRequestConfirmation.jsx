@@ -64,7 +64,7 @@ const MobUrgentServiceRequestConfirmation = () => {
                         <Stack direction="row" alignItems="center" spacing={0.5} mb={0.9}>
                             <MapPinIcon size={15} color="gray" />
                             <Typography sx={{ fontSize: 12, color: "gray" }}>
-                                Veum Point, Michikoton
+                                Thrissur, kerala
                             </Typography>
                         </Stack>
 
