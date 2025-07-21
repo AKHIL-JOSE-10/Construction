@@ -47,7 +47,7 @@ const [date, setDate] = useState(new Date());
                         alignItems: "center",
                         gap: 1,
                         p: 1,
-                        bgcolor: "#f8f8fa",
+                        bgcolor: "#ffffffff",
                         borderRadius: 1,
                         boxShadow: "0 1px 3px rgba(0,0,0,0.2)",
                         mb: 3,
