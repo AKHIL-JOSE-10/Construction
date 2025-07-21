@@ -32,7 +32,7 @@ const [date, setDate] = useState(new Date());
 
             <Box
                 sx={{
-                    px: 2,
+                    px: 1,
                     py:4,
                     borderRadius: 2,
                     bgcolor: "#fff",
