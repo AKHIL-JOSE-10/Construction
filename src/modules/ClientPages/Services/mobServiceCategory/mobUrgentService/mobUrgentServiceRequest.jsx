@@ -124,16 +124,16 @@ const [date, setDate] = useState(new Date());
   placeholder="+ Add your preferences"
   size="medium" 
   sx={{
-    backgroundColor: '#fff', // ⬅️ white background
+    backgroundColor: '#fff', 
     borderRadius: 1, 
-    width:'48%'        // optional: rounded corners
+    width:'48%'        
   }}
   slotProps={{
     inputLabel: {
-      sx: { fontSize: '0.8rem', color:'grey' }, // smaller label
+      sx: { fontSize: '0.7rem', color:'grey' }, 
     },
     input: {
-      sx: { fontSize: '0.85rem' }, // smaller input text
+      sx: { fontSize: '0.65rem' }, 
     },
   }}
 />
@@ -141,18 +141,18 @@ const [date, setDate] = useState(new Date());
   id="outlined-helperText"
   label="Time (optional)"
   placeholder="+ Add preferred time"
-  size="medium" // ⬅️ makes it more compact
+  size="medium" 
   sx={{
-    backgroundColor: '#fff', // ⬅️ white background
+    backgroundColor: '#fff', 
     borderRadius: 1,  
     width:'48%'   
   }}
   slotProps={{
     inputLabel: {
-      sx: { fontSize: '0.8rem', color:'grey' }, // smaller label
+      sx: { fontSize: '0.7rem', color:'grey' }, // smaller label
     },
     input: {
-      sx: { fontSize: '0.85rem' }, // smaller input text
+      sx: { fontSize: '0.65rem' }, 
     },
   }}
 />
