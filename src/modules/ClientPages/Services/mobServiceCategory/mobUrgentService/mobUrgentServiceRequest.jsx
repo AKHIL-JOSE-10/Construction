@@ -259,8 +259,6 @@ const [date, setDate] = useState(new Date());
                             p: 1.5,
                             bgcolor: "#fff",
                             borderRadius: 2,
-                            width: "100%",
-                            height:'auto',
                             boxShadow: "0px 1px 4px rgba(0,0,0,0.1)",
                         }}
                     >
