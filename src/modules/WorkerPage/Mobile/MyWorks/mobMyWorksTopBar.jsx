@@ -3,15 +3,14 @@ import {
   Box,
   Tab,
   Tabs,
-
 } from "@mui/material";
 import { TabContext, TabPanel } from "@mui/lab";
 
-import MobJobOffers from "@/modules/WorkerPage/Mobile/MyWorks/mobJobOffers";
-import MobActivejobs from "@/modules/WorkerPage/Mobile/MyWorks/mobActivejobs";
-import MobCompletedJobs from "@/modules/WorkerPage/Mobile/MyWorks/mobCompletedJobs";
+import MobJobOffers from "./mobJobOffers";
+import MobActivejobs from "./mobActivejobs";
+import MobCompletedJobs from "./mobCompletedJobs";
 
-const MobMyBookingsTopTab = () => {
+const MobMyWorksTopBar = () => {
   const [value, setValue] = useState("0");
 
   const handleTabChange = (event, newValue) => {
@@ -36,7 +35,7 @@ const MobMyBookingsTopTab = () => {
         <Tabs
           value={value}
           onChange={handleTabChange}
-          aria-label="booking tabs"
+          aria-label="worker tabs"
           slotProps={{
             indicator: {
               sx: {
@@ -45,7 +44,7 @@ const MobMyBookingsTopTab = () => {
             },
           }}
         >
-          <Tab value="0" label="Job offers" sx={{ fontSize: "15px" }} />
+          <Tab value="0" label="Job Offers" sx={{ fontSize: "15px" }} />
           <Tab value="1" label="Active" sx={{ fontSize: "15px" }} />
           <Tab value="2" label="Completed" sx={{ fontSize: "15px" }} />
         </Tabs>
@@ -66,4 +65,4 @@ const MobMyBookingsTopTab = () => {
   );
 };
 
-export default MobMyBookingsTopTab;
+export default MobMyWorksTopBar;

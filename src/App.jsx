@@ -37,14 +37,14 @@ import MobUrgentServiceRequestConfirmation from "./modules/ClientPages/Services/
 
 //worker pages
 
-import WorkerRequestConfirmed from "./modules/WorkerPage/Mobile/WorkerRequest/WorkerRequestConfirmed/workerRequestConfirmed";
-import WorkerRequestConfirmation from "./modules/WorkerPage/Mobile/WorkerRequest/WorkerRequestConfirmation/workerRequestConfirmation";
-import WorkerRequestDetail from "./modules/WorkerPage/Mobile/WorkerRequest/WorkerRequestDetail/WorkerRequestDetail";
+
 import WorkerForm1 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm1";
 import WorkerForm2 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm2";
 import WorkerForm3 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm3";
 import WorkerForm4 from "./modules/WorkerPage/Mobile/WorkerForm/workerForm4";
 import WorkerMainPage from "./modules/WorkerPage/Mobile/WorkerMainPage/workerMainPage";
+import MobMyWorks from "./modules/WorkerPage/Mobile/MyWorks/mobMyWorks";
+
 
 import MobileLayout from "./modules/components/Mobile/MobileLayout";
 import AccessDenied from "./Error/AccessDenied";
@@ -133,27 +133,18 @@ function App() {
           <Route path="/mobile-Recent-Search" element={<MobRecentSearch />} />
           <Route path="/mobile-Search-filter" element={<MobSearchFilter />} />
           <Route path="/mobile-Urgent-ServiceRequest" element={<MobUrgentServiceRequest />} />
-                    <Route path="/mobile-Urgent-ServiceRequestConfirmation" element={<MobUrgentServiceRequestConfirmation />} />
+          <Route path="/mobile-Urgent-ServiceRequestConfirmation" element={<MobUrgentServiceRequestConfirmation />} />
 
 
           {/* worker page routes */}
-          <Route
-            path="/mobile-worker-request-confirmed"
-            element={<WorkerRequestConfirmed />}
-          />
-          <Route
-            path="/mobile-worker-request-confirmation"
-            element={<WorkerRequestConfirmation />}
-          />
-          <Route
-            path="/mobile-worker-request-detail"
-            element={<WorkerRequestDetail />}
-          />
+
           <Route path="/mobile-worker-form1" element={<WorkerForm1 />} />
           <Route path="/mobile-worker-form2" element={<WorkerForm2 />} />
           <Route path="/mobile-worker-form3" element={<WorkerForm3 />} />
           <Route path="/mobile-worker-form4" element={<WorkerForm4 />} />
           <Route path="/mobile-worker-mainpage" element={<WorkerMainPage />} />
+          <Route path="/mobile-worker-myworks" element={<MobMyWorks />} />
+
         </Route>
       </Routes>
     </>

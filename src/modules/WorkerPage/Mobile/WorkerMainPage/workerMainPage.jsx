@@ -22,12 +22,15 @@ import {
     PencilSimpleIcon,
     StarIcon
 } from "@phosphor-icons/react";
-
+import { useNavigate } from "react-router-dom";
 import plumbingImg from '@/assets/plumbingImg.png'
 import AdvertisementCarousel from "@/modules/ClientPages/Home/Mobile/AdvertisementCarousal";
 import WorkerBottomBar from "./workerBottomBar";
 
 const WorkerMainPage = () => {
+
+    const navigate = useNavigate();
+
     return (
         <Box sx={{ bgcolor: "#06113C", minHeight: "100vh" }}>
             {/* Top Bar */}
@@ -98,23 +101,46 @@ const WorkerMainPage = () => {
                 <Box>
                     <Grid container justifyContent="space-around" pt={3} px={1}>
                         {[
-                            { text: "My Works", icon: <SuitcaseSimpleIcon size={30} color="white" /> },
-                            { text: "Availability", icon: <CalendarCheckIcon size={30} color="white" /> },
-                            { text: "Bank Details", icon: <BankIcon size={30} color="white" /> },
                             {
-                                text: "Work Profile", icon: (
+                                text: "My Works",
+                                icon: <SuitcaseSimpleIcon size={30} color="white" />,
+                                onClick: () => navigate("/mobile-worker-myworks"), // 👈
+                            },
+                            {
+                                text: "Availability",
+                                icon: <CalendarCheckIcon size={30} color="white" />,
+                            },
+                            {
+                                text: "Bank Details",
+                                icon: <BankIcon size={30} color="white" />,
+                            },
+                            {
+                                text: "Work Profile",
+                                icon: (
                                     <Box position="relative" display="inline-block">
                                         <UserIcon size={30} color="#fff" />
                                         <PencilSimpleIcon
                                             size={18}
                                             color="#ffffff"
-                                            style={{ zIndex: 1, position: "absolute", bottom: 2, right: -5 }}
+                                            style={{
+                                                zIndex: 1,
+                                                position: "absolute",
+                                                bottom: 2,
+                                                right: -5,
+                                            }}
                                         />
                                     </Box>
                                 ),
                             }
-                        ].map(({ text, icon }, idx) => (
-                            <Grid item xs={3} key={idx} textAlign="center">
+                        ].map(({ text, icon, onClick }, idx) => (
+                            <Grid
+                                item
+                                xs={3}
+                                key={idx}
+                                textAlign="center"
+                                onClick={onClick} // 👈
+                                sx={{ cursor: onClick ? "pointer" : "default" }} // 👈 pointer only if clickable
+                            >
                                 <Avatar
                                     sx={{
                                         bgcolor: "#2a30a0ff",
