@@ -252,7 +252,10 @@ const navigate = useNavigate();
       </Box>
 
       {/* Search */}
-
+        <Box sx={{px:2, mb:1}}> 
+          <SearchBar/>
+        </Box>
+       
 
       {/* Banner */}
       <AdvertisementCarousel />
