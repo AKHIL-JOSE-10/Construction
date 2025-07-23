@@ -7,9 +7,9 @@ import {
 } from "@mui/material";
 import { TabContext, TabPanel } from "@mui/lab";
 
-import MobJobOffers from "@/modules/WorkerPage/Mobile/MyWorks/mobJobOffers";
-import MobActivejobs from "@/modules/WorkerPage/Mobile/MyWorks/mobActivejobs";
-import MobCompletedJobs from "@/modules/WorkerPage/Mobile/MyWorks/mobCompletedJobs";
+import MobMyBookingsInProgress from "./mobMyBookingsInProgress";
+import MobMyBookingsCompleted from "./mobMyBookingsCompleted";
+import MobMyBookingsCancelled from "./mobMyBookingsCancelled";
 
 const MobMyBookingsTopTab = () => {
   const [value, setValue] = useState("0");
@@ -45,21 +45,21 @@ const MobMyBookingsTopTab = () => {
             },
           }}
         >
-          <Tab value="0" label="Job offers" sx={{ fontSize: "15px" }} />
-          <Tab value="1" label="Active" sx={{ fontSize: "15px" }} />
-          <Tab value="2" label="Completed" sx={{ fontSize: "15px" }} />
+          <Tab value="0" label="In progress" sx={{ fontSize: "15px" }} />
+          <Tab value="1" label="Completed" sx={{ fontSize: "15px" }} />
+          <Tab value="2" label="Cancelled" sx={{ fontSize: "15px" }} />
         </Tabs>
       </Box>
 
       <Box sx={{ paddingTop: "55px", paddingBottom: "10px" }}>
         <TabPanel value="0" sx={{ p: 0 }}>
-          <MobJobOffers />
+          <MobMyBookingsInProgress />
         </TabPanel>
         <TabPanel value="1" sx={{ p: 0 }}>
-          <MobActivejobs />
+          <MobMyBookingsCompleted />
         </TabPanel>
         <TabPanel value="2" sx={{ p: 0 }}>
-          <MobCompletedJobs />
+          <MobMyBookingsCancelled />
         </TabPanel>
       </Box>
     </TabContext>
