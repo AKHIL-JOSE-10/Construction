@@ -93,7 +93,7 @@ const MobActiveJobs = () => {
                   variant="outlined"
                   sx={{ color: "black", fontSize: 14, px: 4 }}
                 >
-                  Book Now
+                  Cancel
                 </Button>
                 <Button
                   variant="contained"
