@@ -91,7 +91,7 @@ const MobActiveJobs = () => {
               <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%', mt: 2 }}>
                 <Button
                   variant="outlined"
-                  sx={{ color: "black", fontSize: 14, px: 5 }}
+                  sx={{ color: "black", fontSize: 14, px: 4 }}
                 >
                   Book Now
                 </Button>
@@ -101,7 +101,7 @@ const MobActiveJobs = () => {
                     textTransform: "none",
                     fontSize: 14,
                     bgcolor: "#D1004D",
-                    px: 5,
+                    px: 4 ,
                   }}
                 >
                   Complete
@@ -116,3 +116,4 @@ const MobActiveJobs = () => {
 }
 
 export default MobActiveJobs;
+3
