@@ -116,24 +116,24 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           bottom: 0,
           left: `${(100 - fakeScrollBarWidthPercent) / 2}vw`, // to center it
           width: `${fakeScrollBarWidthPercent}vw`,
-          height: "6px",
+          height: "auto",
           overflowX: "auto",
           overflowY: "hidden",
           zIndex: 10,
           "&::-webkit-scrollbar": {
-            height: "8px",
+            height: "6px",
           },
           "&::-webkit-scrollbar-thumb": {
             backgroundColor: "#f7e2e2ff",
-            borderRadius: 50,
+            borderRadius: "100px",
           },
           "&::-webkit-scrollbar-track": {
             backgroundColor: "#ffffff",
-            borderRadius: 50,
+            borderRadius: "100px",
           },
         }}
       >
-        <Box sx={{ width: `${pages.length * 100}vw`, height: "1px" }} />
+        <Box sx={{ width: `${pages.length * 100}vw`, height: "5px" }} />
       </Box>
     </Box>
   );
