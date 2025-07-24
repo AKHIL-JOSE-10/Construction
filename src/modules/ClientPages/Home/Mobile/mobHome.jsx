@@ -414,7 +414,7 @@ const MobHome = () => {
       </Grid> */}
 
       <Grid container justifyContent="center">
-        <Grid sx={{ my: 2.5, px: 1 }}>
+        <Grid sx={{ mb: 2.5,mt:0.5, px: 1 }}>
           <Box component="img" src={InstantService} alt="Sample" onClick={() => navigate("/mobile-Urgent-ServiceRequest")} sx={{
             width: "100%", height: "auto", objectFit: "cover",
             borderRadius: 1, cursor: "pointer",
