@@ -218,7 +218,7 @@ const navigate = useNavigate();
   };
 
   return (
-    <Box sx={{ pb: 2, bgcolor:  "#f7f1f1ff", minHeight: "100vh" }}>
+    <Grid sx={{ pb: 2, bgcolor:  "#ffffffff"}}>
       {/* Header */}
       <Box
         sx={{
@@ -301,11 +301,11 @@ const navigate = useNavigate();
             <Box
   key={index}
   sx={{
-    backgroundColor: "#ffeef1",
+    backgroundColor:"#f7f1f1ff",
     textAlign: "center",
     borderRadius: 1,
-    height: 70,
-    width: 70,
+    height: 80,
+    width: 80,
     mx: "auto",
     display: "flex",
     flexDirection: "column",
@@ -868,7 +868,7 @@ const navigate = useNavigate();
       {/* Bottom Navigation */}
       <MobileBottomTab />
       <AddressDrawer open={open} setOpen={setOpen} />
-    </Box>
+    </Grid>
   );
 };
 
