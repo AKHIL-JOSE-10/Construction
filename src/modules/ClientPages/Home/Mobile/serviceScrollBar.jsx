@@ -61,7 +61,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           <Box
             key={idx}
             sx={{
-              flex: "0 0 120vw",
+              flex: "0 0 100vw",
               scrollSnapAlign: "start",
               display: "grid",
               gridTemplateColumns: "repeat(5, 1fr)",
@@ -113,8 +113,8 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
         sx={{
           position: "absolute",
           bottom: 0,
-          left: `${(15 + fakeScrollBarWidthPercent) / 1.5}vw`, // to center it
-          width: `${fakeScrollBarWidthPercent/5}vw`,
+          left: `${(15 + fakeScrollBarWidthPercent) / 2}vw`, // to center it
+          width: `${fakeScrollBarWidthPercent/2}vw`,
           height: "auto",
           overflowX: "auto",
           overflowY: "hidden",
@@ -132,7 +132,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           },
         }}
       >
-        <Box sx={{ width: `${pages.length * 50}vw`, height: "5px" }} />
+        <Box sx={{ width: `${pages.length * 60}vw`, height: "5px" }} />
       </Box>
     </Box>
   );
