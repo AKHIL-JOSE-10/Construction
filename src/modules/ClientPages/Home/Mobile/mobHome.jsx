@@ -285,7 +285,8 @@ const MobHome = () => {
           scrollSnapType: "x mandatory",
           scrollBehavior: "smooth",
           p: 0,
-          m: 0,
+          mt:1,
+          mx: 0,
 
           // Hides scrollbar across browsers
           scrollbarWidth: "none", // Firefox
