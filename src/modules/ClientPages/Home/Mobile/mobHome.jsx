@@ -570,11 +570,8 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
         transition: "box-shadow 0.3s ease-in-out",
-        "&:hover": {
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
-        },
         backgroundColor: "#fff", // ensure shadow is visible
         mx: 1, // optional margin between cards
         cursor: "pointer",
@@ -665,11 +662,8 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
         transition: "box-shadow 0.3s ease-in-out",
-        "&:hover": {
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
-        },
         backgroundColor: "#fff",
         mx: 1,
         cursor: "pointer",
@@ -760,11 +754,8 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
         transition: "box-shadow 0.3s ease-in-out",
-        "&:hover": {
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 1)",
-        },
         backgroundColor: "#fff",
         mx: 1,
         cursor: "pointer",
@@ -856,11 +847,8 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
         transition: "box-shadow 0.3s ease-in-out",
-        "&:hover": {
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.15)",
-        },
         backgroundColor: "#fff",
         mx: 1,
         cursor: "pointer",
