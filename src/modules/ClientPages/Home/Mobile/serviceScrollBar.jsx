@@ -123,11 +123,11 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
             height: "6px",
           },
           "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "#f9a2a2ff",
+            backgroundColor: "#f32828ff",
             borderRadius: "100px",
           },
           "&::-webkit-scrollbar-track": {
-            backgroundColor: "#db5a5aff",
+            backgroundColor: "#f16b6bff",
             borderRadius: "100px",
           },
         }}
