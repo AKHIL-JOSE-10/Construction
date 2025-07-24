@@ -316,8 +316,8 @@ const MobHome = () => {
                   backgroundColor: "#f7f1f1ff",
                   textAlign: "center",
                   borderRadius: 1,
-                  height: 70,
-                  width: 70,
+                  height: 65,
+                  width: 65,
                   mx: "auto",
                   display: "flex",
                   flexDirection: "column",
@@ -334,10 +334,9 @@ const MobHome = () => {
   sx={{
     width: '100%',
     height: 'auto',
-    filter: 'brightness(1.1)', // reduce intensity (0.0 to 1.0)
   }}
 />
-                <Typography color="black" fontSize={12} >{item.label}</Typography>
+                <Typography color="black" fontSize={11} >{item.label}</Typography>
               </Box>
             ))}
           </Box>
@@ -574,7 +573,7 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
         transition: "box-shadow 0.3s ease-in-out",
         backgroundColor: "#fff", // ensure shadow is visible
         mx: 1, // optional margin between cards
@@ -666,7 +665,7 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
         transition: "box-shadow 0.3s ease-in-out",
         backgroundColor: "#fff",
         mx: 1,
@@ -758,7 +757,7 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
         transition: "box-shadow 0.3s ease-in-out",
         backgroundColor: "#fff",
         mx: 1,
@@ -851,7 +850,7 @@ const MobHome = () => {
         height: 165,
         borderRadius: 1,
         position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.2)",
+        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
         transition: "box-shadow 0.3s ease-in-out",
         backgroundColor: "#fff",
         mx: 1,
