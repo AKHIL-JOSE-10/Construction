@@ -230,7 +230,7 @@ const MobHome = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          m: 0,
+          mt: 2,
           px: 2,
         }}
       >
@@ -414,7 +414,7 @@ const MobHome = () => {
       </Grid> */}
 
       <Grid container justifyContent="center">
-        <Grid sx={{ mb: 3, mt:1.3, px: 1 }}>
+        <Grid sx={{ mb: 3, mt:2, px: 1 }}>
           <Box component="img" src={InstantService} alt="Sample" onClick={() => navigate("/mobile-Urgent-ServiceRequest")} sx={{
             width: "100%", height: "auto", objectFit: "cover",
             borderRadius: 1, cursor: "pointer",
