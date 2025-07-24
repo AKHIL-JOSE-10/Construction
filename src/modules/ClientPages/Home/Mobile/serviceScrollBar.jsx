@@ -113,8 +113,8 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
         sx={{
           position: "absolute",
           bottom: 0,
-          left: `${(28 + fakeScrollBarWidthPercent) / 2}vw`, // to center it
-          width: `${fakeScrollBarWidthPercent/2}vw`,
+          left: `${(28 + fakeScrollBarWidthPercent) / 1.8}vw`, // to center it
+          width: `${fakeScrollBarWidthPercent/4}vw`,
           height: "auto",
           overflowX: "auto",
           overflowY: "hidden",
@@ -132,7 +132,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           },
         }}
       >
-        <Box sx={{ width: `${pages.length * 60}vw`, height: "5px" }} />
+        <Box sx={{ width: `${pages.length * 50}vw`, height: "5px" }} />
       </Box>
     </Box>
   );
