@@ -223,14 +223,14 @@ const MobHome = () => {
   };
 
   return (
-    <Grid sx={{ pb: 2, bgcolor: "#ffffffff" }}>
+    <Grid sx={{ pb: 2, bgcolor: "#f7f1f1ff" }}>
       {/* Header */}
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          mt: 2,
+          pt: 2,
           px: 2,
         }}
       >
@@ -285,7 +285,7 @@ const MobHome = () => {
           scrollSnapType: "x mandatory",
           scrollBehavior: "smooth",
           p: 0,
-          mt:1,
+          mt: 1,
           mx: 0,
 
           // Hides scrollbar across browsers
@@ -313,7 +313,7 @@ const MobHome = () => {
               <Box
                 key={index}
                 sx={{
-                  backgroundColor: "#f7f1f1ff",
+                  backgroundColor: "#ffffffff",
                   textAlign: "center",
                   borderRadius: 1,
                   height: 65,
@@ -327,15 +327,15 @@ const MobHome = () => {
                   p: 0.7
                 }}
               >
-<Box
-  component="img"
-  src={item.icon}
-  alt={item.label}
-  sx={{
-    width: '100%',
-    height: 'auto',
-  }}
-/>
+                <Box
+                  component="img"
+                  src={item.icon}
+                  alt={item.label}
+                  sx={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
+                />
                 <Typography color="black" fontSize={11} >{item.label}</Typography>
               </Box>
             ))}
@@ -417,7 +417,7 @@ const MobHome = () => {
       </Grid> */}
 
       <Grid container justifyContent="center">
-        <Grid sx={{ mb: 3, mt:2, px: 1 }}>
+        <Grid sx={{ mb: 3, mt: 2.5, px: 1 }}>
           <Box component="img" src={InstantService} alt="Sample" onClick={() => navigate("/mobile-Urgent-ServiceRequest")} sx={{
             width: "100%", height: "auto", objectFit: "cover",
             borderRadius: 1, cursor: "pointer",
@@ -555,276 +555,276 @@ const MobHome = () => {
         Architect’s Near You
       </Typography>
 
-<HorizontalScroll>
-  {architects.map((arch) => (
-    <Box
-      key={arch.name}
-      onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: {
-            name: arch.name,
-            img: arch.image,
-            selectedService: "Architect",
-          },
-        })
-      }
-      sx={{
-        minWidth: 120,
-        height: 165,
-        borderRadius: 1,
-        position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
-        transition: "box-shadow 0.3s ease-in-out",
-        backgroundColor: "#fff", // ensure shadow is visible
-        mx: 1, // optional margin between cards
-        cursor: "pointer",
-      }}
-    >
-      <IconButton
-        onClick={(e) => {
-          e.stopPropagation(); // prevent triggering navigate on like
-          toggleLike(arch.name);
-        }}
-        sx={{
-          position: "absolute",
-          top: 2,
-          right: 2,
-          zIndex: 1,
-        }}
-      >
-        {liked.includes(arch.name) ? (
-          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
-        ) : (
-          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
-        )}
-      </IconButton>
-
-      <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
-        <Box sx={{ position: "relative", mb: 1 }}>
-          <Avatar
-            src={arch.image}
-            alt={arch.name}
-            sx={{ mx: "auto", width: 70, height: 70 }}
-          />
-          <Typography
+      <HorizontalScroll>
+        {architects.map((arch) => (
+          <Box
+            key={arch.name}
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: {
+                  name: arch.name,
+                  img: arch.image,
+                  selectedService: "Architect",
+                },
+              })
+            }
             sx={{
-              color: "rgba(13, 162, 208, 1)",
-              position: "absolute",
-              bottom: -5,
-              left: "50%",
-              transform: "translateX(-50%)",
-              bgcolor: "#fff",
-              px: 0.5,
-              fontSize: 9,
-              fontWeight: 500,
-              borderRadius: 0.2,
-              border: "0.5px solid #ccc",
+              minWidth: 120,
+              height: 165,
+              borderRadius: 1,
+              position: "relative",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+              transition: "box-shadow 0.3s ease-in-out",
+              backgroundColor: "#fff", // ensure shadow is visible
+              mx: 1, // optional margin between cards
+              cursor: "pointer",
             }}
           >
-            View Details
-          </Typography>
-        </Box>
+            <IconButton
+              onClick={(e) => {
+                e.stopPropagation(); // prevent triggering navigate on like
+                toggleLike(arch.name);
+              }}
+              sx={{
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
+              }}
+            >
+              {liked.includes(arch.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
 
-        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
-          {arch.name}
-        </Typography>
-        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-          2 km away
-        </Typography>
-        <Rating
-          name="read-only"
-          value={4}
-          sx={{ fontSize: 10 }}
-          readOnly
-        />
-      </Box>
-    </Box>
-  ))}
-</HorizontalScroll>
+            <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={arch.image}
+                  alt={arch.name}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
+                />
+                <Typography
+                  sx={{
+                    color: "rgba(13, 162, 208, 1)",
+                    position: "absolute",
+                    bottom: -5,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border: "0.5px solid #ccc",
+                  }}
+                >
+                  View Details
+                </Typography>
+              </Box>
+
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+                {arch.name}
+              </Typography>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+                2 km away
+              </Typography>
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
+            </Box>
+          </Box>
+        ))}
+      </HorizontalScroll>
 
 
       <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
         Plumber’s Near You
       </Typography>
 
-<HorizontalScroll>
-  {plumbers.map((plumber) => (
-    <Box
-      key={plumber.name}
-      onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: {
-            name: plumber.name,
-            img: plumber.image,
-            selectedService: "Plumber",
-          },
-        })
-      }
-      sx={{
-        minWidth: 120,
-        height: 165,
-        borderRadius: 1,
-        position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
-        transition: "box-shadow 0.3s ease-in-out",
-        backgroundColor: "#fff",
-        mx: 1,
-        cursor: "pointer",
-      }}
-    >
-      <IconButton
-        onClick={(e) => {
-          e.stopPropagation(); // prevent navigation on like click
-          toggleLike(plumber.name);
-        }}
-        sx={{
-          position: "absolute",
-          top: 2,
-          right: 2,
-          zIndex: 1,
-        }}
-      >
-        {liked.includes(plumber.name) ? (
-          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
-        ) : (
-          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
-        )}
-      </IconButton>
-
-      <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
-        <Box sx={{ position: "relative", mb: 1 }}>
-          <Avatar
-            src={plumber.image}
-            alt={plumber.name}
-            sx={{ mx: "auto", width: 70, height: 70 }}
-          />
-          <Typography
+      <HorizontalScroll>
+        {plumbers.map((plumber) => (
+          <Box
+            key={plumber.name}
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: {
+                  name: plumber.name,
+                  img: plumber.image,
+                  selectedService: "Plumber",
+                },
+              })
+            }
             sx={{
-              color: "rgba(13, 162, 208, 1)",
-              position: "absolute",
-              bottom: -9,
-              left: "50%",
-              transform: "translateX(-50%)",
-              bgcolor: "#fff",
-              px: 0.5,
-              fontSize: 9,
-              fontWeight: 500,
-              borderRadius: 0.2,
-              border: "0.5px solid #ccc",
+              minWidth: 120,
+              height: 165,
+              borderRadius: 1,
+              position: "relative",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+              transition: "box-shadow 0.3s ease-in-out",
+              backgroundColor: "#fff",
+              mx: 1,
+              cursor: "pointer",
             }}
           >
-            View Details
-          </Typography>
-        </Box>
+            <IconButton
+              onClick={(e) => {
+                e.stopPropagation(); // prevent navigation on like click
+                toggleLike(plumber.name);
+              }}
+              sx={{
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
+              }}
+            >
+              {liked.includes(plumber.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
 
-        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
-          {plumber.name}
-        </Typography>
-        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-          5 km away
-        </Typography>
-        <Rating
-          name="read-only"
-          value={4}
-          sx={{ fontSize: 10 }}
-          readOnly
-        />
-      </Box>
-    </Box>
-  ))}
-</HorizontalScroll>
+            <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={plumber.image}
+                  alt={plumber.name}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
+                />
+                <Typography
+                  sx={{
+                    color: "rgba(13, 162, 208, 1)",
+                    position: "absolute",
+                    bottom: -9,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border: "0.5px solid #ccc",
+                  }}
+                >
+                  View Details
+                </Typography>
+              </Box>
+
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+                {plumber.name}
+              </Typography>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+                5 km away
+              </Typography>
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
+            </Box>
+          </Box>
+        ))}
+      </HorizontalScroll>
 
 
       <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
         Electrician’s Near You
       </Typography>
 
-<HorizontalScroll>
-  {electricians.map((electrician) => (
-    <Box
-      key={electrician.name}
-      onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: {
-            name: electrician.name,
-            img: electrician.image,
-            selectedService: "Electrician",
-          },
-        })
-      }
-      sx={{
-        minWidth: 120,
-        height: 165,
-        borderRadius: 1,
-        position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
-        transition: "box-shadow 0.3s ease-in-out",
-        backgroundColor: "#fff",
-        mx: 1,
-        cursor: "pointer",
-      }}
-    >
-      <IconButton
-        onClick={(e) => {
-          e.stopPropagation(); // prevent navigate when clicking the icon
-          toggleLike(electrician.name);
-        }}
-        sx={{
-          position: "absolute",
-          top: 2,
-          right: 2,
-          zIndex: 1,
-        }}
-      >
-        {liked.includes(electrician.name) ? (
-          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
-        ) : (
-          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
-        )}
-      </IconButton>
-
-      <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
-        <Box sx={{ position: "relative", mb: 1 }}>
-          <Avatar
-            src={electrician.image}
-            alt={electrician.name}
-            sx={{ mx: "auto", width: 70, height: 70 }}
-          />
-          <Typography
+      <HorizontalScroll>
+        {electricians.map((electrician) => (
+          <Box
+            key={electrician.name}
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: {
+                  name: electrician.name,
+                  img: electrician.image,
+                  selectedService: "Electrician",
+                },
+              })
+            }
             sx={{
-              color: "rgba(13, 162, 208, 1)",
-              position: "absolute",
-              bottom: -9,
-              left: "50%",
-              transform: "translateX(-50%)",
-              bgcolor: "#fff",
-              px: 0.5,
-              fontSize: 9,
-              fontWeight: 500,
-              borderRadius: 0.2,
-              border: "0.5px solid #ccc",
+              minWidth: 120,
+              height: 165,
+              borderRadius: 1,
+              position: "relative",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+              transition: "box-shadow 0.3s ease-in-out",
+              backgroundColor: "#fff",
+              mx: 1,
+              cursor: "pointer",
             }}
           >
-            View Details
-          </Typography>
-        </Box>
+            <IconButton
+              onClick={(e) => {
+                e.stopPropagation(); // prevent navigate when clicking the icon
+                toggleLike(electrician.name);
+              }}
+              sx={{
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
+              }}
+            >
+              {liked.includes(electrician.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
 
-        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
-          {electrician.name}
-        </Typography>
-        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-          5 km away
-        </Typography>
-        <Rating
-          name="read-only"
-          value={4}
-          sx={{ fontSize: 10 }}
-          readOnly
-        />
-      </Box>
-    </Box>
-  ))}
-</HorizontalScroll>
+            <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={electrician.image}
+                  alt={electrician.name}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
+                />
+                <Typography
+                  sx={{
+                    color: "rgba(13, 162, 208, 1)",
+                    position: "absolute",
+                    bottom: -9,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border: "0.5px solid #ccc",
+                  }}
+                >
+                  View Details
+                </Typography>
+              </Box>
+
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+                {electrician.name}
+              </Typography>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+                5 km away
+              </Typography>
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
+            </Box>
+          </Box>
+        ))}
+      </HorizontalScroll>
 
 
 
@@ -832,92 +832,92 @@ const MobHome = () => {
         Painter’s Near You
       </Typography>
 
-<HorizontalScroll>
-  {painters.map((painter) => (
-    <Box
-      key={painter.name}
-      onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: {
-            name: painter.name,
-            img: painter.image,
-            selectedService: "Painter",
-          },
-        })
-      }
-      sx={{
-        minWidth: 120,
-        height: 165,
-        borderRadius: 1,
-        position: "relative",
-        boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
-        transition: "box-shadow 0.3s ease-in-out",
-        backgroundColor: "#fff",
-        mx: 1,
-        cursor: "pointer",
-      }}
-    >
-      <IconButton
-        onClick={(e) => {
-          e.stopPropagation(); // Prevent navigation on like
-          toggleLike(painter.name);
-        }}
-        sx={{
-          position: "absolute",
-          top: 2,
-          right: 2,
-          zIndex: 1,
-        }}
-      >
-        {liked.includes(painter.name) ? (
-          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
-        ) : (
-          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
-        )}
-      </IconButton>
-
-      <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
-        <Box sx={{ position: "relative", mb: 1 }}>
-          <Avatar
-            src={painter.image}
-            alt={painter.name}
-            sx={{ mx: "auto", width: 70, height: 70 }}
-          />
-          <Typography
+      <HorizontalScroll>
+        {painters.map((painter) => (
+          <Box
+            key={painter.name}
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: {
+                  name: painter.name,
+                  img: painter.image,
+                  selectedService: "Painter",
+                },
+              })
+            }
             sx={{
-              color: "rgba(13, 162, 208, 1)",
-              position: "absolute",
-              bottom: -9,
-              left: "50%",
-              transform: "translateX(-50%)",
-              bgcolor: "#fff",
-              px: 0.5,
-              fontSize: 9,
-              fontWeight: 500,
-              borderRadius: 0.2,
-              border: "0.5px solid #ccc",
+              minWidth: 120,
+              height: 165,
+              borderRadius: 1,
+              position: "relative",
+              boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.1)",
+              transition: "box-shadow 0.3s ease-in-out",
+              backgroundColor: "#fff",
+              mx: 1,
+              cursor: "pointer",
             }}
           >
-            View Details
-          </Typography>
-        </Box>
+            <IconButton
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent navigation on like
+                toggleLike(painter.name);
+              }}
+              sx={{
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
+              }}
+            >
+              {liked.includes(painter.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
 
-        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
-          {painter.name}
-        </Typography>
-        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-          5 km away
-        </Typography>
-        <Rating
-          name="read-only"
-          value={4}
-          sx={{ fontSize: 10 }}
-          readOnly
-        />
-      </Box>
-    </Box>
-  ))}
-</HorizontalScroll>
+            <Box sx={{ textAlign: "center", p: 0, pt: 2 }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={painter.image}
+                  alt={painter.name}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
+                />
+                <Typography
+                  sx={{
+                    color: "rgba(13, 162, 208, 1)",
+                    position: "absolute",
+                    bottom: -9,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border: "0.5px solid #ccc",
+                  }}
+                >
+                  View Details
+                </Typography>
+              </Box>
+
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+                {painter.name}
+              </Typography>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+                5 km away
+              </Typography>
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
+            </Box>
+          </Box>
+        ))}
+      </HorizontalScroll>
 
 
 
