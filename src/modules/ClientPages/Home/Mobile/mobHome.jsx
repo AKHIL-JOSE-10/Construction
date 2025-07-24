@@ -28,7 +28,7 @@ import InstantService from "../../../../assets/InstantService.png"
 import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 
-import Artisans from'@/assets/Artisans.png'
+import Artisans from '@/assets/Artisans.png'
 import LegalIcon from '@/assets/Legal.png'
 import FabricationIcon from '@/assets/Fabrication.png'
 import ArchitecturalIcon from '@/assets/Architectural.png'
@@ -40,15 +40,19 @@ import InstantIcon from '@/assets/Instant.png'
 const pages = [
   [
     { label: "All", icon: AllIcon },
-    { label: "Architects",icon: ArchitecturalIcon },
+    { label: "Urgent", icon: InstantIcon },
+    { label: "Architects", icon: ArchitecturalIcon },
     { label: "Engineers", icon: EngineersIcon },
-        { label: "Contractors", icon: ContractorsIcon },
-        { label: "Urgent", icon: InstantIcon },
-        { label: "Fabrication", icon: FabricationIcon },
-        { label: "Automation", icon: AutomationIcon },
-        { label: "Legal", icon: LegalIcon },
-        { label: "Education", icon: EducationalIcon },
-    
+    { label: "Fabrication", icon: FabricationIcon },
+    { label: "Contractors", icon: ContractorsIcon },
+
+
+    { label: "Artisans", icon: Artisans },
+
+    { label: "Automation", icon: AutomationIcon },
+    { label: "Legal", icon: LegalIcon },
+    { label: "Education", icon: EducationalIcon },
+
   ]
 ];
 
@@ -204,7 +208,7 @@ const HorizontalScroll = ({ children }) => (
 const MobHome = () => {
   const [selectedService, setSelectedService] = useState("Fast");
   const [liked, setLiked] = useState([]);
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const toggleLike = (name) => {
     setLiked((prev) =>
@@ -219,7 +223,7 @@ const navigate = useNavigate();
   };
 
   return (
-    <Grid sx={{ pb: 2, bgcolor:  "#ffffffff"}}>
+    <Grid sx={{ pb: 2, bgcolor: "#ffffffff" }}>
       {/* Header */}
       <Box
         sx={{
@@ -254,7 +258,7 @@ const navigate = useNavigate();
         </Box>
         <Stack direction="row" spacing={1} alignItems="center">
           <IconButton onClick={() => navigate("/mobile-notifications")}>
-            <NotificationsNoneOutlined/>
+            <NotificationsNoneOutlined />
           </IconButton>
           <Avatar onClick={() => navigate("/editInfo")}
             sx={{ width: 32, height: 32 }}
@@ -264,70 +268,76 @@ const navigate = useNavigate();
       </Box>
 
       {/* Search */}
-        <Box sx={{px:2, mb:1}}> 
-          <SearchBar/>
-        </Box>
-       
+      <Box sx={{ px: 2, mb: 1 }}>
+        <SearchBar />
+      </Box>
+
 
       {/* Banner */}
       <AdvertisementCarousel />
 
       {/* Services */}
-      
-<Box
-      sx={{
-        display: "flex",
-        overflowX: "auto",
-        scrollSnapType: "x mandatory",
-        scrollBehavior: "smooth",
-        p: 0,
-        m: 0,
-      }}
-    >
-      {pages.map((page, idx) => (
-        <Box
-          key={idx}
-          sx={{
-            flex: "0 0 100vw",
-            scrollSnapAlign: "start",
-            display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gridTemplateRows: "repeat(2, auto)",
-            gap: 2,
-            boxSizing: "border-box",
-            padding: 2,
-          }}
-        >
-          {page.map((item, index) => (
-            <Box
-  key={index}
-  sx={{
-    backgroundColor:"#f7f1f1ff",
-    textAlign: "center",
-    borderRadius: 1,
-    height: 70,
-    width: 70,
-    mx: "auto",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 1,
-     p:0.7
-  }}
->
-  <Box
-    component="img"
-    src={item.icon}
-    alt={item.label}
-    sx={{ width: '100%', height: 'auto', }}
-  />
-  <Typography  color="black" fontSize={12} fontWeight={'550'}>{item.label}</Typography>
-</Box>
-          ))}
-        </Box>
-      ))}
-    </Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          overflowX: "auto",
+          scrollSnapType: "x mandatory",
+          scrollBehavior: "smooth",
+          p: 0,
+          m: 0,
+
+          // Hides scrollbar across browsers
+          scrollbarWidth: "none", // Firefox
+          "&::-webkit-scrollbar": {
+            display: "none", // Chrome, Safari
+          },
+        }}
+      >
+        {pages.map((page, idx) => (
+          <Box
+            key={idx}
+            sx={{
+              flex: "0 0 100vw",
+              scrollSnapAlign: "start",
+              display: "grid",
+              gridTemplateColumns: "repeat(5, 1fr)",
+              gridTemplateRows: "repeat(2, auto)",
+              gap: 2,
+              boxSizing: "border-box",
+              padding: 2,
+            }}
+          >
+            {page.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  backgroundColor: "#f7f1f1ff",
+                  textAlign: "center",
+                  borderRadius: 1,
+                  height: 70,
+                  width: 70,
+                  mx: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 1,
+                  p: 0.7
+                }}
+              >
+                <Box
+                  component="img"
+                  src={item.icon}
+                  alt={item.label}
+                  sx={{ width: '100%', height: 'auto', }}
+                />
+                <Typography color="black" fontSize={12} fontWeight={'550'}>{item.label}</Typography>
+              </Box>
+            ))}
+          </Box>
+        ))}
+      </Box>
 
       {/* <Grid
         container
@@ -404,7 +414,7 @@ const navigate = useNavigate();
 
       <Grid container justifyContent="center">
         <Grid sx={{ my: 3, px: 1 }}>
-          <Box component="img" src={InstantService}  alt="Sample" onClick={() => navigate("/mobile-Urgent-ServiceRequest")} sx={{
+          <Box component="img" src={InstantService} alt="Sample" onClick={() => navigate("/mobile-Urgent-ServiceRequest")} sx={{
             width: "100%", height: "auto", objectFit: "cover",
             borderRadius: 1, cursor: "pointer",
           }} />
@@ -470,30 +480,30 @@ const navigate = useNavigate();
 
 
       {/* Locations we offer*/}
-<Box
-  sx={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    mt: 2,
-    mb: 1,
-    px: 1.5,
-  }}
->
-  <Typography sx={{ fontSize: 17, fontWeight: 600 }}>
-    Locations we offer
-  </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mt: 2,
+          mb: 1,
+          px: 1.5,
+        }}
+      >
+        <Typography sx={{ fontSize: 17, fontWeight: 600 }}>
+          Locations we offer
+        </Typography>
 
-  <Typography
-    sx={{
-      fontSize: 14,
-      fontWeight: 500,
-      color: "#bc9623ff",
-    }}
-  >
-    View All
-  </Typography>
-</Box>
+        <Typography
+          sx={{
+            fontSize: 14,
+            fontWeight: 500,
+            color: "#bc9623ff",
+          }}
+        >
+          View All
+        </Typography>
+      </Box>
 
       <HorizontalScroll>
         {locations.map((loc) => (
@@ -504,7 +514,7 @@ const navigate = useNavigate();
               flex: "0 0 auto",
               textAlign: "center",
               mx: 1,
-              mb:2
+              mb: 2
             }}
           >
             {/* Image container */}
@@ -533,7 +543,7 @@ const navigate = useNavigate();
         ))}
       </HorizontalScroll>
 
-            {/* Banner */}
+      {/* Banner */}
       <AdvertisementCarousel />
 
       {/* Architects Near You */}
@@ -545,11 +555,11 @@ const navigate = useNavigate();
         {architects.map((arch) => (
           <Card
             key={arch.name}
-             onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: { name: arch.name, img: arch.image, selectedService: "Architect", },
-        })
-      }
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: { name: arch.name, img: arch.image, selectedService: "Architect", },
+              })
+            }
             sx={{
               minWidth: 120,
               height: 165,
@@ -626,10 +636,10 @@ const navigate = useNavigate();
           <Card
             key={plumber.name}
             onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: { name: plumber.name, img: plumber.image, selectedService: "Plumber",},
-        })
-      }
+              navigate("/mobile-workerpage", {
+                state: { name: plumber.name, img: plumber.image, selectedService: "Plumber", },
+              })
+            }
             sx={{
               minWidth: 120,
               height: 165,
@@ -697,174 +707,174 @@ const navigate = useNavigate();
         ))}
       </HorizontalScroll>
 
-<Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
-  Electrician’s Near You
-</Typography>
+      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+        Electrician’s Near You
+      </Typography>
 
-<HorizontalScroll>
-  {electricians.map((electrician) => (
-    <Card
-      key={electrician.name}
-      onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: {
-            name: electrician.name,
-            img: electrician.image,
-            selectedService: "Electrician",
-          },
-        })
-      }
-      sx={{
-        minWidth: 120,
-        height: 165,
-        border: "1px solid #ccc",
-        borderRadius: 0.5,
-        position: "relative",
-      }}
-    >
-      <IconButton
-        onClick={() => toggleLike(electrician.name)}
-        sx={{
-          position: "absolute",
-          top: 2,
-          right: 2,
-          zIndex: 1,
-        }}
-      >
-        {liked.includes(electrician.name) ? (
-          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
-        ) : (
-          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
-        )}
-      </IconButton>
-
-      <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
-        <Box sx={{ position: "relative", mb: 1 }}>
-          <Avatar
-            src={electrician.image}
-            alt={electrician.name}
-            sx={{ mx: "auto", width: 70, height: 70 }}
-          />
-          <Typography
+      <HorizontalScroll>
+        {electricians.map((electrician) => (
+          <Card
+            key={electrician.name}
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: {
+                  name: electrician.name,
+                  img: electrician.image,
+                  selectedService: "Electrician",
+                },
+              })
+            }
             sx={{
-              color: "rgba(13, 162, 208, 1)",
-              position: "absolute",
-              bottom: -9,
-              left: "50%",
-              transform: "translateX(-50%)",
-              bgcolor: "#fff",
-              px: 0.5,
-              fontSize: 9,
-              fontWeight: 500,
-              borderRadius: 0.2,
-              border: "0.5px solid #ccc",
+              minWidth: 120,
+              height: 165,
+              border: "1px solid #ccc",
+              borderRadius: 0.5,
+              position: "relative",
             }}
           >
-            View Details
-          </Typography>
-        </Box>
+            <IconButton
+              onClick={() => toggleLike(electrician.name)}
+              sx={{
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
+              }}
+            >
+              {liked.includes(electrician.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
 
-        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
-          {electrician.name}
-        </Typography>
-        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-          5 km away
-        </Typography>
-        <Rating
-          name="read-only"
-          value={4}
-          sx={{ fontSize: 10 }}
-          readOnly
-        />
-      </CardContent>
-    </Card>
-  ))}
-</HorizontalScroll>
+            <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={electrician.image}
+                  alt={electrician.name}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
+                />
+                <Typography
+                  sx={{
+                    color: "rgba(13, 162, 208, 1)",
+                    position: "absolute",
+                    bottom: -9,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border: "0.5px solid #ccc",
+                  }}
+                >
+                  View Details
+                </Typography>
+              </Box>
+
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+                {electrician.name}
+              </Typography>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+                5 km away
+              </Typography>
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
+            </CardContent>
+          </Card>
+        ))}
+      </HorizontalScroll>
 
 
-<Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
-  Painter’s Near You
-</Typography>
+      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+        Painter’s Near You
+      </Typography>
 
-<HorizontalScroll>
-  {painters.map((painter) => (
-    <Card
-      key={painter.name}
-      onClick={() =>
-        navigate("/mobile-workerpage", {
-          state: {
-            name: painter.name,
-            img: painter.image,
-            selectedService: "Painter",
-          },
-        })
-      }
-      sx={{
-        minWidth: 120,
-        height: 165,
-        border: "1px solid #ccc",
-        borderRadius: 0.5,
-        position: "relative",
-      }}
-    >
-      <IconButton
-        onClick={() => toggleLike(painter.name)}
-        sx={{
-          position: "absolute",
-          top: 2,
-          right: 2,
-          zIndex: 1,
-        }}
-      >
-        {liked.includes(painter.name) ? (
-          <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
-        ) : (
-          <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
-        )}
-      </IconButton>
-
-      <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
-        <Box sx={{ position: "relative", mb: 1 }}>
-          <Avatar
-            src={painter.image}
-            alt={painter.name}
-            sx={{ mx: "auto", width: 70, height: 70 }}
-          />
-          <Typography
+      <HorizontalScroll>
+        {painters.map((painter) => (
+          <Card
+            key={painter.name}
+            onClick={() =>
+              navigate("/mobile-workerpage", {
+                state: {
+                  name: painter.name,
+                  img: painter.image,
+                  selectedService: "Painter",
+                },
+              })
+            }
             sx={{
-              color: "rgba(13, 162, 208, 1)",
-              position: "absolute",
-              bottom: -9,
-              left: "50%",
-              transform: "translateX(-50%)",
-              bgcolor: "#fff",
-              px: 0.5,
-              fontSize: 9,
-              fontWeight: 500,
-              borderRadius: 0.2,
-              border: "0.5px solid #ccc",
+              minWidth: 120,
+              height: 165,
+              border: "1px solid #ccc",
+              borderRadius: 0.5,
+              position: "relative",
             }}
           >
-            View Details
-          </Typography>
-        </Box>
+            <IconButton
+              onClick={() => toggleLike(painter.name)}
+              sx={{
+                position: "absolute",
+                top: 2,
+                right: 2,
+                zIndex: 1,
+              }}
+            >
+              {liked.includes(painter.name) ? (
+                <FavoriteIcon sx={{ color: "red", fontSize: 18 }} />
+              ) : (
+                <FavoriteBorderIcon sx={{ color: "grey", fontSize: 18 }} />
+              )}
+            </IconButton>
 
-        <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
-          {painter.name}
-        </Typography>
-        <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
-          5 km away
-        </Typography>
-        <Rating
-          name="read-only"
-          value={4}
-          sx={{ fontSize: 10 }}
-          readOnly
-        />
-      </CardContent>
-    </Card>
-  ))}
-</HorizontalScroll>
+            <CardContent sx={{ textAlign: "center", p: 0, pt: 2 }}>
+              <Box sx={{ position: "relative", mb: 1 }}>
+                <Avatar
+                  src={painter.image}
+                  alt={painter.name}
+                  sx={{ mx: "auto", width: 70, height: 70 }}
+                />
+                <Typography
+                  sx={{
+                    color: "rgba(13, 162, 208, 1)",
+                    position: "absolute",
+                    bottom: -9,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    bgcolor: "#fff",
+                    px: 0.5,
+                    fontSize: 9,
+                    fontWeight: 500,
+                    borderRadius: 0.2,
+                    border: "0.5px solid #ccc",
+                  }}
+                >
+                  View Details
+                </Typography>
+              </Box>
+
+              <Typography sx={{ fontSize: 12, fontWeight: 600, mt: 2 }}>
+                {painter.name}
+              </Typography>
+              <Typography sx={{ fontSize: 10, color: "gray", mt: 0.5 }}>
+                5 km away
+              </Typography>
+              <Rating
+                name="read-only"
+                value={4}
+                sx={{ fontSize: 10 }}
+                readOnly
+              />
+            </CardContent>
+          </Card>
+        ))}
+      </HorizontalScroll>
 
 
       {/* Bottom Navigation */}
