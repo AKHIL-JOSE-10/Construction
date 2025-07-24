@@ -6,8 +6,6 @@ import {
   Stack,
   IconButton,
   Avatar,
-  Card,
-  CardContent,
   Rating,
 } from "@mui/material";
 import {
