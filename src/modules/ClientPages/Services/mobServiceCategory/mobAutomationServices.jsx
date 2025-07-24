@@ -2,7 +2,7 @@ import { Grid, Box } from "@mui/material";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
 import CCTV from "@/assets/CCTV.png";
-import Automation from "@/assets/Automation.png";
+import Automation from "@/assets/SecurityAutomation.png";
 import AudioVideo from "@/assets/AudioVideo.png";
 import SmartLock from "@/assets/SmartLock.png";
 import { useNavigate } from "react-router-dom";

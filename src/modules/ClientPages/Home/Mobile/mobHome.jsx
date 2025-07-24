@@ -22,29 +22,40 @@ import SearchBar from "./SearchBar";
 // import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
 import ArchisansWorker from "../../../../assets/ArchisansWorker.jpg";
-import ArchitecturalIcon from "@/assets/Architectural.png";
 import AllIcon from "@/assets/All.png";
-import ArtisansIcon from "@/assets/Artisans.png";
-import FabricationIcon from "@/assets/Fabrication.png";
-import AutomationIcon from "@/assets/Automation.png"
+import AutomationIcon from "@/assets/SecurityAutomation.png"
 import InstantService from "../../../../assets/InstantService.png"
 import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 
-const serviceLists = [
-  "Fast",
-  "All",
-  "Architectural",
-  "Artisans",
-  "Fabrication",
-  "Other",
+import Artisans from'@/assets/Artisans.png'
+import LegalIcon from '@/assets/Legal.png'
+import FabricationIcon from '@/assets/Fabrication.png'
+import ArchitecturalIcon from '@/assets/Architectural.png'
+import EducationalIcon from '@/assets/Educational.png'
+import ContractorsIcon from '@/assets/Contractors.png'
+import EngineersIcon from '@/assets/Engineers.png'
+
+const pages = [
+  [
+    { label: "All", icon: Artisans },
+    { label: "Architects",icon: ArchitecturalIcon },
+    { label: "Engineers", icon: EngineersIcon },
+        { label: "Contractors", icon: ContractorsIcon },
+        { label: "Urgent", icon: Artisans },
+        { label: "Fabrication", icon: FabricationIcon },
+        { label: "Automation", icon: AutomationIcon },
+        { label: "Legal", icon: LegalIcon },
+        { label: "Education", icon: EducationalIcon },
+    
+  ]
 ];
 
 const serviceImages = {
   Fast: AllIcon,
   All: AllIcon,
   Architectural: ArchitecturalIcon,
-  Artisans: ArtisansIcon,
+  Artisans: Artisans,
   Fabrication: FabricationIcon,
   Other: AllIcon,
 };
@@ -170,7 +181,7 @@ const painters = [
 
 const popularServices = [
   { name: "Architectural", icon: ArchitecturalIcon },
-  { name: "Artisans", icon: ArtisansIcon },
+  { name: "Artisans", icon: Artisans },
   { name: "Fabrication", icon: FabricationIcon },
   { name: "Automation", icon: AutomationIcon },
   { name: "Other", icon: AllIcon },
@@ -207,7 +218,7 @@ const navigate = useNavigate();
   };
 
   return (
-    <Box sx={{ pb: 2, bgcolor: "#fff", minHeight: "100vh" }}>
+    <Box sx={{ pb: 2, bgcolor:  "#f7f1f1ff", minHeight: "100vh" }}>
       {/* Header */}
       <Box
         sx={{
@@ -261,54 +272,60 @@ const navigate = useNavigate();
       <AdvertisementCarousel />
 
       {/* Services */}
-      <Box
-        sx={{ position: "sticky", top: 0, bgcolor: "#fff", zIndex: 2, }}
-      >
-        <HorizontalScroll>
-          {serviceLists.map((service) => (
+      
+<Box
+      sx={{
+        display: "flex",
+        overflowX: "auto",
+        scrollSnapType: "x mandatory",
+        scrollBehavior: "smooth",
+        p: 0,
+        m: 0,
+      }}
+    >
+      {pages.map((page, idx) => (
+        <Box
+          key={idx}
+          sx={{
+            flex: "0 0 100vw",
+            scrollSnapAlign: "start",
+            display: "grid",
+            gridTemplateColumns: "repeat(5, 1fr)",
+            gridTemplateRows: "repeat(2, auto)",
+            gap: 3,
+            boxSizing: "border-box",
+            padding: 2,
+          }}
+        >
+          {page.map((item, index) => (
             <Box
-              key={service}
-              onClick={() => setSelectedService(service)}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                px: 1.5,
-                py: 0.2,
-                mt: 1,
-                borderRadius: 0.6,
-                border: "1px solid #e91e63",
-                backgroundColor:
-                  selectedService === service ? "#e91e63" : "#fff",
-                color: selectedService === service ? "#fff" : "#000",
-                cursor: "pointer",
-                fontWeight: 600,
-                fontSize: 13,
-              }}
-            >
-              <Box
-                sx={{
-                  width: 26,
-                  height: 26,
-                  borderRadius: "0px",
-                  overflow: "hidden",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  mr: 1,
-                }}
-              >
-                <Box
-                  component="img"
-                  src={serviceImages[service]}
-                  alt={service}
-                  sx={{ width: "100%", height: "100%", objectFit: "contain" }}
-                />
-              </Box>
-              {service}
-            </Box>
+  key={index}
+  sx={{
+    backgroundColor: "#ffeef1",
+    textAlign: "center",
+    borderRadius: 1,
+    height: 70,
+    width: 70,
+    mx: "auto",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 1,
+  }}
+>
+  <Box
+    component="img"
+    src={item.icon}
+    alt={item.label}
+    sx={{ width: '100%', height: 'auto', }}
+  />
+  <Typography  color="black" fontSize={13} fontWeight={'550'}>{item.label}</Typography>
+</Box>
           ))}
-        </HorizontalScroll>
-      </Box>
+        </Box>
+      ))}
+    </Box>
 
       {/* <Grid
         container

@@ -23,7 +23,7 @@ import Roofing from "@/assets/Roofing.png";
 import Glass from "@/assets/Glass.png";
 import Steel from "@/assets/Steel.png";
 import CCTV from "@/assets/CCTV.png";
-import Automation from "@/assets/Automation.png";
+import Automation from "@/assets/SecurityAutomation.png";
 import AudioVideo from "@/assets/AudioVideo.png";
 import SmartLock from "@/assets/SmartLock.png";
 import LandScaping from "@/assets/LandScaping.png";

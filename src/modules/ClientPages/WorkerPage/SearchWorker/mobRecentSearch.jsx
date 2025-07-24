@@ -19,7 +19,7 @@ import {
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
-import Artisans from '../../../../assets/Artisans.png';
+import Artisans from '@/assets/Artisans.png';
 import CCTV from '../../../../assets/CCTV.png';
 import Architectural from '../../../../assets/Architectural.png';
 import Legal from '../../../../assets/Legal.png';

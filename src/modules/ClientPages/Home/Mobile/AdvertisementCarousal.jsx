@@ -1,7 +1,10 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, EffectCoverflow } from 'swiper/modules';
+
 import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/autoplay';
 
 import { Box, CardMedia } from '@mui/material';
 
@@ -21,26 +24,38 @@ const AdvertisementCarousel = () => {
       sx={{
         width: '100%',
         mx: 'auto',
-        py: 2,
+        pt: 2,
+        maxWidth: 1000,
       }}
     >
       <Swiper
-        modules={[Autoplay]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        loop
-        slidesPerView={1.2} // shows one card and peeks
+        effect="coverflow"
+        grabCursor
         centeredSlides
-        spaceBetween={20} // gap between slides
+        slidesPerView="auto"
+        loop
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2.5,
+          slideShadows: false,
+        }}
+        modules={[Autoplay, EffectCoverflow]}
+        style={{ paddingBottom: '10px' }}
       >
         {imageData.map((item, index) => (
           <SwiperSlide key={index}>
             <Box
+              className="slide-box"
               sx={{
-                borderRadius: 1,
+                borderRadius: 2,
                 overflow: 'hidden',
-                boxShadow: 3,
                 backgroundColor: '#fff',
                 aspectRatio: '18/9',
+                transform: 'scale(0.85)',
+                transition: 'transform 0.4s ease-in-out',
               }}
             >
               <CardMedia

@@ -1,7 +1,7 @@
 import Architectural from '../../../../assets/Architectural.png';
 import Fabrication from '../../../../assets/Fabrication.png'
-import Artisans from '../../../../assets/Artisans.png';
-import Automation from '../../../../assets/Automation.png';
+import Artisans from '@/assets/Artisans.png';
+import Automation from '../../../../assets/SecurityAutomation.png';
 import Education from '../../../../assets/Education.png';
 import Legal from '../../../../assets/Legal.png';
 import { Height } from '@mui/icons-material';
