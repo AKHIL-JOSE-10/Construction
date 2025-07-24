@@ -50,10 +50,10 @@ const AdvertisementCarousel = () => {
             <Box
               className="slide-box"
               sx={{
-                borderRadius: 2,
+                borderRadius: 0.5,
                 overflow: 'hidden',
                 backgroundColor: '#fff',
-                aspectRatio: '18/9',
+                aspectRatio: '17/9',
                 transform: 'scale(0.85)',
                 transition: 'transform 0.4s ease-in-out',
               }}
