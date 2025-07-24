@@ -292,7 +292,7 @@ const navigate = useNavigate();
             display: "grid",
             gridTemplateColumns: "repeat(5, 1fr)",
             gridTemplateRows: "repeat(2, auto)",
-            gap: 3,
+            gap: 2,
             boxSizing: "border-box",
             padding: 2,
           }}
@@ -301,7 +301,7 @@ const navigate = useNavigate();
             <Box
   key={index}
   sx={{
-    backgroundColor:"#ffffffff",
+    backgroundColor:"#f7f1f1ff",
     textAlign: "center",
     borderRadius: 1,
     height: 75,
