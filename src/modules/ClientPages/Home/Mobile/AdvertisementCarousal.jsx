@@ -24,7 +24,6 @@ const AdvertisementCarousel = () => {
       sx={{
         width: '100%',
         mx: 'auto',
-        pt: 2,
         maxWidth: 1000,
       }}
     >

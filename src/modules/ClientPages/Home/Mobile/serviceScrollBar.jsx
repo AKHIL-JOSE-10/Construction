@@ -52,7 +52,8 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           overflowX: "auto",
           scrollSnapType: "x mandatory",
           scrollBehavior: "smooth",
-          p: 1,
+          px: 1,
+          pb:1.5,
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
         }}
