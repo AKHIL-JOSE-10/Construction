@@ -35,14 +35,15 @@ import ArchitecturalIcon from '@/assets/Architectural.png'
 import EducationalIcon from '@/assets/Educational.png'
 import ContractorsIcon from '@/assets/Contractors.png'
 import EngineersIcon from '@/assets/Engineers.png'
+import InstantIcon from '@/assets/Instant.png'
 
 const pages = [
   [
-    { label: "All", icon: Artisans },
+    { label: "All", icon: AllIcon },
     { label: "Architects",icon: ArchitecturalIcon },
     { label: "Engineers", icon: EngineersIcon },
         { label: "Contractors", icon: ContractorsIcon },
-        { label: "Urgent", icon: Artisans },
+        { label: "Urgent", icon: InstantIcon },
         { label: "Fabrication", icon: FabricationIcon },
         { label: "Automation", icon: AutomationIcon },
         { label: "Legal", icon: LegalIcon },
@@ -304,8 +305,8 @@ const navigate = useNavigate();
     backgroundColor:"#f7f1f1ff",
     textAlign: "center",
     borderRadius: 1,
-    height: 75,
-    width: 75,
+    height: 70,
+    width: 70,
     mx: "auto",
     display: "flex",
     flexDirection: "column",
@@ -321,7 +322,7 @@ const navigate = useNavigate();
     alt={item.label}
     sx={{ width: '100%', height: 'auto', }}
   />
-  <Typography  color="black" fontSize={13} fontWeight={'550'}>{item.label}</Typography>
+  <Typography  color="black" fontSize={12} fontWeight={'550'}>{item.label}</Typography>
 </Box>
           ))}
         </Box>
