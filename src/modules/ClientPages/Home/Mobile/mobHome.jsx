@@ -37,7 +37,7 @@ import ContractorsIcon from '@/assets/Contractors.png'
 import EngineersIcon from '@/assets/Engineers.png'
 import InstantIcon from '@/assets/Instant.png'
 
-import YourComponent from "./yourComponent";
+import ServiceScrollBar from "./serviceScrollBar";
 
 const pages = [
   [
@@ -282,7 +282,7 @@ const MobHome = () => {
 
       {/* Services */}
 
-<YourComponent pages={pages} scrollRef={scrollRef} />
+<ServiceScrollBar pages={pages} scrollRef={scrollRef} />
 
       {/* <Grid
         container

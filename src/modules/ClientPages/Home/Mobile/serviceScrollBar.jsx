@@ -1,22 +1,42 @@
 import React, { useRef, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 
-const YourComponent = ({ pages }) => {
-  const scrollRef = useRef(null);
-  const fakeScrollRef = useRef(null);
+const ServiceScrollBar = ({ pages }) => {
+  const realRef = useRef(null);
+  const fakeRef = useRef(null);
 
   useEffect(() => {
-    const real = scrollRef.current;
-    const fake = fakeScrollRef.current;
+    const real = realRef.current;
+    const fake = fakeRef.current;
+
+    let isSyncingFromFake = false;
+    let isSyncingFromReal = false;
+
+    const syncScroll = () => {
+      const realScrollableWidth = real.scrollWidth - real.clientWidth;
+      const fakeScrollableWidth = fake.scrollWidth - fake.clientWidth;
+
+      fake.onscroll = () => {
+        if (isSyncingFromReal) {
+          isSyncingFromReal = false;
+          return;
+        }
+        isSyncingFromFake = true;
+        real.scrollLeft = (fake.scrollLeft / fakeScrollableWidth) * realScrollableWidth;
+      };
+
+      real.onscroll = () => {
+        if (isSyncingFromFake) {
+          isSyncingFromFake = false;
+          return;
+        }
+        isSyncingFromReal = true;
+        fake.scrollLeft = (real.scrollLeft / realScrollableWidth) * fakeScrollableWidth;
+      };
+    };
 
     if (real && fake) {
-      // Sync fake scrollbar scroll with real scroll
-      fake.onscroll = () => {
-        real.scrollLeft = fake.scrollLeft;
-      };
-      real.onscroll = () => {
-        fake.scrollLeft = real.scrollLeft;
-      };
+      syncScroll();
     }
   }, []);
 
@@ -24,15 +44,15 @@ const YourComponent = ({ pages }) => {
     <Box sx={{ position: "relative", width: "100vw", overflow: "hidden" }}>
       {/* Real Scrollable Content */}
       <Box
-        ref={scrollRef}
+        ref={realRef}
         sx={{
           display: "flex",
           overflowX: "auto",
           scrollSnapType: "x mandatory",
           scrollBehavior: "smooth",
           p: 1,
-          scrollbarWidth: "none", // Firefox
-          "&::-webkit-scrollbar": { display: "none" }, // Chrome/Safari
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
         }}
       >
         {pages.map((page, idx) => (
@@ -85,9 +105,9 @@ const YourComponent = ({ pages }) => {
         ))}
       </Box>
 
-      {/* Fake Scrollbar (Center 50% Width) */}
+      {/* Fake Scrollbar Centered with 50% width */}
       <Box
-        ref={fakeScrollRef}
+        ref={fakeRef}
         sx={{
           position: "absolute",
           bottom: 0,
@@ -107,14 +127,14 @@ const YourComponent = ({ pages }) => {
           "&::-webkit-scrollbar-track": {
             backgroundColor: "#ffffff",
             borderRadius: "4px",
-            width:'10px'
           },
         }}
       >
-        <Box sx={{ width: `${pages.length * 75}vw`, height: "1px" }} />
+        {/* Fake content used only for scroll size */}
+        <Box sx={{ width: `${pages.length * 100}vw`, height: "1px" }} />
       </Box>
     </Box>
   );
 };
 
-export default YourComponent;
+export default ServiceScrollBar;
