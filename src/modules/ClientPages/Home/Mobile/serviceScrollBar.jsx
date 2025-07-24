@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 
-const ServiceScrollBar = ({ pages }) => {
+const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
   const realRef = useRef(null);
   const fakeRef = useRef(null);
 
@@ -22,7 +22,8 @@ const ServiceScrollBar = ({ pages }) => {
           return;
         }
         isSyncingFromFake = true;
-        real.scrollLeft = (fake.scrollLeft / fakeScrollableWidth) * realScrollableWidth;
+        real.scrollLeft =
+          (fake.scrollLeft / fakeScrollableWidth) * realScrollableWidth;
       };
 
       real.onscroll = () => {
@@ -31,7 +32,8 @@ const ServiceScrollBar = ({ pages }) => {
           return;
         }
         isSyncingFromReal = true;
-        fake.scrollLeft = (real.scrollLeft / realScrollableWidth) * fakeScrollableWidth;
+        fake.scrollLeft =
+          (real.scrollLeft / realScrollableWidth) * fakeScrollableWidth;
       };
     };
 
@@ -105,15 +107,15 @@ const ServiceScrollBar = ({ pages }) => {
         ))}
       </Box>
 
-      {/* Fake Scrollbar Centered with 50% width */}
+      {/* Fake Scrollbar */}
       <Box
         ref={fakeRef}
         sx={{
           position: "absolute",
           bottom: 0,
-          left: "25vw",
-          width: "50vw",
-          height: "10px",
+          left: `${(100 - fakeScrollBarWidthPercent) / 2}vw`, // to center it
+          width: `${fakeScrollBarWidthPercent}vw`,
+          height: "6px",
           overflowX: "auto",
           overflowY: "hidden",
           zIndex: 10,
@@ -130,7 +132,6 @@ const ServiceScrollBar = ({ pages }) => {
           },
         }}
       >
-        {/* Fake content used only for scroll size */}
         <Box sx={{ width: `${pages.length * 100}vw`, height: "1px" }} />
       </Box>
     </Box>
