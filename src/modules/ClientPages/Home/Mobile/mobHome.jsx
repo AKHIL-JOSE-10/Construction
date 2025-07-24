@@ -301,17 +301,18 @@ const navigate = useNavigate();
             <Box
   key={index}
   sx={{
-    backgroundColor:"#f7f1f1ff",
+    backgroundColor:"#ffffffff",
     textAlign: "center",
     borderRadius: 1,
-    height: 80,
-    width: 80,
+    height: 75,
+    width: 75,
     mx: "auto",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     gap: 1,
+     p:0.7
   }}
 >
   <Box
