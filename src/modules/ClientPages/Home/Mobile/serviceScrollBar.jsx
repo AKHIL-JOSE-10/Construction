@@ -52,7 +52,6 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           overflowX: "auto",
           scrollSnapType: "x mandatory",
           scrollBehavior: "smooth",
-          px: 1,
           pb:1.5,
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
@@ -62,7 +61,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           <Box
             key={idx}
             sx={{
-              flex: "0 0 100vw",
+              flex: "0 0 120vw",
               scrollSnapAlign: "start",
               display: "grid",
               gridTemplateColumns: "repeat(5, 1fr)",
@@ -114,8 +113,8 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
         sx={{
           position: "absolute",
           bottom: 0,
-          left: `${(55 + fakeScrollBarWidthPercent) / 3}vw`, // to center it
-          width: `${fakeScrollBarWidthPercent/1.5}vw`,
+          left: `${(15 + fakeScrollBarWidthPercent) / 1.5}vw`, // to center it
+          width: `${fakeScrollBarWidthPercent/5}vw`,
           height: "auto",
           overflowX: "auto",
           overflowY: "hidden",
@@ -128,12 +127,12 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
             borderRadius: "100px",
           },
           "&::-webkit-scrollbar-track": {
-            backgroundColor: "#ffffff",
+            backgroundColor: "#db5a5aff",
             borderRadius: "100px",
           },
         }}
       >
-        <Box sx={{ width: `${pages.length * 100}vw`, height: "5px" }} />
+        <Box sx={{ width: `${pages.length * 50}vw`, height: "5px" }} />
       </Box>
     </Box>
   );
