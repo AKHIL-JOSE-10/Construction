@@ -333,7 +333,7 @@ const MobHome = () => {
                   alt={item.label}
                   sx={{ width: '100%', height: 'auto', }}
                 />
-                <Typography color="black" fontSize={12} fontWeight={'550'}>{item.label}</Typography>
+                <Typography color="black" fontSize={12} >{item.label}</Typography>
               </Box>
             ))}
           </Box>
