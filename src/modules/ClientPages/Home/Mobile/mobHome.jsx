@@ -327,12 +327,16 @@ const MobHome = () => {
                   p: 0.7
                 }}
               >
-                <Box
-                  component="img"
-                  src={item.icon}
-                  alt={item.label}
-                  sx={{ width: '100%', height: 'auto', }}
-                />
+<Box
+  component="img"
+  src={item.icon}
+  alt={item.label}
+  sx={{
+    width: '100%',
+    height: 'auto',
+    filter: 'brightness(1.1)', // reduce intensity (0.0 to 1.0)
+  }}
+/>
                 <Typography color="black" fontSize={12} >{item.label}</Typography>
               </Box>
             ))}
