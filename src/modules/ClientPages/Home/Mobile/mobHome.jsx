@@ -438,7 +438,7 @@ const MobHome = () => {
           px: 1.5,
         }}
       >
-        <Typography sx={{ fontSize: 17, fontWeight: 600 }}>
+        <Typography sx={{ fontSize: 17, fontWeight: 600 , mt:1.5 }}>
           Locations we offer
         </Typography>
 
@@ -496,7 +496,11 @@ const MobHome = () => {
 
 
       {/* Banner */}
-      <AdvertisementCarousel />
+
+      <Box sx={{pt:1}}>
+<AdvertisementCarousel />
+      </Box>
+      
 
       {/* Architects Near You */}
       <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2.5, mb: 1, px: 1.5 }}>
