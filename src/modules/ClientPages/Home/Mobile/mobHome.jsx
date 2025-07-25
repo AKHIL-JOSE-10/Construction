@@ -275,7 +275,7 @@ const MobHome = () => {
       </Box>
 
       {/* Search */}
-      <Box sx={{ px: 2, mb: 1,pb:3 }}>
+      <Box sx={{ px: 2, mb: 1,pb:1.5 }}>
         <SearchBar />
       </Box>
  </Grid>
