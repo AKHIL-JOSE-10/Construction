@@ -401,13 +401,12 @@ const MobHome = () => {
             onClick={() => navigate("/mobile-search-worker")}
             sx={{
               flex: "0 0 auto",
-              width: 60,
-              height: 100,
+              width: 100,
+              height: 120,
               textAlign: "center",
               backgroundColor: "#fff",
-              borderRadius: "80px",
+              borderRadius: "10px",
               boxShadow: "0px 1px 5px rgba(0,0,0,0.1)",
-              padding: 1.2,
             }}
           >
             <Box
@@ -415,13 +414,13 @@ const MobHome = () => {
               src={service.icon}
               alt={service.name}
               sx={{
-                width: 60,
-                height: 60,
+                width: 90,
+                height: 90,
                 objectFit: "contain",
                 mx: "auto",
               }}
             />
-            <Typography sx={{ fontSize: 9, fontWeight: 500, mt: 1 }}>
+            <Typography sx={{ fontSize: 12, fontWeight: 500, }}>
               {service.name}
             </Typography>
           </Box>
