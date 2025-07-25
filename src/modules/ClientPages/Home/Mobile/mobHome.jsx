@@ -225,14 +225,15 @@ const MobHome = () => {
   };
 
   return (
-    <Grid sx={{ pb: 2, bgcolor: "#ffffffff" }}>
+    <Grid sx={{ pb: 2, bgcolor: "#f8f0f0ff" }}>
+      <Grid > 
       {/* Header */}
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          mt: 2,
+          pt: 2,
           px: 2,
         }}
       >
@@ -270,10 +271,10 @@ const MobHome = () => {
       </Box>
 
       {/* Search */}
-      <Box sx={{ px: 2, mb: 1 }}>
+      <Box sx={{ px: 2, mb: 1,pb:3 }}>
         <SearchBar />
       </Box>
-
+ </Grid>
 
       {/* Banner */}
       <AdvertisementCarousel />
