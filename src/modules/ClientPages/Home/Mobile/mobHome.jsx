@@ -388,8 +388,9 @@ const MobHome = () => {
       </Grid>
 
 <Grid sx={{ bgcolor:'rgba(250, 249, 249, 1)'}}> 
-  <Box sx={{py:1}}>
-<Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+  <Box sx={{mt:1.2 , pt:0.7}}>
+
+<Typography sx={{ fontSize: 17, fontWeight: 600, mt: 1, mb: 1, px: 1.5 }}>
         Popular Services
       </Typography>
 
