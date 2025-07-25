@@ -23,7 +23,7 @@ import Artisans from '@/assets/Artisans.png';
 import CCTV from '../../../../assets/CCTV.png';
 import Architectural from '../../../../assets/Architectural.png';
 import Legal from '../../../../assets/Legal.png';
-import Education from '../../../../assets/Education.png';
+import Education from '../../../../assets/Educational.png';
 import Acoustic from '../../../../assets/Acoustic.png';
 
 
