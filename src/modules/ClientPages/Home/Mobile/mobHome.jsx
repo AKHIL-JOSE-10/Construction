@@ -52,10 +52,10 @@ const pages = [
 
     { label: "Education", icon: EducationalIcon },
 
-
-    { label: "Fabrication", icon: FabricationIcon },
+   { label: "Architects", icon: ArchitecturalIcon },
+ 
     { label: "Contractors", icon: ContractorsIcon },
-    { label: "Architects", icon: ArchitecturalIcon },
+    { label: "Fabrication", icon: FabricationIcon },
     { label: "Automation", icon: AutomationIcon },
 
 
