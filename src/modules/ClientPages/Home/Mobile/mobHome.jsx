@@ -232,7 +232,7 @@ const MobHome = () => {
 
   return (
     <Grid sx={{ pb: 2,}}>
-      <Grid > 
+      <Grid sx={{ bgcolor:'rgba(250, 249, 249, 1)'}}> 
       {/* Header */}
       <Box
         sx={{
