@@ -43,7 +43,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
   }, []);
 
   return (
-    <Box sx={{ position: "relative", width: "100vw", overflow: "hidden" }}>
+    <Box sx={{ position: "relative", width: "100vw", overflow: "hidden" ,bgcolor:' rgba(250, 249, 249, 1)',}}>
       {/* Real Scrollable Content */}
       <Box
         ref={realRef}
@@ -114,7 +114,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
         sx={{
           position: "absolute",
           bottom: 0,
-          left: `${(28 + fakeScrollBarWidthPercent) / 1.7}vw`, // to center it
+          left: `${(28 + fakeScrollBarWidthPercent) / 1.8}vw`, // to center it
           width: `${fakeScrollBarWidthPercent/4}vw`,
           height: "auto",
           overflowX: "auto",
