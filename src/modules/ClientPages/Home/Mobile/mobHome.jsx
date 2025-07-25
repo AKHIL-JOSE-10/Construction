@@ -49,14 +49,16 @@ const pages = [
     { label: "Urgent", icon: InstantIcon },
     { label: "Architects", icon: ArchitecturalIcon },
     { label: "Engineers", icon: EngineersIcon },
-    { label: "Fabrication", icon: FabricationIcon },
+    { label: "Legal", icon: LegalIcon },
+    
+    { label: "Artisans", icon: Artisans },
     { label: "Contractors", icon: ContractorsIcon },
 
+{ label: "Automation", icon: AutomationIcon },
+    
 
-    { label: "Artisans", icon: Artisans },
-
-    { label: "Automation", icon: AutomationIcon },
-    { label: "Legal", icon: LegalIcon },
+    { label: "Fabrication", icon: FabricationIcon },
+    
     { label: "Education", icon: EducationalIcon },
 
   ]
