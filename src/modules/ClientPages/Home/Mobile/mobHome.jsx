@@ -225,7 +225,7 @@ const MobHome = () => {
   };
 
   return (
-    <Grid sx={{ pb: 2, bgcolor: "#f8f0f0ff" }}>
+    <Grid sx={{ pb: 2, bgcolor: "#faf2f2ff" }}>
       <Grid > 
       {/* Header */}
       <Box
