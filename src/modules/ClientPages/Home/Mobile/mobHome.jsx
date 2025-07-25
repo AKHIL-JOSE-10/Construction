@@ -371,7 +371,7 @@ const MobHome = () => {
 
       {/* Join as Worker */}
       <Grid container justifyContent="center">
-        <Grid sx={{ mt: 3, px: 1 }}>
+        <Grid sx={{ mt: 3, px: 1 , pb:1.5}}>
           <Box
             component="img"
             src={ArchisansWorker}
