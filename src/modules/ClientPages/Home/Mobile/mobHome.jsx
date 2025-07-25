@@ -51,13 +51,13 @@ const pages = [
     { label: "Engineers", icon: EngineersIcon },
     { label: "Legal", icon: LegalIcon },
     
-    { label: "Artisans", icon: Artisans },
+  { label: "Fabrication", icon: FabricationIcon },
     { label: "Contractors", icon: ContractorsIcon },
 
 { label: "Automation", icon: AutomationIcon },
     
-
-    { label: "Fabrication", icon: FabricationIcon },
+    { label: "Artisans", icon: Artisans },
+  
     
     { label: "Education", icon: EducationalIcon },
 
