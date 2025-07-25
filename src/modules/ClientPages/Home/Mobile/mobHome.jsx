@@ -232,7 +232,7 @@ const MobHome = () => {
 
   return (
     <Grid sx={{ pb: 2,}}>
-      <Grid sx={{ bgcolor:'rgba(250, 249, 249, 1)'}}> 
+      <Grid sx={{ bgcolor:'#f7f1f1ff'}}> 
       {/* Header */}
       <Box
         sx={{
@@ -371,7 +371,7 @@ const MobHome = () => {
 
       {/* Join as Worker */}
       <Grid container justifyContent="center">
-        <Grid sx={{ my: 3, px: 1 }}>
+        <Grid sx={{ mt: 3, px: 1 }}>
           <Box
             component="img"
             src={ArchisansWorker}
@@ -388,7 +388,8 @@ const MobHome = () => {
       </Grid>
 
 <Grid sx={{ bgcolor:'rgba(250, 249, 249, 1)'}}> 
-        <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+  <Box sx={{py:1.5}}>
+<Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
         Popular Services
       </Typography>
 
@@ -425,6 +426,34 @@ const MobHome = () => {
           </Box>
         ))}
       </HorizontalScroll>
+
+            {/* Locations we offer*/}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mt: 2,
+          mb: 1,
+          px: 1.5,
+        }}
+      >
+        <Typography sx={{ fontSize: 17, fontWeight: 600 }}>
+          Locations we offer
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: 14,
+            fontWeight: 500,
+            color: "#bc9623ff",
+          }}
+        >
+          View All
+        </Typography>
+      </Box>
+      
+  </Box>
 </Grid>
 
 
