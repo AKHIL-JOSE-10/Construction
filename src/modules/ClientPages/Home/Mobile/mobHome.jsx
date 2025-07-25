@@ -361,7 +361,7 @@ const MobHome = () => {
       </Grid> */}
 
       <Grid container justifyContent="center">
-        <Grid sx={{ mb: 3, mt:3.5 , px: 1 }}>
+        <Grid sx={{ mb: 3, mt:1.5 , px: 1 }}>
           <Box component="img" src={InstantService} alt="Sample" onClick={() => navigate("/mobile-Urgent-ServiceRequest")} sx={{
             width: "100%", height: "auto", objectFit: "cover",
             borderRadius: 1, cursor: "pointer",
@@ -387,8 +387,8 @@ const MobHome = () => {
         </Grid>
       </Grid>
 
-
-      <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
+<Grid sx={{ bgcolor:'rgba(250, 249, 249, 1)'}}> 
+        <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 2, mb: 1, px: 1.5 }}>
         Popular Services
       </Typography>
 
@@ -425,6 +425,7 @@ const MobHome = () => {
           </Box>
         ))}
       </HorizontalScroll>
+</Grid>
 
 
       {/* Locations we offer*/}
