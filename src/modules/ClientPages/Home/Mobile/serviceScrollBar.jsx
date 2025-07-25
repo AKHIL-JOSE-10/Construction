@@ -75,7 +75,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
               <Box
                 key={index}
                 sx={{
-                  backgroundColor: "#f7f1f1ff",
+                  // backgroundColor: "#e7e5fdff",
                   textAlign: "center",
                   borderRadius: 1,
                   height: 65,
