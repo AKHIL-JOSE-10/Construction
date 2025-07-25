@@ -232,7 +232,7 @@ const MobHome = () => {
 
   return (
     <Grid sx={{ pb: 2,}}>
-      <Grid sx={{ bgcolor:'#f7f1f1ff'}}> 
+      <Grid > 
       {/* Header */}
       <Box
         sx={{
@@ -427,36 +427,6 @@ const MobHome = () => {
         ))}
       </HorizontalScroll>
 
-            {/* Locations we offer*/}
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          mt: 2,
-          mb: 1,
-          px: 1.5,
-        }}
-      >
-        <Typography sx={{ fontSize: 17, fontWeight: 600 }}>
-          Locations we offer
-        </Typography>
-
-        <Typography
-          sx={{
-            fontSize: 14,
-            fontWeight: 500,
-            color: "#bc9623ff",
-          }}
-        >
-          View All
-        </Typography>
-      </Box>
-      
-  </Box>
-</Grid>
-
-
       {/* Locations we offer*/}
       <Box
         sx={{
@@ -520,6 +490,10 @@ const MobHome = () => {
           </Box>
         ))}
       </HorizontalScroll>
+
+  </Box>
+</Grid>
+
 
       {/* Banner */}
       <AdvertisementCarousel />
