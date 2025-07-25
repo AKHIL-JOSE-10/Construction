@@ -402,7 +402,7 @@ const MobHome = () => {
             sx={{
               flex: "0 0 auto",
               width: 100,
-              height: 120,
+              height: 100,
               textAlign: "center",
               backgroundColor: "#fff",
               borderRadius: "10px",
@@ -414,8 +414,8 @@ const MobHome = () => {
               src={service.icon}
               alt={service.name}
               sx={{
-                width: 90,
-                height: 90,
+                width: 80,
+                height: 65,
                 objectFit: "contain",
                 mx: "auto",
               }}
