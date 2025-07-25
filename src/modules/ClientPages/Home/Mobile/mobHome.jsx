@@ -37,6 +37,12 @@ import InstantIcon from '@/assets/Instant.png'
 
 import ServiceScrollBar from "./serviceScrollBar";
 
+import {
+  MapPinIcon,
+  BellIcon,
+} from "@phosphor-icons/react";
+
+
 const pages = [
   [
     { label: "All", icon: AllIcon },
@@ -225,7 +231,7 @@ const MobHome = () => {
   };
 
   return (
-    <Grid sx={{ pb: 2, bgcolor: "#faf2f2ff" }}>
+    <Grid sx={{ pb: 2, bgcolor: "#f8f3f3ff" }}>
       <Grid > 
       {/* Header */}
       <Box
@@ -238,19 +244,17 @@ const MobHome = () => {
         }}
       >
         <Box display="flex">
-          <LocationOnOutlined
-            sx={{ fontSize: 25, mr: 1, mt: 0.5, color: "black" }}
-          />
+          <MapPinIcon fontSize={20} />
           <Box display="flex" flexDirection="column">
             <Typography
               variant="caption"
               color="gray"
-              sx={{ lineHeight: 1, fontSize: 13 }}
+              sx={{ lineHeight: 1, fontSize: 13, ml:0.9  }}
             >
               Current Location
             </Typography>
             <Grid container>
-              <Typography sx={{ fontWeight: "bold", fontSize: 15 }}>
+              <Typography sx={{ fontWeight: "bold", fontSize: 15,  ml:0.7 }}>
                 Thrissur, Kerala
               </Typography>
               <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
@@ -261,7 +265,7 @@ const MobHome = () => {
         </Box>
         <Stack direction="row" spacing={1} alignItems="center">
           <IconButton onClick={() => navigate("/mobile-notifications")}>
-            <NotificationsNoneOutlined />
+            <BellIcon />
           </IconButton>
           <Avatar onClick={() => navigate("/editInfo")}
             sx={{ width: 32, height: 32 }}
