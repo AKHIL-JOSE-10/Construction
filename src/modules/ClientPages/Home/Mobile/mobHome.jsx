@@ -477,7 +477,7 @@ const MobHome = () => {
                   sx={{
                     width: "100%",
                     height: 90,
-                    borderRadius: 2,
+                    borderRadius: 1.5,
                     objectFit: "cover",
                   }}
                 />
