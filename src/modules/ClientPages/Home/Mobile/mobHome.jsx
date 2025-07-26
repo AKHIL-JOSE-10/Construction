@@ -19,7 +19,7 @@ import AdvertisementCarousel from "./AdvertisementCarousal";
 import SearchBar from "./SearchBar";
 // import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
-import ArchisansWorker from "../../../../assets/ArchisansWorker.jpg";
+import ArchisansWorker from "../../../../assets/ArchisansWorker.png";
 import AllIcon from "@/assets/All.png";
 import AutomationIcon from "@/assets/SecurityAutomation.png"
 import InstantService from "../../../../assets/InstantService.png"
