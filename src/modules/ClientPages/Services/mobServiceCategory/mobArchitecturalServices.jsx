@@ -36,61 +36,57 @@ const MobArchitecturalServices = () => {
     <Box sx={{ px: 0.3, pt: 2, pb: 8, position: "relative", }}>
       <MobHeading Heading="Architects" />
 
-      <Grid container spacing={2} justifyContent="space-evenly">
-        {architecturalServices.map((service, index) => (
-          <Grid item key={index}>
-            <Box
-              onClick={() => handleClick(service.service)}
-              sx={{
-                width: 105,
-                height: 120,
-                borderRadius: 1,
-                overflow: "hidden",
-                cursor: "pointer",
-                boxShadow: "0px 2px 10px rgba(0,0,0,0.1)",
-                bgcolor: "#fff",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <Box
-                component="img"
-                src={service.img}
-                alt={service.service}
-                sx={{
-                  width: "100%",
-                  height: 'auto',
-                  objectFit: "cover",
-                  borderTopLeftRadius: 8,
-                  borderTopRightRadius: 8,
-                }}
-              />
+<Grid container spacing={2} justifyContent="space-evenly">
+  {architecturalServices.map((service, index) => (
+    <Grid item key={index}>
+      <Box
+        onClick={() => handleClick(service.service)}
+        sx={{
+          width: 115,
+          height: 120,
+          borderRadius: 0.5,
+          overflow: "hidden",
+          cursor: "pointer",
+          boxShadow: "0px 3px 12px rgba(0, 0, 0, 0.1)",
+          position: "relative",
+        }}
+      >
+        <Box
+          component="img"
+          src={service.img}
+          alt={service.service}
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
 
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  px: 1.2,
-                  py: 1.2,
-                }}
-              >
-                <Typography
-                  variant="body1"
-                  fontWeight={550}
-                  fontSize={11}
-                  textAlign="center"
-                >
-                  {service.service}
-                </Typography>
-
-              </Box>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+        {/* Overlay text */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            width: "100%",
+            bgcolor: "rgba(0,0,0,0.5)",
+            color: "#fff",
+            textAlign: "center",
+            py: 0.5,
+          }}
+        >
+          <Typography
+            variant="caption"
+            fontSize={9.5}
+            fontWeight={500}
+            noWrap
+          >
+            {service.service}
+          </Typography>
+        </Box>
+      </Box>
+    </Grid>
+  ))}
+</Grid>
 
       {/* Fixed Bottom Button */}
 <Box
