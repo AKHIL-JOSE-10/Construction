@@ -77,7 +77,7 @@ const MobArchitecturalServices = () => {
           <Typography
             variant="caption"
             fontSize={11}
-            fontWeight={500}
+            fontWeight={550}
             noWrap
           >
             {service.service}
