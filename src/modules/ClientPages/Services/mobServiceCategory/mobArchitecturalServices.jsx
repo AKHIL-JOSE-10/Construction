@@ -1,31 +1,30 @@
-import { Grid, Box } from "@mui/material";
-import MobHeading from "@/modules/components/Mobile/mobileHeading";
-import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
+import { Grid, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import StarIcon from "@mui/icons-material/Star";
 
-import LandScaping from "@/assets/LandScaping.png";
-import CivilEngineer from "@/assets/CivilEngineer.png";
-import InteriorDesign from "@/assets/InteriorDesign.png";
-import PoolDesigning from "@/assets/PoolDesigning.png";
-import Architect from "@/assets/Architect.png";
-import Contractor from "@/assets/Architect.png";
-import MetalFabrication from "@/assets/MetalFabrication.png";
-import StructuralEngineering from "@/assets/StructuralEngineering.png";
-import MEP from "@/assets/MEP.png";
+import LandScapeArchitect from "@/assets/LandScapeArchitectImg.png";
+import CivilEngineer from "@/assets/CivilEngineerImg.png";
+import InteriorDesign from "@/assets/InteriorDesignerImg.png";
+import PoolDesigning from "@/assets/PoolDesignerImg.png";
+import ArchitecturalDesigner from "@/assets/ArchitecturalDesignerImg.png";
+import ConstructionContractor from "@/assets/ConstructionContractorImg.png";
+import SteelFabricators from "@/assets/SteelFabricatorImg.png";
+import StructuralEngineering from "@/assets/StructuralEngineerImg.png";
+import MEP from "@/assets/MEPServiceProviderImg.png";
 
 const MobArchitecturalServices = () => {
   const navigate = useNavigate();
 
   const architecturalServices = [
-    { service: "Architectural Design", img: Architect, description: "Create innovative building designs and plans" },
-    { service: "Civil Engineering", img: CivilEngineer, description: "Plan, design, and oversee construction" },
-    { service: "Interior Design", img: InteriorDesign, description: "Enhance interior functionality and aesthetics" },
-    { service: "Landscaping", img: LandScaping, description: "Design and maintain outdoor environments" },
-    { service: "Structural Engineering", img: StructuralEngineering, description: "Ensure building stability and strength" },
-    { service: "MEP Services", img: MEP, description: "Design mechanical, electrical, and plumbing systems" },
-    { service: "Pool Design", img: PoolDesigning, description: "Plan and design residential and commercial pools" },
-    { service: "Steel Fabrication", img: MetalFabrication, description: "Create structural steel components and assemblies" },
-    { service: "Construction Contracting", img: Contractor, description: "Execute and manage full construction projects" },
+    { service: "Architectural Designers", img: ArchitecturalDesigner },
+    { service: "Civil Engineers", img: CivilEngineer },
+    { service: "Interior Designers", img: InteriorDesign },
+    { service: "Landscaping architects", img: LandScapeArchitect },
+    { service: "Structural Engineerings", img: StructuralEngineering },
+    { service: "MEP Service providers", img: MEP },
+    { service: "Pool Designers", img: PoolDesigning },
+    { service: "Steel Fabricators", img: SteelFabricators },
+    { service: "Construction Contractors", img: ConstructionContractor },
   ];
 
   const handleClick = (serviceName) => {
@@ -33,21 +32,83 @@ const MobArchitecturalServices = () => {
   };
 
   return (
-    <Grid container>
-      <MobHeading Heading="Architectural Services" />
-      <Box sx={{ width: "100%", mt: 8, mb: 7 }}>
+    <Box sx={{ px: 1, pt: 2 }}>
+      <Typography variant="h6" fontWeight={600} mb={3}>
+        Architectural Services
+      </Typography>
+
+      <Grid container spacing={2} justifyContent="center">
         {architecturalServices.map((service, index) => (
-          <Box key={index} onClick={() => handleClick(service.service)} sx={{ cursor: "pointer" }}>
-            <MobServiceCategoryList
-              img={service.img}
-              heading={service.service}
-              subheading={service.description}
-            />
-          </Box>
+          <Grid item key={index}>
+            <Box
+              onClick={() => handleClick(service.service)}
+              sx={{
+                width: 160,
+                borderRadius: 1,
+                overflow: "hidden",
+                cursor: "pointer",
+                boxShadow: "0px 2px 10px rgba(0,0,0,0.05)",
+                display: "flex",
+                flexDirection: "column",
+                bgcolor: "#fff",
+              }}
+            >
+              <Box
+                component="img"
+                src={service.img}
+                alt={service.service}
+                sx={{
+                  height: 'auto',
+                  width: "100%",
+                  objectFit: "cover",
+                  borderTopLeftRadius: 12,
+                  borderTopRightRadius: 12,
+                }}
+              />
+
+              <Box sx={{ p: 1.2 }}>
+                <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
+                  <Typography
+                    variant="body1"
+                    fontWeight={600}
+                    fontSize={13}
+                    textAlign="center"
+                  >
+                    {service.service}
+                  </Typography>
+                </Box>
+
+                <Box display="flex" alignItems="center" justifyContent="center" mt={1}>
+                  <Typography variant="body1" color="textSecondary" fontSize={10}>
+                    1k users Booked
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
         ))}
+      </Grid>
+
+      <Box display="flex" justifyContent="center" mt={5}>
+        <Box
+          onClick={() => navigate("/")}
+          sx={{
+            px: 4,
+            py: 1.5,
+            bgcolor: "#444",
+            color: "#fff",
+            borderRadius: "30px",
+            cursor: "pointer",
+            fontWeight: 500,
+            fontSize: 14,
+          }}
+        >
+          Back to Home
+        </Box>
       </Box>
-    </Grid>
+    </Box>
   );
 };
 
 export default MobArchitecturalServices;
+

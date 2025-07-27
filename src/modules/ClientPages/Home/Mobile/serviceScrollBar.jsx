@@ -1,9 +1,37 @@
 import React, { useRef, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
+import AutomationIcon from "@/assets/SecurityAutomation.png";
+import AllIcon from "@/assets/All.png";
+import Artisans from "@/assets/Artisans.png";
+import LegalIcon from "@/assets/Legal.png";
+import FabricationIcon from "@/assets/Fabrication.png";
+import ArchitecturalIcon from "@/assets/Architectural.png";
+import EducationalIcon from "@/assets/Educational.png";
+import ContractorsIcon from "@/assets/Contractors.png";
+import EngineersIcon from "@/assets/Engineers.png";
+import InstantIcon from "@/assets/Instant.png";
+
+const pages = [
+  [
+    { label: "All", icon: AllIcon },
+    { label: "Urgent", icon: InstantIcon },
+    { label: "Engineers", icon: EngineersIcon },
+    { label: "Artisans", icon: Artisans },
+    { label: "Education", icon: EducationalIcon },
+    { label: "Architects", icon: ArchitecturalIcon },
+    { label: "Contractors", icon: ContractorsIcon },
+    { label: "Fabrication", icon: FabricationIcon },
+    { label: "Automation", icon: AutomationIcon },
+    { label: "Legal", icon: LegalIcon },
+  ],
+];
+
+const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
   const realRef = useRef(null);
   const fakeRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const real = realRef.current;
@@ -43,7 +71,14 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
   }, []);
 
   return (
-    <Box sx={{ position: "relative", overflow: "hidden" , bgcolor:'rgba(250, 249, 249, 1)', pb:3 }}>
+    <Box
+      sx={{
+        position: "relative",
+        overflow: "hidden",
+        bgcolor: "rgba(250, 249, 249, 1)",
+        pb: 3,
+      }}
+    >
       {/* Real Scrollable Content */}
       <Box
         ref={realRef}
@@ -52,7 +87,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           overflowX: "auto",
           scrollSnapType: "x mandatory",
           scrollBehavior: "smooth",
-          pb:1.5,
+          pb: 1.5,
           scrollbarWidth: "none",
           "&::-webkit-scrollbar": { display: "none" },
         }}
@@ -76,7 +111,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
                 key={index}
                 sx={{
                   boxShadow: "0px 2px 8px rgba(72, 3, 3, 0.05)",
-                  bgcolor:' rgba(250, 249, 249, 1)',
+                  bgcolor: "rgba(250, 249, 249, 1)",
                   textAlign: "center",
                   borderRadius: 1,
                   height: 65,
@@ -88,6 +123,12 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
                   alignItems: "center",
                   gap: 1,
                   p: 0.7,
+                  cursor: item.label === "Architects" ? "pointer" : "default",
+                }}
+                onClick={() => {
+                  if (item.label === "Architects") {
+                    navigate("/mobile-architectural-services");
+                  }
                 }}
               >
                 <Box
@@ -114,8 +155,8 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
         sx={{
           position: "absolute",
           bottom: 20,
-          left: `${(28 + fakeScrollBarWidthPercent) / 1.8}vw`, // to center it
-          width: `${fakeScrollBarWidthPercent/4}vw`,
+          left: `${(28 + fakeScrollBarWidthPercent) / 1.8}vw`,
+          width: `${fakeScrollBarWidthPercent / 4}vw`,
           height: "auto",
           overflowX: "auto",
           overflowY: "hidden",
@@ -126,7 +167,7 @@ const ServiceScrollBar = ({ pages, fakeScrollBarWidthPercent = 50 }) => {
           "&::-webkit-scrollbar-thumb": {
             backgroundColor: "#f95353ff",
             borderRadius: "100px",
-            width:'35px'
+            width: "35px",
           },
           "&::-webkit-scrollbar-track": {
             backgroundColor: "#f6bcbcff",

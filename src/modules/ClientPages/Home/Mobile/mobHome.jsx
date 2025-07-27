@@ -27,13 +27,8 @@ import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/Addre
 import { useNavigate } from "react-router-dom";
 
 import Artisans from '@/assets/Artisans.png'
-import LegalIcon from '@/assets/Legal.png'
 import FabricationIcon from '@/assets/Fabrication.png'
 import ArchitecturalIcon from '@/assets/Architectural.png'
-import EducationalIcon from '@/assets/Educational.png'
-import ContractorsIcon from '@/assets/Contractors.png'
-import EngineersIcon from '@/assets/Engineers.png'
-import InstantIcon from '@/assets/Instant.png'
 
 import ServiceScrollBar from "./serviceScrollBar";
 
@@ -43,28 +38,7 @@ import {
 } from "@phosphor-icons/react";
 
 
-const pages = [
-  [
-    { label: "All", icon: AllIcon },
-    { label: "Urgent", icon: InstantIcon },
-    { label: "Engineers", icon: EngineersIcon },
-    { label: "Artisans", icon: Artisans },
 
-    { label: "Education", icon: EducationalIcon },
-
-   { label: "Architects", icon: ArchitecturalIcon },
- 
-    { label: "Contractors", icon: ContractorsIcon },
-    { label: "Fabrication", icon: FabricationIcon },
-    { label: "Automation", icon: AutomationIcon },
-
-
-    { label: "Legal", icon: LegalIcon },
-
-
-
-  ]
-];
 
 const serviceImages = {
   Fast: AllIcon,
@@ -289,7 +263,7 @@ const MobHome = () => {
 
       {/* Services */}
 
-      <ServiceScrollBar pages={pages} scrollRef={scrollRef} />
+      <ServiceScrollBar  />
 
       {/* <Grid
         container
