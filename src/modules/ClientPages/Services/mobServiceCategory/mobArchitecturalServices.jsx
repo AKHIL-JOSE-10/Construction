@@ -42,12 +42,12 @@ const MobArchitecturalServices = () => {
             <Box
               onClick={() => handleClick(service.service)}
               sx={{
-                width: 160,
-                height: 170,
-                borderRadius: 1,
+                width: 110,
+                height: 120,
+                borderRadius: 0.3,
                 overflow: "hidden",
                 cursor: "pointer",
-                boxShadow: "0px 2px 10px rgba(0,0,0,0.05)",
+                boxShadow: "0px 2px 10px rgba(0,0,0,0.1)",
                 bgcolor: "#fff",
                 display: "flex",
                 flexDirection: "column",
@@ -60,7 +60,7 @@ const MobArchitecturalServices = () => {
                 alt={service.service}
                 sx={{
                   width: "100%",
-                  height: 100,
+                  height: 'auto',
                   objectFit: "cover",
                   borderTopLeftRadius: 8,
                   borderTopRightRadius: 8,
@@ -80,21 +80,12 @@ const MobArchitecturalServices = () => {
                 <Typography
                   variant="body1"
                   fontWeight={600}
-                  fontSize={12}
+                  fontSize={10}
                   textAlign="center"
                 >
                   {service.service}
                 </Typography>
 
-                <Typography
-                  variant="body1"
-                  color="textSecondary"
-                  fontSize={10}
-                  textAlign="center"
-                  mt={1}
-                >
-                  1k users Booked
-                </Typography>
               </Box>
             </Box>
           </Grid>
@@ -102,34 +93,34 @@ const MobArchitecturalServices = () => {
       </Grid>
 
       {/* Fixed Bottom Button */}
-      <Box
-        sx={{
-          position: "fixed",
-          bottom: 5,
-          left: 0,
-          right: 0,
-          display: "flex",
-          justifyContent: "center",
-          zIndex: 1000,
-        }}
-      >
-        <Box
-          onClick={() => navigate(-1)}
-          sx={{
-            px: 4,
-            py: 1.5,
-            bgcolor: "#444",
-            color: "#fff",
-            borderRadius: "30px",
-            cursor: "pointer",
-            fontWeight: 500,
-            fontSize: 14,
-            boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
-          }}
-        >
-          Back to Home
-        </Box>
-      </Box>
+<Box
+  sx={{
+    position: "fixed",
+    bottom: 5,
+    left: 0,
+    right: 0,
+    display: "flex",
+    justifyContent: "center",
+    zIndex: 1000,
+  }}
+>
+  <Box
+    onClick={() => navigate(-1)}
+    sx={{
+      px: 4,
+      py: 1.5,
+      bgcolor: "#444",
+      color: "#fff",
+      borderRadius: "30px",
+      cursor: "pointer",
+      fontWeight: 500,
+      fontSize: 14,
+      boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)", // <- Updated
+    }}
+  >
+    Back to Home
+  </Box>
+</Box>
     </Box>
   );
 };
