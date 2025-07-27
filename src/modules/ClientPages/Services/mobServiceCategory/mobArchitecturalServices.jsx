@@ -11,6 +11,8 @@ import SteelFabricators from "@/assets/SteelFabricatorImg.png";
 import StructuralEngineering from "@/assets/StructuralEngineerImg.png";
 import MEP from "@/assets/MEPServiceProviderImg.png";
 
+import MobHeading from "@/modules/components/Mobile/mobileHeading";
+
 const MobArchitecturalServices = () => {
   const navigate = useNavigate();
 
@@ -32,9 +34,9 @@ const MobArchitecturalServices = () => {
 
   return (
     <Box sx={{ px: 1, pt: 2 }}>
-      <Typography variant="h6" fontWeight={600} mb={3}>
-        Architectural Services
-      </Typography>
+
+      <MobHeading Heading="Architects" />
+
 
       <Grid container spacing={2} justifyContent="center">
         {architecturalServices.map((service, index) => (
