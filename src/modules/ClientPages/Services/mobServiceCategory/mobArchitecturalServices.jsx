@@ -1,6 +1,5 @@
 import { Grid, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import StarIcon from "@mui/icons-material/Star";
 
 import LandScapeArchitect from "@/assets/LandScapeArchitectImg.png";
 import CivilEngineer from "@/assets/CivilEngineerImg.png";
@@ -44,13 +43,15 @@ const MobArchitecturalServices = () => {
               onClick={() => handleClick(service.service)}
               sx={{
                 width: 160,
+                height: 170,
                 borderRadius: 1,
                 overflow: "hidden",
                 cursor: "pointer",
                 boxShadow: "0px 2px 10px rgba(0,0,0,0.05)",
+                bgcolor: "#fff",
                 display: "flex",
                 flexDirection: "column",
-                bgcolor: "#fff",
+                justifyContent: "space-between",
               }}
             >
               <Box
@@ -58,31 +59,42 @@ const MobArchitecturalServices = () => {
                 src={service.img}
                 alt={service.service}
                 sx={{
-                  height: 'auto',
                   width: "100%",
+                  height: 100,
                   objectFit: "cover",
-                  borderTopLeftRadius: 12,
-                  borderTopRightRadius: 12,
+                  borderTopLeftRadius: 8,
+                  borderTopRightRadius: 8,
                 }}
               />
 
-              <Box sx={{ p: 1.2 }}>
-                <Box sx={{ display: "flex", justifyContent: "center", width: "100%" }}>
-                  <Typography
-                    variant="body1"
-                    fontWeight={600}
-                    fontSize={13}
-                    textAlign="center"
-                  >
-                    {service.service}
-                  </Typography>
-                </Box>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  px: 1.2,
+                  py: 1.2,
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  fontWeight={600}
+                  fontSize={12}
+                  textAlign="center"
+                >
+                  {service.service}
+                </Typography>
 
-                <Box display="flex" alignItems="center" justifyContent="center" mt={1}>
-                  <Typography variant="body1" color="textSecondary" fontSize={10}>
-                    1k users Booked
-                  </Typography>
-                </Box>
+                <Typography
+                  variant="body1"
+                  color="textSecondary"
+                  fontSize={10}
+                  textAlign="center"
+                  mt={1}
+                >
+                  1k users Booked
+                </Typography>
               </Box>
             </Box>
           </Grid>
@@ -111,4 +123,3 @@ const MobArchitecturalServices = () => {
 };
 
 export default MobArchitecturalServices;
-
