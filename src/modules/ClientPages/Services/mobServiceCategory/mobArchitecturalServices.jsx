@@ -79,8 +79,8 @@ const MobArchitecturalServices = () => {
               >
                 <Typography
                   variant="body1"
-                  fontWeight={600}
-                  fontSize={10}
+                  fontWeight={550}
+                  fontSize={11}
                   textAlign="center"
                 >
                   {service.service}
