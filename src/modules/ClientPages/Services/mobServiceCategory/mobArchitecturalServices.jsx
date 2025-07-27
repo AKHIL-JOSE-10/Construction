@@ -33,10 +33,8 @@ const MobArchitecturalServices = () => {
   };
 
   return (
-    <Box sx={{ px: 1, pt: 2 }}>
-
+    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", minHeight: "100vh" }}>
       <MobHeading Heading="Architects" />
-
 
       <Grid container spacing={2} justifyContent="center">
         {architecturalServices.map((service, index) => (
@@ -103,9 +101,20 @@ const MobArchitecturalServices = () => {
         ))}
       </Grid>
 
-      <Box display="flex" justifyContent="center" mt={5}>
+      {/* Fixed Bottom Button */}
+      <Box
+        sx={{
+          position: "fixed",
+          bottom: 5,
+          left: 0,
+          right: 0,
+          display: "flex",
+          justifyContent: "center",
+          zIndex: 1000,
+        }}
+      >
         <Box
-          onClick={() => navigate("/")}
+          onClick={() => navigate(-1)}
           sx={{
             px: 4,
             py: 1.5,
@@ -115,6 +124,7 @@ const MobArchitecturalServices = () => {
             cursor: "pointer",
             fontWeight: 500,
             fontSize: 14,
+            boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
           }}
         >
           Back to Home
