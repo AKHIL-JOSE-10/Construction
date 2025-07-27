@@ -43,7 +43,7 @@ const MobArchitecturalServices = () => {
         onClick={() => handleClick(service.service)}
         sx={{
           width: 115,
-          height: 120,
+          height: 105,
           borderRadius: 0.5,
           overflow: "hidden",
           cursor: "pointer",
