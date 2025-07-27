@@ -33,17 +33,17 @@ const MobArchitecturalServices = () => {
   };
 
   return (
-    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", minHeight: "100vh" }}>
+    <Box sx={{ px: 0, pt: 2, pb: 8, position: "relative", }}>
       <MobHeading Heading="Architects" />
 
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} justifyContent="space-evenly">
         {architecturalServices.map((service, index) => (
           <Grid item key={index}>
             <Box
               onClick={() => handleClick(service.service)}
               sx={{
-                width: 100,
-                height: 120,
+                width: 140,
+                height: 140,
                 borderRadius: 1,
                 overflow: "hidden",
                 cursor: "pointer",
