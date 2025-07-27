@@ -44,7 +44,7 @@ const MobArchitecturalServices = () => {
               sx={{
                 width: 100,
                 height: 120,
-                borderRadius: 2,
+                borderRadius: 1,
                 overflow: "hidden",
                 cursor: "pointer",
                 boxShadow: "0px 2px 10px rgba(0,0,0,0.1)",
