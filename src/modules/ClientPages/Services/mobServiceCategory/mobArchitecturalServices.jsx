@@ -42,8 +42,8 @@ const MobArchitecturalServices = () => {
             <Box
               onClick={() => handleClick(service.service)}
               sx={{
-                width: 140,
-                height: 140,
+                width: 145,
+                height: 145,
                 borderRadius: 1,
                 overflow: "hidden",
                 cursor: "pointer",
@@ -80,7 +80,7 @@ const MobArchitecturalServices = () => {
                 <Typography
                   variant="body1"
                   fontWeight={600}
-                  fontSize={10}
+                  fontSize={11}
                   textAlign="center"
                 >
                   {service.service}
