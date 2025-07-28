@@ -71,7 +71,7 @@ const WorkerForm3 = () => {
                                     py: 0.8,
                                     px:0.5,
                                     height: 40,
-                                    width: 130,
+                                    width: 135,
                                     cursor: 'pointer',
                                     transition: '0.3s',
                                     '&:hover': {
