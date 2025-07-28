@@ -8,7 +8,7 @@ import {
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from 'react-router-dom';
 import BottomButton from './bottomButton';
-import TopProgressBar from './topProgressBar';
+import TopProgressBar from './stepperForm';
 
 const WorkerForm2 = () => {
     const navigate = useNavigate();

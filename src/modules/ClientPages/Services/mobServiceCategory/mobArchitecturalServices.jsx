@@ -33,7 +33,7 @@ const MobArchitecturalServices = () => {
   };
 
   return (
-    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", bgcolor:"rgba(250, 249, 249, 1)" }}>
+    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", }}>
       <MobHeading Heading="Architects" />
 
 <Grid container spacing={2} justifyContent="space-evenly">
@@ -42,15 +42,13 @@ const MobArchitecturalServices = () => {
       <Box
         onClick={() => handleClick(service.service)}
         sx={{
-          width: 160,
-          bgcolor: "#fff",
+          width: 110,
+          height: 110,
           borderRadius: 1,
-          boxShadow: "0px 2px 6px rgba(0,0,0,0.1)",
+          overflow: "hidden",
           cursor: "pointer",
-          p: 1,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          boxShadow: "0px 3px 12px rgba(0, 0, 0, 0.1)",
+          position: "relative",
         }}
       >
         <Box
@@ -59,25 +57,41 @@ const MobArchitecturalServices = () => {
           alt={service.service}
           sx={{
             width: "100%",
-            height: 90,
+            height: "100%",
             objectFit: "cover",
-            borderRadius: 1,
           }}
         />
 
-        <Typography
-          fontSize={13}
-          fontWeight={600}
-          mt={1}
-          noWrap
-        >
-          {service.service}
-        </Typography>
+        {/* Overlay text */}
+{/* Overlay text */}
+<Box
+  sx={{
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    bgcolor: "rgba(0,0,0,0.5)",
+    color: "#fff",
+    textAlign: "center",
+    py: 0.5,
+    px: 0.5, // add padding for text
+  }}
+>
+  <Typography
+    variant="caption"
+    fontSize={11}
+    fontWeight={550}
+    sx={{
+      whiteSpace: "normal",
+      wordWrap: "break-word",
+    }}
+  >
+    {service.service}
+  </Typography>
+</Box>
       </Box>
     </Grid>
   ))}
 </Grid>
-
 
       {/* Fixed Bottom Button */}
 <Box

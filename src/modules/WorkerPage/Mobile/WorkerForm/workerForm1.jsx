@@ -13,7 +13,7 @@ import {
 import { PhotoCamera } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import BottomButton from './bottomButton';
-import TopProgressBar from './topProgressBar';
+import TopProgressBar from './stepperForm';
 
 const WorkerForm1 = () => {
   const [gender, setGender] = React.useState('');
@@ -29,6 +29,8 @@ const WorkerForm1 = () => {
       {/* Form Content */}
 
       <Box sx={{ mb:4}}>
+
+<TopProgressBar activeStep={0} />
 
         {/* Title */}
         <Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold', mb: 3, textAlign: 'center',mt:1 }}>
