@@ -6,14 +6,13 @@ import {
   Avatar,
   IconButton,
   FormControl,
-  InputLabel,
   Select,
   MenuItem,
 } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import BottomButton from './bottomButton';
-import TopProgressBar from './stepperForm';
+import TopProgressBar from './topProgressBar';
 
 const WorkerForm1 = () => {
   const [gender, setGender] = React.useState('');
@@ -24,17 +23,17 @@ const WorkerForm1 = () => {
   };
 
   return (
-    <Box sx={{ p: 2 ,  mb: 3}}>
+    <Box sx={{ p: 2, mb: 3 }}>
 
       {/* Form Content */}
 
-      <Box sx={{ mb:4}}>
+      <Box sx={{ mb: 4 }}>
 
-<TopProgressBar activeStep={0} />
+        <TopProgressBar activeStep="0" NextButton="/mobile-worker-form1" pgnum="1/5" />
 
         {/* Title */}
-        <Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold', mb: 3, textAlign: 'center',mt:1 }}>
-          Create Your Worker Profile
+        <Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold', mb: 3, textAlign: 'center', mt: 1 }}>
+          Tell us more about your self
         </Typography>
 
         {/* Avatar upload */}
@@ -54,18 +53,6 @@ const WorkerForm1 = () => {
           </IconButton>
         </Box>
 
-        <Typography
-          sx={{
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            mb: 4,
-            pb: 1,
-            borderBottom: '1px solid #ccc',
-            width: '100%',
-          }}
-        >
-          General Details
-        </Typography>
 
         {/* Full Name */}
         <Typography sx={{
@@ -252,7 +239,7 @@ const WorkerForm1 = () => {
       </Box>
 
       {/* Bottom Buttons */}
-      <BottomButton handleNext={handleNext} pgnum="1/2" />
+      <BottomButton handleNext={handleNext} />
 
     </Box>
   );

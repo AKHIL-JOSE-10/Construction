@@ -8,7 +8,7 @@ import {
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useNavigate } from 'react-router-dom';
 import BottomButton from './bottomButton';
-import TopProgressBar from './stepperForm';
+import TopProgressBar from './topProgressBar';
 
 const WorkerForm2 = () => {
     const navigate = useNavigate();
@@ -51,69 +51,20 @@ const WorkerForm2 = () => {
     };
 
     const handleNext = () => {
-        navigate('/mobile-worker-form4');
+        navigate('/mobile-worker-form3');
     };
 
     return (
 
         <Box sx={{ p: 2 }}>
+
+            <TopProgressBar activeStep="1" NextButton="/mobile-worker-form3" pgnum="2/5" />
+
             {/* Title */}
-            <Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold', mb: 8, textAlign: 'center', mt: 1 }}>
-                Create Your Worker Profile
+            <Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold', mb: 3, textAlign: 'center', mt: 1 }}>
+                Tell us how to reach you
             </Typography>
 
-            {/* Contact Details Heading */}
-            <Typography
-                sx={{
-                    fontSize: '1.1rem',
-                    fontWeight: 'bold',
-                    mt: 3,
-                    mb: 4,
-                    pb: 1,
-                    borderBottom: '1px solid #ccc',
-                    width: '100%',
-                }}
-            >
-                Contact Details
-            </Typography>
-
-
-            {/* Email Address */}
-            <Typography
-                sx={{
-                    fontSize: { xs: "15px", sm: "20px", md: "20px" },
-                    color: "#666666",
-                    fontWeight: "550",
-                    mb: 1,
-                    ml: 0.5,
-                }}
-            >
-                Email Address
-            </Typography>
-            <TextField
-                placeholder="Enter your Email"
-                variant="outlined"
-                fullWidth
-                type="email"
-                slotProps={{
-                    input: {
-                        style: {
-                            height: '40px',
-                            padding: '0 10px',
-                            fontSize: '0.9rem',
-                            backgroundColor: 'white',
-                        },
-                    },
-                }}
-                sx={{
-                    mb: 2,
-                    '& .MuiOutlinedInput-root': {
-                        '& fieldset': { borderColor: '#ccc' },
-                        '&:hover fieldset': { borderColor: '#999' },
-                        '&.Mui-focused fieldset': { borderColor: '#666' },
-                    },
-                }}
-            />
 
             {/* Phone Number */}
             <Typography
@@ -188,11 +139,47 @@ const WorkerForm2 = () => {
                 }}
             />
 
+            {/* Email Address */}
+            <Typography
+                sx={{
+                    fontSize: { xs: "15px", sm: "20px", md: "20px" },
+                    color: "#666666",
+                    fontWeight: "550",
+                    mb: 1,
+                    ml: 0.5,
+                }}
+            >
+                Email Address
+            </Typography>
+            <TextField
+                placeholder="Enter your Email"
+                variant="outlined"
+                fullWidth
+                type="email"
+                slotProps={{
+                    input: {
+                        style: {
+                            height: '40px',
+                            padding: '0 10px',
+                            fontSize: '0.9rem',
+                            backgroundColor: 'white',
+                        },
+                    },
+                }}
+                sx={{
+                    mb: 2,
+                    '& .MuiOutlinedInput-root': {
+                        '& fieldset': { borderColor: '#ccc' },
+                        '&:hover fieldset': { borderColor: '#999' },
+                        '&.Mui-focused fieldset': { borderColor: '#666' },
+                    },
+                }}
+            />
 
 
             <Box>
                 {/* Bottom Buttons */}
-                <BottomButton handleNext={handleNext} pgnum="2/2" />
+                <BottomButton handleNext={handleNext} />
 
             </Box>
         </Box>

@@ -261,9 +261,10 @@ const MobHome = () => {
       {/* Banner */}
       <AdvertisementCarousel />
 
+
       {/* Services */}
 
-      <ServiceScrollBar  />
+      <ServiceScrollBar />
 
       {/* <Grid
         container
@@ -354,6 +355,7 @@ const MobHome = () => {
             component="img"
             src={ArchisansWorker}
             alt="Sample"
+            onClick={() => navigate("/mobile-worker-form1")}
             sx={{
               width: "100%",
               height: "auto",
@@ -364,6 +366,7 @@ const MobHome = () => {
           />
         </Grid>
       </Grid>
+
 
       <Grid sx={{ bgcolor: 'rgba(250, 249, 249, 1)' }}>
         <Box sx={{ mt: 1.2, pt: 0.7 }}>

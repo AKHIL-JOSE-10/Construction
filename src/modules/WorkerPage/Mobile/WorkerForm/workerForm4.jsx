@@ -1,70 +1,99 @@
-import React from 'react';
-import { Box, Typography, Button, Paper } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import React, { useState } from 'react';
+import {
+  Box,
+  Typography,
+  Grid,
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import BottomButton from './bottomButton';
+import TopProgressBar from './topProgressBar';
+
+import serviceImg from '@/assets/serviceImg.png';
+
+const professionList = [
+  { label: "Architectural Designers", icon: serviceImg },
+  { label: "Civil Engineers", icon: serviceImg },
+  { label: "Interior Designers", icon: serviceImg },
+  { label: "Landscaping architects", icon: serviceImg },
+  { label: "Structural Engineerings", icon: serviceImg },
+  { label: "MEP Service providers", icon: serviceImg },
+  { label: "Pool Designers", icon: serviceImg },
+  { label: "Steel Fabricators", icon: serviceImg },
+  { label: "Construction Contractors", icon: serviceImg },
+];
 
 const WorkerForm4 = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [selected, setSelected] = useState([]);
 
-    return (
-        <Box
-            sx={{
-                bgcolor: '#f1e4d4', // light brown background
-                minHeight: '100vh',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                px: 2,
-            }}
-        >
-            <Paper
-                elevation={3}
-                sx={{
-                    bgcolor: 'white',
-                    borderRadius: 4,
-                    p: 4,
-                    maxWidth: 400,
-                    width: '100%',
-                    textAlign: 'center',
-                }}
-            >
-                {/* Success Icon */}
-                <CheckCircleIcon sx={{ fontSize: 80, color: '#00C853', mb: 2 }} />
-
-                {/* Main Message */}
-                <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
-                    Profile Completed!
-                </Typography>
-
-                {/* Subtitle */}
-                <Typography sx={{ color: 'gray', mb: 4, fontSize: '0.95rem' }}>
-                    Your profile is now ready. You can start offering your services.
-                </Typography>
-
-                {/* Button */}
-                <Button
-                    variant="contained"
-                    sx={{
-                        bgcolor: '#a47763',
-                        borderRadius: 50,
-                        mt:5,
-                        px: 4,
-                        py: 1.2,
-                        textTransform: 'none',
-                        fontWeight: 'bold',
-                        fontSize: '1rem',
-                        width: '100%',
-                        '&:hover': {
-                            bgcolor: '#8d6551',
-                        },
-                    }}
-                    onClick={() => navigate('/mobile-worker-mainpage')}
-                >
-                    Go to Worker Page
-                </Button>
-            </Paper>
-        </Box>
+  const handleToggle = (label) => {
+    setSelected((prev) =>
+      prev.includes(label)
+        ? prev.filter((item) => item !== label)
+        : [...prev, label]
     );
+  };
+
+  const handleNext = () => {
+    navigate('/mobile-worker-form5');
+  };
+
+  return (
+    <Box sx={{ p: 2 }}>
+      {/* Top Progress Bar */}
+      <TopProgressBar activeStep={3} NextButton="/mobile-worker-form4" pgnum="4/5" />
+
+      {/* Title */}
+      <Typography sx={{ fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center', mt: 1 }}>
+        Select Your Profession
+      </Typography>
+      <Typography sx={{ fontSize: '1rem', fontWeight: '550', mb: 3, textAlign: 'center', mt: 1 }}>
+        you can choose more than one
+      </Typography>
+
+      {/* Profession Grid */}
+      <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
+        {professionList.map((item, index) => {
+          const isSelected = selected.includes(item.label);
+          return (
+            <Grid item key={index}>
+              <Box
+                onClick={() => handleToggle(item.label)}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  border: isSelected ? '2px solid red' : '1px solid #ccc',
+                  borderRadius: '12px',
+                  p: 1,
+                  height: 40,
+                  width: 140,
+                  cursor: 'pointer',
+                  backgroundColor: isSelected ? '#ffe5e5' : 'white',
+                  transition: '0.3s',
+                  '&:hover': {
+                    boxShadow: 2,
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={item.icon}
+                  alt={item.label}
+                  sx={{ width: 40, height: 35, mr: 1 }}
+                />
+                <Typography sx={{ fontSize: '0.7rem', fontWeight: 500 }}>
+                  {item.label}
+                </Typography>
+              </Box>
+            </Grid>
+          );
+        })}
+      </Grid>
+
+      {/* Bottom Next Button */}
+      <BottomButton handleNext={handleNext} />
+    </Box>
+  );
 };
 
 export default WorkerForm4;
