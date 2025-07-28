@@ -42,7 +42,7 @@ const MobArchitecturalServices = () => {
       <Box
         onClick={() => handleClick(service.service)}
         sx={{
-          width: 110,
+          width: 105,
           height: 110,
           borderRadius: 1,
           overflow: "hidden",
@@ -68,11 +68,10 @@ const MobArchitecturalServices = () => {
   sx={{
     position: "absolute",
     bottom: 0,
-    width: "100%",
+    width: "95%",
     bgcolor: "rgba(0,0,0,0.5)",
     color: "#fff",
     textAlign: "center",
-    py: 0.5,
     px: 0.5, // add padding for text
   }}
 >
