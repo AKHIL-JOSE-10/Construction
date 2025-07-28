@@ -83,7 +83,7 @@ const WorkerForm3 = () => {
                                     component="img"
                                     src={item.icon}
                                     alt={item.label}
-                                    sx={{ width: 48, height: 35, mr: 1 }}
+                                    sx={{ width: 48, height: 35, mr: 0.4 }}
                                 />
                                 <Typography sx={{ fontSize: '0.8rem', fontWeight: 500 }}>
                                     {item.label}
