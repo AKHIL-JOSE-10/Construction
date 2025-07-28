@@ -68,11 +68,10 @@ const MobArchitecturalServices = () => {
   sx={{
     position: "absolute",
     bottom: 0,
-    width: "95%",
+    width: "100%",
     bgcolor: "rgba(0,0,0,0.5)",
     color: "#fff",
     textAlign: "center",
-    px: 0.5, // add padding for text
   }}
 >
   <Typography
