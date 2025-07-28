@@ -10,7 +10,7 @@ import ConstructionContractor from "@/assets/ConstructionContractorImg.png";
 import SteelFabricators from "@/assets/SteelFabricatorImg.png";
 import StructuralEngineering from "@/assets/StructuralEngineerImg.png";
 import MEP from "@/assets/MEPServiceProviderImg.png";
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 
 const MobArchitecturalServices = () => {
@@ -103,22 +103,27 @@ const MobArchitecturalServices = () => {
     zIndex: 1000,
   }}
 >
-  <Box
-    onClick={() => navigate(-1)}
-    sx={{
-      px: 4,
-      py: 1.2,
-      bgcolor: "rgba(85, 84, 84, 1)",
-      color: "#fff",
-      borderRadius: "30px",
-      cursor: "pointer",
-      fontWeight: 500,
-      fontSize: 12,
-      boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)", 
-    }}
-  >
-    Back to Home
-  </Box>
+<Box
+  onClick={() => navigate(-1)}
+  sx={{
+    px: 4,
+    py: 1.2,
+    bgcolor: "rgba(85, 84, 84, 1)",
+    color: "#fff",
+    borderRadius: "30px",
+    cursor: "pointer",
+    fontWeight: 500,
+    fontSize: 12,
+    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)",
+    display: "flex",
+    alignItems: "center",
+    gap: 1, // spacing between icon and text
+  }}
+>
+  <ArrowBackIcon sx={{ fontSize: 18 }} />
+  Back to Home
+</Box>
+
 </Box>
     </Box>
   );
