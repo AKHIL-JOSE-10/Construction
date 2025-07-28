@@ -111,9 +111,9 @@ const MobArchitecturalServices = () => {
         <Box
           onClick={() => navigate(-1)}
           sx={{
-            px: 4,
+            px: 2,
             py: 1.2,
-            bgcolor: "rgba(85, 84, 84, 1)",
+            bgcolor: "rgba(103, 102, 102, 1)",
             color: "#fff",
             borderRadius: "30px",
             cursor: "pointer",
@@ -121,11 +121,10 @@ const MobArchitecturalServices = () => {
             fontSize: 12,
             boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)",
             display: "flex",
-            alignItems: "center",
-            gap: 1, // spacing between icon and text
+            alignItems: "center", // spacing between icon and text
           }}
         >
-          <ArrowBackIosIcon sx={{ fontSize: 18 }} />
+          <ArrowBackIosIcon sx={{ fontSize: 16 }} />
           Back to Home
         </Box>
 
