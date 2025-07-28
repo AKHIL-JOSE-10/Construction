@@ -10,7 +10,7 @@ import ConstructionContractor from "@/assets/ConstructionContractorImg.png";
 import SteelFabricators from "@/assets/SteelFabricatorImg.png";
 import StructuralEngineering from "@/assets/StructuralEngineerImg.png";
 import MEP from "@/assets/MEPServiceProviderImg.png";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 
 const MobArchitecturalServices = () => {
@@ -36,95 +36,100 @@ const MobArchitecturalServices = () => {
     <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", }}>
       <MobHeading Heading="Architects" />
 
-<Grid container spacing={1.5} justifyContent="space-evenly">
-  {architecturalServices.map((service, index) => (
-    <Grid item key={index}>
+      <Grid container spacing={1.5} justifyContent="space-evenly">
+        {architecturalServices.map((service, index) => (
+          <Grid item key={index}>
+            <Box
+              onClick={() => handleClick(service.service)}
+              sx={{
+                width: 105,
+                height: 110,
+                borderRadius: 1,
+                overflow: "hidden",
+                cursor: "pointer",
+                boxShadow: "0px 3px 12px rgba(0, 0, 0, 0.1)",
+                position: "relative",
+              }}
+            >
+              <Box
+                component="img"
+                src={service.img}
+                alt={service.service}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
+
+              {/* Overlay text */}
+              {/* Overlay text */}
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: 0,
+                  width: "100%",
+                  bgcolor: "rgba(0, 0, 0, 0.6)",
+                  color: "#fff",
+                  textAlign: "center",
+                  py: 0.5
+                }}
+              >
+                <Typography
+                  variant="caption"
+                  sx={{
+                    fontSize: "10px",             // Slightly smaller font
+                    fontWeight: 600,
+                    lineHeight: "1.8",            // Tight line spacing
+                    whiteSpace: "normal",
+                    wordWrap: "break-word",
+                    overflowWrap: "break-word",
+                    display: "block",
+                  }}
+                >
+                  {service.service}
+                </Typography>
+              </Box>
+
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
+
+      {/* Fixed Bottom Button */}
       <Box
-        onClick={() => handleClick(service.service)}
         sx={{
-          width: 105,
-          height: 110,
-          borderRadius: 1,
-          overflow: "hidden",
-          cursor: "pointer",
-          boxShadow: "0px 3px 12px rgba(0, 0, 0, 0.1)",
-          position: "relative",
+          position: "fixed",
+          bottom: 5,
+          left: 0,
+          right: 0,
+          display: "flex",
+          justifyContent: "center",
+          zIndex: 1000,
         }}
       >
         <Box
-          component="img"
-          src={service.img}
-          alt={service.service}
+          onClick={() => navigate(-1)}
           sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
+            px: 4,
+            py: 1.2,
+            bgcolor: "rgba(85, 84, 84, 1)",
+            color: "#fff",
+            borderRadius: "30px",
+            cursor: "pointer",
+            fontWeight: 500,
+            fontSize: 12,
+            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)",
+            display: "flex",
+            alignItems: "center",
+            gap: 1, // spacing between icon and text
           }}
-        />
+        >
+          <ArrowBackIosIcon sx={{ fontSize: 18 }} />
+          Back to Home
+        </Box>
 
-        {/* Overlay text */}
-{/* Overlay text */}
-<Box
-  sx={{
-    position: "absolute",
-    bottom: 0,
-    width: "100%",
-    bgcolor: "rgba(0,0,0,0.5)",
-    color: "#fff",
-    textAlign: "center",
-  }}
->
-  <Typography
-    variant="caption"
-    fontSize={11}
-    fontWeight={550}
-    sx={{
-      whiteSpace: "normal",
-      wordWrap: "break-word",
-    }}
-  >
-    {service.service}
-  </Typography>
-</Box>
       </Box>
-    </Grid>
-  ))}
-</Grid>
-
-      {/* Fixed Bottom Button */}
-<Box
-  sx={{
-    position: "fixed",
-    bottom: 5,
-    left: 0,
-    right: 0,
-    display: "flex",
-    justifyContent: "center",
-    zIndex: 1000,
-  }}
->
-<Box
-  onClick={() => navigate(-1)}
-  sx={{
-    px: 4,
-    py: 1.2,
-    bgcolor: "rgba(85, 84, 84, 1)",
-    color: "#fff",
-    borderRadius: "30px",
-    cursor: "pointer",
-    fontWeight: 500,
-    fontSize: 12,
-    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)",
-    display: "flex",
-    alignItems: "center",
-    gap: 1, // spacing between icon and text
-  }}
->
-  <ArrowBackIcon sx={{ fontSize: 18 }} />
-  Back to Home
-</Box>
-
-</Box>
     </Box>
   );
 };
