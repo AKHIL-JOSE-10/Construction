@@ -1,5 +1,8 @@
-import { Grid, Box, Typography } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
+import BackToHomeButton from "./backToHome";
+import MobHeading from "@/modules/components/Mobile/mobileHeading";
 
 import LandScapeArchitect from "@/assets/LandScapeArchitectImg.png";
 import CivilEngineer from "@/assets/CivilEngineerImg.png";
@@ -10,8 +13,6 @@ import ConstructionContractor from "@/assets/ConstructionContractorImg.png";
 import SteelFabricators from "@/assets/SteelFabricatorImg.png";
 import StructuralEngineering from "@/assets/StructuralEngineerImg.png";
 import MEP from "@/assets/MEPServiceProviderImg.png";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import MobHeading from "@/modules/components/Mobile/mobileHeading";
 
 const MobArchitecturalServices = () => {
   const navigate = useNavigate();
@@ -33,102 +34,22 @@ const MobArchitecturalServices = () => {
   };
 
   return (
-    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", }}>
+    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative" }}>
       <MobHeading Heading="Architects" />
 
       <Grid container spacing={1.5} justifyContent="space-evenly">
-        {architecturalServices.map((service, index) => (
+        {architecturalServices.map((item, index) => (
           <Grid item key={index}>
-            <Box
-              onClick={() => handleClick(service.service)}
-              sx={{
-                width: 105,
-                height: 110,
-                borderRadius: 1,
-                overflow: "hidden",
-                cursor: "pointer",
-                boxShadow: "0px 3px 12px rgba(0, 0, 0, 0.1)",
-                position: "relative",
-              }}
-            >
-              <Box
-                component="img"
-                src={service.img}
-                alt={service.service}
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-
-              {/* Overlay text */}
-              {/* Overlay text */}
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: 0,
-                  width: "100%",
-                  bgcolor: "rgba(0, 0, 0, 0.6)",
-                  color: "#fff",
-                  textAlign: "center",
-                  py: 0.5
-                }}
-              >
-                <Typography
-                  variant="caption"
-                  sx={{
-                    fontSize: "10px",             // Slightly smaller font
-                    fontWeight: 600,
-                    lineHeight: "1.8",            // Tight line spacing
-                    whiteSpace: "normal",
-                    wordWrap: "break-word",
-                    overflowWrap: "break-word",
-                    display: "block",
-                  }}
-                >
-                  {service.service}
-                </Typography>
-              </Box>
-
-            </Box>
+            <MobServiceCategoryList
+              title={item.service}
+              img={item.img}
+              onClick={() => handleClick(item.service)}
+            />
           </Grid>
         ))}
       </Grid>
 
-      {/* Fixed Bottom Button */}
-      <Box
-        sx={{
-          position: "fixed",
-          bottom: 5,
-          left: 0,
-          right: 0,
-          display: "flex",
-          justifyContent: "center",
-          zIndex: 1000,
-        }}
-      >
-        <Box
-          onClick={() => navigate(-1)}
-          sx={{
-            px: 2,
-            py: 1.2,
-            bgcolor: "rgba(103, 102, 102, 1)",
-            color: "#fff",
-            borderRadius: "30px",
-            cursor: "pointer",
-            fontWeight: 500,
-            fontSize: 12,
-            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.25)",
-            display: "flex",
-            alignItems: "center", // spacing between icon and text
-          }}
-        >
-          <ArrowBackIosIcon sx={{ fontSize: 16 }} />
-          Back to Home
-        </Box>
-
-      </Box>
+      <BackToHomeButton />
     </Box>
   );
 };
