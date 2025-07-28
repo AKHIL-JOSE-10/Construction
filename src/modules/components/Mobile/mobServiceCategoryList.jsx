@@ -40,7 +40,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
         <Typography
           variant="caption"
           sx={{
-            fontSize: "10px",
+            fontSize: "11px",
             fontWeight: 600,
             lineHeight: "1.2",
             whiteSpace: "normal",

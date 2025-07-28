@@ -29,6 +29,7 @@ const MobContractorServices = () => {
     { service: "Masonry contractors", img: PoolDesigning },
     { service: "Glass fabrication contractors", img: PoolDesigning },
     { service: "Exterior finishing contractors", img: PoolDesigning },
+    { service: "Excavation contractors", img: PoolDesigning },
   ];
 
   const handleClick = (serviceName) => {
