@@ -18,11 +18,11 @@ import ContractorsIcon from "@/assets/Contractors.png";
 import EngineersIcon from "@/assets/Engineers.png";
 
 const professionList = [
-    { label: "Engineers", icon: EngineersIcon },
-    { label: "Artisans", icon: Artisans },
+    { label: "Engineer", icon: EngineersIcon },
+    { label: "Artisan", icon: Artisans },
     { label: "Education", icon: EducationalIcon },
-    { label: "Architects", icon: ArchitecturalIcon },
-    { label: "Contractors", icon: ContractorsIcon },
+    { label: "Architect", icon: ArchitecturalIcon },
+    { label: "Contractor", icon: ContractorsIcon },
     { label: "Fabrication", icon: FabricationIcon },
     { label: "Automation", icon: AutomationIcon },
     { label: "Legal", icon: LegalIcon },
