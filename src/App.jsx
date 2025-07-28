@@ -23,6 +23,7 @@ import MobHelpSupportChat from "./modules/ClientPages/Profile/Mobile/mobHelpSupp
 import MobSavedAddress from "./modules/ClientPages/Profile/Mobile/mobSavedAdderess";
 import MobArtisansServices from "./modules/ClientPages/Services/mobServiceCategory/mobArtisansServices";
 import MobArchitecturalServices from "./modules/ClientPages/Services/mobServiceCategory/mobArchitecturalServices";
+import MobContractorServices from "./modules/ClientPages/Services/mobServiceCategory/mobContractors";
 import MobAutomationServices from "./modules/ClientPages/Services/mobServiceCategory/mobAutomationServices";
 import MobFabricationServices from "./modules/ClientPages/Services/mobServiceCategory/mobFabricationServices";
 import MobMessageChat from "./modules/ClientPages/Message/mobMessage/mobMessageChat";
@@ -126,6 +127,11 @@ function App() {
             path="/mobile-fabrication-services"
             element={<MobFabricationServices />}
           />
+          <Route
+            path="/mobile-contractor-services"
+            element={<MobContractorServices />}
+          />
+
           <Route path="/mobile-message-chat" element={<MobMessageChat />} />
           <Route path="/mobile-search-worker" element={<MobSearchWorker />} />
           <Route path="/address" element={<AddressDetails />} />

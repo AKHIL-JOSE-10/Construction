@@ -13,6 +13,19 @@ import ContractorsIcon from "@/assets/Contractors.png";
 import EngineersIcon from "@/assets/Engineers.png";
 import InstantIcon from "@/assets/Instant.png";
 
+const routeMap = {
+  Architects: "/mobile-architectural-services",
+  Contractors: "/mobile-contractor-services",
+  Engineers: "/mobile-engineers",
+  Artisans: "/mobile-artisans",
+  Education: "/mobile-education",
+  All: "/mobile-all-services",
+  Urgent: "/mobile-urgent-services",
+  Fabrication: "/mobile-fabrication",
+  Automation: "/mobile-automation",
+  Legal: "/mobile-legal",
+};
+
 const pages = [
   [
     { label: "All", icon: AllIcon },
@@ -126,9 +139,8 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
                   cursor: item.label === "Architects" ? "pointer" : "default",
                 }}
                 onClick={() => {
-                  if (item.label === "Architects") {
-                    navigate("/mobile-architectural-services");
-                  }
+                  const route = routeMap[item.label];
+                  if (route) navigate(route);
                 }}
               >
                 <Box
