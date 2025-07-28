@@ -82,7 +82,7 @@ const WorkerForm4 = () => {
                   alt={item.label}
                   sx={{ width: 40, height: 35, mr: 1 }}
                 />
-                <Typography sx={{ fontSize: '0.6rem', fontWeight: 500 }}>
+                <Typography sx={{ fontSize: '0.7rem', fontWeight: 500 }}>
                   {item.label}
                 </Typography>
               </Box>
