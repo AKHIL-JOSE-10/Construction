@@ -70,7 +70,7 @@ const WorkerForm3 = () => {
                                     borderRadius: '12px',
                                     p: 1,
                                     height: 40,
-                                    width: 140,
+                                    width: 125,
                                     cursor: 'pointer',
                                     transition: '0.3s',
                                     '&:hover': {
@@ -84,7 +84,7 @@ const WorkerForm3 = () => {
                                     alt={item.label}
                                     sx={{ width: 48, height: 35, mr: 1 }}
                                 />
-                                <Typography sx={{ fontSize: '0.9rem', fontWeight: 500 }}>
+                                <Typography sx={{ fontSize: '0.8rem', fontWeight: 500 }}>
                                     {item.label}
                                 </Typography>
                             </Box>

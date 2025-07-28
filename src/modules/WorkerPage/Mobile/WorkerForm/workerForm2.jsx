@@ -147,6 +147,7 @@ const WorkerForm2 = () => {
                     fontWeight: "550",
                     mb: 1,
                     ml: 0.5,
+                    mt: 2
                 }}
             >
                 Email Address

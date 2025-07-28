@@ -64,9 +64,10 @@ const WorkerForm4 = () => {
                   alignItems: 'center',
                   border: isSelected ? '2px solid red' : '1px solid #ccc',
                   borderRadius: '12px',
-                  p: 1,
+                  py: 1,
+                  px:0.3,
                   height: 40,
-                  width: 140,
+                  width: 130,
                   cursor: 'pointer',
                   backgroundColor: isSelected ? '#ffe5e5' : 'white',
                   transition: '0.3s',
@@ -81,7 +82,7 @@ const WorkerForm4 = () => {
                   alt={item.label}
                   sx={{ width: 40, height: 35, mr: 1 }}
                 />
-                <Typography sx={{ fontSize: '0.7rem', fontWeight: 500 }}>
+                <Typography sx={{ fontSize: '0.6rem', fontWeight: 500 }}>
                   {item.label}
                 </Typography>
               </Box>
