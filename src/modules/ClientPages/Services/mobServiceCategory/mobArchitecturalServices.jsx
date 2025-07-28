@@ -33,7 +33,7 @@ const MobArchitecturalServices = () => {
   };
 
   return (
-    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", }}>
+    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative", bgcolor:"rgba(250, 249, 249, 1)" }}>
       <MobHeading Heading="Architects" />
 
 <Grid container spacing={2} justifyContent="space-evenly">
@@ -43,12 +43,14 @@ const MobArchitecturalServices = () => {
         onClick={() => handleClick(service.service)}
         sx={{
           width: 160,
-          height: 120,
+          bgcolor: "#fff",
           borderRadius: 1,
-          overflow: "hidden",
+          boxShadow: "0px 2px 6px rgba(0,0,0,0.1)",
           cursor: "pointer",
-          boxShadow: "0px 3px 12px rgba(0, 0, 0, 0.1)",
-          position: "relative",
+          p: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <Box
@@ -57,36 +59,25 @@ const MobArchitecturalServices = () => {
           alt={service.service}
           sx={{
             width: "100%",
-            height: "100%",
+            height: 90,
             objectFit: "cover",
+            borderRadius: 1,
           }}
         />
 
-        {/* Overlay text */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: 0,
-            width: "100%",
-            bgcolor: "rgba(0,0,0,0.5)",
-            color: "#fff",
-            textAlign: "center",
-            py: 0.5,
-          }}
+        <Typography
+          fontSize={13}
+          fontWeight={600}
+          mt={1}
+          noWrap
         >
-          <Typography
-            variant="caption"
-            fontSize={11}
-            fontWeight={550}
-            noWrap
-          >
-            {service.service}
-          </Typography>
-        </Box>
+          {service.service}
+        </Typography>
       </Box>
     </Grid>
   ))}
 </Grid>
+
 
       {/* Fixed Bottom Button */}
 <Box
