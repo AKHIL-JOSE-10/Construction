@@ -14,14 +14,14 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
     <Box
       sx={{
         mt: 2,
-        bgcolor: "#d5e4fcff", // light red inner shade
+        bgcolor: "#0d377cff", // light red inner shade
         borderRadius: 1,
         height: 40,
         display: "flex",
         alignItems: "center",
         width: "100%",
         cursor: "pointer",
-        boxShadow: "0 0 10px rgba(114, 126, 234, 0.5)", // subtle red shadow
+        boxShadow: "0 0 10px rgba(1, 1, 9, 0.5)", // subtle red shadow
         transition: "box-shadow 0.3s ease, border 0.3s ease",
         "&:hover": {
           boxShadow: "0px 4px 12px rgba(255, 4, 0, 5)", // stronger on hover
@@ -32,7 +32,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
     >
       <MagnifyingGlassIcon
         size={20}
-        color="#000000ff"
+        color="#fffbfbff"
         style={{ marginLeft: 16, marginRight: 16 }}
       />
 <InputBase
@@ -40,9 +40,9 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
         sx={{
           flex: 1,
           fontSize: "0.8rem",
-          color: "#fff",
+          color: "#ebe4e4ff",
           "& input::placeholder": {
-            color: "#000000ff",
+            color: "#ecececff",
             opacity: 1,
           },
         }}
