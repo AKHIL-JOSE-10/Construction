@@ -200,7 +200,12 @@ const MobHome = () => {
 
   return (
     <Grid sx={{ pb: 2, }}>
-      <Grid
+      <Grid sx={{ background: `linear-gradient(
+      to bottom left,
+      rgba(230, 97, 97, 1),
+      rgba(131, 42, 42, 0.91),
+      rgba(77, 21, 21, 1)
+    )`,}}
       >
         {/* Header */}
         <Box
@@ -210,6 +215,7 @@ const MobHome = () => {
             alignItems: "center",
             pt: 2,
             px: 2,
+            
           }}
         >
           <Box display="flex">
@@ -246,7 +252,7 @@ const MobHome = () => {
           <SearchBar />
         </Box>
 
-
+</Grid>
         {/* Banner */}
         <AdvertisementCarousel />
 
@@ -255,7 +261,7 @@ const MobHome = () => {
 
         <ServiceScrollBar />
 
-      </Grid>
+      
 
 
 
