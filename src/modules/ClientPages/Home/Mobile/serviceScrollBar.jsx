@@ -88,7 +88,6 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
       sx={{
         position: "relative",
         overflow: "hidden",
-        bgcolor: "rgba(247, 234, 234, 1)",
         pb: 3,
       }}
     >

@@ -202,12 +202,13 @@ const MobHome = () => {
   sx={{
     background: `linear-gradient(
       to bottom,
-      rgba(107, 34, 34, 1),
-      rgba(196, 64, 64, 0.91),
-      rgba(248, 142, 142, 1),
-      rgba(249, 238, 238, 1)
+      rgba(16, 14, 62, 1),
+      rgba(29, 31, 131, 0.91),
+      rgba(82, 84, 192, 1),
+      rgba(108, 108, 189, 1),
+      rgba(146, 146, 196, 1),
+      rgba(171, 171, 198, 1)
     )`,
-    boxShadow: '0px 8px 20px rgba(228, 35, 35, 8)', // bottom shadow
   }}
 >
           {/* Header */}
@@ -260,12 +261,14 @@ const MobHome = () => {
       {/* Banner */}
       <AdvertisementCarousel />
 
-        </Grid>
-        
 
       {/* Services */}
 
       <ServiceScrollBar />
+
+        </Grid>
+        
+
 
       {/* <Grid
         container
