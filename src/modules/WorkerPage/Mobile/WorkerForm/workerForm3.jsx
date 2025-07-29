@@ -55,44 +55,51 @@ const WorkerForm3 = () => {
                 you can choose more than one
             </Typography>
 
-            <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center' }}>
-                {professionList.map((item, index) => {
-                    const isSelected = selected.includes(item.label);
-                    return (
-                        <Grid item key={index}>
-                            <Box
-                                onClick={() => handleSelect(item.label)}
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    border: isSelected ? '2px solid red' : '1px solid #ccc',
-                                    backgroundColor: isSelected ? '#ffe5e5' : '#fff',
-                                    borderRadius: '12px',
-                                    py: 0.8,
-                                    px:0.5,
-                                    height: 40,
-                                    width: 135,
-                                    cursor: 'pointer',
-                                    transition: '0.3s',
-                                    '&:hover': {
-                                        boxShadow: 2,
-                                    },
-                                }}
-                            >
-                                <Box
-                                    component="img"
-                                    src={item.icon}
-                                    alt={item.label}
-                                    sx={{ width: 48, height: 35, mr: 0.4 }}
-                                />
-                                <Typography sx={{ fontSize: '0.8rem', fontWeight: 500 }}>
-                                    {item.label}
-                                </Typography>
-                            </Box>
-                        </Grid>
-                    );
-                })}
-            </Grid>
+<Box
+  sx={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    gap: 2, // optional: controls spacing between items
+  }}
+>
+  {professionList.map((item, index) => {
+    const isSelected = selected.includes(item.label);
+    return (
+      <Box
+        key={index}
+        onClick={() => handleSelect(item.label)}
+        sx={{
+          flex: "0 0 44%", 
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          border: isSelected ? "2px solid red" : "1px solid #ccc",
+          backgroundColor: isSelected ? "#ffe5e5" : "#fff",
+          borderRadius: "12px",
+          py: 0.8,
+          px: 0.5,
+          height: 40,
+          cursor: "pointer",
+          transition: "0.3s",
+          "&:hover": {
+            boxShadow: 2,
+          },
+        }}
+      >
+        <Box
+          component="img"
+          src={item.icon}
+          alt={item.label}
+          sx={{ width: 48, height: 35, mr: 0.4 }}
+        />
+        <Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
+          {item.label}
+        </Typography>
+      </Box>
+    );
+  })}
+</Box>
 
             <BottomButton handleNext={handleNext} />
         </Box>
