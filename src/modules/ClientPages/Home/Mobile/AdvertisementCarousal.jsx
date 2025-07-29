@@ -52,7 +52,7 @@ const AdvertisementCarousel = () => {
                 borderRadius: 0.5,
                 overflow: 'hidden',
                 backgroundColor: 'inherit',
-                aspectRatio: '17/9',
+                aspectRatio: '21/9',
                 transform: 'scale(0.85)',
                 transition: 'transform 0.4s ease-in-out',
               }}
