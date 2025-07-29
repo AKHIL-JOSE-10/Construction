@@ -9,7 +9,7 @@ import MobOtpVerification from "./modules/ClientPages/Authentication/Mobile/mobO
 import Signinpage from "./modules/ClientPages/Authentication/signinpage";
 import MobHome from "./modules/ClientPages/Home/Mobile/mobHome";
 import Profile from "./modules/ClientPages/Profile/Profile";
-
+import MobSignIn from "./modules/ClientPages/Authentication/Mobile/mobSignIn";
 import MobAllServiceCategory from "./modules/ClientPages/Services/mobServiceCategory/mobAllServiceCategory";
 import MobWorkerpage from "./modules/ClientPages/WorkerPage/Worker/mobWorkerpage";
 import Bookings from "./modules/ClientPages/Bookings/Bookings";
@@ -85,8 +85,8 @@ function App() {
         <Route element={<MobileLayout />}>
           <Route path="/" element={<RouteListPage />} />
           <Route path="/signin" element={<Signinpage />} />
+          <Route path="/mobile-signin" element={<MobSignIn />} />
 
-          
           <Route path="/mobile-otp-verification" element={<MobOtpVerification />} />
           <Route path="/mobile-profile" element={<MobProfilePage />} />
           <Route path="/mobile-bookings" element={<MobMyBookings />} />
