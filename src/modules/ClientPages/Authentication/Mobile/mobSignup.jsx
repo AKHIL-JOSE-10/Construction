@@ -44,7 +44,7 @@ const MobSignup = () => {
   sx={{
     mt: 5,
     width: '100%',
-    height: 200,
+    height: 250,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
