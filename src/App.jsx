@@ -85,7 +85,7 @@ function App() {
         <Route element={<MobileLayout />}>
           <Route path="/" element={<RouteListPage />} />
           <Route path="/signin" element={<Signinpage />} />
-          <Route path="/MobSignIn" element={<MobSignIn />} />
+          <Route path="/mobile-signin" element={<MobSignIn />} />
           <Route path="/mobile-otp-verification" element={<MobOtpVerification />} />
           <Route path="/mobile-profile" element={<MobProfilePage />} />
           <Route path="/mobile-bookings" element={<MobMyBookings />} />
