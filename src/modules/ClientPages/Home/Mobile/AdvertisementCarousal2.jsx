@@ -1,30 +1,34 @@
+
+
+
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import { Box, CardMedia } from '@mui/material';
+import { Box, Card, CardMedia, Typography } from '@mui/material';
 
-import img1 from '../../../../assets/Interior.png';
-import img2 from '../../../../assets/AdIcon.png';
+import Ad4 from '@/assets/Ad4.png';
+import Ad5 from '@/assets/Ad5.png'
+
 
 const imageData = [
-  { img: img1 },
-  { img: img2 },
-  { img: img1 },
-  { img: img2 },
-];
+  { img: Ad4 },
+  { img: Ad5 },
+  { img: Ad5 },
+  { img: Ad5 },
+]; 
 
-const AdvertisementCarousal2 = () => {
+const AdvertisementCarousel2 = () => {
   return (
-    <Box sx={{ width: '100%', py: 1, pb: 2 }}>
+    <Box sx={{ width: '95%', px: 1, py: 1 , pb:2}}>
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop
-        slidesPerView={1} // 
-        centeredSlides={false}
-        spaceBetween={10}
+        slidesPerView={1.2}
+        centeredSlides={true}
+        spaceBetween={1}
       >
         {imageData.map((item, index) => (
           <SwiperSlide key={index}>
@@ -38,6 +42,7 @@ const AdvertisementCarousal2 = () => {
                 boxShadow: 1,
                 backgroundColor: '#f5f5f5',
               }}
+              className="slide-box"
             >
               <CardMedia
                 component="img"
@@ -45,7 +50,7 @@ const AdvertisementCarousal2 = () => {
                 alt={`Slide ${index}`}
                 sx={{
                   width: '100%',
-                  height: '100%',
+                  height: 200,
                   objectFit: 'cover',
                 }}
               />
@@ -57,4 +62,4 @@ const AdvertisementCarousal2 = () => {
   );
 };
 
-export default AdvertisementCarousal2;
+export default AdvertisementCarousel2;

@@ -233,7 +233,7 @@ const MobHome = () => {
           </Box>
           <Stack direction="row" spacing={1} alignItems="center">
             <IconButton onClick={() => navigate("/mobile-notifications")}>
-              <BellIcon color="white" />
+              <BellIcon />
             </IconButton>
             <Avatar onClick={() => navigate("/editInfo")}
               sx={{ width: 32, height: 32 }}
