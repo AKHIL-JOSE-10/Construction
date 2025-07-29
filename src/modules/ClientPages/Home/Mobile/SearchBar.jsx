@@ -14,7 +14,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
     <Box
       sx={{
         mt: 2,
-        bgcolor: "#d5e4fcff", // light red inner shade
+        bgcolor: "#34578fff", // light red inner shade
         borderRadius: 1,
         height: 45,
         display: "flex",
@@ -33,7 +33,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
     >
       <MagnifyingGlassIcon
         size={20}
-        color="#000000ff"
+        color="#fffafaff"
         style={{ marginLeft: 16, marginRight: 16 }}
       />
 <InputBase
@@ -41,9 +41,9 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
         sx={{
           flex: 1,
           fontSize: "0.8rem",
-          color: "#fff",
+          color: "#ffffff",
           "& input::placeholder": {
-            color: "#000000ff",
+            color: "#ffffffff",
             opacity: 1,
           },
         }}
