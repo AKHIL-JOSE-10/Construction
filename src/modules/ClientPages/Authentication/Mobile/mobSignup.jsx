@@ -36,7 +36,7 @@ const MobSignup = () => {
           <img
             src={OTPImg}
             alt="OTP Verification"
-            style={{ height: "120%", objectFit: "contain" }}
+            style={{ height: "100%", objectFit: "contain" }}
           />
         </Box>
 
