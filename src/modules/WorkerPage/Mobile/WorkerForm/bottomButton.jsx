@@ -32,7 +32,7 @@ const BottomButton = ({ handleNext }) => {
             color: "#fff",
             borderRadius: 35,
             fontWeight: "bold",
-            px:17,
+            px:15,
             "&:hover": {
               backgroundColor: "#b80044",
             },
