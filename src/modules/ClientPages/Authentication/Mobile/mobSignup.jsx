@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, TextField, Button, InputAdornment } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import OTPImg from '@/assets/OTPImg.png'
+import SignInPhoneImg from '@/assets/SignInPhoneImg.png'
 
 const MobSignup = () => {
   return (
@@ -34,7 +34,7 @@ const MobSignup = () => {
           }}
         >
           <img
-            src={OTPImg}
+            src={SignInPhoneImg}
             alt="OTP Verification"
             style={{ height: "100%", objectFit: "contain" }}
           />
@@ -48,7 +48,6 @@ const MobSignup = () => {
         <Box
           sx={{
             px: 3,
-            pb:3
           }}
         >
           <Typography variant="body2" sx={{ mb: 1, fontWeight: '550' }}>
