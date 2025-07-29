@@ -14,6 +14,7 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AdvertisementCarousel from "./AdvertisementCarousal";
+import AdvertisementCarousal2 from "./AdvertisementCarousal2";
 import ScrollToTopButton from "./scrollToTopButton";
 import SearchBar from "./SearchBar";
 // import { DotLottieReact } from "@lottiefiles/dotlottie-react";
@@ -484,7 +485,7 @@ const MobHome = () => {
       {/* Banner */}
 
       <Box sx={{ pt: 1 }}>
-        <AdvertisementCarousel />
+        <AdvertisementCarousal2 />
       </Box>
 
 
