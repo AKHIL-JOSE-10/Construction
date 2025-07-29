@@ -5,14 +5,13 @@ import MobMyBookings from "./modules/ClientPages/Bookings/Mobile/mobmyBookings";
 import MobProfilePage from "./modules/ClientPages/Profile/Mobile/mobProfile";
 import MobSettings from "./modules/ClientPages/Settings/mobSettings";
 import MobNotifications from "./modules/ClientPages/NotificationPage/mobNotifications";
+import MobOtpVerification from "./modules/ClientPages/Authentication/Mobile/mobOtpVerification";
 import Signinpage from "./modules/ClientPages/Authentication/signinpage";
 import MobHome from "./modules/ClientPages/Home/Mobile/mobHome";
 import Profile from "./modules/ClientPages/Profile/Profile";
-import MobSignin from "./modules/ClientPages/Authentication/Mobile/mobsignin";
-import MobSignup from "./modules/ClientPages/Authentication/Mobile/mobSignup";
+import MobSignIn from "./modules/ClientPages/Authentication/Mobile/mobSignIn";
 import MobAllServiceCategory from "./modules/ClientPages/Services/mobServiceCategory/mobAllServiceCategory";
 import MobWorkerpage from "./modules/ClientPages/WorkerPage/Worker/mobWorkerpage";
-import MobForgotPassword from "./modules/ClientPages/Authentication/Mobile/mobForgotPassword";
 import Bookings from "./modules/ClientPages/Bookings/Bookings";
 import EditInfo from "./modules/ClientPages/EditInfo/EditInfo";
 import RouteListPage from "./RouterListPage";
@@ -86,8 +85,8 @@ function App() {
         <Route element={<MobileLayout />}>
           <Route path="/" element={<RouteListPage />} />
           <Route path="/signin" element={<Signinpage />} />
-          <Route path="/mobile-signin" element={<MobSignin />} />
-          <Route path="/mobile-signup" element={<MobSignup />} />
+          <Route path="/mobile-signin" element={<MobSignIn />} />
+          <Route path="/mobile-otp-verification" element={<MobOtpVerification />} />
           <Route path="/mobile-profile" element={<MobProfilePage />} />
           <Route path="/mobile-bookings" element={<MobMyBookings />} />
           <Route path="/mobile-booking-info" element={<MobBookingInfo />} />
@@ -101,7 +100,6 @@ function App() {
           <Route path="/home" element={<MobHome />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/bookings" element={<Bookings />} />
-          <Route path="/forgot-password" element={<MobForgotPassword />} />
           <Route path="/editInfo" element={<EditInfo />} />
           <Route path="/mobile-premium" element={<MobPremium />} />
           <Route path="/mobile-messages" element={<MobMessages />} />
