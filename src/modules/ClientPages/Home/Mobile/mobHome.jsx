@@ -14,7 +14,7 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AdvertisementCarousel from "./AdvertisementCarousal";
-import ScrollToTopButton from "./ScrollToTopButton";
+import ScrollToTopButton from "./scrollToTopButton";
 import SearchBar from "./SearchBar";
 // import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
@@ -199,9 +199,9 @@ const MobHome = () => {
 
   return (
     <Grid sx={{ pb: 2, }}>
-<Grid
-  sx={{
-    background: `linear-gradient(
+      <Grid
+        sx={{
+          background: `linear-gradient(
       to bottom,
       rgba(1, 17, 48, 1),
       rgba(1, 31, 81, 0.95),
@@ -210,9 +210,9 @@ const MobHome = () => {
       rgba(209, 212, 216, 1),
       rgba(246, 247, 247, 1)
     )`,
-  }}
->
-          {/* Header */}
+        }}
+      >
+        {/* Header */}
         <Box
           sx={{
             display: "flex",
@@ -233,7 +233,7 @@ const MobHome = () => {
                 Current Location
               </Typography>
               <Grid container>
-                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, color:"white" }}>
+                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, color: "white" }}>
                   Thrissur, Kerala
                 </Typography>
                 <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
@@ -244,7 +244,7 @@ const MobHome = () => {
           </Box>
           <Stack direction="row" spacing={1} alignItems="center">
             <IconButton onClick={() => navigate("/mobile-notifications")}>
-              <BellIcon color="white"/>
+              <BellIcon color="white" />
             </IconButton>
             <Avatar onClick={() => navigate("/editInfo")}
               sx={{ width: 32, height: 32 }}
@@ -257,18 +257,18 @@ const MobHome = () => {
         <Box sx={{ px: 2, mb: 1, pb: 1.5 }}>
           <SearchBar />
         </Box>
-      
-
-      {/* Banner */}
-      <AdvertisementCarousel />
 
 
-      {/* Services */}
+        {/* Banner */}
+        <AdvertisementCarousel />
 
-      <ServiceScrollBar />
 
-        </Grid>
-        
+        {/* Services */}
+
+        <ServiceScrollBar />
+
+      </Grid>
+
 
 
       {/* <Grid
@@ -373,7 +373,7 @@ const MobHome = () => {
       </Grid>
 
 
-      <Grid sx={{ bgcolor:' rgba(234, 236, 240, 1)' }}>
+      <Grid sx={{ bgcolor: ' rgba(234, 236, 240, 1)' }}>
         <Box sx={{ mt: 1.2, pt: 0.7 }}>
 
           <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 1, mb: 1, px: 1.5 }}>
@@ -857,12 +857,11 @@ const MobHome = () => {
         ))}
       </HorizontalScroll>
 
-
-
       <ScrollToTopButton />
+
       <MobileBottomTab />
       <AddressDrawer open={open} setOpen={setOpen} />
-      
+
     </Grid>
   );
 };
