@@ -90,7 +90,7 @@ const MobOtpVerification = () => {
           variant="contained"
           fullWidth
           sx={{
-            backgroundColor:"#D1004D",
+            backgroundColor:"#7f4d5fff",
             textTransform: 'none',
             fontWeight: 'bold',
             fontSize: '16px',

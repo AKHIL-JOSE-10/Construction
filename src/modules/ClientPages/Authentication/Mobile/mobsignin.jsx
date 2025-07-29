@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"; // <-- Import this
 import SignInPhoneImg from '@/assets/SignInPhoneImg.png'
 
 const MobSignIn = () => {
-  const navigate = useNavigate(); // <-- Hook for navigation
+  const navigate = useNavigate(); 
 
   const handleVerifyClick = () => {
     // You can also validate phone number here if needed
@@ -67,7 +67,7 @@ const MobSignIn = () => {
               fontSize: "16px",
             }}
             endIcon={<ArrowForwardIcon />}
-            onClick={handleVerifyClick} // <-- Trigger navigation
+            onClick={handleVerifyClick} 
           >
             Verify Otp
           </Button>
