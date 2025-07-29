@@ -16,7 +16,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
         mt: 2,
         bgcolor: "#d5e4fcff", // light red inner shade
         borderRadius: 1,
-        height: 40,
+        height: 45,
         display: "flex",
         alignItems: "center",
         width: "100%",
