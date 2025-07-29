@@ -176,7 +176,7 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
             height: "6px",
           },
           "&::-webkit-scrollbar-thumb": {
-            backgroundColor: "#151ab0ff",
+            backgroundColor: "#1527b0ff",
             borderRadius: "100px",
             width: "35px",
           },
