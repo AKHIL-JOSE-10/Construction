@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Grid, Box, Typography, TextField, Stack, Button } from '@mui/material';
-import OtpImg from '@/assets/OtpImg.png';
+import OTPImg from '@/assets/OTPImg.png';
 
 const MobOtpVerification = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
@@ -35,7 +35,7 @@ const MobOtpVerification = () => {
         }}
       >
         <img
-          src={OtpImg}
+          src={OTPImg}
           alt="OTP Verification"
           style={{ height: "100%", objectFit: "contain" }}
         />
@@ -90,7 +90,7 @@ const MobOtpVerification = () => {
           variant="contained"
           fullWidth
           sx={{
-            backgroundColor:"#7f4d5fff",
+            backgroundColor:"#D1004D",
             textTransform: 'none',
             fontWeight: 'bold',
             fontSize: '16px',
