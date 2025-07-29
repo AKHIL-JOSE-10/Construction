@@ -1,59 +1,33 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  TextField,
-  Button,
-  InputAdornment,
-  Paper
-} from "@mui/material";
+import { Box, Typography, TextField, Button, InputAdornment } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { useNavigate } from "react-router-dom";
-import SignInPhoneImg from '@/assets/SignInPhoneImg.png';
-
-const MobSignIn = () => {
-  const navigate = useNavigate();
+import { useNavigate } from "react-router-dom"; // <-- Import this
+import SignInPhoneImg from '@/assets/SignInPhoneImg.png'
+const MobSignIn = () =>{
+  const navigate = useNavigate(); 
 
   const handleVerifyClick = () => {
+    
     navigate("/mobile-Otp-verification");
   };
 
   return (
-    <Box
-      sx={{
-        mt:3,
-        bgcolor: "#f9f9f9",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        px: 2,
-      }}
-    >
-      <Paper
-        elevation={3}
-        sx={{
-          width: "100%",
-          maxWidth: 420,
-          borderRadius: 4,
-          p: 4,
-          backgroundColor: "#fff",
-        }}
-      >
+    <Box sx={{ background: "#fff", display: "flex", flexDirection: "column", bgcolor: 'rgba(255, 255, 255, 1)' }}>
+      <Box sx={{ p: 3 }}>
         <Box>
-          <Typography variant="h5" fontWeight="bold" textAlign="center" gutterBottom>
-            Sign in to Continue
+          <Typography variant="h4" fontWeight="bold">
+            Sign in
           </Typography>
         </Box>
 
         <Box
           sx={{
             width: '100%',
-            height: 200,
+            height: 250,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            mb: 3,
-            mt: 2
+            mt: 7
           }}
         >
           <img
@@ -62,10 +36,12 @@ const MobSignIn = () => {
             style={{ height: "100%", objectFit: "contain" }}
           />
         </Box>
+      </Box>
 
-        <Box>
-          <Typography variant="body1" fontWeight="600" gutterBottom>
-            Mobile Number
+      <Box sx={{ width: "100%" }}>
+        <Box sx={{ px: 3 }}>
+          <Typography variant="body2" sx={{ mb: 1, fontWeight: '550' }}>
+            Mobile number
           </Typography>
           <TextField
             variant="outlined"
@@ -73,10 +49,7 @@ const MobSignIn = () => {
             placeholder="99880-00988"
             InputProps={{
               startAdornment: <InputAdornment position="start">+91</InputAdornment>,
-              sx: {
-                borderRadius: "12px",
-                backgroundColor: "#fafafa",
-              },
+              sx: { borderRadius: "10px", backgroundColor: "#fff" },
             }}
           />
           <Button
@@ -84,59 +57,46 @@ const MobSignIn = () => {
             fullWidth
             sx={{
               mt: 3,
-              borderRadius: "12px",
+              borderRadius: "10px",
               backgroundColor: "#D1004D",
               color: "#fff",
-              py: 1.3,
+              py: 1.2,
               textTransform: "none",
-              fontWeight: "600",
+              fontWeight: "bold",
               fontSize: "16px",
-              boxShadow: "0px 4px 10px rgba(209, 0, 77, 0.3)",
-              '&:hover': {
-                backgroundColor: "#b80040",
-              },
             }}
             endIcon={<ArrowForwardIcon />}
-            onClick={handleVerifyClick}
+            onClick={handleVerifyClick} 
           >
-            Verify OTP
+            Verify Otp
           </Button>
-        </Box>
 
-        <Box sx={{ mt: 4, textAlign: "center" }}>
-          <Typography sx={{ fontSize: 14, color: "#555" }}>
-            Need help?{" "}
-            <Box
-              component="span"
-              sx={{
-                fontSize: 14,
-                color: "#D1004D",
-                textDecoration: "underline",
-                cursor: "pointer",
-              }}
-            >
-              Contact Us
-            </Box>
-          </Typography>
+          <Box sx={{ px: 3, textAlign: "center", mt: 2 }}>
+            <Typography sx={{ fontSize: 14, color: "gray" }}>
+              Need help?{" "}
+              <Typography
+                component="span"
+                sx={{ fontSize: 14, color: "#f44336", textDecoration: "underline", cursor: "pointer" }}
+              >
+                Contact Us
+              </Typography>
+            </Typography>
 
-          <Typography sx={{ fontSize: 13, color: "#888", mt: 2 }}>
-            By signing up, you agree to our{" "}
-            <Box
-              component="span"
-              sx={{
-                fontSize: 13,
-                color: "#D1004D",
-                textDecoration: "underline",
-                cursor: "pointer",
-              }}
-            >
-              Terms & Conditions
-            </Box>
-          </Typography>
+            <Typography sx={{ fontSize: 14, color: "gray", my: 2 }}>
+              By signing up, you agree to our{" "}
+              <Typography
+                component="span"
+                sx={{ fontSize: 14, color: "#f44336", textDecoration: "underline", cursor: "pointer" }}
+              >
+                Terms & Conditions
+              </Typography>
+            </Typography>
+          </Box>
+
         </Box>
-      </Paper>
+      </Box>
     </Box>
   );
 };
 
-export default MobSignIn;
+export default MobSignIn

@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { Grid, Box, Typography, TextField, Stack, Button } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Typography,
+  TextField,
+  Stack,
+  Button
+} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import OTPImg from '@/assets/OTPImg.png';
 
 const MobOtpVerification = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
+  const navigate = useNavigate(); // <-- Added this line
 
   const handleChange = (index, value) => {
     if (/^[0-9]?$/.test(value)) {
@@ -19,7 +28,9 @@ const MobOtpVerification = () => {
   const handleVerify = () => {
     const enteredOtp = otp.join('');
     console.log('OTP entered:', enteredOtp);
-    // Add your API call or validation logic here
+    
+    // Add validation logic if needed
+    navigate('/home'); // <-- Navigate to /home
   };
 
   return (
@@ -90,7 +101,7 @@ const MobOtpVerification = () => {
           variant="contained"
           fullWidth
           sx={{
-            backgroundColor:"#D1004D",
+            backgroundColor: "#D1004D",
             textTransform: 'none',
             fontWeight: 'bold',
             fontSize: '16px',
