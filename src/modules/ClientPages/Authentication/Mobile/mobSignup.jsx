@@ -110,7 +110,7 @@ const MobSignup = () => {
     </Typography>
   </Typography>
 
-  <Typography sx={{fontSize:14, color: "gray", my: 1 }}>
+  <Typography sx={{fontSize:14, color: "gray", my: 2 }}>
     By signing up, you agree to our{" "}
     <Typography
       component="span"
