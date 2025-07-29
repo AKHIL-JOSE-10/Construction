@@ -8,7 +8,7 @@ const ScrollToTopButton = () => {
 
   const handleScroll = () => {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
-    setIsVisible(scrollY > 300);
+    setIsVisible(scrollY > 400);
   };
 
   const scrollToTop = () => {
@@ -31,7 +31,7 @@ const ScrollToTopButton = () => {
         right: 20,
         width: 45,
         height: 45,
-        backgroundColor: "#ff0000ff",
+        backgroundColor: "#0526a8ff",
         color: "white",
         borderRadius: "50%",
         display: "flex",
