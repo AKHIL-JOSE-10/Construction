@@ -91,15 +91,6 @@ const MobSignup = () => {
   </Box>
 </Box>
 
-      {/* Bottom Login Link */}
-      <Box sx={{ mt: 2,  p:2 }}>
-        <Typography variant="body2">
-          Already a member?{" "}
-          <Box component="span" sx={{ color: "#f44336", fontWeight: "bold", cursor: "pointer" }}>
-            Login
-          </Box>
-        </Typography>
-      </Box>
     </Box>
   );
 };
