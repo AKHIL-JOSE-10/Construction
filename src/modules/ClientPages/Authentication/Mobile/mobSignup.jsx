@@ -59,7 +59,7 @@ const MobSignup = () => {
       p: 3,
     }}
   >
-    <Typography variant="body2" sx={{ mb: 1 }}>
+    <Typography variant="body2" sx={{ mb: 1, fontWeight:'550'}}>
       Mobile number
     </Typography>
     <TextField
