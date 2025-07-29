@@ -15,6 +15,8 @@ import {
   LockSimpleIcon
 ,
  ShieldCheckIcon,
+ PaperPlaneRightIcon ,
+ PhoneIcon
 } from "@phosphor-icons/react";
 
 const MobSignup = () => {
@@ -24,11 +26,11 @@ const MobSignup = () => {
         background: "#fff",
         display: "flex",
         flexDirection: "column",
-        bgcolor:'rgba(248, 232, 232, 1)'
+         bgcolor:"#ffffffff"
       }}
     >
 
-      <Box sx={{p:3, bgcolor:"#ffffffff"}}>
+      <Box sx={{p:3, bgcolor:'rgba(248, 232, 232, 1)'}}>
 {/* Top Section */}
       <Box sx={{display:'flex', justifyContent:'center'}}>
         <Typography variant="h4" fontWeight="bold">
@@ -47,7 +49,7 @@ const MobSignup = () => {
           justifyContent: "center",
         }}
       >
-        <PhoneIphoneIcon sx={{ fontSize: 160, color: "#f44336" }} />
+        <PhoneIcon size={150}  color="#f44336" sx={{ fontSize: 160, color: "#f44336" }} />
       </Box>
 
       </Box>
