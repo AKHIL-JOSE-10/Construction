@@ -37,16 +37,6 @@ import {
 
 
 
-
-const serviceImages = {
-  Fast: AllIcon,
-  All: AllIcon,
-  Architectural: ArchitecturalIcon,
-  Artisans: Artisans,
-  Fabrication: FabricationIcon,
-  Other: AllIcon,
-};
-
 const locations = [
   {
     name: "Cochin",
@@ -208,8 +198,21 @@ const MobHome = () => {
 
   return (
     <Grid sx={{ pb: 2, }}>
-      <Grid >
-        {/* Header */}
+<Grid
+  sx={{
+    background: `linear-gradient(
+      to bottom,
+      rgba(107, 34, 34, 1),
+      rgba(196, 64, 64, 0.91),
+      rgba(246, 120, 120, 1),
+      rgba(243, 139, 139, 1),
+      rgba(193, 119, 119, 1),
+      rgba(238, 206, 206, 0.91)
+    )`,
+    boxShadow: '0px 8px 20px rgba(228, 35, 35, 8)', // bottom shadow
+  }}
+>
+          {/* Header */}
         <Box
           sx={{
             display: "flex",
@@ -220,17 +223,17 @@ const MobHome = () => {
           }}
         >
           <Box display="flex">
-            <MapPinIcon fontSize={20} />
+            <MapPinIcon color='white' fontSize={20} />
             <Box display="flex" flexDirection="column">
               <Typography
                 variant="caption"
-                color="gray"
+                color="white"
                 sx={{ lineHeight: 1, fontSize: 13, ml: 0.9 }}
               >
                 Current Location
               </Typography>
               <Grid container>
-                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7 }}>
+                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, color:"white" }}>
                   Thrissur, Kerala
                 </Typography>
                 <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
@@ -241,7 +244,7 @@ const MobHome = () => {
           </Box>
           <Stack direction="row" spacing={1} alignItems="center">
             <IconButton onClick={() => navigate("/mobile-notifications")}>
-              <BellIcon />
+              <BellIcon color="white"/>
             </IconButton>
             <Avatar onClick={() => navigate("/editInfo")}
               sx={{ width: 32, height: 32 }}
@@ -254,11 +257,13 @@ const MobHome = () => {
         <Box sx={{ px: 2, mb: 1, pb: 1.5 }}>
           <SearchBar />
         </Box>
-      </Grid>
+      
 
       {/* Banner */}
       <AdvertisementCarousel />
 
+        </Grid>
+        
 
       {/* Services */}
 
