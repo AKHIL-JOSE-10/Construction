@@ -15,13 +15,15 @@ import Ad5 from '@/assets/Ad5.png'
 const imageData = [
   { img: Ad4 },
   { img: Ad5 },
+   { img: Ad4 },
   { img: Ad5 },
+   { img: Ad4 },
   { img: Ad5 },
 ]; 
 
 const AdvertisementCarousel2 = () => {
   return (
-    <Box sx={{ width: '95%', px: 1, py: 1 , pb:2}}>
+    <Box sx={{ width: '100%', py: 1 , pb:2}}>
       <Swiper
         modules={[Autoplay]}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
