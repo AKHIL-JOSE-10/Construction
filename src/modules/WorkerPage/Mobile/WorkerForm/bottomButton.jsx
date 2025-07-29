@@ -9,23 +9,22 @@ const BottomButton = ({ handleNext }) => {
         bottom: 0,
         left: 0,
         right: 0,
-        width: "100vw",
-        maxWidth: "100vw",
         p: 0,
         zIndex: 10,
         boxSizing: "border-box",
-        backgroundColor: "#fff", // Optional: ensures the background is solid
+        backgroundColor: "#fff",
       }}
     >
       <Box
         sx={{
-          borderTop: "1px solid #ddd", // Top border for separation
+          display:'flex',
+          justifyContent:'center',
+          borderTop: "1px solid #ddd", 
           px: 2,
           py: 1.5,
         }}
       >
         <Button
-          fullWidth
           variant="contained"
           onClick={handleNext}
           sx={{
@@ -33,6 +32,7 @@ const BottomButton = ({ handleNext }) => {
             color: "#fff",
             borderRadius: 35,
             fontWeight: "bold",
+            px:17,
             "&:hover": {
               backgroundColor: "#b80044",
             },
