@@ -14,6 +14,7 @@ import {
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AdvertisementCarousel from "./AdvertisementCarousal";
+import ScrollToTopButton from "./ScrollToTopButton";
 import SearchBar from "./SearchBar";
 // import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import MobileBottomTab from "@/modules/components/Mobile/mobileBottomTab";
@@ -858,9 +859,10 @@ const MobHome = () => {
 
 
 
-      {/* Bottom Navigation */}
+      <ScrollToTopButton />
       <MobileBottomTab />
       <AddressDrawer open={open} setOpen={setOpen} />
+      
     </Grid>
   );
 };
