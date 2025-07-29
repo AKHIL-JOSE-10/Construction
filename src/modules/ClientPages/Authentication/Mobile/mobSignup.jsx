@@ -30,7 +30,7 @@ const MobSignup = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            mt:3
+            mt:7
           }}
         >
           <img
