@@ -14,14 +14,14 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
     <Box
       sx={{
         mt: 2,
-        bgcolor: "#f0b2b2ff", // light red inner shade
+        bgcolor: "#c9ddfcff", // light red inner shade
         borderRadius: 1,
         height: 40,
         display: "flex",
         alignItems: "center",
         width: "100%",
         cursor: "pointer",
-        boxShadow: "0 0 10px rgba(229, 57, 53, 1)", // subtle red shadow
+        boxShadow: "0 0 10px rgba(53, 71, 229, 0.7)", // subtle red shadow
         transition: "box-shadow 0.3s ease, border 0.3s ease",
         "&:hover": {
           boxShadow: "0px 4px 12px rgba(255, 4, 0, 5)", // stronger on hover
