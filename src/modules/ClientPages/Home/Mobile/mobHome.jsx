@@ -213,7 +213,7 @@ const MobHome = () => {
           }}
         >
           <Box display="flex">
-            <MapPinIcon color='white' fontSize={20} />
+            <MapPinIcon fontSize={20} />
             <Box display="flex" flexDirection="column">
               <Typography
                 variant="caption"
