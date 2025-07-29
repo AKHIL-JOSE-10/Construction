@@ -60,7 +60,7 @@ const WorkerForm3 = () => {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    gap: 2, // optional: controls spacing between items
+    gap: 2, 
   }}
 >
   {professionList.map((item, index) => {
@@ -73,7 +73,6 @@ const WorkerForm3 = () => {
           flex: "0 0 44%", 
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-evenly",
           border: isSelected ? "2px solid red" : "1px solid #ccc",
           backgroundColor: isSelected ? "#ffe5e5" : "#fff",
           borderRadius: "12px",
@@ -91,7 +90,7 @@ const WorkerForm3 = () => {
           component="img"
           src={item.icon}
           alt={item.label}
-          sx={{ width: 48, height: 35, mr: 0.4 }}
+          sx={{ width: 48, height: 35, mr: 0.7 }}
         />
         <Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
           {item.label}
