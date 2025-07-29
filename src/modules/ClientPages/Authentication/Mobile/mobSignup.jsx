@@ -27,13 +27,13 @@ const MobSignup = () => {
         background: "#fff",
         display: "flex",
         flexDirection: "column",
-         bgcolor:"#ffffffff"
+        bgcolor:'rgba(247, 236, 236, 1)'
       }}
     >
 
-      <Box sx={{p:3, bgcolor:'rgba(247, 236, 236, 1)'}}>
+      <Box sx={{p:3, bgcolor:'rgba(255, 255, 255, 1)'}}>
 {/* Top Section */}
-      <Box sx={{display:'flex', justifyContent:'center'}}>
+      <Box >
         <Typography variant="h4" fontWeight="bold">
           Sign up
         </Typography>
