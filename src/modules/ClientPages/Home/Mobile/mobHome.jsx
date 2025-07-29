@@ -217,13 +217,12 @@ const MobHome = () => {
             <Box display="flex" flexDirection="column">
               <Typography
                 variant="caption"
-                color="white"
                 sx={{ lineHeight: 1, fontSize: 13, ml: 0.9 }}
               >
                 Current Location
               </Typography>
               <Grid container>
-                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, color: "white" }}>
+                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, }}>
                   Thrissur, Kerala
                 </Typography>
                 <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
