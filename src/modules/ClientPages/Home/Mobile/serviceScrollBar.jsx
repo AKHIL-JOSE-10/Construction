@@ -133,7 +133,6 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
-                  gap: 0.3,
                   p: 0.7,
                   cursor: item.label === "Architects" ? "pointer" : "default",
                 }}
