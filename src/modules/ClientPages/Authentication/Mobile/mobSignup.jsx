@@ -25,7 +25,6 @@ const MobSignup = () => {
         {/* Center Image */}
         <Box
           sx={{
-            mt: 5,
             width: '100%',
             height: 250,
             display: "flex",
@@ -47,7 +46,8 @@ const MobSignup = () => {
       <Box sx={{ width: "100%" }}>
         <Box
           sx={{
-            p: 3,
+            px: 3,
+            pb:3
           }}
         >
           <Typography variant="body2" sx={{ mb: 1, fontWeight: '550' }}>
