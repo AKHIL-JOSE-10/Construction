@@ -201,17 +201,6 @@ const MobHome = () => {
   return (
     <Grid sx={{ pb: 2, }}>
       <Grid
-        sx={{
-          background: `linear-gradient(
-      to bottom,
-      rgba(1, 17, 48, 1),
-      rgba(1, 31, 81, 0.95),
-      rgba(113, 148, 197, 1),
-      rgba(171, 181, 194, 1),
-      rgba(209, 212, 216, 1),
-      rgba(246, 247, 247, 1)
-    )`,
-        }}
       >
         {/* Header */}
         <Box
