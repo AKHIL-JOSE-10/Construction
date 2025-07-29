@@ -31,7 +31,7 @@ const MobSignup = () => {
       }}
     >
 
-      <Box sx={{p:3, bgcolor:'rgba(248, 232, 232, 1)'}}>
+      <Box sx={{p:3, bgcolor:'rgba(247, 236, 236, 1)'}}>
 {/* Top Section */}
       <Box sx={{display:'flex', justifyContent:'center'}}>
         <Typography variant="h4" fontWeight="bold">
@@ -94,8 +94,33 @@ const MobSignup = () => {
       }}
       endIcon={<ArrowForwardIcon />}
     >
-      Next
+      Verify Otp
     </Button>
+
+    {/* Terms and Contact Section */}
+<Box sx={{ px: 3, textAlign: "center", mt:2 }}>
+
+  <Typography sx={{fontSize:14, color: "gray" }}>
+    Need help?{" "}
+    <Typography
+      component="span"
+      sx={{fontSize:14, color: "#f44336", textDecoration: "underline", cursor: "pointer" }}
+    >
+      Contact Us
+    </Typography>
+  </Typography>
+
+  <Typography sx={{fontSize:14, color: "gray", my: 1 }}>
+    By signing up, you agree to our{" "}
+    <Typography
+      component="span"
+      sx={{fontSize:14, color: "#f44336", textDecoration: "underline", cursor: "pointer" }}
+    >
+      Terms & Conditions
+    </Typography>
+  </Typography>
+</Box>
+
   </Box>
 </Box>
 
