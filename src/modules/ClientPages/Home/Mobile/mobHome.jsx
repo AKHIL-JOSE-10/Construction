@@ -204,7 +204,7 @@ const MobHome = () => {
       to bottom,
       rgba(107, 34, 34, 1),
       rgba(196, 64, 64, 0.91),
-      rgba(245, 222, 222, 1),
+      rgba(248, 142, 142, 1),
       rgba(249, 238, 238, 1)
     )`,
     boxShadow: '0px 8px 20px rgba(228, 35, 35, 8)', // bottom shadow
