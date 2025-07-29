@@ -9,6 +9,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import TimerIcon from "@mui/icons-material/Timer";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import OTPImg from '@/assets/OTPImg.png'
 import {
   MapPinIcon,
   PhoneCallIcon,
@@ -39,18 +40,23 @@ const MobSignup = () => {
       </Box>
 
       {/* Center Image */}
-      <Box
-        sx={{
-          mt: 5,
-          width: '100%',
-          height: 200,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <PhoneIcon size={150}  color="#f44336" sx={{ fontSize: 160, color: "#f44336" }} />
-      </Box>
+<Box
+  sx={{
+    mt: 5,
+    width: '100%',
+    height: 200,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  <img
+    src={OTPImg}
+    alt="OTP Verification"
+    style={{ height: "100%", objectFit: "contain" }}
+  />
+</Box>
+
 
       </Box>
       
