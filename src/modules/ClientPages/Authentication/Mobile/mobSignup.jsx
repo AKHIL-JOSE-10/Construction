@@ -1,291 +1,106 @@
+import React from "react";
+import { Box, Typography, TextField, Button, InputAdornment } from "@mui/material";
+import phoneIcon from "@mui/icons-material/Smartphone";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
+import LockIcon from "@mui/icons-material/Lock";
+import SecurityIcon from "@mui/icons-material/Security";
+import EmailIcon from "@mui/icons-material/Email";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import TimerIcon from "@mui/icons-material/Timer";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import {
-  Typography,
-  Box,
-  InputAdornment,
-  TextField,
-  Checkbox,
-  FormControlLabel,
-  Stack,
-  Button,
-} from "@mui/material";
-import MobAuthLayout from "../../../layouts/Mobile/mobAuthLayout";
-import BottomDrawerLayout from "../../../layouts/BottomDrawer/BottomDrawer";
+  MapPinIcon,
+  PhoneCallIcon,
+  LockSimpleIcon
+,
+ ShieldCheckIcon,
+} from "@phosphor-icons/react";
 
 const MobSignup = () => {
   return (
-    <MobAuthLayout heading1="Join & Build" heading2="Smart">
-      <BottomDrawerLayout open={true}>
-        <Box sx={{ overflow: "auto" }}>
-          <Typography
-            sx={{
-              fontSize: { xs: "30px", sm: "40px" },
-              fontWeight: "700",
-              pt: 3.5,
-              textAlign: "center",
-            }}
-          >
-            Sign up{" "}
-          </Typography>
+    <Box
+      sx={{
+        background: "#fff",
+        display: "flex",
+        flexDirection: "column",
+        bgcolor:'rgba(248, 232, 232, 1)'
+      }}
+    >
 
-          <Box px={3} pb={5} pt={4}>
-            <Typography
-              sx={{
-                fontSize: { xs: "15px", sm: "26px", md: "26px" },
-                color: "#666666",
-                fontWeight: "550",
-                mb: 1,
-                ml: 0.5,
-              }}
-            >
-              Full Name
-            </Typography>
-            <TextField
-              size="small"
-              required
-              fullWidth
-              placeholder="Enter your full name"
-              sx={{
-                backgroundColor: "white",
-                border: "0.5px solid grey",
-                placeholder:"Enter your full name",
-                mb: 2,
-                "& .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-              slotProps={{
-                input: {
-                  sx: {
-                    height: { xs: "4.5vh", sm: "5vh", md: "5vh" },
-                    fontSize: { xs: "16px", sm: "24px", md: "25px" },
-                  },
-                },
-              }}
-            />
+      <Box sx={{p:3, bgcolor:"#ffffffff"}}>
+{/* Top Section */}
+      <Box sx={{display:'flex', justifyContent:'center'}}>
+        <Typography variant="h4" fontWeight="bold">
+          Sign up
+        </Typography>
+      </Box>
 
-            <Typography
-              sx={{
-                fontSize: { xs: "15px", sm: "26px", md: "26px" },
-                color: "#666666",
-                fontWeight: "550",
-                mb: 1,
-                ml: 0.5,
-              }}
-            >
-              Phone number
-            </Typography>
-            <TextField
-              size="small"
-              required
-              fullWidth
-              type="number"
-              sx={{
-                mb: 2,
-                backgroundColor: "white",
-                border: "0.5px solid grey",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">+91</InputAdornment>
-                ),
-                sx: {
-                  height: { xs: "4.5vh", sm: "5vh", md: "5vh" },
-                  fontSize: { xs: "16px", sm: "24px", md: "25px" },
-                },
-              }}
-              inputProps={{
-                inputMode: "numeric",
-                type: "tel",
-              }}
-            />
+      {/* Center Image */}
+      <Box
+        sx={{
+          mt: 5,
+          width: '100%',
+          height: 200,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <PhoneIphoneIcon sx={{ fontSize: 160, color: "#f44336" }} />
+      </Box>
 
-            <Typography
-              sx={{
-                fontSize: { xs: "15px", sm: "26px", md: "26px" },
-                color: "#666666",
-                fontWeight: "550",
-                mb: 1,
-                ml: 0.5,
-              }}
-            >
-              Password
-            </Typography>
-            <TextField
-              size="small"
-              required
-              type="password"
-              placeholder="Enter your password"
-              fullWidth
-              sx={{
-                backgroundColor: "white",
-                border: "0.5px solid grey",
-                mb: 2,
-                "& .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-              slotProps={{
-                input: {
-                  sx: {
-                    height: { xs: "4.5vh", sm: "5vh", md: "5vh" },
-                    fontSize: { xs: "16px", sm: "24px", md: "25px" },
-                  },
-                },
-              }}
-            />
-                   <Typography
-              sx={{
-                fontSize: { xs: "15px", sm: "26px", md: "26px" },
-                color: "#666666",
-                fontWeight: "550",
-                mb: 1,
-                ml: 0.5,
-              }}
-            >
-            Confirm Password
-            </Typography>
-            <TextField
-              size="small"
-              required
-              type="password"
-              placeholder="Enter your password"
-              fullWidth
-              sx={{
-                backgroundColor: "white",
-                border: "0.5px solid grey",
-                mb: 2,
-                "& .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  border: "none",
-                },
-              }}
-              slotProps={{
-                input: {
-                  sx: {
-                    height: { xs: "4.5vh", sm: "5vh", md: "5vh" },
-                    fontSize: { xs: "16px", sm: "24px", md: "25px" },
-                  },
-                },
-              }}
-            />
+      </Box>
+      
+      {/* Form Section */}
+<Box sx={{ width: "100%"}}>
+  <Box
+    sx={{
+      p: 3,
+    }}
+  >
+    <Typography variant="body2" sx={{ mb: 1 }}>
+      Mobile number
+    </Typography>
+    <TextField
+      variant="outlined"
+      fullWidth
+      placeholder="99880-00988"
+      InputProps={{
+        startAdornment: <InputAdornment position="start">+91</InputAdornment>,
+        sx: { borderRadius: "10px", backgroundColor: "#fff" },
+      }}
+    />
+    <Button
+      variant="contained"
+      fullWidth
+      sx={{
+        mt: 3,
+        borderRadius: "10px",
+        backgroundColor: "#f44336",
+        color: "#fff",
+        py: 1.2,
+        textTransform: "none",
+        fontWeight: "bold",
+        fontSize: "16px",
+      }}
+      endIcon={<ArrowForwardIcon />}
+    >
+      Next
+    </Button>
+  </Box>
+</Box>
 
-            <Typography
-              sx={{
-                fontSize: { xs: "11px", sm: "19px", md: "20px" },
-                color: "#666666",
-              }}
-            >
-              Use 8 or more characters with a mix of letters, numbers & symbols
-            </Typography>
-
-            <FormControlLabel
-              control={<Checkbox />}
-              label={
-                <Typography
-                  sx={{
-                    fontSize: { xs: "13px", sm: "20px", md: "20px" },
-                    color: "#666666",
-                  }}
-                >
-                  By creating an account, I agree to our{" "}
-                  <span
-                    style={{
-                      color: "#666666",
-                      fontWeight: "bold",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Terms of use
-                  </span>{" "}
-                  and{" "}
-                  <span
-                    style={{
-                      color: "#666666",
-                      fontWeight: "bold",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    privacy policy
-                  </span>
-                </Typography>
-              }
-              sx={{ mt: 3 }}
-            />
-
-            <Stack
-              spacing={2}
-              mt={3}
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Button
-                sx={{
-                  borderRadius: "20px",
-                  bgcolor: "#B08B6F",
-                  color: "white",
-                  width: "200px",
-                  textTransform: "none",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: { xs: "15px", sm: "30px", md: "40px" },
-                    color: "white",
-                  }}
-                >
-                  Sign Up
-                </Typography>
-              </Button>
-
-              <Stack direction="row" spacing={1} sx={{ pt: 1 }}>
-                <Typography
-                  sx={{
-                    fontSize: { xs: "15px", sm: "25px", md: "25px" },
-                    color: "#666666",
-                    mt: 1,
-                  }}
-                >
-                  Already have an account ?
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: { xs: "15px", sm: "25px", md: "26px" },
-                    color: "#666666",
-                    fontWeight: "bold",
-                    textDecoration: "underline",
-                  }}
-                >
-                  Log in
-                </Typography>
-              </Stack>
-            </Stack>
+      {/* Bottom Login Link */}
+      <Box sx={{ mt: 2,  p:2 }}>
+        <Typography variant="body2">
+          Already a member?{" "}
+          <Box component="span" sx={{ color: "#f44336", fontWeight: "bold", cursor: "pointer" }}>
+            Login
           </Box>
-        </Box>
-      </BottomDrawerLayout>
-    </MobAuthLayout>
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 

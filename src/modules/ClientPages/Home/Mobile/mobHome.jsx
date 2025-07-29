@@ -9,8 +9,6 @@ import {
   Rating,
 } from "@mui/material";
 import {
-  NotificationsNoneOutlined,
-  LocationOnOutlined,
   KeyboardArrowDownOutlined,
 } from "@mui/icons-material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
