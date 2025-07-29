@@ -126,14 +126,15 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
                   bgcolor: "rgba(242, 242, 248, 1)",
                   textAlign: "center",
                   borderRadius: 1,
-                  height: 75,
-                  width: 75,
+                  height: 85,
+                  width: 85,
                   mx: "auto",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
                   p: 0.7,
+                  gap:1,
                   cursor: item.label === "Architects" ? "pointer" : "default",
                 }}
                 onClick={() => {
@@ -150,7 +151,7 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
                     height: "auto",
                   }}
                 />
-                <Typography color="black" fontSize={11} >
+                <Typography color="black" fontSize={13} >
                   {item.label}
                 </Typography>
               </Box>
