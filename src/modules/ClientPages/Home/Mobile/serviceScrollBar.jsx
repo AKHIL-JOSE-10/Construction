@@ -150,7 +150,7 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
                     height: "auto",
                   }}
                 />
-                <Typography color="black" fontSize={11} fontWeight={550}>
+                <Typography color="black" fontSize={11} >
                   {item.label}
                 </Typography>
               </Box>
