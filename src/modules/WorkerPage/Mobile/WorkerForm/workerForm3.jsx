@@ -70,7 +70,7 @@ const WorkerForm3 = () => {
         key={index}
         onClick={() => handleSelect(item.label)}
         sx={{
-          flex: "0 0 45%", 
+          flex: "0 0 44%", 
           display: "flex",
           alignItems: "center",
           border: isSelected ? "2px solid red" : "1px solid #ccc",
