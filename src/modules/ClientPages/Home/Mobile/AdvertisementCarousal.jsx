@@ -9,13 +9,14 @@ import 'swiper/css/autoplay';
 import { Box, CardMedia } from '@mui/material';
 
 import img1 from '../../../../assets/Interior.png';
-import img2 from '../../../../assets/AdIcon.png';
+import Ad4 from '@/assets/Ad4.png';
+import Ad5 from '@/assets/Ad5.png'
+
 
 const imageData = [
+  { img: Ad4 },
+  { img: Ad5 },
   { img: img1 },
-  { img: img2 },
-  { img: img1 },
-  { img: img2 },
 ];
 
 const AdvertisementCarousel = () => {
