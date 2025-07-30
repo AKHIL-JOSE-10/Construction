@@ -11,7 +11,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
                 height:160,
                 borderRadius: 1,
                 overflow: 'hidden',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
                 backgroundColor: '#fff',
                 cursor: 'pointer',
                 transition: 'transform 0.2s ease-in-out',
@@ -40,23 +40,39 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
                         borderRadius: 2,
                     }}
                 />
-                <IconButton size="large">
-                    <ArrowForwardIosIcon sx={{ fontSize: 26, color: '#888' }} />
+                <IconButton >
+                    <ArrowForwardIosIcon sx={{ fontSize: 26, color: '#888' , ml:2 }} />
                 </IconButton>
             </Box>
-            <Box sx={{ textAlign: 'center',justifyContent:'center', px: 1, py: 1 }}>
-                <Typography
-                    variant="subtitle2"
-                    sx={{
-                        fontWeight: 600,
-                        fontSize: '14px',
-                        backgroundColor: '#f5f5f5',
-                        wordBreak: 'break-word',
-                    }}
-                >
-                    {title}
-                </Typography>
-            </Box>
+<Box sx={{ p:0.7 }}>
+  <Box
+    sx={{
+      backgroundColor: '#f5f5f5',
+      height: 40, // fixed height
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: '4px',
+      px: 1,
+      textAlign: 'center',
+    }}
+  >
+    <Typography
+      variant="subtitle2"
+      sx={{
+        fontWeight: 600,
+        fontSize: '14px',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        display: '-webkit-box',
+        WebkitLineClamp: 2,
+        WebkitBoxOrient: 'vertical',
+      }}
+    >
+      {title}
+    </Typography>
+  </Box>
+</Box>
         </Box>
     );
 };
