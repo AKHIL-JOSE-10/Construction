@@ -29,6 +29,7 @@ import {
   MagnifyingGlassIcon,
   SlidersHorizontalIcon
 } from "@phosphor-icons/react";
+
 import SearchBar from "../../Home/Mobile/SearchBar";
 
 // Dummy data
