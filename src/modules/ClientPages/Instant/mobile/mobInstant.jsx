@@ -15,37 +15,6 @@ const MobInstant = () => {
       <MobHeading Heading="Instant Service" />
 
 
-      {/* Image Card */}
-      <Box
-        onClick={() => navigate("/mobile-Urgent-ServiceRequest")}
-        sx={{
-          mt:1,
-          mb: 3,
-          width: '100%',
-          maxWidth: 400,
-          borderRadius: 2,
-          overflow: 'hidden',
-          boxShadow: '0px 6px 16px rgba(0, 0, 0, 0.2)',
-          transition: 'transform 0.3s ease-in-out',
-          cursor: 'pointer',
-          '&:hover': {
-            transform: 'scale(1.03)',
-          },
-        }}
-      >
-        <Box
-          component="img"
-          src={InstantService}
-          alt="Instant Service"
-          sx={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover',
-            display: 'block',
-          }}
-        />
-      </Box>
-
       {/* Description */}
       <Box sx={{ maxWidth: 400 }}>
         <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
@@ -83,6 +52,39 @@ const MobInstant = () => {
           </Typography>
         </Box>
       </Stack>
+
+      
+      {/* Image Card */}
+      <Box
+        onClick={() => navigate("/mobile-Urgent-ServiceRequest")}
+        sx={{
+          mt:3,
+          mb: 3,
+          width: '100%',
+          maxWidth: 400,
+          borderRadius: 1,
+          overflow: 'hidden',
+          boxShadow: '0px 6px 16px rgba(0, 0, 0, 0.2)',
+          transition: 'transform 0.3s ease-in-out',
+          cursor: 'pointer',
+          '&:hover': {
+            transform: 'scale(1.03)',
+          },
+        }}
+      >
+        <Box
+          component="img"
+          src={InstantService}
+          alt="Instant Service"
+          sx={{
+            width: '100%',
+            height: 'auto',
+            objectFit: 'cover',
+            display: 'block',
+          }}
+        />
+      </Box>
+
     </Grid>
   );
 };
