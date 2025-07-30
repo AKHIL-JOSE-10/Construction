@@ -423,10 +423,10 @@ const MobHome = () => {
           sx={{
             color: "#fff",
             fontSize: "11px",
-            fontWeight: 550,
             textAlign: "center",
             whiteSpace: "normal",
             wordWrap: "break-word",
+            lineHeight:1.2,
             px: 0.9,
             mb:0.7
           }}
