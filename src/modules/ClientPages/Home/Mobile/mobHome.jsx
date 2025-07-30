@@ -385,8 +385,8 @@ const MobHome = () => {
       sx={{
         position: "relative",
         flex: "0 0 auto",
-        width: 110,
-        height: 110,
+        width: 105,
+        height: 105,
         borderRadius: 2,
         overflow: "hidden",
         cursor: "pointer",
@@ -423,7 +423,7 @@ const MobHome = () => {
           variant="caption"
           sx={{
             color: "#fff",
-            fontSize: "11px",
+            fontSize: "10px",
             textAlign: "center",
             whiteSpace: "normal",
             wordWrap: "break-word",
