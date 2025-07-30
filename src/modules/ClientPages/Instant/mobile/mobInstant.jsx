@@ -15,15 +15,6 @@ const MobInstant = () => {
       <MobHeading Heading="Instant Service" />
 
 
-      {/* Description */}
-      <Box sx={{ maxWidth: 400 }}>
-        <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-          Quick Help, Anytime!
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Need urgent repair, maintenance, or home service? Our instant service feature helps you get a verified technician in no time. Just tap and get help on the way.
-        </Typography>
-      </Box>
 
       {/* Features Section */}
       <Stack spacing={2} sx={{ mt: 3, maxWidth: 400 }}>
