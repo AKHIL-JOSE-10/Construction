@@ -54,6 +54,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
       justifyContent: 'center',
       borderRadius: '4px',
       px: 1,
+      py:0.5,
       textAlign: 'center',
     }}
   >
