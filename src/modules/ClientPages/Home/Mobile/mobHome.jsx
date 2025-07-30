@@ -385,9 +385,9 @@ const MobHome = () => {
       sx={{
         position: "relative",
         flex: "0 0 auto",
-        width: 115,
-        height: 115,
-        borderRadius: 1.5,
+        width: 110,
+        height: 110,
+        borderRadius: 2,
         overflow: "hidden",
         cursor: "pointer",
         mr: 1,
