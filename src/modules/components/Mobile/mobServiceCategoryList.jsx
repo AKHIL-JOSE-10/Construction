@@ -11,8 +11,9 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
                 height:160,
                 borderRadius: 1,
                 overflow: 'hidden',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                backgroundColor: '#fff',
+                border:'0.3px solid #818690ff',
+                boxShadow: '0 2px 8px rgba(13, 22, 74, 0.3)',
+                backgroundColor: '#f1f3f6ff',
                 cursor: 'pointer',
                 transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
