@@ -413,7 +413,7 @@ const MobHome = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          background: "linear-gradient(to bottom, rgba(219, 217, 217, 0), rgba(79, 78, 78, 0.27), rgba(41, 41, 41, 0.58), rgba(0, 0, 0, 0.97))",
+          background: "linear-gradient(to bottom, rgba(219, 217, 217, 0), rgba(64, 63, 63, 0.27), rgba(41, 41, 41, 0.78), rgba(0, 0, 0, 0.97))",
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "center",
