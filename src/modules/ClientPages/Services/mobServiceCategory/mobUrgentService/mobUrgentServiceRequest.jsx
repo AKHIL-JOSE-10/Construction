@@ -363,10 +363,10 @@ const MobUrgentServiceRequest = () => {
 </Box>
 
 
-      <Typography fontSize={17} fontWeight={600} mb={2}>
+      <Typography fontSize={17} fontWeight={550} mb={2}>
         Request Received – Call Incoming!
       </Typography>
-      <Typography fontSize={14} fontWeight={550}  >
+      <Typography fontSize={14}   >
         Your request is with us. A team member will call you within a minute to confirm and get started.
       </Typography>
     </Box>
