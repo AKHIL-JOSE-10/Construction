@@ -24,7 +24,6 @@ import MobArchitecturalServices from "./modules/ClientPages/Services/mobServiceC
 import MobContractorServices from "./modules/ClientPages/Services/mobServiceCategory/mobContractors";
 import MobAutomationServices from "./modules/ClientPages/Services/mobServiceCategory/mobAutomationServices";
 import MobFabricationServices from "./modules/ClientPages/Services/mobServiceCategory/mobFabricationServices";
-import MobInstant from "./modules/ClientPages/Instant/mobile/mobInstant";
 import MobSearchWorker from "./modules/ClientPages/WorkerPage/SearchWorker/mobSearchWorker";
 import MobSavedWorkers from "./modules/ClientPages/Profile/Mobile/mobSavedWorkers";
 import MobRecentSearch from "./modules/ClientPages/WorkerPage/SearchWorker/mobRecentSearch";
@@ -102,7 +101,6 @@ function App() {
           <Route path="/bookings" element={<Bookings />} />
           <Route path="/editInfo" element={<EditInfo />} />
           <Route path="/mobile-premium" element={<MobPremium />} />
-          <Route path="/mobile-instant" element={<MobInstant />} />
           <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
           <Route
             path="/mobile-helpsupportchat"

@@ -13,7 +13,7 @@ const MobileBottomTab = () => {
 
   const allowedPaths = [
     "/home",
-    "/mobile-instant",   // ⬅️ Updated path
+    "/mobile-Urgent-ServiceRequest",   // ⬅️ Updated path
     "/mobile-bookings",
     "/mobile-profile",
   ];
@@ -28,7 +28,7 @@ const MobileBottomTab = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     if (newValue === 0) navigate("/home");
-    else if (newValue === 1) navigate("/mobile-instant");  // ⬅️ Navigate to instant
+    else if (newValue === 1) navigate("/mobile-Urgent-ServiceRequest"); 
     else if (newValue === 2) navigate("/mobile-bookings");
     else if (newValue === 3) navigate("/mobile-profile");
   };
