@@ -260,7 +260,9 @@ const MobHome = () => {
 
 
         {/* Services */}
-
+          <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 1, mb: 1, px: 1.5 }}>
+            Book your worker
+          </Typography>
         <ServiceScrollBar />
 
       </Grid>

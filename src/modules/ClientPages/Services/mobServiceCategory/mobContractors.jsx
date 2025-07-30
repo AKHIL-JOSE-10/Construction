@@ -5,31 +5,31 @@ import BackToHomeButton from "./backToHome";
 import MobHeading from "@/modules/components/Mobile/mobileHeading";
 
 
-import PoolDesigning from "@/assets/PoolDesignerImg.png";
+import CivilEngineer from "@/assets/CivilEngineerImg.png";
 
 const MobContractorServices = () => {
   const navigate = useNavigate();
 
   const contractorServices = [
-    { service: "Civil contractors", img: PoolDesigning },
-    { service: "MEP contractors", img: PoolDesigning },
-    { service: "Electrical contractors", img: PoolDesigning },
-    { service: "Plumbing contractors", img: PoolDesigning },
-    { service: "Interior contractors", img: PoolDesigning },
-    { service: "HVAC contractors", img: PoolDesigning },
-    { service: "Carpentry contractors", img: PoolDesigning },
-    { service: "Roofing contractors", img: PoolDesigning },
-    { service: "Prefabricated framing contractors", img: PoolDesigning },
-    { service: "Demolition contractors", img: PoolDesigning },
-    { service: "Landscaping contractors", img: PoolDesigning },
-    { service: "Painting contractors", img: PoolDesigning },
-    { service: "Tiling contractors", img: PoolDesigning },
-    { service: "Flooring contractors", img: PoolDesigning },
-    { service: "Waterproofing contractors", img: PoolDesigning },
-    { service: "Masonry contractors", img: PoolDesigning },
-    { service: "Glass fabrication contractors", img: PoolDesigning },
-    { service: "Exterior finishing contractors", img: PoolDesigning },
-    { service: "Excavation contractors", img: PoolDesigning },
+    { service: "Civil contractors", img: CivilEngineer },
+    { service: "MEP contractors", img: CivilEngineer },
+    { service: "Electrical contractors", img: CivilEngineer },
+    { service: "Plumbing contractors", img: CivilEngineer },
+    { service: "Interior contractors", img: CivilEngineer },
+    { service: "HVAC contractors", img: CivilEngineer },
+    { service: "Carpentry contractors", img: CivilEngineer },
+    { service: "Roofing contractors", img: CivilEngineer },
+    { service: "Prefabricated framing contractors", img: CivilEngineer },
+    { service: "Demolition contractors", img: CivilEngineer },
+    { service: "Landscaping contractors", img: CivilEngineer },
+    { service: "Painting contractors", img: CivilEngineer },
+    { service: "Tiling contractors", img: CivilEngineer },
+    { service: "Flooring contractors", img: CivilEngineer },
+    { service: "Waterproofing contractors", img: CivilEngineer },
+    { service: "Masonry contractors", img: CivilEngineer },
+    { service: "Glass fabrication contractors", img: CivilEngineer },
+    { service: "Exterior finishing contractors", img: CivilEngineer },
+    { service: "Excavation contractors", img: CivilEngineer },
   ];
 
   const handleClick = (serviceName) => {

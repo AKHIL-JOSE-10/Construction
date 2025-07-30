@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material";
 
 const MobServiceCategoryList = ({ img, title, onClick }) => {
   return (
@@ -7,13 +7,13 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
       sx={{
         width: 105,
         height: 110,
-        borderRadius: 1,
+        borderRadius: "10px",
         overflow: "hidden",
-        cursor: "pointer",
-        boxShadow: "0px 3px 12px rgba(0, 0, 0, 0.1)",
         position: "relative",
+        cursor: "pointer",
       }}
     >
+      {/* Background Image (fills entire box) */}
       <Box
         component="img"
         src={img}
@@ -25,29 +25,32 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
         }}
       />
 
-      {/* Overlay Text */}
+      {/* Gradient Overlay */}
       <Box
         sx={{
           position: "absolute",
-          bottom: 0,
+          top: 0,
+          left: 0,
           width: "100%",
-          bgcolor: "rgba(0, 0, 0, 0.6)",
-          color: "#fff",
-          textAlign: "center",
-          py: 0.5,
+          height: "100%",
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.7))",
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "center",
+          pb: 0.8,
         }}
       >
         <Typography
           variant="caption"
           sx={{
+            color: "#fff",
             fontSize: "11px",
             fontWeight: 550,
+            textAlign: "center",
             lineHeight: "1.2",
-            whiteSpace: "normal",
             wordWrap: "break-word",
-            overflowWrap: "break-word",
-            display: "block",
-            px: 0.5,
+            mb:0.7,
+            px:0.7
           }}
         >
           {title}
