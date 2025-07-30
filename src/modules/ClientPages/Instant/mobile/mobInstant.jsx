@@ -23,7 +23,7 @@ const MobInstant = () => {
         </Typography>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <LocationOnIcon sx={{ color: 'primary.main'}} />
+          <LocationOnIcon sx={{ color: 'primary.main' , ml:-0.3}} />
           <Typography variant="body2">
             Quick response from nearby professionals
           </Typography>
