@@ -439,7 +439,8 @@ const MobHome = () => {
 
 
           {/* Locations we offer*/}
-          <Box
+          
+          {/* <Box
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -476,7 +477,7 @@ const MobHome = () => {
                   mb: 2
                 }}
               >
-                {/* Image container */}
+                
                 <Box
                   component="img"
                   src={loc.image}
@@ -488,7 +489,7 @@ const MobHome = () => {
                     objectFit: "cover",
                   }}
                 />
-                {/* Text below */}
+                
                 <Box
                   sx={{
                     fontSize: 12,
@@ -500,7 +501,7 @@ const MobHome = () => {
                 </Box>
               </Box>
             ))}
-          </HorizontalScroll>
+          </HorizontalScroll> */}
 
         </Box>
       </Grid>
