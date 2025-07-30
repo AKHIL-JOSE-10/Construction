@@ -22,7 +22,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
         width: "100%",
         cursor: "pointer",
         border:'0.5px solid #ffffffff',
-        boxShadow: "0 0 10px rgba(6, 14, 85, 0.5)", // subtle red shadow
+        boxShadow: "0 0 10px rgba(6, 14, 85, 0.4)", // subtle red shadow
         transition: "box-shadow 0.3s ease, border 0.3s ease",
         "&:hover": {
           boxShadow: "0px 4px 12px rgba(255, 4, 0, 5)", // stronger on hover
