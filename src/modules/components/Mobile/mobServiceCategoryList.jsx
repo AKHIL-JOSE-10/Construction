@@ -42,7 +42,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
                     }}
                 />
                 <IconButton >
-                    <ArrowForwardIosIcon sx={{ fontSize: 26, color:"#050a56ff" , ml:2 }} />
+                    <ArrowForwardIosIcon sx={{ fontSize: 25, color:"#5c619eff" , ml:2 }} />
                 </IconButton>
             </Box>
 <Box>
