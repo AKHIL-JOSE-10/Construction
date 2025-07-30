@@ -21,7 +21,7 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
         alignItems: "center",
         width: "100%",
         cursor: "pointer",
-        border:'0.5px solid #ffffffff',
+        border:'0.7px solid #ffffffff',
         boxShadow: "0 0 10px rgba(6, 14, 85, 0.2)", // subtle red shadow
         transition: "box-shadow 0.3s ease, border 0.3s ease",
       }}

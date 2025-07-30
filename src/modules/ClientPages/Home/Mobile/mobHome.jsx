@@ -226,7 +226,7 @@ const MobHome = () => {
                   Thrissur, Kerala
                 </Typography>
                 <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
-                  <KeyboardArrowDownOutlined sx={{ color: "grey" }} />
+                  <KeyboardArrowDownOutlined sx={{  color:"#050b68ff" }} />
                 </IconButton>
               </Grid>
             </Box>
