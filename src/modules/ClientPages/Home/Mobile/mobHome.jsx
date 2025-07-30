@@ -222,7 +222,7 @@ const MobHome = () => {
                 Current Location
               </Typography>
               <Grid container>
-                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, color:"#050b68ff" }}>
+                <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, color:"#050a56ff" }}>
                   Thrissur, Kerala
                 </Typography>
                 <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
