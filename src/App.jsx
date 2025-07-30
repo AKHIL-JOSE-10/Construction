@@ -15,7 +15,6 @@ import MobWorkerpage from "./modules/ClientPages/WorkerPage/Worker/mobWorkerpage
 import Bookings from "./modules/ClientPages/Bookings/Bookings";
 import EditInfo from "./modules/ClientPages/EditInfo/EditInfo";
 import RouteListPage from "./RouterListPage";
-import MobMessages from "./modules/ClientPages/Message/mobMessage/mobMessages";
 import MobPremium from "./modules/ClientPages/Premium/mobPremium";
 import MobHelpSupport from "./modules/ClientPages/Profile/Mobile/mobHelpSupport/mobHelpSupport";
 import MobHelpSupportChat from "./modules/ClientPages/Profile/Mobile/mobHelpSupport/mobHelpSupportChat";
@@ -25,7 +24,7 @@ import MobArchitecturalServices from "./modules/ClientPages/Services/mobServiceC
 import MobContractorServices from "./modules/ClientPages/Services/mobServiceCategory/mobContractors";
 import MobAutomationServices from "./modules/ClientPages/Services/mobServiceCategory/mobAutomationServices";
 import MobFabricationServices from "./modules/ClientPages/Services/mobServiceCategory/mobFabricationServices";
-import MobMessageChat from "./modules/ClientPages/Message/mobMessage/mobMessageChat";
+import MobInstant from "./modules/ClientPages/Instant/mobile/mobInstant";
 import MobSearchWorker from "./modules/ClientPages/WorkerPage/SearchWorker/mobSearchWorker";
 import MobSavedWorkers from "./modules/ClientPages/Profile/Mobile/mobSavedWorkers";
 import MobRecentSearch from "./modules/ClientPages/WorkerPage/SearchWorker/mobRecentSearch";
@@ -103,7 +102,7 @@ function App() {
           <Route path="/bookings" element={<Bookings />} />
           <Route path="/editInfo" element={<EditInfo />} />
           <Route path="/mobile-premium" element={<MobPremium />} />
-          <Route path="/mobile-messages" element={<MobMessages />} />
+          <Route path="/mobile-instant" element={<MobInstant />} />
           <Route path="/mobile-helpsupport" element={<MobHelpSupport />} />
           <Route
             path="/mobile-helpsupportchat"
@@ -131,7 +130,7 @@ function App() {
             element={<MobContractorServices />}
           />
 
-          <Route path="/mobile-message-chat" element={<MobMessageChat />} />
+          
           <Route path="/mobile-search-worker" element={<MobSearchWorker />} />
           <Route path="/address" element={<AddressDetails />} />
           <Route path="/mobile-saved-workers" element={<MobSavedWorkers />} />

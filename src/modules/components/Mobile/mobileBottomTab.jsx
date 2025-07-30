@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Tabs, Tab } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import MessageIcon from "@mui/icons-material/Message";
+import FlashOnIcon from "@mui/icons-material/FlashOn"; // ⬅️ New icon for Instant
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
@@ -10,24 +10,25 @@ const MobileBottomTab = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [value, setValue] = useState(0);
+
   const allowedPaths = [
     "/home",
-    "/mobile-messages",
+    "/mobile-instant",   // ⬅️ Updated path
     "/mobile-bookings",
     "/mobile-profile",
   ];
 
   useEffect(() => {
     const tabValue = allowedPaths.indexOf(location.pathname);
-    if (tabValue != -1) {
+    if (tabValue !== -1) {
       setValue(tabValue);
     }
-  }, [location.pathname])
+  }, [location.pathname]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
     if (newValue === 0) navigate("/home");
-    else if (newValue === 1) navigate("/mobile-messages");
+    else if (newValue === 1) navigate("/mobile-instant");  // ⬅️ Navigate to instant
     else if (newValue === 2) navigate("/mobile-bookings");
     else if (newValue === 3) navigate("/mobile-profile");
   };
@@ -54,7 +55,7 @@ const MobileBottomTab = () => {
       <Tabs
         value={value}
         onChange={handleChange}
-        aria-label="icon label tabs example"
+        aria-label="mobile bottom navigation"
         variant="fullWidth"
         sx={{
           minHeight: 45,
@@ -78,10 +79,10 @@ const MobileBottomTab = () => {
           }}
         />
         <Tab
-          icon={<MessageIcon sx={{ width: 23, height: 23 }} />}
-          label="Messages"
+          icon={<FlashOnIcon sx={{ width: 23, height: 23 }} />} // ⬅️ New icon
+          label="Instant"
           sx={{
-            fontSize: "0.55rem",
+            fontSize: "0.6rem",
             minWidth: 0,
             px: 0.8,
             mx: 0.4,
