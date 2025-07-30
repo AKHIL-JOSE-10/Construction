@@ -370,7 +370,7 @@ const MobHome = () => {
 
 
       <Grid >
-        <Box sx={{ mt: 1.2, pt:1, pb: 2  }}>
+        <Box sx={{ mt: 1.2, pt:1, pb: 2.8  }}>
 
           <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 1, mb: 1, px: 1.5 }}>
             Popular Services
