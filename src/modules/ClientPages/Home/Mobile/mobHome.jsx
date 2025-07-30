@@ -412,7 +412,7 @@ const MobHome = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          background: "linear-gradient(to bottom, rgba(219, 217, 217, 0), rgba(53, 52, 52, 0.27), rgba(0, 0, 0, 0.97))",
+          background: "linear-gradient(to bottom, rgba(219, 217, 217, 0), rgba(79, 78, 78, 0.27), rgba(41, 41, 41, 0.58), rgba(0, 0, 0, 0.97))",
           display: "flex",
           alignItems: "flex-end",
           justifyContent: "center",
@@ -427,8 +427,8 @@ const MobHome = () => {
             whiteSpace: "normal",
             wordWrap: "break-word",
             lineHeight:1.2,
-            px: 0.9,
-            mb:0.7
+            px: 1,
+            mb:0.9
           }}
         >
           {service.name}
