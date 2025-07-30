@@ -11,7 +11,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
                 height:160,
                 borderRadius: 1,
                 overflow: 'hidden',
-                border:'0.3px solid #818690ff',
+                border:'0.3px solid #b2b5bcff',
                 boxShadow: '0 2px 8px rgba(13, 22, 74, 0.3)',
                 backgroundColor: '#f1f3f6ff',
                 cursor: 'pointer',
@@ -27,7 +27,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
                     position: 'relative',
                     display: 'flex',
                     alignItems: 'center',
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: '#f5f5f5ff',
                     px: 1.5,
                     py: 2,
                 }}
@@ -48,7 +48,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
 <Box sx={{ p:0.7 }}>
   <Box
     sx={{
-      backgroundColor: '#f5f5f5',
+      backgroundColor: '#edeef4ff',
       height: 40, // fixed height
       display: 'flex',
       alignItems: 'center',
