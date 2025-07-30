@@ -17,27 +17,27 @@ const MobInstant = () => {
 
 
       {/* Features Section */}
-      <Stack spacing={2} sx={{ mt: 3, maxWidth: 400 }}>
+      <Stack spacing={2} sx={{ mt: 1, maxWidth: 400 }}>
         <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
           Why Choose Instant Service?
         </Typography>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <LocationOnIcon sx={{ color: 'primary.main' }} />
+          <LocationOnIcon sx={{ color: 'primary.main'}} />
           <Typography variant="body2">
             Quick response from nearby professionals
           </Typography>
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <VerifiedIcon sx={{ color: 'primary.main' }} />
+          <VerifiedIcon sx={{ color: 'primary.main', fontSize:21  }} />
           <Typography variant="body2">
             Trusted, verified service providers
           </Typography>
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <FlashOnIcon sx={{ color: 'primary.main' }} />
+          <FlashOnIcon sx={{ color: 'primary.main' , fontSize:23 }} />
           <Typography variant="body2">
             Real-time tracking & instant updates
           </Typography>
