@@ -26,6 +26,13 @@ import InstantService from "../../../../assets/InstantService.png"
 import AddressDrawer from "../../OldHome/Address/AddressSelectBottomDrawer/AddressDrawer";
 import { useNavigate } from "react-router-dom";
 
+
+import LandScapeArchitect from "@/assets/LandScapeArchitectImg.png";
+import CivilEngineer from "@/assets/CivilEngineerImg.png";
+import InteriorDesign from "@/assets/InteriorDesignerImg.png";
+import PoolDesigning from "@/assets/PoolDesignerImg.png";
+import ArchitecturalDesigner from "@/assets/ArchitecturalDesignerImg.png";
+
 import Artisans from '@/assets/Artisans.png'
 import FabricationIcon from '@/assets/Fabrication.png'
 import ArchitecturalIcon from '@/assets/Architectural.png'
@@ -159,11 +166,11 @@ const painters = [
 ];
 
 const popularServices = [
-  { name: "Architectural", icon: ArchitecturalIcon },
-  { name: "Artisans", icon: Artisans },
-  { name: "Fabrication", icon: FabricationIcon },
-  { name: "Automation", icon: AutomationIcon },
-  { name: "Other", icon: AllIcon },
+  { name: "Architectural Designers", icon: ArchitecturalDesigner },
+  { name: "Civil Engineers", icon: CivilEngineer },
+  { name: "Interior Designers", icon: InteriorDesign },
+  { name: "Landscaping architects", icon: LandScapeArchitect },
+  { name: "Pool Designers", icon: PoolDesigning },
 ];
 
 const HorizontalScroll = ({ children }) => (
@@ -362,45 +369,74 @@ const MobHome = () => {
       </Grid>
 
 
-      <Grid s>
+      <Grid >
         <Box sx={{ mt: 1.2, pt: 0.7 }}>
 
           <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 1, mb: 1, px: 1.5 }}>
             Popular Services
           </Typography>
+<HorizontalScroll>
+  {popularServices.map((service) => (
+    <Box
+      key={service.name}
+      onClick={() => navigate("/mobile-search-worker")}
+      sx={{
+        position: "relative",
+        flex: "0 0 auto",
+        width: 115,
+        height: 115,
+        borderRadius: 2.1,
+        overflow: "hidden",
+        cursor: "pointer",
+      }}
+    >
+      {/* Full-size Image */}
+      <Box
+        component="img"
+        src={service.icon}
+        alt={service.name}
+        sx={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
 
-          <HorizontalScroll>
-            {popularServices.map((service) => (
-              <Box
-                key={service.name}
-                onClick={() => navigate("/mobile-search-worker")}
-                sx={{
-                  flex: "0 0 auto",
-                  width: 100,
-                  height: 100,
-                  textAlign: "center",
-                  backgroundColor: "#fff",
-                  borderRadius: "10px",
-                  boxShadow: "0px 1px 5px rgba(0,0,0,0.1)",
-                }}
-              >
-                <Box
-                  component="img"
-                  src={service.icon}
-                  alt={service.name}
-                  sx={{
-                    width: 80,
-                    height: 65,
-                    objectFit: "contain",
-                    mx: "auto",
-                  }}
-                />
-                <Typography sx={{ fontSize: 12, fontWeight: 500, }}>
-                  {service.name}
-                </Typography>
-              </Box>
-            ))}
-          </HorizontalScroll>
+      {/* Full gradient overlay with text at bottom */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "linear-gradient(to bottom, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.87))",
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "center",
+        }}
+      >
+        <Typography
+          variant="caption"
+          sx={{
+            color: "#fff",
+            fontSize: "11px",
+            fontWeight: 550,
+            textAlign: "center",
+            whiteSpace: "normal",
+            wordWrap: "break-word",
+            px: 0.9,
+            mb:0.7
+          }}
+        >
+          {service.name}
+        </Typography>
+      </Box>
+    </Box>
+  ))}
+</HorizontalScroll>
+
+
 
           {/* Locations we offer*/}
           <Box
