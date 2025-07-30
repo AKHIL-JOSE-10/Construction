@@ -390,6 +390,7 @@ const MobHome = () => {
         borderRadius: 1.5,
         overflow: "hidden",
         cursor: "pointer",
+        mr: 1,
       }}
     >
       {/* Full-size Image */}
