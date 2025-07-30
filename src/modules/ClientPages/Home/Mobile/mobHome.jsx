@@ -387,7 +387,7 @@ const MobHome = () => {
         flex: "0 0 auto",
         width: 105,
         height: 105,
-        borderRadius: 2,
+        borderRadius: 2.5,
         overflow: "hidden",
         cursor: "pointer",
         mr: 1,
