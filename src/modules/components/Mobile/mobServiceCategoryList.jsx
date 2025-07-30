@@ -63,7 +63,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
             variant="subtitle2"
             sx={{
               fontWeight: 600,
-              fontSize: '14px',
+              fontSize: '13px',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               display: '-webkit-box',
