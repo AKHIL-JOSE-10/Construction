@@ -370,7 +370,7 @@ const MobHome = () => {
 
 
       <Grid >
-        <Box sx={{ mt: 1.2, pt: 0.7 }}>
+        <Box sx={{ mt: 1.2, pt:1, pb: 2  }}>
 
           <Typography sx={{ fontSize: 17, fontWeight: 600, mt: 1, mb: 1, px: 1.5 }}>
             Popular Services
@@ -385,7 +385,7 @@ const MobHome = () => {
         flex: "0 0 auto",
         width: 115,
         height: 115,
-        borderRadius: 2.1,
+        borderRadius: 1.5,
         overflow: "hidden",
         cursor: "pointer",
       }}
