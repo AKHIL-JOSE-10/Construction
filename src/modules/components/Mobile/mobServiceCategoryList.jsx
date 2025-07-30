@@ -5,52 +5,53 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
     <Box
       onClick={onClick}
       sx={{
-        width: 105,
-        height: 110,
+        display: "flex",
+        alignItems: "center",
+        width: "100%",
+        maxWidth: 220,
+        height: 80,
         borderRadius: "10px",
         overflow: "hidden",
         position: "relative",
         cursor: "pointer",
+        boxShadow: "0px 2px 8px rgba(0,0,0,0.3)",
+        backgroundColor: "#fff",
       }}
     >
-      {/* Background Image (fills entire box) */}
+      {/* Left: Image section */}
       <Box
         component="img"
         src={img}
         alt={title}
         sx={{
-          width: "100%",
+          width: 80,
           height: "100%",
           objectFit: "cover",
+          borderTopRightRadius:5,
+          borderBottomRightRadius:5
         }}
       />
 
-      {/* Gradient Overlay */}
+      {/* Right: Text section */}
       <Box
         sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.7))",
+          flex: 1,
           display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "center",
-          pb: 0.8,
+          alignItems: "center",
+          width:90,
+          height: "100%",
+          background: "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0))",
         }}
       >
         <Typography
-          variant="caption"
+          variant="body2"
           sx={{
-            color: "#fff",
+            fontWeight: 600,
             fontSize: "11px",
-            fontWeight: 550,
-            textAlign: "center",
-            lineHeight: "1.2",
+            color: "#000000ff",
             wordWrap: "break-word",
-            mb:0.7,
-            px:0.7
+            pl:1,
+            pr:1
           }}
         >
           {title}
