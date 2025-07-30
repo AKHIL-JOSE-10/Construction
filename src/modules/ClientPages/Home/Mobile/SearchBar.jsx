@@ -28,8 +28,8 @@ const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
       onClick={handleClick}
     >
       <MagnifyingGlassIcon
-        size={20}
-        color="#000000ff"
+        size={22}
+         color="#050a56ff"
         style={{ marginLeft: 16, marginRight: 16 }}
       />
 <InputBase

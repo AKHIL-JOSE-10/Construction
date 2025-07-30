@@ -8,7 +8,7 @@ const ScrollToTopButton = () => {
 
   const handleScroll = () => {
     const scrollY = window.scrollY || document.documentElement.scrollTop;
-    setIsVisible(scrollY > 800);
+    setIsVisible(scrollY > 900);
   };
 
   const scrollToTop = () => {
