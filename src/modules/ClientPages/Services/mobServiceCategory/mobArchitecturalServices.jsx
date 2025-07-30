@@ -34,10 +34,10 @@ const MobArchitecturalServices = () => {
   };
 
   return (
-    <Box sx={{ px: 1, pt: 2, pb: 8, position: "relative" }}>
+    <Box sx={{ px: 1, pt: 2, pb: 8}}>
       <MobHeading Heading="Architects" />
 
-      <Grid container spacing={1} justifyContent="center">
+      <Grid container  gap={0.5} justifyContent="center">
         {architecturalServices.map((item, index) => (
           <Grid item key={index}>
             <MobServiceCategoryList
