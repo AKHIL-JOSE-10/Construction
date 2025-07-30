@@ -8,11 +8,11 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
             sx={{
                 width: '100%',
                 maxWidth: 150,
-                height:160,
+                height:150,
                 borderRadius: 1,
                 overflow: 'hidden',
-                border:'0.3px solid #b2b5bcff',
-                boxShadow: '0 2px 8px rgba(13, 22, 74, 0.3)',
+                border:'0.5px solid #ffffffff',
+                boxShadow: '0 2px 8px rgba(51, 62, 120, 0.3)',
                 backgroundColor: '#f1f3f6ff',
                 cursor: 'pointer',
                 transition: 'transform 0.2s ease-in-out',
@@ -45,7 +45,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
                     <ArrowForwardIosIcon sx={{ fontSize: 26, color: '#888' , ml:2 }} />
                 </IconButton>
             </Box>
-<Box sx={{ p:0.7 }}>
+<Box>
   <Box
     sx={{
       backgroundColor: '#edeef4ff',
