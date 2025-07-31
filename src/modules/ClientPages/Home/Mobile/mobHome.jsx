@@ -213,64 +213,89 @@ const MobHome = () => {
 
 
 <Grid>
-  <Box
-    sx={{
-      backgroundImage: `url(${Top_Home_Img})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      width: '100%',
-      minHeight: '15vh', 
-    }}
-  >
-    {/* Header */}
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        pt: 2,
-        px: 2,
+        position: 'relative',
+        width: '100%',
+        minHeight: '15vh',
+        overflow: 'hidden',
       }}
     >
-      <Box display="flex">
-        <Box display="flex" flexDirection="column">
-          <Typography
-            variant="caption"
-            sx={{ lineHeight: 1, fontSize: 13, ml: 0.9 }}
-          >
-            Current Location
-          </Typography>
-          <Grid container>
-            <Typography sx={{ fontWeight: "bold", fontSize: 15, ml: 0.7, color: "#050a56ff" }}>
-              Thrissur, Kerala
-            </Typography>
-            <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
-              <KeyboardArrowDownOutlined sx={{ color: "#050b68ff" }} />
+      {/* Background Image with Reduced Opacity */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundImage: `url(${Top_Home_Img})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.4, // Adjust this value for transparency
+          zIndex: 1,
+        }}
+      />
+
+      {/* Foreground Content */}
+      <Box sx={{ position: 'relative', zIndex: 2 }}>
+        {/* Header */}
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            pt: 2,
+            px: 2,
+          }}
+        >
+          <Box display="flex">
+            <Box display="flex" flexDirection="column">
+              <Typography
+                variant="caption"
+                sx={{ lineHeight: 1, fontSize: 13, ml: 0.9 }}
+              >
+                Current Location
+              </Typography>
+              <Grid container>
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    ml: 0.7,
+                    color: '#050a56ff',
+                  }}
+                >
+                  Thrissur, Kerala
+                </Typography>
+                <IconButton onClick={() => handleOpen(true)} sx={{ padding: 0 }}>
+                  <KeyboardArrowDownOutlined sx={{ color: '#050b68ff' }} />
+                </IconButton>
+              </Grid>
+            </Box>
+          </Box>
+          <Stack direction="row" spacing={1} alignItems="center">
+            <IconButton onClick={() => navigate('/mobile-notifications')}>
+              <BellIcon color="#050b5fff" />
             </IconButton>
-          </Grid>
+            <Avatar
+              onClick={() => navigate('/editInfo')}
+              sx={{ width: 32, height: 32 }}
+              src="https://randomuser.me/api/portraits/men/83.jpg"
+            />
+          </Stack>
         </Box>
+
+        {/* Search */}
+        <Box sx={{ px: 2, mb: 1, pb: 1.5 }}>
+          <SearchBar />
+        </Box>
+
+        {/* Banner */}
+        <AdvertisementCarousel />
       </Box>
-      <Stack direction="row" spacing={1} alignItems="center">
-        <IconButton onClick={() => navigate("/mobile-notifications")}>
-          <BellIcon color="#050b5fff" />
-        </IconButton>
-        <Avatar
-          onClick={() => navigate("/editInfo")}
-          sx={{ width: 32, height: 32, }}
-          src={"https://randomuser.me/api/portraits/men/83.jpg"}
-        />
-      </Stack>
     </Box>
-
-    {/* Search */}
-    <Box sx={{ px: 2, mb: 1, pb: 1.5 }}>
-      <SearchBar />
-    </Box>
-
-    {/* Banner */}
-    <AdvertisementCarousel />
-  </Box>
 </Grid>
 
 

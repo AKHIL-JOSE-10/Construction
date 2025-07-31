@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Tabs, Tab } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import FlashOnIcon from "@mui/icons-material/FlashOn"; // ⬅️ New icon for Instant
+import FlashOnIcon from "@mui/icons-material/FlashOn"; 
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
