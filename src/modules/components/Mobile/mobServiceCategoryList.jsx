@@ -7,7 +7,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
       onClick={onClick}
       sx={{
         width: '100%',
-        maxWidth: 350,
+        maxWidth: 330,
         borderRadius: 1,
         overflow: 'hidden',
         border: '0.5px solid #ffffffff',

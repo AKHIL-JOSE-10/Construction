@@ -5,7 +5,6 @@ import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCatego
 import BackToHomeButton from "./backToHome";
 
 import Masons_Img from '@/assets/Masons_Img.png'
-import InteriorDesign from "@/assets/InteriorDesignerImg.png";
 import Carpenters_Img from "@/assets/Carpenters_Img.png";
 import Metal_Fabricators_Img from "@/assets/Metal_Fabricators_Img.png";
 import Electrician_Img from "@/assets/Electrician_Img.png";
