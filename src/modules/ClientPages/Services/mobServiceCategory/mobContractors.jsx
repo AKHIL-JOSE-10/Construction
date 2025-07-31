@@ -7,7 +7,7 @@ import MobHeading from "@/modules/components/Mobile/mobileHeading";
 
 import CivilEngineer from "@/assets/CivilEngineerImg.png";
 
-const MobContractorServices = () => {
+const MobContractors = () => {
   const navigate = useNavigate();
 
   const contractorServices = [
@@ -55,4 +55,4 @@ const MobContractorServices = () => {
   );
 };
 
-export default MobContractorServices;
+export default MobContractors;

@@ -10,7 +10,7 @@ import Signinpage from "./modules/ClientPages/Authentication/signinpage";
 import MobHome from "./modules/ClientPages/Home/Mobile/mobHome";
 import Profile from "./modules/ClientPages/Profile/Profile";
 import MobSignIn from "./modules/ClientPages/Authentication/Mobile/mobSignIn";
-import MobAllServiceCategory from "./modules/ClientPages/Services/mobServiceCategory/mobAllServiceCategory";
+import MobAllServices from "./modules/ClientPages/Services/mobServiceCategory/mobAllServices";
 import MobWorkerpage from "./modules/ClientPages/WorkerPage/Worker/mobWorkerpage";
 import Bookings from "./modules/ClientPages/Bookings/Bookings";
 import EditInfo from "./modules/ClientPages/EditInfo/EditInfo";
@@ -19,11 +19,12 @@ import MobPremium from "./modules/ClientPages/Premium/mobPremium";
 import MobHelpSupport from "./modules/ClientPages/Profile/Mobile/mobHelpSupport/mobHelpSupport";
 import MobHelpSupportChat from "./modules/ClientPages/Profile/Mobile/mobHelpSupport/mobHelpSupportChat";
 import MobSavedAddress from "./modules/ClientPages/Profile/Mobile/mobSavedAdderess";
-import MobArtisansServices from "./modules/ClientPages/Services/mobServiceCategory/mobArtisansServices";
-import MobArchitecturalServices from "./modules/ClientPages/Services/mobServiceCategory/mobArchitecturalServices";
-import MobContractorServices from "./modules/ClientPages/Services/mobServiceCategory/mobContractors";
-import MobAutomationServices from "./modules/ClientPages/Services/mobServiceCategory/mobAutomationServices";
-import MobFabricationServices from "./modules/ClientPages/Services/mobServiceCategory/mobFabricationServices";
+import MobArtisans from "./modules/ClientPages/Services/mobServiceCategory/mobArtisans";
+import MobArchitects from "./modules/ClientPages/Services/mobServiceCategory/mobArchitects";
+import MobContractors from "./modules/ClientPages/Services/mobServiceCategory/mobContractors";
+import MobAutomation from "./modules/ClientPages/Services/mobServiceCategory/mobAutomation";
+import MobFabricators from "./modules/ClientPages/Services/mobServiceCategory/mobFabricators";
+import MobEngineers from "./modules/ClientPages/Services/mobServiceCategory/mobEngineers";
 import MobSearchWorker from "./modules/ClientPages/WorkerPage/SearchWorker/mobSearchWorker";
 import MobSavedWorkers from "./modules/ClientPages/Profile/Mobile/mobSavedWorkers";
 import MobRecentSearch from "./modules/ClientPages/WorkerPage/SearchWorker/mobRecentSearch";
@@ -90,8 +91,8 @@ function App() {
           <Route path="/mobile-bookings" element={<MobMyBookings />} />
           <Route path="/mobile-booking-info" element={<MobBookingInfo />} />
           <Route
-            path="/mobile-service-category"
-            element={<MobAllServiceCategory />}
+            path="/mobile-all-services"
+            element={<MobAllServices/>}
           />
           <Route path="/mobile-workerpage" element={<MobWorkerpage />} />
           <Route path="/mobile-settings" element={<MobSettings />} />
@@ -108,24 +109,28 @@ function App() {
           />
           <Route path="/mobile-saved-address" element={<MobSavedAddress />} />
           <Route
-            path="/mobile-artisans-services"
-            element={<MobArtisansServices />}
+            path="/mobile-artisans"
+            element={<MobArtisans />}
           />
           <Route
-            path="/mobile-architectural-services"
-            element={<MobArchitecturalServices />}
+            path="/mobile-architects"
+            element={<MobArchitects/>}
           />
           <Route
-            path="/mobile-automation-services"
-            element={<MobAutomationServices />}
+            path="/mobile-automation"
+            element={<MobAutomation />}
           />
           <Route
-            path="/mobile-fabrication-services"
-            element={<MobFabricationServices />}
+            path="/mobile-fabricators"
+            element={<MobFabricators />}
           />
           <Route
-            path="/mobile-contractor-services"
-            element={<MobContractorServices />}
+            path="/mobile-contractors"
+            element={<MobContractors />}
+          />
+          <Route
+            path="/mobile-engineers"
+            element={<MobEngineers />}
           />
 
           

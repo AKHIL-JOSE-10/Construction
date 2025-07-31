@@ -14,7 +14,7 @@ import SteelFabricators from "@/assets/SteelFabricatorImg.png";
 import StructuralEngineering from "@/assets/StructuralEngineerImg.png";
 import MEP from "@/assets/MEPServiceProviderImg.png";
 
-const MobArchitecturalServices = () => {
+const MobArchitects = () => {
   const navigate = useNavigate();
 
   const architecturalServices = [
@@ -54,4 +54,4 @@ const MobArchitecturalServices = () => {
   );
 };
 
-export default MobArchitecturalServices;
+export default MobArchitects;

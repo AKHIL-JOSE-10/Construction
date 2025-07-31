@@ -14,14 +14,14 @@ import EngineersIcon from "@/assets/Engineers.png";
 import InstantIcon from "@/assets/Instant.png";
 
 const routeMap = {
-  Architects: "/mobile-architectural-services",
-  Contractors: "/mobile-contractor-services",
+  Architects: "/mobile-architects",
+  Contractors: "/mobile-contractors",
   Engineers: "/mobile-engineers",
   Artisans: "/mobile-artisans",
   Education: "/mobile-education",
   All: "/mobile-all-services",
-  Urgent: "/mobile-urgent-services",
-  Fabrication: "/mobile-fabrication",
+  Urgent: "/mobile-Urgent-ServiceRequest",
+  Fabrication: "/mobile-fabricators",
   Automation: "/mobile-automation",
   Legal: "/mobile-legal",
 };
@@ -134,7 +134,7 @@ const ServiceScrollBar = ({ fakeScrollBarWidthPercent = 50 }) => {
                   justifyContent: "center",
                   alignItems: "center",
                   p: 0.7,
-                  gap:1,
+                  gap: 1,
                   cursor: item.label === "Architects" ? "pointer" : "default",
                 }}
                 onClick={() => {
