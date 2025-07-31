@@ -33,7 +33,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
           src={img}
           alt={title}
           sx={{
-            width: "100%",
+            width: 330,
             height: "auto",
             borderRadius: 0,
           }}

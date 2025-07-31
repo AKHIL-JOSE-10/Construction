@@ -4,20 +4,30 @@ import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
 import BackToHomeButton from "./backToHome";
 
+import Masons_Img from '@/assets/Masons_Img.png'
 import InteriorDesign from "@/assets/InteriorDesignerImg.png";
+import Carpenters_Img from "@/assets/Carpenters_Img.png";
+import Metal_Fabricators_Img from "@/assets/Metal_Fabricators_Img.png";
+import Electrician_Img from "@/assets/Electrician_Img.png";
+import Plumbers_Img from "@/assets/Plumbers_Img.png";
+import Painters_Img from "@/assets/Painters_Img.png";
+import WaterProofing_Img from "@/assets/WaterProofing_Img.png";
+import Floor_Installation_Img from "@/assets/Floor_Installation_Img.png";
+
+
 
 const MobArtisans = () => {
   const navigate = useNavigate();
 
   const artisansServices = [
-    { service: "Masons", img: InteriorDesign },
-    { service: "Carpenters", img: InteriorDesign },
-    { service: "Metal Fabricators", img: InteriorDesign },
-    { service: "Electricians", img: InteriorDesign },
-    { service: "Plumbers", img: InteriorDesign },
-    { service: "Painters", img: InteriorDesign },
-    { service: "Water Proofing Specialists", img: InteriorDesign },
-    { service: "Flooring Installers", img: InteriorDesign },
+    { service: "Masons", img: Masons_Img },
+    { service: "Carpenters", img: Carpenters_Img },
+    { service: "Metal Fabricators", img: Metal_Fabricators_Img },
+    { service: "Electricians", img: Electrician_Img },
+    { service: "Plumbers", img: Plumbers_Img },
+    { service: "Painters", img: Painters_Img },
+    { service: "Water Proofing Specialists", img: WaterProofing_Img },
+    { service: "Flooring Installers", img: Floor_Installation_Img },
   ];
 
   const handleClick = (serviceName) => {

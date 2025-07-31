@@ -39,7 +39,7 @@ const AdvertisementCarousel = () => {
           rotate: 0,
           stretch: 0,
           depth: 100,
-          modifier: 2.5,
+          modifier: 2.9,
           slideShadows: false,
         }}
         modules={[Autoplay, EffectCoverflow]}
