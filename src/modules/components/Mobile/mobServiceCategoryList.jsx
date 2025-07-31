@@ -7,8 +7,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
       onClick={onClick}
       sx={{
         width: '100%',
-        maxWidth: 150,
-        height: 150,
+        maxWidth: 350,
         borderRadius: 1,
         overflow: 'hidden',
         border: '0.5px solid #ffffffff',
@@ -28,22 +27,20 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
           display: 'flex',
           alignItems: 'center',
           backgroundColor: '#f5f5f5ff',
-          px: 1.5,
-          py: 2,
         }}
       >
         <Avatar
           src={img}
           alt={title}
           sx={{
-            width: 68,
-            height: 68,
-            borderRadius: 2,
+            width: "100%",
+            height: "auto",
+            borderRadius: 0,
           }}
         />
-        <IconButton >
+        {/* <IconButton >
           <ArrowForwardIosIcon sx={{ fontSize: 16, color: "#363852ff", ml: 2 }} />
-        </IconButton>
+        </IconButton> */}
       </Box>
       <Box>
         <Box
