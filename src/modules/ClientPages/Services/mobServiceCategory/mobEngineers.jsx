@@ -33,7 +33,7 @@ const MobEngineers = () => {
     };
 
     return (
-        <Box sx={{ px: 1, pt: 2, pb: 8 }}>
+        <Box sx={{  pt: 2, pb: 8 }}>
             <MobHeading Heading="Engineers" />
 
             <Grid container gap={0.5} justifyContent="center">
