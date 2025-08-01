@@ -27,11 +27,11 @@ const ScrollToTopButton = () => {
       sx={{
         position: "fixed",
         bottom: 70,
-        left: "90%",
+        left: "50%",
         transform: "translateX(-50%)",
-        background: "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(3, 5, 60, 1))",
+        background: "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(0, 0, 0, 1))",
         borderRadius: 50,
-        padding:1.2,
+        padding:1,
         display: "flex",
         alignItems: "center",
         cursor: "pointer",
@@ -39,7 +39,8 @@ const ScrollToTopButton = () => {
         zIndex: 1000,
       }}
     >
-      <KeyboardArrowUpIcon sx={{ fontSize: 30, color: "white" }} />
+      <KeyboardArrowUpIcon sx={{ fontSize: 20, color: "white" }} />
+     <Typography sx={{color:'white', fontSize:13}}>  Back to home </Typography>
     </Box>
   );
 };
