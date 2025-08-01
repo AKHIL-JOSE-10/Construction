@@ -12,7 +12,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
         cursor: 'pointer',
         position: 'relative',
         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
-        m: 1,
+        m: 0.5,
       }}
     >
       {/* Full-size Image */}
