@@ -46,11 +46,12 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
           variant="caption"
           sx={{
             color: '#fff',
-            fontSize: '10px',
+            fontSize: '12px',
             textAlign: 'center',
             lineHeight: 1.2,
             wordWrap: 'break-word',
-            mb:1
+            mb:1.2,
+            px:1
           }}
         >
           {title}
