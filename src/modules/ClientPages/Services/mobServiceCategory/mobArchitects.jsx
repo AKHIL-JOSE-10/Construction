@@ -37,7 +37,7 @@ const MobArchitects = () => {
     <Box sx={{ pt: 2, pb: 8}}>
       <MobHeading Heading="Architects" />
 
-      <Grid container  justifyContent="center">
+      <Grid container  justifyContent="space-evenly">
         {architecturalServices.map((item, index) => (
           <Grid item key={index}>
             <MobServiceCategoryList

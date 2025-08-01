@@ -36,7 +36,7 @@ const MobEngineers = () => {
         <Box sx={{  pt: 2, pb: 8 }}>
             <MobHeading Heading="Engineers" />
 
-            <Grid container gap={0.5} justifyContent="center">
+            <Grid container gap={0.5} justifyContent="space-evenly">
                 {engineerServices.map((item, index) => (
                     <Grid item key={index}>
                         <MobServiceCategoryList

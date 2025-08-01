@@ -5,7 +5,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
     <Box
       onClick={onClick}
       sx={{
-        width: 105,
+        width: 160,
         height: 105,
         borderRadius: 2,
         overflow: 'hidden',
@@ -38,7 +38,7 @@ const MobServiceCategoryList = ({ img, title, onClick }) => {
           background: 'linear-gradient(to bottom, rgba(62, 61, 61, 0.03), rgba(50, 50, 50, 0.42), rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 1))',
           display: 'flex',
           alignItems: 'flex-end',
-          justifyContent: 'center',
+          justifyContent: 's',
           pb: 1.2,
         }}
       >
