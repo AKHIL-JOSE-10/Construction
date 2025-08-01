@@ -1,76 +1,60 @@
-import { Box, Typography, IconButton, Avatar } from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Box, Typography } from '@mui/material';
 
 const MobServiceCategoryList = ({ img, title, onClick }) => {
   return (
     <Box
       onClick={onClick}
       sx={{
-        width: '100%',
-        maxWidth: 330,
-        borderRadius: 1,
+        width: 105,
+        height: 105,
+        borderRadius: 2,
         overflow: 'hidden',
-        border: '0.5px solid #ffffffff',
-        boxShadow: '0 2px 8px rgba(51, 62, 120, 0.3)',
-        backgroundColor: '#f1f3f6ff',
         cursor: 'pointer',
-        transition: 'transform 0.2s ease-in-out',
-        '&:hover': {
-          transform: 'scale(1.03)',
-        },
+        position: 'relative',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
         m: 1,
       }}
     >
+      {/* Full-size Image */}
+      <Box
+        component="img"
+        src={img}
+        alt={title}
+        sx={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+        }}
+      />
+
+      {/* Full Gradient Overlay with Title */}
       <Box
         sx={{
-          position: 'relative',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: 'linear-gradient(to bottom, rgba(62, 61, 61, 0.03), rgba(50, 50, 50, 0.42), rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 1))',
           display: 'flex',
-          alignItems: 'center',
-          backgroundColor: '#f5f5f5ff',
+          alignItems: 'flex-end',
+          justifyContent: 'center',
+          pb: 1.2,
         }}
       >
-        <Avatar
-          src={img}
-          alt={title}
+        <Typography
+          variant="caption"
           sx={{
-            width: 330,
-            height: "auto",
-            borderRadius: 0,
-          }}
-        />
-        {/* <IconButton >
-          <ArrowForwardIosIcon sx={{ fontSize: 16, color: "#363852ff", ml: 2 }} />
-        </IconButton> */}
-      </Box>
-      <Box>
-        <Box
-          sx={{
-            backgroundColor: '#edeef4ff',
-            height: 42, // fixed height
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: '4px',
-            px: 1,
-            py: 0.5,
+            color: '#fff',
+            fontSize: '10px',
             textAlign: 'center',
+            lineHeight: 1.2,
+            wordWrap: 'break-word',
+            mb:1
           }}
         >
-          <Typography
-            variant="subtitle2"
-            sx={{
-              fontWeight: 600,
-              fontSize: '13px',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-            }}
-          >
-            {title}
-          </Typography>
-        </Box>
+          {title}
+        </Typography>
       </Box>
     </Box>
   );
