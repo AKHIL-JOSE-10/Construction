@@ -37,10 +37,11 @@ const ScrollToTopButton = () => {
         cursor: "pointer",
         backdropFilter: "blur(1px)", 
         zIndex: 1000,
+        alignItems:'center'
       }}
     >
-      <KeyboardArrowUpIcon sx={{ fontSize: 20, color: "white" }} />
-     <Typography sx={{color:'white', fontSize:13}}>  Back to home </Typography>
+      <KeyboardArrowUpIcon sx={{ fontSize: 19, color: "white" }} />
+     <Typography sx={{color:'white', fontSize:11, ml:0.5}}>  Back to home </Typography>
     </Box>
   );
 };
