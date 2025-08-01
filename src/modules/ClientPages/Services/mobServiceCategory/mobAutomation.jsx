@@ -4,16 +4,18 @@ import MobHeading from "@/modules/components/Mobile/mobileHeading";
 import MobServiceCategoryList from "@/modules/components/Mobile/mobServiceCategoryList";
 import BackToHomeButton from "./backToHome";
 
-import InteriorDesign from "@/assets/InteriorDesignerImg.png";
+import Security_Automation_Img from "@/assets/Security_Automation_Img.png";
+import Smart_Home_Img from "@/assets/Smart_Home_Img.png";
+import Smart_Lock_Img from "@/assets/Smart_Lock_Img.png";
 
 const MobAutomation = () => {
   const navigate = useNavigate();
 
   const automationServices = [
-    { service: "Security & Surveillance Specialists", img: InteriorDesign },
-    { service: "Smart Home Automation Experts", img: InteriorDesign },
-    { service: "Audio and Video System Integrators", img: InteriorDesign },
-    { service: "Automated Smart Lock Installers", img: InteriorDesign },
+    { service: "Security & Surveillance Specialists", img: Security_Automation_Img },
+    { service: "Smart Home Automation Experts", img: Smart_Home_Img },
+    { service: "Audio and Video System Integrators", img: Security_Automation_Img },
+    { service: "Automated Smart Lock Installers", img: Smart_Lock_Img },
   ];
 
   const handleClick = (serviceName) => {

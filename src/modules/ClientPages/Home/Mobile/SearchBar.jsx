@@ -3,7 +3,7 @@ import { Box, InputBase } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 
-const SearchBar = ({ placeholder = 'Search for “Plumbing Services”' }) => {
+const SearchBar = ({ placeholder = 'Search for Services' }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {

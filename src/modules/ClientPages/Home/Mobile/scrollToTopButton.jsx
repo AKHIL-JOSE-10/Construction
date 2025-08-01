@@ -1,6 +1,5 @@
-// ScrollToTopButton.jsx
 import React, { useEffect, useState } from "react";
-import { Box, IconButton } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 const ScrollToTopButton = () => {
@@ -27,24 +26,20 @@ const ScrollToTopButton = () => {
       onClick={scrollToTop}
       sx={{
         position: "fixed",
-        bottom: 75,
-        right: 20,
-        width: 45,
-        height: 45,
-        backgroundColor: "#a1aff9ff",
-        color: "white",
-        borderRadius: "50%",
+        bottom: 70,
+        left: "90%",
+        transform: "translateX(-50%)",
+        background: "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(3, 5, 60, 1))",
+        borderRadius: 50,
+        padding:1.2,
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.5)",
         cursor: "pointer",
+        backdropFilter: "blur(1px)", 
         zIndex: 1000,
       }}
     >
-      <IconButton size="small" sx={{ color: "white" }}>
-        <KeyboardArrowUpIcon />
-      </IconButton>
+      <KeyboardArrowUpIcon sx={{ fontSize: 30, color: "white" }} />
     </Box>
   );
 };
