@@ -89,7 +89,7 @@ const WorkerCard = ({ worker }) => (
         }}
       >
         <StarIcon fontSize={12} weight="fill" color="#7D81F0" mb={1}/>
-        <Typography fontSize={11} fontWeight={600} color="black" ml={0.3} mt={0.4}>
+        <Typography fontSize={11} fontWeight={600} color="black" ml={0.3} mt={0.2}>
           {worker.rating} 
         </Typography>
         <Typography fontSize={9} fontWeight={600} color="black" mt={0.4} >
