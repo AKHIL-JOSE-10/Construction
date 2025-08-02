@@ -89,7 +89,7 @@ const WorkerCard = ({ worker }) => (
         }}
       >
         <StarIcon fontSize={12} weight="fill" color="#7D81F0" />
-        <Typography fontSize={11} fontWeight={600} ml={0.3}>
+        <Typography fontSize={11} fontWeight={600} color="black" ml={0.3}>
           {worker.rating}
         </Typography>
         <Typography fontSize={9} fontWeight={600} color="black">
@@ -123,7 +123,7 @@ const WorkerCard = ({ worker }) => (
             </Typography>
             <Stack direction="row" alignItems="center" spacing={0.5}>
               <MapPinIcon size={18} />
-              <Typography color="text.secondary" fontSize={14}>
+              <Typography color="#6c6868ff" fontSize={14}>
                 {worker.location}
               </Typography>
             </Stack>
