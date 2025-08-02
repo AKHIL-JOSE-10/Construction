@@ -278,7 +278,7 @@ const MobHome = () => {
               <BellIcon color="#050b5fff" />
             </IconButton>
             <Avatar
-              onClick={() => navigate('/editInfo')}
+              onClick={() => navigate('/mobile-profile')}
               sx={{ width: 32, height: 32 }}
               src="https://randomuser.me/api/portraits/men/83.jpg"
             />

@@ -4,7 +4,8 @@ import { Box, Tabs, Tab } from "@mui/material";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import FlashOnIcon from "@mui/icons-material/FlashOn"; 
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { MagnifyingGlassIcon } from "@phosphor-icons/react";
+
 
 const MobileBottomTab = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const MobileBottomTab = () => {
     "/home",
     "/mobile-Urgent-ServiceRequest",   // ⬅️ Updated path
     "/mobile-bookings",
-    "/mobile-profile",
+    "/mobile-search-worker",
   ];
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const MobileBottomTab = () => {
     if (newValue === 0) navigate("/home");
     else if (newValue === 1) navigate("/mobile-Urgent-ServiceRequest"); 
     else if (newValue === 2) navigate("/mobile-bookings");
-    else if (newValue === 3) navigate("/mobile-profile");
+    else if (newValue === 3) navigate("/mobile-search-worker");
   };
 
   if (!allowedPaths.includes(location.pathname)) {
@@ -109,8 +110,8 @@ const MobileBottomTab = () => {
           }}
         />
         <Tab
-          icon={<AccountCircleIcon sx={{ width: 23, height: 23 }} />}
-          label="Profile"
+          icon={<MagnifyingGlassIcon size={23} />}
+          label="Search"
           sx={{
             fontSize: "0.6rem",
             minWidth: 0,
