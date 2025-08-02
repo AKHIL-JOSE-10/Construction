@@ -89,10 +89,10 @@ const WorkerCard = ({ worker }) => (
         }}
       >
         <StarIcon fontSize={12} weight="fill" color="#7D81F0" />
-        <Typography fontSize={11} fontWeight={650} ml={0.3}>
+        <Typography fontSize={11} fontWeight={600} ml={0.3}>
           {worker.rating}
         </Typography>
-        <Typography fontSize={9} fontWeight={600}>
+        <Typography fontSize={9} fontWeight={600} color="black">
           ({worker.reviews} reviews)
         </Typography>
       </Box>
@@ -129,7 +129,7 @@ const WorkerCard = ({ worker }) => (
             </Stack>
           </Box>
         </Stack>
-        <Box textAlign="right">
+        <Box textAlign="right" mr={1.5}>
           <Typography fontSize={15} color="grey">
             Starts from
           </Typography>
@@ -150,7 +150,7 @@ const WorkerCard = ({ worker }) => (
               bgcolor: "#f1e9ff",
               color: "#5f3dc4",
               fontWeight: 400,
-              fontSize: 10,
+              fontSize: 9,
               px:1
             }}
           />
@@ -158,7 +158,7 @@ const WorkerCard = ({ worker }) => (
       </Stack>
 
       {/* Description */}
-      <Typography fontSize={13} mb={2}>
+      <Typography fontSize={13} mb={2} ml={0.8}>
         {worker.description}
       </Typography>
 
@@ -168,10 +168,10 @@ const WorkerCard = ({ worker }) => (
         variant="outlined"
         sx={{
           borderColor: "#6739B7",
-          color: "#6739B7",
+          color: "#7445c6ff",
           bgcolor: "#f6f3f9ff",
           textTransform: "none",
-          fontSize: 15.5,
+          fontSize: 15,
           py: 0.4,
           fontWeight: 400,
         }}
