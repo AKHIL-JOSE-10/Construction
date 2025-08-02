@@ -118,7 +118,7 @@ const WorkerCard = ({ worker }) => (
         <Stack direction="row" spacing={1} alignItems="center">
           <Avatar src={worker.avatar} sx={{ height: 53, width: 53 }} />
           <Box>
-            <Typography mb={0.4} fontSize={18} fontWeight={600} color="black">
+            <Typography mb={0.4} fontSize={18} fontWeight={580} color="black">
               {worker.name}
             </Typography>
             <Stack direction="row" alignItems="center" spacing={0.5}>
@@ -154,7 +154,7 @@ const WorkerCard = ({ worker }) => (
               bgcolor: "#f1e9ff",
               color: "#5f3dc4",
               fontWeight: 400,
-              fontSize: 9,
+              fontSize: 10,
               px:1
             }}
           />
