@@ -79,7 +79,7 @@ const WorkerCard = ({ worker }) => (
           position: "absolute",
           bottom: 8,
           right: 8,
-          bgcolor: "rgba(255, 255, 255, 0.7)",
+          bgcolor: "rgba(255, 255, 255, 0.8)",
           borderRadius: 2,
           px: 1,
           py: 0.3,
@@ -88,11 +88,11 @@ const WorkerCard = ({ worker }) => (
           boxShadow: 2,
         }}
       >
-        <StarIcon fontSize={13} weight="fill" color="#7D81F0" />
-        <Typography fontSize={12} fontWeight={650} ml={0.3}>
+        <StarIcon fontSize={12} weight="fill" color="#7D81F0" />
+        <Typography fontSize={11} fontWeight={650} ml={0.3}>
           {worker.rating}
         </Typography>
-        <Typography fontSize={9} fontWeight={650}>
+        <Typography fontSize={9} fontWeight={600}>
           ({worker.reviews} reviews)
         </Typography>
       </Box>
@@ -113,17 +113,17 @@ const WorkerCard = ({ worker }) => (
     </Box>
 
     {/* Info Section */}
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ px: 1,  py:2 }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Stack direction="row" spacing={1} alignItems="center">
-          <Avatar src={worker.avatar} sx={{ height: 55, width: 55 }} />
+          <Avatar src={worker.avatar} sx={{ height: 53, width: 53 }} />
           <Box>
             <Typography mb={0.5} fontSize={18} fontWeight={600}>
               {worker.name}
             </Typography>
             <Stack direction="row" alignItems="center" spacing={0.5}>
               <MapPinIcon size={18} />
-              <Typography color="text.secondary" fontSize={15}>
+              <Typography color="text.secondary" fontSize={14}>
                 {worker.location}
               </Typography>
             </Stack>
@@ -168,11 +168,11 @@ const WorkerCard = ({ worker }) => (
         variant="outlined"
         sx={{
           borderColor: "#6739B7",
-          color: "#a17fddff",
+          color: "#6739B7",
           bgcolor: "#f6f3f9ff",
           textTransform: "none",
           fontSize: 15.5,
-          py: 0.5,
+          py: 0.4,
           fontWeight: 400,
         }}
       >
