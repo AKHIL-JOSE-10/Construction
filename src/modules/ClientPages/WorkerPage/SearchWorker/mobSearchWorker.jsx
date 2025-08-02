@@ -11,7 +11,6 @@ import {
   InputBase,
 } from "@mui/material";
 import {
-  KeyboardArrowDownOutlined,
   Tune,
   Search,
   LocationOnOutlined,
@@ -38,7 +37,7 @@ const workers = [
       "I am a professional Architect with 5 years of experience",
     price: "899 Rs",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+    avatar: "https://randomuser.me/api/portraits/men/18.jpg",
   },
   {
     name: "Athul Murali",
@@ -54,8 +53,16 @@ const workers = [
   },
 ];
 
-const WorkerCard = ({ worker }) => (
+const WorkerCard = ({ worker , navigate }) => (
   <Box
+   onClick={() =>
+    navigate("/mobile-workerpage", {
+      state: {
+        name: worker.name,
+        img: worker.avatar,
+      },
+    })
+  }
     sx={{
       mx: 2,
       mb: 2,
@@ -259,7 +266,7 @@ const MobSearchWorker = () => {
 
       {/* Worker Cards */}
       {workers.map((worker, idx) => (
-        <WorkerCard key={idx} worker={worker} />
+        <WorkerCard key={idx} worker={worker} navigate={navigate}/>
       ))}
     </Box>
   );

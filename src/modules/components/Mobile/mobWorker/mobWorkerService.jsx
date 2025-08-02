@@ -34,8 +34,8 @@ const MobWorkerservice = ({selectedService,setIsAlert}) => {
               />
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
 
-                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '600', fontSize: "16px" }}>{selectedService || "Plumbing" } </Typography>
-                <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your {selectedService?.toLowerCase() || "Plumbing"} needs </Typography>
+                <Typography variant='h6' component="span" sx={{ ml: 2, fontWeight: '600', fontSize: "16px" }}>{selectedService || "Architect" } </Typography>
+                <Typography component="span" sx={{ ml: 2, fontSize: '13px' }}>Reliable solution for all your {selectedService?.toLowerCase() || "Hosing"} needs </Typography>
               </Box>
 
             </Box>
