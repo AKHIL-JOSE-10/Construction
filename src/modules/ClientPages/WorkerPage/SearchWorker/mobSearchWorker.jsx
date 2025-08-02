@@ -92,7 +92,7 @@ const WorkerCard = ({ worker }) => (
         <Typography fontSize={11} fontWeight={600} color="black" ml={0.3}>
           {worker.rating}
         </Typography>
-        <Typography fontSize={9} fontWeight={600} color="black">
+        <Typography fontSize={9} fontWeight={600} color="black" bottom={0}>
           ({worker.reviews} reviews)
         </Typography>
       </Box>
@@ -118,7 +118,7 @@ const WorkerCard = ({ worker }) => (
         <Stack direction="row" spacing={1} alignItems="center">
           <Avatar src={worker.avatar} sx={{ height: 53, width: 53 }} />
           <Box>
-            <Typography mb={0.4} fontSize={18} fontWeight={600}>
+            <Typography mb={0.4} fontSize={18} fontWeight={600} color="black">
               {worker.name}
             </Typography>
             <Stack direction="row" alignItems="center" spacing={0.5}>
@@ -133,9 +133,13 @@ const WorkerCard = ({ worker }) => (
           <Typography fontSize={15} color="grey">
             Starts from
           </Typography>
-          <Typography fontSize={18} fontWeight={500}>
-            {worker.price} /hr
+          <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+<Typography fontSize={18} fontWeight={500} color="black">
+            {worker.price} 
           </Typography>
+          <Typography color="grey"> /hr</Typography>
+          </Box>
+          
         </Box>
       </Stack>
 
