@@ -133,7 +133,7 @@ const WorkerCard = ({ worker }) => (
           <Typography fontSize={15} color="grey">
             Starts from
           </Typography>
-          <Typography fontSize={18} fontWeight={600}>
+          <Typography fontSize={18} fontWeight={500}>
             {worker.price} /hr
           </Typography>
         </Box>
@@ -149,8 +149,9 @@ const WorkerCard = ({ worker }) => (
             sx={{
               bgcolor: "#f1e9ff",
               color: "#5f3dc4",
-              fontWeight: 500,
-              fontSize: 12,
+              fontWeight: 400,
+              fontSize: 10,
+              px:1
             }}
           />
         ))}
@@ -172,6 +173,7 @@ const WorkerCard = ({ worker }) => (
           textTransform: "none",
           fontSize: 15.5,
           py: 0.5,
+          fontWeight: 400,
         }}
       >
         Book Now
