@@ -431,12 +431,13 @@ const MobHome = () => {
       sx={{
         position: "relative",
         flex: "0 0 auto",
-        width: 105,
-        height: 105,
+        width: 115,
+        height: 115,
         borderRadius: 2,
         overflow: "hidden",
         cursor: "pointer",
-        mr: 1,
+        border:'0.5px solid #858383ff',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
       }}
     >
       {/* Full-size Image */}
