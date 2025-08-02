@@ -208,16 +208,7 @@ const MobHome = () => {
 
   return (
     <Grid sx={{ pb: 2, }}>
-
-      <Box>
-        <Box>
-          
-        </Box>
-      </Box>
       <Grid >
-        
-
-
 <Grid>
     <Box
       sx={{
@@ -246,6 +237,7 @@ const MobHome = () => {
 
       {/* Foreground Content */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
+        
         {/* Header */}
         <Box
           sx={{
@@ -437,7 +429,7 @@ const MobHome = () => {
         overflow: "hidden",
         cursor: "pointer",
         border:'0.5px solid #858383ff',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
       }}
     >
       {/* Full-size Image */}

@@ -50,7 +50,7 @@ const ScrollToTopButton = () => {
     >
       <KeyboardArrowUpIcon sx={{ fontSize: 19, color: "white" }} />
       <Typography sx={{ color: 'white', fontSize: 11, ml: 0.5 }}>
-        Back to home
+        Back to top
       </Typography>
     </Box>
   );
