@@ -30,24 +30,24 @@ import { useNavigate } from "react-router-dom";
 const workers = [
   {
     name: "Alan Jose",
-    location: "Kukatpally",
+    location: "Thrissur",
     rating: 3.8,
     reviews: 520,
     roles: ["Designer", "Architect", "+ 2"],
     description:
-      "I will do app UI UX design in figma and Frontend coding. Fast and Super cheap",
+      "I am a professional Architect with 5 years of experience",
     price: "899 Rs",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
     avatar: "https://randomuser.me/api/portraits/men/75.jpg",
   },
   {
-    name: "Alan Jose",
-    location: "Kukatpally",
+    name: "Athul Murali",
+    location: "Thrissur",
     rating: 3.8,
     reviews: 520,
     roles: ["Designer", "Architect", "+ 2"],
     description:
-      "I will do app UI UX design in figma and Frontend coding. Fast and Super cheap",
+      "I am a professional Architect with 7 years of experience",
     price: "799 Rs",
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
     avatar: "https://randomuser.me/api/portraits/men/75.jpg",
@@ -118,7 +118,7 @@ const WorkerCard = ({ worker }) => (
         <Stack direction="row" spacing={1} alignItems="center">
           <Avatar src={worker.avatar} sx={{ height: 53, width: 53 }} />
           <Box>
-            <Typography mb={0.5} fontSize={18} fontWeight={600}>
+            <Typography mb={0.4} fontSize={18} fontWeight={600}>
               {worker.name}
             </Typography>
             <Stack direction="row" alignItems="center" spacing={0.5}>
@@ -158,7 +158,7 @@ const WorkerCard = ({ worker }) => (
       </Stack>
 
       {/* Description */}
-      <Typography fontSize={13} mb={2} ml={0.8}>
+      <Typography fontSize={13} mb={1.7} ml={0.8}>
         {worker.description}
       </Typography>
 
