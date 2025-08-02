@@ -82,17 +82,17 @@ const WorkerCard = ({ worker }) => (
           bgcolor: "rgba(255, 255, 255, 0.8)",
           borderRadius: 2,
           px: 1,
-          py: 0.3,
+          py: 0.1,
           display: "flex",
           alignItems: "center",
           boxShadow: 2,
         }}
       >
-        <StarIcon fontSize={12} weight="fill" color="#7D81F0" />
-        <Typography fontSize={11} fontWeight={600} color="black" ml={0.3}>
-          {worker.rating}
+        <StarIcon fontSize={12} weight="fill" color="#7D81F0" mb={1}/>
+        <Typography fontSize={11} fontWeight={600} color="black" ml={0.3} mt={0.4}>
+          {worker.rating} 
         </Typography>
-        <Typography fontSize={9} fontWeight={600} color="black" bottom={0}>
+        <Typography fontSize={9} fontWeight={600} color="black" mt={0.4} >
           ({worker.reviews} reviews)
         </Typography>
       </Box>
@@ -130,7 +130,7 @@ const WorkerCard = ({ worker }) => (
           </Box>
         </Stack>
         <Box textAlign="right" mr={1.5}>
-          <Typography fontSize={15} color="grey">
+          <Typography fontSize={15.5} color="grey">
             Starts from
           </Typography>
           <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
